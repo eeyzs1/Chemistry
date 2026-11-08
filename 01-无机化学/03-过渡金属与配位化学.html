@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>过渡金属与配位化学 · 无机化学 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">01 无机化学</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 过渡金属与配位化学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 无机化学 · 第 3 章</div>
+    <h1>过渡金属与配位化学：中部的彩色腰带</h1>
+    <p class="lede">
+      红宝石的红是铬、翡翠的绿也是铬；蓝色硫酸铜、黄色铁锈、紫色高锰酸钾、你血管里运氧的血红素——
+      周期表中部那条宽宽的 d 区<strong>腰带</strong>，承包了自然界大半的颜色与生命过程的关键反应。
+      本章先看 d 区金属的三大招牌（多变价、彩色化合物、好催化），再学一套全新语言——
+      <strong>配合物</strong>：中心离子、配体、配位数；最后用晶体场理论的"d 轨道分裂"一步看懂：
+      为什么无色的离子一遇到配体，就染上鲜艳的颜色。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：第 1–2 章</span>
+      <span class="chip">交互动画 ×1</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#dblock">§1 d 区三大招牌</a>
+    <a href="#complex">§2 配合物的组成与命名</a>
+    <a href="#cft">§3 晶体场与颜色</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：颜料店的一半货架</h2>
+    <p>
+      走进一间颜料店：群青、钴蓝、铬绿、镉红、铁黄……数一数标签上的元素，大半来自周期表中部
+      第 3–12 列。这条"腰带"里的元素被称为<span class="term">过渡金属</span>
+      <span class="en">transition metals</span>——"过渡"指的是它们的性质在活泼的 s 区金属与
+      p 区之间过渡，也指它们的电子正在<strong>逐个填充次外层的 d 轨道</strong>（回忆第 1 章 §1 的思考题：
+      4s 填完才轮到 3d，d 电子"住在里层却中途加入"）。
+    </p>
+    <p>
+      正是这批"住在里层"的 d 电子，给了过渡金属三件法宝：<strong>多种氧化态、缤纷的颜色、卓越的催化能力</strong>。
+      而要真正读懂颜色，我们还得先学一门新的"分子语法"——配位化学。它研究的对象
+      <span class="term">配合物</span><span class="en">coordination complex</span>长得像句套娃：
+      一个金属离子坐在中央，一圈分子或离子手拉手围着它。别小看这种结构——
+      血红素、叶绿素、维生素 B<sub>12</sub>，全是配合物。
+    </p>
+  </section>
+
+  <!-- ============ §1 d 区 ============ -->
+  <section id="dblock">
+    <h2>§1 d 区三大招牌：多变价、彩色、好催化</h2>
+    <p>
+      <strong>招牌一：多变价。</strong>主族金属通常只有一种"体面"的价态（Na⁺、Mg²⁺、Al³⁺），
+      过渡金属却像换衣服一样自然：铁有 Fe²⁺/Fe³⁺，铜有 Cu⁺/Cu²⁺，锰更是从 +2 一路演到 +7
+      （KMnO<sub>4</sub> 里的 Mn 就是 +7）。原因正是那批 d 电子：<strong>次外层 d 与最外层 s 能量相近，
+      化学反应里两层电子都能参战</strong>——少给几个、多给几个，都不伤元气。
+    </p>
+    <p>
+      <strong>招牌二：彩色化合物。</strong>d 区溶液是化学实验室最上镜的部分，一张表认识常客：
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>物种</th><th>颜色</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">Cu<sup>2+</sup></span>（水合）</td><td>蓝色</td><td>§3 的主角</td></tr>
+        <tr><td><span class="formula">Fe<sup>2+</sup></span> / <span class="formula">Fe<sup>3+</sup></span></td><td>浅绿 / 黄色</td><td>同一元素两种脸色</td></tr>
+        <tr><td><span class="formula">Co<sup>2+</sup></span> / <span class="formula">Ni<sup>2+</sup></span></td><td>粉红 / 绿色</td><td>变色硅胶里的钴会"报湿度"</td></tr>
+        <tr><td><span class="formula">MnO<sub>4</sub><sup>−</sup></span></td><td>紫色（浓艳）</td><td>颜色来自电荷迁移，见 §3</td></tr>
+        <tr><td><span class="formula">CrO<sub>4</sub><sup>2−</sup></span> / <span class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup></span></td><td>黄色 / 橙色</td><td>酸碱度切换两种脸</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>招牌三：好催化。</strong>多变的价态让过渡金属可以"先接盘、再交货"：
+      铁催化剂帮 N<sub>2</sub> 和 H<sub>2</sub> 分步合成氨（哈伯法，喂饱了全球一半人口）；
+      V<sub>2</sub>O<sub>5</sub> 在接触法制硫酸中来回复价；汽车尾气净化里的 Pt、Pd
+      把 CO 与 NO 转成无害气体；你身体里几乎每一种酶的活性中心都坐着一种过渡金属。
+      <strong>能伸出 d 轨道拉一把反应物、再全身而退——这是催化者的天赋。</strong>
+    </p>
+
+    <details class="think">
+      <summary>想一想：为什么主族金属很少"多价"，过渡金属却动辄五六个价态？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回忆第 1 章——Na 失去最外层 1 个电子后就剩下什么结构？再打破它容易吗？</p>
+        <p>
+          Na 失去 3s 电子后是满壳的 Ne 结构，再要动第 2 层电子，电离能陡增一个数量级——所以主族"一价定终身"。
+          过渡金属不同：反应时先丢 ns，剩下的 (n−1)d 电子彼此能量接近、逐个可丢，
+          <strong>丢 2 个、3 个……成本是"缓坡"而非"悬崖"</strong>。价态多 = 氧化还原角色多 = 催化的资本，
+          三大招牌其实是同一件事（d 电子位置灵活）的三张面孔。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 配合物 ============ -->
+  <section id="complex">
+    <h2>§2 配合物的组成、结构与命名</h2>
+    <p>
+      往硫酸铜溶液里滴氨水，除了颜色变化，还发生了一件更本质的事：氨分子用氮原子上的
+      <span class="term">孤对电子</span><span class="en">lone pair</span>抓住了 Cu²⁺，形成了一种
+      "金属离子 + 环绕分子"的新物种。这类结构叫<strong>配合物</strong>（也叫配位化合物），它的三要素：
+    </p>
+    <ul>
+      <li><strong>中心离子（或原子）</strong>：坐镇中央的金属，如 Cu²⁺、Fe³⁺——提供空轨道的"房客"；
+      </li>
+      <li><strong>配体</strong>（ligand）：围着中心的路由器，如 H<sub>2</sub>O、NH<sub>3</sub>、CN⁻——
+        直接与中心结合的原子叫<strong>配位原子</strong>（NH<sub>3</sub> 是 N，CN⁻ 是 C）；
+      </li>
+      <li><strong>配位数</strong>：直接与中心结合的配位原子数，常见 4（平面正方形/四面体）与 6（八面体）。
+      </li>
+    </ul>
+    <p>
+      配体与中心之间的化学键叫<span class="term">配位键</span><span class="en">coordinate bond</span>：
+      <strong>共用电子对完全由配体一方提供</strong>，中心离子只出空轨道。本质仍是共价键，只是"出资方"单边。
+      注意这句话的方向——配体出电子对，是"给电子的行家"；中心离子接受电子对。这条伏笔在
+      第 4 章会正式展开成路易斯酸碱理论。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="两种经典配合物的空间结构">
+          <defs>
+            <marker id="mkS" markerWidth="7" markerHeight="7" refX="5" refY="2.6" orient="auto">
+              <path d="M0,0 L5.6,2.6 L0,5.2 z" fill="#475569"></path>
+            </marker>
+          </defs>
+          <!-- 左：[Cu(NH3)4]2+ 平面正方形 -->
+          <text x="150" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#111827">[Cu(NH₃)₄]²⁺</text>
+          <line x1="150" y1="150" x2="150" y2="74" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="226" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="150" y2="226" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="74" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <circle cx="150" cy="150" r="17" fill="#ea580c" stroke="#9a3412" stroke-width="2"></circle>
+          <text x="150" y="156" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">Cu²⁺</text>
+          <circle cx="150" cy="66" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="224" cy="150" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="150" cy="234" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="76" cy="150" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <text x="150" y="48" text-anchor="middle" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="248" y="154" text-anchor="start" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="150" y="258" text-anchor="middle" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="52" y="154" text-anchor="end" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="150" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#374151">平面正方形 · 配位数 4</text>
+          <!-- 右：[Fe(CN)6]3- 八面体 -->
+          <text x="470" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#111827">[Fe(CN)₆]³⁻</text>
+          <g>
+            <line x1="470" y1="150" x2="470" y2="86" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="470" y2="214" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="396" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="544" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="529" y2="91" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="411" y2="209" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#mkS)"></line>
+          </g>
+          <circle cx="470" cy="150" r="17" fill="#b45309" stroke="#92400e" stroke-width="2"></circle>
+          <text x="470" y="156" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">Fe³⁺</text>
+          <g font-size="10.5">
+            <circle cx="470" cy="76" r="8.5" fill="#475569"></circle><circle cx="470" cy="60" r="8.5" fill="#2563eb"></circle>
+            <text x="487" y="72" fill="#475569">CN⁻</text>
+            <circle cx="470" cy="224" r="8.5" fill="#475569"></circle><circle cx="470" cy="240" r="8.5" fill="#2563eb"></circle>
+            <text x="487" y="240" fill="#475569">CN⁻</text>
+            <circle cx="390" cy="150" r="8.5" fill="#475569"></circle><circle cx="374" cy="150" r="8.5" fill="#2563eb"></circle>
+            <text x="392" y="136" fill="#475569">CN⁻</text>
+            <circle cx="550" cy="150" r="8.5" fill="#475569"></circle><circle cx="566" cy="150" r="8.5" fill="#2563eb"></circle>
+            <text x="536" y="136" fill="#475569">CN⁻</text>
+            <circle cx="536" cy="86" r="8.5" fill="#475569"></circle><circle cx="547" cy="75" r="8.5" fill="#2563eb"></circle>
+            <circle cx="404" cy="214" r="8.5" fill="#475569"></circle><circle cx="393" cy="225" r="8.5" fill="#2563eb"></circle>
+          </g>
+          <text x="470" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#374151">八面体 · 配位数 6（虚线为斜向键）</text>
+          <!-- 图例 -->
+          <g font-size="10.5" fill="#4b5563">
+            <circle cx="288" cy="60" r="7" fill="#ea580c"></circle><text x="300" y="64" fill="#4b5563">中心离子</text>
+            <circle cx="288" cy="80" r="7" fill="#2563eb"></circle><text x="300" y="84" fill="#4b5563">配位原子 N</text>
+            <circle cx="288" cy="100" r="7" fill="#475569"></circle><text x="300" y="104" fill="#4b5563">配位原子 C</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        箭头方向指示配位键的电子对流向：<strong>由配体指向中心离子</strong>。氰根 CN⁻ 以碳端配位（C 的孤对电子更"慷慨"）。
+        整个内界带电：[Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> 中 4 个 NH<sub>3</sub> 都是中性分子，+2 全由 Cu²⁺ 贡献；
+        [Fe(CN)<sub>6</sub>]<sup>3−</sup> 中 6 个 CN⁻ 共 −6，加上 Fe³⁺ 的 +3，内界净电荷 −3。
+      </figcaption>
+    </figure>
+
+    <h3>内界、外界与命名入门</h3>
+    <p>
+      写配合物化学式时用<strong>方括号圈出"内界"</strong>（靠配位键抱团的核心），括号外是"外界"（靠离子键松散搭伙）。
+      例如 <span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span>：内界
+      [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> + 外界 SO<sub>4</sub><sup>2−</sup>。溶于水时外界解离，
+      <strong>内界基本原样不动</strong>——所以溶液显示的是配合物自己的颜色。
+    </p>
+    <p>
+      命名只要记一个模板：<strong>（配体数 + 配体名 + "合" + 中心离子名 + 括号内罗马数字氧化态）</strong>，
+      阴离子配合物再缀一个"酸"。两个例子走一遍：
+    </p>
+    <ul>
+      <li><span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span> → <strong>硫酸四氨合铜(Ⅱ)</strong>（外界酸根名在前，四氨 = 4 个 NH<sub>3</sub>，铜的氧化态 Ⅱ）；</li>
+      <li><span class="formula">K<sub>3</sub>[Fe(CN)<sub>6</sub>]</span> → <strong>六氰合铁(Ⅲ)酸钾</strong>（内界是阴离子，命名末尾加"酸"，铁的氧化态 Ⅲ）。</li>
+    </ul>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：拆解 K₃[Fe(CN)₆]</div>
+      <div class="worked-problem">
+        指出 <span class="formula">K<sub>3</sub>[Fe(CN)<sub>6</sub>]</span> 的内界与外界、中心离子及其氧化态、配体与配位原子、配位数，并命名。
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>找括号</strong>：方括号内 [Fe(CN)<sub>6</sub>]<sup>3−</sup> 是内界；括号外 3 个 K<sup>+</sup> 是外界。外界电荷与内界相反、总量相等 → 内界带 −3。</li>
+        <li class="step"><strong>定中心氧化态</strong>：内界里 6 个 CN<sup>−</sup> 共 −6，内界净电荷 −3，设铁为 x：x + (−6) = −3 → <strong>x = +3，中心是 Fe³⁺</strong>。</li>
+        <li class="step"><strong>认配体</strong>：配体是氰根 CN<sup>−</sup>，配位原子是<strong>碳 C</strong>（孤对电子在 C 端），每个 CN⁻ 提供 1 个配位原子。</li>
+        <li class="step"><strong>数配位数</strong>：6 个 CN⁻ 各出 1 个 C → <strong>配位数 = 6</strong>，几何为八面体。</li>
+        <li class="step">✅ <strong>命名</strong>：内界为阴离子 → 末尾加"酸"：六氰合铁(Ⅲ)酸钾。自查：外界 3 个 K<sup>+</sup>(+3) 与内界 −3 恰好中和，整个化合物电中性 ✓</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：拆解 [Cu(NH₃)₄]SO₄</div>
+      <div class="worked-problem">
+        指出 <span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span> 的中心离子与氧化态、配体、配位数、内界电荷，并命名。
+        <em>（提示藏在每一步里）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：先看内界电荷。外界只有 1 个 SO<sub>4</sub><sup>2−</sup> → 内界 [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> 带 +2。</li>
+        <li class="step">💡 提示：4 个配体 NH<sub>3</sub> 都是<strong>中性分子</strong>（0 电荷），对内界电荷没有贡献 → +2 全由铜贡献 → 中心是 <strong>Cu²⁺</strong>（氧化态 Ⅱ）。</li>
+        <li class="step">💡 提示：配位原子是 NH<sub>3</sub> 的<strong>氮 N</strong>；4 个 N 各占一位 → 配位数 = 4，几何为平面正方形（见上图）。</li>
+        <li class="step">💡 提示：套模板"配体数 + 配体名 + 合 + 中心名(氧化态)" → "四氨合铜(Ⅱ)"，外界硫酸根在前 → <strong>硫酸四氨合铜(Ⅱ)</strong>。</li>
+        <li class="step">✅ 自查：内界 +2 与外界 −2 中和，电中性 ✓。注意"氨"与"胺"：配体是氨分子 NH<sub>3</sub>，命名用"氨"；"胺"是有机物（02 分支）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：CO 一不带电、二不显碱性，凭什么也能当配体？——煤气中毒的化学就在这一问</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：配体的入场券不是电荷，而是孤对电子。CO 的碳端有吗？</p>
+        <p>
+          有，而且极强。CO 的碳端孤对电子不仅能配位，还能反过来接受金属的 d 电子（"反馈键"），
+          与血红素里 Fe²⁺ 的结合力是 O<sub>2</sub> 的 200 倍以上——这就是煤气中毒的原理：
+          <strong>CO 霸占了运氧座位，氧气排队进不来</strong>。急救的关键是高压氧舱用高分压把 CO 顶下去。
+          配体竞争的胜负，常常就是孤对电子"出手"的强弱——记住这个画面，第 4 章的酸碱争夺战你会再次见到它。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 晶体场与颜色 ============ -->
+  <section id="cft">
+    <h2>§3 晶体场初步：d 轨道分裂出颜色</h2>
+    <p>
+      一切颜色的源头是一个几何问题。自由金属离子的 5 个 d 轨道（d<sub>xy</sub>、d<sub>xz</sub>、d<sub>yz</sub>、
+      d<sub>z²</sub>、d<sub>x²−y²</sub>）能量完全相同；但当 6 个配体从六个方向逼近（八面体构型），
+      指向配体的两个轨道（d<sub>z²</sub>、d<sub>x²−y²</sub>，合称 e<sub>g</sub>）迎头撞上负电云，能量被顶高；
+      避开配体的三个（d<sub>xy</sub> 等，合称 t<sub>2g</sub>）相对落低——这就是
+      <span class="term">d 轨道分裂</span><span class="en">d-orbital splitting</span>，
+      两组之间的能量差记作 <span class="formula">Δ<sub>o</sub></span>（分裂能）。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="250" viewBox="0 0 640 250" role="img" aria-label="八面体场中 d 轨道分裂示意图">
+          <!-- 自由离子 -->
+          <text x="120" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">自由离子</text>
+          <g>
+            <circle cx="40" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="80" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="120" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="160" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="200" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+          </g>
+          <text x="120" y="146" text-anchor="middle" font-size="10.5" fill="#6b7280">5 个 d 轨道能量相同（五重简并）</text>
+          <!-- 过渡箭头 -->
+          <path d="M232,110 L300,110" stroke="#475569" stroke-width="2" marker-end="url(#mkC)"></path>
+          <text x="266" y="94" text-anchor="middle" font-size="10.5" fill="#475569">6 配体逼近</text>
+          <text x="266" y="132" text-anchor="middle" font-size="10.5" fill="#475569">（八面体场）</text>
+          <!-- 分裂后 -->
+          <text x="470" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">配位场中（分裂）</text>
+          <g>
+            <circle cx="400" cy="60" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"></circle>
+            <circle cx="448" cy="60" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"></circle>
+            <circle cx="376" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+            <circle cx="424" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+            <circle cx="472" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+          </g>
+          <text x="560" y="56" text-anchor="start" font-size="10.5" fill="#dc2626">e（z²、x²−y²）</text>
+          <text x="560" y="70" text-anchor="start" font-size="9.5" fill="#6b7280">迎着配体 → 升高</text>
+          <text x="560" y="164" text-anchor="start" font-size="10.5" fill="#16a34a">t（xy、xz、yz）</text>
+          <text x="560" y="178" text-anchor="start" font-size="9.5" fill="#6b7280">避开配体 → 降低</text>
+          <line x1="510" y1="76" x2="510" y2="152" stroke="#9a3412" stroke-width="2" marker-end="url(#mkC)"></line>
+          <line x1="510" y1="152" x2="510" y2="76" stroke="#9a3412" stroke-width="2" marker-end="url(#mkC)"></line>
+          <text x="528" y="120" text-anchor="start" font-size="13" font-weight="800" fill="#9a3412">Δ</text>
+          <text x="424" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">电子吸收能量恰为 Δ 的可见光，从低组跳到高组</text>
+          <defs>
+            <marker id="mkC" markerWidth="7" markerHeight="7" refX="5" refY="2.6" orient="auto">
+              <path d="M0,0 L5.6,2.6 L0,5.2 z" fill="#475569"></path>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <figcaption>
+        八面体场分裂示意（e/t 为两组轨道的群论记号，入门可先当"高组/低组"用）。
+        分裂能 Δ 的大小由<strong>配体的"气场强度"</strong>决定：常见配体从弱到强
+        <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>（光谱化学序列的片段）。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 无色的离子，配上配体怎么就有颜色了？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把白光想成一整排琴键。普通的自由离子像一台<strong>没调过音的琴</strong>——键与键之间没有音差，
+          任何可见光都"弹不动"它，所以无色。配体一来，像有人垫高了其中两个键：
+          <strong>出现了固定的音差</strong>。恰好等于这个音差的光会被吸收（弹响），
+          白光里少了一段颜色，你眼睛看到的就是剩下的<strong>互补色</strong>。音差（Δ）由配体决定——
+          换配体，就是重新调琴。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · d-d 跃迁</span>
+        <p>
+          说回电子：配体场把 5 个 d 轨道劈成高 (e<sub>g</sub>) 低 (t<sub>2g</sub>) 两组，能差 Δ。
+          Cu²⁺（d⁹）的电子可以吸收<strong>能量恰好等于 Δ 的光子</strong>，从低组跳到高组——这就是
+          <span class="term">d-d 跃迁</span><span class="en">d-d transition</span>。白光扫过去，
+          被吸收的波段消失，溶液就呈现出被吃掉颜色的互补色。水合铜离子的 Δ 对应吸收橙红光 → 你看到蓝色；
+          换成 NH<sub>3</sub> 配体，Δ 变大，吸收移向橙黄 → 看到更深的宝蓝。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 定量与例外</span>
+        <p>
+          光子能量 <span class="formula">E = hν = hc/λ</span>：Δ 越大，吸收波长越短，观察色随互补关系移动。
+          配体强弱排序（光谱化学序列片段）<span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>
+          中，CN<sup>−</sup> 之所以最强，除静电外还能用 π 体系分走金属 d 电子（反馈），进一步拉大分裂。
+          两个重要例外要记：① d 轨道全满或全空（如 Zn²⁺ d¹⁰、Sc³⁺ d⁰）<strong>无电子可跳或无空位可跳，配合物无色</strong>；
+          ② MnO<sub>4</sub><sup>−</sup>（Mn +7，d⁰）却浓紫——那不是 d-d 跃迁，而是更强的"电荷迁移"（O 的电子瞬时跳向 Mn），
+          吸收强度比 d-d 高百倍，颜色也浓艳得多。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "物质的颜色来自添加的颜料"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          蓝色瓶子装着蓝色染料，绿色溶液掺了绿色颜料——硫酸铜溶液那么蓝，一定是溶了什么"铜颜料"进去。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          过渡金属溶液的颜色<strong>不需要任何颜料</strong>：d 电子按 Δ 吸收可见光的特定波段（d-d 跃迁），
+          剩下的光进入你的眼睛——颜色是<strong>选择性吸收的负片（互补色）</strong>。Cu²⁺ 吸橙红显蓝、
+          Fe³⁺ 吸紫蓝显黄、MnO<sub>4</sub><sup>−</sup> 吸黄绿显紫。证据是加了配体后颜色随 Δ 变化而变——
+          如果只是"掺颜料"，换配体不该换颜色。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "滴了氨水颜色变深，只是浓度变大了吧"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          淡蓝变深蓝嘛，跟冲浓咖啡一个道理——氨水只是把 Cu²⁺"浓缩"了，铜离子还是那个铜离子。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          变的是<strong>化学物种本身</strong>：配体从 H<sub>2</sub>O 换成了 NH<sub>3</sub>，
+          [Cu(H<sub>2</sub>O)<sub>4</sub>]<sup>2+</sup> → [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>。
+          NH<sub>3</sub> 的配体场更强 → Δ 更大 → 吸收峰向短波移动（橙红→橙黄）→ 互补色移向更深的宝蓝。
+          下面的模拟器让这场"换座位"全程可见——还能用稀盐酸把它请回原座。
+        </div>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：配体置换模拟器</h3>
+    <p>
+      左边是试管里的宏观现象，右边是分子层面的同步解说。点击"下一步"逐步滴加试剂，
+      注意观察中间那个关键的<strong>浅蓝色沉淀</strong>——很多教材略过它，但真实实验里它一定会先出现。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ligandSvg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="氨水与硫酸铜的配体置换分步模拟"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="lgNext">下一步 · 滴加试剂</button>
+          <button class="btn ghost" id="lgReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="ligandReadout">【1/5 · 初始】硫酸铜溶液：[Cu(H₂O)₄]²⁺ 呈淡蓝色——水配体场弱、Δ 小，吸收偏长的橙红光</div>
+      </div>
+      <figcaption>
+        真实实验中水合铜离子更接近 [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 的变形八面体，此处按惯例用四配位简写。
+        记住配体强度片段 <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>：
+        配体越强 → Δ 越大 → 吸收越短波 → 颜色越深。最后一步的"酸复原"是第 4 章酸碱争夺战的预告。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：Zn²⁺ 也能与 NH₃ 形成配合物 [Zn(NH₃)₄]²⁺，为什么它的溶液几乎无色？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：数一数 Zn 原子的 d 电子数（Zn 是 30 号，Ar 核 + 3d¹⁰4s²）。</p>
+        <p>
+          Zn²⁺ 是 <strong>d¹⁰ 全满</strong>：低组轨道全部占满、高组也全占——电子没有可去的高组空位，
+          <strong>d-d 跃迁无从发生</strong>，可见光基本不被吸收，溶液无色。同理 Sc³⁺（d⁰）没有电子可跳，
+          也无色。反过来说，颜色本身就泄露了 d 电子的填充情况：<strong>d 介于 0 和 10 之间，才有"舞台"可跳</strong>。
+          这就是为什么"有色"成了 d 区的招牌，而 s 区、锌族例外地素颜。
+        </p>
+      </div>
+    </details>
+
+    <div class="warn">
+      <div class="kp-title">🧯 氰化物安全警告（必读）</div>
+      本节的 CN⁻ 只是纸上谈兵——<strong>任何含氰化物的实验都严禁自行尝试</strong>。
+      CN⁻ 的配位能力极强，进入体内会死死结合细胞色素氧化酶里的 Fe³⁺，呼吸链当场瘫痪，
+      数毫克即可致命；遇酸还放出剧毒的 HCN 气体。工业上含氰废水必须先氧化解毒再排放。
+      "配位能力最强"在试管里是漂亮的蓝色，在身体里是致命的抢劫——化学的威力从来双向。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>过渡金属三大招牌同源：<strong>d 电子能量灵活</strong> → 多变价（Mn 可达 +7）、彩色（d-d 跃迁）、好催化（合成氨、尾气净化、酶活性中心）。</li>
+        <li>配合物三要素：<strong>中心离子</strong>（出空轨道）、<strong>配体</strong>（出孤对电子）、<strong>配位数</strong>（常见 4 平面正方形、6 八面体）；配位键是"单边出资"的共价键。</li>
+        <li>方括号内是<strong>内界</strong>（配位键抱团），外是外界；命名模板"配体数 + 配体名 + 合 + 中心名(氧化态)"，阴离子内界加"酸"。</li>
+        <li>晶体场初步：配体把 5 个 d 轨道劈成两组，能差 Δ；<strong>电子吸收能量恰为 Δ 的可见光跃迁（d-d），呈被吸收色的互补色</strong>。</li>
+        <li>配体强度片段 <strong>H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></strong>：换配体 → 换 Δ → 换颜色；d⁰/d¹⁰ 无色；MnO<sub>4</sub><sup>−</sup> 的浓紫来自更强的电荷迁移。</li>
+        <li>CO 中毒与氰化物中毒都是<strong>配体竞争</strong>抢占 Fe 位点——配位化学直接关乎生死。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 过渡金属与配位化学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "下列关于过渡金属的说法，错误的是？",
+            "options": [
+              "常见多种氧化态，因为 (n−1)d 与 ns 电子能量相近、都可参战",
+              "化合物常带颜色，与 d 电子跃迁有关",
+              "常作催化剂，与多变价、能临时结合反应物有关",
+              "所有过渡金属离子的水溶液一定都显深色"
+            ],
+            "answer": 3,
+            "explain": "颜色不是人人都有：d 全满或全空（Zn²⁺ d¹⁰、Sc³⁺ d⁰）无 d-d 跃迁，溶液无色；且 d-d 跃迁吸收较弱，颜色常较淡（如 Fe²⁺ 只是浅绿）。A、B、C 都是 d 区共性。"
+          },
+          {
+            "q": "K₃[Fe(CN)₆] 中，中心离子、配体与配位数分别是？",
+            "options": [
+              "Fe³⁺、CN⁻、6",
+              "Fe²⁺、CN⁻、6",
+              "Fe³⁺、CN⁻、3",
+              "K⁺、CN⁻、6"
+            ],
+            "answer": 0,
+            "explain": "内界 [Fe(CN)₆]³⁻ 带 −3：6 个 CN⁻ 共 −6，故 Fe 为 +3。6 个氰根各以 C 端配位 → 配位数 6（八面体）。K⁺ 只是外界，不参与配位。"
+          },
+          {
+            "q": "配位键的共用电子对由谁提供？",
+            "options": [
+              "中心离子与配体各出一半",
+              "完全由配体的配位原子提供（孤对电子）",
+              "完全由中心离子提供",
+              "由外界离子提供"
+            ],
+            "answer": 1,
+            "explain": "配位键是'单边出资'的共价键：配体的配位原子（如 NH₃ 的 N、CN⁻ 的 C）拿出孤对电子，进入中心离子的空轨道。外界离子只以离子键中和电荷，不参与配位。"
+          },
+          {
+            "q": "按晶体场理论，[Cu(NH₃)₄]²⁺ 比 [Cu(H₂O)₄]²⁺ 颜色更深的原因是？",
+            "options": [
+              "NH₃ 本身是蓝色分子",
+              "氨把铜的浓度变大了",
+              "NH₃ 配体场更强，分裂能 Δ 更大，吸收向短波方向移动，互补色更深",
+              "Cu²⁺ 的 d 电子数变了"
+            ],
+            "answer": 2,
+            "explain": "同一个 Cu²⁺（d⁹），变的是配体：光谱化学序列中 H₂O < NH₃ < CN⁻，NH₃ 使 Δ 增大，d-d 跃迁吸收的能量更高（波长更短，橙红→橙黄），观察到的互补色随之移向深宝蓝。物种变了，不是浓缩，更不是蓝色分子。"
+          },
+          {
+            "q": "Zn²⁺ 的配合物（如 [Zn(NH₃)₄]²⁺）几乎无色，原因是？",
+            "options": [
+              "配体 NH₃ 是无色的",
+              "Zn²⁺ 不吸收任何光",
+              "Zn²⁺ 为 d¹⁰ 全满结构：低组满员、高组也满员，d-d 跃迁无从发生",
+              "配体场太弱，Δ 等于零"
+            ],
+            "answer": 2,
+            "explain": "d¹⁰ 时 5 个 d 轨道全部各有一对电子——低组 t 满员、高组 e 也满员，电子没有可跃迁的空位，可见光基本不被吸收，故无色。Δ 并不为零（轨道照样分裂），只是'无台可跳'。同理 d⁰（Sc³⁺）无电子可跳。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-主族元素.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 主族元素</span></a>
+      <a class="next" href="04-酸碱与水溶液.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 4 章 · 酸碱与水溶液</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互：配体置换模拟器 ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  var svg = document.getElementById("ligandSvg");
+  if (!svg) return;
+  var readout = document.getElementById("ligandReadout");
+  var step = 0; /* 0 初始 1 少量氨水沉淀 2 氨过量深蓝 3 对比 4 加酸复原 */
+
+  var STEPS = [
+    "【1/5 · 初始】硫酸铜溶液：[Cu(H₂O)₄]²⁺ 呈淡蓝色——水配体场弱、Δ 小，吸收偏长的橙红光",
+    "【2/5 · 滴入少量氨水】NH₃·H₂O ⇌ NH₄⁺ + OH⁻，OH⁻ 先与 Cu²⁺ 结合：Cu²⁺ + 2OH⁻ → Cu(OH)₂↓，出现浅蓝色絮状沉淀",
+    "【3/5 · 氨水过量】配位能力更强的 NH₃ 逐个顶替：Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]²⁺ + 2OH⁻，沉淀溶解，溶液变为深宝蓝色",
+    "【4/5 · 对比】还是同一个 Cu²⁺！配体 H₂O → NH₃，Δ 增大，吸收从橙红移向橙黄——颜色变深的是'物种'，不是加了颜料",
+    "【5/5 · 滴入稀盐酸】H⁺ 把 NH₃ 拉走：[Cu(NH₃)₄]²⁺ + 4H⁺ → [Cu(H₂O)₄]²⁺ + 4NH₄⁺，溶液回到淡蓝——配体置换是可逆的争夺战（第 4 章路易斯酸碱的预告）"
+  ];
+
+  var liq = [ /* [顶色, 底色] */
+    ["#bfdbfe", "#60a5fa"],  /* 0 淡蓝 */
+    ["#b6d4f0", "#5b9fd6"],  /* 1 上清液仍淡蓝（微浊） */
+    ["#3b82f6", "#1e3a8a"],  /* 2 深宝蓝 */
+    ["#3b82f6", "#1e3a8a"],  /* 3 同 2 */
+    ["#bfdbfe", "#60a5fa"]   /* 4 复原淡蓝 */
+  ];
+  var gap = [10, 12, 26, 26, 10]; /* Δ 示意间隙(px) */
+
+  function drawTube(colors) {
+    /* 滴管 */
+    var reagent = step === 1 || step === 2 ? "氨水" : (step === 4 ? "稀盐酸" : null);
+    if (reagent) {
+      el("circle", { cx: 112, cy: 22, r: 8, fill: "#94a3b8" }, svg);
+      el("rect", { x: 106, y: 26, width: 12, height: 24, rx: 3, fill: "#cbd5e1", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: 112, cy: 62, r: 4, fill: reagent === "氨水" ? "#93c5fd" : "#fca5a5", class: "anim-pulse" }, svg);
+      var rt = el("text", { x: 128, y: 36, "font-size": 11, fill: "#6b7280" }, svg);
+      rt.textContent = "滴加" + reagent;
+    }
+    /* 试管 */
+    el("path", { d: "M76,56 L76,252 Q76,268 92,268 L132,268 Q148,268 148,252 L148,56",
+                 fill: "none", stroke: "#94a3b8", "stroke-width": 3, "stroke-linecap": "round" }, svg);
+    el("line", { x1: 68, y1: 56, x2: 156, y2: 56, stroke: "#cbd5e1", "stroke-width": 3 }, svg);
+    /* 液体（渐变） */
+    var defs = el("defs", {}, svg);
+    var grad = el("linearGradient", { id: "liqG", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+    el("stop", { offset: "0%", "stop-color": colors[0] }, grad);
+    el("stop", { offset: "100%", "stop-color": colors[1] }, grad);
+    el("path", { d: "M82,110 L82,252 Q82,262 92,262 L132,262 Q142,262 142,252 L142,110 Z", fill: "url(#liqG)" }, svg);
+    /* 沉淀（仅第 1 步） */
+    if (step === 1) {
+      var blobs = [[98, 250, 7, 5], [116, 245, 8, 6], [130, 252, 6, 5], [90, 236, 5, 4], [124, 230, 6, 4]];
+      blobs.forEach(function (b) {
+        el("ellipse", { cx: b[0], cy: b[1], rx: b[2], ry: b[3], fill: "#bae6fd", stroke: "#7dd3fc", "stroke-width": 1 }, svg);
+      });
+      [[102, 180, 3], [120, 158, 2.5], [92, 208, 3.5]].forEach(function (c) {
+        el("circle", { cx: c[0], cy: c[1], r: c[2], fill: "#bae6fd", opacity: 0.85 }, svg);
+      });
+      var pt = el("text", { x: 112, y: 132, "text-anchor": "middle", "font-size": 10.5, "font-weight": 700, fill: "#1e40af" }, svg);
+      pt.textContent = "Cu(OH)₂↓";
+    }
+    /* 试管状态标签 */
+    var tags = ["① 淡蓝", "② 浅蓝沉淀", "③ 深宝蓝", "③ 深宝蓝", "④ 复原淡蓝"];
+    var lt = el("text", { x: 112, y: 292, "text-anchor": "middle", "font-size": 12.5, "font-weight": 800, fill: "#9a3412" }, svg);
+    lt.textContent = tags[step];
+  }
+
+  function ligandNode(kind, x, y) {
+    if (kind === "H2O") {
+      el("circle", { cx: x, cy: y, r: 9, fill: "#ef4444", stroke: "#b91c1c", "stroke-width": 1.5 }, svg);
+      el("circle", { cx: x - 8, cy: y - 8, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x + 8, cy: y - 8, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      var t = el("text", { x: x, y: y + 26, "text-anchor": "middle", "font-size": 10, fill: "#374151" }, svg);
+      t.textContent = "H₂O";
+    } else {
+      el("circle", { cx: x, cy: y, r: 9, fill: "#2563eb", stroke: "#1d4ed8", "stroke-width": 1.5 }, svg);
+      el("circle", { cx: x - 9, cy: y - 6, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x + 9, cy: y - 6, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x, y: y - 11, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      var t2 = el("text", { x: x, y: y + 26, "text-anchor": "middle", "font-size": 10, fill: "#374151" }, svg);
+      t2.textContent = "NH₃";
+    }
+  }
+
+  function drawMolecule() {
+    var cx = 420, cy = 150;
+    var species = [
+      "[Cu(H₂O)₄]²⁺", "Cu(OH)₂ ↓ 絮状沉淀（聚合网络示意）", "[Cu(NH₃)₄]²⁺",
+      "[Cu(NH₃)₄]²⁺", "[Cu(H₂O)₄]²⁺"
+    ][step];
+    var st = el("text", { x: cx, y: 46, "text-anchor": "middle", "font-size": 14.5, "font-weight": 800, fill: "#111827" }, svg);
+    st.textContent = species;
+
+    /* 配位键箭头 marker */
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "mkL", markerWidth: 7, markerHeight: 7, refX: 5, refY: 2.6, orient: "auto" }, defs);
+    el("path", { d: "M0,0 L5.6,2.6 L0,5.2 z", fill: "#475569" }, mk);
+
+    var pos = [[cx, 76], [cx + 74, cy], [cx, 224], [cx - 74, cy]];
+    var kind = (step === 2 || step === 3) ? "NH3" : "H2O";
+
+    if (step === 1) {
+      /* 沉淀示意：中心变灰 + 两个 OH⁻ */
+      pos.forEach(function (p, i) {
+        if (i % 2 === 1) return;
+        ligandNode("H2O", p[0], p[1]);
+      });
+      el("line", { x1: cx, y1: cy, x2: cx + 52, y2: cy, stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      el("line", { x1: cx, y1: cy, x2: cx - 52, y2: cy, stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      [["OH⁻", cx + 66, cy], ["OH⁻", cx - 66, cy]].forEach(function (o) {
+        el("circle", { cx: o[1], cy: o[2], r: 10, fill: "#f472b6", stroke: "#be185d", "stroke-width": 1.5 }, svg);
+        var t = el("text", { x: o[1], y: o[2] + 4, "text-anchor": "middle", "font-size": 8.5, "font-weight": 700, fill: "#fff" }, svg);
+        t.textContent = "OH";
+      });
+      el("circle", { cx: cx, cy: cy, r: 17, fill: "#94a3b8", stroke: "#64748b", "stroke-width": 2 }, svg);
+      var ct = el("text", { x: cx, y: cy + 5, "text-anchor": "middle", "font-size": 10.5, "font-weight": 800, fill: "#fff" }, svg);
+      ct.textContent = "Cu²⁺";
+      el("ellipse", { cx: cx, cy: cy, rx: 96, ry: 88, fill: "none", stroke: "#94a3b8", "stroke-width": 1.5, "stroke-dasharray": "6 5" }, svg);
+    } else {
+      /* 正常四配位 */
+      pos.forEach(function (p) {
+        el("line", { x1: p[0] + (cx - p[0]) * 0.28, y1: p[1] + (cy - p[1]) * 0.28,
+                     x2: cx + (p[0] - cx) * 0.24, y2: cy + (p[1] - cy) * 0.24,
+                     stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      });
+      el("circle", { cx: cx, cy: cy, r: 17, fill: "#ea580c", stroke: "#9a3412", "stroke-width": 2 }, svg);
+      var ct2 = el("text", { x: cx, y: cy + 5, "text-anchor": "middle", "font-size": 10.5, "font-weight": 800, fill: "#fff" }, svg);
+      ct2.textContent = "Cu²⁺";
+      pos.forEach(function (p) { ligandNode(kind, p[0], p[1]); });
+    }
+
+    /* Δ 小图谱 */
+    var dyy = 282, g = gap[step];
+    el("line", { x1: cx - 34, y1: dyy, x2: cx + 24, y2: dyy, stroke: "#15803d", "stroke-width": 3.5 }, svg);
+    el("line", { x1: cx - 34, y1: dyy - g, x2: cx + 24, y2: dyy - g, stroke: "#dc2626", "stroke-width": 2.5 }, svg);
+    var lo = el("text", { x: cx + 30, y: dyy + 4, "font-size": 10, fill: "#15803d" }, svg);
+    lo.textContent = "t 低组";
+    var hi = el("text", { x: cx + 30, y: dyy - g + 4, "font-size": 10, fill: "#dc2626" }, svg);
+    hi.textContent = "e 高组";
+    var dt = el("text", { x: cx - 50, y: dyy - g / 2 + 5, "font-size": 13, "font-weight": 800, fill: "#9a3412" }, svg);
+    dt.textContent = "Δ";
+    var cap = el("text", { x: cx, y: 306, "text-anchor": "middle", "font-size": 10.5, fill: "#4b5563" }, svg);
+    cap.textContent = step === 1 ? "沉淀中 Cu 的配位环境被打破" :
+      (g > 18 ? "Δ 大 → 吸收橙黄光 → 深宝蓝" : "Δ 小 → 吸收橙红光 → 淡蓝");
+  }
+
+  function render() {
+    svg.innerHTML = "";
+    drawTube(liq[step]);
+    drawMolecule();
+    /* 对比徽章（第 3 步） */
+    if (step === 3) {
+      el("circle", { cx: 588, cy: 96, r: 11, fill: "#93c5fd", stroke: "#2563eb", "stroke-width": 1.5 }, svg);
+      var t1 = el("text", { x: 588, y: 122, "text-anchor": "middle", "font-size": 9, fill: "#4b5563" }, svg);
+      t1.textContent = "H₂O·淡蓝";
+      el("circle", { cx: 588, cy: 150, r: 11, fill: "#1d4ed8", stroke: "#1e3a8a", "stroke-width": 1.5 }, svg);
+      var t2 = el("text", { x: 588, y: 176, "text-anchor": "middle", "font-size": 9, fill: "#4b5563" }, svg);
+      t2.textContent = "NH₃·深蓝";
+    }
+    readout.textContent = STEPS[step];
+  }
+
+  var nx = document.getElementById("lgNext");
+  if (nx) nx.addEventListener("click", function () {
+    if (step < 4) { step++; render(); }
+    nx.textContent = step >= 4 ? "已完成 ✓" : "下一步 · 滴加试剂";
+    nx.disabled = step >= 4;
+  });
+  var rs = document.getElementById("lgReset");
+  if (rs) rs.addEventListener("click", function () {
+    step = 0; render();
+    nx.disabled = false; nx.textContent = "下一步 · 滴加试剂";
+  });
+  render();
+})();
+</script>
+</body>
+</html>

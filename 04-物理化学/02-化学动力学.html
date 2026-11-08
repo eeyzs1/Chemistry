@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学动力学 · 物理化学 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">04 物理化学</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 化学动力学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 物理化学 · 第 2 章</div>
+    <h1>化学动力学：变化的秒表</h1>
+    <p class="lede">
+      同一瓶鲜奶，放在桌上一天就馊，放进冰箱能撑一周，冷冻库里甚至能存几个月。
+      热力学早就判了"变质"死刑（ΔG &lt; 0），可它从不说<strong>什么时候</strong>执行——
+      上一章管方向，这一章管时间。<strong>化学动力学研究反应的快慢与路径</strong>：
+      速率怎么定义和测量？浓度、温度、催化剂各把速率推快多少倍？
+      为什么升温仅仅 10 °C，速率就能翻倍？答案藏在分子能量分布的"长尾巴"里。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：第 1 章 化学热力学</span>
+      <span class="chip">交互动画 ×2（能量分布 · 能级图）</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#rate">反应速率</a>
+    <a href="#order">速率方程与级数</a>
+    <a href="#temp">温度与活化能</a>
+    <a href="#catal">催化剂与机理</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：快慢也是化学</h2>
+    <p>
+      铁钉生锈要以天计，钢铁厂炼一炉钢只要几十分钟，安全气囊从碰撞到充满只要 30 毫秒——
+      它们都是氧化反应，快慢却差了亿亿倍。决定这种差别的，不是"要不要发生"（热力学的地盘），
+      而是"分子们如何相遇、如何跨过门槛"（动力学的地盘）。
+    </p>
+    <p>
+      两个问题看似平行，实则互补：热力学说" downhill 的路才走得通"，动力学说
+      "下山还要翻一道垭口，垭口多高、翻的人多不多，决定你几点到山脚"。
+      本章按"先测速（§1）→ 找规律（§2）→ 解释温度（§3）→ 请出催化剂（§4）"的顺序展开，
+      最后你会明白：为什么冰箱、火柴、催化转换器、酶，本质上是同一件事的四种马甲。
+    </p>
+  </section>
+
+  <!-- ============ §1 反应速率 ============ -->
+  <section id="rate">
+    <h2>§1 反应速率：给变化测速</h2>
+    <p>
+      速率就是"浓度的变化率"。对反应物取消耗快慢，对生成物取积累快慢，一律取正值：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">v = |Δc / Δt|</span>，单位常用 <span class="formula">mol·L⁻¹·s⁻¹</span>
+    </p>
+    <p>
+      拿合成氨来说：<span class="formula">N₂ + 3H₂ → 2NH₃</span>。每消耗 1 mol N₂ 必然同时消耗
+      3 mol H₂、生成 2 mol NH₃，所以三种物质"报出的速度"并不相同——
+      H₂ 的消耗速率是 N₂ 的 3 倍，NH₃ 的生成速率是 N₂ 的 2 倍。为了统一口径，约定
+      <strong>除以各自的化学计量数</strong>：<span class="formula">v(N₂)/1 = v(H₂)/3 = v(NH₃)/2</span>，
+      这样无论用谁表示，速率数值相同。
+    </p>
+    <p>
+      实验上怎么"看到"速率？凡是随浓度单调变化的性质都能当秒表：<strong>压强</strong>（有气体摩尔数变化的反应）、
+      <strong>颜色</strong>（如 KMnO₄ 褪色）、<strong>电导率</strong>（离子浓度变化）、<strong>体积</strong>（气体量管）。
+      动力学实验的精髓就是：把"浓度-时间"曲线画出来，斜率就是速率。
+    </p>
+
+    <details class="think">
+      <summary>想一想：对反应 2N₂O₅ → 4NO₂ + O₂，用 N₂O₅ 消表示与用 O₂ 生表示的速率，哪个大？大几倍？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：每"消失"2 个 N₂O₅，才"出生"1 个 O₂。</p>
+        <p>
+          O₂ 的生成速率是 N₂O₅ 消耗速率的 <strong>1/2</strong>（或反过说，N₂O₅ 的速率是 O₂ 的 2 倍）。
+          同一反应、同一时刻，不同物质的速率可差好几倍——所以文献里报速率必须注明"用谁表示"，
+          或按计量数折算成同一标尺。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 速率方程与级数 ============ -->
+  <section id="order">
+    <h2>§2 速率方程与反应级数：规律靠实验</h2>
+    <p>
+      把速率与浓度的关系写成数学式，就是<span class="term">速率方程</span>
+      <span class="en">rate equation</span>。对常见反应：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">v = k[A]<sup>m</sup>[B]<sup>n</sup></span>
+    </p>
+    <p>
+      其中 <span class="formula">k</span> 叫<span class="term">速率常数</span>
+      <span class="en">rate constant</span>——温度与催化剂一变它就变；
+      指数 m、n 叫对 A、B 的反应级数，m + n 是总级数。
+      0 级（浓度不影响速率）、1 级、2 级、1.5 级……都真实存在。
+    </p>
+    <p>
+      最要紧的一条：<strong>级数由实验测定，不能看方程式系数</strong>。
+      大多数反应并非一步完成，而是分几步走（见 §4），速率由其中最慢的一步决定，
+      与总方程式系数往往对不上。经典反例：H₂ + Br₂ → 2HBr 的实验速率方程复杂到
+      带分数和比值项，而表面"简单"的 NO₂ + CO → NO + CO₂ 在低温下实测 v = k[NO₂]²，
+      与 [CO] 干脆无关。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 看系数写级数 = 白送的分</div>
+      看到方程式 aA + bB → 产物 就写 v = k[A]<sup>a</sup>[B]<sup>b</sup>，是最经典的错误。
+      唯一例外是<span class="term">基元反应</span><span class="en">elementary reaction</span>——
+      一步完成的反应，此时才能按系数写（称质量作用定律）。总反应行不行，<strong>实验说了算</strong>。
+    </div>
+
+    <h3>📐 例题脚手架：由实验数据定级数</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        25 °C 时测得反应 2A + B → 2C 的初速率如下。求 m、n 与速率常数 k，并写出速率方程。
+        <table class="tbl" style="margin:10px 0 0">
+          <thead><tr><th>实验</th><th>[A]₀ / (mol·L⁻¹)</th><th>[B]₀ / (mol·L⁻¹)</th><th>初速率 v / (mol·L⁻¹·s⁻¹)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>0.10</td><td>0.10</td><td>0.010</td></tr>
+            <tr><td>2</td><td>0.20</td><td>0.10</td><td>0.040</td></tr>
+            <tr><td>3</td><td>0.20</td><td>0.30</td><td>0.120</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 选对照组：比较 1 与 2——[B] 固定不变，[A] 加倍（0.10→0.20），
+          速率 0.010→0.040，变为 <strong>4 倍</strong>。2<sup>m</sup> = 4 → m = <strong>2</strong>。</li>
+        <li class="step">💡 再比较 2 与 3——这次 [A] 固定，[B] 变为 3 倍（0.10→0.30），
+          速率 0.040→0.120，恰好 <strong>3 倍</strong>。3<sup>n</sup> = 3 → n = <strong>1</strong>。</li>
+        <li class="step">💡 速率方程为 <span class="formula">v = k[A]²[B]</span>，总级数 = 3。
+          注意方程式系数是"2A + B"——若照抄就会错写成 v = k[A]²[B]，本例巧合相同；
+          但把方法当成巧合的保票，下次必然翻车。级数，永远由数据决定。</li>
+        <li class="step">💡 代入第 1 组数据求 k：0.010 = k × (0.10)² × 0.10 = k × 0.0010
+          → k = <strong>10 L²·mol⁻²·s⁻¹</strong>。
+          ✅ 自查：用第 3 组验证 10×(0.20)²×0.30 = 10×0.012 = 0.120 ✓ 与数据吻合。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：H₂O₂ 分解的实验速率方程是 v = k[H₂O₂]，与"2H₂O₂ → 2H₂O + O₂"的系数 2 无关。这暗示了什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：如果决定快慢的那一步只需要一个 H₂O₂ 分子……</p>
+        <p>
+          速率只与一次方的 [H₂O₂] 相关，说明<strong>决速的那一步（见 §4）只涉及一个 H₂O₂ 分子</strong>，
+          而不是两个 H₂O₂ 迎面相撞。事实上该反应分多步走，还有 I⁻ 等中间物牵线。
+          速率方程是"侦探小说的线索"：它反过来帮化学家反推反应的机理。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 温度与活化能 ============ -->
+  <section id="temp">
+    <h2>§3 温度与活化能：指数级的车速表</h2>
+
+    <h3>碰撞理论：什么样的碰撞才"有效"</h3>
+    <p>
+      反应的第一步是分子相撞。但每秒钟分子们要撞上亿亿次，绝大多数撞完各回各家——
+      <span class="term">碰撞理论</span><span class="en">collision theory</span>指出，
+      只有同时满足两个条件的<span class="term">有效碰撞</span>才能引发反应：
+    </p>
+    <ul>
+      <li><strong>能量够</strong>：相对动能足以跨过一道门槛，这道门槛（活化分子具有的最低能量与反应物平均能量之差）就是
+        <span class="term">活化能</span><span class="en">activation energy, E<sub>a</sub></span>；</li>
+      <li><strong>取向正</strong>：分子要按正确的角度相遇——反应位点对不上，能量再高也白撞。</li>
+    </ul>
+
+    <h3>阿伦尼乌斯方程：门槛写进指数</h3>
+    <p>
+      1889 年，阿伦尼乌斯把上述图景写成公式：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">k = A·e<sup>−E<sub>a</sub>/RT</sup></span>
+    </p>
+    <p>
+      A 是"频率因子"（撞得多不多、取向对的比例），指数项
+      <span class="formula">e<sup>−E<sub>a</sub>/RT</sup></span> 是"能量达标比例"。
+      E<sub>a</sub> 坐在<strong>指数的分子上</strong>、T 坐在分母的乘积里——
+      这就是温度小小一变、速率翻天覆地的数学根源。经验法则：
+      <strong>室温附近，每升高 10 °C，速率约翻一倍</strong>。
+    </p>
+
+    <h3>🔬 动手玩：分子能量分布曲线</h3>
+    <p>
+      拖动温度滑块，看整条分布曲线如何右移变宽，以及越过活化能线的<strong>阴影面积</strong>（能量达标的分子比例）
+      如何急剧膨胀。这条曲线叫麦克斯韦-玻尔兹曼分布，是本章一切"温度魔法"的幕后主角。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mbSvg" width="640" height="270" viewBox="0 0 640 270" role="img" aria-label="分子动能分布随温度变化示意图">
+          <!-- 坐标轴 -->
+          <line x1="60" y1="210" x2="614" y2="210" stroke="#94a3b8" stroke-width="1.5"></line>
+          <line x1="60" y1="210" x2="60" y2="26" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="608" y="230" text-anchor="end" font-size="12" fill="#4b5563">分子动能 →</text>
+          <text x="20" y="120" font-size="12" fill="#4b5563" transform="rotate(-90 20 120)">具有该能量的分子数</text>
+          <!-- 活化能线 -->
+          <line x1="468" y1="210" x2="468" y2="36" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6 4"></line>
+          <text x="468" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">活化能 Eₐ</text>
+          <!-- 200 K 参考曲线（灰） -->
+          <path id="mbRef" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5 4"></path>
+          <!-- 当前曲线与阴影 -->
+          <path id="mbShade" fill="rgba(3,105,161,.30)" stroke="none"></path>
+          <path id="mbCurve" fill="none" stroke="#0369a1" stroke-width="3"></path>
+          <text id="mbTlabel" font-size="12" font-weight="700" fill="#075985"></text>
+          <text id="mbRefLabel" font-size="11" fill="#94a3b8"></text>
+        </svg>
+        <div class="fig-controls">
+          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:300px">
+            温度 T = <b id="mbTv">300</b> K（拖动看阴影面积变化）
+            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="温度滑块">
+          </label>
+        </div>
+        <div class="fig-readout" id="mbReadout"></div>
+      </div>
+      <figcaption>
+        示意图（比例经视觉化处理）。灰色虚线始终是 200 K 的参考分布；蓝色曲线随温度右移、变宽，
+        峰值略降——但真正决定速率的不是"平均动能涨了 3%"，而是右尾越过 Eₐ 线的面积成倍膨胀。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 升温 10 °C，速率翻倍——温度明明只涨了 3%，凭什么？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          想象全班平均分 60 分，及格线 90 分。期末平均分只涨了 3 分（涨 5%），
+          但及格人数可能<strong>翻倍</strong>——因为挤在 88、89 分的"临界学生"最密集，
+          平均分的小小右移，把一大批临界者集体推过线。分子能量同理：
+          平均动能只随温度涨 3%，可挡在活化能线下方的分子恰恰最密集，
+          分布整体右挪一点点，<strong>过线的分子数成群结队</strong>。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          平均动能 ∝ T：298 K → 308 K 只涨 3.4%。但速率常数走的是阿伦尼乌斯公式。
+          取 E<sub>a</sub> = 50 kJ/mol（常见量级），R = 8.314 J·mol⁻¹·K⁻¹：
+          升温后 e<sup>−E<sub>a</sub>/RT</sup> 增大 <span class="formula">e<sup>Eₐ/R × (1/298 − 1/308)</sup></span> 倍，
+          指数值 = 50000/8.314 × 10/(298×308) ≈ 0.655，e<sup>0.655</sup> ≈ <strong>1.9 倍</strong>——
+          恰是"翻倍"经验规则的来历。温度的变化被指数放大，3% 进去，100% 出来。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          玻尔兹曼因子 <span class="formula">e<sup>−Eₐ/RT</sup></span> 来自统计力学：
+          能量 ≥ E<sub>a</sub> 的分子份额按<strong>能量的指数</strong>衰减。
+          分布曲线的尾部是长长的指数尾巴——头部（低能区）挤满了分子，
+          尾部却人烟稀少；温度右移分布时，<strong>头部贡献微小，尾部份额爆炸</strong>。
+          这也是为什么 E<sub>a</sub> 越大的反应对温度越敏感（翻倍规则在 E<sub>a</sub> ≈ 50 kJ/mol 附近最准，
+          实际倍数从 1.2 到 4 倍不等，"翻倍"只是室温下的经验平均）。
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：木柴自己烧不起来，划一根火柴却能把整堆柴点着。点篝火的人到底提供了什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：火柴的火焰给了木柴表面的分子什么"入场费"？</p>
+        <p>
+          提供的是<strong>活化能的入场费</strong>。火焰把局部分子推过能垒，先有少量木柴烧起来，
+          放出的热又把更多分子推过线——反应自己为自己的"点火费"买单，一旦点着就能自持。
+          引擎的火花塞、打火机的燧石、蛋白消化酶降低的能垒，扮演的都是同一个角色：
+          <strong>先垫付 E<sub>a</sub></strong>。烧起来之后能放出多少净热，那是 ΔH 的事（上一章）。
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 例题脚手架：用"翻倍规则"心算</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        某反应在 20 °C 下需要 8 小时完成。若温度升到 50 °C，大约需要多久？
+        （利用"每升 10 °C 速率约翻倍"的经验规则心算）
+      </div>
+      <ol class="worked-steps">
+        <li class="step">认清工具：经验规则给的是<strong>速率</strong>关系，而题目给的是<strong>时间</strong>。
+          时间与速率成反比（同样的"反应量"，v 越大 t 越小），所以先算速率倍数，再取倒数。</li>
+        <li class="step">数台阶：50 − 20 = 30 °C = 3 个"10 °C 台阶"，
+          速率约增大 2³ = <strong>8 倍</strong>。</li>
+        <li class="step">换算时间：速率 ×8 → 时间 ÷8：8 小时 ÷ 8 = <strong>1 小时</strong>。</li>
+        <li class="step">✅ 自查与边界：心算合理（8h→1h）。注意这是<strong>粗估</strong>——
+          若该反应 E<sub>a</sub> 偏离 50 kJ/mol，倍数会偏离 2；高温下副反应、分解也会来捣乱。
+          规则用于"量级判断"，不用于精密计算。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 催化剂与机理 ============ -->
+  <section id="catal">
+    <h2>§4 催化剂与反应机理：抄近路的艺术</h2>
+
+    <h3>催化剂：改道，不改终点</h3>
+    <p>
+      <span class="term">催化剂</span><span class="en">catalyst</span>能大幅加快反应，
+      秘诀只有一句话：<strong>参与反应、提供一条活化能更低的新路径，自己最后毫发无损地再生</strong>。
+      门槛从 80 kJ/mol 降到 45 kJ/mol，按阿伦尼乌斯算一算，298 K 下速率可提升百万倍量级——
+      而反应的始态与终态一点没动。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 能级图上的永恒等式</div>
+      正反应活化能与逆反应活化能之差就是反应热：
+      <span class="formula">ΔH = E<sub>a</sub>(正) − E<sub>a</sub>(逆)</span>。
+      催化剂把两个 E<sub>a</sub> <strong>等量降低</strong>，所以 ΔH 不变、ΔG 不变、
+      平衡常数与平衡位置统统不变——<strong>催化剂只帮你更快到达平衡，不帮你到达更远的平衡</strong>。
+    </div>
+
+    <h3>🔬 动手玩：能级图切换器</h3>
+    <p>
+      切换"无催化 / 有催化 / 对比"三种视图：蓝线是原路径的高峰，绿线是催化剂提供的"盘山公路"
+      （两段矮峰）。无论怎么切，反应物与产物的平台高度——也就是 ΔH——始终不变。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="催化与非催化路径能级图">
+          <!-- 纵轴 -->
+          <line x1="52" y1="270" x2="52" y2="30" stroke="#94a3b8" stroke-width="1.5"></line>
+          <path d="M52,30 l-4,10 h8 z" fill="#94a3b8"></path>
+          <text x="58" y="36" font-size="12" fill="#4b5563">势能</text>
+          <!-- 反应物平台 -->
+          <line x1="70" y1="250" x2="190" y2="250" stroke="#1f2937" stroke-width="3"></line>
+          <text x="130" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">反应物</text>
+          <!-- 产物平台 -->
+          <line x1="450" y1="160" x2="575" y2="160" stroke="#1f2937" stroke-width="3"></line>
+          <text x="512" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">产物</text>
+          <!-- 无催化路径 -->
+          <g id="ecUn">
+            <path d="M190,250 C260,40 380,40 450,160" fill="none" stroke="#0369a1" stroke-width="3"></path>
+            <text x="320" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">过渡态（无催化）</text>
+            <line x1="238" y1="250" x2="238" y2="78" stroke="#0369a1" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <line x1="231" y1="250" x2="245" y2="250" stroke="#0369a1" stroke-width="1.5"></line>
+            <line x1="231" y1="78" x2="245" y2="78" stroke="#0369a1" stroke-width="1.5"></line>
+            <text x="248" y="160" font-size="12" font-weight="700" fill="#0369a1">Eₐ = 80</text>
+          </g>
+          <!-- 有催化路径 -->
+          <g id="ecCat" style="display:none">
+            <path d="M190,250 C225,140 255,140 285,200 C305,240 340,240 375,150 C400,105 425,105 450,160" fill="none" stroke="#15803d" stroke-width="3"></path>
+            <text x="240" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">中间体</text>
+            <line x1="222" y1="250" x2="222" y2="168" stroke="#15803d" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <text x="150" y="200" font-size="12" font-weight="700" fill="#15803d">Eₐ′ = 45</text>
+            <text x="330" y="92" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">催化剂另辟的低垭口</text>
+          </g>
+          <!-- ΔH 标注（恒定） -->
+          <line x1="600" y1="250" x2="600" y2="160" stroke="#b45309" stroke-width="1.8"></line>
+          <path d="M600,160 l-4,-9 h8 z" fill="#b45309"></path>
+          <text x="588" y="210" text-anchor="end" font-size="12" font-weight="700" fill="#b45309">ΔH = −90（不变）</text>
+          <!-- 横轴 -->
+          <line x1="52" y1="270" x2="614" y2="270" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="608" y="290" text-anchor="end" font-size="12" fill="#4b5563">反应进程 →</text>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="ecBtnUn">无催化</button>
+          <button class="btn ghost" id="ecBtnCat">有催化</button>
+          <button class="btn ghost" id="ecBtnBoth">叠加对比</button>
+        </div>
+        <div class="fig-readout" id="ecReadout"></div>
+      </div>
+      <figcaption>
+        催化剂把 Eₐ 从 80 kJ/mol 降到 45 kJ/mol，两条路径起点终点完全相同。
+        298 K 时按 k = A·e<sup>−Eₐ/RT</sup> 估算（A 不变），速率约提高 e<sup>35000/(8.314×298)</sup> ≈ 1.2×10⁶ 倍。
+        逆反应的 Eₐ 同步从 170 降到 135 kJ/mol——<strong>正逆同催，平衡不动</strong>。
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 催化剂的两张假面</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区一</span>
+          "催化剂不参与反应，只是站在旁边看着。"
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">真相</span>
+          催化剂<strong>深度参与</strong>：它与反应物生成中间体、改换反应路线（如上图的绿色盘山公路），
+          只是在后续步骤中<strong>完整再生</strong>，所以宏观上"不出现在方程式里、总量不减"。
+          参与但不消耗——两件事并不矛盾。
+        </div>
+      </div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区二</span>
+          "加了催化剂，产率就能提高。"
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">真相</span>
+          催化剂只改变 <strong>Eₐ 和 k</strong>，不改变 ΔH、ΔG 与平衡常数 K；
+          平衡转化率分毫不动，只是<strong>更早到达平衡</strong>。
+          想提高产率，得去动温度、压强、浓度——那是上一章 ΔG 与平衡的地盘。
+        </div>
+      </div>
+    </div>
+
+    <h3>反应机理与决速步：流水线上最慢的工位</h3>
+    <p>
+      总反应式只是"总账"，分子层面的<strong>分步账本</strong>叫<span class="term">反应机理</span>
+      <span class="en">reaction mechanism</span>。例如 NO₂ + CO → NO + CO₂（低温）分两步走：
+    </p>
+    <p style="text-align:center">
+      ① <span class="formula">NO₂ + NO₂ → NO₃ + NO</span>（慢）　
+      ② <span class="formula">NO₃ + CO → NO₂ + CO₂</span>（快）
+    </p>
+    <p>
+      总反应速率由<strong>最慢的一步</strong>决定——就像流水线的产量卡在最慢的工位，
+      这一步叫<span class="term">决速步</span><span class="en">rate-determining step</span>。
+      上面机理中慢步骤只含两个 NO₂，所以实测 v = k[NO₂]²，与 [CO] 无关——
+      §2 里"级数不能看系数"的悬案，在这里破了案：
+      <strong>速率方程的指数，露出的是决速步的面孔</strong>。酶之所以是自然界最高明的催化剂，
+      正因为把千万年一遇的反应（如固氮）的决速步改写到了毫秒量级。
+    </p>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>速率 <span class="formula">v = |Δc/Δt|</span>；同一反应用不同物质表示时按计量数折算统一。</li>
+        <li>速率方程 <span class="formula">v = k[A]<sup>m</sup>[B]<sup>n</sup></span>：
+          级数由<strong>实验</strong>测定，只有基元反应才能按系数写。</li>
+        <li>有效碰撞 = 能量达标（≥ Eₐ）+ 取向正确；Eₐ 是能垒，与 ΔH 是两回事。</li>
+        <li>阿伦尼乌斯 <span class="formula">k = A·e<sup>−Eₐ/RT</sup></span>：
+          温度坐在指数上，升温 10 °C 速率约翻倍——根源是能量分布尾部份额暴涨。</li>
+        <li>催化剂参与反应、降低 Eₐ、提供新路径、终了再生；不改 ΔH、ΔG 与平衡，正逆同催。</li>
+        <li>总反应分步进行，速率由决速步决定；速率方程反过来是推测机理的证据。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 化学动力学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "室温附近升温 10 °C，反应速率约翻倍。其主要原因是？",
+            "options": ["分子平均动能增大了约 3%", "能量超过活化能的分子比例成倍增加", "分子碰撞频率翻倍", "反应的活化能降低了"],
+            "answer": 1,
+            "explain": "平均动能只随 T 涨约 3%，碰撞频率也只随温度微弱增长；真正的主角是麦克斯韦-玻尔兹曼分布右移后，越过 Eₐ 线的尾部面积按指数膨胀。活化能不随温度改变。"
+          },
+          {
+            "q": "速率方程 v = k[A]^m[B]^n 中的级数 m、n 应当由谁决定？",
+            "options": ["化学方程式中 A、B 的系数", "实验数据", "阿伦尼乌斯方程", "ΔG 的符号"],
+            "answer": 1,
+            "explain": "总反应往往分步进行，速率由决速步决定，与总方程式系数常常对不上（如 NO₂+CO 低温下 v=k[NO₂]²）。只有基元反应才能按系数写速率方程。"
+          },
+          {
+            "q": "某反应 25 °C 需 32 分钟完成。按「每升 10 °C 速率约翻倍」估算，55 °C 约需多久？",
+            "options": ["8 分钟", "4 分钟", "16 分钟", "2 分钟"],
+            "answer": 1,
+            "explain": "55−25=30 °C，即 3 个台阶，速率 ×2³=8，时间 ÷8：32/8=4 分钟。注意先换算成速率倍数再取倒数，直接除 3 是常见错误。"
+          },
+          {
+            "q": "加入催化剂后，下列哪个量会发生变化？",
+            "options": ["ΔH", "平衡常数 K", "活化能 Eₐ（所走路径的）", "ΔG"],
+            "answer": 2,
+            "explain": "催化剂提供低能垒新路径，反应实际经过的 Eₐ 显著降低；但始态终态未变，故 ΔH、ΔG、K 与平衡位置都不变——它只缩短到达平衡的时间。"
+          },
+          {
+            "q": "反应 NO₂ + CO → NO + CO₂ 实验测得 v = k[NO₂]²，与 [CO] 无关。最合理的解释是？",
+            "options": ["CO 的浓度太大了", "决速步只涉及 NO₂，CO 参与的是快步骤", "CO 是催化剂", "该反应是零级反应"],
+            "answer": 1,
+            "explain": "机理解释：慢步骤 NO₂+NO₂→NO₃+NO 只含 NO₂；NO₃ 再与 CO 快速反应。决速步写速率方程，快步骤和 CO 的浓度都不出现在式中——这正是动力学反推机理的经典案例。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-化学热力学.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 化学热力学</span></a>
+      <a class="next" href="03-电化学.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 电化学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（能量分布曲线 · 能级图切换器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+
+  /* ---------- 1. 麦克斯韦-玻尔兹曼能量分布 ---------- */
+  var sT = document.getElementById("mbT");
+  if (sT) {
+    var curve = document.getElementById("mbCurve");
+    var shade = document.getElementById("mbShade");
+    var refPath = document.getElementById("mbRef");
+    var tLabel = document.getElementById("mbTlabel");
+    var tv = document.getElementById("mbTv");
+    var readout = document.getElementById("mbReadout");
+    var EA = 75;                 /* 活化能位置（示意单位） */
+    var X0 = 60, XW = 544;       /* 绘图区：x 60..604 */
+    var Y0 = 210, HGT = 165;     /* 基线与曲线高度 */
+
+    function px(x) { return X0 + x / 100 * XW; }
+    /* 归一化形状函数：s 越大曲线越靠右越宽（峰在 x = s） */
+    function ny(x, s) { return (x / s) * Math.exp(1 - x / s); }
+    function py(y) { return Y0 - y * HGT; }
+
+    /* 200 K 参考曲线（s = 200/12） */
+    var sRef = 200 / 12;
+    var dRef = "";
+    for (var x = 0; x <= 100; x += 1) {
+      dRef += (x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(ny(x, sRef)).toFixed(1);
+    }
+    refPath.setAttribute("d", dRef);
+    var refLabel = document.getElementById("mbRefLabel");
+    if (refLabel) {
+      refLabel.setAttribute("x", px(sRef) + 8);
+      refLabel.setAttribute("y", py(1) - 6);
+      refLabel.textContent = "200 K（参考）";
+    }
+
+    function fraction(s) {
+      return (EA / s + 1) * Math.exp(-EA / s);
+    }
+    var f0 = fraction(sRef);
+
+    function upd() {
+      var T = parseFloat(sT.value);
+      var s = T / 12;
+      tv.textContent = T.toFixed(0);
+      var d = "", dShade = "";
+      for (var x = 0; x <= 100; x += 1) {
+        var pt = (x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(ny(x, s)).toFixed(1);
+        if (x < EA) { d += pt; }
+        else { dShade += (x === Math.ceil(EA) ? "M" + px(EA).toFixed(1) + "," + Y0 + " L" : "") + pt; d += pt; }
+      }
+      curve.setAttribute("d", d);
+      shade.setAttribute("d", dShade + "L" + px(100).toFixed(1) + "," + Y0 + " Z");
+      var f = fraction(s);
+      tLabel.setAttribute("x", px(s) - 10);
+      tLabel.setAttribute("y", py(1) - 8);
+      tLabel.textContent = "T = " + T.toFixed(0) + " K";
+      readout.textContent = "T = " + T.toFixed(0) + " K ｜ 能量 ≥ Eₐ 的分子比例 ≈ " +
+        (f * 100).toFixed(1) + "%（200 K 时仅 " + (f0 * 100).toFixed(1) +
+        "%）｜ 相对速率 ≈ " + (f / f0).toFixed(1) + " 倍（以 200 K 为基准，示意）";
+    }
+    sT.addEventListener("input", upd);
+    upd();
+  }
+
+  /* ---------- 2. 能级图切换器 ---------- */
+  var gUn = document.getElementById("ecUn");
+  var gCat = document.getElementById("ecCat");
+  if (gUn && gCat) {
+    var bUn = document.getElementById("ecBtnUn");
+    var bCat = document.getElementById("ecBtnCat");
+    var bBoth = document.getElementById("ecBtnBoth");
+    var ro = document.getElementById("ecReadout");
+    var ALL = [[bUn, "un"], [bCat, "cat"], [bBoth, "both"]];
+    var TEXT = {
+      un: "无催化：Eₐ = 80 kJ/mol ｜ ΔH = −90 kJ/mol（放热）",
+      cat: "有催化：Eₐ 降至 45 kJ/mol ｜ ΔH 仍为 −90 kJ/mol —— 催化剂不改反应热与 ΔG",
+      both: "对比：Eₐ 降低 35 kJ/mol，298 K 速率约提升 e^(35000/8.314×298) ≈ 1.2×10⁶ 倍；平台（ΔH）纹丝不动"
+    };
+    function setMode(mode) {
+      gUn.style.display = (mode === "cat") ? "none" : "";
+      gCat.style.display = (mode === "un") ? "none" : "";
+      ALL.forEach(function (p) {
+        var on = p[1] === mode;
+        p[0].className = on ? "btn" : "btn ghost";
+      });
+      ro.textContent = TEXT[mode];
+    }
+    ALL.forEach(function (p) {
+      p[0].addEventListener("click", function () { setMode(p[1]); });
+    });
+    setMode("un");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>反应机理入门 · 有机化学 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">02 有机化学</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 反应机理入门</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 有机化学 · 第 3 章</div>
+    <h1>反应机理入门：弯箭头与三种经典剧本</h1>
+    <p class="lede">
+      化学方程式只告诉你"从哪到哪"，<strong>反应机理</strong><span class="en">reaction mechanism</span>
+      才告诉你"怎么去的"。本章先学会化学家的秘密语言——<strong>弯箭头</strong>（画的是电子对的移动），
+      再认识三种经典剧本：<strong>自由基链式取代</strong>、<strong>亲核取代 SN1/SN2</strong>、
+      <strong>亲电加成与马氏规则</strong>。最后分清三个高频词：活化能、过渡态、中间体。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 70 分钟</span>
+      <span class="chip">先修：第 1–2 章</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#arrow">§1 弯箭头语言</a>
+    <a href="#radical">§2 自由基链式取代</a>
+    <a href="#sn">§3 亲核取代 SN1/SN2</a>
+    <a href="#add">§4 亲电加成与马氏规则</a>
+    <a href="#energy">§5 能量图：过渡态与中间体</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：方程式是结果，机理是过程</h2>
+    <p>
+      打开导航软件，它告诉你"全程 12 公里"——这是方程式：出发地和目的地都写清楚了。
+      但它没告诉你走的是隧道还是盘山路、途中在哪个服务区歇过脚。反应机理就是那条
+      <strong>完整的行车路线</strong>：电子从哪里出发、经过哪几个中间站、翻越几座能垒"山口"。
+    </p>
+    <p>
+      为什么值得学？因为机理能<strong>预测</strong>：换一个溶剂会不会变快？产物会不会是左右手各半？
+      事故调查（例如为什么要往反应釜里加阻聚剂）也全靠它。本章的三类剧本覆盖了有机反应的大半舞台，
+      而它们的入场券是一支笔：<strong>会画弯箭头</strong>。
+    </p>
+  </section>
+
+  <!-- ============ §1 弯箭头语言 ============ -->
+  <section id="arrow">
+    <h2>§1 弯箭头：电子的行军路线</h2>
+    <p>
+      有机化学家用<span class="term">弯箭头</span><span class="en">curved arrow</span>记录电子的迁移。
+      规则只有三条，但一条都不能错：
+    </p>
+    <ol>
+      <li><strong>箭头从电子丰富处出发</strong>：孤对电子、π 键、负电荷（–）；</li>
+      <li><strong>箭头指向电子贫乏处</strong>：正电荷（+）、缺电子的原子、即将形成的新键；</li>
+      <li><strong>箭头画的是"电子对"的移动</strong>，不是原子移动，更不是能量流向。
+        双钩箭头表示一对电子；单钩（半箭头）表示单个电子——那是自由基剧本的专用记号（§2 见）。</li>
+    </ol>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="280" viewBox="0 0 640 280" role="img" aria-label="弯箭头的两个基本示例">
+          <defs>
+            <marker id="arrR" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+            </marker>
+          </defs>
+          <!-- 例1：NH3 + H+ -->
+          <g>
+            <text x="320" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">例 1：孤对电子 → 质子（铵盐的形成）</text>
+            <line x1="105" y1="95" x2="80" y2="60" stroke="#6b7280" stroke-width="3"/>
+            <line x1="105" y1="95" x2="130" y2="60" stroke="#6b7280" stroke-width="3"/>
+            <line x1="105" y1="95" x2="105" y2="135" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="105" cy="95" r="20" fill="#2563eb"/>
+            <text x="105" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">N</text>
+            <circle cx="80" cy="60" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="80" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="130" cy="60" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="130" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="105" cy="135" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="105" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <text x="170" y="100" font-size="16" font-weight="700" fill="#1f2937">+</text>
+            <circle cx="235" cy="95" r="15" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+            <text x="235" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">H⁺</text>
+            <path d="M 118 70 C 150 30 200 30 228 78" fill="none" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrR)"/>
+            <text x="175" y="150" font-size="12" fill="#b91c1c">孤对 → 空轨道</text>
+            <text x="285" y="100" font-size="16" font-weight="700" fill="#1f2937">→</text>
+            <text x="330" y="88" font-size="14" font-weight="700" fill="#1f2937">NH₄⁺</text>
+            <text x="330" y="112" font-size="12" fill="#4b5563">N 把孤对"借"给 H⁺，形成第四个 N–H 键</text>
+          </g>
+          <!-- 例2：π 键 + H+ -->
+          <g>
+            <text x="320" y="185" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">例 2：π 键 → 质子（碳正离子的诞生）</text>
+            <line x1="95" y1="240" x2="155" y2="240" stroke="#6b7280" stroke-width="3"/>
+            <line x1="95" y1="233" x2="155" y2="233" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="95" cy="240" r="16" fill="#374151"/>
+            <text x="95" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="155" cy="240" r="16" fill="#374151"/>
+            <text x="155" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">C</text>
+            <text x="245" y="245" font-size="16" font-weight="700" fill="#1f2937">+ H⁺</text>
+            <path d="M 118 220 C 150 185 200 190 226 225" fill="none" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrR)"/>
+            <text x="175" y="196" font-size="12" fill="#b91c1c">π 电子对 → H⁺</text>
+            <text x="330" y="245" font-size="16" font-weight="700" fill="#1f2937">→</text>
+            <text x="375" y="233" font-size="14" font-weight="700" fill="#1f2937">CH₃–CH₂⁺</text>
+            <text x="375" y="257" font-size="12" fill="#4b5563">π 键断开，正电荷落在碳上——碳正离子</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        弯箭头永远"从富到贫"。例 2 尤其重要：π 键作为电子源把 H⁺ 拉过来，
+        这是 §4 亲电加成的第一步，也是绝大多数碳正离子的出生方式。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 弯箭头三连问</div>
+      从哪出？（孤对 / π / 负电荷）→ 到哪去？（正电荷 / 缺电子原子 / 新键）→
+      动的是什么？（<strong>电子对</strong>，不是原子核）。画机理前先答这三问，箭头就错不了。
+    </div>
+  </section>
+
+  <!-- ============ §2 自由基链式取代 ============ -->
+  <section id="radical">
+    <h2>§2 剧本一：自由基链式取代（甲烷氯代）</h2>
+    <p>
+      把甲烷和氯气混合放在暗处，相安无事；一见阳光，立刻爆炸式反应生成一氯甲烷和氯化氢：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>4</sub> + Cl<sub>2</sub> —hν→ CH<sub>3</sub>Cl + HCl</span>（ΔH ≈ −104 kJ/mol，放热）
+    </p>
+    <p>
+      这个"见光才炸"的反应走的是<span class="term">自由基</span><span class="en">free radical</span>
+      （带单电子的原子/基团，记作 ·）的剧本，分三幕：<strong>引发、增长、终止</strong>。
+      点击下面的三幕按钮，把整个舞台看一遍：
+    </p>
+
+    <h3>🔬 动手玩：链式反应三幕舞台</h3>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="chainSvg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="自由基链式取代三阶段演示"></svg>
+        <div class="fig-controls" id="chainBtns">
+          <button type="button" class="btn ghost" data-s="init">① 引发</button>
+          <button type="button" class="btn ghost" data-s="grow">② 增长</button>
+          <button type="button" class="btn ghost" data-s="term">③ 终止</button>
+        </div>
+        <div class="fig-readout" id="chainReadout"></div>
+      </div>
+      <figcaption>
+        绿球 = 氯，灰球 = 碳，白球 = 氢，闪烁的小黑点 = 未配对的单电子。
+        注意"增长"幕的妙处：每一步都<strong>消耗一个自由基、同时再造一个</strong>——这就是"链"的含义。
+      </figcaption>
+    </figure>
+
+    <p>
+      三幕合起来解释了一个反直觉的事实：<strong>一个光子能引发成千上万次取代</strong>。
+      引发只发生一次，增长却能循环 10⁴～10⁶ 次，直到某个终止反应把链条掐断。
+      工业上生产一氯甲烷等溶剂、实验室里烷烃卤代，走的都是这条路。
+    </p>
+
+    <details class="think">
+      <summary>想一想：为什么市售苯乙烯单体里要加一点"阻聚剂"？运输途中它防的是什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：苯乙烯的 C=C 遇到自由基会发生什么？（回忆 06 分支将讲的聚合）</p>
+        <p>
+          苯乙烯的乙烯基非常容易被自由基"进攻"而开始链式聚合，一个自由基就能引发一整条高分子链，
+          轻则黏稠结块，重则聚合放热失控。阻聚剂（如对苯二酚）是"自由基清道夫"，
+          优先与偶然产生的自由基结合把它消灭在引发阶段——本质上就是人为安装的"终止反应"。
+          使用前蒸馏除去阻聚剂，聚合就能干净地启动。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 亲核取代 ============ -->
+  <section id="sn">
+    <h2>§3 剧本二：亲核取代 SN1 与 SN2</h2>
+    <p>
+      卤代烃 R–X 的碳因卤素的吸电子效应而略显正电（δ+），会吸引带孤对或负电荷的
+      <span class="term">亲核试剂</span><span class="en">nucleophile</span>（Nu⁻，"爱核"），
+      卤素则以 <span class="term">离去基团</span><span class="en">leaving group</span> X⁻ 的身份离开。
+      例如：<span class="formula">CH<sub>3</sub>Br + OH⁻ → CH<sub>3</sub>OH + Br⁻</span>。
+      这类"换个基团"的反应叫亲核取代，它有两条完全不同的路线：
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>特征</th><th>SN2（双分子亲核取代）</th><th>SN1（单分子亲核取代）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>步骤</strong></td><td>一步完成（协同）</td><td>两步：先电离，后进攻</td></tr>
+        <tr><td><strong>中间体</strong></td><td>无（只有过渡态）</td><td>碳正离子 R⁺（能量谷）</td></tr>
+        <tr><td><strong>速率方程</strong></td>
+          <td><span class="formula">v = k[RX][Nu⁻]</span>，两种分子都算数</td>
+          <td><span class="formula">v = k[RX]</span>，只看卤代烃</td></tr>
+        <tr><td><strong>立体后果</strong></td>
+          <td>背面进攻 → 构型翻转（"雨伞翻转"）</td>
+          <td>平面 R⁺ 两面受攻 → 外消旋化</td></tr>
+        <tr><td><strong>底物偏好</strong></td><td>甲基、伯卤代烃（位阻小）</td><td>叔卤代烃（R⁺ 更稳定）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔬 动手玩：SN1 / SN2 能量图切换器</h3>
+    <p>
+      点击按钮切换机理，观察能量曲线的形状差：<strong>SN2 是单峰</strong>（一个过渡态），
+      <strong>SN1 是双峰夹谷</strong>（两个过渡态，中间是真实存在的碳正离子）。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="enSvg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="SN1 与 SN2 反应能量图切换器"></svg>
+        <div class="fig-controls" id="enBtns">
+          <button type="button" class="btn ghost" data-m="sn2">SN2 能量图</button>
+          <button type="button" class="btn ghost" data-m="sn1">SN1 能量图</button>
+        </div>
+        <div class="fig-readout" id="enReadout"></div>
+      </div>
+      <figcaption>
+        两张图的起点（反应物）与终点（产物）几乎一样——差别全在<strong>中间的路</strong>。
+        过渡态（‡）是曲线顶点，寿命约等于零、无法分离；中间体是两峰之间的谷，
+        虽短命却真实存在（§5 细说）。决速步 = 最高的那座山。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：用速率数据审问机理</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        某卤代烃 RX 在水溶液中水解。实验一：[RX] 加倍，速率加倍；
+        实验二：[OH⁻] 加倍，速率不变。该反应走 SN1 还是 SN2？可预测什么立体结果？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">先立标尺：SN2 的速率方程 v = k[RX][Nu⁻]（两分子碰撞才能反应）；SN1 的 v = k[RX]（电离一步单干）。</li>
+        <li class="step">实验一：[RX] ×2 → v ×2，说明反应对 RX 是一级。两种机理都兼容，还分辨不出。</li>
+        <li class="step">实验二：[OH⁻] ×2 → v 不变，说明亲核试剂<strong>不参与决速步</strong> → 排除 SN2。</li>
+        <li class="step">✅ 结论：SN1——决速步是 C–X 键电离出碳正离子。预测：底物多半是叔卤代烃（R⁺ 稳定）；
+          碳正离子呈平面，OH⁻ 从两面进攻机会均等 → <strong>外消旋化</strong>（若该碳是手性碳，旋光将消失）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 速率定律是机理的指纹</div>
+      改变浓度、观察速率怎么响应——这是化学家"审问"机理最常用的刑具。
+      双分子机理必留下二级速率定律，单分子机理只留一级。第 3 问"同位素/立体化学"则是另外两件（§5 阶梯）。
+    </div>
+  </section>
+
+  <!-- ============ §4 亲电加成 ============ -->
+  <section id="add">
+    <h2>§4 剧本三：亲电加成与马氏规则</h2>
+    <p>
+      双键的 π 电子云像一块裸露在分子表面的电子毯，专门吸引缺电子的
+      <span class="term">亲电试剂</span><span class="en">electrophile</span>（E⁺，"爱电"）。
+      以丙烯加 HBr 为例，第一步是 π 电子毯向 H⁺ 示好（弯箭头从 π 键出发），
+      生成碳正离子，然后 Br⁻ 进攻——两步加成。
+    </p>
+    <p>
+      关键分歧在第一步：H 加到哪一端？两种可能给出两种碳正离子：
+    </p>
+    <ul>
+      <li>H 到端碳 → 正电荷落在<strong>中间碳</strong>：二级碳正离子（两个 C 送来超共轭"扶助"）；</li>
+      <li>H 到中间碳 → 正电荷落在<strong>端碳</strong>：一级碳正离子（只有一路扶助）。</li>
+    </ul>
+    <p>
+      碳正离子稳定性次序是 <strong>三级 &gt; 二级 &gt; 一级 &gt; CH₃⁺</strong>
+      （烷基像撑伞的路人，通过超共轭与诱导效应分散正电荷）。
+      体系自然走更稳的路线 → 主产物是 2-溴丙烷。这就是<span class="term">马氏规则</span>
+      <span class="en">Markovnikov's rule</span>：<strong>氢加到含氢较多的双键碳上</strong>。
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>–CH=CH<sub>2</sub> + HBr → CH<sub>3</sub>–CHBr–CH<sub>3</sub>（主产物）</span>
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        预测 <span class="formula">CH<sub>3</sub>CH<sub>2</sub>CH=CH<sub>2</sub></span>（1-丁烯）与 HCl 加成的主产物，并说明理由。
+        <em>（先自己走一遍电子流程，再逐步对照）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 找电子源：π 键（电子富）→ 找电子池：H⁺（来自 HCl 的 δ+ 端）。弯箭头从 π 键画向 H。</li>
+        <li class="step">💡 两种加法：H 到端碳 C1 → 正电荷在 C2（<strong>二级</strong>碳正离子）；
+          H 到 C2 → 正电荷在 C1（一级）。稳定性二级 &gt; 一级 → 走第一条路。</li>
+        <li class="step">💡 Cl⁻ 进攻 C2 上的正电荷 → 主产物 <span class="formula">CH<sub>3</sub>CH<sub>2</sub>CHClCH<sub>3</sub></span>（2-氯丁烷）。</li>
+        <li class="step">✅ 用马氏规则复查："H 加到含 H 多的碳"——端碳 C1 有两个 H，H 确实加到了它那里 ✓。
+          两种视角（碳正离子稳定性 / 马氏口诀）互相印证。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：往体系里加少量过氧化物（ROOR），HBr 对丙烯的加成竟然"反马氏"了。为什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：过氧化物容易断出什么？（回忆 §2 的剧本一）</p>
+        <p>
+          机理整个换了剧本：从离子型的碳正离子路线，切换成<strong>自由基路线</strong>。
+          第一步换成 Br· 先加到双键——它选择加到端碳，让自由基落在<strong>中间碳</strong>
+          （二级自由基，比一级更稳定）；随后自由基从 HBr 夺氢收尾。净效果：Br 落在端碳、
+          H 落在中间碳——恰好反马氏。
+          注意这条"过氧化物效应"几乎只对 HBr 有效（HCl、HI 的键能不能配合这两步）。
+          同一个净方程式，两条机理、两种产物比例——这就是下一节阶梯的主题。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 能量图 ============ -->
+  <section id="energy">
+    <h2>§5 活化能、过渡态与中间体：三个最容易混的词</h2>
+    <p>
+      能量图上的三个角色，考试年年考，概念一句话分清：
+    </p>
+    <ul>
+      <li><span class="term">活化能</span><span class="en">activation energy, E<sub>a</sub></span>：
+        从反应物"爬"到山顶需要的那份能量。E<sub>a</sub> 越大，翻越越少，反应越慢。</li>
+      <li><span class="term">过渡态</span><span class="en">transition state, ‡</span>：
+        曲线的<strong>顶点</strong>。旧键半断、新键半成的临界构型，寿命约等于零，
+        <strong>无法分离、无法储存</strong>，只能用波谱间接窥探。</li>
+      <li><span class="term">中间体</span><span class="en">intermediate</span>：
+        两峰之间的<strong>谷</strong>。如碳正离子、自由基——真实存在的分子，
+        化学寿命短（微秒～毫秒级），但可以被快速光谱捕捉，甚至让它在低温下多活一会儿。</li>
+    </ul>
+    <p>
+      判别口诀：<strong>顶点不是物种，谷底才是物种</strong>。多步反应里最陡的那座山（最高过渡态）
+      决定总速率，叫决速步——SN1 的第一座山（电离）就是它的收费站。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么方程式相同的反应可能机理完全不同？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          山两侧各有一个村子：A 村（反应物）与 B 村（产物）。方程式只写"从 A 到 B"，
+          没写翻的是北坡还是绕的南谷。有人徒步（一步到位），有人中途在服务区歇脚
+          （中间体），还有人组成接力队（链式）——村民名单和终点都一样，路线天差地别。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 实验</span>
+        <p>
+          化学家有三件"测谎仪"：<strong>①动力学</strong>——速率对浓度的依赖直接暴露决速步的参加者
+          （例 1 的 SN1/SN2 之辨）；<strong>②立体化学</strong>——SN2 翻转、SN1 外消旋，产物构型会作证；
+          <strong>③同位素标记</strong>——给某个原子换个"可追踪的同位素身份证"，看它最终落在产物哪个位置。
+          三证齐全，机理才能立住脚。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 势能面</span>
+        <p>
+          把分子全部原子位置张开成一张多维"势能面"：反应物与产物是面上的两个盆地，
+          连接两盆地的路径可以<strong>不止一条</strong>，每条路径有自己的过渡态序列。
+          温度、溶剂、浓度决定各条路径的"车流量"，甚至能把主路彻底切换——
+          过氧化物让 HBr 从离子路换到自由基路就是实例。机理因此不是哲学，而是
+          <strong>可证伪的模型</strong>：永远保留被新实验推翻的权利。定量的工具（阿伦尼乌斯方程、
+          过渡态理论）在 04 物理化学分支等你。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "配平的方程式能告诉我们反应是怎么发生的"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          方程式都写出来了，反应步骤自然一目了然；系数配平就等于理解了反应。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          方程式是一笔<strong>总账</strong>：只登记始态与终态，不登记路径。
+          溴甲烷与叔丁基氯的水解方程式几乎一模一样（RCl + H₂O → ROH + HCl），
+          前者走 SN2（速率随 OH⁻ 变化、构型翻转），后者走 SN1（速率与 OH⁻ 无关、外消旋化）。
+          机理必须靠实验推断——动力学、立体化学、同位素——而且永远是当前最佳模型，
+          不是圣旨。配平是记账，机理才是侦查。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：升高温度对活化能大的反应"提携"更明显，为什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：温度提供的是什么？爬山的人有了更多体力，哪条路受益最大？</p>
+        <p>
+          温度提高分子的动能储备。E<sub>a</sub> 大的反应原本"爬得动的人"极少
+          （玻尔兹曼分布右尾极小），温度升高让尾部人数成倍增长——提携效应呈指数放大；
+          E<sub>a</sub> 小的反应本来就大多爬得动，提升空间有限。定量关系由阿伦尼乌斯方程
+          <span class="formula">k = Ae<sup>−Ea/RT</sup></span> 描述（04 分支细讲）——
+          注意它对 E<sub>a</sub> 出现在指数上，敏感得很。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li><strong>弯箭头</strong>从电子富（孤对/π/负电荷）画向电子贫；双钩=电子对，单钩=单电子。</li>
+        <li>自由基链式取代三幕：引发（光解出 Cl·）→ 增长（夺氢/夺氯，自由基再生）→ 终止（自由基结合）。</li>
+        <li>SN2：一步、v = k[RX][Nu]、构型翻转；SN1：两步、v = k[RX]、碳正离子中间体、外消旋化。</li>
+        <li>亲电加成走更稳的碳正离子（三级&gt;二级&gt;一级）→ 马氏规则；过氧化物可让 HBr 换剧本反马氏。</li>
+        <li>过渡态=顶点（不可分离），中间体=谷（真实物种）；最高山决定速率（决速步）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 反应机理入门 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "机理中的弯箭头表示的是什么？",
+            "options": [
+              "原子核的移动方向",
+              "电子对（或单电子）的移动方向",
+              "分子整体在溶液中的旋转",
+              "能量从反应物流向产物的路径"
+            ],
+            "answer": 1,
+            "explain": "弯箭头画的是电子：双钩箭头表示一对电子从富电子处（孤对、π 键、负电荷）迁移到贫电子处。它不表示原子移动，也不表示能量流向。"
+          },
+          {
+            "q": "自由基链式反应中『增长』步骤的特征是？",
+            "options": [
+              "吸收光子产生自由基",
+              "每步消耗一个自由基的同时生成一个新的自由基，可循环成千上万次",
+              "两个自由基结合成稳定分子",
+              "只在反应开始时发生一次"
+            ],
+            "answer": 1,
+            "explain": "增长步是链条的发动机：Cl· 夺氢变 ·CH₃，·CH₃ 夺氯又变回 Cl·——自由基像接力棒一样传递，一个光子引发的链可循环 10⁴～10⁶ 次。吸收光子是『引发』，自由基结合是『终止』。"
+          },
+          {
+            "q": "SN2 反应的总反应速率方程是？",
+            "options": [
+              "v = k[RX][Nu⁻]",
+              "v = k[RX]",
+              "v = k[Nu⁻]",
+              "v = k[RX]²[Nu⁻]"
+            ],
+            "answer": 0,
+            "explain": "SN2 的决速（也是唯一）一步需要亲核试剂与卤代烃双分子碰撞，速率与两者浓度都成正比。v = k[RX] 是 SN1 的标志。"
+          },
+          {
+            "q": "若反应中心是手性碳，SN1 取代后产物的立体化学通常是？",
+            "options": [
+              "构型 100% 翻转",
+              "构型 100% 保持",
+              "外消旋化——翻转与保持约各半",
+              "产物全部变成气体逸出"
+            ],
+            "answer": 2,
+            "explain": "SN1 先电离出平面三角形碳正离子，亲核试剂从两面进攻的机会均等，得到约 1:1 的两种构型——外消旋化、旋光消失。100% 翻转是 SN2 背面进攻的标志。"
+          },
+          {
+            "q": "CH₃CH=CH₂ 与 HBr 加成（无过氧化物）的主产物是？",
+            "options": [
+              "1-溴丙烷",
+              "2-溴丙烷",
+              "1,2-二溴丙烷",
+              "不发生反应"
+            ],
+            "answer": 1,
+            "explain": "按马氏规则，H 加到含氢较多的端碳，生成更稳定的二级碳正离子，Br⁻ 随后接到中间碳 → 2-溴丙烷为主。1,2-二溴丙烷是与 Br₂ 加成的产物。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-立体化学.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 立体化学</span></a>
+      <a class="next" href="04-官能团反应巡礼.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 4 章 · 官能团反应巡礼</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（链式反应三幕舞台 / SN1-SN2 能量图切换器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+  function ball(g, x, y, r, fill, label, tc, size) {
+    el("circle", { cx: x, cy: y, r: r, fill: fill, stroke: "rgba(0,0,0,.18)", "stroke-width": 1 }, g);
+    T(g, x, y + 4, label, { size: size || 13, weight: 700, fill: tc || "#ffffff" });
+  }
+  function bond(g, x1, y1, x2, y2, w, c) {
+    el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: c || "#6b7280", "stroke-width": w || 3 }, g);
+  }
+  function radDot(g, x, y) {
+    el("circle", { cx: x, cy: y, r: 4.5, fill: "#111827", class: "anim-pulse" }, g);
+  }
+  function arrow(g, x1, y1, x2, y2, c) {
+    bond(g, x1, y1, x2, y2, 2.5, c || "#4b5563");
+    var a = Math.atan2(y2 - y1, x2 - x1);
+    var s = 9;
+    el("polygon", { points: x2 + "," + y2 + " " + (x2 - s * Math.cos(a - 0.42)) + "," + (y2 - s * Math.sin(a - 0.42)) +
+      " " + (x2 - s * Math.cos(a + 0.42)) + "," + (y2 - s * Math.sin(a + 0.42)), fill: c || "#4b5563" }, g);
+  }
+  var CL = "#16a34a", CB = "#374151", HB = "#ffffff", HT = "#1f2937";
+
+  /* ---------- 1. 链式反应三幕舞台 ---------- */
+  var chainSvg = document.getElementById("chainSvg");
+  if (chainSvg) {
+    var chainReadout = document.getElementById("chainReadout");
+    var chainBtns = Array.prototype.slice.call(document.querySelectorAll("#chainBtns button"));
+
+    function cl2(g, x, y) {
+      bond(g, x - 24, y, x + 24, y, 4);
+      ball(g, x - 24, y, 20, CL, "Cl", "#ffffff", 12);
+      ball(g, x + 24, y, 20, CL, "Cl", "#ffffff", 12);
+    }
+    function ch4(g, x, y) {
+      bond(g, x, y, x - 34, y - 30, 2.5); bond(g, x, y, x + 34, y - 30, 2.5);
+      bond(g, x, y, x - 34, y + 30, 2.5); bond(g, x, y, x + 34, y + 30, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x - 34, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x + 34, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x - 34, y + 30, 10, HB, "H", HT, 10);
+      ball(g, x + 34, y + 30, 10, HB, "H", HT, 10);
+    }
+    function ch3(g, x, y, dotPos) {
+      bond(g, x, y, x - 32, y - 30, 2.5); bond(g, x, y, x + 32, y - 30, 2.5); bond(g, x, y, x, y + 38, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x - 32, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x + 32, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x, y + 38, 10, HB, "H", HT, 10);
+      if (dotPos) radDot(g, x + 18, y - 44);
+    }
+    function ch3cl(g, x, y) {
+      bond(g, x, y, x + 40, y, 3); bond(g, x, y, x - 30, y - 32, 2.5);
+      bond(g, x, y, x - 30, y + 32, 2.5); bond(g, x, y, x, y - 40, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x + 40, y, 19, CL, "Cl", "#ffffff", 11);
+      ball(g, x - 30, y - 32, 10, HB, "H", HT, 10);
+      ball(g, x - 30, y + 32, 10, HB, "H", HT, 10);
+      ball(g, x, y - 40, 10, HB, "H", HT, 10);
+    }
+    function clRad(g, x, y) {
+      ball(g, x, y, 20, CL, "Cl", "#ffffff", 12);
+      radDot(g, x + 20, y - 22);
+    }
+    function hcl(g, x, y) {
+      bond(g, x - 20, y, x + 18, y, 3);
+      ball(g, x - 20, y, 10, HB, "H", HT, 10);
+      ball(g, x + 18, y, 19, CL, "Cl", "#ffffff", 11);
+    }
+
+    var SCENES = {
+      init: function () {
+        var g = chainSvg;
+        T(g, 320, 32, "第①幕 · 引发：光把 Cl₂ 劈成两个自由基", { size: 14, weight: 700, fill: "#166534" });
+        cl2(g, 120, 160);
+        el("polyline", { points: "210,140 230,175 252,130 274,178 296,140", fill: "none", stroke: "#ca8a04", "stroke-width": 3 }, g);
+        T(g, 253, 205, "hν", { size: 16, weight: 700, fill: "#a16207" });
+        arrow(g, 330, 160, 390, 160, "#b45309");
+        clRad(g, 450, 110);
+        clRad(g, 520, 210);
+        T(g, 320, 290, "共价键『均裂』：每个 Cl 各带走一个电子 → 一对自由基火种", { size: 13, fill: "#4b5563" });
+        return "引发：Cl₂ 吸收光子发生均裂，产生 2 个 Cl·。这一幕只需要极少量的光——火种虽小，下一幕会放大它。";
+      },
+      grow: function () {
+        var g = chainSvg;
+        T(g, 320, 30, "第②幕 · 增长：夺氢与传氯，自由基接力", { size: 14, weight: 700, fill: "#166534" });
+        // 第一行
+        clRad(g, 60, 100); T(g, 110, 105, "＋", { size: 16, weight: 700 });
+        ch4(g, 190, 100);
+        arrow(g, 250, 100, 300, 100);
+        hcl(g, 340, 100); T(g, 395, 105, "＋", { size: 16, weight: 700 });
+        ch3(g, 470, 100, true);
+        T(g, 470, 160, "·CH₃", { size: 12, fill: "#4b5563" });
+        T(g, 190, 158, "CH₄", { size: 12, fill: "#4b5563" });
+        // 第二行
+        ch3(g, 60, 225, true); T(g, 60, 283, "·CH₃", { size: 12, fill: "#4b5563" });
+        T(g, 110, 230, "＋", { size: 16, weight: 700 });
+        cl2(g, 190, 225);
+        arrow(g, 250, 225, 300, 225);
+        ch3cl(g, 350, 225); T(g, 350, 283, "CH₃Cl", { size: 12, fill: "#4b5563" });
+        T(g, 420, 230, "＋", { size: 16, weight: 700 });
+        clRad(g, 490, 225);
+        T(g, 275, 80, "① 夺氢", { size: 12, fill: "#6b7280" });
+        T(g, 275, 205, "② 传氯", { size: 12, fill: "#6b7280" });
+        // 循环箭头
+        el("path", { d: "M 520 255 C 420 315 160 315 60 138", fill: "none", stroke: "#b45309",
+          "stroke-width": 2.5, "stroke-dasharray": "7 6" }, g);
+        T(g, 330, 310, "Cl· 再生 → 回到 ①，循环可重复上千次", { size: 12, fill: "#b45309", weight: 700 });
+        return "增长：① Cl· 夺取 CH₄ 的氢生成 HCl 与 ·CH₃；② ·CH₃ 从 Cl₂ 夺氯生成 CH₃Cl，同时释放新的 Cl·。每两步净结果：消耗一个 Cl₂、一个 CH₄，产出一个 CH₃Cl——自由基分毫未损，链条继续。";
+      },
+      term: function () {
+        var g = chainSvg;
+        T(g, 320, 30, "第③幕 · 终止：自由基相遇，链条熄火", { size: 14, weight: 700, fill: "#166534" });
+        var rows = [[75, "cl", "cl", "Cl₂"], [155, "cl", "me", "CH₃Cl"], [235, "me", "me", "CH₃CH₃"]];
+        rows.forEach(function (r) {
+          var y = r[0];
+          if (r[1] === "cl") clRad(g, 70, y); else ch3(g, 70, y, true);
+          T(g, 120, y + 5, "＋", { size: 16, weight: 700 });
+          if (r[2] === "cl") clRad(g, 200, y); else ch3(g, 200, y, true);
+          arrow(g, 260, y, 315, y);
+          if (r[3] === "Cl₂") cl2(g, 400, y);
+          else if (r[3] === "CH₃Cl") ch3cl(g, 390, y);
+          else {
+            bond(g, 380, y, 430, y, 3);
+            ball(g, 380, y, 15, CB, "C"); ball(g, 430, y, 15, CB, "C");
+            T(g, 405, y + 38, "乙烷（微量副产物）", { size: 11, fill: "#4b5563" });
+          }
+        });
+        T(g, 530, 155, "两个自由基", { size: 11, fill: "#6b7280" });
+        T(g, 530, 172, "→ 两个稳定分子", { size: 11, fill: "#6b7280" });
+        T(g, 320, 295, "链越长，自由基浓度越高 → 相遇概率越大 → 最终达到稳态", { size: 13, fill: "#4b5563" });
+        return "终止：任意两个自由基结合（Cl·+Cl·、Cl·+·CH₃、·CH₃+·CH₃）都生成稳定分子，链条永久熄灭。第三种终止给出乙烷——所以氯代产物里总能检出微量乙烷，这是链式机理的『签名』。";
+      }
+    };
+
+    function drawChain(stage) {
+      chainSvg.innerHTML = "";
+      chainReadout.textContent = SCENES[stage]();
+      chainBtns.forEach(function (b) {
+        if (b.getAttribute("data-s") === stage) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    chainBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawChain(b.getAttribute("data-s")); });
+    });
+    drawChain("init");
+  }
+
+  /* ---------- 2. SN1 / SN2 能量图切换器 ---------- */
+  var enSvg = document.getElementById("enSvg");
+  if (enSvg) {
+    var enReadout = document.getElementById("enReadout");
+    var enBtns = Array.prototype.slice.call(document.querySelectorAll("#enBtns button"));
+
+    function axis() {
+      el("line", { x1: 60, y1: 292, x2: 618, y2: 292, stroke: "#94a3b8", "stroke-width": 2 }, enSvg);
+      el("line", { x1: 60, y1: 292, x2: 60, y2: 40, stroke: "#94a3b8", "stroke-width": 2 }, enSvg);
+      var yl = el("text", { x: 30, y: 165, "text-anchor": "middle", "font-size": 13, fill: "#4b5563",
+        transform: "rotate(-90 30 165)" }, enSvg);
+      yl.textContent = "势能 E →";
+      T(enSvg, 340, 332, "反应进程 →", { size: 13, fill: "#4b5563" });
+      T(enSvg, 78, 314, "反应物", { size: 12, fill: "#1f2937", anchor: "start" });
+      T(enSvg, 600, 314, "产物", { size: 12, fill: "#1f2937", anchor: "end" });
+    }
+    function ea(x, y1, y2, label) {
+      el("line", { x1: x, y1: y1, x2: x, y2: y2, stroke: "#b45309", "stroke-width": 2.2 }, enSvg);
+      el("polygon", { points: x + "," + y2 + " " + (x - 5) + "," + (y2 + 9) + " " + (x + 5) + "," + (y2 + 9), fill: "#b45309" }, enSvg);
+      el("polygon", { points: x + "," + y1 + " " + (x - 5) + "," + (y1 - 9) + " " + (x + 5) + "," + (y1 - 9), fill: "#b45309" }, enSvg);
+      T(enSvg, x + 14, (y1 + y2) / 2, label, { size: 13, weight: 700, fill: "#b45309", anchor: "start" });
+    }
+    function tsDash(x, yTop, label, sub) {
+      el("line", { x1: x, y1: yTop, x2: x, y2: 292, stroke: "#cbd5e1", "stroke-width": 1.5, "stroke-dasharray": "5 5" }, enSvg);
+      T(enSvg, x, yTop - 10, label, { size: 13, weight: 700, fill: "#b45309" });
+      if (sub) T(enSvg, x, yTop - 27, sub, { size: 11, fill: "#6b7280" });
+    }
+
+    function drawEn(mode) {
+      enSvg.innerHTML = "";
+      axis();
+      if (mode === "sn2") {
+        el("path", { d: "M60,262 C180,258 200,78 320,78 C440,78 470,272 590,272",
+          fill: "none", stroke: "#15803d", "stroke-width": 4 }, enSvg);
+        tsDash(320, 78, "过渡态 ‡", "旧键半断 · 新键半成");
+        ea(150, 262, 78, "Ea");
+        T(enSvg, 90, 250, "R–X + Nu⁻", { size: 12, fill: "#374151", anchor: "start" });
+        T(enSvg, 585, 258, "Nu–R + X⁻", { size: 12, fill: "#374151", anchor: "end" });
+        T(enSvg, 320, 176, "一步协同：无中间体", { size: 12, fill: "#166534", weight: 700 });
+        enReadout.textContent = "SN2（协同一步）：v = k[RX][Nu⁻] · 速率与两种分子都有关 · 单一过渡态，没有中间体 · 亲核试剂从背面进攻 → 构型翻转（像雨伞被风吹翻）。";
+      } else {
+        el("path", { d: "M60,275 C130,270 152,72 215,72 C280,72 292,186 330,186 C368,186 392,112 445,112 C500,112 520,282 590,282",
+          fill: "none", stroke: "#15803d", "stroke-width": 4 }, enSvg);
+        tsDash(215, 72, "过渡态 ‡①（决速步）");
+        tsDash(445, 112, "过渡态 ‡②");
+        el("line", { x1: 330, y1: 186, x2: 330, y2: 292, stroke: "#cbd5e1", "stroke-width": 1.5, "stroke-dasharray": "5 5" }, enSvg);
+        el("circle", { cx: 330, cy: 186, r: 7, fill: "#15803d" }, enSvg);
+        T(enSvg, 330, 214, "中间体：碳正离子 R⁺", { size: 13, weight: 700, fill: "#166534" });
+        T(enSvg, 330, 231, "（两峰之间的真实能量谷）", { size: 11, fill: "#6b7280" });
+        ea(140, 275, 72, "Ea(决速)");
+        T(enSvg, 90, 263, "R–X（慢电离）", { size: 12, fill: "#374151", anchor: "start" });
+        T(enSvg, 585, 268, "Nu–R + X⁻", { size: 12, fill: "#374151", anchor: "end" });
+        enReadout.textContent = "SN1（分两步）：v = k[RX] · 速率只与卤代烃有关 · 第一步慢电离出碳正离子（最高山=决速步），第二步快进攻 · 平面 R⁺ 两面受攻 → 外消旋化。";
+      }
+      enBtns.forEach(function (b) {
+        if (b.getAttribute("data-m") === mode) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    enBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawEn(b.getAttribute("data-m")); });
+    });
+    drawEn("sn2");
+  }
+})();
+</script>
+</body>
+</html>

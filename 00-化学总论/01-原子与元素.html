@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原子与元素 · 化学总论 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">00 化学总论</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 原子与元素</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 化学总论 · 第 1 章</div>
+    <h1>原子与元素：万物的积木</h1>
+    <p class="lede">
+      一杯水、一缕烟、一颗恒星、你身体里的每一个细胞——剥开宏观世界的外衣，
+      里面都是同一种积木：<strong>原子</strong>。本章带你钻进原子内部，认识质子、中子与电子，
+      弄清"元素""同位素""离子"这三个最容易混淆的词，并初识化学家最重要的地图——元素周期表。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 45 分钟</span>
+      <span class="chip">先修：无（起点章节）</span>
+      <span class="chip">交互动画 ×3</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#inside">原子的内部世界</a>
+    <a href="#elements">元素 · 同位素 · 离子</a>
+    <a href="#mass">相对原子质量</a>
+    <a href="#periodic">初识周期表</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：切到切不动为止</h2>
+    <p>
+      拿一块糖，切成两半，再切一半……有没有尽头？两千四百年前，古希腊哲学家德谟克利特
+      没有显微镜，却凭思辨给出答案：<em>切到某一步，你会得到一个"不可再分"的小块</em>——
+      他称之为 <span class="term">atomos</span><span class="en">ἄτομος，"不可分割"</span>，这就是"原子"一词的由来。
+    </p>
+    <p>
+      现代化学证实了这个直觉的大方向，也修正了细节：原子并非绝对不可分——它有内部结构，
+      但<strong>用化学手段确实无法把原子再拆开</strong>（拆原子核是核物理的事，见 11 分支）。
+      化学研究的就是原子如何组合、交换、重组，从而演出万千变化。
+    </p>
+    <details class="think">
+      <summary>想一想：一勺糖大约 4 g，约含 7×10²¹ 个糖分子。这个数字是什么概念？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：把糖分子放大到沙粒大小试试。</p>
+        <p>
+          全球沙滩的沙粒总数估计约在 10¹⁸～10¹⁹ 量级。一勺糖里的分子数比地球上所有沙滩的沙粒
+          还多几百上千倍。原子世界的基本特征就是<strong>数目巨大、体积极小</strong>——
+          这正是后面"摩尔"概念（第 3 章）要解决的问题。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 原子内部 ============ -->
+  <section id="inside">
+    <h2>§1 原子的内部世界</h2>
+    <p>
+      原子由两种"区域"构成：中心的<span class="term">原子核</span><span class="en">nucleus</span>
+      与外围的<span class="term">电子</span><span class="en">electron</span>。原子核又由两种粒子组成——
+      带正电的<span class="term">质子</span><span class="en">proton</span>与不带电的
+      <span class="term">中子</span><span class="en">neutron</span>。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>粒子</th><th>电荷</th><th>相对质量</th><th>位置</th><th>决定什么？</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>质子</strong> p⁺</td><td>+1</td><td>≈1836</td><td>原子核内</td><td><strong>元素种类</strong>（质子数 = 原子序数 Z）</td></tr>
+        <tr><td><strong>中子</strong> n⁰</td><td>0</td><td>≈1839</td><td>原子核内</td><td>同位素与核的稳定性</td></tr>
+        <tr><td><strong>电子</strong> e⁻</td><td>−1</td><td>≈1/1836</td><td>核外空间</td><td>化学行为、成键与离子电荷</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      质子数说"你是谁"（哪种元素）；电子数说"你带什么电"（原子还是离子）；
+      中子数说"你有多重"（哪种同位素）。
+    </div>
+
+    <h3>🔬 动手玩：自己造一个原子</h3>
+    <p>
+      下面的模拟器里，你可以增减质子、中子与电子。注意观察：<strong>改变质子数，元素就变了</strong>；
+      增减电子，原子变成带电的离子；中子只改变质量数，不改变元素。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="atomSvg" width="360" height="330" viewBox="0 0 360 330" role="img" aria-label="原子结构模拟器"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="addP">＋质子</button>
+          <button class="btn ghost" id="subP">－质子</button>
+          <button class="btn" id="addN">＋中子</button>
+          <button class="btn ghost" id="subN">－中子</button>
+          <button class="btn" id="addE">＋电子</button>
+          <button class="btn ghost" id="subE">－电子</button>
+          <button class="btn ghost" id="resetAtom">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="atomReadout"></div>
+      </div>
+      <figcaption>
+        玻尔模型演示。增减质子时电子数会自动跟随成中性原子；再单独增减电子即可制造离子。
+        （真实电子并非沿固定圆轨道运动，见下方"误区粉碎机"。）
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 原子核到底有多小？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把一个原子放大到一座体育场那么大：整个看台与草坪是电子的活动空间，
+          而体育场正中央的一颗<strong>玻璃弹珠</strong>就是原子核。原子几乎全是"空的"——
+          但这颗弹珠集中了原子 99.9% 以上的质量。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          原子的直径约 10⁻¹⁰ m（0.1 nm），原子核直径约 10⁻¹⁵～10⁻¹⁴ m。
+          两者相差 <strong>1 万～10 万倍</strong>。若电子云像体育场（~200 m），核只有 2 cm～2 mm。
+          这也是为什么卢瑟福用 α 粒子轰击金箔时，绝大多数粒子直接穿了过去——原子内部空旷得出乎意料。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          都带正电的质子为什么挤在一起却不散开？因为在小于 10⁻¹⁵ m 的尺度上存在一种比电磁排斥
+          强得多的<span class="term">强相互作用</span><span class="en">strong nuclear force</span>，
+          它把核子"粘"在一起。中子的加入能稀释质子间的排斥、增强核力，所以较大的核几乎都必须搭配中子——
+          这为 11 分支（核化学）的"稳定线"埋下伏笔。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 关于电子的轨道</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          电子像地球绕太阳、或小球绕铁圈一样，沿着<strong>固定的圆轨道</strong>高速公转，位置和路径都能画出来。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          电子没有确定路径。量子力学告诉我们：只能谈电子在核外各处<strong>出现的概率</strong>。
+          把概率画成一片"云"，云越浓的地方电子越可能出现——这就是
+          <span class="term">电子云</span><span class="en">electron cloud</span> /
+          <span class="term">原子轨道</span><span class="en">atomic orbital</span>。玻尔的圆轨道只是便于入门的近似模型。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 元素/同位素/离子 ============ -->
+  <section id="elements">
+    <h2>§2 元素、同位素与离子：三个最容易混的词</h2>
+
+    <h3>元素：质子数说了算</h3>
+    <p>
+      <span class="term">元素</span><span class="en">element</span>的唯一定义标准是<strong>质子数</strong>
+      （即<span class="term">原子序数</span> <span class="en">atomic number, Z</span>）。
+      质子数为 1 的都是氢，质子数为 6 的都是碳——不管它带不带电、中子多几颗。
+    </p>
+
+    <h3>同位素：同一种元素的不同"体重版"</h3>
+    <p>
+      质子数相同、<strong>中子数不同</strong>的原子互称<span class="term">同位素</span>
+      <span class="en">isotope</span>。氢有三种天然同位素，名字都自带故事：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="氢的三种同位素对比图">
+          <!-- 氕 -->
+          <g transform="translate(110,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-6" cy="0" r="13" fill="#ef4444"/><text x="-6" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">氕 ¹H</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 0n · 普通氢 99.98%</text>
+          </g>
+          <!-- 氘 -->
+          <g transform="translate(320,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-7" cy="0" r="13" fill="#ef4444"/><text x="-7" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle cx="8" cy="-2" r="13" fill="#9ca3af"/><text x="8" y="3" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">氘 ²H（D）</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 1n · 重氢</text>
+          </g>
+          <!-- 氚 -->
+          <g transform="translate(530,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-8" cy="-3" r="13" fill="#ef4444"/><text x="-8" y="2" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle cx="8" cy="-3" r="13" fill="#9ca3af"/><text x="8" y="-1" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle cx="0" cy="12" r="13" fill="#9ca3af"/><text x="0" y="17" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">氚 ³H（T）</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 2n · 有放射性</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        记号 <sup>A</sup>X 中，左上角 A = 质量数 = 质子数 + 中子数。氘和氚是核聚变燃料（11 分支），
+        而"重水"D₂O 因为比普通水重 10%，有着奇妙的不同性质。
+      </figcaption>
+    </figure>
+
+    <h3>离子：电子的得与失</h3>
+    <p>
+      原子整体电中性（质子数 = 电子数）。一旦<strong>得到或失去电子</strong>，就变成带电的
+      <span class="term">离子</span><span class="en">ion</span>：失去电子带正电，叫
+      <span class="term">阳离子</span><span class="en">cation</span>；得到电子带负电，叫
+      <span class="term">阴离子</span><span class="en">anion</span>。食盐的诞生就是最经典的一幕：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="naclSvg" width="560" height="220" viewBox="0 0 560 220" role="img" aria-label="钠与氯的电子转移动画"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="naclGo">⚡ 电子转移</button>
+          <button class="btn ghost" id="naclReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="naclReadout">Na（11p·11e，电中性） + Cl（17p·17e，电中性）</div>
+      </div>
+      <figcaption>
+        钠把最外层的 1 个电子交给氯：Na → Na⁺（11p · 10e），Cl → Cl⁻（17p · 18e）。
+        正负离子相互吸引，就是下一章"离子键"的开场。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：数清核内与核外</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        氯离子 <sup>35</sup>Cl⁻ 中，质子数、中子数、电子数各是多少？质量数是多少？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">查元素符号：Cl 的原子序数 Z = 17 → <strong>质子数 = 17</strong>（离子的质子数永远不变）。</li>
+        <li class="step">质量数 A = 35（左上角）→ 中子数 = A − Z = 35 − 17 = <strong>18</strong>。</li>
+        <li class="step">右上角电荷为 −1 → 原子得到了 1 个电子 → 电子数 = 17 + 1 = <strong>18</strong>。</li>
+        <li class="step">✅ 结论：17p · 18n · 18e，质量数 35。核对：电中性需 17p 对 17e，现在多 1 个 e，恰为 −1。合理。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        镁离子 <sup>24</sup>Mg²⁺ 中，质子数、中子数、电子数各是多少？<em>（提示藏在每一步里，先自己想想再点开）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：Mg 的原子序数是多少？周期表里排第 12 位…… 质子数 = <strong>12</strong>。</li>
+        <li class="step">💡 提示：质量数就写在左上角。中子数 = A − Z = 24 − 12 = <strong>12</strong>。</li>
+        <li class="step">💡 提示：右上角 2+ 是"失去 2 个电子"。电子数 = 12 − 2 = <strong>10</strong>。</li>
+        <li class="step">✅ 自查：12p 对 10e，净电荷 +2，与 Mg²⁺ 一致。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 3 · 独立练习（你来做）</div>
+      <div class="worked-problem">
+        铝离子 <sup>27</sup>Al³⁺ 中，质子数、中子数、电子数各是多少？
+        <strong>先写在纸上，再展开答案对照。</strong>
+      </div>
+      <div class="worked-controls">
+        <details class="think" style="background:var(--surface);border:1px dashed var(--line);flex:1;min-width:240px">
+          <summary>📝 展开答案</summary>
+          <div class="think-body">
+            <p>
+              Z = 13 → 质子数 13；中子数 = 27 − 13 = 14；Al³⁺ 失去 3 个电子 → 电子数 = 13 − 3 = 10。
+              核对：13p − 10e → 净电荷 +3 ✓
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 相对原子质量 ============ -->
+  <section id="mass">
+    <h2>§3 相对原子质量：为什么原子量不是整数</h2>
+    <p>
+      周期表上氯的相对原子质量是 <strong>35.45</strong>——既不是 35 也不是 36。
+      原因：自然界中的氯是<strong>两种同位素的混合物</strong>——<sup>35</sup>Cl（约 75.8%）和
+      <sup>37</sup>Cl（约 24.2%）。宏观测到的"原子量"是它们的<strong>加权平均</strong>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">M̄ = 34.969 × 75.8% + 36.966 × 24.2% ≈ 35.45</span>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px">
+          <label for="clSlider" style="font-size:.9rem;color:var(--ink-2)">
+            <strong id="clPct">75.8%</strong> 的 <sup>35</sup>Cl（其余为 <sup>37</sup>Cl）
+          </label>
+          <input id="clSlider" type="range" min="0" max="100" value="76" step="0.5"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="氯35的比例">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>0%（全是 ³⁷Cl）</span><span>100%（全是 ³⁵Cl）</span>
+          </div>
+        </div>
+        <div class="fig-readout" id="clReadout">平均相对原子质量 ≈ 35.45</div>
+      </div>
+      <figcaption>
+        拖动滑块改变同位素比例。注意：无论比例如何，混合物的平均质量<strong>永远落在 34.97 与 36.97 之间</strong>——
+        加权平均不可能跑出端点之外。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：既然几乎所有元素都有同位素，为什么有些元素的原子量是整数（如 F = 19.00）？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：是"没有同位素"还是"只有一种主要同位素"？</p>
+        <p>
+          氟在自然界中<strong>只有一种稳定同位素</strong> <sup>19</sup>F（丰度≈100%），
+          所以原子量就是 19 的整数倍（精确值 18.998 与"1 个原子单位不严格等于 1 u"的约定有关，可暂时不管）。
+          类似的还有 Na（23）、P（31）、Al（27）。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 周期表 ============ -->
+  <section id="periodic">
+    <h2>§4 初识元素周期表：化学家的地图</h2>
+    <p>
+      1869 年，门捷列夫把当时已知的 63 种元素按原子量排列，发现性质<strong>周期性重复</strong>。
+      他大胆地在表中留空，预言了"类铝""类硅"等新元素——后来镓、锗的发现与他预言的性质惊人吻合，
+      周期表从此封神。今天我们知道，周期表真正的排序依据是<strong>原子序数（质子数）</strong>，
+      而周期性的根源是<strong>核外电子的分层排布</strong>（下一章展开）。
+    </p>
+
+    <p>把鼠标移到下面的迷你周期表上（前 36 号元素），认识每一格：</p>
+
+    <figure class="fig">
+      <div class="fig-canvas" style="overflow-x:auto;max-width:100%">
+        <div id="miniPtable" style="display:grid;grid-template-columns:repeat(18,46px);grid-auto-rows:52px;gap:3px;min-width:max-content"></div>
+        <div id="ptLegend" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:.78rem;color:var(--ink-2)"></div>
+      </div>
+      <div class="fig-readout" id="ptInfo" style="display:block;text-align:left;max-width:100%">
+        👆 悬停或点击任意元素格子查看信息（当前未选择）
+      </div>
+      <figcaption>
+        迷你周期表（1–36 号）。每一<strong>横行</strong>是一个周期（period），电子层数逐行增加；
+        每一<strong>纵列</strong>是一个族（group），同族元素最外层电子数相同，因而化学性质相似。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 读表口诀（入门版）</div>
+      <strong>周期数 = 电子层数；主族序数 ≈ 最外层电子数</strong>。
+      例如 Na：第 3 周期 → 3 个电子层；第 ⅠA 族 → 最外层 1 个电子。这也解释了它为什么容易失去
+      1 个电子变成 Na⁺——化学性质在周期表上的位置早已写好。
+    </div>
+
+    <details class="think">
+      <summary>想一想：氦 He 只有两个电子，为什么排在最右侧的"稀有气体"族，而不是第 ⅡA 族？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：族的划分依据是"最外层电子数"，但别忘了第一层最多装几个电子。</p>
+        <p>
+          第一电子层（K 层）最多容纳 2 个电子，He 的这层已经<strong>填满</strong>。
+          "稀有气体族"的真正定义是<strong>最外层达到稳定满员结构</strong>（He 为 2，其余为 8），
+          而不是机械的"最外层 8 个"。满员结构极难得失电子——这就是稀有气体"惰性"的由来，
+          也是下一章化学键理论的核心线索。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>原子 = 原子核（质子 ＋ 中子）＋ 核外电子；核极小但占绝大部分质量。</li>
+        <li><strong>质子数（Z）定义元素</strong>；中子数区分同位素；电子数决定电性（原子/离子）。</li>
+        <li>原子量是各同位素质量的<strong>加权平均</strong>，因此常带小数。</li>
+        <li>周期表按 Z 排列；周期 ≈ 电子层数，族 ≈ 最外层电子数；位置预言性质。</li>
+        <li>电子的真实图景是<strong>电子云</strong>（概率），玻尔轨道只是入门近似。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 原子与元素 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "决定元素种类的是下列哪个粒子？",
+            "options": ["中子", "质子", "电子", "光子"],
+            "answer": 1,
+            "explain": "质子数 = 原子序数 Z，是元素身份的唯一标准。中子数只区分同位素，电子数只决定电性。"
+          },
+          {
+            "q": "¹⁴C（碳-14，考古测年用）与 ¹²C 的本质区别是？",
+            "options": ["质子数不同", "电子数不同", "中子数不同", "化学性质完全不同"],
+            "answer": 2,
+            "explain": "都是碳：6 个质子。¹⁴C 多 2 个中子（14−6=8 vs 12−6=6）。同位素的化学性质几乎相同，这就是为什么生物活着时会不断摄入 ¹⁴C，死后摄入停止、¹⁴C 衰变减少，从而可以测年。"
+          },
+          {
+            "q": "原子直径约 10⁻¹⁰ m，原子核直径约 10⁻¹⁵ m。二者比值最接近？",
+            "options": ["10 倍", "1 千倍", "10 万倍", "10 亿倍"],
+            "answer": 2,
+            "explain": "10⁻¹⁰ / 10⁻¹⁵ = 10⁵，即 10 万倍。类比：体育场与场中央一颗弹珠。"
+          },
+          {
+            "q": "某元素样品中 ³⁵Cl 占 75%、³⁷Cl 占 25%，平均相对原子质量约为？",
+            "options": ["35.0", "35.5", "36.0", "36.5"],
+            "answer": 1,
+            "explain": "35×0.75 + 37×0.25 = 26.25 + 9.25 = 35.5。加权平均偏向占比高的同位素。"
+          },
+          {
+            "q": "Mg²⁺ 离子的质子数与电子数分别是？",
+            "options": ["12 与 12", "12 与 10", "10 与 12", "14 与 12"],
+            "answer": 1,
+            "explain": "Mg 的 Z=12，质子数永远是 12；2+ 表示失去 2 个电子 → 10e。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">00 化学总论 · 导学</span></a>
+      <a class="next" href="02-化学键与分子结构.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 2 章 · 化学键与分子结构</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（原子模拟器 / NaCl / 氯同位素 / 迷你周期表） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* ---------- 1. 玻尔原子模拟器 ---------- */
+  var NAMES = ["氢 H","氦 He","锂 Li","铍 Be","硼 B","碳 C","氮 N","氧 O","氟 F","氖 Ne",
+               "钠 Na","镁 Mg","铝 Al","硅 Si","磷 P","硫 S","氯 Cl","氩 Ar","钾 K","钙 Ca"];
+  var SHELLS = [2, 8, 8, 2];
+  var CX = 180, CY = 160;
+
+  var atomSvg = document.getElementById("atomSvg");
+  if (atomSvg) {
+    var readout = document.getElementById("atomReadout");
+    var st = { p: 1, n: 0, e: 1 };
+
+    function shellFill(eCount) {
+      var arr = [], left = eCount;
+      for (var i = 0; i < SHELLS.length && left > 0; i++) {
+        arr.push(Math.min(left, SHELLS[i]));
+        left -= SHELLS[i];
+      }
+      return arr;
+    }
+    function ionLabel(p, e) {
+      var d = p - e;
+      if (p === 0) return "没有质子：还不是原子";
+      if (d === 0) return "电中性原子";
+      return d > 0 ? ("阳离子 " + NAMES[p-1].split(" ")[0] + (d>1?d:"") + "⁺") : ("阴离子 " + NAMES[p-1].split(" ")[0] + (-d>1?-d:"") + "⁻");
+    }
+
+    function renderAtom() {
+      atomSvg.innerHTML = "";
+      var fillArr = shellFill(Math.max(0, st.e));
+      var radii = [52, 90, 128, 166];
+      for (var s = 0; s < fillArr.length; s++) {
+        el("circle", { cx: CX, cy: CY, r: radii[s], fill: "none", stroke: "#cbd5e1",
+                       "stroke-width": 1.4, "stroke-dasharray": "4 5" }, atomSvg);
+        var g = el("g", { class: "anim-spin" }, atomSvg);
+        g.style.animationDuration = (7 + s * 3) + "s";
+        if (s % 2 === 1) g.style.animationDirection = "reverse";
+        for (var i = 0; i < fillArr[s]; i++) {
+          var a = 2 * Math.PI * i / fillArr[s] - Math.PI / 2;
+          el("circle", { cx: CX + radii[s] * Math.cos(a), cy: CY + radii[s] * Math.sin(a),
+                         r: 7, fill: "#2563eb", stroke: "#1d4ed8", "stroke-width": 1.5 }, g);
+        }
+      }
+      // 原子核（质子红、中子灰，最多画 14 颗示意）
+      var nucleus = el("g", {}, atomSvg);
+      var total = Math.min(st.p + st.n, 14), placed = 0;
+      for (var pi = 0; pi < st.p && placed < total; pi++, placed++) {
+        var ang = 2 * Math.PI * placed / Math.max(total, 1);
+        el("circle", { cx: CX + 9 * Math.cos(ang), cy: CY + 9 * Math.sin(ang), r: 7, fill: "#ef4444" }, nucleus);
+      }
+      for (var ni = 0; placed < total; ni++, placed++) {
+        var ang2 = 2 * Math.PI * placed / Math.max(total, 1);
+        el("circle", { cx: CX + 9 * Math.cos(ang2), cy: CY + 9 * Math.sin(ang2), r: 7, fill: "#94a3b8" }, nucleus);
+      }
+      var label = el("text", { x: CX, y: CY + 40, "text-anchor": "middle", "font-size": 14,
+                               "font-weight": 700, fill: "#1f2937" }, atomSvg);
+      label.textContent = st.p > 0 ? NAMES[st.p - 1] : "—";
+
+      var eConfig = fillArr.join(" · ") || "0";
+      readout.textContent = st.p > 0
+        ? NAMES[st.p - 1] + " ｜ Z=" + st.p + " · A=" + (st.p + st.n) +
+          " ｜ p⁺=" + st.p + " n⁰=" + st.n + " e⁻=" + st.e +
+          " ｜ " + ionLabel(st.p, st.e) + " ｜ 电子排布：" + eConfig
+        : "先加一颗质子，才有元素";
+    }
+
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+    function bind(id, fn) {
+      var b = document.getElementById(id);
+      if (b) b.addEventListener("click", function () { fn(); renderAtom(); });
+    }
+    bind("addP", function () { st.p = clamp(st.p + 1, 0, 20); st.e = st.p; });   // 默认保持中性
+    bind("subP", function () { st.p = clamp(st.p - 1, 0, 20); st.e = st.p; });
+    bind("addN", function () { st.n = clamp(st.n + 1, 0, 30); });
+    bind("subN", function () { st.n = clamp(st.n - 1, 0, 30); });
+    bind("addE", function () { st.e = clamp(st.e + 1, 0, 20); });
+    bind("subE", function () { st.e = clamp(st.e - 1, 0, 20); });
+    bind("resetAtom", function () { st = { p: 1, n: 0, e: 1 }; });
+    renderAtom();
+  }
+
+  /* ---------- 2. NaCl 电子转移动画 ---------- */
+  var naclSvg = document.getElementById("naclSvg");
+  if (naclSvg) {
+    var naReadout = document.getElementById("naclReadout");
+    var moved = false, flying = null;
+    function drawNaCl(state) {
+      naclSvg.innerHTML = "";
+      // Na
+      var naColor = state === 1 ? "#f97316" : "#fb923c";
+      var g1 = el("g", { transform: "translate(130,110)" }, naclSvg);
+      el("circle", { r: 70, fill: state === 1 ? "#ffedd5" : "#fff7ed", stroke: naColor, "stroke-width": 2.5 }, g1);
+      el("text", { y: -18, "text-anchor": "middle", "font-size": 26, "font-weight": 800, fill: "#c2410c" }, g1).textContent = "Na";
+      el("text", { y: 4, "text-anchor": "middle", "font-size": 11, fill: "#7c2d12" }, g1).textContent = "11p · " + (state === 1 ? "10e" : "11e");
+      el("text", { y: 22, "text-anchor": "middle", "font-size": 15, "font-weight": 700, fill: state === 1 ? "#c2410c" : "#9a3412" }, g1).textContent = state === 1 ? "Na⁺ 阳离子" : "钠原子";
+      if (state === 0) {
+        var ring = el("g", { class: "anim-spin" }, g1);
+        ring.style.animationDuration = "5s";
+        var nae = el("circle", { cx: 46, cy: -46, r: 7, fill: "#2563eb" }, ring);
+      }
+      // Cl
+      var g2 = el("g", { transform: "translate(430,110)" }, naclSvg);
+      el("circle", { r: 70, fill: state === 1 ? "#dcfce7" : "#f0fdf4", stroke: "#16a34a", "stroke-width": 2.5 }, g2);
+      el("text", { y: -18, "text-anchor": "middle", "font-size": 26, "font-weight": 800, fill: "#15803d" }, g2).textContent = "Cl";
+      el("text", { y: 4, "text-anchor": "middle", "font-size": 11, fill: "#14532d" }, g2).textContent = "17p · " + (state === 1 ? "18e" : "17e");
+      el("text", { y: 22, "text-anchor": "middle", "font-size": 15, "font-weight": 700, fill: "#166534" }, g2).textContent = state === 1 ? "Cl⁻ 阴离子" : "氯原子";
+      var ring2 = el("g", { class: "anim-spin" }, g2);
+      ring2.style.animationDuration = "9s";
+      var nClE = state === 1 ? 8 : 7;
+      for (var i = 0; i < nClE; i++) {
+        var a = 2 * Math.PI * i / nClE - Math.PI / 2;
+        el("circle", { cx: 56 * Math.cos(a), cy: 56 * Math.sin(a), r: 7, fill: "#2563eb" }, ring2);
+      }
+      // 飞行中的电子
+      if (flying !== null && flying !== undefined) {
+        el("circle", { cx: flying, cy: 60, r: 8, fill: "#2563eb", class: "anim-pulse" }, naclSvg);
+      }
+    }
+    drawNaCl(0);
+    var goBtn = document.getElementById("naclGo");
+    if (goBtn) goBtn.addEventListener("click", function () {
+      if (moved) { drawNaCl(1); naReadout.textContent = "Na⁺（11p·10e，+1） + Cl⁻（17p·18e，−1） → 异性相吸，构成 NaCl"; return; }
+      var x0 = 176, x1 = 374, t0 = null, dur = 1100;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        flying = x0 + (x1 - x0) * ease + Math.sin(k * Math.PI) * -46;
+        drawNaCl(k < 1 ? 0.5 : 1);
+        if (k >= 1) {
+          flying = null; moved = true;
+          naReadout.textContent = "转移完成！Na⁺（11p·10e）与 Cl⁻（17p·18e）—— 它们将互相吸引成盐。";
+          return;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+    var rBtn = document.getElementById("naclReset");
+    if (rBtn) rBtn.addEventListener("click", function () {
+      moved = false; flying = null; drawNaCl(0);
+      naReadout.textContent = "Na（11p·11e，电中性） + Cl（17p·17e，电中性）";
+    });
+  }
+
+  /* ---------- 3. 氯同位素混合滑块 ---------- */
+  var slider = document.getElementById("clSlider");
+  if (slider) {
+    var clReadout = document.getElementById("clReadout");
+    var pctLabel = document.getElementById("clPct");
+    function updCl() {
+      var x = parseFloat(slider.value);
+      var avg = 34.969 * (x / 100) + 36.966 * (1 - x / 100);
+      pctLabel.textContent = x.toFixed(1) + "%";
+      clReadout.textContent = "平均相对原子质量 ≈ " + avg.toFixed(2) +
+        "　（34.969×" + x.toFixed(1) + "% + 36.966×" + (100 - x).toFixed(1) + "%）";
+    }
+    slider.addEventListener("input", updCl);
+    updCl();
+  }
+
+  /* ---------- 4. 迷你周期表（1–36 号） ---------- */
+  var ELS = [
+    [1,"H","氢",1.008,"nonmetal",1,1],[2,"He","氦",4.003,"noble",1,18],
+    [3,"Li","锂",6.94,"alkali",2,1],[4,"Be","铍",9.012,"alkaline",2,2],
+    [5,"B","硼",10.81,"metalloid",2,13],[6,"C","碳",12.011,"nonmetal",2,14],
+    [7,"N","氮",14.007,"nonmetal",2,15],[8,"O","氧",15.999,"nonmetal",2,16],
+    [9,"F","氟",18.998,"halogen",2,17],[10,"Ne","氖",20.180,"noble",2,18],
+    [11,"Na","钠",22.990,"alkali",3,1],[12,"Mg","镁",24.305,"alkaline",3,2],
+    [13,"Al","铝",26.982,"post",3,13],[14,"Si","硅",28.085,"metalloid",3,14],
+    [15,"P","磷",30.974,"nonmetal",3,15],[16,"S","硫",32.06,"nonmetal",3,16],
+    [17,"Cl","氯",35.45,"halogen",3,17],[18,"Ar","氩",39.95,"noble",3,18],
+    [19,"K","钾",39.098,"alkali",4,1],[20,"Ca","钙",40.078,"alkaline",4,2],
+    [21,"Sc","钪",44.956,"transition",4,3],[22,"Ti","钛",47.867,"transition",4,4],
+    [23,"V","钒",50.942,"transition",4,5],[24,"Cr","铬",51.996,"transition",4,6],
+    [25,"Mn","锰",54.938,"transition",4,7],[26,"Fe","铁",55.845,"transition",4,8],
+    [27,"Co","钴",58.933,"transition",4,9],[28,"Ni","镍",58.693,"transition",4,10],
+    [29,"Cu","铜",63.546,"transition",4,11],[30,"Zn","锌",65.38,"transition",4,12],
+    [31,"Ga","镓",69.723,"post",4,13],[32,"Ge","锗",72.630,"metalloid",4,14],
+    [33,"As","砷",74.922,"metalloid",4,15],[34,"Se","硒",78.971,"nonmetal",4,16],
+    [35,"Br","溴",79.904,"halogen",4,17],[36,"Kr","氪",83.798,"noble",4,18]
+  ];
+  var CAT = {
+    alkali:     ["碱金属", "#fecaca"],
+    alkaline:   ["碱土金属", "#fed7aa"],
+    transition: ["过渡金属", "#c7d2fe"],
+    post:       ["后过渡金属", "#e2e8f0"],
+    metalloid:  ["类金属", "#fde68a"],
+    nonmetal:   ["非金属", "#bbf7d0"],
+    halogen:    ["卤素", "#99f6e4"],
+    noble:      ["稀有气体", "#ddd6fe"]
+  };
+  var host = document.getElementById("miniPtable");
+  if (host) {
+    var info = document.getElementById("ptInfo");
+    ELS.forEach(function (d) {
+      var cell = document.createElement("div");
+      cell.style.gridColumn = d[6];
+      cell.style.gridRow = d[5];
+      cell.style.background = CAT[d[4]][1];
+      cell.style.borderRadius = "6px";
+      cell.style.border = "1px solid rgba(0,0,0,.08)";
+      cell.style.display = "flex";
+      cell.style.flexDirection = "column";
+      cell.style.alignItems = "center";
+      cell.style.justifyContent = "center";
+      cell.style.cursor = "pointer";
+      cell.style.transition = "transform .12s ease";
+      cell.tabIndex = 0;
+      cell.setAttribute("role", "button");
+      cell.setAttribute("aria-label", d[2] + " " + d[1] + " 第" + d[0] + "号元素");
+      cell.innerHTML = "<span style='font-size:.62rem;color:#475569'>" + d[0] + "</span>" +
+                       "<span style='font-size:1rem;font-weight:800;color:#111827'>" + d[1] + "</span>";
+      function show() {
+        cell.style.transform = "scale(1.12)";
+        info.innerHTML = "⚛️ <strong>" + d[2] + " " + d[1] + "</strong>（Z=" + d[0] + "） · 相对原子质量 " +
+          d[3] + " · " + CAT[d[4]][0] + " · 第 " + d[5] + " 周期 / 第 " + d[6] + " 列";
+      }
+      function hide() { cell.style.transform = ""; }
+      cell.addEventListener("mouseenter", show);
+      cell.addEventListener("mouseleave", hide);
+      cell.addEventListener("focus", show);
+      cell.addEventListener("click", show);
+      host.appendChild(cell);
+    });
+    var legend = document.getElementById("ptLegend");
+    Object.keys(CAT).forEach(function (k) {
+      var item = document.createElement("span");
+      item.style.display = "inline-flex";
+      item.style.alignItems = "center";
+      item.style.gap = "4px";
+      item.innerHTML = "<span style='width:12px;height:12px;border-radius:3px;display:inline-block;background:" +
+        CAT[k][1] + ";border:1px solid rgba(0,0,0,.12)'></span>" + CAT[k][0];
+      legend.appendChild(item);
+    });
+  }
+})();
+</script>
+</body>
+</html>

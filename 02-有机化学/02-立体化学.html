@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>立体化学 · 有机化学 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">02 有机化学</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 立体化学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 有机化学 · 第 2 章</div>
+    <h1>立体化学：分子的左手与右手</h1>
+    <p class="lede">
+      纸上的分子式是平面的，真实的分子是三维的。本章带你从<strong>甲烷的正四面体</strong>出发，
+      玩转<strong>乙烷的构象旋转</strong>与<strong>顺反异构</strong>，抵达立体化学最迷人的核心：
+      <strong>手性</strong>——两个分子互为镜像却永远不能重合，就像你的左手与右手。
+      这不是几何游戏：生物界几乎只"挑一只手"用，而一次忽视手性的失误曾造成上万个畸形婴儿。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：第 1 章 碳骨架与官能团</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#tetra">§1 甲烷与正四面体</a>
+    <a href="#conf">§2 乙烷的构象</a>
+    <a href="#cis">§3 顺反异构</a>
+    <a href="#chiral">§4 手性碳与对映体</a>
+    <a href="#life">§5 手性与生命</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：镜子里的化学</h2>
+    <p>
+      站到镜子前举起右手，镜中人向你举起"右手"——但你们永远无法握手：他要握你，
+      必须用他的左手，而那正是镜像把左右互换的结果。手套是最诚实的证据：
+      左手手套和右手手套<strong>尺寸完全相同</strong>，材料相同、针脚相同，
+      却怎么转都戴不进另一只手。物体与其镜像"看起来一样却不能重合"的性质，叫
+      <span class="term">手性</span><span class="en">chirality</span>（希腊语 cheir，"手"）。
+    </p>
+    <p>
+      分子同样分左右手。两种互为镜像的分子，熔点、沸点、溶解度全部相同，
+      却可能在身体里走出完全不同的剧情——一种是良药，另一种是毒药。
+      本章我们先学会在纸上看三维分子，再读懂分子的"左右手"。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么左手手套戴不进右手？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          问题不在大小——两只手套尺寸分毫不差；问题在<strong>"旋向"</strong>。
+          镜子把"里外"翻了：拇指在前的那只变成了拇指在后。而"旋转"只是原地打转，
+          永远不会把任何一个部件翻到另一面。所以无论顺时针转、逆时针转、翻来覆去地转，
+          左手手套都变不成右手手套。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 判据</span>
+        <p>
+          数学上，"重合"意味着只允许<strong>平移和旋转</strong>（刚体运动）让每一点对上。
+          镜像操作虽然不改变任何两点间距离，却把空间"翻了个面"，等价于一次反射，
+          无法用任何旋转拼出来。判断一个分子有没有手性，只需找<strong>对称面</strong>：
+          若存在一个平面能把分子切成互为镜像的两半，它就是"无手性"（能与镜像重合）；
+          找不到任何对称面的分子才有左右手之分。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          对分子而言，"重合"的严格标准是：所有原子核的位置能通过刚体运动完全对齐
+          （此时能量的每个细节自然也相同）。最常见的手性来源是
+          <span class="term">手性碳</span>：一个碳上接了<strong>四个互不相同的基团</strong>，
+          任何平面都无法把它切成对称的两半。工程师早就熟悉这套几何：
+          左旋螺纹与右旋螺纹、偏振光振动面的左旋与右旋，都是同一个数学——定向性。
+          下面的演示器会让你亲手"失败"一次。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §1 甲烷与正四面体 ============ -->
+  <section id="tetra">
+    <h2>§1 甲烷与正四面体</h2>
+    <p>
+      最简单的有机分子甲烷 <span class="formula">CH<sub>4</sub></span> 长什么样？
+      四个氢若排成正方形，键角 90°；若排成"风车"（一个 H 在中心平面上、三个在下），角度也不均。
+      真实答案是：四个 sp³ 杂化轨道<strong>彼此尽量远离</strong>，最终指向
+      <strong>正四面体</strong>的四个顶点，任意两个 C–H 键的夹角都是
+      <span class="formula">109.5°</span>（精确值 109°28′）。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="甲烷的正四面体模型与楔形虚线记号">
+          <g transform="translate(230,140)">
+            <line x1="0" y1="0" x2="-92" y2="-62" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="92" y2="-62" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="104" y2="80" stroke="#92400e" stroke-width="9"/>
+            <line x1="0" y1="0" x2="-104" y2="80" stroke="#6b7280" stroke-width="3" stroke-dasharray="7 6"/>
+            <circle cx="0" cy="0" r="26" fill="#374151"/>
+            <text x="0" y="7" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="-92" cy="-62" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="-92" y="-55" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="92" cy="-62" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="92" y="-55" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="104" cy="80" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="104" y="87" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="-104" cy="80" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="-104" y="87" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <path d="M -60 -46 A 70 70 0 0 1 60 -46" fill="none" stroke="#15803d" stroke-width="2"/>
+            <text x="0" y="-64" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">109.5°</text>
+          </g>
+          <g>
+            <text x="418" y="96" font-size="13" font-weight="700" fill="#92400e">粗楔线</text>
+            <text x="418" y="116" font-size="12" fill="#4b5563">伸向纸外</text>
+            <text x="418" y="156" font-size="13" font-weight="700" fill="#4b5563">虚线</text>
+            <text x="418" y="176" font-size="12" fill="#4b5563">缩向纸后</text>
+            <text x="418" y="216" font-size="13" font-weight="700" fill="#6b7280">细实线</text>
+            <text x="418" y="236" font-size="12" fill="#4b5563">躺在纸面内</text>
+          </g>
+          <text x="230" y="284" text-anchor="middle" font-size="13" fill="#6b7280">纸是二维的，分子是三维的——楔形与虚线就是它的"3D 眼镜"</text>
+        </svg>
+      </div>
+      <figcaption>
+        甲烷的球棍模型：两条细实线在纸面内，粗楔线伸向纸外，虚线缩向纸后。
+        这三种记号是立体化学的"国际通用语"，§4 的镜像演示器全靠它。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      有机分子是<strong>三维物体</strong>，纸面结构只是它的投影。
+      碳的 sp³ 四面体几何是这一切的起点——此后你看到的每个分子，都请自动"立体化"。
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么化学家非要发明楔形线和虚线两种记号不可？只用普通直线行不行？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：一张纸最多"画得下"几个方向？</p>
+        <p>
+          不行。纸面只能表现平面内的两个方向，而碳的四根键指向四面体的四个顶点——
+          至少有一个键伸向纸外、一个缩向纸后。若都用普通直线，读者无从知道分子在空间里
+          怎么"折"。楔形/虚线正是把第三个维度压进二维纸面的约定，就像地图上的等高线。
+          没有它，§4 的手性讨论根本无法落笔。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 乙烷的构象 ============ -->
+  <section id="conf">
+    <h2>§2 乙烷的构象：绕着单键转</h2>
+    <p>
+      单键 σ 键是轴对称的，可以像轴一样<strong>自由旋转</strong>（双键可不行，见 §3）。
+      乙烷 <span class="formula">CH<sub>3</sub>–CH<sub>3</sub></span> 两个甲基绕 C–C 键转到不同角度，
+      就得到不同的<span class="term">构象</span><span class="en">conformation</span>。
+      化学家习惯沿 C–C 键的方向看过去，画成<span class="term">纽曼投影</span>
+      <span class="en">Newman projection</span>：前碳是一个点，后碳是一个圈。
+    </p>
+    <p>
+      两种极端：<strong>交叉式</strong>（前后碳的氢彼此错开 60°）与<strong>重叠式</strong>
+      （前后碳的氢正对着）。重叠式里，前后两对 C–H 键的电子云互相挤靠，
+      产生<span class="term">扭转张力</span><span class="en">torsional strain</span>，
+      能量比交叉式高出约 <span class="formula">12.6 kJ/mol</span>——不大，
+      所以室温下乙烷仍在两种构象间飞速旋转，但任一时刻大多数分子停留在更舒服的交叉式。
+    </p>
+
+    <h3>🔬 动手玩：构象旋转器</h3>
+    <p>
+      拖动滑块改变前后两个甲基的<strong>二面角 θ</strong>，观察纽曼投影与右侧能量曲线的联动：
+      转到 θ = 60°、180°、300° 是三个"谷"（交叉式），θ = 0°、120°、240° 是三个"峰"（重叠式）。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="confSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="乙烷构象纽曼投影与能量曲线"></svg>
+        <div class="fig-controls">
+          <input type="range" id="confSlider" min="0" max="360" step="5" value="60"
+                 style="min-width:260px;accent-color:var(--accent);height:44px" aria-label="二面角">
+          <button type="button" class="btn ghost" id="confStag">对准交叉式 60°</button>
+          <button type="button" class="btn ghost" id="confEcl">对准重叠式 0°</button>
+        </div>
+        <div class="fig-readout" id="confReadout"></div>
+      </div>
+      <figcaption>
+        绿色粗键属于前碳（中心圆点），灰色键属于后碳（圆圈）。能量曲线纵轴是相对能量（kJ/mol），
+        横轴是二面角 θ。真实的乙烷在势能面上像个小球，在谷与谷之间不停滚动。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 单键能转 ≠ 想转就随便转</div>
+      构象之间有能垒（乙烷约 12.6 kJ/mol），室温热运动足以翻越；
+      但对更大的分子，能垒可能高到"锁死"某个构象——蛋白质的功能形态正是被这样锁出来的（05 分支）。
+    </div>
+  </section>
+
+  <!-- ============ §3 顺反异构 ============ -->
+  <section id="cis">
+    <h2>§3 顺反异构：双键上的"硬约束"</h2>
+    <p>
+      双键 = 1 个 σ 键 + 1 个 π 键。π 键是两个 p 轨道<strong>肩并肩</strong>重叠形成的，
+      一旦绕轴旋转，"肩"就错开了、π 键就断了——需要约 270 kJ/mol，常温下根本办不到。
+      所以双键两端是被<strong>焊死</strong>的：基团要么在双键同侧，要么异侧，无法互换。
+    </p>
+    <p>
+      产生顺反异构需要两个条件同时满足：<strong>①有双键（或环）；②每个双键碳上都连着两个不同的基团</strong>。
+      以 2-丁烯 <span class="formula">CH<sub>3</sub>CH=CHCH<sub>3</sub></span> 为例：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="260" viewBox="0 0 640 260" role="img" aria-label="顺式与反式 2-丁烯对比">
+          <!-- 顺式 -->
+          <g transform="translate(0,10)">
+            <line x1="170" y1="120" x2="270" y2="120" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="113" x2="270" y2="113" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="170" cy="120" r="19" fill="#374151"/>
+            <text x="170" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="270" cy="120" r="19" fill="#374151"/>
+            <text x="270" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="120" cy="72" r="20" fill="#16a34a"/>
+            <text x="120" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="320" cy="72" r="20" fill="#16a34a"/>
+            <text x="320" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="120" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="120" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="320" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="320" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <text x="220" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">顺式（cis）：两个 CH₃ 同侧</text>
+            <text x="220" y="242" text-anchor="middle" font-size="12" fill="#4b5563">沸点 3.7 °C · 偶极不为零</text>
+          </g>
+          <!-- 反式 -->
+          <g transform="translate(320,10)">
+            <line x1="170" y1="120" x2="270" y2="120" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="113" x2="270" y2="113" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="170" cy="120" r="19" fill="#374151"/>
+            <text x="170" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="270" cy="120" r="19" fill="#374151"/>
+            <text x="270" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="120" cy="72" r="20" fill="#16a34a"/>
+            <text x="120" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="320" cy="168" r="20" fill="#16a34a"/>
+            <text x="320" y="173" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="120" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="120" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="320" cy="72" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="320" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <text x="220" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">反式（trans）：两个 CH₃ 异侧</text>
+            <text x="220" y="242" text-anchor="middle" font-size="12" fill="#4b5563">沸点 0.9 °C · 更对称、更易结晶</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        顺反异构体是分子式、连接顺序都相同、仅<strong>空间排布</strong>不同的两种物质，
+        需要加热到断键才能互变。生活中的版本：天然橄榄油富含顺式油酸（液态）；
+        部分氢化产生的反式脂肪（固态）已被多国限制，因为反式异构体会升高心血管风险。
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "化学式相同的分子是完全相同的物质"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          只要分子式一样，就是同一种物质，性质必然相同。做题写出分子式就算写完了。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          分子式只登记"原子种类和数目"，不登记<strong>连接方式</strong>，更不登记<strong>空间排布</strong>。
+          身份有三层：分子式 → 结构式（同分异构：乙醇沸点 78 °C，二甲醚 −24 °C）→
+          立体结构（顺反异构：顺丁烯二酸熔点 135 °C，反丁烯二酸 287 °C；对映体：旋光方向相反，
+          在手性环境里表现迥异）。只有"结构 + 立体化学"才是物质的完整姓名。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：1-丁烯 CH₂=CH–CH₂CH₃ 为什么没有顺反异构？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：检查"每个双键碳连两个不同基团"这个条件，两个碳都要过审。</p>
+        <p>
+          1-丁烯的端双键碳（C1）连着<strong>两个氢</strong>——基团相同。
+          既然 C1 上两个基团可以互换而不产生任何新排布，"同侧/异侧"就失去了意义。
+          顺反异构要求<strong>两端都"各连两个不同基团"</strong>，缺一不可。
+          顺便自检：丙烯、乙烯同样因端碳双氢而无顺反异构。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 手性碳与对映体 ============ -->
+  <section id="chiral">
+    <h2>§4 手性碳与对映体：乳酸的左右手</h2>
+    <p>
+      当一个碳原子接了<strong>四个互不相同的基团</strong>，它就成了
+      <span class="term">手性碳</span><span class="en">chiral center</span>：
+      无论如何都找不到对称面。它有两种且只有两种四面体排法，彼此互为镜像——
+      就像左手与右手。这样的一对分子互称<span class="term">对映体</span>
+      <span class="en">enantiomers</span>。
+    </p>
+    <p>
+      经典例子是乳酸 <span class="formula">CH<sub>3</sub>CH(OH)COOH</span>
+      （酸奶里那个酸）：中间的碳连着 –CH₃、–OH、–COOH、–H 四个不同基团，是手性碳。
+      于是乳酸有两种：一种使偏振光右旋（记作 +），一种使它左旋（记作 −）。
+      关于<span class="term">旋光性</span><span class="en">optical activity</span>，
+      入门只需一句话：<strong>对映体使平面偏振光向相反方向旋转相同角度，除此之外
+      在非手性环境里性质完全相同</strong>（旋光方向与 D/L 标记没有必然对应，需实验测定）。
+    </p>
+
+    <h3>🔬 动手玩：镜像重合演示器</h3>
+    <p>
+      左边是乳酸分子，右边是它的镜像（四种取代基用颜色区分）。
+      请用"旋转镜像"按钮做平面旋转，再点"尝试重合"——演示器会把镜像平移到原分子上对齐。
+      你会发现：<strong>无论转到哪个角度，总有基团"站错位置"。</strong>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mirSvg" width="660" height="330" viewBox="0 0 660 330" role="img" aria-label="手性分子镜像重合演示器"></svg>
+        <div class="fig-controls">
+          <button type="button" class="btn ghost" id="mirR30">↻ 旋转 +30°</button>
+          <button type="button" class="btn ghost" id="mirL30">↺ 旋转 −30°</button>
+          <button type="button" class="btn" id="mirTry">🎯 尝试重合</button>
+          <button type="button" class="btn ghost" id="mirReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="mirReadout"></div>
+      </div>
+      <figcaption>
+        绿 = CH₃，红 = OH，蓝 = COOH，白 = H；粗楔线伸向纸外，虚线缩向纸后。
+        平面内旋转保持"手性"不变——这是演示的极限；即使允许在三维空间里任意旋转，
+        对映体依然无法与原分子重合，这正是手性的定义。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：判断手性碳</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        2-丁醇 <span class="formula">CH<sub>3</sub>CH(OH)CH<sub>2</sub>CH<sub>3</sub></span>
+        有没有手性碳？若有，请指出是哪个碳、连了哪四个基团。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">方法：逐个检查碳，问它"连的四个基团是否互不相同"。
+          两端的 C1（3 个 H + 1 个 C）与 C4 立即淘汰——有相同的 H。</li>
+        <li class="step">C2 连着：–OH、–H、–CH₃（向上）、–CH₂CH₃（向下）。四个基团两两不同 → <strong>C2 是手性碳</strong>。</li>
+        <li class="step">C3 是 CH₂（两个 H），同样淘汰。结论：只有 C2 一个手性碳。</li>
+        <li class="step">✅ 推论：恰有一个手性碳的分子必有手性，存在两种对映体（R 与 S，命名规则本入门从略）。
+          所以"2-丁醇"其实是一对左右手——实验室合成的通常是 1:1 混合物（外消旋体）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        下列分子中，哪个存在顺反异构？A. 丙烯　B. 1-丁烯　C. 2-丁烯　D. 1-氯丙烯的一种写法 CH₂=CHCl
+        <em>（先逐项检查条件，再点开对照）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 调出判据：双键 + <strong>每个</strong>双键碳连两个不同基团。</li>
+        <li class="step">💡 检查 A 丙烯 CH₂=CHCH₃：端碳 C1 连两个 H → 不满足。B 1-丁烯同理（端碳双 H）→ 不满足。</li>
+        <li class="step">💡 检查 C 2-丁烯：C2 连 H 与 CH₃（不同），C3 连 H 与 CH₃（不同）→ <strong>存在顺反异构</strong>。
+          D 的 C1 同样双 H → 不满足。</li>
+        <li class="step">✅ 答案 C。口诀：『两头各自换不同，才分顺反』——端烯烃永远没有顺反异构。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 手性与生命 ============ -->
+  <section id="life">
+    <h2>§5 手性与生命：生物学只挑一只手</h2>
+    <p>
+      惊人的事实：构成蛋白质的氨基酸几乎全是 <strong>L 型</strong>（左手），
+      而糖几乎全是 <strong>D 型</strong>（右手）——生物界是高度"偏手"的。
+      原因不难理解：酶和受体本身是手性分子，它们的"口袋"就像左手手套，
+      只合一只手的分子戴得进去。于是对映体进入身体后，可能一个被识别利用、另一个被无视甚至闯祸：
+    </p>
+    <ul>
+      <li><strong>气味</strong>：(R)-香芹酮闻起来是留兰香味，它的镜像 (S)-香芹酮却是葛缕子（藏茴香）味——鼻子的受体分得清左右手。</li>
+      <li><strong>药效</strong>：左旋多巴治帕金森，右旋体却几乎无效；某些手性药物两种对映体作用完全不同。</li>
+    </ul>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 沙利度胺（反应停）悲剧</div>
+      1950 年代末，沙利度胺作为孕妇止吐镇静药在欧洲上市。它的一种对映体（R）有镇静作用，
+      另一种（S）却会干扰胎儿四肢发育，酿成上万"海豹肢"畸形婴儿。
+      更糟的是：人体会把 R 型慢慢转化为 S 型——就算只给"好的那一半"也难以自保。
+      此后各国新药审批都要求交代<strong>对映体的单独行为</strong>。这一课，
+      是立体化学用最沉重的代价写进教科书的。
+    </div>
+
+    <details class="think">
+      <summary>想一想：既然天然氨基酸几乎都是 L 型，你吃的营养补充剂要不要担心"左右手比例"？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：化学合成（非手性条件）通常得到什么比例？身体又怎么处理另一半？</p>
+        <p>
+          普通化学合成的氨基酸若不使用手性工艺，得到的是 1:1 的外消旋混合物——
+          身体往往只吸收 L 型，另一半要么排出、要么甚至干扰吸收（D 型与 L 型竞争转运蛋白）。
+          所以药物级氨基酸生产普遍采用手性合成或拆分工艺。
+          这也解释了为什么手性是制药工业的核心问题（10 药物化学分支的主角之一）。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>碳的 sp³ 构型是<strong>正四面体</strong>（109.5°）；楔形线/虚线是纸面表达三维的通用记号。</li>
+        <li>单键可旋转产生<strong>构象</strong>：交叉式比重叠式稳定约 12.6 kJ/mol（扭转张力）。</li>
+        <li>双键不能旋转 → <strong>顺反异构</strong>，条件是每个双键碳都连两个不同基团。</li>
+        <li>四个基团互不相同的碳是<strong>手性碳</strong>；两种排法互为<strong>对映体</strong>（镜像且不能重合），旋光方向相反。</li>
+        <li>生物界挑手：氨基酸 L、糖 D；对映体在身体里可能药效/毒性迥异——沙利度胺之训。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 立体化学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "甲烷分子的空间构型与 C–H 键间夹角是？",
+            "options": [
+              "平面正方形，90°",
+              "正四面体，约 109.5°",
+              "三角锥形，约 107°",
+              "直线形，180°"
+            ],
+            "answer": 1,
+            "explain": "四个 sp³ 杂化轨道彼此尽量远离，指向正四面体四个顶点，键角 109°28′。三角锥是氨（有孤对电子挤压）的构型，别和甲烷搞混。"
+          },
+          {
+            "q": "乙烷的各种构象中，能量最低的是？",
+            "options": [
+              "重叠式",
+              "交叉式",
+              "两者能量完全相同",
+              "取决于温度，无固定答案"
+            ],
+            "answer": 1,
+            "explain": "交叉式中前后两个碳的 C–H 键彼此错开，电子云互不挤靠，扭转张力最小；重叠式高出约 12.6 kJ/mol。室温热运动足以在两者间转换，但大多数分子停留在交叉式。"
+          },
+          {
+            "q": "下列分子中存在顺反异构的是？",
+            "options": ["丙烯", "1-丁烯", "2-丁烯", "乙烯"],
+            "answer": 2,
+            "explain": "顺反异构要求每个双键碳都连两个不同基团。2-丁烯两端都是 H 与 CH₃，满足；丙烯和 1-丁烯的端碳连着两个相同的 H，乙烯两端更是各连两个 H，都不满足。"
+          },
+          {
+            "q": "一个碳原子成为手性碳的条件是？",
+            "options": [
+              "连接四个碳原子",
+              "连接四个互不相同的基团",
+              "本身形成双键",
+              "连有羟基"
+            ],
+            "answer": 1,
+            "explain": "四个基团互不相同时，四面体排布只有互为镜像的两种，不存在对称面，才有左右手之分。连四个碳或连羟基都不是充分条件——基团必须两两不同。"
+          },
+          {
+            "q": "关于一对对映体（如两种乳酸），下列说法正确的是？",
+            "options": [
+              "熔点、沸点、密度各不相同",
+              "互为镜像且不能重合，使偏振光向相反方向旋转",
+              "在任何化学反应中的表现都完全相同",
+              "通过平面内旋转即可互相重合"
+            ],
+            "answer": 1,
+            "explain": "对映体在非手性环境里熔沸点、溶解度完全相同，与非手性试剂反应也一样；差别有二：旋光方向相反，以及与手性对象（酶、受体、偏振光）作用不同。这正是『不能重合』带来的可观测差异。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-碳骨架与官能团.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 碳骨架与官能团</span></a>
+      <a class="next" href="03-反应机理入门.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 反应机理入门</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（乙烷构象旋转器 / 镜像重合演示器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+  function rot2(x, y, deg) {
+    var r = deg * Math.PI / 180;
+    return [x * Math.cos(r) - y * Math.sin(r), x * Math.sin(r) + y * Math.cos(r)];
+  }
+
+  /* ---------- 1. 乙烷构象：纽曼投影 + 能量曲线 ---------- */
+  var confSvg = document.getElementById("confSvg");
+  if (confSvg) {
+    var confReadout = document.getElementById("confReadout");
+    var confSlider = document.getElementById("confSlider");
+    var CX = 170, CY = 165, R = 88, BACK = 26;
+
+    function energy(theta) { return 6.3 * (1 + Math.cos(3 * theta * Math.PI / 180)); }
+
+    function drawConf() {
+      var th = parseFloat(confSlider.value);
+      confSvg.innerHTML = "";
+      T(confSvg, CX, 30, "纽曼投影：沿 C–C 键看", { size: 14, weight: 700 });
+      // 后碳圆圈与键
+      el("circle", { cx: CX, cy: CY, r: BACK, fill: "#ffffff", stroke: "#94a3b8", "stroke-width": 2.5 }, confSvg);
+      var fBase = [90, 210, 330];
+      fBase.forEach(function (a) {
+        var rad = (a + th) * Math.PI / 180;
+        var x1 = CX + BACK * Math.cos(rad), y1 = CY + BACK * Math.sin(rad);
+        var x2 = CX + R * Math.cos(rad), y2 = CY + R * Math.sin(rad);
+        el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: "#64748b", "stroke-width": 4 }, confSvg);
+        T(confSvg, CX + (R + 14) * Math.cos(rad), CY + (R + 14) * Math.sin(rad) + 4, "H", { size: 12, weight: 700, fill: "#475569" });
+      });
+      // 前碳点与键
+      fBase.forEach(function (a) {
+        var rad = a * Math.PI / 180;
+        var x2 = CX + R * Math.cos(rad), y2 = CY + R * Math.sin(rad);
+        el("line", { x1: CX, y1: CY, x2: x2, y2: y2, stroke: "#15803d", "stroke-width": 5 }, confSvg);
+        T(confSvg, CX + (R + 14) * Math.cos(rad), CY + (R + 14) * Math.sin(rad) + 4, "H", { size: 12, weight: 700, fill: "#166534" });
+      });
+      el("circle", { cx: CX, cy: CY, r: 10, fill: "#15803d" }, confSvg);
+
+      // 能量曲线小图
+      var X0 = 300, Y0 = 250, W = 320, H = 175;
+      el("line", { x1: X0, y1: Y0, x2: X0 + W + 14, y2: Y0, stroke: "#94a3b8", "stroke-width": 2 }, confSvg);
+      el("line", { x1: X0, y1: Y0, x2: X0, y2: Y0 - H - 24, stroke: "#94a3b8", "stroke-width": 2 }, confSvg);
+      var pts = [];
+      for (var d = 0; d <= 360; d += 6) {
+        pts.push((X0 + d * W / 360).toFixed(1) + "," + (Y0 - energy(d) * 12).toFixed(1));
+      }
+      el("polyline", { points: pts.join(" "), fill: "none", stroke: "#15803d", "stroke-width": 2.5 }, confSvg);
+      var mx = X0 + th * W / 360, my = Y0 - energy(th) * 12;
+      el("circle", { cx: mx, cy: my, r: 7, fill: "#b45309", class: "anim-pulse" }, confSvg);
+      T(confSvg, X0 + W / 2, Y0 + 22, "二面角 θ（°）", { size: 12, fill: "#4b5563" });
+      var yl = el("text", { x: X0 - 12, y: Y0 - H / 2, "text-anchor": "middle", "font-size": 12, fill: "#4b5563",
+        transform: "rotate(-90 " + (X0 - 12) + " " + (Y0 - H / 2) + ")" }, confSvg);
+      yl.textContent = "相对能量 kJ/mol";
+      T(confSvg, 620, 292, "绿=前碳 H · 灰=后碳 H", { size: 11, fill: "#6b7280" });
+
+      var m = th % 120, state, hint;
+      if (m < 15 || m > 105) { state = "重叠式（最不稳定）"; hint = "前后氢正对，扭转张力最大"; }
+      else if (Math.abs(m - 60) < 15) { state = "交叉式（最稳定）"; hint = "前后氢错开，扭转张力最小"; }
+      else { state = "介于两者之间"; hint = "正在翻越能垒"; }
+      confReadout.textContent = "二面角 θ = " + th + "° · " + state + " · 相对能量 ≈ " +
+        energy(th).toFixed(1) + " kJ/mol（峰顶 12.6）｜ " + hint;
+    }
+    confSlider.addEventListener("input", drawConf);
+    var s1 = document.getElementById("confStag"), s2 = document.getElementById("confEcl");
+    if (s1) s1.addEventListener("click", function () { confSlider.value = 60; drawConf(); });
+    if (s2) s2.addEventListener("click", function () { confSlider.value = 0; drawConf(); });
+    drawConf();
+  }
+
+  /* ---------- 2. 镜像重合演示器 ---------- */
+  var mirSvg = document.getElementById("mirSvg");
+  if (mirSvg) {
+    var mirReadout = document.getElementById("mirReadout");
+    var AX = 170, AY = 155, BX0 = 490, BY = 155;
+    var SUBS = [
+      { k: "OH", full: "OH", f: "#dc2626", tc: "#ffffff", x: 52, y: -56, bond: "w" },
+      { k: "H", full: "H", f: "#ffffff", tc: "#1f2937", x: -52, y: 56, bond: "d" },
+      { k: "CH₃", full: "CH₃（绿）", f: "#16a34a", tc: "#ffffff", x: -58, y: -46, bond: "p" },
+      { k: "COOH", full: "COOH（蓝）", f: "#2563eb", tc: "#ffffff", x: 58, y: 48, bond: "p" }
+    ];
+    var rot = 0, attempts = 0, busy = false;
+
+    function drawMirror(bx, rings) {
+      mirSvg.innerHTML = "";
+      T(mirSvg, 170, 26, "原分子（乳酸）", { size: 14, weight: 700, fill: "#166534" });
+      T(mirSvg, 490, 26, "镜像分子", { size: 14, weight: 700, fill: "#9a3412" });
+      // 镜面
+      el("line", { x1: 330, y1: 40, x2: 330, y2: 280, stroke: "#9ca3af", "stroke-width": 2, "stroke-dasharray": "8 7" }, mirSvg);
+      T(mirSvg, 330, 32, "镜面", { size: 12, fill: "#6b7280" });
+
+      drawOneMol(AX, AY, 0, "A", null);
+      drawOneMol(bx, BY, rot, "M", rings);
+
+      // 图例
+      el("line", { x1: 120, y1: 306, x2: 168, y2: 306, stroke: "#92400e", "stroke-width": 8 }, mirSvg);
+      T(mirSvg, 250, 310, "粗楔＝伸向纸外", { size: 11, fill: "#4b5563" });
+      el("line", { x1: 340, y1: 306, x2: 388, y2: 306, stroke: "#6b7280", "stroke-width": 3, "stroke-dasharray": "6 5" }, mirSvg);
+      T(mirSvg, 470, 310, "虚线＝缩向纸后", { size: 11, fill: "#4b5563" });
+      T(mirSvg, 578, 310, "细线＝纸面内", { size: 11, fill: "#4b5563" });
+    }
+
+    function drawOneMol(cx, cy, angle, which, rings) {
+      var i;
+      // 键（先画，球后画覆盖端点）
+      SUBS.forEach(function (s) {
+        var rx = (which === "A") ? s.x : -s.x;
+        var ry = s.y;
+        var p = (which === "A") ? [rx, ry] : rot2(rx, ry, angle);
+        var x2 = cx + p[0], y2 = cy + p[1];
+        var dx = x2 - cx, dy = y2 - cy, L = Math.sqrt(dx * dx + dy * dy);
+        if (s.bond === "w") {
+          var px = -dy / L, py = dx / L, ex = cx + dx * 0.82, ey = cy + dy * 0.82;
+          el("polygon", { points: (cx + px * 2.5) + "," + (cy + py * 2.5) + " " + (ex + px * 12) + "," + (ey + py * 12) +
+            " " + (ex - px * 12) + "," + (ey - py * 12) + " " + (cx - px * 2.5) + "," + (cy - py * 2.5), fill: "#4b5563" }, mirSvg);
+        } else if (s.bond === "d") {
+          el("line", { x1: cx, y1: cy, x2: x2, y2: y2, stroke: "#6b7280", "stroke-width": 3, "stroke-dasharray": "6 5" }, mirSvg);
+        } else {
+          el("line", { x1: cx, y1: cy, x2: x2, y2: y2, stroke: "#6b7280", "stroke-width": 3 }, mirSvg);
+        }
+      });
+      // 中心碳
+      el("circle", { cx: cx, cy: cy, r: 20, fill: "#374151" }, mirSvg);
+      T(mirSvg, cx, cy + 5, "C", { size: 14, weight: 700, fill: "#ffffff" });
+      // 取代基球
+      SUBS.forEach(function (s, idx) {
+        var rx = (which === "A") ? s.x : -s.x;
+        var p = (which === "A") ? [rx, s.y] : rot2(rx, s.y, angle);
+        var x2 = cx + p[0], y2 = cy + p[1];
+        if (rings && which === "M" && rings[idx]) {
+          el("circle", { cx: x2, cy: y2, r: 22, fill: "none", stroke: rings[idx], "stroke-width": 3.5 }, mirSvg);
+        }
+        el("circle", { cx: x2, cy: y2, r: 17, fill: s.f, stroke: s.k === "H" ? "#9ca3af" : "rgba(0,0,0,.2)", "stroke-width": 1.5 }, mirSvg);
+        T(mirSvg, x2, y2 + 4, s.k, { size: 11, weight: 700, fill: s.tc });
+      });
+    }
+
+    function mirrorSubsPos() {
+      return SUBS.map(function (s) {
+        var p = rot2(-s.x, s.y, rot);
+        return [BX0 + p[0], BY + p[1]];
+      });
+    }
+
+    function setRot(d) {
+      if (busy) return;
+      rot = ((rot + d) % 360 + 360) % 360;
+      attempts++;
+      drawMirror(BX0, null);
+      mirReadout.textContent = "已旋转 " + rot + "°。平面内旋转不改变分子的手性——点『尝试重合』把它平移过去对对看。";
+    }
+
+    var r30 = document.getElementById("mirR30"), l30 = document.getElementById("mirL30"),
+        tryBtn = document.getElementById("mirTry"), resetBtn = document.getElementById("mirReset");
+
+    if (r30) r30.addEventListener("click", function () { setRot(30); });
+    if (l30) l30.addEventListener("click", function () { setRot(-30); });
+    if (resetBtn) resetBtn.addEventListener("click", function () {
+      if (busy) return;
+      rot = 0; attempts = 0;
+      drawMirror(BX0, null);
+      mirReadout.textContent = "已重置。镜像分子已就位——先旋转，再『尝试重合』。";
+    });
+
+    if (tryBtn) tryBtn.addEventListener("click", function () {
+      if (busy) return;
+      busy = true; attempts++;
+      var t0 = null;
+      function slide(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / 600);
+        var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var bx = BX0 + (AX - BX0) * ease;
+        drawMirror(bx, null);
+        if (k < 1) { requestAnimationFrame(slide); return; }
+        // 对齐检查
+        var mp = SUBS.map(function (s) {
+          var p = rot2(-s.x, s.y, rot);
+          return [bx + p[0], BY + p[1]];
+        });
+        var rings = [], aligned = 0, wrongList = [];
+        SUBS.forEach(function (s, i) {
+          var ox = AX + s.x, oy = AY + s.y;
+          var dx = mp[i][0] - ox, dy = mp[i][1] - oy;
+          if (dx * dx + dy * dy < 324) { rings.push("#15803d"); aligned++; }
+          else {
+            rings.push("#b91c1c");
+            // 找它压到了谁的位置
+            SUBS.forEach(function (o, j) {
+              if (j !== i) {
+                var jx = mp[i][0] - (AX + o.x), jy = mp[i][1] - (AY + o.y);
+                if (jx * jx + jy * jy < 324) wrongList.push(s.full + " 顶到了 " + o.full + " 的位置");
+              }
+            });
+          }
+        });
+        drawMirror(bx, rings);
+        var msg = "旋转 " + rot + "° 后尝试重合：4 个基团只有 " + aligned + "/4 对上";
+        if (aligned < 4) {
+          msg += " —— ✗ 无法重合！" + (wrongList.length ? "例如 " + wrongList[0] + "。" : "");
+          msg += " 平面内旋转永远凑不齐。";
+          if (attempts >= 3) msg += " 事实上就算允许三维空间里任意旋转也不行——这对镜像就是两种分子（对映体）。";
+        }
+        mirReadout.textContent = msg;
+        setTimeout(function () {
+          var t1 = null;
+          function back(ts2) {
+            if (t1 === null) t1 = ts2;
+            var k2 = Math.min(1, (ts2 - t1) / 600);
+            var e2 = k2 < 0.5 ? 2 * k2 * k2 : 1 - Math.pow(-2 * k2 + 2, 2) / 2;
+            drawMirror(BX0 + (AX - BX0) * (1 - e2), null);
+            if (k2 < 1) requestAnimationFrame(back);
+            else busy = false;
+          }
+          requestAnimationFrame(back);
+        }, 900);
+      }
+      requestAnimationFrame(slide);
+    });
+
+    drawMirror(BX0, null);
+    mirReadout.textContent = "镜像分子已就位。用旋转按钮试着把它转到与左边一致，再『尝试重合』。";
+  }
+})();
+</script>
+</body>
+</html>

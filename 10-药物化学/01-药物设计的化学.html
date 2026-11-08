@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>药物设计的化学 · 药物化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b10">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">10 药物化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 药物设计的化学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">10 药物化学 · 第 1 章</div>
+    <h1>药物设计的化学：一把钥匙的开刃</h1>
+    <p class="lede">
+      一片 500 mg 的药片里挤着约 10²¹ 个相同的分子。吞下后它们随血液漫无目的地刷过全身——
+      却几乎只在生病的部位"停下开工"。凭什么？因为<strong>药物不是炸弹，而是精密的分子工具</strong>：
+      它的形状与电荷恰好与致病靶点互补，像钥匙插进锁孔。本章用一把"钥匙"串起药物化学的全景——
+      靶点与分子识别、ADME 体内旅程、构效关系、经典案例，直到现代设计方法。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：02 有机化学（官能团·手性）＋05 生物化学（酶·受体）</span>
+      <span class="chip">交互动画 ×1</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#targets">靶点与分子识别</a>
+    <a href="#adme">ADME 药动学</a>
+    <a href="#sar">构效关系</a>
+    <a href="#cases">经典案例</a>
+    <a href="#chirality">手性之训</a>
+    <a href="#modern">现代设计</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：药片里没有导航仪</h2>
+    <p>
+      很多人想象中的药物像导弹：认路、瞄准、命中。真相更浪漫——每个药物分子都是一枚
+      <strong>没有动力的钥匙</strong>，被血流推着随机碰撞体内每一个角落。碰撞千万次，
+      绝大多数徒劳弹开；只有遇到那把"齿纹完全对得上"的锁——
+      <span class="term">靶点</span><span class="en">target</span>——它才插进去、停下来、发挥作用。
+      所谓"药到病除"，其实是<strong>选择性停留</strong>的统计结果。
+    </p>
+    <p>
+      这个朴素图像立刻抛出三个问题，正是本章的路线图：钥匙与锁如何识别（§1）？
+      钥匙如何在被冲走、被销毁之前赶到锁旁（§2）？齿纹磨掉一格会发生什么（§3–§4）？
+    </p>
+    <details class="think">
+      <summary>想一想：既然靠"形状匹配"起效，能不能造一把"万能钥匙"，同时打开许多靶点，一药治百病？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：人体自己就有上万种蛋白，它们的"锁眼"长什么样？全都相似吗？</p>
+        <p>
+          恰恰相反——<strong>好药要"挑锁"，而不是"开遍所有的锁"</strong>。一把万能钥匙意味着
+          与许多无关蛋白结合，每把锁都拨动一点，副作用随之而来。经典教训是第一代抗组胺药：
+          它们既能外周抗过敏，也能穿入脑内锁住嗜睡相关受体，病人吃完昏昏欲睡。
+          <strong>选择性</strong>（只打该打的靶）与<strong>亲和力</strong>（打得够狠）同为新药的核心指标。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 靶点与分子识别 ============ -->
+  <section id="targets">
+    <h2>§1 靶点与分子识别：药物如何起效</h2>
+    <p>
+      人体内绝大多数药物的靶点落在三类生物大分子上。它们的共同点：都有一条"缝隙"或"凹坑"
+      （结合位点），天然信号分子或底物本该进来，药物分子冒名顶替。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>靶点类型</th><th>它是什么</th><th>药物通常做什么</th><th>实例</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>受体</strong><br><span class="en">receptor</span></td>
+          <td>细胞表面/胞内的"信号接收器"，多为跨膜蛋白</td>
+          <td>占住位点，模拟天然信号（激动剂）或挡住信号（拮抗剂）</td>
+          <td>肾上腺素受体 ↔ 哮喘吸入剂沙丁胺醇</td>
+        </tr>
+        <tr>
+          <td><strong>酶</strong><br><span class="en">enzyme</span></td>
+          <td>催化生化反应的分子机器</td>
+          <td>堵进活性位点当"假底物"，让反应停摆</td>
+          <td>HMG-CoA 还原酶 ↔ 他汀类降脂药</td>
+        </tr>
+        <tr>
+          <td><strong>离子通道</strong></td>
+          <td>跨膜离子闸门，控制 Na⁺/K⁺/Ca²⁺ 流动</td>
+          <td>卡住闸门，改变开闭时长</td>
+          <td>电压门控钠通道 ↔ 局麻药利多卡因</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>从锁钥到诱导契合</h3>
+    <p>
+      1894 年，糖化学家 Fischer 提出著名的<span class="term">锁钥模型</span>
+      <span class="en">lock and key</span>：酶与底物像锁与钥匙，刚性互补、严丝合缝。
+      它解释了专一性，却解释不了一个酶为何能接纳形形色色的类似物。1958 年 Koshland 提出
+      <span class="term">诱导契合</span><span class="en">induced fit</span>：蛋白不是死锁，
+      配体靠近时，口袋与配体会<strong>相互微调形变</strong>，像手伸进手套时手套随之贴手。
+      今天两者合起来读：<strong>互补是前提，柔性是常态</strong>。
+    </p>
+    <p>那"插进锁孔"具体靠什么力量？主要是四种非共价作用（呼应 02 分支的分子间作用力）：</p>
+    <ul>
+      <li><strong>氢键</strong>——方向性强，一个约贡献 1–3 kcal/mol，是"对准齿位"的关键；</li>
+      <li><strong>静电作用</strong>——正负电荷相吸，强而长程，盐桥最典型；</li>
+      <li><strong>疏水效应</strong>——非极性基团互相贴靠、把有序的水分子挤回溶液（熵增），
+        往往是结合的最大推手；</li>
+      <li><strong>范德华力</strong>——单个极弱，但形状贴得越满、接触面越大，加起来可观。</li>
+    </ul>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      药物-靶点结合 = <strong>形状 ＋ 作用力</strong>的双重匹配：形状决定"能不能结合"，
+      作用力的数目与强度决定"结合多牢"。结合能（ΔG）越<strong>负</strong>，亲和力越高——
+      室温下结合能每差约 1.4 kcal/mol，亲和力相差约 10 倍。
+    </div>
+
+    <h3>🔬 动手玩：给口袋配钥匙</h3>
+    <p>
+      下面的受体口袋有三个彩色位点（红＝氢键供体、蓝＝氢键受体）和一段黄色疏水区。
+      三个候选分子谁插得进去？逐个点击"尝试对接"，看结合能评分——
+      记住：<strong>形状不对一票否决，作用力缺一组就打折</strong>。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="dockSvg" width="560" height="340" viewBox="0 0 560 340" role="img"
+             aria-label="配体-受体对接模拟器：三个候选分子尝试进入受体口袋"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="dockA" type="button">尝试分子 A（块状）</button>
+          <button class="btn" id="dockB" type="button">尝试分子 B（L 形）</button>
+          <button class="btn" id="dockC" type="button">尝试分子 C（缺基 L 形）</button>
+          <button class="btn ghost" id="dockReset" type="button">↺ 重置</button>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:.78rem;color:var(--ink-2);margin-top:10px">
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#dc2626;display:inline-block"></span>受体·氢键供体位点</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#2563eb;display:inline-block"></span>受体·氢键受体位点</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:14px;height:8px;background:#facc15;border:1px solid #ca8a04;display:inline-block"></span>口袋疏水区</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="display:inline-block;width:24px;border-top:2.5px dashed #334155"></span>形成的氢键</span>
+        </div>
+        <div class="fig-readout" id="dockReadout">👆 选择一个候选分子，尝试让它进入右侧受体口袋</div>
+      </div>
+      <figcaption>
+        评分解读：结合能越负结合越牢。分子 B 比分子 A 强约百万倍量级、比分子 C 强约千倍量级——
+        差距全部来自"形状互补 ＋ 位点配对"这八个字。真实研究中这类打分由分子对接软件完成（见 §6），
+        但判断逻辑与你刚才的手感一模一样。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么吃下去的药能"认得"生病的部位？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          亿万把相同的钥匙随血流刷过全身每一把锁，绝大多数锁眼形状不对、插不进去，
+          于是钥匙被继续冲走。只有患处那把"特别的锁"（大量出现的靶蛋白）齿纹吻合，
+          钥匙在那里停留最久——<strong>看起来"认得"，其实是"只有那里留得住"</strong>。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 分子互补 ＋ 靶点差异</span>
+        <p>
+          选择性来自两个条件的交集。① <strong>分子互补</strong>：氢键、静电、疏水与范德华
+          必须成组匹配（就像刚才 demo 里的分子 B），否则结合太弱留不住。② <strong>靶点差异</strong>：
+          致病靶点须在人体正常组织缺失或明显不同——细菌要自己造细胞壁（人体细胞没有壁）、
+          炎症组织高表达 COX-2、某些癌细胞过度依赖特定激酶。<strong>选择性毒性就是把差异变现</strong>。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 分布与代谢的化学</span>
+        <p>
+          严格说药物没有任何"感知"：它被动随血流与浓度梯度分布，与靶点碰撞千万次，
+          只有互补时解离速率（k<sub>off</sub>）足够慢、停留时间足够长，药效才积累出来。
+          与此同时肝脏的 CYP450 酶系不断把外来分子氧化、肾不断把它冲走——药物必须在
+          "被清除之前"维持足够浓度。所以好药 = <strong>亲和力 × 选择性 × ADME</strong> 的乘积，
+          缺一项归零；试管里结合最强的分子，往往根本到不了靶点。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 ADME ============ -->
+  <section id="adme">
+    <h2>§2 ADME：一片药的体内旅程</h2>
+    <p>
+      新化合物九死一生，多数不是死在"结合不强"，而是死在"体内混不下去"。药物动力学的四道关卡
+      合称 <strong>ADME</strong>（呼应 <a href="../05-生物化学/index.html">05 生物化学</a>的代谢一章）：
+    </p>
+    <ul>
+      <li><strong>A · 吸收</strong>（Absorption）——从给药处进入血液：分子太大、极性太强就过不了胃肠壁；
+        即使进去了，还可能被肝脏"首过效应"先扣下一截。</li>
+      <li><strong>D · 分布</strong>（Distribution）——随血流分送到组织：脂溶性才穿得过血脑屏障；
+        与血浆蛋白结合太牢又会"押运在途、无法下车"。</li>
+      <li><strong>M · 代谢</strong>（Metabolism）——肝脏 CYP450 把分子氧化（Ⅰ相），再接上葡萄糖醛酸等
+        极性大基团（Ⅱ相），通常活性下降、水溶性上升、准备出舱；少数药物却是"前药"，代谢后才活化。</li>
+      <li><strong>E · 排泄</strong>（Excretion）——肾滤过随尿出走，或经胆汁入肠。代谢 ＋ 排泄共同决定
+        药物在体内的<strong>半衰期</strong>。</li>
+    </ul>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 试管 ≠ 人体</div>
+      试管里测出"结合能 −12 kcal/mol"毫无意义，如果这个分子口服不吸收、五分钟就被代谢。
+      一句话版：<strong>好药要"到得了、待得住、用得好、走得掉"</strong>——A、D、M、E 四关全过，
+      才配谈药效。
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么很多药一天要服 3–4 次，而他汀类一天只需一片？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：给药间隔的依据是血药浓度的"半衰期"，而半衰期由谁决定？</p>
+        <p>
+          代谢（M）与排泄（E）不断清除药物，血药浓度每过一个半衰期减半；半衰期短的药必须
+          频繁补服，才能让浓度维持在"有效窗口"内。他汀类半衰期长，且药效滞后于血药浓度——
+          酶被抑制后，胆固醇合成下调的效果可持续一整天，于是每天一片足矣。缓释胶囊
+          （药剂学的招数）则反过来"拖住药物的释放"，等效延长半衰期。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 SAR ============ -->
+  <section id="sar">
+    <h2>§3 构效关系：改一个基团，改一段命运</h2>
+    <p>
+      <span class="term">构效关系</span><span class="en">SAR, structure–activity relationship</span>
+      研究一个问题：分子结构每动一刀，活性怎么变？它的开山故事正好也是"假底物"策略的教科书。
+    </p>
+
+    <h3>磺胺：染料柜里翻出来的抗生素</h3>
+    <p>
+      1932 年，德国病理学家 Domagk 测试一批红色染料时发现：染料
+      <span class="formula">百浪多息</span>能让感染链球菌的小鼠活下来——而它在试管里毫无杀菌力。
+      谜底很快揭开：染料在体内被代谢<strong>切开</strong>，释放出真正的主角
+      <span class="formula">磺胺</span>（对氨基苯磺酰胺）。磺胺长得酷似细菌的造叶酸原料
+      <strong>PABA</strong>（对氨基苯甲酸）：细菌认不出这位"李鬼"，拿它拼出造不出叶酸的"假图纸"，
+      从此不能合成 DNA 的原料，活活饿死。而人体根本不用 PABA 自己造叶酸——直接从饭菜里获取，
+      <strong>没有这条通路，就没有这个靶点</strong>，于是磺胺对细菌赶尽杀绝、对人体网开一面。
+      Domagk 因此获 1939 年诺贝尔生理学或医学奖。
+    </p>
+    <p>
+      更妙的是磺胺 N 上的取代基几乎可以随意更换——改变溶解度、酸碱性、代谢速度，
+      于是一个先导分子滚雪球成整个"磺胺家族"（上千个衍生物）。把"改结构 → 测活性 → 找规律"
+      做成系统方法，就是 SAR；再进一步用数学模型量化（QSAR），就是今天的计算机辅助优化。
+    </p>
+
+    <h3>📐 例题脚手架：给口袋挑钥匙</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 · 完整示范（口袋测绘题）</div>
+      <div class="worked-problem">
+        某酶的活性口袋测绘结果：① 袋口宽约 8 Å，入口一圈疏水残基；② 袋底有一个氢键供体（—NH）；
+        ③ 中部有一条带负电的氨基酸侧链。候选分子——<br>
+        甲：细长形，尾端带 —OH，表面多甲基；乙：直径 12 Å 的刚性球，布满羟基；丙：细长形，
+        尾端带 <span class="formula">C=O</span>，中部带 <span class="formula">—NH₃⁺</span>，还有两个甲基。
+        谁最可能成为先导化合物？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">先过<strong>形状关</strong>（一票否决）：袋口仅 8 Å，乙直径 12 Å 直接撞壁出局——
+          正是刚才 demo 里分子 A 的下场。</li>
+        <li class="step">再数<strong>作用力配对</strong>：袋底供体 —NH 需要配体出受体原子 →
+          甲的 —OH 可以、丙的 <span class="formula">C=O</span> 更强；中部负电残基需要正电配体 →
+          只有丙的 <span class="formula">—NH₃⁺</span> 配得上。</li>
+        <li class="step">最后看<strong>疏水贴合</strong>：入口的疏水圈偏爱非极性基团 → 甲的多个甲基 ✓、
+          丙的两个甲基 ✓，都能贴合。</li>
+        <li class="step">✅ 结论：丙胜出——形状匹配 ＋ 三组互补（C=O↔—NH、—NH₃⁺↔负电残基、CH₃↔疏水圈），
+          甲缺静电配对居次，乙形状出局。下一步：合成丙的系列类似物，测活性、做 SAR。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 经典案例 ============ -->
+  <section id="cases">
+    <h2>§4 经典案例：三把名钥匙</h2>
+
+    <h3>阿司匹林：乙酰化的"永久贴条"</h3>
+    <p>
+      柳树皮镇痛的古方，有效成分是水杨酸，但刺激胃。1897 年拜耳的化学家 Hoffmann
+      给它接上一个乙酰基（制成<span class="formula">乙酰水杨酸</span>），效力不减、胃刺激大减。
+      机制几十年后才揭晓：它把环氧酶 COX 活性中心的丝氨酸<strong>乙酰化</strong>——共价、不可逆，
+      相当于给酶贴了张撕不掉的封条。血小板没有细胞核、无法再造新酶，于是小小剂量即可
+      长效抑制血栓形成：同一分子，大剂量解热镇痛抗炎，小剂量抗血小板。
+    </p>
+
+    <h3>青霉素：绷紧的四元环</h3>
+    <p>
+      1928 年 Fleming 度假归来，发现培养皿里一粒青霉孢子周围葡萄球菌全军覆没。
+      青霉素的杀招在<span class="term">β-内酰胺环</span>：一个四元环，键角被强行压成 90°，
+      张力巨大如上紧的发条。它的形状酷似细菌细胞壁交联反应的底物（D-Ala–D-Ala 二肽），
+      转肽酶一口咬住后，绷紧的环当场弹开，把酶活性中心的丝氨酸<strong>共价锁死</strong>——
+      "自杀式"抑制，细胞壁交联失败，细菌吸水胀破。耐药菌的对策则是分泌 β-内酰胺酶，
+      提前把这把发条拆掉；克拉维酸等"自杀式抑制剂"再反过来保环，攻防至今仍在继续。
+    </p>
+
+    <h3>他汀：模仿底物的竞争者</h3>
+    <p>
+      1976 年，日本微生物学家远藤章从霉菌中找到第一个他汀。这类分子的开链部分
+      与胆固醇合成限速酶 HMG-CoA 还原酶的底物 HMG-CoA <strong>形状如出一辙</strong>，
+      是教科书级的竞争性抑制剂：占住活性位点却"不反应"，产线怠工，血脂下降。
+      其中阿托伐他汀（立普妥）成为药物史上最畅销的品种之一——从霉菌代谢物到"世纪之药"，
+      SAR 优化一路铺路。
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "天然药物比合成药物更安全"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          天然的 = 温和、无毒、随便吃；实验室合成的 = "化学品"、一定有害。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          安全性由<strong>分子本身与剂量</strong>决定，与出身无关。砒霜（三氧化二砷）纯天然却剧毒，
+          乌头碱、马兜铃酸都是天然毒物；反过来，天然产物也能当好药的起点——紫杉醇来自红豆杉树皮，
+          却因难溶于水必须化学修饰、特殊制剂才能注射；青蒿素也靠结构优化（蒿甲醚）才更好用。
+          有趣的是，剧毒的砒霜经严格剂量控制，如今以三氧化二砷注射液治疗急性早幼粒细胞白血病——
+          <strong>是药是毒，全看分子、剂量与用法</strong>。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 手性 ============ -->
+  <section id="chirality">
+    <h2>§5 手性之训：一枚药片，两种药</h2>
+    <p>
+      回忆 <a href="../02-有机化学/index.html">02 分支 · 立体化学</a>：手性碳上四个基团排布不同，
+      会得到互为镜像、却怎么转也重合不了的两个分子（对映体）。对非手性的环境（沸水、滤纸）
+      它们毫无差别；可蛋白质由 L-氨基酸折叠而成，是<strong>彻底手性的锁</strong>——
+      左右手套的分野在这里被放大成两种完全不同的药效。
+    </p>
+    <p>
+      1950 年代末，镇吐安眠药<strong>沙利度胺</strong>（反应停）以"安全无害"之名在欧洲广泛用于
+      孕吐。1961 年真相大白：它导致上万例"海豹肢"畸形儿。后续研究指向手性——
+      <span class="formula">(R)</span>-异构体负责镇静，<span class="formula">(S)</span>-异构体干扰
+      胎儿肢芽发育的血管生成。更残酷的是，两种异构体在体内还会<strong>互相转化</strong>：
+      即便只给"好手"，也防不住"坏手"慢慢生成。悲剧之后，手性药物必须把每个对映体
+      分开做药效与安全性评价写进了各国药政，也点燃了不对称合成与手性拆分的工业浪潮。
+      （讽刺的后续：沙利度胺严格避孕规程下，重新用于麻风结节性红斑与多发性骨髓瘤——
+      分子无善恶，用法见高下。）
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 手性 = 药效的一部分</div>
+      含手性中心的候选药物，其<strong>每个对映体都要当作独立的新药来评价</strong>：
+      可能一个好一个坏（沙利度胺）、可能只有一个是药（多数），也可能手拉手协同。
+      结构决定性质，立体结构也是结构。
+    </div>
+  </section>
+
+  <!-- ============ §6 现代设计 ============ -->
+  <section id="modern">
+    <h2>§6 现代方法：大海捞针的三种姿势</h2>
+    <p>经典时代的药物多靠"运气＋提取"；今天筛一把好钥匙，至少有三种系统化姿势。</p>
+    <ul>
+      <li><strong>高通量筛选（HTS）</strong>——机器人对着几十万至上百万个化合物库逐一"试钥匙"，
+        在微孔板上批量测活性。命中率极低，但胜在不依赖任何先验知识，冷门靶点也能撞出惊喜。
+        淘出的"苗头"再经 SAR 打磨成"先导"，最后优化成药。</li>
+      <li><strong>基于结构的药物设计</strong>——先拿到靶点蛋白的三维结构（X 射线晶体、冷冻电镜，
+        或 AlphaFold 预测），再在计算机里做<span class="term">分子对接</span>
+        <span class="en">docking</span>：像你在 §1 的 demo 里做的那样，让候选分子转着角度往口袋里塞、
+        打分排序。抗流感药奥司他韦（达菲）就是看着神经氨酸酶的口袋"量体裁衣"设计出来的。</li>
+      <li><strong>PROTAC 与降解疗法</strong>——一句话：不再"堵住"靶蛋白，而是给 recruit 来的
+        E3 泛素连接酶和靶蛋白各递一只手，把靶蛋白挂上"泛素化降解标签"，让细胞自己的
+        蛋白酶体把它整个拆掉——从"占着才有效"升级为"标记一次、催化降解"。</li>
+    </ul>
+    <p style="margin-bottom:0">
+      工具在变，逻辑未变：<strong>形状 ＋ 作用力 ＋ ADME</strong>。AI 生成分子、编码万亿级的
+      DNA 编码文库（DEL）都只是把同一道题算得更快——钥匙与锁的化学，仍是药物设计的底座。
+    </p>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>药物起效第一步是<strong>分子识别</strong>：受体、酶、离子通道三类靶点；锁钥讲互补，
+          诱导契合讲柔性；氢键、静电、疏水、范德华共同决定结合能——越负越牢。</li>
+        <li>药物"认得"患处是错觉：无导航、被动分布，靠<strong>靶点差异 ＋ 选择性停留</strong>积累药效。</li>
+        <li><strong>ADME</strong> 一句话版：到得了（A）、待得住（D）、用得好（M）、走得掉（E）——
+          四关全过才谈得上药。</li>
+        <li><strong>SAR</strong>：改基团看活性。磺胺冒充 PABA 骗细菌造"假叶酸"，
+          选择性毒性来自人体没有这条通路。</li>
+        <li>三把名钥匙三种抑制：阿司匹林共价乙酰化 COX、青霉素 β-内酰胺"自杀式"锁转肽酶、
+          他汀模仿底物竞争性占位。</li>
+        <li><strong>手性即药效</strong>：沙利度胺一好一坏且互变，对映体须逐一评价。</li>
+        <li>现代方法（HTS／基于结构的对接／PROTAC）是新工具，"形状＋作用力＋ADME"是老底座。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 药物设计的化学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "关于「锁钥模型」与「诱导契合」，下列说法正确的是？",
+            "options": [
+              "两者完全等同，只是名称不同",
+              "锁钥模型把受体口袋视为刚性；诱导契合强调结合时双方构象相互微调",
+              "诱导契合认为药物必须与受体形成共价键",
+              "锁钥模型认为受体口袋形状可以任意改变"
+            ],
+            "answer": 1,
+            "explain": "Fischer 的锁钥模型用「刚性互补」解释专一性；Koshland 的诱导契合补充：配体靠近时，口袋与配体的构象会相互调整——锁会为钥匙轻微变形。两者是递进关系，不是对立。"
+          },
+          {
+            "q": "ADME 四个字母中的 M 指的是？",
+            "options": ["分布", "代谢", "吸收", "排泄"],
+            "answer": 1,
+            "explain": "M = Metabolism（代谢）：主要在肝脏被 CYP450 氧化（Ⅰ相），再接葡萄糖醛酸等极性基团（Ⅱ相），便于经肾（E，排泄）清除。A 是吸收、D 是分布。"
+          },
+          {
+            "q": "磺胺类药物能抑菌却对人体细胞毒性很小，原因是？",
+            "options": [
+              "磺胺入血后立即分解失活",
+              "磺胺结构类似 PABA，冒充原料让细菌造不出叶酸；人体直接从食物获取叶酸，没有这条通路",
+              "磺胺专门溶解细菌的细胞壁",
+              "人体细胞膜对磺胺完全不透"
+            ],
+            "answer": 1,
+            "explain": "选择性毒性的经典：细菌必须用 PABA 自行合成叶酸，磺胺顶替原料使其断供；人类从膳食直接获得叶酸——靶点在人体缺席，故安全。选项 C 是青霉素的逻辑。"
+          },
+          {
+            "q": "青霉素的 β-内酰胺环之所以能杀菌，关键在于？",
+            "options": [
+              "四元环张力大，形似 D-Ala–D-Ala，开环时共价锁死转肽酶，阻断细胞壁交联",
+              "六元芳香环稳定，通过可逆氢键抑制酶",
+              "环内的金属离子催化细胞壁水解",
+              "环上的甲基是必不可少的药效基团"
+            ],
+            "answer": 0,
+            "explain": "四元环键角被压到约 90°，像上紧的发条；青霉素模仿细菌细胞壁交联的底物 D-Ala–D-Ala，骗转肽酶咬住后环弹出，共价酰化酶活性中心——细胞壁交联失败，细菌胀破。"
+          },
+          {
+            "q": "沙利度胺（反应停）悲剧带给药物化学的核心教训是？",
+            "options": [
+              "天然药物比合成药物更安全",
+              "口服给药必然导致畸形",
+              "药片颜色会影响胚胎发育",
+              "互为镜像的对映体可能是「两种药」，且体内可互变，手性药物须逐一评价安全性与药效"
+            ],
+            "answer": 3,
+            "explain": "(R)-异构体镇静、(S)-异构体致畸，且两者在体内互相转化——即便单给「好手」也无法避险。此后各国药政要求对映体分别做完整评价，并推动了不对称合成工业。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">10 药物化学 · 导学</span></a>
+      <a class="next" href="../11-核化学与放射化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">11 核化学与放射化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（配体-受体对接模拟器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  var svg = document.getElementById("dockSvg");
+  var readout = document.getElementById("dockReadout");
+  if (!svg || !readout) return;
+
+  var RED = "#dc2626", BLUE = "#2563eb", BOND = "#334155";
+  var LC = { A: ["#d8b4fe", "#7e22ce"], B: ["#86efac", "#15803d"], C: ["#fdba74", "#c2410c"] };
+  var animating = false;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* 受体口袋：L 形凹腔（水平通道 y128–192 ＋ 顶端竖腔 x420–468, y52–128） */
+  function drawReceptor() {
+    svg.innerHTML = "";
+    el("path", {
+      d: "M 300,24 L 516,24 Q 536,24 536,44 L 536,296 Q 536,316 516,316 L 300,316 " +
+         "L 300,192 L 468,192 L 468,52 L 420,52 L 420,128 L 300,128 Z",
+      fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 2, "stroke-linejoin": "round"
+    }, svg);
+    el("text", { x: 418, y: 254, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "#475569" }, svg).textContent = "靶蛋白（受体）";
+    el("text", { x: 418, y: 274, "text-anchor": "middle", "font-size": 10.5, fill: "#64748b" }, svg).textContent = "结合口袋向左开口";
+
+    /* 位点①：竖腔顶壁的氢键供体（红） */
+    el("line", { x1: 440, y1: 53, x2: 440, y2: 57, stroke: RED, "stroke-width": 2 }, svg);
+    el("circle", { cx: 440, cy: 58, r: 3.5, fill: RED }, svg);
+    el("text", { x: 450, y: 55, "font-size": 10, "font-weight": 700, fill: RED }, svg).textContent = "①";
+    /* 位点②：通道底壁的氢键受体（蓝） */
+    el("line", { x1: 376, y1: 191, x2: 376, y2: 187, stroke: BLUE, "stroke-width": 2 }, svg);
+    el("circle", { cx: 376, cy: 186.5, r: 3.5, fill: BLUE }, svg);
+    el("text", { x: 376, y: 206, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: BLUE }, svg).textContent = "②";
+    /* 位点③：通道顶壁的氢键受体（蓝） */
+    el("line", { x1: 352, y1: 129, x2: 352, y2: 133, stroke: BLUE, "stroke-width": 2 }, svg);
+    el("circle", { cx: 352, cy: 133.5, r: 3.5, fill: BLUE }, svg);
+    el("text", { x: 352, y: 123, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: BLUE }, svg).textContent = "③";
+    /* 疏水区：底壁黄色条带 */
+    el("rect", { x: 400, y: 186, width: 62, height: 6, fill: "#facc15", stroke: "#ca8a04", "stroke-width": .75, opacity: .9 }, svg);
+    el("text", { x: 431, y: 206, "text-anchor": "middle", "font-size": 9.5, fill: "#a16207" }, svg).textContent = "疏水区";
+  }
+
+  /* 候选分子（局部坐标，组原点＝横杆左上角） */
+  function drawLigand(which, g) {
+    var c = LC[which];
+    var common = { fill: c[0], stroke: c[1], "stroke-width": 2 };
+    if (which === "A") {
+      el("rect", { x: 0, y: 0, width: 84, height: 84, rx: 12 }, g).setAttribute("style", "fill:" + c[0] + ";stroke:" + c[1] + ";stroke-width:2");
+      el("circle", Object.assign({ cx: 84, cy: 18, r: 8 }, common), g);
+      el("circle", Object.assign({ cx: 89, cy: 44, r: 9 }, common), g);
+      el("circle", Object.assign({ cx: 84, cy: 70, r: 8 }, common), g);
+      var ta = el("text", { x: 40, y: 50, "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: c[1] }, g);
+      ta.textContent = "A";
+    } else {
+      if (which === "B") el("rect", Object.assign({ x: 114, y: -64, width: 40, height: 64, rx: 6 }, common), g);
+      if (which === "C") el("rect", Object.assign({ x: 114, y: -34, width: 40, height: 34, rx: 6 }, common), g);
+      el("rect", Object.assign({ x: 0, y: 0, width: 156, height: 26, rx: 6 }, common), g);
+      /* 配体上的基团：供体红 / 受体蓝 / 疏水贴片黄 */
+      el("circle", { cx: 70, cy: 23, r: 4, fill: RED, stroke: "#7f1d1d", "stroke-width": 1 }, g);
+      el("circle", { cx: 46, cy: 3, r: 4, fill: RED, stroke: "#7f1d1d", "stroke-width": 1 }, g);
+      if (which === "B") el("circle", { cx: 134, cy: -58, r: 4, fill: BLUE, stroke: "#1e3a8a", "stroke-width": 1 }, g);
+      el("rect", { x: 94, y: 26, width: 62, height: 5, fill: "#facc15", stroke: "#ca8a04", "stroke-width": .75 }, g);
+      var t = el("text", { x: 20, y: 13, "font-size": 12, "font-weight": 800, fill: c[1] }, g);
+      t.textContent = which;
+    }
+  }
+
+  /* 对接结果叠加层（全局坐标） */
+  function drawResult(which) {
+    if (which === "A") {
+      [["✗", 300, 146], ["✗", 300, 178]].forEach(function (m) {
+        var t = el("text", { x: m[1], y: m[2], "text-anchor": "middle", "font-size": 15, "font-weight": 800, fill: "#b91c1c", class: "anim-pulse" }, svg);
+        t.textContent = m[0];
+      });
+      var lab = el("text", { x: 258, y: 116, "text-anchor": "middle", "font-size": 11, "font-weight": 700, fill: "#b91c1c" }, svg);
+      lab.textContent = "形状冲突！";
+    } else if (which === "B") {
+      [[440, 62, 440, 81], [376, 173, 376, 182], [352, 138, 352, 144]].forEach(function (l) {
+        el("line", { x1: l[0], y1: l[1], x2: l[2], y2: l[3], stroke: BOND, "stroke-width": 2.5, "stroke-dasharray": "4 3" }, svg);
+      });
+    } else {
+      [[376, 173, 376, 182], [352, 138, 352, 144]].forEach(function (l) {
+        el("line", { x1: l[0], y1: l[1], x2: l[2], y2: l[3], stroke: BOND, "stroke-width": 2.5, "stroke-dasharray": "4 3" }, svg);
+      });
+      el("line", { x1: 440, y1: 63, x2: 440, y2: 102, stroke: "#b91c1c", "stroke-width": 2, "stroke-dasharray": "2 4", opacity: .55 }, svg);
+      var q = el("text", { x: 452, y: 88, "font-size": 15, "font-weight": 800, fill: "#b91c1c", class: "anim-pulse" }, svg);
+      q.textContent = "？";
+      var lab2 = el("text", { x: 440, y: 118, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: "#b91c1c" }, svg);
+      lab2.textContent = "位点①无人配对";
+    }
+  }
+
+  function drawIdle() {
+    drawReceptor();
+    var g = el("g", { class: "anim-float", transform: "translate(42,146)" }, svg);
+    drawLigand("B", g);
+    readout.textContent = "👆 选择一个候选分子，尝试让它进入右侧受体口袋";
+  }
+
+  var MSG = {
+    A: "✗ 分子 A：块状身形超出袋口，撞壁无法进入 → 结合能 ≈ −0.8 kcal/mol（太弱，随血流冲走）",
+    B: "✓ 分子 B：形状互补 ＋ 3 组氢键 ＋ 疏水贴合 → 结合能 ≈ −9.5 kcal/mol（强结合 · 先导候选）",
+    C: "△ 分子 C：形状接近，但深处的位点①没有配对基团 → 结合能 ≈ −5.3 kcal/mol（中等 · SAR 优化起点）"
+  };
+
+  function tryDock(which) {
+    if (animating) return;
+    animating = true;
+    drawReceptor();
+    var y = which === "A" ? 116 : 146;
+    var x0 = 42;
+    var x1 = which === "A" ? 202 : 306;   /* A：撞停在袋口；B/C：滑入通道 */
+    var g = el("g", { transform: "translate(" + x0 + "," + y + ")" }, svg);
+    drawLigand(which, g);
+    var dur = reduce ? 1 : 900;
+    var t0 = null;
+    function frame(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      g.setAttribute("transform", "translate(" + (x0 + (x1 - x0) * e) + "," + y + ")");
+      if (k < 1) { requestAnimationFrame(frame); return; }
+      drawResult(which);
+      readout.textContent = MSG[which];
+      animating = false;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  [["dockA", "A"], ["dockB", "B"], ["dockC", "C"]].forEach(function (p) {
+    var b = document.getElementById(p[0]);
+    if (b) b.addEventListener("click", function () { tryDock(p[1]); });
+  });
+  var rb = document.getElementById("dockReset");
+  if (rb) rb.addEventListener("click", function () { if (!animating) drawIdle(); });
+
+  drawIdle();
+})();
+</script>
+</body>
+</html>

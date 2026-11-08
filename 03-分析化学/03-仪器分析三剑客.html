@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>仪器分析三剑客 · 分析化学 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b03">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">03 分析化学</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 仪器分析三剑客</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">03 分析化学 · 第 3 章（本分支终章）</div>
+    <h1>仪器分析三剑客：光谱、色谱与质谱</h1>
+    <p class="lede">
+      新房装修后测甲醛、果蔬查农残、运动员尿检兴奋剂——目标物含量常在百万分之一以下，
+      滴定的"体积尺子"在这里完全失效。现代分析实验室靠三件武器打天下：
+      <strong>光谱</strong>让分子"亮出身份牌"（吸收什么光、吸收多少），<strong>色谱</strong>把混在一起的分子
+      "排队分开"，<strong>质谱</strong>给每个分子"称重并读出同位素签名"。本章把三剑客一次讲透，
+      并回答一个贯穿全章的问题：仪器直接给我们的究竟是<strong>信号</strong>，还是<strong>答案</strong>？
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 50 分钟</span>
+      <span class="chip">先修：本分支第 1–2 章＋00 总论（同位素）</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#spec">§1 光谱与比尔定律</a>
+    <a href="#ir">§2 红外指纹区与 AAS</a>
+    <a href="#chrom">§3 色谱：先分离</a>
+    <a href="#ms">§4 质谱：称分子</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：百万分之一的世界</h2>
+    <p>
+      国家标准规定生活饮用水硝酸盐限值 10 mg/L、铅限值 0.01 mg/L——后者相当于在一个标准泳池里
+      溶进一枚回形针。靠滴定？消耗的滴定剂体积连滴定管的刻度都读不出来。
+      进入<strong>痕量与超痕量</strong>的世界，分析化学家换上了仪器时代的兵器谱：
+      把光打进样品看它吸收什么（光谱学），把混合物塞进一根管子让它自己排队（色谱学），
+      再把每个分子打成离子逐个称重（质谱）。
+    </p>
+    <p>
+      但无论仪器多贵、屏幕多炫，有一条第 1 章立下的铁律在本章反复出现：
+      <strong>仪器输出的是信号，不是浓度</strong>——把信号换算成答案，永远要靠"用已知换未知"的校准。
+      带着这句话，我们登台三剑客。
+    </p>
+  </section>
+
+  <!-- ============ §1 光谱与比尔定律 ============ -->
+  <section id="spec">
+    <h2>§1 光谱分析：紫外-可见与朗伯-比尔定律</h2>
+    <p>
+      <span class="term">光谱学</span><span class="en">spectroscopy</span>研究光与物质的相互作用。
+      分子只能吸收<strong>特定能量</strong>的光子（能量 = hν，恰好等于两个能级之差），
+      于是"吸收哪些波长、吸收多少"就成了分子的身份证与体重秤。
+      最常用的入口是<span class="term">紫外-可见吸收光谱</span><span class="en">UV-Vis</span>：
+      让一束单色光穿过样品池，比较进出的光强。
+    </p>
+    <p>
+      定义<span class="term">透射比</span><span class="en">transmittance</span>
+      <span class="formula">T = I / I₀</span>（出射光强与入射光强之比），
+      <span class="term">吸光度</span><span class="en">absorbance</span>
+      <span class="formula">A = −lg T = lg(I₀/I)</span>。1852 年，比尔与朗伯发现：
+      稀溶液的吸光度与浓度、光程成正比——
+    </p>
+    <p style="text-align:center">
+      <span class="formula">A = ε·b·c</span>　（<span class="term">朗伯-比尔定律</span><span class="en">Lambert-Beer law</span>）
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>符号</th><th>含义</th><th>单位</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A</strong></td><td>吸光度</td><td>无量纲</td><td>与浓度线性，实用范围 0.2–0.8 最佳</td></tr>
+        <tr><td><strong>ε</strong></td><td>摩尔吸光系数</td><td>L·mol⁻¹·cm⁻¹</td><td>物质在特定波长的"吸收本领"，强生色团可达 10⁴–10⁵</td></tr>
+        <tr><td><strong>b</strong></td><td>比色皿光程</td><td>cm</td><td>常用 1.00 cm，加厚一倍 A 翻倍</td></tr>
+        <tr><td><strong>c</strong></td><td>溶液浓度</td><td>mol/L</td><td>稀溶液范围内成立，过浓会弯曲</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      为什么费劲定义 A 而不直接用透射比？因为 T 与 c 是<strong>指数衰减</strong>关系（浓度翻倍、光强指数级变暗），
+      画出来是弯的；取对数后的 A 与 c 是<strong>直线</strong>——好画线、好拟合、好反查。
+      下面的比色皿随浓度变深，注意出射光束同时变暗，而 A 读数线性增长：
+    </p>
+
+    <h3>🔬 动手玩：比尔定律滑块</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="beerSvg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="朗伯-比尔定律演示器"></svg>
+        <div class="fig-controls">
+          <label for="beerSlider" style="font-size:.88rem;color:var(--ink-2)">
+            浓度 c：<strong id="beerC">1.0×10⁻⁴</strong> mol/L
+          </label>
+          <input id="beerSlider" type="range" min="0" max="10" step="0.1" value="1"
+                 style="width:min(380px,80%);accent-color:var(--accent);height:40px" aria-label="溶液浓度">
+        </div>
+        <div class="fig-readout" id="beerReadout">c = 1.0×10⁻⁴ mol/L ｜ A = εbc = 4.2×10³ × 1.00 × 1.0×10⁻⁴ = 0.42 ｜ T = 10⁻ᴬ = 38%</div>
+      </div>
+      <figcaption>
+        设 ε = 4.2×10³ L·mol⁻¹·cm⁻¹、b = 1.00 cm。浓度越大，比色皿越深、透射光越弱（指数变暗），
+        但 A 读数线性增长——这正是分光光度法用 A 而不用 T 的原因。
+      </figcaption>
+    </figure>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：由吸光度求浓度</div>
+      <div class="worked-problem">
+        某有色溶液在 1.00 cm 比色皿中、指定波长下测得吸光度 A = 0.420。
+        该物质在此波长下的摩尔吸光系数 ε = 4.2×10³ L·mol⁻¹·cm⁻¹。求浓度。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">变形公式：由 A = εbc 得 <span class="formula">c = A / (ε·b)</span>。</li>
+        <li class="step">代入：<span class="formula">c = 0.420 / (4.2×10³ × 1.00) = 1.0×10⁻⁴ mol/L</span>。</li>
+        <li class="step">检查量程：A = 0.42 落在最佳区间 0.2–0.8 内，读数可靠；若 A 太小应加大比色皿光程或浓缩，A 太大应稀释。</li>
+        <li class="step">✅ 有效数字自查：A 三位、ε 两位 → 结果两位：c = 1.0×10⁻⁴ mol/L。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：标准曲线反查</div>
+      <div class="worked-problem">
+        用分光光度法测水中铁：配制系列标准溶液，测得
+        c = 2/4/6/8 mg/L 对应 A = 0.12/0.24/0.36/0.48。相同条件下测得未知水样 A = 0.33。
+        求水样含铁量。<em>（提示藏在每一步里，先自己想想再点开）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 先验线性：A/c = 0.12/2 = 0.24/4 = 0.06（L/mg）处处相等 → 标准曲线是过原点的直线 A = 0.06c。</li>
+        <li class="step">💡 反查浓度：c = A / 0.06 = 0.33 / 0.06 = <strong>5.5 mg/L</strong>。</li>
+        <li class="step">💡 检查范围：5.5 mg/L 落在标准系列 2–8 mg/L 之内——内插安全；若未知样超出标准范围，应稀释或扩展标准系列，绝不外推。</li>
+        <li class="step">✅ 报告 5.5 mg/L（两位有效数字）。这正是第 1 章"标准曲线：用已知换未知"的仪器版实战。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 高级仪器直接给出答案，无需校准？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          花几十万买的仪器自带"mg/L"打印口，结果直接出——仪器够高级，就不需要标准曲线、
+          不需要内标，说明书都不用翻。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          仪器输出的永远是<strong>信号</strong>（吸光度、峰面积、离子计数），不是浓度。
+          把信号换算成含量必须靠已知浓度的标准（外标曲线、内标、标准加入）；仪器会漂移、
+          检测器会老化、样品基体会干扰——"用已知换未知"的校准思想在第 1 章和本章一次都没变过。
+          打印口里那个浓度，也是仪器替你查了它内置的标准曲线而已。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：两杯同样浓度的蓝色溶液，一杯光程 1 cm、一杯 2 cm，哪杯更蓝？透过的光呢？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：光每穿过 1 cm，都被"吃掉"同样比例——按比例衰减意味着什么关系？</p>
+        <p>
+          2 cm 那杯更蓝。光强按<strong>指数衰减</strong>：每穿过 1 cm 被吸收固定比例，
+          所以 I = I₀·10<sup>−kbc</sup>——这就是"朗伯"那半边定律（A 与 b 成正比）的来源；
+          "比尔"那半边则说浓度 c 也以同样的方式起作用。二者相乘，才有 A = εbc 的简洁线性。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 红外指纹区与 AAS ============ -->
+  <section id="ir">
+    <h2>§2 红外"指纹区"与原子吸收：光谱的另外两副面孔</h2>
+
+    <h3>红外光谱：官能团的实验探测器</h3>
+    <p>
+      把波长换成红外光（4000–400 cm⁻¹），分子不再发生电子跃迁，而是<strong>振动</strong>被激发——
+      原子团像用弹簧连接的小球，每种键有自己的"固有频率"，只吸收频率匹配的红外光子。
+      于是红外光谱（IR）直接把<span class="term">官能团</span><span class="en">functional group</span>
+      摆上台面（在 <a href="../02-有机化学/index.html">02 有机化学</a>里你认识了它们的反应性格，IR 则负责"点名"）：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>官能团</th><th>特征吸收 / cm⁻¹</th><th>峰形印象</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>O—H（醇、酚、水）</td><td>3200–3600</td><td>又宽又圆的"大馒头"</td></tr>
+        <tr><td>N—H（胺、酰胺）</td><td>3300–3500</td><td>中等强度、稍尖</td></tr>
+        <tr><td>C—H</td><td>2850–3000</td><td>一组小尖峰</td></tr>
+        <tr><td>C=O（酮、醛、酸、酯、酰胺）</td><td>1650–1750</td><td>窄而强，全谱最醒目的峰</td></tr>
+        <tr><td>C—O（醚、醇）</td><td>1000–1300</td><td>较强</td></tr>
+      </tbody>
+    </table>
+    <p>
+      高波数段（4000–1300 cm⁻¹）像"官能团公告栏"；低波数段（1300–400 cm⁻¹）则是
+      <span class="term">指纹区</span><span class="en">fingerprint region</span>——整分子各种振动的大合奏，
+      分子结构哪怕只差一个甲基，整段图谱就面目全非。<strong>把样品谱图与标准谱库比对，
+      像警方核对指纹一样确认"正是这个化合物"</strong>——这就是"指纹区"名号的由来。
+    </p>
+
+    <h3>原子吸收光谱（AAS）：一句话认识</h3>
+    <p>
+      想测<strong>痕量金属</strong>（铅、镉、铜、锌）？把样品气化成基态原子蒸气，
+      用该元素的空心阴极灯发出<strong>特征谱线</strong>穿过蒸气——基态原子最"挑食"，只吃自己波长的那一口，
+      吸光度同样与原子浓度成正比。AAS 灵敏度高、选择性好，是水质与食品中重金属的经典筛查手段。
+    </p>
+
+    <details class="think">
+      <summary>想一想：丁醇与乙醚组成相同（C₄H₁₀O），只用一张红外谱就能区分它们吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：两者的差别在官能团——O 的旁边连着什么？哪个官能团有"招牌峰"？</p>
+        <p>
+          能，而且一步到位。丁醇有 O—H：3200–3600 cm⁻¹ 的宽峰 + 1000–1100 cm⁻¹ 的 C—O 峰；
+          乙醚只有 C—O 而没有 O—H。看一眼"官能团公告栏"就能分家——这正是 IR 相对其他手段的独门优势：
+          <strong>直接点名官能团</strong>。再往指纹区核对，还能确认具体是哪一种同分异构体。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 色谱 ============ -->
+  <section id="chrom">
+    <h2>§3 色谱：先分离，后检测</h2>
+    <p>
+      光谱有个软肋：遇到混合物，各组分的光谱彼此叠加，像十几个人同时抢话筒。
+      <span class="term">色谱</span><span class="en">chromatography</span>的答案是<strong>先分离、后检测</strong>：
+      让混合物随<span class="term">流动相</span><span class="en">mobile phase</span>流过一层
+      <span class="term">固定相</span><span class="en">stationary phase</span>，
+      各组分在两相间"进进出出"的偏好不同，宏观上表现为<strong>迁移速度不同</strong>——
+      于是同一起点出发的它们，会在柱子尽头分批到达，形成一个个独立的色谱峰。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 色谱为什么能"分开"本来混在一起的物质？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把色谱柱想成一条洒满商铺的长街，流动相是推着人走的人流。三种行人同时出发：
+          逛店欲为零的从头走到尾；见店就进的走几步停半天；介于两者之间的偶尔进店。
+          走出街口时，他们自然分成了三批——<strong>爱"待在固定相里"的组分，永远最后到达</strong>。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          量化"爱待在固定相"的指标是<span class="term">分配系数</span><span class="en">partition coefficient</span>
+          <span class="formula">K = c(固定相) / c(流动相)</span>。K 大的组分大部分时间滞留在固定相里，
+          平均迁移速度小；K 小的随流动相一路畅行。柱子足够长时，速度差累积成时间差——
+          每个组分在自己的<span class="term">保留时间</span><span class="en">retention time, t<sub>R</sub></span>
+          流出：同一条件下 t<sub>R</sub> 是组分的"时间指纹"（<strong>定性</strong>依据），
+          而峰面积与该组分含量成正比（<strong>定量</strong>依据，仍要靠标准曲线换算）。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          分离的好坏用<strong>分离度</strong> <span class="formula">R = 2(t<sub>R2</sub>−t<sub>R1</sub>)/(w₁+w₂)</span>
+          衡量：峰既要"离得远"又要"长得窄"。峰会展宽，因为分子在柱内有三种扩散来源——
+          涡流扩散（路径长短不一）、纵向分子扩散、两相间传质阻力（van Deemter 方程描述三者的总和效应）。
+          柱效用理论塔板数 N 表征。选多长的柱、多细的填料、多快的流速，
+          本质都是在与这三种展宽赛跑——这是色谱方法开发的全部艺术。
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：色谱分离动画</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="chromCanvas" width="640" height="310" style="max-width:100%;display:block" aria-label="三组分色谱分离动画" role="img"></canvas>
+        <div class="fig-controls">
+          <button class="btn" id="chromPlay">▶ 重新分离</button>
+        </div>
+        <div class="fig-readout" id="chromReadout">三种组分同时进样：红·绿·蓝分配系数依次增大，迁移速度依次变慢……</div>
+      </div>
+      <figcaption>
+        组分说明——<strong style="color:#ef4444">红色组分①</strong>：K 最小，几乎不进固定相，最先在 t₁ 出峰；
+        <strong style="color:#16a34a">绿色组分②</strong>：K 居中，t₂ 出峰；
+        <strong style="color:#2563eb">蓝色组分③</strong>：K 最大，频频滞留固定相，最后在 t₃ 出峰。
+        峰越来越宽是分子纵向扩散的结果；每个峰的<strong>面积</strong>（不是高度）正比于组分含量。
+      </figcaption>
+    </figure>
+
+    <p>
+      色谱两大家族按流动相分：<span class="term">气相色谱</span><span class="en">GC</span>用载气，
+      <span class="term">高效液相色谱</span><span class="en">HPLC</span>用液体（高压驱动）。选择一句口诀：
+      <strong>能气化、耐热的用 GC（快、灵、省）；不能气化、怕热的用 HPLC（几乎万能）</strong>。
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th></th><th>气相色谱 GC</th><th>高效液相色谱 HPLC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>流动相</strong></td><td>载气（He、N₂）</td><td>液体（水/甲醇/乙腈等，高压泵驱动）</td></tr>
+        <tr><td><strong>样品要求</strong></td><td>能气化、热稳定</td><td>可溶于流动相即可，不怕热敏、大分子</td></tr>
+        <tr><td><strong>典型任务</strong></td><td>白酒风味、溶剂残留、油气组成、兴奋剂初筛</td><td>药物、氨基酸、维生素、食品添加剂、蛋白质</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      色谱的革命在"<strong>分离</strong>"二字：它把"混合物的定量"转化为"纯组分信号的测量"。
+      保留时间定性、峰面积定量——两句话撑起了现代分析实验室的半壁江山；
+      色谱与质谱联用（GC-MS、LC-MS）后，更是定性定量一肩挑。
+    </div>
+  </section>
+
+  <!-- ============ §4 质谱 ============ -->
+  <section id="ms">
+    <h2>§4 质谱：给分子称重，读同位素签名</h2>
+    <p>
+      <span class="term">质谱</span><span class="en">mass spectrometry, MS</span>的思路干脆利落：
+      把样品分子<strong>电离成离子</strong>（常用高能电子把分子打掉一个电子，得到带正电的分子离子），
+      再利用电场与磁场让离子按<span class="term">荷质比</span><span class="en">mass-to-charge ratio, m/z</span>
+      （离子质量与所带电荷数之比）分道扬镳，检测器逐个计数——得到一张以 m/z 为横轴的"棒图"。
+    </p>
+    <p>
+      读图三步：<strong>最高质量端</strong>寻找<span class="term">分子离子峰</span>
+      <span class="en">molecular ion peak</span>——它的 m/z 就是相对分子质量（M）；
+      <strong>碎片峰</strong>看断裂规律，推断官能团与骨架连接（与 IR、核磁联用更稳）；
+      <strong>同位素峰</strong>则是元素组成的铁证——这里正是
+      <a href="../00-化学总论/01-原子与元素.html">00 总论第 1 章"同位素"</a>的用武之地：
+      MS 的分辨率足以把质量相差 1–2 的同位素离子分成相邻的峰。
+    </p>
+    <p>最实用的两条同位素判据：</p>
+    <ul>
+      <li><strong>含一个 Cl</strong>：³⁵Cl 与 ³⁷Cl 天然丰度约 75.8% : 24.2% ≈ <strong>3 : 1</strong>，
+        谱图上 M 峰与 M+2 峰强度比约 3:1。</li>
+      <li><strong>含一个 Br</strong>：⁷⁹Br 与 ⁸¹Br 各约 50%，M 与 M+2 <strong>等高双峰</strong>，一眼可辨。</li>
+    </ul>
+    <p>
+      碳的 ¹³C（约 1.1%）则在 M+1 处留下一枚与碳原子数成正比的小峰。
+      三剑客至此合体：光谱认官能团、色谱做分离、质谱定分子——
+      联用仪器（GC-MS、LC-MS）加上化学计量学的数据处理，就是导学页"子分支地图"里那片更远的疆域。
+    </p>
+
+    <details class="think">
+      <summary>想一想：某卤代烃的质谱中，m/z 128 与 130 两峰强度比约为 3:1。它含什么元素？若换成 1:1 呢？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回想 00 总论——氯和溴各自有哪些天然同位素？丰度比例是多少？</p>
+        <p>
+          3:1 的 M / M+2 双峰是<strong>一个氯原子</strong>的签名（³⁵Cl 约 75.8%、³⁷Cl 约 24.2%）。
+          若是 1:1，则是<strong>一个溴原子</strong>（⁷⁹Br 与 ⁸¹Br 各约一半）。
+          不用做任何化学反应，一张质谱图就交出了元素组成的关键证据——这就是"同位素签名"的威力。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>UV-Vis：朗伯-比尔定律 <span class="formula">A = εbc</span>，A 与浓度线性、最佳区间 0.2–0.8；定量仍靠标准曲线反查。</li>
+        <li>IR：官能团区点名（O—H 宽峰、C=O 尖强峰等），指纹区与标准谱比对确认化合物；AAS 一句话——基态原子吃掉特征谱线，测痕量金属。</li>
+        <li>色谱：分配系数差异 → 差速迁移 → 保留时间 t<sub>R</sub> 定性、峰面积定量；能气化用 GC，怕热大分子用 HPLC。</li>
+        <li>质谱：按 m/z 分离，分子离子峰给相对分子质量，碎片峰推结构，同位素峰辨元素（Cl 3:1、Br 1:1）。</li>
+        <li>铁律不变：仪器给的是信号，不是答案——所有定量都要"用已知换未知"的校准。</li>
+        <li>三剑客联手（GC-MS / LC-MS）＋化学计量学，构成现代分析实验室的主力与子分支地图的下一站。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 仪器分析三剑客 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "某溶液在 1.00 cm 比色皿中测得 A = 0.84，ε = 4.2×10³ L·mol⁻¹·cm⁻¹。其浓度约为？",
+            "options": ["2.0×10⁻⁴ mol/L", "1.0×10⁻⁴ mol/L", "4.2×10⁻⁴ mol/L", "8.4×10⁻³ mol/L"],
+            "answer": 0,
+            "explain": "c = A/(εb) = 0.84 / (4.2×10³ × 1.00) = 2.0×10⁻⁴ mol/L。代入时注意 ε 的单位与 b 用 cm，结果才落在 mol/L。"
+          },
+          {
+            "q": "色谱图上定性与定量的依据分别是？",
+            "options": ["峰高定含量，出峰时间定结构", "保留时间定性（与标准品比对），峰面积定量", "峰越多说明样品越纯", "最先出的峰含量最大"],
+            "answer": 1,
+            "explain": "同一条件下保留时间是组分的『时间指纹』，与标准品比对即可定性；峰面积与组分含量成正比，配合标准曲线或内标即可定量。峰高还受峰宽影响，出峰先后只由分配行为决定，与含量无关。"
+          },
+          {
+            "q": "下列样品最适合用气相色谱（GC）测定的是？",
+            "options": ["血液中的氨基酸（不挥发、热敏感）", "蛋白质与多肽", "白酒中的乙醇等挥发性成分", "维生素C 水溶液"],
+            "answer": 2,
+            "explain": "GC 要求样品能气化且热稳定：乙醇等挥发成分正合适，而且快、灵敏。氨基酸、蛋白质、维生素 C 不挥发或怕热，应走 HPLC。"
+          },
+          {
+            "q": "某化合物质谱中 M 峰与 M+2 峰强度几乎相等（约 1:1），它最可能含？",
+            "options": ["一个 Cl", "一个 Br", "两个 Cl", "一个 ¹³C"],
+            "answer": 1,
+            "explain": "⁷⁹Br 与 ⁸¹Br 天然丰度各约 50%，含一个 Br 的分子会产生等高的 M / M+2 双峰。一个 Cl 是约 3:1；两个 Cl 会出现 M、M+2、M+4 三峰（约 9:6:1）；¹³C 只贡献约 1.1%×碳数的 M+1 小峰。"
+          },
+          {
+            "q": "关于昂贵仪器的使用态度，正确的是？",
+            "options": ["仪器足够高级，定量结果直接打印、无需校准", "灵敏度越高越好，样品无需任何预处理", "每年只需开机自检一次", "所有定量仍需标准曲线或内标校准，仪器只提供信号"],
+            "answer": 3,
+            "explain": "仪器输出的是信号（吸光度、峰面积、离子计数），换算成含量必须靠已知浓度的标准（外标/内标/标准加入）；仪器漂移、检测器老化、基体效应随时会让标尺变形。校准思想从第 1 章到本章从未改变。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-滴定与化学分析.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 滴定与化学分析</span></a>
+      <a class="next" href="../04-物理化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">04 物理化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（比尔定律滑块 / 色谱分离动画） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function mixColor(c1, c2, t) {
+    return "rgb(" + Math.round(lerp(c1[0], c2[0], t)) + "," +
+      Math.round(lerp(c1[1], c2[1], t)) + "," + Math.round(lerp(c1[2], c2[2], t)) + ")";
+  }
+
+  /* ---------- 1. 比尔定律滑块 ---------- */
+  var beerSvg = document.getElementById("beerSvg");
+  if (beerSvg) {
+    var EPS = 4200, B = 1.00;
+    var cLabel = document.getElementById("beerC");
+    var slider = document.getElementById("beerSlider");
+    var readout = document.getElementById("beerReadout");
+
+    el("rect", { x: 0, y: 0, width: 640, height: 300, fill: "#ffffff" }, beerSvg);
+
+    // 光源
+    el("circle", { cx: 70, cy: 150, r: 22, fill: "#fbbf24", stroke: "#f59e0b", "stroke-width": 2.5 }, beerSvg);
+    for (var r = 0; r < 8; r++) {
+      var ang = Math.PI * 2 * r / 8;
+      el("line", { x1: 70 + 28 * Math.cos(ang), y1: 150 + 28 * Math.sin(ang),
+        x2: 70 + 38 * Math.cos(ang), y2: 150 + 38 * Math.sin(ang),
+        stroke: "#f59e0b", "stroke-width": 2.5 }, beerSvg);
+    }
+    var lampTxt = el("text", { x: 70, y: 208, "text-anchor": "middle", "font-size": 12, fill: "#92400e" }, beerSvg);
+    lampTxt.textContent = "光源 I₀";
+
+    // 入射光束
+    el("line", { x1: 108, y1: 150, x2: 244, y2: 150, stroke: "#f59e0b", "stroke-width": 8 }, beerSvg);
+    el("polygon", { points: "244,142 258,150 244,158", fill: "#f59e0b" }, beerSvg);
+
+    // 比色皿
+    el("rect", { x: 262, y: 66, width: 112, height: 168, fill: "#ffffff", stroke: "#64748b", "stroke-width": 2.5, rx: 5 }, beerSvg);
+    var liquid = el("rect", { x: 268, y: 72, width: 100, height: 156, fill: "#e9d5ff", rx: 3 }, beerSvg);
+    el("line", { x1: 262, y1: 60, x2: 262, y2: 240, stroke: "#94a3b8", "stroke-width": 1 }, beerSvg);
+    el("line", { x1: 374, y1: 60, x2: 374, y2: 240, stroke: "#94a3b8", "stroke-width": 1 }, beerSvg);
+    var cuvTxt = el("text", { x: 318, y: 262, "text-anchor": "middle", "font-size": 12, fill: "#4b5563" }, beerSvg);
+    cuvTxt.textContent = "比色皿 b = 1.00 cm";
+    var cTxt = el("text", { x: 318, y: 52, "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: "#5b21b6" }, beerSvg);
+    cTxt.textContent = "c = 1.0×10⁻⁴ mol/L";
+
+    // 出射光束（动态透明度）
+    var beamOut = el("line", { x1: 380, y1: 150, x2: 508, y2: 150, stroke: "#f59e0b", "stroke-width": 8, opacity: 1 }, beerSvg);
+    var beamArr = el("polygon", { points: "508,142 522,150 508,158", fill: "#f59e0b", opacity: 1 }, beerSvg);
+
+    // 检测器
+    el("rect", { x: 528, y: 118, width: 92, height: 64, rx: 8, fill: "#f1f5f9", stroke: "#64748b", "stroke-width": 2 }, beerSvg);
+    var detTxt = el("text", { x: 574, y: 140, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, beerSvg);
+    detTxt.textContent = "检测器";
+    var aTxt = el("text", { x: 574, y: 165, "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: "#5b21b6" }, beerSvg);
+    aTxt.textContent = "A = 0.42";
+    var tTxt = el("text", { x: 574, y: 200, "text-anchor": "middle", "font-size": 12, fill: "#6b7280" }, beerSvg);
+    tTxt.textContent = "T = 38%";
+
+    var PALE = [245, 243, 255], DEEP = [76, 29, 149];
+    function sup(cVal) {
+      var A = EPS * B * cVal * 1e-4;
+      var T = Math.pow(10, -A);
+      liquid.setAttribute("fill", mixColor(PALE, DEEP, cVal / 10));
+      var op = Math.max(0.06, T);
+      var w = (4 + 6 * T).toFixed(1);
+      beamOut.setAttribute("opacity", op.toFixed(3));
+      beamOut.setAttribute("stroke-width", w);
+      beamArr.setAttribute("opacity", op.toFixed(3));
+      aTxt.textContent = "A = " + A.toFixed(2);
+      tTxt.textContent = "T = " + Math.round(T * 100) + "%";
+      cTxt.textContent = "c = " + cVal.toFixed(1) + "×10⁻⁴ mol/L";
+      cLabel.textContent = cVal.toFixed(1) + "×10⁻⁴";
+      readout.textContent = "c = " + cVal.toFixed(1) + "×10⁻⁴ mol/L ｜ A = εbc = 4.2×10³ × 1.00 × " +
+        cVal.toFixed(1) + "×10⁻⁴ = " + A.toFixed(2) + " ｜ T = 10⁻ᴬ = " + Math.round(Math.pow(10, -A) * 100) + "%";
+    }
+    if (slider) {
+      slider.addEventListener("input", function () { sup(parseFloat(slider.value)); });
+      sup(parseFloat(slider.value));
+    }
+  }
+
+  /* ---------- 2. 色谱分离动画（canvas） ---------- */
+  var cv = document.getElementById("chromCanvas");
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext("2d");
+    var readout = document.getElementById("chromReadout");
+    var playBtn = document.getElementById("chromPlay");
+
+    var COL = { x0: 40, x1: 400, y0: 62, y1: 152 };          // 色谱柱区域
+    var PLT = { x0: 432, x1: 622, yBase: 262, yTop: 56 };    // 色谱图区域
+    var TMAX = 100;
+    var COMP = [
+      { name: "红·组分①", tR: 30, sigma: 5, H: 74, color: "#ef4444", rgba: [239, 68, 68] },
+      { name: "绿·组分②", tR: 55, sigma: 6, H: 52, color: "#16a34a", rgba: [22, 163, 74] },
+      { name: "蓝·组分③", tR: 85, sigma: 8, H: 60, color: "#2563eb", rgba: [37, 99, 235] }
+    ];
+    COMP.forEach(function (c) { c.v = (COL.x1 - COL.x0 - 5) / c.tR; });
+
+    var startTime = null, rafId = null, reduced = false;
+    try {
+      reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (e) { reduced = false; }
+
+    function gauss(x, mu, s) { return Math.exp(-(x - mu) * (x - mu) / (2 * s * s)); }
+    function signal(tau) {
+      var s = 0;
+      for (var i = 0; i < COMP.length; i++) s += COMP[i].H * gauss(tau, COMP[i].tR, COMP[i].sigma);
+      return s;
+    }
+    function pxT(tau) { return PLT.x0 + (PLT.x1 - PLT.x0) * tau / TMAX; }
+    function pyS(s) { return PLT.yBase - s; }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.textBaseline = "alphabetic";
+
+      // 柱体与固定相纹理
+      ctx.fillStyle = "#f8fafc";
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      roundRect(COL.x0 - 8, COL.y0, COL.x1 - COL.x0 + 16, COL.y1 - COL.y0, 10);
+      ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = "#eef2f7";
+      ctx.lineWidth = 1;
+      for (var sy = COL.y0 + 8; sy < COL.y1 - 4; sy += 7) {
+        ctx.beginPath();
+        ctx.moveTo(COL.x0, sy);
+        ctx.lineTo(COL.x1, sy);
+        ctx.stroke();
+      }
+
+      // 标注
+      ctx.fillStyle = "#4b5563";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("流动相 ＋ 组分 →", (COL.x0 + COL.x1) / 2, COL.y0 - 10);
+      ctx.fillStyle = "#6b7280";
+      ctx.textAlign = "left";
+      ctx.fillText("色谱柱（管内：固定相）", COL.x0 - 4, COL.y1 + 18);
+
+      // 柱内组分带
+      for (var i = 0; i < COMP.length; i++) {
+        var cx = COL.x0 + 4 + COMP[i].v * t;
+        if (cx < COL.x1 - 2) {
+          var cy = (COL.y0 + COL.y1) / 2;
+          var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 17);
+          grad.addColorStop(0, "rgba(" + COMP[i].rgba.join(",") + ",0.9)");
+          grad.addColorStop(1, "rgba(" + COMP[i].rgba.join(",") + ",0)");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(cx, cy, 17, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // 检测器
+      ctx.strokeStyle = "#b91c1c";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(COL.x1 + 10, COL.y0 - 8);
+      ctx.lineTo(COL.x1 + 10, COL.y1 + 8);
+      ctx.stroke();
+      ctx.fillStyle = "#b91c1c";
+      ctx.textAlign = "center";
+      ctx.font = "bold 12px sans-serif";
+      ctx.fillText("检测器", COL.x1 + 10, COL.y0 - 16);
+
+      // 色谱图坐标轴
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(PLT.x0, PLT.yTop);
+      ctx.lineTo(PLT.x0, PLT.yBase);
+      ctx.lineTo(PLT.x1, PLT.yBase);
+      ctx.stroke();
+      ctx.fillStyle = "#4b5563";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText("信号", PLT.x0 - 6, PLT.yTop + 10);
+      ctx.textAlign = "center";
+      ctx.fillText("保留时间 t →", (PLT.x0 + PLT.x1) / 2, PLT.yBase + 34);
+
+      // 保留时间参考线与标签
+      ctx.setLineDash([4, 4]);
+      for (var j = 0; j < COMP.length; j++) {
+        ctx.strokeStyle = COMP[j].color;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(pxT(COMP[j].tR), PLT.yBase);
+        ctx.lineTo(pxT(COMP[j].tR), pyS(COMP[j].H));
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.font = "bold 12px sans-serif";
+      var tLabels = ["t₁", "t₂", "t₃"];
+      for (var k = 0; k < COMP.length; k++) {
+        ctx.fillStyle = COMP[k].color;
+        ctx.textAlign = "center";
+        ctx.fillText(tLabels[k], pxT(COMP[k].tR), PLT.yBase + 16);
+      }
+
+      // 各组分独立峰（已流出的部分）
+      for (var m = 0; m < COMP.length; m++) {
+        var c = COMP[m];
+        ctx.beginPath();
+        var started = false;
+        for (var tau = Math.max(0, c.tR - 3.2 * c.sigma); tau <= Math.min(t, c.tR + 3.2 * c.sigma); tau += 0.2) {
+          var yy = pyS(c.H * gauss(tau, c.tR, c.sigma));
+          if (!started) { ctx.moveTo(pxT(tau), PLT.yBase); started = true; }
+          ctx.lineTo(pxT(tau), yy);
+        }
+        if (started) {
+          ctx.lineTo(pxT(Math.min(t, c.tR + 3.2 * c.sigma)), PLT.yBase);
+          ctx.closePath();
+          ctx.fillStyle = "rgba(" + c.rgba.join(",") + ",0.30)";
+          ctx.fill();
+        }
+      }
+      // 总信号曲线（到当前 t）
+      ctx.strokeStyle = "#1f2937";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (var tau2 = 0; tau2 <= t; tau2 += 0.25) {
+        var y2 = pyS(signal(tau2));
+        if (tau2 === 0) ctx.moveTo(pxT(tau2), y2); else ctx.lineTo(pxT(tau2), y2);
+      }
+      ctx.lineTo(pxT(t), PLT.yBase);
+      ctx.stroke();
+    }
+
+    function roundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    var DUR = 9000; // 毫秒
+    function frame(now) {
+      if (startTime === null) startTime = now;
+      var t = Math.min(TMAX, (now - startTime) / DUR * TMAX);
+      draw(t);
+      var done = COMP.filter(function (c) { return t >= c.tR; });
+      readout.textContent = done.length === 0
+        ? "t = " + t.toFixed(0) + "：三组分还在柱内前行，速度差异正逐渐拉开距离……"
+        : "t = " + t.toFixed(0) + "：已出峰 " + done.map(function (c) { return c.name; }).join("、") +
+          (done.length < 3 ? "，柱内仍在分离……" : "。分离完成：t₁ < t₂ < t₃，保留时间定性、峰面积定量。");
+      if (t >= TMAX) { rafId = null; return; }
+      rafId = requestAnimationFrame(frame);
+    }
+    function start() {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (reduced) { draw(TMAX); readout.textContent = "分离完成（已按系统减少动画设置直接显示结果）：红·绿·蓝依次在 t₁ < t₂ < t₃ 出峰，保留时间定性、峰面积定量。"; return; }
+      startTime = null;
+      rafId = requestAnimationFrame(frame);
+    }
+    if (playBtn) playBtn.addEventListener("click", start);
+    start();
+  }
+})();
+</script>
+</body>
+</html>

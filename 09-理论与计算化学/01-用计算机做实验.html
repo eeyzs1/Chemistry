@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用计算机做实验 · 理论与计算化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b09">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">09 理论与计算化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 用计算机做实验</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">09 理论与计算化学 · 第 1 章</div>
+    <h1>💻 用计算机做实验：先算后做的化学</h1>
+    <p class="lede">
+      1929 年狄拉克断言：化学的底层方程已经全部写好，"唯一的困难是这些方程太难解"。
+      一个世纪过去，<strong>聪明的近似 + 暴涨的算力</strong>终于把这句感叹变成了日常工具：
+      在动手合成之前，先在计算机里算出分子的形状与能量、模拟反应翻越哪座"山口"、
+      预告速率有多快。本章带你看懂这门学科的两台引擎——量子力学算电子、牛顿力学跑原子——
+      以及正在登场第三台引擎：机器学习。学完你会明白：计算结果能信到什么程度，
+      什么时候该"先算后做"。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：04 物理化学（量子章）</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#qm">电子结构：用近似换可解</a>
+    <a href="#pes">势能面：反应的地图</a>
+    <a href="#md">分子动力学：让原子跑起来</a>
+    <a href="#ml">机器学习势与 AI</a>
+    <a href="#tradeoff">精度与代价</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：方程在手，解不出来</h2>
+    <p>
+      量子力学给出了支配分子的总方程——不含时薛定谔方程
+      <span class="formula">Ĥψ = Eψ</span>：知道 ψ，就知道分子的一切。
+      麻烦在于<strong>电子之间互相排斥</strong>，每个电子的位置都牵连其他电子，
+      波函数成了一个 3N 维的函数（N = 电子数）。10 个电子就是 30 维——
+      哪怕每个坐标只取 10 个格点，也要存 10³⁰ 个数，比地球上所有沙粒还多十几个数量级。
+      这就是化学家所说的<strong>"维度灾难"</strong>：精确解只有氢原子这样的单电子体系。
+    </p>
+    <p>
+      计算化学的全部历史，就是一部<strong>用近似换可解</strong>的历史。出路有两条：
+      一条是继续解量子方程，但做聪明的近似（量子化学，§1–2）；
+      另一条干脆不算电子，用经验势能函数直接跑牛顿方程（分子模拟，§3）。
+      近年又杀出第三条：让机器从数据里学势能（§4）。
+    </p>
+    <div class="keypoint">
+      <div class="kp-title">📌 两台引擎，一座桥</div>
+      <strong>引擎一（量子）</strong>：解电子的薛定谔方程 → 给出能量与形状；
+      <strong>引擎二（牛顿）</strong>：让原子核在力的作用下运动 → 给出过程与轨迹。
+      连接两台引擎的桥是<strong>玻恩–奥本海默近似</strong>：先固定核、解出电子能量，
+      把结果铺成一张"能量地形图"，再让核在图上运动——这张图就是 §2 的主角：
+      <span class="term">势能面</span><span class="en">potential energy surface, PES</span>。
+    </div>
+  </section>
+
+  <!-- ============ §1 电子结构 ============ -->
+  <section id="qm">
+    <h2>§1 电子结构：用近似换可解</h2>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 从"解不动"到"算得动"</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          玻恩–奥本海默近似的直觉是"轻重悬殊"：原子核比电子重几千到几十万倍，
+          电子调整状态几乎瞬时完成。<strong>先让笨重的演员（核）摆好姿势，
+          灯光（电子）立刻跟上</strong>——于是可以每摆一个姿势解一次电子问题，
+          把不同姿势下的能量记下来，就得到核运动的"地板地形"。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 方法</span>
+        <p>
+          电子怎么办？<strong>平均场</strong>：让每个电子把其他电子感受成一片"平均云雾"，
+          多电子问题拆成一串单电子问题——这就是哈特里–福克（HF）方法；
+          在其上继续修正关联效应，得到微扰（MP2）与"金标准"CCSD(T)。
+          另一条路更妙：<strong>密度泛函理论（DFT）</strong>证明基态能量只是
+          电子密度 ρ（一个三维函数！）的泛函 <span class="formula">E[ρ]</span>——
+          维度灾难被绕开。1998 年诺贝尔化学奖（科恩、波普尔）正授予这两条路的开创者。
+          日常 DFT 算键长的典型误差约 0.01 Å，已够化学家使用。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          为什么这些方法"越算越准"？靠<strong>变分原理</strong>：对任何试探波函数，
+          <span class="formula">⟨ψ|Ĥ|ψ⟩ ≥ E₀</span>——算出的能量永不低于真实基态。
+          于是把 ψ 展开在一组"基函数"上，调节组合系数让能量最低：
+          基组越大越接近真值，代价也越大。计算化学的每次点击，
+          本质上都是一次<strong>精度 ↔ 代价</strong>的交易。
+        </p>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 DFT：性价比之王</div>
+      CCSD(T) 准到"化学精度"（kJ/mol 级），但只养得起十几个原子；
+      DFT 精度略逊、却算得动几百个原子——今天期刊里绝大多数反应机理研究，
+      用的都是它。先修的 04 分支量子章里"电子云"的图像，在 DFT 里变成了主角：
+      <strong>能量由密度决定，不必追每个电子</strong>。
+    </div>
+  </section>
+
+  <!-- ============ §2 势能面 ============ -->
+  <section id="pes">
+    <h2>§2 势能面：反应的立体地图</h2>
+    <p>
+      玻恩–奥本海默近似铺好"地形"之后，分子能量就成了所有原子坐标的函数
+      <span class="formula">E(R)</span>——一个 3N−6 维的超曲面。化学家的全部词汇都能翻译成地形：
+      <strong>谷底 = 稳定分子；两谷之间的山口 = 过渡态；谷到山口的高差 = 活化能 Ea</strong>。
+      反应就像一只小球从"反应物谷"翻过山口滚进"产物谷"——Ea 一旦算出，
+      速率就能用阿伦尼乌斯式 <span class="formula">k = A·e<sup>−Ea/RT</sup></span> 预言。
+    </p>
+
+    <h3>🔬 动手玩：势能面探索器</h3>
+    <p>
+      下图是计算化学家测试算法的"标准考场"（Müller–Brown 模型势能面）。
+      拖动小球（或用滑块、或直接在图上点按）选好初始构型，点"最陡下降"，看它滚进哪个谷：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="pesCanvas" width="560" height="380" style="max-width:100%;border-radius:8px;cursor:crosshair;touch-action:none" aria-label="势能面探索器：能量地形图上的小球最陡下降动画"></canvas>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;min-width:280px">
+          <div style="flex:1;min-width:220px">
+            <label for="pesX" style="font-size:.86rem;color:var(--ink-2)">构型坐标 x</label>
+            <input id="pesX" type="range" min="-1.6" max="1.2" step="0.005" value="0.623"
+                   style="width:100%;accent-color:var(--accent);height:40px" aria-label="小球 x 坐标">
+          </div>
+          <div style="flex:1;min-width:220px">
+            <label for="pesY" style="font-size:.86rem;color:var(--ink-2)">构型坐标 y</label>
+            <input id="pesY" type="range" min="-0.4" max="2.2" step="0.005" value="0.028"
+                   style="width:100%;accent-color:var(--accent);height:40px" aria-label="小球 y 坐标">
+          </div>
+        </div>
+        <div class="fig-controls">
+          <button class="btn" id="pesDescend">⛰ 最陡下降 · 滚向谷底</button>
+          <button class="btn ghost" id="pesReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="pesReadout"></div>
+      </div>
+      <figcaption>
+        蓝 = 谷底（稳定构型），红 = 山坡（高能量）。这张图上有三个谷（反应物、中间体、产物）
+        与两个山口（TS①、TS②，即鞍点）。注意观察：<strong>最陡下降永远只会滚进"脚下的谷"，
+        绝不翻山</strong>——这正是结构优化算法的天性；而要找过渡态（鞍点：沿反应方向是极大、
+        垂直方向是极小），必须用专门的鞍点搜索算法（如 NEB 弹性带方法）。
+        试着把小球放在两个谷之间的分水岭两侧各一次，看初位置如何决定命运。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 局部极小 ≠ 全局极小</div>
+      优化到梯度为零只能保证"到了某个谷底"，至于是哪一座，取决于出发位置——
+      这就是为什么计算化学家做"构型搜索"时要从多个初始结构出发。
+      产物谷（全局最低）未必是反应的归宿：<strong>动力学控制的过程可以停在中间体谷里</strong>。
+    </div>
+
+    <details class="think">
+      <summary>想一想：算出某反应 Ea = 50 kJ/mol，室温下它能发生吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：比较 Ea 与 RT（298 K 时约 2.5 kJ/mol），再想想"概率小"乘上"分子多"会怎样。</p>
+        <p>
+          能垒是 RT 的约 20 倍，能翻越山口的分子比例只有 e<sup>−Ea/RT</sup> ≈ e<sup>−20</sup> ≈
+          2×10⁻⁹——<strong>十亿分之二</strong>，看起来毫无希望？但一摩尔有 6×10²³ 个分子，
+          气相分子每秒碰撞 ~10⁹ 次：宏观速率依然可观。这正是阿伦尼乌斯式的深意：
+          <strong>温度出现在指数上</strong>，升温 10 K 就能让速率翻倍；
+          催化剂把 50 降到 25 kJ/mol，速率暴涨千倍——计算化学只要算准两个驻点的能量，
+          就能把这些数字全部预言出来。
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 例题脚手架：从 DFT 能垒到反应速率</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        DFT 计算给出某反应的活化能 Ea = 80.0 kJ/mol，指前因子 A = 1.0×10¹³ s⁻¹。<br>
+        ① 25 °C 时速率常数 k 是多少？② 升温到 125 °C，反应加快多少倍？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">写公式 <span class="formula">k = A·e<sup>−Ea/RT</sup></span>，统一单位：
+          Ea = 80000 J/mol，R = 8.314 J/(mol·K)，T₁ = 298 K。</li>
+        <li class="step">算指数：Ea/RT₁ = 80000 ÷ (8.314×298) = 32.3 →
+          e<sup>−32.3</sup> ≈ 9.7×10⁻¹⁵ →
+          k₁ = 1.0×10¹³ × 9.7×10⁻¹⁵ ≈ <strong>9.7×10⁻² s⁻¹</strong>（半衰期约 7 秒，肉眼可见的快）。</li>
+        <li class="step">T₂ = 398 K：Ea/RT₂ = 80000 ÷ (8.314×398) = 24.2 →
+          e<sup>−24.2</sup> ≈ 3.2×10⁻¹¹ → k₂ ≈ <strong>3.2×10² s⁻¹</strong>（半衰期约 2 毫秒）。</li>
+        <li class="step">倍数 = e<sup>(Ea/R)(1/T₁ − 1/T₂)</sup> = e<sup>8.1</sup> ≈
+          <strong>3300 倍</strong>。✅ 核对：k₂/k₁ = 320/0.097 ≈ 3300，两法一致。
+          结论：能垒越高，对温度越敏感——升温 100 K 快三千多倍，全写在指数里。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 分子动力学 ============ -->
+  <section id="md">
+    <h2>§3 分子动力学：让十万个原子跑起来</h2>
+    <p>
+      第二台引擎干脆不碰量子：给每个原子一个经验"力场"（键的弹簧 + 角的弯折 +
+      范德华 + 库仑），然后用 <span class="formula">F = −∂V/∂R</span> 和牛顿第二定律，
+      把时间切成飞秒级的小步（每步 1 fs），一步步推演位置与速度——
+      这就是<span class="term">分子动力学</span><span class="en">molecular dynamics, MD</span>。
+      一百万步才算出一纳秒的"电影"，却能看到实验看不见的画面：
+      药物分子如何从口袋里滑出、离子如何在电池里扩散、蛋白质如何折叠。
+      2013 年诺贝尔化学奖（卡普拉斯、莱维特、瓦谢尔）表彰的正是这类
+      "复杂化学体系的多尺度模型"。
+    </p>
+    <p>
+      MD 里的"温度"不是环境参数，而是<strong>分子平均动能的统计量</strong>；
+      模拟器靠"恒温器"微调速度，把体系维持在设定温度。这一点，下面的玩具模拟器里就能摸到：
+    </p>
+
+    <h3>🔬 动手玩：一台 90 原子的"分子动力学"</h3>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px;margin-bottom:10px">
+          <label for="mdT" style="font-size:.9rem;color:var(--ink-2)">
+            恒温器设定温度 T* = <strong id="mdTVal">0.30</strong>（约化单位）
+          </label>
+          <input id="mdT" type="range" min="5" max="150" value="30" step="1"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="模拟温度">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>低温（凝聚成液滴）</span><span>高温（蒸发成气体）</span>
+          </div>
+        </div>
+        <canvas id="mdCanvas" width="560" height="340" style="max-width:100%;border-radius:8px" aria-label="粒子分子动力学模拟器：温度滑块观察凝聚与蒸发"></canvas>
+        <div class="fig-controls">
+          <button class="btn ghost" id="mdReset">↺ 重置粒子</button>
+        </div>
+        <div class="fig-readout" id="mdReadout"></div>
+      </div>
+      <figcaption>
+        90 个粒子只受一对简单的伦纳德–琼斯势与微弱重力（σ 为粒径、ε 为作用强度、τ 为时间单位）。
+        把温度拉到底：动能被恒温器不断抽走，粒子凝聚成"液滴"，偶有表面粒子逃逸又被拉回；
+        调到中段：液滴与蒸气此消彼长，正是蒸发–凝结的动态平衡；拉到顶端：全部蒸发成气。
+        颜色按瞬时速率着色（蓝慢红快）——一屏看懂速率分布。真实 MD 只是把它放大到百万原子、
+        换上更精细的力场，原理一模一样。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 力场决定一切</div>
+      MD 的牛顿方程是精确的数值积分，<strong>精度全押在势能函数（力场）上</strong>：
+      力场算不准，后面的轨迹再漂亮也是"垃圾进、垃圾出"。
+      经典力场还有一个先天盲区——<strong>看不见断键与成键</strong>（电子过程被冻结了），
+      要模拟化学反应，就得请出 §4 的新引擎。
+    </div>
+  </section>
+
+  <!-- ============ §4 机器学习势与 AI ============ -->
+  <section id="ml">
+    <h2>§4 机器学习势与 AI：第三台引擎</h2>
+    <p>
+      计算化学长期困在一个不等式里：<strong>量子方法准但小（数百原子、皮秒），
+      经典力场大但糙（看不见反应）</strong>。2007 年 Behler 与 Parrinello 提出破局思路：
+      用几百上千个 DFT 算好的能量与力作为"教材"，训练一个神经网络来模仿 DFT——
+      <span class="term">机器学习势</span><span class="en">machine learning potential</span>。
+      它<strong>准得像量子、快得像经典</strong>，如今已能把含化学反应的模拟推到百万原子。
+      更宏观的版本同样震撼：DeepMind 的 GNoME 模型一口气预测出 220 万种候选晶体结构，
+      相当于把人类已知的无机晶体目录翻了近十倍——"先算几百万种、再挑几百种去合成"。
+    </p>
+    <p>
+      另一条新闻你多半听说过：2020 年 AlphaFold 在蛋白质结构预测大赛中达到接近实验的精度，
+      2024 年诺贝尔化学奖的一半授予了它的缔造者（另一半给了从头设计蛋白质的贝克）。
+      注意它的路线：<strong>不是解薛定谔方程，而是从十几万个已知结构中学习统计规律</strong>——
+      数据驱动，而非第一性原理。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 计算结果 ≠ 事实</div>
+      屏幕上的图再漂亮，也只是某个近似方法在某个基组下的输出。每个方法都有系统误差，
+      机器学习模型还只能<strong>内插、不能外推</strong>到训练数据之外。
+      严肃的计算必须报告方法与误差来源，并与实验基准核对——
+      <strong>未经检验的计算比无知更危险</strong>，因为它带着"精确"的假面具。
+    </div>
+
+    <details class="think">
+      <summary>想一想：AlphaFold 能预测结构，却说不出"为什么这样折叠"——没有方程的预测还算科学吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：科学的核心是"可检验的预言"，还是"可理解的机制"？两者必须是同一个吗？</p>
+        <p>
+          科学理论的门槛是<strong>可证伪、可检验</strong>：AlphaFold 的每个预测都能被实验推翻，
+          也确实在反复接受检验——它当然是科学工具。但"为什么"仍是第一性原理的领地：
+          方程给出机制与因果，数据给出关联与候选。<strong>数据驱动负责发现，第一性原理负责解释</strong>，
+          两台引擎加一台新引擎，恰好互补而非互替。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 精度与代价 ============ -->
+  <section id="tradeoff">
+    <h2>§5 精度与代价：没有"最好"的方法</h2>
+    <p>
+      把本章的方法放进一张表，"精度 × 空间尺度 × 时间尺度"的三角权衡一目了然——
+      三者同时拉满的方案不存在，预算永远只够你挑两样：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>方法</th><th>能算多大</th><th>能算多久</th><th>精度</th><th>典型用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>从头算（HF / MP2 / CCSD(T)）</td><td>十几~几十个原子</td><td>静态、振动</td><td>CCSD(T) = 金标准（kJ/mol 级）</td><td>小分子能谱、基准数据</td></tr>
+        <tr><td>密度泛函 DFT</td><td>数百原子</td><td>皮秒</td><td>键长 ~0.01 Å，能量数 kJ/mol</td><td>反应机理、催化剂筛选</td></tr>
+        <tr><td>经典力场 MD</td><td>十万~百万原子</td><td>微秒~毫秒</td><td>依赖参数化，看不见成断键</td><td>蛋白质、材料、界面</td></tr>
+        <tr><td>机器学习势</td><td>数千~百万原子</td><td>纳秒~微秒</td><td>接近 DFT（训练范围内）</td><td>大体系的化学反应</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 够用就好：分层计算策略</div>
+      现代研发的标准动作是<strong>分层下注</strong>：先用快而糙的方法扫成千上万个候选，
+      幸存者升级到 DFT 精算，最后冠军交给实验与合成。
+      "没有最好的方法，只有够用的方法"——这句行话，就是本章最后一课。
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "方程都写好了，化学是不是快'完结'了"？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          狄拉克都说定律全知道了——化学剩下的只是计算问题，
+          等计算机足够快，化学家就没事可干了。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          方程在手 ≠ 化学在手。其一，多电子问题遭遇<strong>维度灾难</strong>，
+          "再快一点的计算机"永远追不上指数增长——这正是近似方法与机器学习存在的理由；
+          其二，即便算得动，<strong>算什么、怎么把它造出来、真实现象意味着什么</strong>——
+          提出问题、设计合成、诠释结果，仍是化学家的创造。
+          理论给化学画好了跑道，比赛才刚开场。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>薛定谔方程原则上包含全部化学，但多电子体系遭遇<strong>维度灾难</strong>；
+          计算化学 = 用近似换可解。</li>
+        <li><strong>玻恩–奥本海默近似</strong>是两台引擎之间的桥：固定核解电子 → 铺出势能面 → 核在面上运动。</li>
+        <li>DFT 用电子密度代替波函数，是"性价比之王"；变分原理保证近似只会"偏高不会偏低"。</li>
+        <li>势能面上：<strong>谷 = 稳定构型，鞍点 = 过渡态，高差 = 活化能</strong>；
+          算出 Ea 即可经阿伦尼乌斯式预言速率。</li>
+        <li>MD 用力场 + 牛顿定律生成"分子电影"；温度 = 平均动能；
+          精度全押在力场上，经典力场看不见反应。</li>
+        <li>机器学习势"准如量子、快如经典"；AlphaFold 代表数据驱动路线——
+          发现与解释互补，计算结果必须经实验检验。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 用计算机做实验 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "玻恩–奥本海默近似（先固定原子核、解电子方程）的物理依据是？",
+            "options": ["原子核比电子重成千上万倍，电子几乎瞬间适应核的位置", "电子之间没有相互作用，方程本就可拆", "原子核在化学过程中从来不运动", "波函数必须是实函数才能求解"],
+            "answer": 0,
+            "explain": "依据是质量悬殊：核比电子重几千到几十万倍，电子状态的调整近乎瞬时，因此可把核坐标当参数先解电子问题，得到核运动的势能面。电子间排斥恰恰是要近似掉的难点，核当然也在动——只是慢得多。"
+          },
+          {
+            "q": "关于势能面上“过渡态”（鞍点）的描述，正确的是？",
+            "options": ["沿任何方向都是极大值，是整个势能面上能量最高的点", "沿反应方向是极大、垂直方向是极小，一推就滑走", "和极小点一样稳定，可以长期存在", "就是反应物与产物能量的平均值处"],
+            "answer": 1,
+            "explain": "过渡态是鞍点：一阶导为零；沿反应坐标是极大（两侧能量都更低），其余方向是极小。它是不稳定平衡，净反应方向上轻轻一推就滑向反应物或产物谷，寿命只有分子振动周期量级。"
+          },
+          {
+            "q": "分子动力学模拟中的“温度”指什么？",
+            "options": ["运行模拟的电脑的发热量", "粒子平均动能的统计量，由速度平方的平均算出", "每个粒子瞬时速度的大小", "体系总势能的高低"],
+            "answer": 1,
+            "explain": "统计力学中温度对应平均动能：kT 正比于 m 乘以速度平方的平均。模拟里的实测温度就是由所有粒子速度平方平均得到的，恒温器则通过微调速度（增减动能）把体系维持在设定值附近。"
+          },
+          {
+            "q": "机器学习势（ML potential）最大的优势是？",
+            "options": ["完全不需要训练数据即可使用", "能超越量子力学，比第一性原理更基本", "精度接近第一性原理计算，速度接近经典力场", "可以彻底取代实验测量"],
+            "answer": 2,
+            "explain": "机器学习势用 DFT 数据训练神经网络来模仿量子计算：精度接近 DFT、代价接近经验力场，从而让含化学反应的大体系模拟成为可能。但它本质上是对训练数据中规律的插值，外推能力有限，更谈不上取代实验。"
+          },
+          {
+            "q": "两个反应活化能分别为 40 与 80 kJ/mol，指前因子相同。升高相同的温度，谁加速得更猛？",
+            "options": ["两者加速倍数相同", "Ea = 40 kJ/mol 的反应更猛", "无法比较，还要看反应物浓度", "Ea = 80 kJ/mol 的反应更猛"],
+            "answer": 3,
+            "explain": "升温的加速倍数为 e 的 (Ea/R)(1/T₁−1/T₂) 次方：Ea 越大，倍数越大——高能垒反应对温度更敏感。这也解释了为什么催化剂把能垒从 80 砍到 40 kJ/mol，常足以让一个需要高温的反应在室温下进行。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">09 理论与计算化学 · 导学</span></a>
+      <a class="next" href="../10-药物化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">10 药物化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（势能面探索器 / 粒子分子动力学模拟器） ============ */
+(function () {
+  "use strict";
+
+  /* ---------- 1. 势能面探索器（Müller–Brown 势能面） ---------- */
+  var pesCanvas = document.getElementById("pesCanvas");
+  if (pesCanvas) {
+    var pctx = pesCanvas.getContext("2d");
+    var PW = pesCanvas.width, PH = pesCanvas.height;
+    var XMIN = -1.6, XMAX = 1.2, YMIN = -0.4, YMAX = 2.2;
+    var MB_A = [-200, -100, -170, 15], MB_a = [-1, -1, -6.5, 0.7],
+        MB_b = [0, 0, 11, 0.6], MB_c = [-10, -10, -6.5, 0.7],
+        MB_x = [1, 0, -0.5, -1], MB_y = [0, 1.5, 1.5, 1];
+
+    function mbE(x, y) {
+      var s = 0;
+      for (var i = 0; i < 4; i++) {
+        var dx = x - MB_x[i], dy = y - MB_y[i];
+        s += MB_A[i] * Math.exp(MB_a[i] * dx * dx + MB_b[i] * dx * dy + MB_c[i] * dy * dy);
+      }
+      return s;
+    }
+    function mbG(x, y) {
+      var gx = 0, gy = 0;
+      for (var i = 0; i < 4; i++) {
+        var dx = x - MB_x[i], dy = y - MB_y[i];
+        var e = MB_A[i] * Math.exp(MB_a[i] * dx * dx + MB_b[i] * dx * dy + MB_c[i] * dy * dy);
+        gx += e * (2 * MB_a[i] * dx + MB_b[i] * dy);
+        gy += e * (MB_b[i] * dx + 2 * MB_c[i] * dy);
+      }
+      return [gx, gy];
+    }
+    function toPx(x, y) {
+      return [(x - XMIN) / (XMAX - XMIN) * PW, PH - (y - YMIN) / (YMAX - YMIN) * PH];
+    }
+    function toDom(px, py) {
+      return [XMIN + px / PW * (XMAX - XMIN), YMIN + (PH - py) / PH * (YMAX - YMIN)];
+    }
+    function clampX(v) { return Math.max(XMIN + 0.02, Math.min(XMAX - 0.02, v)); }
+    function clampY(v) { return Math.max(YMIN + 0.02, Math.min(YMAX - 0.02, v)); }
+
+    var PTS = [
+      { x: 0.623, y: 0.028, tag: "反应物谷（局部极小）", lab: "反应物谷" },
+      { x: -0.558, y: 1.442, tag: "产物谷（全局极小）", lab: "产物谷" },
+      { x: -0.050, y: 0.467, tag: "中间体（局部极小）", lab: "中间体" },
+      { x: 0.212, y: 0.293, tag: "过渡态①（鞍点）", lab: "TS①" },
+      { x: -0.822, y: 0.624, tag: "过渡态②（鞍点）", lab: "TS②" }
+    ];
+
+    /* 色带：蓝（低能）→ 红（高能） */
+    function pal(t) {
+      var S = [
+        [0, 30, 58, 138], [0.25, 14, 165, 233], [0.45, 34, 197, 94],
+        [0.65, 253, 224, 71], [0.85, 249, 115, 22], [1, 220, 38, 38]
+      ];
+      for (var i = 1; i < S.length; i++) {
+        if (t <= S[i][0]) {
+          var u = (t - S[i - 1][0]) / (S[i][0] - S[i - 1][0]);
+          return [Math.round(S[i - 1][1] + u * (S[i][1] - S[i - 1][1])),
+                  Math.round(S[i - 1][2] + u * (S[i][2] - S[i - 1][2])),
+                  Math.round(S[i - 1][3] + u * (S[i][3] - S[i - 1][3]))];
+        }
+      }
+      return [220, 38, 38];
+    }
+
+    /* 预渲染地形（一次性） */
+    var LO = -147, HI = 15;
+    var pesBg = document.createElement("canvas");
+    pesBg.width = PW; pesBg.height = PH;
+    (function () {
+      var bctx = pesBg.getContext("2d");
+      var img = bctx.createImageData(PW, PH);
+      for (var py = 0; py < PH; py++) {
+        var wy = YMIN + (PH - py) / PH * (YMAX - YMIN);
+        for (var px = 0; px < PW; px++) {
+          var wx = XMIN + px / PW * (XMAX - XMIN);
+          var t = Math.max(0, Math.min(1, (mbE(wx, wy) - LO) / (HI - LO)));
+          var c = pal(t);
+          var k = (py * PW + px) * 4;
+          img.data[k] = c[0]; img.data[k + 1] = c[1]; img.data[k + 2] = c[2]; img.data[k + 3] = 255;
+        }
+      }
+      bctx.putImageData(img, 0, 0);
+    })();
+
+    var ball = { x: 0.623, y: 0.028 };
+    var trail = [];
+    var descending = false, dragging = false;
+    var pesX = document.getElementById("pesX"), pesY = document.getElementById("pesY");
+    var pesReadout = document.getElementById("pesReadout");
+    var btnDesc = document.getElementById("pesDescend"), btnPReset = document.getElementById("pesReset");
+
+    function pesWhere(x, y) {
+      var best = null, bd = 0.2;
+      for (var i = 0; i < PTS.length; i++) {
+        var d = Math.hypot(x - PTS[i].x, y - PTS[i].y);
+        if (d < bd) { bd = d; best = PTS[i]; }
+      }
+      return best;
+    }
+
+    function pesDraw() {
+      pctx.drawImage(pesBg, 0, 0);
+      pctx.shadowColor = "rgba(0,0,0,.75)"; pctx.shadowBlur = 3;
+      pctx.font = "bold 11px sans-serif"; pctx.textAlign = "left";
+      pctx.fillStyle = "rgba(255,255,255,.95)";
+      pctx.fillText("势能地形图：蓝 = 谷底（能量低）→ 红 = 山坡（能量高）", 10, 18);
+      pctx.fillText("Müller–Brown 模型势能面", 10, 34);
+      pctx.font = "bold 11.5px sans-serif"; pctx.textAlign = "center";
+      for (var i = 0; i < PTS.length; i++) {
+        var p = toPx(PTS[i].x, PTS[i].y);
+        pctx.beginPath(); pctx.arc(p[0], p[1], 3, 0, 6.283);
+        pctx.fillStyle = "#fff"; pctx.fill();
+        pctx.fillText(PTS[i].lab, p[0], p[1] - 9);
+      }
+      pctx.shadowBlur = 0;
+      if (trail.length > 1) {
+        pctx.strokeStyle = "rgba(255,255,255,.9)";
+        pctx.lineWidth = 2; pctx.setLineDash([5, 4]);
+        pctx.beginPath();
+        var p0 = toPx(trail[0].x, trail[0].y);
+        pctx.moveTo(p0[0], p0[1]);
+        for (var j = 1; j < trail.length; j++) {
+          var pj = toPx(trail[j].x, trail[j].y);
+          pctx.lineTo(pj[0], pj[1]);
+        }
+        pctx.stroke(); pctx.setLineDash([]);
+      }
+      var b = toPx(ball.x, ball.y);
+      pctx.beginPath(); pctx.arc(b[0], b[1], 8, 0, 6.283);
+      pctx.fillStyle = "#fff"; pctx.fill();
+      pctx.lineWidth = 2.5; pctx.strokeStyle = "#111827"; pctx.stroke();
+    }
+
+    function pesRead() {
+      pesX.value = ball.x; pesY.value = ball.y;
+      var E = mbE(ball.x, ball.y), g = mbG(ball.x, ball.y), gn = Math.hypot(g[0], g[1]);
+      var w = pesWhere(ball.x, ball.y), loc;
+      if (gn < 2) loc = "梯度≈0：停在驻点——" + (w ? w.tag : "某个山口或谷底");
+      else loc = w ? "山坡上（靠近" + w.tag + "）" : "山坡上";
+      pesReadout.textContent = descending
+        ? "⤵ 最陡下降滚动中……（白球只认坡度，从不翻山）"
+        : "小球坐标 (" + ball.x.toFixed(2) + ", " + ball.y.toFixed(2) + ") ｜ 能量 E = " +
+          E.toFixed(1) + " ｜ 梯度 |∇E| = " + gn.toFixed(1) + " ｜ " + loc;
+    }
+
+    function startDescent() {
+      if (descending) return;
+      trail = [{ x: ball.x, y: ball.y }];
+      descending = true;
+      var steps = 0;
+      (function anim() {
+        var s = 0;
+        while (descending && s < 8) {
+          var g = mbG(ball.x, ball.y), gn = Math.hypot(g[0], g[1]);
+          if (gn < 2 || steps >= 800) { descending = false; break; }
+          ball.x = clampX(ball.x - g[0] / gn * 0.012);
+          ball.y = clampY(ball.y - g[1] / gn * 0.012);
+          trail.push({ x: ball.x, y: ball.y });
+          steps++; s++;
+        }
+        pesDraw(); pesRead();
+        if (descending) requestAnimationFrame(anim);
+      })();
+    }
+
+    function pesPoint(e) {
+      var r = pesCanvas.getBoundingClientRect();
+      var px = (e.clientX - r.left) * PW / r.width;
+      var py = (e.clientY - r.top) * PH / r.height;
+      var d = toDom(px, py);
+      ball.x = clampX(d[0]); ball.y = clampY(d[1]);
+      trail = [];
+    }
+    pesCanvas.addEventListener("pointerdown", function (e) {
+      dragging = true; descending = false;
+      try { pesCanvas.setPointerCapture(e.pointerId); } catch (err) {}
+      pesPoint(e); pesDraw(); pesRead();
+    });
+    pesCanvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      pesPoint(e); pesDraw(); pesRead();
+    });
+    pesCanvas.addEventListener("pointerup", function () { dragging = false; });
+    pesCanvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    if (pesX) pesX.addEventListener("input", function () {
+      descending = false; trail = [];
+      ball.x = clampX(parseFloat(this.value)); pesDraw(); pesRead();
+    });
+    if (pesY) pesY.addEventListener("input", function () {
+      descending = false; trail = [];
+      ball.y = clampY(parseFloat(this.value)); pesDraw(); pesRead();
+    });
+    if (btnDesc) btnDesc.addEventListener("click", startDescent);
+    if (btnPReset) btnPReset.addEventListener("click", function () {
+      descending = false; trail = [];
+      ball.x = 0.623; ball.y = 0.028;
+      pesDraw(); pesRead();
+    });
+    pesDraw(); pesRead();
+  }
+
+  /* ---------- 2. 粒子分子动力学模拟器（LJ + 重力 + 恒温器） ---------- */
+  var mdCanvas = document.getElementById("mdCanvas");
+  if (mdCanvas) {
+    var mctx = mdCanvas.getContext("2d");
+    var MW = mdCanvas.width, MH = mdCanvas.height, S = 20;
+    var BW = MW / S, BH = MH / S; /* 约 28σ × 17σ 的盒子 */
+    var P = [];
+    var mdSet = 0.30, mdTema = 0.30;
+    var mdSlider = document.getElementById("mdT"), mdTVal = document.getElementById("mdTVal");
+    var mdReadout = document.getElementById("mdReadout"), mdResetBtn = document.getElementById("mdReset");
+
+    function mdInit() {
+      P = [];
+      var tries = 0;
+      while (P.length < 90 && tries < 30000) {
+        tries++;
+        var x = 1 + Math.random() * (BW - 2), y = 1 + Math.random() * (BH - 2), ok = true;
+        for (var i = 0; i < P.length; i++) {
+          var dx = P[i].x - x, dy = P[i].y - y;
+          if (dx * dx + dy * dy < 1.44) { ok = false; break; }
+        }
+        if (ok) {
+          var a = Math.random() * 6.283, v = Math.sqrt(mdSet) * (0.5 + Math.random());
+          P.push({ x: x, y: y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, fx: 0, fy: 0 });
+        }
+      }
+      mdTema = mdSet;
+    }
+
+    function mdStep(dt) {
+      var i, j;
+      for (i = 0; i < P.length; i++) { P[i].fx = 0; P[i].fy = -0.012; }
+      for (i = 0; i < P.length; i++) {
+        for (j = i + 1; j < P.length; j++) {
+          var dx = P[j].x - P[i].x, dy = P[j].y - P[i].y, r2 = dx * dx + dy * dy;
+          if (r2 < 6.25 && r2 > 0.01) {
+            var inv2 = 1 / r2, inv6 = inv2 * inv2 * inv2;
+            var f = 24 * inv6 * (2 * inv6 - 1) * inv2;
+            P[i].fx += f * dx; P[i].fy += f * dy;
+            P[j].fx -= f * dx; P[j].fy -= f * dy;
+          }
+        }
+      }
+      var sum = 0;
+      for (i = 0; i < P.length; i++) {
+        var p = P[i];
+        p.vx += p.fx * dt; p.vy += p.fy * dt;
+        p.x += p.vx * dt; p.y += p.vy * dt;
+        if (p.x < 0.5) { p.x = 0.5; p.vx = Math.abs(p.vx); }
+        if (p.x > BW - 0.5) { p.x = BW - 0.5; p.vx = -Math.abs(p.vx); }
+        if (p.y < 0.5) { p.y = 0.5; p.vy = Math.abs(p.vy); }
+        if (p.y > BH - 0.5) { p.y = BH - 0.5; p.vy = -Math.abs(p.vy); }
+        sum += p.vx * p.vx + p.vy * p.vy;
+      }
+      var Tc = sum / (2 * P.length);
+      if (Tc > 1e-9) {
+        var lam = Math.sqrt(1 + 0.12 * (mdSet / Tc - 1));
+        lam = Math.max(0.9, Math.min(1.12, lam));
+        for (i = 0; i < P.length; i++) { P[i].vx *= lam; P[i].vy *= lam; }
+      }
+    }
+
+    function mdStatus(T) {
+      if (T < 0.08) return "低温：粒子凝聚成液滴，表面偶有粒子逃逸又被拉回";
+      if (T < 0.45) return "中温：液滴与蒸气共存，蒸发–凝结动态拉锯";
+      return "高温：气态，粒子四处飞散，只在碰撞瞬间相互作用";
+    }
+
+    function mdDraw() {
+      mctx.fillStyle = "#0f172a"; mctx.fillRect(0, 0, MW, MH);
+      mctx.strokeStyle = "#334155"; mctx.lineWidth = 2; mctx.strokeRect(1, 1, MW - 2, MH - 2);
+      var vref = Math.sqrt(Math.max(mdSet, 0.05) * 3) + 0.15;
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i], v = Math.hypot(p.vx, p.vy);
+        var t = Math.min(1, v / vref);
+        mctx.beginPath();
+        mctx.arc(p.x * S, MH - p.y * S, 8, 0, 6.283);
+        mctx.fillStyle = "hsl(" + Math.round(205 - 205 * t) + ",85%,62%)";
+        mctx.fill();
+      }
+      mctx.font = "bold 11px sans-serif"; mctx.textAlign = "left";
+      mctx.fillStyle = "rgba(255,255,255,.85)";
+      mctx.fillText("颜色 = 瞬时速率：蓝（慢）→ 红（快），即速率分布的一瞥", 10, 18);
+    }
+
+    var mdFrame = 0;
+    function mdLoop() {
+      for (var s = 0; s < 6; s++) mdStep(0.008);
+      mdFrame++;
+      var sum = 0, vsum = 0;
+      for (var i = 0; i < P.length; i++) {
+        sum += P[i].vx * P[i].vx + P[i].vy * P[i].vy;
+        vsum += Math.hypot(P[i].vx, P[i].vy);
+      }
+      mdTema = mdTema * 0.95 + (sum / (2 * P.length)) * 0.05;
+      mdDraw();
+      if (mdFrame % 8 === 0) {
+        mdReadout.textContent = "设定 T* = " + mdSet.toFixed(2) + " ｜ 实测 T* ≈ " + mdTema.toFixed(2) +
+          " ｜ 平均速率 ≈ " + (vsum / P.length).toFixed(2) + " σ/τ ｜ 观察：" + mdStatus(mdTema);
+      }
+      requestAnimationFrame(mdLoop);
+    }
+
+    if (mdSlider) mdSlider.addEventListener("input", function () {
+      mdSet = parseInt(this.value, 10) / 100;
+      if (mdTVal) mdTVal.textContent = mdSet.toFixed(2);
+    });
+    if (mdResetBtn) mdResetBtn.addEventListener("click", function () { mdInit(); });
+    mdInit(); mdDraw(); mdLoop();
+  }
+})();
+</script>
+</body>
+</html>

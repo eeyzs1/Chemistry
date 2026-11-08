@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>元素周期律 · 无机化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">01 无机化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 元素周期律</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 无机化学 · 第 1 章</div>
+    <h1>元素周期律：读懂化学家的地图</h1>
+    <p class="lede">
+      把一小块钠丢进水缸，它会尖叫着打转、甚至爆燃；隔两格的镁，只安分地冒气泡；
+      再隔两格的硅，泡在水里十年八年也纹丝不动。<strong>同样是第 3 周期的邻居，脾气却天差地别</strong>——
+      差别不在"出身"，而在它们在周期表上的<strong>位置</strong>。本章教你把周期表从一张"元素名单"
+      升级为一张带等高线的地形图：半径、电离能、电子亲和能、电负性四大趋势，就是图上的四条等高线。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 50 分钟</span>
+      <span class="chip">先修：00 化学总论（原子结构 · 初识周期表）</span>
+      <span class="chip">交互动画 ×1</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#blocks">§1 周期表的分区</a>
+    <a href="#trends">§2 四大趋势</a>
+    <a href="#metallic">§3 金属性与非金属性</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：三格之差，天壤之别</h2>
+    <p>
+      1869 年门捷列夫排出周期表时（00 分支讲过这个故事），真正让化学家震惊的不是"元素能排队"，
+      而是<strong>排好队之后，性质会周期性地重复</strong>。锂、钠、钾、铷每隔八格出现一次，个个都是遇水就炸的暴脾气；
+      氟、氯、溴、碘也每隔八格出现一次，个个都是抢电子的猎手。
+    </p>
+    <p>
+      在 00 分支你已经会用两句口诀读表：<strong>周期数 = 电子层数，主族序数 ≈ 最外层电子数</strong>。
+      本章要把这两句口诀升级成一套"地形判读术"：为什么同一横行的元素从左到右越来越"抠门"
+      （半径变小、电离能变大、电负性变大），同一竖列从上到下越来越"大方"（恰恰相反）？
+      一旦掌握，你看到任何元素的位置，就能预判它的化学性格——这是整个无机化学分支的<strong>总钥匙</strong>。
+    </p>
+    <details class="think">
+      <summary>想一想：钠、镁、硅是第 3 周期的三位邻居，遇水表现却截然不同。位置差几格，到底差了什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：用 00 分支的口诀算一算它们的最外层电子数，再想想每加一个质子、核的引力变化。</p>
+        <p>
+          三者的最外层电子数分别是 1（Na）、2（Mg）、4（Si），且从左到右<strong>质子数递增而电子层数不变</strong>——
+          核对外层电子的引力一个比一个强。于是失电子越来越难：Na 恨不得把电子扔给水（剧烈放氢），
+          Mg 只能缓慢反应，Si 则把电子攥得死死的，干脆不与冷水反应。你看，<strong>周期表上的一小格，
+          就是化学性格的一大步</strong>。为什么会这样？§2 给出定量答案。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 分区 ============ -->
+  <section id="blocks">
+    <h2>§1 周期表的分区：s、p、d、f 四大板块</h2>
+    <p>
+      周期表有 18 个纵列（族），但化学家更爱按<strong>价电子填入的轨道类型</strong>把它切成四大块。
+      回忆 00 分支：电子住在 s、p、d、f 等轨道里，填充顺序遵循能量从低到高。
+      <strong>最后填充的是哪种轨道，元素就属于哪个区</strong>——这决定了它的"板块性格"。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>分区</th><th>价电子排布</th><th>所在位置</th><th>代表元素</th><th>板块性格</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>s 区</strong></td>
+          <td><span class="formula">ns<sup>1~2</sup></span></td>
+          <td>左侧第 1–2 列（ⅠA、ⅡA）</td>
+          <td>Na、Mg、Ca</td>
+          <td>活泼金属，见电子就让（强还原性）</td>
+        </tr>
+        <tr>
+          <td><strong>p 区</strong></td>
+          <td><span class="formula">ns<sup>2</sup>np<sup>1~6</sup></span></td>
+          <td>右侧第 13–18 列（ⅢA→0 族）</td>
+          <td>Al、Si、N、O、Cl</td>
+          <td>金属↔非金属渐变带，成键花样最多</td>
+        </tr>
+        <tr>
+          <td><strong>d 区</strong></td>
+          <td><span class="formula">(n−1)d<sup>1~10</sup>ns<sup>1~2</sup></span></td>
+          <td>中部第 3–12 列</td>
+          <td>Fe、Cu、Zn</td>
+          <td>过渡金属，多变价、多彩色、好催化</td>
+        </tr>
+        <tr>
+          <td><strong>f 区</strong></td>
+          <td><span class="formula">(n−2)f<sup>1~14</sup></span></td>
+          <td>表中另立两行（镧系、锕系）</td>
+          <td>Ce、U</td>
+          <td>稀土与放射性元素，性质彼此极其相似</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="230" viewBox="0 0 640 230" role="img" aria-label="周期表 s/p/d/f 分区示意图">
+          <!-- 坐标提示 -->
+          <text x="94" y="12" font-size="10" fill="#94a3b8">族 →</text>
+          <text x="560" y="100" font-size="10" fill="#94a3b8" transform="rotate(90 560 100)">周期 ↓</text>
+          <!-- s 区 -->
+          <rect x="90" y="20" width="54" height="148" rx="6" fill="#fecaca" stroke="#f87171" stroke-width="1.5"/>
+          <text x="117" y="86" text-anchor="middle" font-size="15" font-weight="800" fill="#7f1d1d">s 区</text>
+          <text x="117" y="106" text-anchor="middle" font-size="10" fill="#7f1d1d">ⅠA · ⅡA</text>
+          <text x="117" y="122" text-anchor="middle" font-size="9.5" fill="#991b1b">碱金属碱土</text>
+          <!-- d 区 -->
+          <rect x="152" y="20" width="220" height="148" rx="6" fill="#c7d2fe" stroke="#818cf8" stroke-width="1.5"/>
+          <text x="262" y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#312e81">d 区</text>
+          <text x="262" y="100" text-anchor="middle" font-size="10" fill="#312e81">第 3–12 列</text>
+          <text x="262" y="116" text-anchor="middle" font-size="9.5" fill="#3730a3">过渡金属</text>
+          <!-- p 区 -->
+          <rect x="380" y="20" width="152" height="148" rx="6" fill="#bbf7d0" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="456" y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#14532d">p 区</text>
+          <text x="456" y="100" text-anchor="middle" font-size="10" fill="#14532d">第 13–18 列</text>
+          <text x="456" y="116" text-anchor="middle" font-size="9.5" fill="#166534">主族非金属带</text>
+          <!-- He 例外标注 -->
+          <circle cx="520" cy="40" r="9" fill="#fff" stroke="#4ade80" stroke-width="1.2"/>
+          <text x="520" y="44" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">He</text>
+          <line x1="520" y1="51" x2="520" y2="64" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 2"/>
+          <text x="556" y="60" font-size="8.5" fill="#6b7280">He：住 s 区，坐在 0 族</text>
+          <!-- f 区 -->
+          <rect x="152" y="180" width="220" height="36" rx="6" fill="#fde68a" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="262" y="202" text-anchor="middle" font-size="11" font-weight="700" fill="#78350f">f 区 · 镧系 / 锕系（从第 6 周期"插队"另立两行）</text>
+        </svg>
+      </div>
+      <figcaption>
+        分区示意（非严格比例）。注意氦 He 是著名"钉子户"：电子排布 <span class="formula">1s<sup>2</sup></span> 属 s 区，
+        但因为它最外层满员的"贵族气质"，在表中被安置在第 18 列的稀有气体族。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：d 区为什么"夹"在 s 区和 p 区中间，而不是排在表的开头或末尾？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：第 4 周期开头，4s 和 3d 谁的能量更低？</p>
+        <p>
+          存在<span class="term">能级交错</span><span class="en">energy level interleaving</span>：
+          从第 4 周期起，<span class="formula">4s</span> 的能量反而低于 <span class="formula">3d</span>。
+          于是钾、钙先填满 4s（此时是 s 区性格），从钪 Sc 起电子才开始填 3d——d 电子"住在次外层却中途加入"，
+          在表上就表现为中部插进一大块 d 区；填完 d 再填 4p，接上右侧的 p 区。这也解释了为什么
+          过渡金属常有多种价态：次外层的 d 电子与最外层的 s 电子能量相近，都可以参战（第 3 章展开）。
+        </p>
+      </div>
+    </details>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 分区速记</div>
+      <strong>左右两翼是 s 区与 p 区（主族元素），中间宽腰带是 d 区（过渡金属），表下另立两行是 f 区。</strong>
+      本分支第 2 章走两翼（主族），第 3 章钻腰带（过渡金属）。
+    </div>
+  </section>
+
+  <!-- ============ §2 四大趋势 ============ -->
+  <section id="trends">
+    <h2>§2 四大趋势：地图上的等高线</h2>
+    <p>
+      四大趋势的主角只有一个：<span class="term">有效核电荷</span><span class="en">effective nuclear charge, Z<sub>eff</sub></span>。
+      核内质子数 Z 在增加，但新增电子会<strong>屏蔽</strong>一部分核引力——内层电子像一堵墙，替外层电子挡住部分正电。
+      外层电子实际感受到的引力，约等于 <span class="formula">Z<sub>eff</sub> = Z − 屏蔽常数</span>。
+      同一周期从左到右，质子一个一个加，新增电子却几乎填在<strong>同一层</strong>，彼此屏蔽不彻底——
+      于是 Z<sub>eff</sub> 持续上升，核把外层电子越攥越紧。这一条主线，决定了四大趋势的方向。
+    </p>
+
+    <h3>趋势一：原子半径——右小下大</h3>
+    <p>
+      <strong>同一周期从左到右：电子层数不变、Z<sub>eff</sub> 增大 → 半径减小。</strong>
+      <strong>同一族从上到下：Z<sub>eff</sub> 增幅不大、电子层数逐个加一层 → 半径增大。</strong>
+      两句合起来：谁的"座位"靠右上，谁就被压得小；靠左下，就长得大。
+    </p>
+
+    <h3>趋势二：第一电离能——右大下小</h3>
+    <p>
+      <span class="term">电离能</span><span class="en">ionization energy, IE</span>是夺走一个气态原子最外层电子所需的能量：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">M(g) → M<sup>+</sup>(g) + e<sup>−</sup>　ΔH = IE<sub>1</sub> &gt; 0</span>
+    </p>
+    <p>
+      它衡量原子<strong>守住自己电子的能力</strong>。从左到右 Z<sub>eff</sub> 增大、半径减小，电子被攥得更紧 → IE 升高；
+      从上到下半径增大、最外层离核越来越远 → IE 下降。
+    </p>
+
+    <h3>趋势三：电子亲和能——右大下小（总体）</h3>
+    <p>
+      <span class="term">电子亲和能</span><span class="en">electron affinity, EA</span>是气态原子<strong>得到一个电子</strong>所放出的能量
+      （放热越多，EA 绝对值越大）。从左到右，原子核想抢电子的"愿望"增强 → EA 总体增大；
+      从上到下，新增电子要挤进越来越大的电子云、离核越来越远 → EA 总体减小。
+      但这条趋势的例外最多——比如 EA 最大的是<strong>氯 Cl</strong>（约 349 kJ/mol）而不是氟，§末的误区粉碎机会解释原因。
+    </p>
+
+    <h3>趋势四：电负性——右大下小</h3>
+    <p>
+      <span class="term">电负性</span><span class="en">electronegativity, EN</span>由鲍林提出，衡量原子<strong>在化合物中拉拢共用电子</strong>的本领。
+      它综合了"抓住外来电子"（EA）与"守住自家电子"（IE）两端，是从左到右增大、从上到下减小的"斜线指标"：
+      全表最强在右上角（氟，3.98），最弱在左下角（钫/铯附近，约 0.7–0.8）。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>趋势</th><th>从左 → 右（同周期）</th><th>从上 → 下（同族）</th><th>主因</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>原子半径</strong></td><td>减小 ↓</td><td>增大 ↑</td><td>→：Z<sub>eff</sub> 增大；↓：电子层数增加</td></tr>
+        <tr><td><strong>第一电离能</strong></td><td>增大 ↑</td><td>减小 ↓</td><td>→：电子被攥更紧；↓：最外层离核更远</td></tr>
+        <tr><td><strong>电子亲和能</strong></td><td>增大 ↑（例外多）</td><td>减小 ↓</td><td>→：抢电子愿望增强；↓：电子云更松散</td></tr>
+        <tr><td><strong>电负性</strong></td><td>增大 ↑</td><td>减小 ↓</td><td>综合 IE 与 EA 的"斜线指标"</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔬 动手玩：趋势可视化器</h3>
+    <p>
+      下面把前 20 号元素的三项关键数据画成柱状图。<strong>用三个按钮切换指标</strong>，
+      观察每个周期内部的锯齿走势和周期之间的"跳水"——尤其是稀有气体处电离能的尖峰，
+      以及 He、Ne、Ar 在电负性图上的空缺。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="trendSvg" width="680" height="380" viewBox="0 0 680 380" role="img" aria-label="前 20 号元素性质趋势柱状图"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="mR" aria-pressed="true">原子半径</button>
+          <button class="btn ghost" id="mIE" aria-pressed="false">第一电离能</button>
+          <button class="btn ghost" id="mEN" aria-pressed="false">电负性</button>
+        </div>
+        <div class="fig-readout" id="trendReadout">👆 悬停或点击任一柱子查看数值</div>
+      </div>
+      <figcaption>
+        半径为 Clementi 计算值（pm）；电离能为实验值（kJ/mol）；电负性为 Pauling 标度（稀有气体无常见化合物，传统上不赋值）。
+        留意图中的"小锯齿"：Be→B、N→O 处电离能不升反降——半满、全满结构的额外稳定性（见下方思考题）。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 质子明明变多了，原子为什么反而从左到右缩小？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把原子想成一座环形剧场：<strong>电子层数 = 座位的圈数</strong>，原子核 = 舞台中央的磁铁。
+          同一周期从左到右，圈数一张椅子都没加，可磁铁一块接一块地叠上去——吸力越来越强，
+          每一圈观众都被往舞台方向拉近。<strong>座位没变多，但整场都缩了水。</strong>
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          同周期新增的电子几乎落在<strong>同一层（甚至同一亚层）</strong>，同层电子之间屏蔽很不彻底——
+          每加一个质子，Z<sub>eff</sub> 净增约 0.6~0.7。以第 2 周期为例，锂的 Z=3，外层电子感受到的
+          Z<sub>eff</sub> 只有 1+ ；到氟时 Z=9，Z<sub>eff</sub> 已升至 5+ 以上。<strong>引力几乎翻了五倍，
+          而盾牌（内层电子）一个没加</strong>，电子云自然被压扁——半径从 Li 的 167 pm 一路缩到 F 的 42 pm。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          用类氢轨道近似，电子云最概然半径 <span class="formula">r<sub>max</sub> ∝ n² / Z<sub>eff</sub></span>：
+          半径由"圈数 n"与"有效引力 Z<sub>eff</sub>"拔河决定。同周期 n 不变，Z<sub>eff</sub> 稳步上升，r<sub>max</sub> 必然压缩。
+          同族从上到下则相反：Z<sub>eff</sub> 只缓慢增加（每层新电子把内层裹得越来越严实），
+          而 n² 逐级跳涨——半径于是逐级膨胀。顺带预告一个精彩的例外：第 6 周期镧系元素的 f 电子屏蔽不佳，
+          导致其后元素半径反常地小，称为<span class="term">镧系收缩</span><span class="en">lanthanide contraction</span>，
+          它是第 3 章过渡金属故事里的重要伏笔。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "氟最活泼，所以电离能一定最高"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          氟是反应最猛烈、电负性最大的元素，"抓电子天下第一"——那它"守电子"的本事肯定也第一，
+          电离能应该最高。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          电离能是<strong>别人从它手里抢电子的成本</strong>，与它<strong>主动抢别人电子</strong>的活性是两回事，方向恰好相反。
+          第一电离能的冠军根本不在活泼元素里，而在"懒得反应"的稀有气体：<strong>He（2372 kJ/mol）&gt; Ne（2081）&gt; Ar（1521）</strong>，
+          氟只有 1681 kJ/mol，连氖都比不过。氟的凶猛来自抢电子（EA/EN），不是守电子（IE）。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "电子亲和能大 = 电负性大，两个是同一件事"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          都说 EA 衡量"得电子能力"、EN 也衡量"得电子能力"，那两者排序应该一模一样：
+          Cl 的 EA（349 kJ/mol）比 F（328）大，所以 Cl 的电负性也该比 F 大。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          EA 是<strong>孤立原子额外抓一个电子的瞬间放热</strong>；EN 是原子<strong>在分子里持续拉拢共用电子</strong>的综合倾向，
+          同时兼顾"抓来"（EA）与"守住"（IE）。F 的 EN（3.98）仍远大于 Cl（3.16）。
+          至于 Cl 的 EA 反超 F：F 原子太小，新电子挤进本已拥挤的 2p 电子云，排斥能吃掉了一部分放热——
+          小个子挤地铁，费劲。两个指标各有场景，不能互相替换。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：N 的第一电离能（1402）比 O（1314）还高，"从左到右增大"失灵了？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：写出 N 和 O 的 2p 轨道填充图，看看失电子前后各自变成什么结构。</p>
+        <p>
+          N 是 <span class="formula">2p<sup>3</sup></span>——三个 2p 轨道<strong>半满</strong>，自旋平行、彼此远离，特别稳定；
+          失去一个电子反而破坏这份稳定。O 是 <span class="formula">2p<sup>4</sup></span>，有一对电子挤同一轨道、互相排斥，
+          失去一个反而"退"回半满的 N 型结构，于是更容易被夺走。同理 Be（2s² 全满）&gt; B（2s²2p¹）。
+          <strong>趋势是主旋律，半满/全满是装饰音</strong>——判断题遇到相邻两元素，先想想有没有这两个"特殊拍子"。
+        </p>
+      </div>
+    </details>
+
+    <div class="warn">
+      <div class="kp-title">🧯 趋势使用须知</div>
+      四大趋势适用于<strong>同周期、同族的方向性比较</strong>，不要拿它硬算相邻两元素的具体数值，
+      也别用它跨大半个周期"精确定位"——遇到 Be/B、N/O 这类近邻，先检查半满/全满结构；
+      遇到 f 区，记得镧系收缩。趋势是地图，不是导航仪。
+    </div>
+  </section>
+
+  <!-- ============ §3 金属性 ============ -->
+  <section id="metallic">
+    <h2>§3 金属性与非金属性：趋势的合流</h2>
+    <p>
+      单独记四条趋势太累，化学家用两个"合成指标"把它们收拢：
+      <span class="term">金属性</span><span class="en">metallic character</span>＝原子<strong>失去</strong>电子的倾向
+      （IE 越低、半径越大、EN 越小 → 金属性越强）；
+      <span class="term">非金属性</span><span class="en">nonmetallic character</span>＝原子<strong>获得/共用</strong>电子的倾向
+      （IE、EA、EN 越大 → 非金属性越强）。
+    </p>
+    <p>
+      于是四大趋势合流成一句话：<strong>金属性从左到右减弱、从上到下增强；非金属性恰好相反。</strong>
+      在地图上画一条左下—右上的对角线：左下角（Cs、Fr）是最暴躁的金属，右上角（F）是最贪婪的非金属，
+      沿对角线一带（B、Si、As、Te）则是"墙头草"类金属。
+    </p>
+
+    <h3>📐 例题脚手架：用趋势排大小</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：比较 Na、Mg、Si 的原子半径</div>
+      <div class="worked-problem">
+        将钠、镁、硅按原子半径从大到小排序，并说明理由。
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>定位</strong>：三者都在第 3 周期，从左到右依次是 Na（11）→ Mg（12）→ Si（14）。同周期比较，只需"从左到右"一条规则。</li>
+        <li class="step"><strong>调用规则</strong>：同周期从左到右，电子层数不变（都是 3 层），质子数增加而新增电子同层屏蔽不彻底 → Z<sub>eff</sub> 增大 → 核对外层电子引力增强 → 半径减小。</li>
+        <li class="step"><strong>应用规则</strong>：位置越靠右半径越小，故 r(Na) &gt; r(Mg) &gt; r(Si)。</li>
+        <li class="step"><strong>数据核对</strong>：计算值 r(Na)=190 pm、r(Mg)=145 pm、r(Si)=111 pm——钠几乎是硅的两倍，排序成立 ✓</li>
+        <li class="step">✅ <strong>结论</strong>：r(Na) &gt; r(Mg) &gt; r(Si)。延伸：半径大、最外层只有 1 个电子、IE 最低——这也预告了下一章钠的暴脾气。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：比较 K、Ca、Mg 的第一电离能</div>
+      <div class="worked-problem">
+        将钾、钙、镁按第一电离能从大到小排序。<em>（每一步都藏了提示，先自己推一步再看）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：先定位。K、Ca 同在第 4 周期；Mg 在第 3 周期。跨周期的比较没法一条规则走完，得<strong>搭桥</strong>——找一个能与两边都比的元素。</li>
+        <li class="step">💡 提示：Ca 和 Mg 同为 ⅡA 族。"同族从上到下，电子层数增加、最外层离核更远 → IE 减小"，所以 Mg &gt; Ca。</li>
+        <li class="step">💡 提示：K 和 Ca 同在第 4 周期。"同周期从左到右 Z<sub>eff</sub> 增大 → IE 增大"，所以 Ca &gt; K。</li>
+        <li class="step">💡 提示：两段桥接起来：<strong>Mg &gt; Ca &gt; K</strong>。核对数据：738 &gt; 590 &gt; 419 kJ/mol ✓</li>
+        <li class="step">✅ 自查逻辑：Mg 在 Ca 的正上方（同族靠上），Ca 在 K 的右侧（同周期靠右）——两个方向都指向"IE 更大"，结论一致。K 的 IE 是三者最低，它最容易失去电子，下一章你会看到钾遇水的疯狂。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一张图记住本章</div>
+      半径<strong>右小下大</strong>；电离能、电子亲和能、电负性一律<strong>右大下小</strong>；
+      于是金属性<strong>右弱下强</strong>（最金属：Cs），非金属性<strong>右强下弱</strong>（最非金属：F）。
+      一切方向都来自两股力量的拔河：<strong>向右，Z<sub>eff</sub> 越来越大；向下，电子层越加越多。</strong>
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>周期表按价电子轨道分四区：<strong>s 区</strong>（活泼金属）、<strong>p 区</strong>（主族渐变带）、<strong>d 区</strong>（过渡金属）、<strong>f 区</strong>（镧系锕系）。</li>
+        <li>一切趋势的主线是 <strong>Z<sub>eff</sub> 与电子层数的拔河</strong>：向右 Z<sub>eff</sub> 增大，向下电子层增多。</li>
+        <li>原子半径<strong>右小下大</strong>；第一电离能、电子亲和能、电负性<strong>右大下小</strong>（EA 例外较多）。</li>
+        <li>电离能最高的是 <strong>He、Ne、Ar</strong>，不是最活泼的氟——"守电子"与"抢电子"是两个方向。</li>
+        <li>金属性右弱下强（Cs 最强），非金属性右强下弱（F 最强）；半满/全满结构会造成小锯齿。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 元素周期律 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "同一周期内，原子半径从左到右减小的根本原因是？",
+            "options": [
+              "电子层数逐个减少",
+              "电子层数不变，质子数增加使有效核电荷增大，核对外层电子引力增强",
+              "质子数增加使原子质量增大，把原子压紧",
+              "新增电子把原子核包裹得更厚"
+            ],
+            "answer": 1,
+            "explain": "同一周期电子层数完全相同；差别在 Zeff：同层新电子彼此屏蔽不彻底，每右移一格净引力约增 0.6~0.7，电子云被逐步拉紧，半径减小。选项 A 错在层数不变；C 与质量无关；D 说反了——屏蔽越厚 Zeff 增长越慢。"
+          },
+          {
+            "q": "第一电离能最大的元素是？",
+            "options": ["氟 F", "氦 He", "氖 Ne", "铯 Cs"],
+            "answer": 1,
+            "explain": "He 2372 > Ne 2081 > F 1681 kJ/mol。电离能衡量'守住自家电子'的成本，冠军是满层结构的稀有气体；氟的活泼来自抢电子（EA/EN），与守电子是两回事。"
+          },
+          {
+            "q": "Na、Mg、Si 的原子半径从大到小排序正确的是？",
+            "options": [
+              "Na > Mg > Si",
+              "Si > Mg > Na",
+              "Mg > Na > Si",
+              "三者几乎相同"
+            ],
+            "answer": 0,
+            "explain": "同为第 3 周期，从左到右 Zeff 增大、半径减小：Na(190 pm) > Mg(145) > Si(111)。同周期排序题不需要记具体数字，位置即答案。"
+          },
+          {
+            "q": "下列元素中电负性最大的是？",
+            "options": ["氯 Cl", "氧 O", "氟 F", "氮 N"],
+            "answer": 2,
+            "explain": "电负性从左到右增大、从上到下减小，最强在右上角——F(3.98) > O(3.44) > Cl(3.16) > N(3.04)。注意 Cl 虽然电子亲和能略高于 F，但电负性综合'抓+守'两端，F 仍是冠军。"
+          },
+          {
+            "q": "同族元素从上到下金属性增强，主要原因是？",
+            "options": [
+              "质子数减少，核对电子引力减弱",
+              "电子层数增多、半径增大，最外层电子离核更远更易失去",
+              "原子质量增大，电子被压出去",
+              "同族元素的电负性逐个增大"
+            ],
+            "answer": 1,
+            "explain": "同族向下质子数其实增加，但新增的整层电子屏蔽了净引力的增长，Zeff 变化不大；而电子层数逐个 +1、半径逐级膨胀，最外层电子'山高皇帝远'，越来越容易丢——金属性增强。D 方向说反了：电负性从上到下减小。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">01 无机化学 · 导学</span></a>
+      <a class="next" href="02-主族元素.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 2 章 · 主族元素</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互：趋势可视化器（半径 / 电离能 / 电负性） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* 前 20 号元素数据：r=Clementi 计算半径(pm)；ie=第一电离能(kJ/mol)；en=Pauling 电负性 */
+  var ELS = [
+    { z: 1,  s: "H",  n: "氢", r: 53,  ie: 1312, en: 2.20 },
+    { z: 2,  s: "He", n: "氦", r: 31,  ie: 2372, en: null },
+    { z: 3,  s: "Li", n: "锂", r: 167, ie: 520,  en: 0.98 },
+    { z: 4,  s: "Be", n: "铍", r: 112, ie: 900,  en: 1.57 },
+    { z: 5,  s: "B",  n: "硼", r: 87,  ie: 801,  en: 2.04 },
+    { z: 6,  s: "C",  n: "碳", r: 67,  ie: 1086, en: 2.55 },
+    { z: 7,  s: "N",  n: "氮", r: 56,  ie: 1402, en: 3.04 },
+    { z: 8,  s: "O",  n: "氧", r: 48,  ie: 1314, en: 3.44 },
+    { z: 9,  s: "F",  n: "氟", r: 42,  ie: 1681, en: 3.98 },
+    { z: 10, s: "Ne", n: "氖", r: 38,  ie: 2081, en: null },
+    { z: 11, s: "Na", n: "钠", r: 190, ie: 496,  en: 0.93 },
+    { z: 12, s: "Mg", n: "镁", r: 145, ie: 738,  en: 1.31 },
+    { z: 13, s: "Al", n: "铝", r: 118, ie: 578,  en: 1.61 },
+    { z: 14, s: "Si", n: "硅", r: 111, ie: 787,  en: 1.90 },
+    { z: 15, s: "P",  n: "磷", r: 98,  ie: 1012, en: 2.19 },
+    { z: 16, s: "S",  n: "硫", r: 88,  ie: 1000, en: 2.58 },
+    { z: 17, s: "Cl", n: "氯", r: 79,  ie: 1251, en: 3.16 },
+    { z: 18, s: "Ar", n: "氩", r: 71,  ie: 1521, en: null },
+    { z: 19, s: "K",  n: "钾", r: 243, ie: 419,  en: 0.82 },
+    { z: 20, s: "Ca", n: "钙", r: 194, ie: 590,  en: 1.00 }
+  ];
+  var PERIODS = [[0, 1], [2, 9], [10, 17], [18, 19]];
+
+  var METRICS = {
+    r:  { axis: "原子半径 / pm", color: "#2563eb", key: "r",
+          periodNote: "同周期 左→右：半径减小", groupNote: "同族 上→下（Li→Na→K）：半径增大",
+          fmt: function (v) { return v + " pm"; } },
+    ie: { axis: "第一电离能 / kJ·mol⁻¹", color: "#c2410c", key: "ie",
+          periodNote: "同周期 左→右：电离能增大（注意稀有气体尖峰）", groupNote: "同族 上→下（Li→Na→K）：电离能减小",
+          fmt: function (v) { return v + " kJ/mol"; } },
+    en: { axis: "电负性 / Pauling", color: "#15803d", key: "en",
+          periodNote: "同周期 左→右：电负性增大（稀有气体无值）", groupNote: "同族 上→下（Li→Na→K）：电负性减小",
+          fmt: function (v) { return v.toFixed(2); } }
+  };
+
+  var svg = document.getElementById("trendSvg");
+  if (!svg) return;
+  var readout = document.getElementById("trendReadout");
+  var current = "r";
+  var selected = -1;
+
+  /* 布局常量 */
+  var W = 680, SLOT0 = 52, SLOTW = 30.8;
+  var ANN1 = 26, ANN2 = 52, TOP = 88, BOT = 326, SYM = 346, PB = 366;
+
+  function xOf(i) { return SLOT0 + i * SLOTW + SLOTW / 2; }
+
+  function buildRanks(m) {
+    var arr = [];
+    for (var i = 0; i < ELS.length; i++) {
+      if (ELS[i][m.key] !== null) arr.push([ELS[i][m.key], i]);
+    }
+    arr.sort(function (a, b) { return b[0] - a[0]; });
+    var rk = {};
+    arr.forEach(function (pair, idx) { rk[pair[1]] = idx + 1; });
+    return rk;
+  }
+
+  function arrow(parent, x1, y1, x2, y2, dashed) {
+    var ln = el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: "#4b5563",
+                          "stroke-width": 1.6, "marker-end": "url(#trArr)" }, parent);
+    if (dashed) ln.setAttribute("stroke-dasharray", "5 4");
+  }
+
+  function render() {
+    var m = METRICS[current];
+    svg.innerHTML = "";
+
+    /* 箭头 marker 定义 */
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "trArr", markerWidth: 7, markerHeight: 7, refX: 5.2, refY: 2.6, orient: "auto" }, defs);
+    el("path", { d: "M0,0 L5.6,2.6 L0,5.2 z", fill: "#4b5563" }, mk);
+
+    /* 周期底色带与分隔虚线 */
+    PERIODS.forEach(function (p, pi) {
+      var x = SLOT0 + p[0] * SLOTW, w = (p[1] - p[0] + 1) * SLOTW;
+      el("rect", { x: x, y: TOP, width: w, height: BOT - TOP, fill: pi % 2 ? "#ffffff" : "#f8fafc" }, svg);
+      el("text", { x: x + w / 2, y: PB, "text-anchor": "middle", "font-size": 9.5, fill: "#94a3b8" }, svg)
+        .textContent = "第" + (pi + 1) + "周期";
+    });
+    [2, 10, 18].forEach(function (b) {
+      el("line", { x1: SLOT0 + b * SLOTW, y1: TOP, x2: SLOT0 + b * SLOTW, y2: BOT,
+                   stroke: "#e5e7eb", "stroke-width": 1.2, "stroke-dasharray": "3 4" }, svg);
+    });
+
+    /* 纵轴与网格线 */
+    var maxV = 0;
+    ELS.forEach(function (e) { if (e[m.key] !== null && e[m.key] > maxV) maxV = e[m.key]; });
+    var scaleMax = maxV * 1.08;
+    for (var g = 1; g <= 4; g++) {
+      var gy = BOT - (BOT - TOP) * g / 4;
+      el("line", { x1: SLOT0 - 4, y1: gy, x2: W - 10, y2: gy, stroke: "#eef1f4", "stroke-width": 1 }, svg);
+      var lab = el("text", { x: SLOT0 - 8, y: gy + 3.5, "text-anchor": "end", "font-size": 9.5, fill: "#6b7280" }, svg);
+      lab.textContent = m.key === "en" ? (scaleMax * g / 4).toFixed(1) : Math.round(scaleMax * g / 4);
+    }
+    el("line", { x1: SLOT0 - 4, y1: BOT, x2: W - 10, y2: BOT, stroke: "#cbd5e1", "stroke-width": 1.5 }, svg);
+    el("text", { x: 14, y: (TOP + BOT) / 2, "font-size": 11, fill: "#6b7280",
+                 transform: "rotate(-90 14 " + ((TOP + BOT) / 2) + ")" }, svg).textContent = m.axis;
+
+    /* 柱子 + 元素符号 + 数值 */
+    var ranks = buildRanks(m);
+    ELS.forEach(function (e, i) {
+      var v = e[m.key];
+      var cx = xOf(i);
+      var isSel = (i === selected);
+      if (v === null) {
+        el("rect", { x: cx - 10, y: BOT - 3, width: 20, height: 3, rx: 1.5, fill: "#cbd5e1" }, svg);
+        el("text", { x: cx, y: BOT - 8, "text-anchor": "middle", "font-size": 10, fill: "#94a3b8" }, svg).textContent = "—";
+      } else {
+        var h = Math.max(3, (v / scaleMax) * (BOT - TOP));
+        var y = BOT - h;
+        el("rect", { x: cx - 10, y: y, width: 20, height: h, rx: 3, fill: m.color,
+                     opacity: isSel ? 1 : 0.82,
+                     stroke: isSel ? "#111827" : "none", "stroke-width": isSel ? 2 : 0 }, svg);
+        var vt = el("text", { x: cx, y: y - 5, "text-anchor": "middle", "font-size": 9.5,
+                              fill: isSel ? "#111827" : "#6b7280",
+                              "font-weight": isSel ? 700 : 400 }, svg);
+        vt.textContent = m.key === "en" ? v.toFixed(2) : v;
+      }
+      var st = el("text", { x: cx, y: SYM, "text-anchor": "middle", "font-size": 11,
+                            "font-weight": 600, fill: isSel ? "#111827" : "#1f2937" }, svg);
+      st.textContent = e.s;
+
+      /* 命中区域（整列可点） */
+      var hit = el("rect", { x: SLOT0 + i * SLOTW, y: TOP, width: SLOTW, height: BOT - TOP + 34,
+                             fill: "transparent", cursor: "pointer" }, svg);
+      function show() {
+        selected = i;
+        var parts;
+        if (e[m.key] === null) {
+          parts = m.key === "en" ? "电负性：稀有气体几乎不形成常见化合物，Pauling 标度未赋值" : "无数据";
+        } else {
+          parts = m.title || m.axis;
+          parts = m.axis.split(" / ")[0] + " " + m.fmt(e[m.key]) + " · 1–20 号中第 " + ranks[i] + " 大";
+        }
+        readout.textContent = e.n + " " + e.s + "（Z=" + e.z + "） · " + parts;
+        render();
+      }
+      hit.addEventListener("mouseenter", function () { selected = i; render(); buildReadout(i); });
+      hit.addEventListener("click", function () { selected = i; render(); buildReadout(i); });
+    });
+
+    /* 趋势标注箭头 */
+    el("text", { x: (xOf(2) + xOf(9)) / 2, y: ANN1 - 9, "text-anchor": "middle",
+                 "font-size": 10.5, fill: "#374151", "font-weight": 700 }, svg).textContent = m.periodNote;
+    arrow(svg, xOf(2) - 8, ANN1, xOf(9) + 9, ANN1, false);
+
+    el("text", { x: (xOf(2) + xOf(18)) / 2, y: ANN2 - 9, "text-anchor": "middle",
+                 "font-size": 10.5, fill: "#374151", "font-weight": 700 }, svg).textContent = m.groupNote;
+    arrow(svg, xOf(2) - 8, ANN2, xOf(18) + 9, ANN2, true);
+    [2, 10, 18].forEach(function (idx) {
+      el("circle", { cx: xOf(idx), cy: ANN2, r: 3.4, fill: "#fff", stroke: "#4b5563", "stroke-width": 1.6 }, svg);
+    });
+  }
+
+  function buildReadout(i) {
+    var m = METRICS[current];
+    var e = ELS[i];
+    var ranks = buildRanks(m);
+    var info;
+    if (e[m.key] === null) {
+      info = m.key === "en" ? "电负性：稀有气体几乎不形成常见化合物，Pauling 标度未赋值" : "无数据";
+    } else {
+      info = m.axis.split(" / ")[0] + " " + m.fmt(e[m.key]) + " · 1–20 号中第 " + ranks[i] + " 大";
+    }
+    readout.textContent = e.n + " " + e.s + "（Z=" + e.z + "） · " + info;
+  }
+
+  function setMetric(key) {
+    current = key;
+    selected = -1;
+    render();
+    readout.textContent = "👆 悬停或点击任一柱子查看数值（当前指标：" + METRICS[key].axis + "）";
+    [["mR", "r"], ["mIE", "ie"], ["mEN", "en"]].forEach(function (pair) {
+      var btn = document.getElementById(pair[0]);
+      if (!btn) return;
+      var on = pair[1] === key;
+      btn.classList.toggle("ghost", !on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  [["mR", "r"], ["mIE", "ie"], ["mEN", "en"]].forEach(function (pair) {
+    var btn = document.getElementById(pair[0]);
+    if (btn) btn.addEventListener("click", function () { setMetric(pair[1]); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

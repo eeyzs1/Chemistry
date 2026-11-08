@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>材料的化学世界 · 材料化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b07">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">07 材料化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 材料的化学世界</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">07 材料化学 · 第 1 章</div>
+    <h1>材料的化学世界：排列、缺陷与尺度</h1>
+    <p class="lede">
+      铅笔芯和钻戒都是纯碳，一个几块钱，一个身价连城。材料化学告诉你：<strong>决定性能的不只是"含什么"，
+      更是"怎么排"（晶体结构）、"哪里不完美"（缺陷与掺杂）、"有多小"（纳米尺度）</strong>。
+      本章沿"结构 → 缺陷 → 尺度 → 功能"主线，从晶胞一路讲到 pn 结、纳米金与锂电池，
+      看化学如何像画笔一样设计出功能材料。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：<a href="../01-无机化学/index.html">01 无机化学</a> + <a href="../04-物理化学/index.html">04 物理化学</a>（推荐）</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 4 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#crystal">晶体与晶胞</a>
+    <a href="#defect">缺陷创造功能</a>
+    <a href="#nano">纳米效应</a>
+    <a href="#energy">能源材料速览</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：一部手机，一座材料博览会</h2>
+    <p>
+      拿起你的手机：芯片是掺了微量杂质的单晶硅，屏幕是离子交换强化的玻璃，
+      电池正极是含锂的金属氧化物，边框是铝合金，摄像头镀膜是几十纳米厚的交替介质层。
+      一部手机，就是一场材料化学博览会——每一种材料都对应一个化学问题：
+      <strong>原子怎么排列？要往里掺什么？颗粒做多小？</strong>
+    </p>
+    <p>
+      更妙的是，这些问题往往"反常识"：半导体需要 99.9999999%（九个 9）纯度的硅，
+      却要再故意掺进百万分之几的杂质才好用；金子本来是黄色的，做成几纳米的小颗粒却变成红色；
+      最硬的天然物质和最软的书写材料，成分完全相同。要理解这些，得从固体内部的"排队规则"说起。
+    </p>
+    <details class="think">
+      <summary>想一想：芯片为什么偏偏选硅？地壳里最多的元素它排第几？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：想想"储量、提纯难度、表面氧化物的用途"三件事。</p>
+        <p>
+          硅在地壳中的丰度排第二（约 28%，仅次于氧），原料就是沙子里的石英，便宜到近乎无限；
+          硅的带隙（约 1.1 eV）不大不小，室温下导电性可精确调控；更妙的是它表面氧化生成的
+          SiO<sub>2</sub> 是绝佳绝缘层，天然给芯片"铺地砖"。<strong>储量富 + 带隙合适 + 自带绝缘外衣</strong>，
+          三者兼备，让硅成了信息时代的"元素之王"。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 晶体与晶胞 ============ -->
+  <section id="crystal">
+    <h2>§1 晶体与晶胞：固体里的"排队规则"</h2>
+    <p>
+      固体里的原子有两种活法：乱糟糟堆在一起的<strong>非晶体</strong>（玻璃、松香——内部像被瞬间冻住的液体），
+      和按规则整齐排队的<span class="term">晶体</span><span class="en">crystal</span>（食盐、钻石、一切金属）。
+      晶体中最小的重复"砖块"叫<span class="term">晶胞</span><span class="en">unit cell</span>——
+      就像壁纸的花纹单元，平移复制无数次便铺满整块材料。
+    </p>
+    <p>
+      按晶胞的边长与夹角，所有晶体可以归入<strong>七大晶系</strong>：立方、四方、正交、三方、六方、单斜、三斜——
+      从"正正方方"一路退化到"怎么歪怎么来"。其中最简单、最常见的是立方家族的三兄弟：
+      简单立方、体心立方、面心立方。点按钮切换看看：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="latSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="三种立方晶胞切换演示"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="latSC">简单立方</button>
+          <button class="btn ghost" id="latBCC">体心立方</button>
+          <button class="btn ghost" id="latFCC">面心立方</button>
+        </div>
+        <div class="fig-readout" id="latReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        灰球=角上原子（每个被 8 个晶胞分享，各记 1/8）；橙球=体心原子（整颗归本晶胞）；
+        金球=面心原子（每个被 2 个晶胞分享，记 1/2）；虚线边框是被遮挡的棱。
+        半透明圆表示藏在晶胞后方的面心原子。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 数晶胞原子的诀窍</div>
+      <strong>角上一颗记 1/8，棱上一颗记 1/4，面上一颗记 1/2，体内一颗记 1</strong>。
+      于是：简单立方 8×⅛=1 个；体心立方 8×⅛+1=2 个；面心立方 8×⅛+6×½=4 个。
+      堆得越满（配位数 6→8→12），结构越致密——铜、银、铝、金都是面心立方，所以它们又重又韧。
+    </div>
+
+    <h3>石墨 vs 金刚石：同一种元素的两种人生</h3>
+    <p>
+      石墨与金刚石互为<span class="term">同素异形体</span><span class="en">allotrope</span>——
+      同一种元素的不同单质。差异全在"连接方式"：石墨是 sp² 杂化（呼应 02 分支），
+      每个碳出 3 个 σ 键拼成二维层，剩 1 个 π 电子在层间"游荡"，层与层之间只靠微弱的范德华力叠着，
+      一蹭就滑动，所以在纸上留下笔迹、也能当润滑剂；金刚石是 sp³ 杂化，
+      每个碳向四个方向伸出 σ 键，织成整个三维空间的大网——每个方向都拉不断，成为自然界最硬（莫氏 10）的材料。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 都是碳，为什么一个是铅笔芯、一个是钻戒？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          石墨像<strong>一摞千层饼</strong>：每层饼皮又薄又韧（层内共价键极强），层与层只靠一点点"粘意"（范德华力）搭着——
+          手一抹就错层，于是能在纸上留下薄片当字迹。金刚石像<strong>浇筑的钢筋网架</strong>：
+          横竖斜每个方向都是粗钢筋（σ 共价键），想掰断任何一处都要剪断钢筋——所以切玻璃、钻岩石毫不含糊。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据对比</span>
+        <p>
+          石墨：sp² 杂化，层内 C–C 键长 142 pm，层间距 335 pm（是键长的两倍多！），
+          莫氏硬度 1–2，层向导电良好（π 电子离域）。
+          金刚石：sp³ 杂化，键长 154 pm，正四面体网，莫氏硬度 10，折射率 2.42（极高，故璀璨），
+          电阻率高达 10¹⁸ Ω·cm，是最优秀的绝缘体之一。
+          <strong>硬度看键的方向覆盖，导电看有无可移动电子，光学看电子被激发的难易——三种性质，一次排列全解释。</strong>
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 能带</span>
+        <p>
+          量子力学把"电子能不能动"写成能带：石墨层内每个碳贡献 1 个 π 电子，π 与 π* 能带恰好半满——
+          半满带就是导体（这也是石墨烯载流子如"无质量粒子"般飞驰的原因）。
+          金刚石的 σ 键把电子全部锁死在价带，导带空置，两带之间隔着 <strong>5.5 eV 的宽禁带</strong>——
+          可见光（约 2 eV）打不上去，所以透明且绝缘。有趣的是：天然蓝钻正是掺了微量硼（受主杂质），
+          在禁带里挖出浅能级，既上色又能导电——一块"p 型半导体钻石"。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "成分决定一切"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          想知道一种材料的性能，查它的化学成分就够了；成分相同的物质，性能必然相同。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          <strong>性能 = 成分 × 结构 × 尺度 × 工艺</strong>。石墨、金刚石、石墨烯、C<sub>60</sub> 成分全同，
+          性能天差地别；氧化锆掺不同稳定剂可得立方相（透明陶瓷）或单斜相（陶瓷增韧）；
+          同是不锈钢，热处理不同韧性差数倍。材料化学的半壁江山，就是研究"同样的原子，
+          怎样排才能排出新功能"。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 缺陷创造功能 ============ -->
+  <section id="defect">
+    <h2>§2 缺陷创造功能：不完美才是亮点</h2>
+    <p>
+      "完美晶体"听起来是好事，但一块绝对纯净、绝对整齐的硅几乎不导电，做不成任何器件。
+      真正让硅"活"起来的，是故意掺入的百万分之几的杂质——
+      <span class="term">掺杂</span><span class="en">doping</span>，本质是往晶格里"安排"点缺陷：
+    </p>
+    <ul>
+      <li><strong>硅掺磷 → n 型</strong>：磷有 5 个价电子，替掉 4 价的硅后多出 1 个"无处成键"的电子，
+        松散地绕磷离子转，稍一加热就自由奔驰——载流子是<strong>负电（negative）的电子</strong>，故称 n 型。</li>
+      <li><strong>硅掺硼 → p 型</strong>：硼只有 3 个价电子，替位后欠 1 个电子，留下一个带正电的"空位"——
+        <span class="term">空穴</span><span class="en">hole</span>。邻近电子跳来填补，空穴就像正电荷在流动，故称 p 型（positive）。</li>
+      <li><strong>pn 结一句话</strong>：把 n 型与 p 型贴在一起，交界处形成内建电场，只许电流单向通过——
+        这个"微观阀门"就是二极管、LED、太阳能电池和芯片里亿万晶体管的共同祖先。</li>
+    </ul>
+
+    <h3>📐 例题脚手架：判断掺杂类型</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 磷与硼，各造什么型？（和我一起做）</div>
+      <div class="worked-problem">
+        在纯硅（4 价）中分别掺入微量磷（15 号，5 价）与硼（5 号，3 价），各得到什么型半导体？多数载流子分别是什么？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 先看价电子数：Si 4 个、P 5 个、B 3 个。掺杂原子替位进入硅的四面体网格，需要与 4 个邻居成键。</li>
+        <li class="step">💡 磷出 5 个电子、只用到 4 个 → <strong>多 1 个电子</strong>，成为自由载流子 → 电子为负 → <strong>n 型</strong>。</li>
+        <li class="step">💡 硼只有 3 个电子、缺 1 个 → 留下<strong>空穴</strong>，等效正电荷 → <strong>p 型</strong>。</li>
+        <li class="step">✅ 自查：n 型多电子（负）、p 型多空穴（正）——英文 negative/positive 正是名字由来。两型相贴即成 pn 结，单向导电。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：掺杂浓度只有百万分之一量级，为什么足以让硅的导电性变化上万倍？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：硅的原子密度约 5×10²² 个/cm³，本征（纯硅）自由载流子约 10¹⁰ 个/cm³。算算百万分之一是多少。</p>
+        <p>
+          5×10²² × 10⁻⁶ = 5×10¹⁶ 个/cm³——比起纯硅自己热激发出的 10¹⁰ 个载流子，
+          <strong>多出整整 6 个数量级</strong>！所以"一点点"杂质在原子尺度上是"千军万马"。
+          这也解释了为什么半导体工业要把硅提纯到九个 9（99.9999999%）：
+          先清场，再按剧本掺入指定角色——不受控的杂质会打乱载流子的"编制"。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 纳米效应 ============ -->
+  <section id="nano">
+    <h2>§3 纳米效应：切得越碎，表面越多</h2>
+    <p>
+      把一块 1 cm³ 的材料切成纳米颗粒，<strong>成分没变、体积没变</strong>，
+      变的是<strong>表面</strong>：小块的数目按立方增长，每块的表面积按平方缩小，
+      合起来的总表面积 = 6n（n 为切割份数的边长方向）——线性放大！
+      催化、吸附、溶解、反应都发生在表面上，所以"纳米化"等于把材料的"工作面"成千万倍地扩建。
+      动手切一切，亲眼看看：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="nanoSvg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-label="纳米切割器：立方体逐次切细演示"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="nanoCut">🔪 再切一刀</button>
+          <button class="btn ghost" id="nanoExtreme">⚡ 直接切到 1 nm！</button>
+          <button class="btn ghost" id="nanoReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="nanoReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        初始为边长 1 cm 的整块（表面积 6 cm²）。每按一次"再切一刀"，三个方向的分割数 +1（2×2×2、3×3×3……）；
+        "切到 1 nm"展示极限情形。注意 readout 中总表面积随切割份数线性暴涨——这就是纳米催化的数学根基。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：算一笔"表面账"</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 1 cm³ 铂块粉碎成 1 nm 颗粒（看我做）</div>
+      <div class="worked-problem">
+        把边长 1 cm 的铂催化剂整块（表面积 6 cm²）粉碎成边长 1 nm 的小立方颗粒。总表面积变成多少？放大约多少倍？
+        （1 cm = 10⁷ nm）
+      </div>
+      <ol class="worked-steps">
+        <li class="step">数块数：每个方向切 10⁷ 份 → 块数 = (10⁷)³ = <strong>10²¹ 块</strong>（总份数按立方涨）。</li>
+        <li class="step">每块表面积 = 6 × (1 nm)² = 6 nm² = 6×10⁻¹⁴ cm²（单块面积按平方缩）。</li>
+        <li class="step">总表面积 = 10²¹ × 6×10⁻¹⁴ cm² = <strong>6×10⁷ cm² = 6000 m²</strong>。</li>
+        <li class="step">✅ 放大倍数 = 6×10⁷ cm² ÷ 6 cm² = <strong>10⁷ 倍</strong>（恰等于边长缩短倍数）。6000 m² ≈ 一个标准足球场——难怪汽车尾气催化剂要把铂做到纳米级：反应只发生在表面，表面即产能。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 两个纳米效应，一句话各记一个</div>
+      <strong>表面效应</strong>：尺寸↓ → 比表面积↑（正比于 1/边长）→ 表面原子占比暴增 → 催化、吸附活性骤升（例题的 10⁷ 倍）。
+      <strong>量子尺寸效应</strong>：电子被关进纳米小盒，能级从"连续带"变成"分立台阶"——
+      金纳米颗粒约 20 nm 时因表面等离激元共振<strong>显红色</strong>（古罗马 Lycurgus 杯的谜底），量子点的发光颜色随尺寸可调。
+    </div>
+  </section>
+
+  <!-- ============ §4 能源材料速览 ============ -->
+  <section id="energy">
+    <h2>§4 能源材料速览：电池、光伏与催化剂</h2>
+    <table class="tbl">
+      <thead>
+        <tr><th>材料</th><th>化学核心</th><th>一句话原理</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>锂离子电池</strong></td>
+          <td>Li⁺ 在两极间"嵌入/脱嵌"</td>
+          <td>充电时 Li⁺ 从正极（含锂金属氧化物）"摇"到石墨负极安家，放电再摇回来——摇椅电池；电极材料的层状晶格正是给 Li⁺ 留的"客房"（呼应 04 分支电化学）。</td>
+        </tr>
+        <tr>
+          <td><strong>钙钛矿太阳能电池</strong></td>
+          <td>ABX₃ 结构（如 CH₃NH₃PbI₃）</td>
+          <td>一类晶体结构之名（源自矿物钙钛矿 CaTiO₃）：八面体骨架天然适合光生载流子传输，实验室效率十余年从 3.8% 飙到 26% 以上，是光伏界的"超级新星"。</td>
+        </tr>
+        <tr>
+          <td><strong>催化剂</strong></td>
+          <td>表面降低活化能</td>
+          <td>反应分子吸附在催化剂表面走"捷径"过渡态（呼应 04 分支动力学）；汽车三元催化剂用纳米铂/钯/铑同时转化 CO、烃与氮氧化物。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      三种材料的共同哲学：<strong>在正确的尺度上安排正确的原子</strong>——锂电靠晶格留客房，
+      钙钛矿靠结构选能带，催化剂靠纳米表面建工厂。结构、缺陷、尺度，本章三件法宝在能源舞台上全部到齐。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 材料安全提示</div>
+      ① 锂离子电池严禁穿刺、挤压、过充或投入火中——短路可致热失控起火，鼓包电池应立即停用；
+      ② 纳米颗粒与纳米粉尘比表面积巨大，化学活性远超同成分大块材料，实验时须佩戴防护并避免吸入；
+      ③ 钙钛矿光伏研究常用铅盐，实验废弃物属重金属污染物，须按危化品规范处理。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>晶体 = 原子平移周期排列；晶胞是最小重复砖块；数原子口诀：角⅛、棱¼、面½、体1（简单立方1、体心2、面心4）。</li>
+        <li>石墨（sp² 层状，层间范德华）vs 金刚石（sp³ 三维 σ 网）：成分相同、结构不同 → 性质迥异，能带是终极解释。</li>
+        <li>缺陷创造功能：硅掺磷（多电子）→n 型，掺硼（缺电子成空穴）→p 型；pn 结是电子器件的共同祖先。</li>
+        <li>纳米效应：总表面积与边长成反比（切到 1 nm 放大 10⁷ 倍）→ 催化活性暴增；量子尺寸效应让金变红、量子点发光可调。</li>
+        <li>能源材料 = 在正确尺度安排正确原子：锂电（嵌入晶格）、钙钛矿（结构选带隙）、催化剂（纳米表面降活化能）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 材料的化学世界 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "石墨与金刚石都是纯碳，性能却天差地别。造成差异的最主要原因是？",
+            "options": ["金刚石含某种神秘杂质", "原子的排列方式（杂化与连接方式）不同", "石墨密度是金刚石的两倍", "金刚石中的碳原子更多"],
+            "answer": 1,
+            "explain": "两者成分完全相同（都是碳）。差别全在结构：石墨 sp² 成层、层间仅范德华力（软、润滑、导电）；金刚石 sp³ 织成三维 σ 键网（最硬、绝缘、璀璨）。这正是'结构决定性质'的教科书案例——材料性能 = 成分 × 结构 × 尺度 × 工艺。"
+          },
+          {
+            "q": "在纯硅中掺入微量磷（5 价），得到的半导体类型与多数载流子是？",
+            "options": ["p 型，多数载流子是空穴", "n 型，多数载流子是自由电子", "n 型，多数载流子是空穴", "不改变类型，仍是绝缘体"],
+            "answer": 1,
+            "explain": "硅 4 价，替位后磷的 5 个价电子只用 4 个成键，多出的第 5 个电子受束缚松散、极易电离为自由电子——负电载流子（negative）得名 n 型。若掺 3 价硼则缺一个电子、留下空穴，得 p 型（positive）。"
+          },
+          {
+            "q": "把 1 cm³ 的材料切成边长 1 nm 的立方颗粒（1 cm = 10⁷ nm），总表面积约放大多少倍？",
+            "options": ["10³ 倍", "10⁵ 倍", "10⁷ 倍", "10²¹ 倍"],
+            "answer": 2,
+            "explain": "总表面积放大倍数恰好等于边长缩小倍数：块数按立方增（10²¹ 块），单块面积按平方缩（10⁻¹⁴ cm²），两者相乘得 6×10⁷ cm² = 6000 m²，是原来 6 cm² 的 10⁷ 倍。注意不是 10²¹ 倍——那是块数，不是面积放大倍数。这就是纳米催化剂高效的数学根基。"
+          },
+          {
+            "q": "面心立方晶胞中，实际'属于'该晶胞原子数是几个？",
+            "options": ["8 个", "6 个", "4 个", "14 个"],
+            "answer": 2,
+            "explain": "8 个角原子各被 8 个晶胞分享（各记 1/8，合计 1 个）；6 个面心原子各被 2 个晶胞分享（各记 1/2，合计 3 个）；总计 1+3=4 个。'14 个'是肉眼数到的球数，忘了晶胞之间是'拼墙共柱'的邻居关系。铜、银、铝、金都是面心立方。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="../06-高分子化学/01-从单体到聚合物.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">06 高分子 · 从单体到聚合物</span></a>
+      <a class="next" href="../08-环境化学/index.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">08 环境化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（纳米切割器 / 晶格切换器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function txt(parent, x, y, str, size, fill, weight, anchor) {
+    var t = el("text", { x: x, y: y, "font-size": size, fill: fill,
+      "font-weight": weight || 400, "text-anchor": anchor || "start" }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. 纳米切割器 ---------- */
+  var nanoSvg = document.getElementById("nanoSvg");
+  if (nanoSvg) {
+    var nanoReadout = document.getElementById("nanoReadout");
+    var nCut = 1;          // 每个方向的分割数
+    var S = 190;           // 立方体边长（px）
+    var AX = 150, AY = 88; // 前左上角
+    var DX = 62, DY = -46; // 深度偏移（右上后方）
+
+    // 三个可见面的网格：corner + 两条边向量
+    function faceGrid(g, cx, cy, ux, uy, vx, vy, n, stroke) {
+      for (var i = 1; i < n; i++) {
+        var f = i / n;
+        // 沿 u 方向的线（固定 v 分量）
+        el("line", { x1: cx + vx * f, y1: cy + vy * f,
+                     x2: cx + ux + vx * f, y2: cy + uy + vy * f,
+                     stroke: stroke, "stroke-width": 1.1, opacity: .85 }, g);
+        // 沿 v 方向的线（固定 u 分量）
+        el("line", { x1: cx + ux * f, y1: cy + uy * f,
+                     x2: cx + ux * f + vx, y2: cy + uy * f + vy,
+                     stroke: stroke, "stroke-width": 1.1, opacity: .85 }, g);
+      }
+    }
+
+    function renderNano(extreme) {
+      nanoSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 640, height: 330, fill: "#ffffff" }, nanoSvg);
+      var g = el("g", {}, nanoSvg);
+
+      var bx = AX, by = AY;             // front 左上
+      var fx2 = AX + S, fy2 = AY + S;   // front 右下
+
+      if (extreme) {
+        // 纳米极限：面已"黑透"，用密集小点表示表面原子暴增
+        var poly = [
+          "M" + bx + "," + by + " L" + fx2 + "," + by + " L" + fx2 + "," + fy2 + " L" + bx + "," + fy2 + " Z",
+          "M" + bx + "," + by + " L" + (bx + DX) + "," + (by + DY) + " L" + (fx2 + DX) + "," + (by + DY) + " L" + fx2 + "," + by + " Z",
+          "M" + fx2 + "," + by + " L" + (fx2 + DX) + "," + (by + DY) + " L" + (fx2 + DX) + "," + (fy2 + DY) + " L" + fx2 + "," + fy2 + " Z"
+        ];
+        poly.forEach(function (d, i) {
+          el("path", { d: d, fill: i === 0 ? "#1f2937" : (i === 1 ? "#374151" : "#111827") }, g);
+          el("path", { d: d, fill: "none", stroke: "#0ea5e9", "stroke-width": 1.5 }, g);
+        });
+        // 表面原子小点
+        var dots = el("g", {}, g);
+        var seed = 7;
+        for (var i = 0; i < 90; i++) {
+          seed = (seed * 9301 + 49297) % 233280;
+          var rx = seed / 233280;
+          seed = (seed * 9301 + 49297) % 233280;
+          var ry = seed / 233280;
+          var px = bx + 6 + rx * (S - 12), py = by + 6 + ry * (S - 12);
+          el("circle", { cx: px, cy: py, r: 1.6, fill: "#67e8f9" }, dots);
+        }
+        txt(g, 320, 40, "n = 10⁷（1 nm 颗粒）——肉眼已无法分辨小块", 13, "#0c4a6e", 700, "middle");
+        nanoReadout.innerHTML = "切割 <strong>10⁷ × 10⁷ × 10⁷</strong> ｜ 小块边长 = <strong>1 nm</strong> ｜ 块数 = <strong>10²¹</strong> ｜ " +
+          "总表面积 = <strong>6×10⁷ cm² = 6000 m² ≈ 一个足球场</strong> ｜ 相对整块（6 cm²）放大 <strong>10⁷ 倍</strong>";
+        return;
+      }
+
+      var n = nCut;
+      var gridColor = "#b45309";
+      // front 面（网格最密）
+      faceGrid(g, bx, by, S, 0, 0, S, n, gridColor);
+      // top 面
+      faceGrid(g, bx, by, S, 0, DX, DY, n, "#92400e");
+      // right 面
+      faceGrid(g, fx2, by, 0, S, DX, DY, n, "#a16207");
+
+      // 立方体棱
+      var edges = [
+        // front 正方形
+        [bx, by, fx2, by], [fx2, by, fx2, fy2], [fx2, fy2, bx, fy2], [bx, fy2, bx, by],
+        // back 正方形（三条不可见用虚线）
+        [bx + DX, by + DY, fx2 + DX, by + DY], [fx2 + DX, by + DY, fx2 + DX, fy2 + DY],
+        [fx2 + DX, fy2 + DY, bx + DX, fy2 + DY, 1], [bx + DX, fy2 + DY, bx + DX, by + DY, 1],
+        // 连接棱（一条不可见）
+        [bx, by, bx + DX, by + DY], [fx2, by, fx2 + DX, by + DY],
+        [fx2, fy2, fx2 + DX, fy2 + DY], [bx, fy2, bx + DX, fy2 + DY, 1]
+      ];
+      edges.forEach(function (e) {
+        el("line", { x1: e[0], y1: e[1], x2: e[2], y2: e[3],
+          stroke: "#334155", "stroke-width": 2.4,
+          "stroke-dasharray": e[4] ? "6 5" : "none" }, g);
+      });
+
+      // 标注
+      txt(g, 320, 40, n + " × " + n + " × " + n + " 切割", 15, "#92400e", 800, "middle");
+      txt(g, 455, fy2 + 30, "小块边长 " + (1 / n).toFixed(n > 4 ? 3 : 2) + " cm", 12, "#4b5563", 600);
+      txt(g, 320, 312, "蓝字 = 切割数 n ｜ 三可见面网格数 = n×n", 11, "#9ca3af", 500, "middle");
+
+      var blocks = Math.pow(n, 3);
+      var area = 6 * n; // cm²
+      nanoReadout.innerHTML = "切割 <strong>" + n + "×" + n + "×" + n + "</strong> ｜ 块数 = <strong>" + n + "³ = " +
+        blocks.toLocaleString("en-US") + "</strong> ｜ 每块边长 = 1/" + n + " cm ｜ " +
+        "总表面积 = 块数 × 6 × (1/" + n + ")² = <strong>" +
+        (area % 1 === 0 ? area : area.toFixed(2)) + " cm²</strong> ｜ 相对整块 6 cm² 放大 <strong>" + n + " 倍</strong>";
+    }
+
+    document.getElementById("nanoCut").addEventListener("click", function () {
+      if (nCut < 10) { nCut++; renderNano(false); }
+      else { renderNano(false); }
+    });
+    document.getElementById("nanoExtreme").addEventListener("click", function () { renderNano(true); });
+    document.getElementById("nanoReset").addEventListener("click", function () { nCut = 1; renderNano(false); });
+    renderNano(false);
+  }
+
+  /* ---------- 2. 晶格切换器 ---------- */
+  var latSvg = document.getElementById("latSvg");
+  if (latSvg) {
+    var latReadout = document.getElementById("latReadout");
+    var S2 = 180, AX2 = 150, AY2 = 80, DX2 = 60, DY2 = -45;
+    var MODES = {
+      sc:  { name: "简单立方 Simple Cubic", atoms: "8×⅛ = 1", cn: "6", rep: "钋 Po（罕见）、α-Fe 某些低温相之外极少见",
+             note: "最松散的堆法：只在 8 个角放原子，每个原子上下左右前后各碰 6 个邻居。" },
+      bcc: { name: "体心立方 BCC", atoms: "8×⅛ + 1 = 2", cn: "8", rep: "α-铁（钢）、钨 W、钼 Mo、钠 Na",
+             note: "晶胞中心再塞一颗整原子。铁素体钢的韧性之源——位错易滑移，塑性好。" },
+      fcc: { name: "面心立方 FCC", atoms: "8×⅛ + 6×½ = 4", cn: "12", rep: "铜 Cu、银 Ag、金 Au、铝 Al、铂 Pt、NaCl（两套 fcc 嵌套）",
+             note: "最密堆法之一（配位数 12）。金延展成金箔、铝压成易拉罐，都是 fcc 滑移系多的功劳。" }
+    };
+
+    function drawAtom(g, x, y, r, fill, stroke, hidden) {
+      el("circle", { cx: x, cy: y, r: r, fill: fill, stroke: stroke,
+        "stroke-width": 2, opacity: hidden ? 0.4 : 1 }, g);
+    }
+
+    function renderLat(mode) {
+      latSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 640, height: 310, fill: "#ffffff" }, latSvg);
+      var g = el("g", {}, latSvg);
+      var M = MODES[mode];
+
+      var corners = [
+        [AX2, AY2], [AX2 + S2, AY2], [AX2 + S2, AY2 + S2], [AX2, AY2 + S2],
+        [AX2 + DX2, AY2 + DY2], [AX2 + S2 + DX2, AY2 + DY2],
+        [AX2 + S2 + DX2, AY2 + S2 + DY2], [AX2 + DX2, AY2 + S2 + DY2]
+      ];
+      var front = corners.slice(0, 4), back = corners.slice(4);
+      var edges = [
+        [front[0], front[1]], [front[1], front[2]], [front[2], front[3]], [front[3], front[0]],
+        [back[0], back[1]], [back[1], back[2], 1], [back[2], back[3], 1], [back[3], back[0], 1],
+        [front[0], back[0]], [front[1], back[1]], [front[2], back[2]], [front[3], back[3], 1]
+      ];
+      edges.forEach(function (e) {
+        el("line", { x1: e[0][0], y1: e[0][1], x2: e[1][0], y2: e[1][1],
+          stroke: "#94a3b8", "stroke-width": 2.2,
+          "stroke-dasharray": e[2] ? "6 5" : "none" }, g);
+      });
+
+      // 体心：先画键再画原子（虚线到 8 角）
+      if (mode === "bcc") {
+        var cx = AX2 + S2 / 2 + DX2 / 2, cy = AY2 + S2 / 2 + DY2 / 2;
+        corners.forEach(function (c) {
+          el("line", { x1: cx, y1: cy, x2: c[0], y2: c[1],
+            stroke: "#fdba74", "stroke-width": 1.6, "stroke-dasharray": "5 4" }, g);
+        });
+      }
+
+      // 角原子
+      corners.forEach(function (c) { drawAtom(g, c[0], c[1], 14, "#475569", "#1e293b"); });
+
+      if (mode === "bcc") {
+        var cx2 = AX2 + S2 / 2 + DX2 / 2, cy2 = AY2 + S2 / 2 + DY2 / 2;
+        drawAtom(g, cx2, cy2, 17, "#ea580c", "#9a3412");
+        txt(g, cx2, cy2 + 5, "+1", 11, "#fff", 800, "middle");
+      }
+
+      if (mode === "fcc") {
+        // 面心位置：front、top、right 可见；back、left、bottom 用半透明
+        var h = S2 / 2;
+        var faces = [
+          [AX2 + h, AY2 + h, false],                                  // front
+          [AX2 + h + DX2 / 2, AY2 + DY2 / 2, false],                  // top
+          [AX2 + S2 + DX2 / 2, AY2 + h + DY2 / 2, false],             // right
+          [AX2 + h + DX2, AY2 + h + DY2, true],                       // back（半透明）
+          [AX2 + DX2 / 2, AY2 + h + DY2 / 2, true],                   // left（半透明）
+          [AX2 + h + DX2 / 2, AY2 + S2 + DY2 / 2, true]               // bottom（半透明）
+        ];
+        faces.forEach(function (f) {
+          drawAtom(g, f[0], f[1], 13, "#d97706", "#92400e", f[2]);
+          txt(g, f[0], f[1] + 4, "½", 10, "#fff", 800, "middle");
+        });
+      }
+
+      txt(g, 320, 34, M.name, 16, "#92400e", 800, "middle");
+      txt(g, 320, 296, M.note, 12, "#4b5563", 600, "middle");
+      latReadout.innerHTML = "晶胞原子数：<strong>" + M.atoms + "</strong> ｜ 配位数：<strong>" + M.cn +
+        "</strong> ｜ 代表物质：" + M.rep;
+
+      ["latSC", "latBCC", "latFCC"].forEach(function (id) {
+        var btn = document.getElementById(id);
+        var isCur = (id === "latSC" && mode === "sc") || (id === "latBCC" && mode === "bcc") ||
+                    (id === "latFCC" && mode === "fcc");
+        btn.classList.toggle("ghost", !isCur);
+      });
+    }
+
+    document.getElementById("latSC").addEventListener("click", function () { renderLat("sc"); });
+    document.getElementById("latBCC").addEventListener("click", function () { renderLat("bcc"); });
+    document.getElementById("latFCC").addEventListener("click", function () { renderLat("fcc"); });
+    renderLat("sc");
+  }
+})();
+</script>
+</body>
+</html>

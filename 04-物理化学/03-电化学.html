@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电化学 · 物理化学 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">04 物理化学</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 电化学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 物理化学 · 第 3 章</div>
+    <h1>电化学：化学能与电能的兑换所</h1>
+    <p class="lede">
+      手机电量从 100% 掉到 20%，你的一天就开始焦虑。这块小小的电池里，
+      正上演着第一章和第二章的合奏：<strong>电子转移（氧化还原）</strong>提供能量差，
+      而一套精巧的装置让电子不再"就地"传递，而是<strong>沿着导线定向流动</strong>——
+      那就是电流。本章从一枚 1836 年的铜锌电池讲起：盐桥为什么必不可少？
+      电极电势如何预判反应方向？电解为什么能"逆天改命"？最后看看锂离子电池里
+      Li⁺ 如何像摇椅一样荡来荡去。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：第 1 章 化学热力学 · 01 无机化学 氧化还原</span>
+      <span class="chip">交互动画 ×1（丹尼尔电池组装）</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#redox">氧化还原回顾</a>
+    <a href="#cell">原电池与盐桥</a>
+    <a href="#potential">电极电势与能斯特</a>
+    <a href="#electrolysis">电解与法拉第定律</a>
+    <a href="#lithium">锂离子电池</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：把"火"装进盒子里</h2>
+    <p>
+      人类用火几十万年：木柴氧化，放出光和热——但能量四散奔逃，抓不住、带不走。
+      1800 年伏打把铜片和锌片叠进盐水里，第一次让<strong>氧化还原安静地发生在金属表面</strong>，
+      电子被导线收拢成电流。从此，"燃烧"被装进了盒子：汽车引擎里烧汽油是化学能→热能→机械能，
+      而氢燃料电池车里同样的氢氧反应直接给出电流，效率翻倍、尾气只剩水。
+    </p>
+    <p>
+      电化学研究的就是<strong>化学能 ⇌ 电能</strong>的双向兑换：自发的反应（ΔG &lt; 0）可做成电池发电；
+      不自发的反应（ΔG &gt; 0）可用电解强行推动。本章的路线：先复习电子记账（§1），
+      再拆解原电池（§2），学会用电势表预判方向（§3），然后用它反向做功（§4），
+      最后走进你口袋里的锂电池（§5）。
+    </p>
+  </section>
+
+  <!-- ============ §1 氧化还原 ============ -->
+  <section id="redox">
+    <h2>§1 氧化还原：电子的会计学</h2>
+    <p>
+      <span class="term">氧化数</span><span class="en">oxidation number</span>是给原子分配的"电子账面值"。
+      反应中<strong>氧化数升高 = 失电子 = 被氧化</strong>（该物质是还原剂，替别人出电子）；
+      <strong>氧化数降低 = 得电子 = 被还原</strong>（该物质是氧化剂，收别人的电子）。
+      电子不会凭空消失：有人失就有人得，两本账必须轧平。
+    </p>
+    <p>
+      看本章的主角反应：把锌片插进蓝色的硫酸铜溶液，锌表面慢慢镀出红棕色铜，溶液蓝色褪去：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Zn + Cu<sup>2+</sup> → Zn<sup>2+</sup> + Cu</span>
+      　　Zn：0 → +2（失 2e⁻，被氧化）　Cu：+2 → 0（得 2e⁻，被还原）
+    </p>
+    <p>
+      直接混合时，电子在锌铜接触面上"就地"转移，能量以热的形式散掉。
+      <strong>电化学的全部智慧，就是让氧化和还原在两个地点分别发生，逼电子沿导线绕行</strong>——
+      于是散逸的能量变成了可利用的电流。
+    </p>
+
+    <details class="think">
+      <summary>想一想：把铁钉和铜丝同时浸入稀盐酸，只在铁钉表面冒出气泡。谁在失电子？铜在干什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：冒出的气泡是 H₂，H⁺ 得电子被还原；那么电子是谁给的？</p>
+        <p>
+          铁失电子：Fe − 2e⁻ → Fe²⁺，放出的电子被表面的 H⁺ 接走，生成 H₂ 气泡。
+          铜不与稀盐酸反应——它失电子比铁"不情愿"得多。这种<strong>失电子难易的差异</strong>，
+          正是 §3 电极电势要定量刻画的东西，也是 §2 里锌愿做负极、铜只做正极的原因。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 原电池 ============ -->
+  <section id="cell">
+    <h2>§2 原电池：拆开一场氧化还原</h2>
+    <p>
+      1836 年丹尼尔把上面的反应拆成两半：<strong>锌片插进 ZnSO₄ 溶液（左），铜片插进 CuSO₄ 溶液（右）</strong>，
+      两杯溶液之间架一支盐桥，金属片之间接上导线——灯亮了。这套装置叫
+      <span class="term">原电池</span><span class="en">galvanic / voltaic cell</span>，
+      每半套叫一个<span class="term">半电池</span><span class="en">half-cell</span>。电极命名是本章第一道坎：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>电极</th><th>发生的反应</th><th>电子走向</th><th>丹尼尔电池中</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>负极</strong> = 阳极</td><td>氧化（失电子）</td><td>电子流出，经外电路去正极</td><td>Zn 电极：Zn − 2e⁻ → Zn²⁺</td></tr>
+        <tr><td><strong>正极</strong> = 阴极</td><td>还原（得电子）</td><td>接受外电路流入的电子</td><td>Cu 电极：Cu²⁺ + 2e⁻ → Cu</td></tr>
+      </tbody>
+    </table>
+    <div class="keypoint">
+      <div class="kp-title">📌 记忆锚点</div>
+      <strong>阳—氧押韵，负极唱氧化</strong>：阳极永远发生氧化反应（"阳氧"），阴极永远发生还原反应（"阴还"）。
+      至于阳极是不是"正极"，原电池与电解池恰好相反——§4 会专门拆这个坑。
+    </div>
+
+    <h3>🔬 动手玩：组装丹尼尔电池</h3>
+    <p>
+      按下面的步进器一步步组装：先摆两个半电池，再接盐桥，再闭合外电路，
+      最后观察持续放电时电压的变化。注意每一步 readout 里的电极反应式。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="丹尼尔电池分步组装模拟">
+          <!-- 左杯 ZnSO4 -->
+          <path d="M70,150 h130 v140 a14,14 0 0 1 -14,14 h-102 a14,14 0 0 1 -14,-14 z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></path>
+          <path d="M74,190 h122 v100 a12,12 0 0 1 -12,12 h-98 a12,12 0 0 1 -12,-12 z" fill="#eff6ff" stroke="none"></path>
+          <text x="135" y="322" text-anchor="middle" font-size="12" fill="#4b5563">ZnSO₄ 溶液</text>
+          <!-- 右杯 CuSO4 -->
+          <path d="M440,150 h130 v140 a14,14 0 0 1 -14,14 h-102 a14,14 0 0 1 -14,-14 z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></path>
+          <path d="M444,190 h122 v100 a12,12 0 0 1 -12,12 h-98 a12,12 0 0 1 -12,-12 z" fill="#bfdbfe" stroke="none" id="dcSolR"></path>
+          <text x="505" y="322" text-anchor="middle" font-size="12" fill="#4b5563">CuSO₄ 溶液（蓝）</text>
+          <!-- 锌电极 -->
+          <rect x="118" y="92" width="34" height="200" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="2"></rect>
+          <text x="100" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="#475569">Zn</text>
+          <text x="86" y="140" text-anchor="end" font-size="11" fill="#64748b">负极 · 阳极</text>
+          <!-- 铜电极 -->
+          <rect x="488" y="92" width="34" height="200" rx="4" fill="#fdba74" stroke="#c2410c" stroke-width="2"></rect>
+          <text x="540" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="#c2410c">Cu</text>
+          <text x="554" y="140" font-size="11" fill="#c2410c">正极 · 阴极</text>
+          <!-- 盐桥（第 2 步起显示） -->
+          <g id="dcSalt" style="display:none">
+            <path d="M135,150 v-52 a18,18 0 0 1 18,-18 h314 a18,18 0 0 1 18,18 v52" fill="none" stroke="#cbd5e1" stroke-width="26"></path>
+            <path d="M135,150 v-52 a18,18 0 0 1 18,-18 h314 a18,18 0 0 1 18,18 v52" fill="none" stroke="#f1f5f9" stroke-width="18"></path>
+            <circle cx="230" cy="80" r="7" fill="#7c3aed"></circle>
+            <text x="230" y="98" text-anchor="middle" font-size="10" font-weight="700" fill="#6d28d9">K⁺</text>
+            <circle cx="410" cy="80" r="7" fill="#0e7490"></circle>
+            <text x="410" y="98" text-anchor="middle" font-size="10" font-weight="700" fill="#0e7490">Cl⁻</text>
+            <text x="320" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">盐桥（充满 KCl 凝胶）</text>
+          </g>
+          <!-- 盐桥离子流动（第 3 步起） -->
+          <g id="dcIons" style="display:none">
+            <circle r="7" fill="#7c3aed">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M320,80 L462,80"></animateMotion>
+            </circle>
+            <circle r="7" fill="#0e7490">
+              <animateMotion dur="3.4s" repeatCount="indefinite" path="M320,80 L178,80"></animateMotion>
+            </circle>
+          </g>
+          <!-- 外电路（第 3 步起） -->
+          <g id="dcWire" style="display:none">
+            <polyline points="135,92 135,58 296,58" fill="none" stroke="#1f2937" stroke-width="3"></polyline>
+            <polyline points="344,58 505,58 505,92" fill="none" stroke="#1f2937" stroke-width="3"></polyline>
+            <circle id="dcBulb" cx="320" cy="58" r="24" fill="#fde047" stroke="#f59e0b" stroke-width="2.5"></circle>
+            <path d="M312,62 l4,-10 l4,6 l4,-10 l4,14" fill="none" stroke="#b45309" stroke-width="2"></path>
+            <g id="dcRays" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round">
+              <line x1="320" y1="24" x2="320" y2="12"></line>
+              <line x1="294" y1="34" x2="286" y2="26"></line>
+              <line x1="346" y1="34" x2="354" y2="26"></line>
+            </g>
+            <text x="320" y="104" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e" id="dcVolt">E° = 1.10 V</text>
+            <text x="210" y="46" font-size="11" font-weight="700" fill="#1d4ed8">e⁻ →</text>
+            <g fill="#2563eb">
+              <circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+              <circle r="5"><animateMotion dur="3.2s" begin="-1.1s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+              <circle r="5"><animateMotion dur="3.2s" begin="-2.2s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+            </g>
+          </g>
+          <!-- 第 4 步注释 -->
+          <g id="dcAnno" style="display:none">
+            <text x="88" y="210" font-size="11" font-weight="700" fill="#475569">Zn²⁺ ↑</text>
+            <text x="452" y="210" font-size="11" font-weight="700" fill="#1e40af">Cu²⁺ ↓ 变浅</text>
+          </g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn dc-step" data-step="1">① 两个半电池</button>
+          <button class="btn ghost dc-step" data-step="2">② 接盐桥</button>
+          <button class="btn ghost dc-step" data-step="3">③ 接外电路</button>
+          <button class="btn ghost dc-step" data-step="4">④ 持续放电</button>
+          <button class="btn ghost dc-step" data-step="0">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="dcReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        蓝点是沿外电路流动的电子（实际方向从负极 Zn 经导线到正极 Cu，与"电流方向"相反）；
+        盐桥中 K⁺ 趋向阴极区（右）、Cl⁻ 趋向阳极区（左），维持两杯电中性。
+        第 ④ 步的电压跌落是能斯特效应的预告（§3）。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 盐桥到底解决什么问题？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          想象一条搬运队往仓库搬货：只管往里搬、不管往外清，门口很快堆满，队伍被迫停摆。
+          左杯只顾产生 Zn²⁺（堆积正电荷），右杯只顾消耗 Cu²⁺（剩下多余的负离子），
+          <strong>电荷账目两边都不平衡，反应瞬间"刹车"</strong>。盐桥就是那条"清货通道"，
+          让两边的电荷账实时结清，搬运才能一直进行。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 标准</span>
+        <p>
+          电子走导线（外电路），但<strong>溶液里没有自由电子</strong>，溶液导电全靠离子（内电路）。
+          若两杯互不相通：负极区 Zn²⁺ 越积越多、正极区 SO₄²⁻ 相对过剩，短短一瞬间
+          积累的电势差就足以反向抵消化学推动力，电流在毫秒级停摆。接上充满 KCl 凝胶的盐桥后：
+          <strong>K⁺ 迁向阴极区补正电荷缺口，Cl⁻ 迁向阳极区中和多余的 Zn²⁺</strong>，
+          两杯保持电中性，电流持续。盐桥还顺带拦住 Cu²⁺ 跑去锌极直接反应，避免化学短路。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          一个完整的电池回路 = <strong>电子导体（金属导线）+ 离子导体（溶液与盐桥）</strong>串联，
+          两种电流在电极表面"换乘"：负极把电子交给导线、把离子留给溶液；正极反之。
+          盐桥选用 KCl 而非任意盐，是因为 K⁺ 与 Cl⁻ 迁移速率几乎相同，
+          可把两溶液界面上的<strong>液接电势</strong>压到最小，不让它偷走电池的电压。
+          精密测量中甚至用"盐桥链"逐级过渡——电化学的工程学，一半都在跟界面较劲。
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：用一根粗铜丝代替盐桥，两头分别浸进两杯溶液，电池能工作吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：溶液里的"电流"由什么粒子搬运？铜丝里呢？</p>
+        <p>
+          不能正常工作。铜丝是<strong>电子导体</strong>，而溶液中电子无法自由迁移——
+          内电路需要的是<strong>离子通道</strong>。铜丝一插入溶液，自身立刻变成新电极，
+          引发副反应与额外的界面电势，电池电压被搅乱。盐桥的关键不在"导电"二字，
+          而在"以离子的方式导电"。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 电极电势与能斯特 ============ -->
+  <section id="potential">
+    <h2>§3 电极电势：反应方向的预测学</h2>
+    <p>
+      锌"乐意"失电子、铜"不乐意"——这种差异可以量化。给每个电对
+      （氧化型/还原型，如 Cu²⁺/Cu）规定一个<span class="term">标准电极电势</span>
+      <span class="en">standard electrode potential, E°</span>：以标准氢电极（SHE）为 0 V 参照，
+      在离子浓度 1 mol/L、25 °C 下测得。几个常用值：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>电对</th><th>E° / V</th><th>脾气</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Zn²⁺ / Zn</td><td>−0.76</td><td>还原型 Zn 很慷慨，容易失电子（活泼金属）</td></tr>
+        <tr><td>Fe²⁺ / Fe</td><td>−0.44</td><td>铁也愿意失电子，但比锌矜持</td></tr>
+        <tr><td>Cu²⁺ / Cu</td><td>+0.34</td><td>氧化型 Cu²⁺ 有抢电子的胃口</td></tr>
+        <tr><td>Cl₂ / Cl⁻</td><td>+1.36</td><td>Cl₂ 是强氧化剂，抢电子胃口极大</td></tr>
+      </tbody>
+    </table>
+    <p>
+      排序思想一句话：<strong>E° 越大，其氧化型越强（越容易得电子）；E° 越小，其还原型越强（越容易失电子）</strong>。
+      把两个电对组成电池，判断方向只需三步（见下例），判据是
+      <span class="formula">E°<sub>电池</sub> = E°<sub>正</sub> − E°<sub>负</sub> &gt; 0</span> 则反应自发。
+      它与第一章 ΔG 判据心心相通：<span class="formula">ΔG° = −nFE°</span>，
+      E° 为正时 ΔG° 必为负——电化学其实是热力学的"电压口音"。
+    </p>
+
+    <h3>能斯特方程：浓度让电压"打折扣"</h3>
+    <p>
+      标准电势对应 1 mol/L 的理想浓度。真实浓度偏离时，电势按
+      <span class="term">能斯特方程</span><span class="en">Nernst equation</span>修正：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">E = E° + (RT/nF)·ln([氧化型]/[还原型])</span>
+    </p>
+    <p>
+      定性读法只有两条：<strong>氧化型浓度↑ → E 升；还原型浓度↑ → E 降</strong>。
+      用它解释电池的"衰老"：放电时负极区 Zn²⁺ 越积越多，E<sub>负</sub> 升高；
+      正极区 Cu²⁺ 越用越少，E<sub>正</sub> 降低。两头夹击，
+      <strong>E<sub>电池</sub> = E<sub>正</sub> − E<sub>负</sub> 持续缩小，电压一路走低</strong>——
+      手机用久了电量"跳水"，就是能斯特方程在记账。
+    </p>
+
+    <h3>📐 例题脚手架：用电势表判断反应方向</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        已知 E°(Zn²⁺/Zn) = −0.76 V，E°(Cu²⁺/Cu) = +0.34 V，E°(Fe²⁺/Fe) = −0.44 V。
+        (1) 判断 Zn + Cu²⁺ → Zn²⁺ + Cu 能否自发；(2) 判断 Fe + Zn²⁺ → Fe²⁺ + Zn 能否自发。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">找两个电对，比大小：(1) 涉及 Zn²⁺/Zn（−0.76）与 Cu²⁺/Cu（+0.34）。
+          规则：<strong>E° 大的电对其氧化型当氧化剂（得电子，作正极）；E° 小的电对其还原型当还原剂（失电子，作负极）</strong>。
+          这里 Cu²⁺ 得电子、Zn 失电子——恰是题目写的方向。</li>
+        <li class="step">算电池电动势：E°<sub>电池</sub> = E°<sub>正</sub> − E°<sub>负</sub> =
+          0.34 − (−0.76) = <strong>+1.10 V</strong>。E° &gt; 0 → <strong>自发</strong>，
+          这正是 §2 丹尼尔电池的电压。</li>
+        <li class="step">热力学互证：ΔG° = −nFE° = −2 × 96485 × 1.10 ≈ <strong>−212 kJ/mol</strong> &lt; 0，
+          与第一章"ΔG &lt; 0 自发"完全一致——电势判据和自由能判据是同一枚硬币的两面。</li>
+        <li class="step">(2) Fe + Zn²⁺：若按所写方向，正极应是 Zn²⁺/Zn（−0.76），负极 Fe²⁺/Fe（−0.44），
+          E°<sub>电池</sub> = −0.76 − (−0.44) = <strong>−0.32 V</strong> &lt; 0 → <strong>不自发</strong>；
+          逆反应（Zn + Fe²⁺）才自发。✅ 检验直觉：锌比铁活泼，当然是锌失电子，方向判据与金属活动顺序表吻合。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 电池里装的是电子？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          "电池就像蓄水池，里面存着满满的电子；充电就是把电子灌回去，用完了就空了。"
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          电池里储存的是<strong>化学能</strong>——高能量的活性物质（锌与铜离子、锂与层状氧化物）。
+          电子只是流动的载体：放电时它们从负极经外电路涌向正极，<strong>在回路中循环流动、
+          数量从不增减</strong>；真正被消耗的是"愿意失电子"的物质。
+          充电也不是灌电子，而是用外电源把反应<strong>逆向</strong>推回去，重新生成高能物质——
+          能量以化学形式归仓。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 电解与法拉第定律 ============ -->
+  <section id="electrolysis">
+    <h2>§4 电解与法拉第定律：逆天改命</h2>
+    <p>
+      原电池利用自发反应发电；<span class="term">电解</span><span class="en">electrolysis</span>则反过来：
+      <strong>用外电源强行推动不自发反应</strong>（ΔG &gt; 0）。电解池接电源正极的电极发生氧化（称阳极），
+      接电源负极的电极发生还原（称阴极）——注意与原电池相反：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th></th><th>阳极（氧化）</th><th>阴极（还原）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>原电池</strong>（自发，发电）</td><td>负极（如 Zn）</td><td>正极（如 Cu）</td></tr>
+        <tr><td><strong>电解池</strong>（非自发，耗电）</td><td>接电源<strong>正</strong>极</td><td>接电源<strong>负</strong>极</td></tr>
+      </tbody>
+    </table>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 阳极 = 正极？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          "阳极就是正极、阴极就是负极，背一遍走天下。"
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          阳阴极按<strong>反应类型</strong>定义（阳氧化、阴还原），正负极按<strong>电势高低</strong>定义。
+          原电池里阳极恰是负极（Zn）；电解池里阳极接的才是正极。<strong>先问氧化还原，再问正负</strong>，
+          两套名字就永远不会张冠李戴。
+        </div>
+      </div>
+    </div>
+
+    <h3>法拉第定律：电量换物质的汇率表</h3>
+    <p>
+      1833 年法拉第发现：<strong>电极上析出（或溶解）的物质的量，与通过的电量严格成正比</strong>。
+      换算链条只有三步：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Q = I·t</span>　→　
+      <span class="formula">n(e⁻) = Q / F</span>　→　
+      <span class="formula">n(物质) = n(e⁻) / z</span>
+    </p>
+    <p>
+      其中 <span class="term">法拉第常数</span><span class="en">Faraday constant</span>
+      <span class="formula">F = 96485 C/mol</span>，正是 1 mol 电子的总电量；
+      z 是每个离子转移的电子数（Cu²⁺ → Cu 时 z = 2）。这条链是电镀、电解精炼铜、
+      氯碱工业的计量基础——工厂电镀槽里"通多少电、镀多少铜"，账算到小数点后。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 电解计算两大坑</div>
+      一是<strong>时间不化秒</strong>：I·t 里的 t 必须用秒（2.0 h = 7200 s），用小时直接乘就错一千倍量级；
+      二是<strong>忘记除以 z</strong>：Cu²⁺ 析出要 2 个电子，电量再多也只能折半算铜。
+      动笔前先写电极反应式，把 z 圈出来，两个坑都能绕开。
+    </div>
+
+    <h3>📐 例题脚手架：电镀铜的定量账本</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        电解精炼铜时，阴极通过 5.0 A 电流持续 2.0 小时。理论上析出多少克铜？
+        （M(Cu) = 64 g/mol，F = 96485 C/mol）
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 先写阴极反应、圈出 z：Cu²⁺ + <strong>2</strong>e⁻ → Cu，z = 2。
+          这一步同时决定了后面要"除以 2"。</li>
+        <li class="step">💡 电量 Q = I·t = 5.0 A × (2.0 × 3600 s) = <strong>3.6 × 10⁴ C</strong>。
+          小时先化秒，别偷懒。</li>
+        <li class="step">💡 电子的物质的量 n(e⁻) = Q / F = 36000 / 96485 ≈ <strong>0.373 mol</strong>。</li>
+        <li class="step">💡 折算铜：n(Cu) = n(e⁻)/z = 0.373/2 ≈ 0.187 mol，
+          m = 0.187 × 64 ≈ <strong>12 g</strong>。
+          ✅ 自查：12 g 约一枚旧硬币的质量，用 5 A 电流镀 2 小时——数量级合理。
+          顺手记个生活换算：36000 C ≈ 10 Ah，正是一节小充电宝释放的三分之一电量。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 锂离子电池 ============ -->
+  <section id="lithium">
+    <h2>§5 锂离子电池：一把摇椅的故事</h2>
+    <p>
+      1991 年索尼把锂离子电池推向市场，从此手机、笔记本、电动车一路狂奔。
+      它的天才之处在于：<strong>全程没有金属锂参与沉积，只有最小的金属离子 Li⁺ 在两种"层状仓库"之间来回穿梭</strong>——
+      一边是石墨的碳层，一边是锂钴氧化物（LiCoO₂）的氧化物层。这个模型俗称"摇椅电池"：
+    </p>
+    <p style="text-align:center">
+      放电·负极：<span class="formula">Li<sub>x</sub>C₆ → xLi⁺ + xe⁻ + 6C</span>　
+      放电·正极：<span class="formula">Li₁₋ₓCoO₂ + xLi⁺ + xe⁻ → LiCoO₂</span>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="230" viewBox="0 0 640 230" role="img" aria-label="锂离子电池摇椅原理示意">
+          <!-- 左：石墨负极 -->
+          <g transform="translate(120,110)">
+            <rect x="-70" y="-70" width="140" height="140" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></rect>
+            <line x1="-52" y1="-40" x2="52" y2="-40" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="-16" x2="52" y2="-16" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="8" x2="52" y2="8" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="32" x2="52" y2="32" stroke="#475569" stroke-width="3"></line>
+            <circle cx="-20" cy="-46" r="5" fill="#7c3aed"></circle>
+            <circle cx="18" cy="-22" r="5" fill="#7c3aed"></circle>
+            <circle cx="0" cy="2" r="5" fill="#7c3aed"></circle>
+            <text y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">石墨负极（层间嵌 Li⁺）</text>
+          </g>
+          <!-- 右：氧化物正极 -->
+          <g transform="translate(520,110)">
+            <rect x="-70" y="-70" width="140" height="140" rx="10" fill="#fff7ed" stroke="#fb923c" stroke-width="2"></rect>
+            <line x1="-52" y1="-40" x2="52" y2="-40" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="-16" x2="52" y2="-16" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="8" x2="52" y2="8" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="32" x2="52" y2="32" stroke="#c2410c" stroke-width="3"></line>
+            <circle cx="26" cy="-46" r="5" fill="#7c3aed"></circle>
+            <circle cx="-14" cy="-22" r="5" fill="#7c3aed"></circle>
+            <circle cx="30" cy="2" r="5" fill="#7c3aed"></circle>
+            <text y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c">LiCoO₂ 正极（层间嵌 Li⁺）</text>
+          </g>
+          <!-- 摇椅箭头 -->
+          <path d="M200,80 Q320,10 440,80" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#dcArrow)"></path>
+          <defs>
+            <marker id="dcArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#15803d"></path>
+            </marker>
+          </defs>
+          <text x="320" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">放电：Li⁺ → 正极 · e⁻ 经外电路</text>
+          <path d="M440,150 Q320,215 200,150" fill="none" stroke="#0369a1" stroke-width="2.5" marker-end="url(#dcArrowB)"></path>
+          <defs>
+            <marker id="dcArrowB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0369a1"></path>
+            </marker>
+          </defs>
+          <text x="320" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">充电：外电源把 Li⁺ 推回负极（电解）</text>
+        </svg>
+      </div>
+      <figcaption>
+        放电时 Li⁺ 从石墨层脱出、穿过电解液、嵌入氧化物层，电子同步经外电路做功；
+        充电时外电源反向推动，Li⁺ 摇回石墨层。两座"仓库"结构稳定、只进不出形貌，
+        所以锂离子电池可逆上千次——这正是它战胜早期锂金属电池（会生长枝晶、易燃）的关键。
+      </figcaption>
+    </figure>
+
+    <p>
+      把本章知识对号入座：<strong>放电时它是原电池</strong>（自发反应，E 高的 LiCoO₂ 作正极），
+      <strong>充电时它是电解池</strong>（外电源做功，把 Li⁺ 逆势推回）；
+      电解液与隔膜扮演"盐桥"的角色——只放行 Li⁺、挡住电子。
+      你口袋里装的，正是丹尼尔电池思想的最精致传人。
+    </p>
+
+    <details class="think">
+      <summary>想一想：冬天手机在户外掉电飞快、甚至自动关机，用本章哪个概念解释最顺？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：第二章说过温度对速率常数的指数效应；本章能斯特方程则管电压。</p>
+        <p>
+          两条线一起用：<strong>低温让离子迁移和电极反应速率骤降</strong>（动力学的账，第二章），
+          管理电路误判为"没电"；同时电池内阻升高、输出电压被拉低（能斯特与欧姆降的账）。
+          回到暖处，速率与电压恢复，电量常常又"涨"回来——它不是被冻掉的能量，
+          而是暂时取不出来的能量。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>氧化还原 = 电子转移：氧化数升高失电子（还原剂），降低得电子（氧化剂）。</li>
+        <li>原电池把氧化、还原拆到两极：<strong>负极 = 阳极 = 氧化</strong>；电子经外电路从负到正，
+          溶液内靠离子导电。<strong>盐桥维持两杯电中性，无它电流瞬停</strong>。</li>
+        <li>E° 越大氧化型越强；判方向三步：找电对 → 比 E° →
+          <span class="formula">E°<sub>电池</sub> = E°<sub>正</sub> − E°<sub>负</sub> &gt; 0</span> 自发，
+          与 ΔG° = −nFE° 等价。</li>
+        <li>能斯特方程定性：氧化型浓度↑ E 升、还原型↑ E 降；放电中电压持续走低。</li>
+        <li>电解用外电源推动非自发反应；阳极接正极。法拉第定律：
+          <span class="formula">Q = I·t → n(e⁻) = Q/F → n = n(e⁻)/z</span>（F = 96485 C/mol）。</li>
+        <li>锂离子电池 = 摇椅：放电是原电池、充电是电解，Li⁺ 在石墨与 LiCoO₂ 层间往返，无金属锂沉积。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 电化学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "丹尼尔电池工作时，电子在电路中的流动路线是？",
+            "options": ["从 Cu 极经导线流向 Zn 极", "从 Zn 极经导线流向 Cu 极，再经盐桥回来", "在两杯溶液中自由穿梭", "从正极经导线流向负极"],
+            "answer": 1,
+            "explain": "Zn 是负极（氧化，失电子），电子经外电路流向正极 Cu（还原）。注意电子不进盐桥——溶液里导电的是离子，K⁺ 与 Cl⁻ 各奔阴阳两区。"
+          },
+          {
+            "q": "抽掉盐桥后电流几乎立刻停止，根本原因是？",
+            "options": ["导线断了", "两半电池电荷迅速积聚，电势差反向抵消化学推动力", "盐桥是电子的必经之路", "Cu²⁺ 用完了"],
+            "answer": 1,
+            "explain": "无离子通道时，负极区积累正电荷、正极区过剩负电荷，瞬间形成的反向电势差把反应顶住——盐桥用 K⁺/Cl⁻ 的双向迁移把两杯账目结清，电流才能持续。"
+          },
+          {
+            "q": "已知 E°(Cu²⁺/Cu) = +0.34 V，E°(Fe²⁺/Fe) = −0.44 V。反应 Fe + Cu²⁺ → Fe²⁺ + Cu 的标准电动势与方向为？",
+            "options": ["+0.78 V，正向自发", "−0.78 V，正向不自发", "+0.10 V，正向自发", "−0.10 V，正向不自发"],
+            "answer": 0,
+            "explain": "Fe 失电子作负极（E°=−0.44），Cu²⁺ 得电子作正极（E°=+0.34），E°电池 = 0.34−(−0.44) = +0.78 V > 0，正向自发——湿法炼铜（铁置换铜）正是它。"
+          },
+          {
+            "q": "电解含 Cu²⁺ 的溶液，阴极析出 0.10 mol Cu，通过阴极的电子是？",
+            "options": ["0.10 mol", "0.20 mol", "9650 C", "96485 C"],
+            "answer": 1,
+            "explain": "Cu²⁺ + 2e⁻ → Cu，每析出 1 mol Cu 需 2 mol 电子：0.10×2 = 0.20 mol（约 19297 C）。选项 C、D 的错误在于把物质的量与电量混为一谈。"
+          },
+          {
+            "q": "锂离子电池充放电过程中，Li⁺ 的行为最准确的描述是？",
+            "options": ["在石墨与金属氧化物层间来回嵌入/脱出，像摇椅两端荡", "放电时析出金属锂，充电时再溶解", "始终留在正极内部不移动", "被电池永久消耗掉"],
+            "answer": 0,
+            "explain": "摇椅原理：放电 Li⁺ 从石墨层脱出迁入 LiCoO₂ 层（电子走外电路做功）；充电时被外电源推回石墨层。Li⁺ 循环使用不消耗，也从不以金属锂形式析出——这正是它安全、长寿的原因。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-化学动力学.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 化学动力学</span></a>
+      <a class="next" href="04-量子化学与分子结构.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 4 章 · 量子化学与分子结构</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（丹尼尔电池组装模拟） ============ */
+(function () {
+  "use strict";
+  var gSalt = document.getElementById("dcSalt");
+  var gIons = document.getElementById("dcIons");
+  var gWire = document.getElementById("dcWire");
+  var gAnno = document.getElementById("dcAnno");
+  var rays  = document.getElementById("dcRays");
+  var bulb  = document.getElementById("dcBulb");
+  var volt  = document.getElementById("dcVolt");
+  var solR  = document.getElementById("dcSolR");
+  var readout = document.getElementById("dcReadout");
+  if (!gSalt || !gWire) return;
+
+  var TEXT = {
+    0: "↺ 已重置。按 ① 开始组装。",
+    1: "① 两个半电池：左 Zn|Zn²⁺，右 Cu²⁺|Cu。彼此隔绝，什么也不会发生——氧化与还原没有各自的舞台。",
+    2: "② 接上盐桥：离子通道打通（K⁺ 待命去阴极区、Cl⁻ 待命去阳极区）。但外电路未接通，电子无路可走，电荷瞬间积聚，反应立刻『刹车』——只有盐桥还不够。",
+    3: "③ 闭合外电路，回路完整！负极(阳极·氧化)：Zn − 2e⁻ → Zn²⁺ ｜ 正极(阴极·还原)：Cu²⁺ + 2e⁻ → Cu ｜ 总反应：Zn + Cu²⁺ → Zn²⁺ + Cu ｜ E° = 1.10 V，灯亮。",
+    4: "④ 持续放电：负极区 Zn²⁺ 越积越多、正极区 Cu²⁺ 越用越少（蓝色变浅）。由能斯特方程：E正降、E负升 → 电压跌破 1.10 V 并一路走低——电池『衰老』的秘密。"
+  };
+
+  function setStep(k) {
+    var step = parseInt(k, 10) || 0;
+    gSalt.style.display = step >= 2 ? "" : "none";
+    gIons.style.display = step >= 3 ? "" : "none";
+    gWire.style.display = step >= 3 ? "" : "none";
+    gAnno.style.display = step >= 4 ? "" : "none";
+    if (step >= 3) {
+      bulb.setAttribute("fill", step >= 4 ? "#fef08a" : "#fde047");
+      rays.setAttribute("opacity", step >= 4 ? ".45" : "1");
+      volt.textContent = step >= 4 ? "E < 1.10 V ↓" : "E° = 1.10 V";
+    }
+    solR.setAttribute("fill", step >= 4 ? "#dbeafe" : "#bfdbfe");
+    readout.textContent = TEXT[step];
+    Array.prototype.forEach.call(document.querySelectorAll(".dc-step"), function (b) {
+      b.className = parseInt(b.getAttribute("data-step"), 10) === step ? "btn" : "btn ghost";
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".dc-step"), function (b) {
+    b.addEventListener("click", function () { setStep(b.getAttribute("data-step")); });
+  });
+  setStep(1);
+})();
+</script>
+</body>
+</html>

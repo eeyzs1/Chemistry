@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学热力学 · 物理化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">04 物理化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 化学热力学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 物理化学 · 第 1 章</div>
+    <h1>化学热力学：变化的方向盘</h1>
+    <p class="lede">
+      撕开暖手宝，它会自己发热，从不"倒吸"你手心的热变凉；拧开硝酸铵运动冰袋，它吸热变凉，
+      也照样自动发生。一个放热、一个吸热，<strong>却都自发</strong>——可见"放热"并不是方向的最终裁判。
+      本章要找到那位真正的裁判：先学会给变化记账（内能与焓），再学会加总路径（盖斯定律），
+      最后请出 <strong>ΔG = ΔH − TΔS</strong>，一锤定音地回答：这个变化，能不能自发？
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 65 分钟</span>
+      <span class="chip">先修：00 化学总论 · 摩尔与化学计量</span>
+      <span class="chip">交互动画 ×1（ΔG 探索器）</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#basics">体系与状态函数</a>
+    <a href="#firstlaw">第一定律与焓</a>
+    <a href="#hess">盖斯定律</a>
+    <a href="#gibbs">熵与吉布斯自由能</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：世界为什么有方向</h2>
+    <p>
+      热咖啡放在桌上总会凉，凉咖啡却从不会自己变热；香水开了瓶盖就飘满屋子，
+      却从不会自己乖乖回到瓶里；山涧的水一路向下，从不倒流回山顶。
+      物理学把这类"不用外界推动就能发生、且不能自动倒退"的变化叫作
+      <span class="term">自发过程</span><span class="en">spontaneous process</span>。
+    </p>
+    <p>
+      化学家关心的问题更具体：<strong>一个化学反应，比如铁生锈、葡萄糖氧化、水变冰，
+      到底能不能自发？条件是什么？</strong>这个问题之所以值钱，是因为答案直接告诉我们：
+      电池能不能做成、石灰石要烧到多高温才能变成石灰、一个梦想中的合成路线是不是"物理上允许"。
+      本章分三步走：先弄清给谁记账（§1）、账本上的两条规则（§2、§3），
+      最后请出裁判（§4）。
+    </p>
+    <details class="think">
+      <summary>想一想：打开一瓶香水，分子很快散满全屋；可它们从不会自己回到瓶里。这两件事的"能量"差别大吗？真正的差别在哪？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：比较"所有分子都在瓶里"与"分子均匀铺满全屋"这两种排列方式，哪种的排列数目更多？</p>
+        <p>
+          能量上两者几乎没差别——分子飞来飞去的动能并没有变。真正的差别是<strong>排列方式的多寡</strong>：
+          "散布全屋"的实现方式数不清，"全体回瓶"只有寥寥几种。世界天然偏爱"实现方式更多"的状态，
+          这就是 §4 要量化的<strong>熵</strong>。方向感，很多时候不是能量给的，是"混乱度"给的。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 体系与状态函数 ============ -->
+  <section id="basics">
+    <h2>§1 体系、环境与状态函数</h2>
+    <p>
+      记账之前先划定账本边界。被研究的那部分物质叫<span class="term">体系</span>
+      <span class="en">system</span>，体系之外的一切叫<span class="term">环境</span>
+      <span class="en">surroundings</span>。研究杯里的热水，热水是体系，杯、桌面、空气是环境；
+      做实验时，敞口烧杯里的反应体系可以与环境交换物质和能量，封闭的弹筒只能交换能量。
+      热力学关心的是<strong>两者之间交换了多少热与功</strong>。
+    </p>
+    <p>
+      体系的"家底"用一些只取决于当前状态的量来描述：温度、压强、体积，以及内能
+      <span class="formula">U</span>。这类量统称<span class="term">状态函数</span>
+      <span class="en">state function</span>——<strong>只看起点和终点，与经过什么路径无关</strong>。
+      而热 <span class="formula">Q</span> 和功 <span class="formula">W</span> 是
+      <strong>过程量</strong>：它们描述"怎么走"，同一段旅程换个走法，数值就不同。
+    </p>
+
+    <details class="think">
+      <summary>想一想：从山顶酒店回到山脚停车场，坐缆车或步行下山。"海拔下降"和"消耗的体力"哪个像状态函数？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：换一种下山方式，哪个数字永远不变？</p>
+        <p>
+          海拔下降只由起点与终点决定——坐缆车也好、翻山越岭也罢，都是 800 米，它是"状态函数"。
+          消耗的体力却完全取决于路径长短与方式，它是"过程量"。热力学里：
+          <strong>ΔU 像海拔差，Q 和 W 像体力</strong>——这解释了为什么同一反应在不同装置里放出的热可以不同，
+          而内能变化始终如一。
+        </p>
+      </div>
+    </details>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      状态函数像<strong>海拔</strong>（只看起终点），过程量像<strong>脚程</strong>（要看路径）。
+      本章的主角——<span class="formula">U</span>、<span class="formula">H</span>、
+      <span class="formula">S</span>、<span class="formula">G</span>——全是状态函数，
+      所以它们的差值 ΔH、ΔG 才能像 §3 那样任意拆解、加减。
+    </div>
+  </section>
+
+  <!-- ============ §2 第一定律与焓 ============ -->
+  <section id="firstlaw">
+    <h2>§2 热力学第一定律与焓</h2>
+    <p>
+      能量守恒写进化学账本，就是<span class="term">热力学第一定律</span>
+      <span class="en">first law of thermodynamics</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">ΔU = Q + W</span>
+    </p>
+    <p>
+      采用常用符号约定：<strong>Q &gt; 0 体系吸热，Q &lt; 0 体系放热；
+      W &gt; 0 外界对体系做功，W &lt; 0 体系对外界做功</strong>。
+      例：某气体吸热 50 J，同时膨胀对活塞做功 20 J，则 W = −20 J，
+      ΔU = 50 + (−20) = +30 J——吸入的热，一部分变成了对外做的功，剩下的存进内能。
+      这条定律说：能量不生不灭，只在体系与环境之间转账；<strong>永动机不可能造出来</strong>。
+    </p>
+
+    <h3>焓：为"敞口容器"定制的能量账</h3>
+    <p>
+      实验室里的反应几乎都在<strong>恒压</strong>下进行（敞口容器，大气压不变）。
+      这时若有气体生成或消耗，体系要推挤大气做一笔"膨胀功"，ΔU 没把这笔账算清楚。
+      于是热力学定义了一个新状态函数——<span class="term">焓</span>
+      <span class="en">enthalpy</span>，<span class="formula">H = U + pV</span>，
+      它恰好补上这笔功，使得恒压过程的热收支变得干净利落：
+    </p>
+    <p style="text-align:center">
+      恒压时 <span class="formula">Q<sub>p</sub> = ΔH</span>
+    </p>
+    <p>
+      这就是化学家开口闭口都是 ΔH 的原因：<strong>恒压下测到的"反应热"就是焓变</strong>。
+      符号一目了然：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>符号</th><th>含义</th><th>体系能量</th><th>手感</th><th>例子（每摩尔）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">ΔH &lt; 0</span></td><td>放热反应</td><td>焓降低，多余的热跑到环境</td><td>变热</td><td>甲烷燃烧 −890 kJ；中和反应 −57.3 kJ</td></tr>
+        <tr><td><span class="formula">ΔH &gt; 0</span></td><td>吸热反应</td><td>焓升高，从环境"借"热</td><td>变凉</td><td>冰融化 +6.0 kJ；硝酸铵溶于水 +25.8 kJ</td></tr>
+      </tbody>
+    </table>
+    <p>
+      注意"手感"一栏的暗雷：放热≠自发，吸热≠不自发——上表最后一行那个吸热却自动发生的溶解过程，
+      就是 §4 要解决的悬案。
+    </p>
+  </section>
+
+  <!-- ============ §3 盖斯定律 ============ -->
+  <section id="hess">
+    <h2>§3 盖斯定律：反应热的加减法</h2>
+    <p>
+      1840 年，瑞士化学家盖斯从实验中归纳出：<strong>恒温恒压（或恒容）下，反应热只由始态与终态决定，
+      与中间路径无关</strong>。这就是<span class="term">盖斯定律</span>
+      <span class="en">Hess's law</span>。它其实是"ΔH 是状态函数的增量"这一身份的直接推论——
+      既然只看起终点，那么<strong>方程式怎么加减，ΔH 就怎么加减</strong>，就像爬山的高度可以分段累加。
+    </p>
+    <p>
+      它最大的用处是把<strong>测不到的反应热算出来</strong>。有些反应无法"停在半路"，
+      比如碳燃烧——你永远烧不出纯 CO（它总会继续烧成 CO₂），那"C 烧成 CO 放多少热"这道题就只能靠绕路：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="盖斯定律路径图：碳到二氧化碳的直接路径与经一氧化碳的分步路径">
+          <defs>
+            <marker id="arrH" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0369a1"></path>
+            </marker>
+          </defs>
+          <!-- 起点：C + O2 -->
+          <g transform="translate(105,105)">
+            <circle r="46" fill="#f0f9ff" stroke="#0369a1" stroke-width="2"></circle>
+            <text y="-4" text-anchor="middle" font-size="17" font-weight="800" fill="#075985">C + O₂</text>
+            <text y="20" text-anchor="middle" font-size="11" fill="#4b5563">起点</text>
+          </g>
+          <!-- 终点：CO2 -->
+          <g transform="translate(535,105)">
+            <circle r="46" fill="#f0fdf4" stroke="#15803d" stroke-width="2"></circle>
+            <text y="-4" text-anchor="middle" font-size="17" font-weight="800" fill="#166534">CO₂</text>
+            <text y="20" text-anchor="middle" font-size="11" fill="#4b5563">终点</text>
+          </g>
+          <!-- 直接路径（上） -->
+          <path d="M150,68 Q320,8 490,68" fill="none" stroke="#0369a1" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <text x="320" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#075985">① 直接烧尽：ΔH₁ = −393.5 kJ/mol</text>
+          <!-- 分步路径（下） -->
+          <path d="M150,142 Q230,190 300,158" fill="none" stroke="#92400e" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <path d="M330,142 Q425,88 490,142" fill="none" stroke="#92400e" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <g transform="translate(320,178)">
+            <rect x="-64" y="-16" width="128" height="32" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"></rect>
+            <text y="5" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">CO（中转站）</text>
+          </g>
+          <text x="196" y="192" text-anchor="middle" font-size="12" fill="#92400e">ΔH(?)</text>
+          <text x="445" y="96" text-anchor="middle" font-size="12" fill="#92400e">② 再烧：−283.0</text>
+        </svg>
+      </div>
+      <figcaption>
+        两条路的高度差（ΔH）必然相同：直接路径的 ΔH₁ = 分步路径的 ΔH(?) + ΔH₂。
+        "测不到的那一步"于是被两条可测量的路夹逼出来。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：算出"C 烧成 CO"的 ΔH</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        已知 ① <span class="formula">C(s) + O₂(g) → CO₂(g)</span>，ΔH₁ = −393.5 kJ/mol；
+        ② <span class="formula">CO(g) + ½O₂(g) → CO₂(g)</span>，ΔH₂ = −283.0 kJ/mol。
+        求 <span class="formula">C(s) + ½O₂(g) → CO(g)</span> 的 ΔH。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">认清困境：碳在氧气里燃烧无法停留在 CO 这一步（生成的 CO 会立刻继续氧化），
+          所以目标反应的 ΔH<strong>无法直接测量</strong>——这正是盖斯定律登场的信号。</li>
+        <li class="step">设计路径：目标 = ① − ②。检查物质账：
+          ①的 C + O₂ + CO₂ 减去 ②的 CO + ½O₂ + CO₂，
+          CO₂ 两侧恰好消去，O₂ 剩 1 − ½ = ½，得到 <strong>C + ½O₂ → CO</strong> ✓ 正是目标。</li>
+        <li class="step">ΔH 同步运算：ΔH = ΔH₁ − ΔH₂ = (−393.5) − (−283.0) =
+          <strong>−110.5 kJ/mol</strong>。注意"减去一个负数"等于加上它的绝对值，符号别丢。</li>
+        <li class="step">合理性检验：C → CO₂ 放 393.5 kJ，其中 C → CO 放 110.5、CO → CO₂ 放 283.0，
+          110.5 + 283.0 = 393.5 ✓ 两条路"高度差"严丝合缝。答案：ΔH = <strong>−110.5 kJ/mol</strong>（放热）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 熵与吉布斯自由能 ============ -->
+  <section id="gibbs">
+    <h2>§4 熵与吉布斯自由能：方向的最终裁判</h2>
+
+    <h3>熵：世界的另一个偏好</h3>
+    <p>
+      新买的一副扑克牌按花色排得整整齐齐，洗几次就乱；把它撒在地上，永远不会自动码回原样。
+      分子世界也一样：冰的晶格里每个水分子都"站好队"，融化成水后各自游走，排列方式暴增。
+      热力学用<span class="term">熵</span><span class="en">entropy, S</span>度量这种
+      "实现方式的多寡"——直观地说，<strong>熵是体系混乱度（更严格地说：微观状态数）的量度</strong>，
+      S 越大，可能的微观排列越多。气体膨胀、物质溶解、晶体熔化，熵都在增大。
+    </p>
+
+    <h3>ΔG：两位裁判合成一位</h3>
+    <p>
+      现在把两股驱动力放进同一个公式。1870 年代，吉布斯定义了
+      <span class="term">吉布斯自由能</span><span class="en">Gibbs free energy, G</span>，
+      并证明在<strong>恒温恒压</strong>条件下：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">ΔG = ΔH − TΔS</span>
+    </p>
+    <p>
+      ΔH 是<strong>能量项</strong>（放热为负，推动反应），TΔS 是<strong>熵项</strong>
+      （熵增为正、温度越高推力越大）。两者拔河，净推力就是 ΔG：
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 自发性判据（恒温恒压）</div>
+      <span class="formula">ΔG &lt; 0</span> 正反应<strong>自发</strong>；
+      <span class="formula">ΔG = 0</span> 达到<strong>平衡</strong>；
+      <span class="formula">ΔG &gt; 0</span> 正反应不自发（<strong>逆反应</strong>自发）。
+      冰融化的悬案就此告破：ΔH = +6.0 kJ/mol 在"反对"，但 298 K 时 TΔS ≈ 6.6 kJ/mol 在"推动"，
+      ΔG = 6.0 − 6.6 = −0.6 kJ/mol &lt; 0——<strong>熵赢了，所以吸热照样自发</strong>。
+    </div>
+
+    <p>把 ΔH 与 ΔS 的四种正负组合摆成一张表，温度的角色一目了然：</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>ΔH</th><th>ΔS</th><th>ΔG 随温度</th><th>自发性</th><th>实例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>−</td><td>+</td><td>恒为负</td><td><strong>任何温度都自发</strong></td><td>H₂O₂ 分解：2H₂O₂ → 2H₂O + O₂（放热又产气）</td></tr>
+        <tr><td>+</td><td>−</td><td>恒为正</td><td><strong>任何温度都不自发</strong></td><td>CO 分解回 C + ½O₂（例 1 的逆反应）</td></tr>
+        <tr><td>−</td><td>−</td><td>随 T 升高而增大</td><td><strong>低温自发，高温不自发</strong>（转折 T = ΔH/ΔS）</td><td>合成氨 N₂ + 3H₂ → 2NH₃</td></tr>
+        <tr><td>+</td><td>+</td><td>随 T 升高而减小</td><td><strong>高温自发，低温不自发</strong>（转折 T = ΔH/ΔS）</td><td>CaCO₃ 分解 → CaO + CO₂</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · "能量最低"为什么不是自发的充分条件？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          世界不只有"往低处流"一个偏好，还有"越洗越乱"的偏好。瀑布奔向低处（能量降低），
+          香水散向全屋（混乱度增大）——两股潮流常同向，让我们误以为"能量最低=必自发"。
+          冰在室温融化却逆流而上：它吸热、能量升高，但分子从整齐晶格获得自由，
+          <strong>混乱度的赢面盖过了能量的输面</strong>。只看能量，你就只看懂了半张地图。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          用公式算账。冰融化：ΔH = +6.0 kJ/mol，ΔS = +22 J/(mol·K) = +0.022 kJ/(mol·K)。
+          298 K（25 °C）时 ΔG = 6.0 − 298×0.022 = 6.0 − 6.6 = <strong>−0.6 kJ/mol</strong>，自发；
+          268 K（−5 °C）时 ΔG = 6.0 − 5.9 = <strong>+0.1 kJ/mol</strong>，不自发，冰稳稳不化。
+          转折点恰在 T* = ΔH/ΔS = 6000/22 ≈ 273 K——就是 0 °C。
+          <strong>同一个反应，温度改判</strong>：这正是"能量最低"无法解释、ΔG 才能解释的现象。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          真正的裁判是热力学第二定律：<strong>孤立体系的总熵永不减少</strong>。
+          体系融化吸热 ΔH，环境就失去这些热，环境的熵变 ΔS<sub>环</sub> = −ΔH/T（负号：环境放热给体系）。
+          于是宇宙总熵变 ΔS<sub>总</sub> = ΔS − ΔH/T。两边同乘 −T：
+          <span class="formula">−TΔS<sub>总</sub> = ΔH − TΔS = ΔG</span>。
+          所以 <strong>ΔG &lt; 0 ⇔ ΔS<sub>总</sub> &gt; 0</strong>——ΔG 不过是把"环境那半本账"折算进体系的记账方式，
+          它的判决书落款永远是：宇宙总熵增加。
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：ΔG 探索器</h3>
+    <p>
+      拖动 ΔH、ΔS、T 三个滑块，右侧实时显示 ΔG 数值与自发性判决，左侧四象限图上,
+      光点标出你当前的 (ΔH, ΔS) 位置与所在象限。试试三个预设：先用"冰融化"验证 273 K 转折，
+      再用"合成氨"体会"低温有利"为什么配低温工业条件，最后用"CaCO₃ 分解"把温度拉过 1113 K，
+      看判决当场翻转。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ggSvg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-label="ΔG 四象限探索器">
+          <!-- 四象限底色 -->
+          <rect id="ggQul" x="30" y="25" width="160" height="140" rx="4" fill="#f0fdf4" opacity=".55"></rect>
+          <rect id="ggQur" x="190" y="25" width="160" height="140" rx="4" fill="#eff6ff" opacity=".55"></rect>
+          <rect id="ggQll" x="30" y="165" width="160" height="140" rx="4" fill="#fffbeb" opacity=".55"></rect>
+          <rect id="ggQlr" x="190" y="165" width="160" height="140" rx="4" fill="#fef2f2" opacity=".55"></rect>
+          <!-- 象限标注 -->
+          <text x="110" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">ΔH&lt;0 · ΔS&gt;0</text>
+          <text x="110" y="64" text-anchor="middle" font-size="11" fill="#166534">任何温度都自发 ✓</text>
+          <text x="270" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">ΔH&gt;0 · ΔS&gt;0</text>
+          <text x="270" y="64" text-anchor="middle" font-size="11" fill="#1e40af">高温才自发</text>
+          <text x="110" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">ΔH&lt;0 · ΔS&lt;0</text>
+          <text x="110" y="204" text-anchor="middle" font-size="11" fill="#a16207">低温才自发</text>
+          <text x="270" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">ΔH&gt;0 · ΔS&lt;0</text>
+          <text x="270" y="204" text-anchor="middle" font-size="11" fill="#b91c1c">任何温度都不自发 ✗</text>
+          <!-- 坐标轴 -->
+          <line x1="26" y1="165" x2="352" y2="165" stroke="#94a3b8" stroke-width="1.5"></line>
+          <line x1="190" y1="21" x2="190" y2="309" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="348" y="156" text-anchor="end" font-size="11" fill="#4b5563">ΔH (kJ/mol) →</text>
+          <text x="196" y="34" font-size="11" fill="#4b5563">ΔS ↑ (J·mol⁻¹·K⁻¹)</text>
+          <!-- 十字参考线与光点 -->
+          <line id="ggCh" x1="30" y1="165" x2="350" y2="165" stroke="#0369a1" stroke-width="1" stroke-dasharray="3 4" opacity=".55"></line>
+          <line id="ggCv" x1="190" y1="25" x2="190" y2="305" stroke="#0369a1" stroke-width="1" stroke-dasharray="3 4" opacity=".55"></line>
+          <circle id="ggDot" cx="116.4" cy="234.65" r="8" fill="#15803d" stroke="#ffffff" stroke-width="2.5"></circle>
+          <!-- 右侧实时面板 -->
+          <text x="372" y="42" font-size="12" fill="#6b7280">当前温度下的 ΔG</text>
+          <text id="ggVal" x="372" y="76" font-size="26" font-weight="800" fill="#15803d">−32.7</text>
+          <text x="500" y="76" font-size="13" fill="#6b7280">kJ/mol</text>
+          <text id="ggStatus" x="372" y="104" font-size="15" font-weight="700" fill="#15803d">正向自发 ✓</text>
+          <line x1="372" y1="122" x2="626" y2="122" stroke="#e5e7eb" stroke-width="1"></line>
+          <text x="372" y="146" font-size="12" fill="#6b7280">转折温度 T* = ΔH / ΔS</text>
+          <text id="ggTstar" x="372" y="172" font-size="15" font-weight="700" fill="#1f2937">≈ 462 K</text>
+          <text id="ggTnote" x="372" y="198" font-size="12" fill="#4b5563">T &lt; 462 K 时自发；越过它则反向</text>
+          <text id="ggQuad" x="372" y="230" font-size="12" font-weight="700" fill="#075985">当前象限：ΔH&lt;0、ΔS&lt;0（低温自发型）</text>
+          <text x="372" y="258" font-size="11" fill="#6b7280">拖动下方滑块，或点击预设案例</text>
+          <text id="ggCalc" x="372" y="284" font-size="11" font-family="Consolas, monospace" fill="#4b5563"></text>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn ghost gg-preset" data-h="6" data-s="22" data-t="298">🧊 冰融化</button>
+          <button class="btn ghost gg-preset" data-h="-92" data-s="-199" data-t="298">🌿 合成氨</button>
+          <button class="btn ghost gg-preset" data-h="178" data-s="160" data-t="298">🪨 CaCO₃ 分解</button>
+        </div>
+        <div style="display:grid;gap:10px;margin-top:12px;text-align:left;min-width:300px;max-width:430px;margin-left:auto;margin-right:auto">
+          <label for="ggH" style="font-size:.88rem;color:var(--ink-2)">
+            ΔH = <b id="ggHv">−92</b> kJ/mol（放热 ↔ 吸热）
+            <input id="ggH" type="range" min="-200" max="200" step="1" value="-92" style="width:100%;accent-color:var(--accent);height:44px" aria-label="焓变滑块">
+          </label>
+          <label for="ggS" style="font-size:.88rem;color:var(--ink-2)">
+            ΔS = <b id="ggSv">−199</b> J/(mol·K)（熵减 ↔ 熵增）
+            <input id="ggS" type="range" min="-400" max="400" step="1" value="-199" style="width:100%;accent-color:var(--accent);height:44px" aria-label="熵变滑块">
+          </label>
+          <label for="ggT" style="font-size:.88rem;color:var(--ink-2)">
+            T = <b id="ggTv">298</b> K（温度）
+            <input id="ggT" type="range" min="100" max="1500" step="1" value="298" style="width:100%;accent-color:var(--accent);height:44px" aria-label="温度滑块">
+          </label>
+        </div>
+        <div class="fig-readout" id="ggReadout"></div>
+      </div>
+      <figcaption>
+        判据速查：光点落绿色象限 → 任何温度都自发；蓝色 → 升温有利；黄色 → 降温有利；
+        红色 → 永不自发。当 ΔH 与 ΔS 同号时存在转折温度 T* = ΔH/ΔS，它是"判决翻转"的临界点——
+        冰的 273 K、合成氨的约 462 K、石灰石分解的约 1113 K，都是这条除法算出来的。
+      </figcaption>
+    </figure>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 单位陷阱（本章头号丢分点）</div>
+      ΔH 通常以 <strong>kJ/mol</strong> 计，ΔS 通常以 <strong>J/(mol·K)</strong> 计。
+      代入 <span class="formula">ΔG = ΔH − TΔS</span> 前必须统一：把 ΔS <strong>除以 1000</strong>。
+      若拿 160.5 J 直接乘 298 K，TΔS 会凭空大出一千倍，"不自发"瞬间变成"自发"——
+      一个单位，判决反转。动笔第一步永远先换算。
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 放热与自发</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          判断反应能否自发，看它放热还是吸热就行：放热的都能自发，吸热的都不能。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          只看 ΔH 就只看了一半。冰融化（ΔH = +6.0 kJ/mol）和硝酸铵溶于水（ΔH = +25.8 kJ/mol，
+          试管摸上去冰凉）都<strong>吸热却自发</strong>，因为熵增项 TΔS 更大；
+          反之，放热若伴随剧烈熵减（如极高温下的合成氨），ΔG 也能转正。
+          唯一裁判是 <span class="formula">ΔG = ΔH − TΔS</span> 是否小于零。
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 例题脚手架：用 ΔG 判断分解能否发生</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        煅烧石灰石：<span class="formula">CaCO₃(s) → CaO(s) + CO₂(g)</span>，
+        ΔH = +178.2 kJ/mol，ΔS = +160.5 J/(mol·K)。
+        (1) 判断 300 K 时能否自发；(2) 判断 1200 K 时能否自发；(3) 求转折温度，并解释石灰窑为何要烧到约 900 °C。
+        <em>（每步都先给提示，自己算完再点开对照）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 第一步永远是把单位摆齐：ΔS = 160.5 J/(mol·K) ÷ 1000 =
+          <strong>0.1605 kJ/(mol·K)</strong>。ΔH 保持 kJ/mol，别动。</li>
+        <li class="step">💡 300 K：ΔG = 178.2 − 300×0.1605 = 178.2 − 48.2 = <strong>+130.0 kJ/mol</strong> &gt; 0，
+          常温下<strong>不自发</strong>——这就是山上的石灰岩亿万年不分解的原因。</li>
+        <li class="step">💡 1200 K：ΔG = 178.2 − 1200×0.1605 = 178.2 − 192.6 = <strong>−14.4 kJ/mol</strong> &lt; 0，
+          高温下<strong>自发</strong>。注意 ΔS &gt; 0（产生了气体），TΔS 项随温度越涨越快，终于反超。</li>
+        <li class="step">💡 转折温度 T* = ΔH/ΔS = 178.2/0.1605 ≈ <strong>1110 K（约 837 °C）</strong>。
+          石灰窑烧到 900 °C 以上，正是为了跨过这道门槛并留出余量。
+          ✅ 自查：T* 介于 300 K 与 1200 K 之间，与 (1) 不自发、(2) 自发的结论自洽。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：ΔG = 0 意味着反应"停住不动"了吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回忆化学平衡里正、逆速率的关系。</p>
+        <p>
+          没有"停住"。ΔG = 0 是<strong>平衡态</strong>：正、逆反应仍在时刻进行，只是速率相等，
+          宏观浓度不再变化。ΔG 像下坡的坡度：离平衡越远坡越陡（驱动力越大），
+          到达谷底坡度归零——但分子层面的来往从不停止。这也提醒我们：
+          ΔG 只管"往哪边走、走多远"，不管"走多快"。
+        </p>
+      </div>
+    </details>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · ΔG 负了就万事大吉？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          只要算出 ΔG &lt; 0，反应就会顺利发生，而且发生得很快。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          热力学只回答"能不能、往哪边"，<strong>从不回答"多快"</strong>。
+          金刚石变成石墨 ΔG &lt; 0，可你手上的钻戒安然无恙——因为速率慢到亿年为单位。
+          速率归动力学管，那是下一章的主角；工业上许多"ΔG 很负"的反应仍要靠高温与催化剂，
+          就是为了同时满足两章的要求。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>划清体系与环境后记账：ΔU、H、S、G 都是<strong>状态函数</strong>（只看起终点），Q、W 是过程量。</li>
+        <li>第一定律 <span class="formula">ΔU = Q + W</span>：能量守恒，永动机无门。</li>
+        <li>恒压反应热即焓变：<span class="formula">ΔH &lt; 0</span> 放热、<span class="formula">ΔH &gt; 0</span> 吸热。</li>
+        <li>盖斯定律：方程式怎么加减，ΔH 就怎么加减——测不到的反应热可以"绕路"算出。</li>
+        <li>熵 S 度量混乱度；自发的唯一裁判是
+          <span class="formula">ΔG = ΔH − TΔS</span>（ΔG&lt;0 自发，=0 平衡，&gt;0 逆向自发）。</li>
+        <li>四种 ΔH/ΔS 组合里，同号的两种存在转折温度 <span class="formula">T* = ΔH/ΔS</span>；
+          计算前务必统一单位（ΔS 除以 1000）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 化学热力学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "下列四个量中，哪个不是状态函数？",
+            "options": ["内能 U", "焓 H", "热量 Q", "熵 S"],
+            "answer": 2,
+            "explain": "U、H、S 只取决于体系当前状态，像海拔只看起终点；Q 是过程量，同一段变化路径不同则数值不同。盖斯定律之所以成立，正因为 ΔH 是状态函数的增量、与路径无关。"
+          },
+          {
+            "q": "已知 ① C + O₂ → CO₂，ΔH₁ = −393.5 kJ/mol；② CO + ½O₂ → CO₂，ΔH₂ = −283.0 kJ/mol。则 C + ½O₂ → CO 的 ΔH 为？",
+            "options": ["+110.5 kJ/mol", "−110.5 kJ/mol", "−676.5 kJ/mol", "−283.0 kJ/mol"],
+            "answer": 1,
+            "explain": "① − ② 恰好消去 CO₂、剩 ½O₂，得到目标反应；ΔH 同步相减：(−393.5) − (−283.0) = −110.5 kJ/mol。验算：110.5 + 283.0 = 393.5，两条路径的高度差闭合。"
+          },
+          {
+            "q": "冰在 25 °C 自发融化，但它吸热（ΔH = +6.0 kJ/mol）。推动这个变化的是哪一项？",
+            "options": ["焓减小", "熵增项 TΔS", "温度降低", "外界对体系做功"],
+            "answer": 1,
+            "explain": "ΔH > 0，能量项其实在反对。但冰→水熵增（ΔS = +22 J/(mol·K)），298 K 时 TΔS ≈ 6.6 kJ/mol > ΔH，于是 ΔG = 6.0 − 6.6 = −0.6 kJ/mol < 0。熵的推力盖过了能量的阻力。"
+          },
+          {
+            "q": "某反应 ΔH < 0 且 ΔS < 0（如合成氨）。关于它的自发性，正确的说法是？",
+            "options": ["任何温度都自发", "任何温度都不自发", "低温自发、高温不自发", "高温自发、低温不自发"],
+            "answer": 2,
+            "explain": "ΔG = ΔH − TΔS 中，因 ΔS < 0，T 越大 −TΔS 项越大，ΔG 随温度单调上升；越过转折温度 T* = ΔH/ΔS 后 ΔG 转正。故低温有利、高温不利——工业合成氨选 400~500 °C 正是两边兼顾。"
+          },
+          {
+            "q": "CaCO₃ 分解 ΔH = +178 kJ/mol，ΔS = +0.160 kJ/(mol·K)，其转折温度约为？",
+            "options": ["178 K", "298 K", "1113 K", "1600 K"],
+            "answer": 2,
+            "explain": "T* = ΔH/ΔS = 178/0.160 ≈ 1113 K（约 840 °C）。石灰窑要烧到 900 °C 以上，就是为了跨过这道门槛并留出速率余量——方向与快慢，两个条件都要满足。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">04 物理化学 · 导学</span></a>
+      <a class="next" href="02-化学动力学.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 2 章 · 化学动力学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（ΔG 探索器） ============ */
+(function () {
+  "use strict";
+  var sH = document.getElementById("ggH");
+  var sS = document.getElementById("ggS");
+  var sT = document.getElementById("ggT");
+  if (!sH || !sS || !sT) return;
+
+  var vH = document.getElementById("ggHv");
+  var vS = document.getElementById("ggSv");
+  var vT = document.getElementById("ggTv");
+  var dot = document.getElementById("ggDot");
+  var ch = document.getElementById("ggCh");
+  var cv = document.getElementById("ggCv");
+  var val = document.getElementById("ggVal");
+  var status = document.getElementById("ggStatus");
+  var tstar = document.getElementById("ggTstar");
+  var tnote = document.getElementById("ggTnote");
+  var quad = document.getElementById("ggQuad");
+  var calc = document.getElementById("ggCalc");
+  var readout = document.getElementById("ggReadout");
+  var rects = {
+    ul: document.getElementById("ggQul"), ur: document.getElementById("ggQur"),
+    ll: document.getElementById("ggQll"), lr: document.getElementById("ggQlr")
+  };
+
+  function fmt(n, d) {
+    var f = n.toFixed(d);
+    return f.replace("-", "−");
+  }
+
+  function update() {
+    var H = parseFloat(sH.value);
+    var S = parseFloat(sS.value);
+    var T = parseFloat(sT.value);
+    var dG = H - T * S / 1000;
+
+    vH.textContent = fmt(H, 0);
+    vS.textContent = fmt(S, 0);
+    vT.textContent = fmt(T, 0);
+
+    /* 光点定位：x = 190 + ΔH×0.8，y = 165 − ΔS×0.35 */
+    var px = 190 + H * 0.8;
+    var py = 165 - S * 0.35;
+    dot.setAttribute("cx", px);
+    dot.setAttribute("cy", py);
+    ch.setAttribute("x1", 30); ch.setAttribute("x2", 350);
+    ch.setAttribute("y1", py); ch.setAttribute("y2", py);
+    cv.setAttribute("x1", px); cv.setAttribute("x2", px);
+    cv.setAttribute("y1", 25); cv.setAttribute("y2", 305);
+
+    /* ΔG 判决配色 */
+    var col = dG < 0 ? "#15803d" : (dG > 0 ? "#b91c1c" : "#4b5563");
+    dot.setAttribute("fill", col);
+    val.setAttribute("fill", col);
+    val.textContent = fmt(dG, 1);
+    status.setAttribute("fill", col);
+    status.textContent = dG < 0 ? "正向自发 ✓" : (dG > 0 ? "正向不自发 ✗（逆向自发）" : "恰好处于平衡");
+
+    /* 转折温度 */
+    var tS, tN;
+    if (S === 0) {
+      tS = "—";
+      tN = "ΔS = 0：ΔG = ΔH，与温度无关";
+    } else {
+      var Ts = H * 1000 / S;
+      if (Ts <= 0) {
+        tS = "不存在（解为负）";
+        tN = S > 0 ? "熵恒增且放热：任何温度都自发" : "熵减且吸热：任何温度都不自发";
+      } else {
+        tS = "≈ " + Math.round(Ts) + " K";
+        if (S > 0) {
+          tN = "T > " + Math.round(Ts) + " K 时自发（升温有利）";
+        } else {
+          tN = "T < " + Math.round(Ts) + " K 时自发（降温有利）";
+        }
+      }
+    }
+    tstar.textContent = tS;
+    tnote.textContent = tN;
+
+    /* 象限高亮 */
+    var key = (H < 0 ? "l" : "r") + (S < 0 ? "l" : "u");
+    ["ul", "ur", "ll", "lr"].forEach(function (k) {
+      var on = k === key;
+      rects[k].setAttribute("opacity", on ? "1" : ".45");
+      if (on) rects[k].setAttribute("stroke", "#0369a1");
+      else rects[k].removeAttribute("stroke");
+    });
+    var qName = { ul: "任何温度都自发型", ur: "高温自发型", ll: "低温自发型", lr: "任何温度都不自发型" };
+    quad.textContent = "当前象限：" + (H < 0 ? "ΔH<0" : "ΔH>0") + "、" + (S < 0 ? "ΔS<0" : "ΔS>0") +
+      "（" + qName[key] + "）";
+
+    /* 数值轨迹 */
+    calc.textContent = "ΔG = ΔH − TΔS = " + fmt(H, 0) + " − " + fmt(T, 0) + "×" +
+      fmt(S / 1000, 3) + " = " + fmt(dG, 1) + " kJ/mol";
+    readout.textContent = "ΔH = " + fmt(H, 0) + " kJ/mol ｜ ΔS = " + fmt(S, 0) +
+      " J/(mol·K) ｜ T = " + fmt(T, 0) + " K ｜ ΔG = " + fmt(dG, 1) +
+      " kJ/mol → " + (dG < 0 ? "自发" : (dG > 0 ? "不自发" : "平衡")) +
+      " ｜ T* " + tS;
+  }
+
+  [sH, sS, sT].forEach(function (s) { s.addEventListener("input", update); });
+  Array.prototype.forEach.call(document.querySelectorAll(".gg-preset"), function (b) {
+    b.addEventListener("click", function () {
+      sH.value = b.getAttribute("data-h");
+      sS.value = b.getAttribute("data-s");
+      sT.value = b.getAttribute("data-t");
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>

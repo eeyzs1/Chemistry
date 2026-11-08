@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemistry · 化学自学中心</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .portal-hero{
+    border-radius:14px; border:1px solid var(--line);
+    background:linear-gradient(135deg,#ecfeff,#f0f9ff 55%,var(--surface));
+    padding:42px 34px 38px; margin:18px 0 30px; box-shadow:var(--shadow-1);
+    position:relative; overflow:hidden;
+  }
+  .portal-hero::after{
+    content:""; position:absolute; right:-60px; top:-60px; width:240px; height:240px;
+    border-radius:50%; border:2px dashed rgba(14,116,144,.18); animation:spin 40s linear infinite;
+  }
+  .portal-hero::before{
+    content:""; position:absolute; right:20px; top:30px; width:120px; height:120px;
+    border-radius:50%; border:2px dotted rgba(14,116,144,.25); animation:spin 26s linear infinite reverse;
+  }
+  .portal-hero h1{font-size:2.3rem;margin-bottom:10px;}
+  .portal-hero .lede{font-size:1.06rem;color:var(--ink-2);max-width:44em;}
+  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:22px 0;}
+  .branch-card{
+    display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;
+    background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);
+    border-radius:12px;padding:20px 20px 16px;box-shadow:var(--shadow-1);min-height:150px;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .branch-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);}
+  .branch-card .bc-no{font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--accent-deep);}
+  .branch-card .bc-title{font-size:1.12rem;font-weight:700;}
+  .branch-card .bc-desc{font-size:.88rem;color:var(--ink-2);flex:1;}
+  .branch-card .bc-meta{font-size:.76rem;color:var(--ink-3);display:flex;gap:12px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:10px;}
+  .sec-title{display:flex;align-items:center;gap:10px;margin:38px 0 6px;font-size:1.3rem;}
+  .sec-title .bar{display:inline-block;width:8px;height:22px;border-radius:3px;background:var(--brand);}
+  .route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0;padding:16px 18px;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;}
+  .route .r-name{font-weight:700;font-size:.9rem;color:var(--accent-deep);margin-right:6px;}
+  .route .node{background:var(--accent-soft,#ecfeff);border:1px solid var(--line);border-radius:999px;
+    padding:4px 12px;font-size:.84rem;font-weight:600;color:var(--ink-2);}
+  .route .arr{color:var(--ink-3);font-weight:700;}
+  .feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:18px 0;}
+  .feat .f{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.88rem;color:var(--ink-2);}
+  .feat .f b{display:block;color:#111827;margin-bottom:4px;font-size:.95rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <span class="here">🏠 化学自学中心</span>
+  </nav>
+
+  <header class="portal-hero">
+    <h1>🧪 化学自学中心</h1>
+    <p class="lede">
+      一座完全离线的交互式化学图书馆：<strong>12 个主分支、28 章教程</strong>。
+      每个概念都用「直觉类比 → 标准讲解 → 深入原理」三级阶梯来讲授，
+      配合误区粉碎机、例题脚手架与交互动画。从零基础到建立完整的化学学科图景。
+    </p>
+    <p style="margin-top:16px">
+      <a class="btn" href="00-化学总论/index.html">从这里开始 →</a>
+      <a class="btn ghost" href="README.md" style="margin-left:8px">查看分支地图说明</a>
+    </p>
+  </header>
+
+  <h2 class="sec-title"><span class="bar"></span>十二大分支</h2>
+  <p style="color:var(--ink-2)">前六个是传统「五大化学 + 总论」骨架，后六个是交叉与专门分支。点击卡片进入分支导学页。</p>
+
+  <div class="branch-grid">
+    <a class="branch-card" style="--accent:#475569;--accent-deep:#334155;--accent-soft:#f1f5f9" href="00-化学总论/index.html">
+      <span class="bc-no">分支 00 · 地基</span>
+      <span class="bc-title">化学总论</span>
+      <span class="bc-desc">原子、化学键、化学计量、溶液——所有分支的公共语言。</span>
+      <span class="bc-meta"><span>4 章</span><span>先修：无</span><span>入门</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#c2410c;--accent-deep:#9a3412;--accent-soft:#fff7ed" href="01-无机化学/index.html">
+      <span class="bc-no">分支 01 · 五大化学</span>
+      <span class="bc-title">无机化学</span>
+      <span class="bc-desc">元素周期律、主族与过渡金属、配位化学、酸碱与水溶液。</span>
+      <span class="bc-meta"><span>4 章</span><span>先修：00</span><span>入门→进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#15803d;--accent-deep:#166534;--accent-soft:#f0fdf4" href="02-有机化学/index.html">
+      <span class="bc-no">分支 02 · 五大化学</span>
+      <span class="bc-title">有机化学</span>
+      <span class="bc-desc">碳骨架、官能团、立体化学与反应机理——分子构建的艺术。</span>
+      <span class="bc-meta"><span>4 章</span><span>先修：00</span><span>入门→进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#6d28d9;--accent-deep:#5b21b6;--accent-soft:#f5f3ff" href="03-分析化学/index.html">
+      <span class="bc-no">分支 03 · 五大化学</span>
+      <span class="bc-title">分析化学</span>
+      <span class="bc-desc">物质"含什么、含多少"：误差理论、滴定、光谱、色谱与质谱。</span>
+      <span class="bc-meta"><span>3 章</span><span>先修：00</span><span>入门→进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#0369a1;--accent-deep:#075985;--accent-soft:#f0f9ff" href="04-物理化学/index.html">
+      <span class="bc-no">分支 04 · 五大化学</span>
+      <span class="bc-title">物理化学</span>
+      <span class="bc-desc">热力学、动力学、电化学、量子化学——变化的方向、速度与本质。</span>
+      <span class="bc-meta"><span>4 章</span><span>先修：00–02</span><span>进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#0d9488;--accent-deep:#0f766e;--accent-soft:#f0fdfa" href="05-生物化学/index.html">
+      <span class="bc-no">分支 05 · 五大化学</span>
+      <span class="bc-title">生物化学</span>
+      <span class="bc-desc">蛋白质、核酸、酶与代谢——生命这台化学机器如何运转。</span>
+      <span class="bc-meta"><span>3 章</span><span>先修：00、02</span><span>入门→进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#a21caf;--accent-deep:#86198f;--accent-soft:#fdf4ff" href="06-高分子化学/index.html">
+      <span class="bc-no">分支 06 · 交叉分支</span>
+      <span class="bc-title">高分子化学</span>
+      <span class="bc-desc">从单体到聚合物：加聚与缩聚、塑料橡胶纤维的世界。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：02</span><span>入门</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#b45309;--accent-deep:#92400e;--accent-soft:#fffbeb" href="07-材料化学/index.html">
+      <span class="bc-no">分支 07 · 交叉分支</span>
+      <span class="bc-title">材料化学</span>
+      <span class="bc-desc">晶体与缺陷、半导体、纳米材料、能源材料。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：01、04</span><span>入门</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#4d7c0f;--accent-deep:#3f6212;--accent-soft:#f7fee7" href="08-环境化学/index.html">
+      <span class="bc-no">分支 08 · 交叉分支</span>
+      <span class="bc-title">环境化学</span>
+      <span class="bc-desc">大气与臭氧、温室效应、水污染与绿色化学。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：00–02</span><span>入门</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#4338ca;--accent-deep:#3730a3;--accent-soft:#eef2ff" href="09-理论与计算化学/index.html">
+      <span class="bc-no">分支 09 · 交叉分支</span>
+      <span class="bc-title">理论与计算化学</span>
+      <span class="bc-desc">薛定谔方程、分子动力学与 AI：在计算机里做实验。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：04</span><span>进阶</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#be185d;--accent-deep:#9d174d;--accent-soft:#fdf2f8" href="10-药物化学/index.html">
+      <span class="bc-no">分支 10 · 交叉分支</span>
+      <span class="bc-title">药物化学</span>
+      <span class="bc-desc">药物靶点、构效关系与药物设计：从阿司匹林到新药研发。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：02、05</span><span>入门</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#a16207;--accent-deep:#854d0e;--accent-soft:#fefce8" href="11-核化学与放射化学/index.html">
+      <span class="bc-no">分支 11 · 交叉分支</span>
+      <span class="bc-title">核化学与放射化学</span>
+      <span class="bc-desc">放射性衰变、半衰期、裂变与聚变、同位素的应用与防护。</span>
+      <span class="bc-meta"><span>1 章导论</span><span>先修：00</span><span>入门</span></span>
+    </a>
+  </div>
+
+  <h2 class="sec-title"><span class="bar"></span>三条学习路线</h2>
+  <div class="route"><span class="r-name">📚 系统路线</span>
+    <span class="node">00 总论</span><span class="arr">→</span><span class="node">01 无机</span><span class="arr">→</span><span class="node">02 有机</span><span class="arr">→</span><span class="node">04 物化</span><span class="arr">→</span><span class="node">03 分析</span><span class="arr">→</span><span class="node">05 生化</span><span class="arr">→</span><span class="node">06–11 按兴趣</span>
+  </div>
+  <div class="route"><span class="r-name">🧬 生命兴趣路线</span>
+    <span class="node">00 总论</span><span class="arr">→</span><span class="node">02 有机</span><span class="arr">→</span><span class="node">05 生化</span><span class="arr">→</span><span class="node">10 药物</span>
+  </div>
+  <div class="route"><span class="r-name">⚙️ 理工材料路线</span>
+    <span class="node">00 总论</span><span class="arr">→</span><span class="node">01 无机</span><span class="arr">→</span><span class="node">04 物化</span><span class="arr">→</span><span class="node">07 材料</span><span class="arr">→</span><span class="node">09 理论计算</span>
+  </div>
+
+  <h2 class="sec-title"><span class="bar"></span>每章教材的六个组件</h2>
+  <div class="feat">
+    <div class="f"><b>🪜 三级讲解阶梯</b>直觉理解 → 标准讲解 → 深入原理，同一概念按需切换深度。</div>
+    <div class="f"><b>⚠️ 误区粉碎机</b>列出最常见的错误认知，给出正确图景。</div>
+    <div class="f"><b>📐 例题脚手架</b>完整示范 → 提示引导 → 独立练习，逐步放手。</div>
+    <div class="f"><b>💭 思考提示</b>苏格拉底式提问，先预测再对照答案。</div>
+    <div class="f"><b>🎬 交互动画</b>轨道、滴定、能量图、衰变……可用按钮与滑块操作。</div>
+    <div class="f"><b>✅ 章末自测</b>即时判分 + 逐题解析，80 分再进入下一章。</div>
+  </div>
+
+  <p style="color:var(--ink-3);font-size:.86rem;margin-top:34px">
+    💡 所有页面均可直接双击在浏览器打开，完全离线。分支分类与学习路径的详细说明见
+    <a href="README.md">README.md</a>。
+  </p>
+</div>
+</body>
+</html>

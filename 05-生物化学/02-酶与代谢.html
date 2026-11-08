@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>酶与代谢 · 生物化学 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b05">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">05 生物化学</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 酶与代谢</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">05 生物化学 · 第 2 章</div>
+    <h1>酶与代谢：细胞的加速器与能量账本</h1>
+    <p class="lede">
+      一块面包放在桌上，一周只会变干；进了你的身体，几小时就变成二氧化碳、水和能量——
+      差别就在<strong>酶</strong>。本章先拆开酶这台纳米机器：它如何把反应加速百万倍、
+      为什么对底物如此挑剔；再顺着<strong>糖酵解 → 三羧酸循环 → 氧化磷酸化</strong>的能量流水线，
+      看一碗米饭如何变成 ATP——细胞里唯一的"能量通货"。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：本分支第 1 章（四大家族）</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#enzyme">§1 酶：生物催化剂</a>
+    <a href="#atp">§2 ATP：能量通货</a>
+    <a href="#resp">§3 细胞呼吸三阶段</a>
+    <a href="#reg">§4 代谢的开关</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：热力学说"能"，动力学说"慢"</h2>
+    <p>
+      把葡萄糖氧化成 <span class="formula">CO₂</span> 和水，每摩尔放出 <strong>−2870 kJ</strong>——
+      热力学上极其划算。可实验桌上的一勺糖放几年也烧不掉：这些电子"有想法没胆量"，
+      翻不过反应的<span class="term">活化能</span><span class="en">activation energy</span>大山。
+    </p>
+    <p>
+      你的细胞在 37 ℃、常压、水溶液里几小时就完成同样的事，靠两件法宝：
+      <strong>酶</strong>——把大山变成小丘的催化剂；
+      <strong>代谢</strong>——把一次"爆炸"拆成一串小步的分步产能流水线。
+      <span class="term">代谢</span><span class="en">metabolism</span>就是细胞内全部化学反应的总账本：
+      拆解放能的<strong>分解代谢</strong>与建造吸能的<strong>合成代谢</strong>，一进一出，昼夜对账。
+    </p>
+  </section>
+
+  <!-- ============ §1 酶 ============ -->
+  <section id="enzyme">
+    <h2>§1 酶：快百万倍的生物催化剂</h2>
+    <p>
+      绝大多数酶是蛋白质（第 1 章的"机器家族"），少数是 RNA（核酶，第 3 章的伏笔）。
+      它们遵守催化剂的三条铁律：<strong>不启动热力学不允许的反应、不改变平衡位置、自己不被消耗</strong>——
+      只是把<strong>活化能</strong>降下来。看下面的对比实验：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="eaSvg" width="620" height="260" viewBox="0 0 620 260" role="img" aria-label="活化能与酶催化动画">
+          <path id="eaRawPath" d="M40,205 C130,205 175,45 310,45 C445,45 490,225 580,225"
+                fill="none" stroke="#94a3b8" stroke-width="3"/>
+          <path id="eaEnzPath" d="M40,205 C160,205 205,148 310,148 C415,148 460,225 580,225"
+                fill="none" stroke="#0d9488" stroke-width="3" stroke-dasharray="7 6"/>
+          <circle cx="40" cy="205" r="5" fill="#475569"/>
+          <circle cx="580" cy="225" r="5" fill="#475569"/>
+          <text x="40" y="235" font-size="11" fill="#4b5563">反应物</text>
+          <text x="580" y="248" text-anchor="end" font-size="11" fill="#4b5563">产物（能量更低，ΔG＜0）</text>
+          <text x="310" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">Ea（无酶）≈ 75 kJ/mol</text>
+          <text x="310" y="133" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">Ea（有酶）≈ 20 kJ/mol</text>
+          <rect x="56" y="44" width="18" height="4" fill="#94a3b8"/>
+          <text x="80" y="50" font-size="11" fill="#4b5563">无酶</text>
+          <rect x="56" y="64" width="18" height="4" fill="#0d9488"/>
+          <text x="80" y="70" font-size="11" fill="#4b5563">酶催化（降低活化能）</text>
+          <circle id="eaBall" cx="40" cy="193" r="10" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="eaRaw">🏃 无酶翻山</button>
+          <button class="btn" id="eaEnz">⚡ 酶来帮忙</button>
+          <button class="btn ghost" id="eaReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="eaReadout">选择一种方式，看分子能否翻过能垒</div>
+      </div>
+      <figcaption>
+        酶不改变起点和终点（ΔG 不变），只在中间"挖隧道"。活化能从 75 降到 20 kJ/mol，
+        室温下能翻垒的分子比例暴涨，速率提升可达 <strong>10⁹ 倍</strong>量级。
+      </figcaption>
+    </figure>
+
+    <h3>活性中心与诱导契合</h3>
+    <p>
+      酶身上只有一小块凹槽真正干活，叫<span class="term">活性中心</span>
+      <span class="en">active site</span>；被它加工的分子叫<span class="term">底物</span>
+      <span class="en">substrate</span>。老教材讲"锁与钥匙"，现代版是
+      <span class="term">诱导契合</span><span class="en">induced fit</span>：
+      底物进来时，酶和底物<em>都</em>微微变形，像握手一样互相贴合——贴合得越准，
+      过渡态越稳定，反应越快。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 酶为什么能快上百万倍？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          让两个分子在溶液里反应，像让两个害羞的人在全城随机散步时<strong>恰好相撞还要姿势正确</strong>——
+          难如登天。酶是靠谱的<strong>媒人</strong>：把两人按正确姿势请到同一张小桌上（邻近 + 定向），
+          还调好灯光温度（微环境）。瞎撞变必然，大山变小丘。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 机制</span>
+        <p>
+          教科书归纳四招：①<strong>邻近与定向效应</strong>——有效浓度飙升、碰撞姿势锁定；
+          ②<strong>过渡态互补</strong>——活性中心与<em>过渡态</em>（不是底物！）形状互补，把最不稳的中间态稳住，
+          ΔG‡ 直降；③<strong>酸碱催化</strong>——活性中心的残基就近递质子/收质子；④<strong>应变与共价催化</strong>——
+          把底物"扭弯"或短暂结成共价中间体。注意第②招：<strong>酶的模具是过渡态</strong>，
+          这句话是理解酶抑制药物（§4）的钥匙。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 定量</span>
+        <p>
+          效率可以用 <strong>k<sub>cat</sub>/K<sub>m</sub></strong> 衡量。有些酶（碳酸酐酶每秒转换百万个 CO₂；
+          乳清苷酸脱羧酶把本要 7800 万年才完成一次的反应提速 10¹⁷ 倍）已撞上<strong>扩散极限</strong>——
+          底物一飘到就成功，被称为"催化完美"。<strong>k<sub>cat</sub>/K<sub>m</sub></strong> 达到 10⁸–10⁹ M⁻¹s⁻¹
+          意味着物理上没有再快的余地。正因如此，药物设计不去"让酶更快"，而是制造<strong>过渡态类似物</strong>
+          骗住酶（HIV 蛋白酶抑制剂就是这个思路）。
+        </p>
+      </div>
+    </div>
+
+    <h3>底物越多，快到头为止：米氏曲线</h3>
+    <p>
+      固定酶量、增加底物，速率先近似线性上升，随后逐渐<strong>饱和</strong>——像码头的装卸工：
+      货少时来一箱搬一箱，货再多也只有一个班组。拖动滑块感受这条曲线：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mmSvg" width="620" height="290" viewBox="0 0 620 290" role="img" aria-label="米氏动力学曲线模拟器"></svg>
+        <div class="fig-controls">
+          <label for="mmS" style="font-size:.9rem;color:var(--ink-2)">
+            底物浓度 [S] = <strong id="mmSVal">1.5</strong> mM（K<sub>m</sub> = 1.5 mM 固定）
+          </label>
+          <input id="mmS" type="range" min="0" max="10" step="0.1" value="1.5"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="底物浓度">
+        </div>
+        <div class="fig-readout" id="mmReadout"></div>
+      </div>
+      <figcaption>
+        <strong>K<sub>m</sub></strong> 是达到半最大速率时的底物浓度——可以粗略读作"亲和力"：K<sub>m</sub> 越小，酶越省底物；
+        <strong>V<sub>max</sub></strong> 是全部酶满负荷时的极限速率。[S] = K<sub>m</sub> 时 v 恰为 50% V<sub>max</sub>。
+      </figcaption>
+    </figure>
+
+    <h3>温度与 pH：机器有工作区间</h3>
+    <p>
+      温度升高先让反应变快，但越过<strong>最适温度</strong>（人体酶约 37 ℃）后酶开始变性，速率断崖式下跌；
+      pH 同理：胃蛋白酶最适 <strong>pH ≈ 2</strong>（强酸环境照样干活），
+      进了小肠的胰蛋白酶偏爱 <strong>pH ≈ 8</strong>。pH 改变活性中心残基的电荷，等于给机器的接口"变形"。
+    </p>
+
+    <details class="think">
+      <summary>想一想：为什么发烧到 40 ℃ 以上是危险信号，而运动体温升高一点却没事？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回想第 1 章"变性"——什么键在维持酶的三维结构？它们怕什么？</p>
+        <p>
+          酶的高级结构靠<strong>氢键、疏水作用等弱相互作用</strong>维持，温度越高热运动越猛，
+          这些弱键最先松手。37 ℃ 的酶是按体温精调的：高烧时一些"临界"的酶先失活，
+          代谢网络出现堵塞；40 ℃ 以上变性加速，可能伤及大脑等器官。运动时核心温度只小幅上升、
+          且身体有散热与热休克蛋白（帮酶重新折叠的"救援队"）保护——幅度和时长完全不同。
+        </p>
+      </div>
+    </details>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 酶会被"用掉"吗</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          酶参加反应就被消耗掉了，所以体内要不断大量合成酶，"补充消化酶"的保健品人人受益。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          酶是<strong>催化剂</strong>：反应结束即释放、循环再用。一分子碳酸酐酶每秒可加工约百万个 CO₂ 分子。
+         身体确实要不断合成酶，那是因为酶会像所有蛋白质一样<strong>老化降解</strong>（第 1 章的蛋白质周转），
+          而不是被反应吃掉。健康人的消化酶自给自足；酶补剂只在特定缺乏症（如乳糖不耐、胰酶不足）中有明确价值。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 ATP ============ -->
+  <section id="atp">
+    <h2>§2 ATP：细胞的能量通货</h2>
+    <p>
+      分解代谢放出的能量不能直接拿去干活——就像不能用一场大火给手机充电。
+      细胞的解法是把能量零存整取到一种小分子上：
+      <span class="term">ATP</span><span class="en">adenosine triphosphate，腺苷三磷酸</span>——
+      腺嘌呤 + 核糖 + <strong>三个串联磷酸基团</strong>。它正是第 1 章说过的"核苷酸衍生物"：
+      核酸家族的表亲改行当了能量搬运工。
+    </p>
+    <p>
+      ATP 末端的水解 <span class="formula">ATP + H₂O → ADP + Pi</span> 释放约 −30.5 kJ/mol
+      （细胞内实际条件约 −50 kJ/mol）。合成代谢就靠<strong>耦合</strong>吃饭：
+      把放能反应与吸能反应绑在一起做——放能的"下坡"推着吸能的"上坡"，
+      ATP 是两者之间的<strong>现金转账</strong>：分解代谢"挣钱"把它充成 ATP，合成代谢"花钱"把它水解掉。
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · ATP 是"大电池"吗</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          身体把能量大量储存在 ATP 里，越"充电"越精神；ATP 高能磷酸键里锁着一包巨大的能量。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          ATP 是<strong>通货不是存款</strong>：任一时刻你全身只有约 250 g ATP，静坐几分钟就能用光，
+          必须边产边用、高速周转（每天周转量相当于体重，见例 2）。所谓"高能磷酸键"不是说键里藏着能量，
+          而是水解<strong>产物</strong>（ADP 与 Pi）共振稳定、电荷分离更舒展，
+          净放能。真正的长期储能是脂肪和糖原——ATP 只当"零钱"。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么不直接用葡萄糖给肌肉供能，非要先换成 ATP？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：一次付 2870 kJ 和分 30 次每次约 30 kJ，对精密机器意味着什么？</p>
+        <p>
+          ①<strong>面额</strong>：1 分子葡萄糖放能 2870 kJ，相当于约 94 个 ATP 的能量一次性释放——
+          蛋白质会被"烧坏"（温度失控、副反应横飞）。ATP 把能量切成 ~30 kJ 的小额纸币，精确可控。
+          ②<strong>通用性</strong>：合成、运输、运动、信号都认 ATP 这一种通货，
+          耦合反应只需一张通用接口。③<strong>可逆</strong>：ATP/ADP 循环使用，随用随充——
+          这是"零钱经济学"，不是"仓库经济学"。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 细胞呼吸 ============ -->
+  <section id="resp">
+    <h2>§3 细胞呼吸：能量流水线三阶段</h2>
+    <p>
+      一分子葡萄糖的彻底氧化分三站完成，先看全景图，再逐站参观：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="335" viewBox="0 0 640 335" role="img" aria-label="细胞呼吸三阶段流水线总览">
+          <!-- ① 糖酵解 -->
+          <rect x="20" y="20" width="600" height="85" rx="12" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+          <text x="36" y="42" font-size="12" font-weight="700" fill="#854d0e">① 细胞质 · 糖酵解（无氧也能跑）</text>
+          <rect x="36" y="56" width="80" height="34" rx="8" fill="#fff" stroke="#a16207" stroke-width="2"/>
+          <text x="76" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">葡萄糖</text>
+          <line x1="116" y1="73" x2="160" y2="73" stroke="#854d0e" stroke-width="2.5"/>
+          <polygon points="160,73 152,69 152,77" fill="#854d0e"/>
+          <rect x="162" y="56" width="80" height="34" rx="8" fill="#fff" stroke="#a16207" stroke-width="2"/>
+          <text x="202" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">丙酮酸</text>
+          <text x="270" y="70" font-size="11" font-weight="700" fill="#15803d">净 +2 ATP · +2 NADH</text>
+          <text x="270" y="88" font-size="10" fill="#6b7280">先垫付 2 ATP，回收 4 ATP（净赚 2）</text>
+          <text x="470" y="70" font-size="10.5" fill="#6b7280">无氧时发酵救场：</text>
+          <text x="470" y="86" font-size="10.5" fill="#6b7280">肌肉→乳酸 · 酵母→乙醇+CO₂</text>
+          <!-- 过渡 -->
+          <line x1="216" y1="107" x2="216" y2="118" stroke="#854d0e" stroke-width="2.5"/>
+          <polygon points="216,120 212,112 220,112" fill="#854d0e"/>
+          <text x="230" y="117" font-size="9.5" fill="#6b7280">丙酮酸入线粒体 → 乙酰CoA（+2 NADH）</text>
+          <!-- ② TCA -->
+          <rect x="20" y="120" width="600" height="85" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="36" y="142" font-size="12" font-weight="700" fill="#0f766e">② 线粒体基质 · 三羧酸循环（转 2 轮）</text>
+          <circle cx="110" cy="170" r="28" fill="#fff" stroke="#0d9488" stroke-width="2.5"/>
+          <path d="M110,146 a24,24 0 1,1 -17,42" fill="none" stroke="#0d9488" stroke-width="2"/>
+          <polygon points="93,188 91,179 100,183" fill="#0d9488"/>
+          <text x="110" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">TCA</text>
+          <text x="160" y="164" font-size="11" font-weight="700" fill="#15803d">每轮：3 NADH + 1 FADH₂ + 1 GTP</text>
+          <text x="160" y="182" font-size="10.5" fill="#6b7280">Krebs 循环 · 碳以 CO₂ 形式清出（呼出去的 CO₂ 就来自这里）</text>
+          <!-- 过渡 -->
+          <line x1="216" y1="207" x2="216" y2="218" stroke="#0f766e" stroke-width="2.5"/>
+          <polygon points="216,220 212,212 220,212" fill="#0f766e"/>
+          <text x="230" y="217" font-size="9.5" fill="#6b7280">NADH / FADH₂ 携带高能电子抵达内膜</text>
+          <!-- ③ ETC -->
+          <rect x="20" y="220" width="600" height="85" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+          <text x="36" y="242" font-size="12" font-weight="700" fill="#1e40af">③ 线粒体内膜 · 氧化磷酸化（产能大户）</text>
+          <rect x="46" y="256" width="140" height="34" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+          <text x="116" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">电子传递链</text>
+          <line x1="186" y1="273" x2="226" y2="273" stroke="#1e40af" stroke-width="2.5"/>
+          <polygon points="228,273 220,269 220,277" fill="#1e40af"/>
+          <rect x="230" y="256" width="150" height="34" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+          <text x="305" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">泵 H⁺ 蓄水位</text>
+          <line x1="380" y1="273" x2="420" y2="273" stroke="#1e40af" stroke-width="2.5"/>
+          <polygon points="422,273 414,269 414,277" fill="#1e40af"/>
+          <rect x="424" y="256" width="160" height="34" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+          <text x="504" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">ATP 合酶 ≈ +26 ATP</text>
+          <text x="46" y="300" font-size="10" fill="#475569">O₂ 是电子最终归宿：O₂ + 4H⁺ + 4e⁻ → 2H₂O（你呼出的水）· 质子梯度像水坝，ATP 合酶是转动的水轮机</text>
+          <text x="320" y="327" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0f766e">1 分子葡萄糖 ≈ 30–32 ATP（旧教材的 36–38 是高估）</text>
+        </svg>
+      </div>
+      <figcaption>
+        三个阶段的分工：①糖酵解在细胞质快速启动（无需氧气）；②三羧酸循环把碳拆成 CO₂、
+        把能量装进电子载体 NADH/FADH₂；③电子传递链用电子"泵水蓄能"，ATP 合酶放水发电。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 化学渗透：流动的电池</div>
+      ③阶段的精髓是<strong>先把化学能转成"水位差"再发电</strong>：传递链把 H⁺ 泵到膜外，
+      内外形成质子梯度（蓄水）；ATP 合酶让 H⁺ 回流，像水推动水轮机一样旋转合成 ATP。
+      这就是 Mitchell 1961 年提出、起初无人相信、1978 年拿诺贝尔奖的<strong>化学渗透假说</strong>。
+    </div>
+
+    <h3>📐 例题脚手架：能量账本</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：一分子葡萄糖换几个 ATP</div>
+      <div class="worked-problem">
+        1 分子葡萄糖彻底有氧氧化，按现代算法（NADH ≈ 2.5 ATP，FADH₂ ≈ 1.5 ATP）核算总账。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">糖酵解：净得 <strong>2 ATP</strong>（底物水平磷酸化）＋ <strong>2 NADH</strong>（细胞质）。</li>
+        <li class="step">2 个丙酮酸 → 2 乙酰CoA：得 <strong>2 NADH</strong>。</li>
+        <li class="step">三羧酸循环转 2 轮：2 GTP（= 2 ATP）＋ <strong>6 NADH</strong> ＋ <strong>2 FADH₂</strong>。</li>
+        <li class="step">电子传递链结账：NADH 共 10 个 × 2.5 = 25；FADH₂ 2 个 × 1.5 = 3。</li>
+        <li class="step">✅ 总计 2 + 2 + 25 + 3 = <strong>32 ATP</strong>（考虑穿梭损耗，通常写 30–32）。旧教材按 3/2 结算得 36–38，是高估。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：ATP 每天周转多少</div>
+      <div class="worked-problem">
+        某成人每天摄入约 2000 kcal（≈ 8370 kJ），全部经 ATP 周转。体内条件下每摩尔 ATP 水解供 ~50 kJ。
+        估算他每天周转的 ATP 质量（M(ATP) ≈ 507 g/mol），并说明结论的含义。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：能量 ÷ 单价 = 摩尔数。8370 ÷ 50 ≈ <strong>167 mol</strong> ATP/天。</li>
+        <li class="step">💡 提示：换质量。167 × 507 g ≈ <strong>85 kg</strong>——比多数人的体重还重！</li>
+        <li class="step">💡 提示：可体内任一时刻只有约 250 g ATP（≈ 0.49 mol）。周转次数 = 167 ÷ 0.49 ≈ <strong>每天 340 次</strong>。</li>
+        <li class="step">✅ 结论：ATP 是"即产即用的零钱"而非"存款"——它必须高速循环，储存能量的另有其人（脂肪、糖原）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：运动后肌肉酸痛两三天，真是"乳酸堆积"吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：乳酸在运动停止后多久被清走？酸痛是"当时"还是"第二天"？</p>
+        <p>
+          运动中确实产生乳酸（发酵再生 NAD⁺ 让糖酵解继续），但<strong>运动后 1 小时内血乳酸就基本清除</strong>——
+          它还能被心脏、肌肉当燃料烧掉，或经 Cori 循环回肝变成葡萄糖。
+          <strong>延迟性肌肉酸痛（DOMS）</strong>出现在 24–72 小时后，主角是肌纤维的<strong>微损伤与炎症</strong>。
+          把账算在乳酸头上，是运动科学里流传最广的"冤案"之一。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 调节 ============ -->
+  <section id="reg">
+    <h2>§4 代谢的开关：谁来喊停</h2>
+    <p>
+      流水线不能闷头全速跑——细胞按需生产、缺了就开、够了就停。三把常见开关：
+    </p>
+    <ul>
+      <li><strong>竞争性抑制</strong>：冒牌货挤占活性中心。磺胺药长得像细菌的"叶酸原料"对氨基苯甲酸，
+        霸占酶的活性中心，细菌造不出叶酸就断粮——而人体从食物获取叶酸，所以药物选择性地毒害细菌。
+        竞争抑制的特点：<strong>加底物能解救</strong>（V<sub>max</sub> 不变，K<sub>m</sub> 变大）。</li>
+      <li><strong>变构调节与反馈抑制</strong>：效应物结合在活性中心之外的<strong>变构位点</strong>，让酶变形换挡。
+        最优雅的是<strong>负反馈</strong>：通路终产物回头关掉第一个酶——像恒温器，产物越多产得越慢。</li>
+      <li><strong>共价修饰</strong>：给酶挂上/摘下磷酸基团（激酶/磷酸酶），一秒切换开与关。
+        肾上腺素到货 → 糖原磷酸化酶被磷酸化激活 → 立刻分解糖原供能，整套"战时动员"在秒级完成。</li>
+    </ul>
+    <div class="keypoint">
+      <div class="kp-title">📌 药物化学的伏笔</div>
+      青霉素抑制细菌细胞壁的转肽酶、他汀竞争性抑制胆固醇合成第一酶、HIV 蛋白酶抑制剂模仿过渡态——
+      <strong>读懂酶，就能设计开关</strong>。这条路线在 10 药物化学分支正式展开。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>酶是生物催化剂：<strong>只降低活化能</strong>，不改变 ΔG 与平衡，自身循环使用；速率提升可达 10⁹ 倍以上。</li>
+        <li>活性中心 + 诱导契合；酶的模具是<strong>过渡态</strong>而非底物——理解抑制与药物设计的钥匙。</li>
+        <li>米氏动力学：v = V<sub>max</sub>[S]/(K<sub>m</sub>+[S])；K<sub>m</sub> 读作亲和力，V<sub>max</sub> 是饱和极限。</li>
+        <li>温度、pH 各有最适区间；过界则弱键松散、酶变性失活。</li>
+        <li>ATP 是<strong>能量通货</strong>而非储能仓库：分次小额转账（≈ 30 kJ/次）、高速周转（每天约体重级别）。</li>
+        <li>细胞呼吸三阶段：糖酵解（净 2 ATP）→ 三羧酸循环（装载电子载体）→ 氧化磷酸化（质子梯度 → ATP 合酶，产能大户）。</li>
+        <li>代谢靠三把开关按需调节：竞争抑制、变构/反馈抑制、磷酸化共价修饰。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 酶与代谢 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "酶加快化学反应的原理是？",
+            "options": ["提高反应物的总能量", "降低反应的活化能", "改变反应的平衡常数", "为反应提供能量并被消耗"],
+            "answer": 1,
+            "explain": "酶把'能垒'挖低，让更多分子翻得过去；ΔG 与平衡位置不变，酶也不被消耗——这是催化剂三铁律。"
+          },
+          {
+            "q": "ATP 在细胞中的角色，最贴切的比喻是？",
+            "options": ["长期存款的储蓄罐", "即产即用的能量通货（零钱）", "储存遗传信息的档案库", "构成细胞膜的围墙"],
+            "answer": 1,
+            "explain": "ATP 全身仅约 250 g，却每天周转约体重级别——边挣边花。长期储能靠脂肪与糖原。"
+          },
+          {
+            "q": "糖酵解的净产物是？",
+            "options": ["2 丙酮酸 + 净 2 ATP + 2 NADH", "6 CO₂ + 32 ATP", "乳酸 + 乙醇", "2 乙酰CoA + 6 NADH"],
+            "answer": 0,
+            "explain": "1 葡萄糖 → 2 丙酮酸，投资 2 ATP 回收 4 ATP（净 2），另得 2 NADH。全程在细胞质、无需氧气。"
+          },
+          {
+            "q": "竞争性抑制剂起作用的方式是？",
+            "options": ["与底物竞争活性中心", "把酶水解成氨基酸", "提高环境温度使酶变性", "改变反应的 ΔG 使其放能减少"],
+            "answer": 0,
+            "explain": "抑制剂长得像底物、占住活性中心。提高底物浓度可缓解（Vmax 不变、Km 增大）。磺胺就是经典例子。"
+          },
+          {
+            "q": "一分子葡萄糖有氧氧化中，ATP 产量最多的阶段是？",
+            "options": ["糖酵解", "三羧酸循环", "氧化磷酸化（电子传递链 + ATP 合酶）", "乳酸发酵"],
+            "answer": 2,
+            "explain": "氧化磷酸化贡献约 26–28 ATP，占总账 30–32 的绝大部分——前两站更像是'给电子载体充电'。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-生物分子四大家族.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 生物分子四大家族</span></a>
+      <a class="next" href="03-遗传信息的化学.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 遗传信息的化学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（活化能动画 / 米氏曲线滑块） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* ---------- 1. 活化能翻山动画 ---------- */
+  var eaBall = document.getElementById("eaBall");
+  var eaRawPath = document.getElementById("eaRawPath");
+  var eaEnzPath = document.getElementById("eaEnzPath");
+  var eaReadout = document.getElementById("eaReadout");
+  var eaRaf = null;
+
+  function placeBallStart() {
+    if (eaBall) { eaBall.setAttribute("cx", 40); eaBall.setAttribute("cy", 193); }
+  }
+  function seg(path, from, to, dur, done) {
+    var L = path.getTotalLength();
+    var t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var p = path.getPointAtLength(L * (from + (to - from) * k));
+      eaBall.setAttribute("cx", p.x);
+      eaBall.setAttribute("cy", p.y - 12);
+      if (k < 1) eaRaf = requestAnimationFrame(step);
+      else if (done) done();
+    }
+    if (eaRaf) cancelAnimationFrame(eaRaf);
+    eaRaf = requestAnimationFrame(step);
+  }
+  function bindEa(id, fn) {
+    var b = document.getElementById(id);
+    if (b) b.addEventListener("click", fn);
+  }
+  bindEa("eaRaw", function () {
+    if (!eaBall || !eaRawPath) return;
+    placeBallStart();
+    eaReadout.textContent = "分子冲向山坡……";
+    seg(eaRawPath, 0, 0.42, 1400, function () {
+      seg(eaRawPath, 0.42, 0, 1000, function () {
+        eaReadout.textContent = "❌ 能量不足，冲到半坡又滑回——无酶时该反应在室温下慢到几乎不发生（ Ea ≈ 75 kJ/mol ）";
+      });
+    });
+  });
+  bindEa("eaEnz", function () {
+    if (!eaBall || !eaEnzPath) return;
+    placeBallStart();
+    eaReadout.textContent = "酶把能垒挖低，分子轻松上路……";
+    seg(eaEnzPath, 0, 1, 1700, function () {
+      eaReadout.textContent = "✅ 活化能降到 ≈ 20 kJ/mol：分子顺利到达产物一侧，速率提升约 10⁹ 倍（数量级估算）";
+    });
+  });
+  bindEa("eaReset", function () {
+    if (eaRaf) cancelAnimationFrame(eaRaf);
+    placeBallStart();
+    eaReadout.textContent = "选择一种方式，看分子能否翻过能垒";
+  });
+
+  /* ---------- 2. 米氏动力学曲线 ---------- */
+  var mmSvg = document.getElementById("mmSvg");
+  if (mmSvg) {
+    var mmReadout = document.getElementById("mmReadout");
+    var mmS = document.getElementById("mmS");
+    var mmSVal = document.getElementById("mmSVal");
+    var VMAX = 100, KM = 1.5;
+    var X0 = 60, X1 = 570, Y0 = 250, Y1 = 40;   // 画布像素
+    var SMAX = 10;
+
+    function px(s) { return X0 + (X1 - X0) * s / SMAX; }
+    function py(v) { return Y0 - (Y0 - Y1) * v / 110; }
+    function vv(s) { return VMAX * s / (KM + s); }
+
+    function drawMM() {
+      mmSvg.innerHTML = "";
+      // 网格与轴
+      for (var g = 0; g <= 5; g++) {
+        var gx = px(g * 2);
+        el("line", { x1: gx, y1: Y1, x2: gx, y2: Y0, stroke: "#e5e7eb", "stroke-width": 1 }, mmSvg);
+        var gt = el("text", { x: gx, y: Y0 + 18, "text-anchor": "middle", "font-size": 10, fill: "#6b7280" }, mmSvg);
+        gt.textContent = g * 2;
+      }
+      el("line", { x1: X0, y1: Y0, x2: X1, y2: Y0, stroke: "#9ca3af", "stroke-width": 2 }, mmSvg);
+      el("line", { x1: X0, y1: Y0, x2: X0, y2: Y1, stroke: "#9ca3af", "stroke-width": 2 }, mmSvg);
+      var xl = el("text", { x: (X0 + X1) / 2, y: Y0 + 36, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, mmSvg);
+      xl.textContent = "底物浓度 [S] / mM";
+      var yl = el("text", { x: 18, y: (Y0 + Y1) / 2, "font-size": 11, fill: "#4b5563",
+                            transform: "rotate(-90 18 " + (Y0 + Y1) / 2 + ")" }, mmSvg);
+      yl.textContent = "反应速率 v（% Vmax）";
+      // Vmax 虚线
+      el("line", { x1: X0, y1: py(VMAX), x2: X1, y2: py(VMAX), stroke: "#94a3b8",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      var vt = el("text", { x: X1 - 4, y: py(VMAX) - 6, "text-anchor": "end", "font-size": 10.5,
+                            "font-weight": 700, fill: "#475569" }, mmSvg);
+      vt.textContent = "Vmax（饱和极限）";
+      // Km 虚线（半速）
+      el("line", { x1: px(KM), y1: py(50), x2: px(KM), y2: Y0, stroke: "#0d9488",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      el("line", { x1: X0, y1: py(50), x2: px(KM), y2: py(50), stroke: "#0d9488",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      var kt = el("text", { x: px(KM) + 6, y: py(50) - 6, "font-size": 10.5, "font-weight": 700, fill: "#0f766e" }, mmSvg);
+      kt.textContent = "Km = 1.5 → v = 50% Vmax";
+      // 曲线
+      var d = "";
+      for (var s = 0; s <= SMAX + 0.001; s += 0.05) {
+        d += (s === 0 ? "M" : " L") + px(s).toFixed(1) + "," + py(vv(s)).toFixed(1);
+      }
+      el("path", { d: d, fill: "none", stroke: "#0d9488", "stroke-width": 3.5, "stroke-linecap": "round" }, mmSvg);
+      // 当前点
+      var S = parseFloat(mmS.value), V = vv(S);
+      el("line", { x1: px(S), y1: py(V), x2: px(S), y2: Y0, stroke: "#f97316",
+                   "stroke-width": 1.5, "stroke-dasharray": "3 4" }, mmSvg);
+      el("circle", { cx: px(S), cy: py(V), r: 9, fill: "#f97316", opacity: .25 }, mmSvg);
+      el("circle", { cx: px(S), cy: py(V), r: 6, fill: "#f97316", stroke: "#c2410c", "stroke-width": 1.5 }, mmSvg);
+      // 读数
+      mmSVal.textContent = S.toFixed(1);
+      var note;
+      if (S < KM * 0.8) note = "底物稀少：酶大多空闲，速率几乎随 [S] 线性上涨（对底物浓度最敏感）";
+      else if (S < KM * 1.25) note = "到达 Km：恰好半速运转，v = 50% Vmax";
+      else if (S < KM * 4) note = "渐入饱和：大部分工位已占满，增速放缓";
+      else note = "接近饱和：码头满负荷，再加底物也快不了多少（→ Vmax）";
+      mmReadout.textContent = "v = " + V.toFixed(1) + " % Vmax ｜ " + note;
+    }
+    if (mmS) {
+      mmS.addEventListener("input", drawMM);
+      drawMM();
+    }
+  }
+})();
+</script>
+</body>
+</html>

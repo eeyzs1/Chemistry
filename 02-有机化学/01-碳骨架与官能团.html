@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>碳骨架与官能团 · 有机化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">02 有机化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 碳骨架与官能团</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 有机化学 · 第 1 章</div>
+    <h1>碳骨架与官能团：有机化学的字母表</h1>
+    <p class="lede">
+      已知化合物超过两千万种，其中绝大多数含碳。凭什么一个排在周期表第 6 位的元素能撑起如此庞大的家族？
+      本章回答三件事：<strong>碳为什么特殊</strong>（四价、强键、成链成环）、
+      <strong>烃家族怎么分类</strong>（烷、烯、炔、芳烃），以及有机化学最重要的一句话——
+      <strong>官能团决定性质</strong>。最后学会数同分异构体、查最简单的 IUPAC 名称。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：00 总论 §2 化学键</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#carbon">§1 碳为何特殊</a>
+    <a href="#hydro">§2 烃家族</a>
+    <a href="#fg">§3 官能团总览</a>
+    <a href="#iso">§4 同分异构体</a>
+    <a href="#name">§5 命名入门</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：从一张食品标签说起</h2>
+    <p>
+      随手拿起一瓶饮料，配料表上写着：水、果葡糖浆、柠檬酸、山梨酸钾、食用香精（乙酸乙酯）……
+      除了水，几乎全是<strong>含碳化合物</strong>。再看看四周：衣服（纤维素、涤纶）、药片（阿司匹林）、
+      汽油、香水、洗洁精，乃至你的皮肤和头发——我们生活在一个由碳骨架搭成的世界里。
+    </p>
+    <p>
+      十九世纪初，化学家还相信"有机物只能由生命体制造"（活力论），直到 1828 年维勒在烧瓶里
+      用无机物氰酸铵合成了尿素——生命体里的分子。从此<strong>有机化学</strong>
+      <span class="en">organic chemistry</span>摆脱神秘色彩，成为一门研究碳化合物的科学。
+      注意：这里的"有机"与"有机食品"毫无关系，它只是历史留下来的名字。
+    </p>
+    <details class="think">
+      <summary>想一想：同样一瓶"香蕉味"饮料，天然香蕉和香精的气味分子可能是同一个吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：气味由分子决定，还是由分子"出身"决定？</p>
+        <p>
+          很可能是同一个——乙酸异戊酯。香蕉的香气本来就是它合成的这个分子，
+          香精不过是把同一个分子在工厂里造出来。分子不讲出身：组成与结构相同，就是同一物质。
+          这个话题我们在第 4 章的"误区粉碎机"里还会正式讨论。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 碳为何特殊 ============ -->
+  <section id="carbon">
+    <h2>§1 碳为何特殊：四价、强键与杂化</h2>
+    <p>
+      碳的原子序数是 6：核外电子排布 2、4，最外层有 <strong>4 个价电子</strong>。
+      它离"满 8 电子"刚好差 4 个——不多不少。于是碳几乎总是与<strong>四个</strong>原子共享电子对，
+      这就是<span class="term">四价</span><span class="en">tetravalency</span>：
+      既不轻易丢电子（像钠），也不轻易抢电子（像氯），而是踏踏实实共用电子，形成共价键。
+    </p>
+    <p>
+      四价只回答了"有几个接口"，碳的另一半天赋是<strong>接口极其结实</strong>。
+      下表把碳与同族的硅做个对比：
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>化学键</th><th>键能（kJ/mol）</th><th>后果</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>C–C</strong></td><td>≈ 347</td><td>强而无极性 → 碳链、碳环在常温稳定存在</td></tr>
+        <tr><td><strong>C–H</strong></td><td>≈ 413</td><td>比 C–C 还强 → 烷烃骨架的"防护漆"</td></tr>
+        <tr><td>Si–Si</td><td>≈ 226</td><td>弱 → 硅链超过几个原子就自发断裂</td></tr>
+        <tr><td>Si–O</td><td>≈ 452</td><td>极强 → 硅更愿意去搭 SiO₄ 四面体（石英、岩石）</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      所以大自然写了两种"架构方案"：硅把全部天赋点在 Si–O 上，搭出稳定但单调的岩石网络；
+      碳则用 C–C 链与环，配合氢、氧、氮、卤素等"配件"，搭出了从甲烷到 DNA 的全部多样性。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      碳 = <strong>4 个接口 + 结实耐用的接口</strong>。碳骨架决定分子的"体格"，
+      之后你会看到：官能团决定分子的"性格"。
+    </div>
+
+    <h3>杂化：三种直观图景</h3>
+    <p>
+      碳成键时，它的原子轨道会先"混合重排"成几个等同的新轨道，叫
+      <span class="term">杂化轨道</span><span class="en">hybrid orbital</span>。
+      入门阶段只需记住三张图景：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="680" height="240" viewBox="0 0 680 240" role="img" aria-label="sp3、sp2、sp 三种杂化的代表分子对比">
+          <!-- 甲烷 sp3 -->
+          <g transform="translate(115,110)">
+            <line x1="0" y1="0" x2="-52" y2="-44" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="52" y2="-44" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="60" y2="46" stroke="#92400e" stroke-width="8"/>
+            <line x1="0" y1="0" x2="-60" y2="46" stroke="#6b7280" stroke-width="3" stroke-dasharray="6 5"/>
+            <circle cx="0" cy="0" r="20" fill="#374151"/>
+            <text x="0" y="6" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="-52" cy="-44" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="-52" y="-39" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="52" cy="-44" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="52" y="-39" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="60" cy="46" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="60" y="51" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="-60" cy="46" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="-60" y="51" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <text x="0" y="-72" text-anchor="middle" font-size="12" fill="#92400e" font-weight="700">≈109.5°</text>
+            <text x="0" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">甲烷 · sp³</text>
+            <text x="0" y="116" text-anchor="middle" font-size="12" fill="#4b5563">正四面体 · 单键</text>
+          </g>
+          <!-- 乙烯 sp2 -->
+          <g transform="translate(345,110)">
+            <line x1="-30" y1="0" x2="30" y2="0" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-30" y1="-7" x2="30" y2="-7" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-38" y1="0" x2="-84" y2="-38" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-38" y1="0" x2="-84" y2="38" stroke="#6b7280" stroke-width="3"/>
+            <line x1="38" y1="0" x2="84" y2="-38" stroke="#6b7280" stroke-width="3"/>
+            <line x1="38" y1="0" x2="84" y2="38" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="-38" cy="0" r="18" fill="#374151"/>
+            <text x="-38" y="6" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="38" cy="0" r="18" fill="#374151"/>
+            <text x="38" y="6" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="-84" cy="-38" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="-84" y="-33" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="-84" cy="38" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="-84" y="43" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="84" cy="-38" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="84" y="-33" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="84" cy="38" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="84" y="43" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <text x="0" y="-66" text-anchor="middle" font-size="12" fill="#92400e" font-weight="700">≈120°</text>
+            <text x="0" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">乙烯 · sp²</text>
+            <text x="0" y="116" text-anchor="middle" font-size="12" fill="#4b5563">平面 · 双键（σ+π）</text>
+          </g>
+          <!-- 乙炔 sp -->
+          <g transform="translate(575,110)">
+            <line x1="-58" y1="0" x2="58" y2="0" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-58" y1="-6" x2="58" y2="-6" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-58" y1="6" x2="58" y2="6" stroke="#6b7280" stroke-width="3"/>
+            <line x1="-76" y1="0" x2="-118" y2="0" stroke="#6b7280" stroke-width="3"/>
+            <line x1="76" y1="0" x2="118" y2="0" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="-58" cy="0" r="17" fill="#374151"/>
+            <text x="-58" y="6" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="58" cy="0" r="17" fill="#374151"/>
+            <text x="58" y="6" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="-118" cy="0" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="-118" y="5" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="118" cy="0" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="118" y="5" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <text x="0" y="-52" text-anchor="middle" font-size="12" fill="#92400e" font-weight="700">180°</text>
+            <text x="0" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">乙炔 · sp</text>
+            <text x="0" y="116" text-anchor="middle" font-size="12" fill="#4b5563">直线 · 三键（σ+2π）</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        三种杂化的代表分子（球棍示意，未按精确键角投影）。粗楔形线示意伸向纸外的键，虚线示意缩向纸后的键——
+        这是纸面上表达三维分子的通用记号，第 2 章会频繁使用。双键 = 1 个 σ 键 + 1 个 π 键；
+        三键 = 1 个 σ 键 + 2 个 π 键。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么两千万种化合物里绝大多数含碳？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把原子想成乐高积木：氢只有 1 个凸点、氧 2 个、氮 3 个，拼两三层就到头了；
+          <strong>碳块有 4 个凸点</strong>，而且碳块之间能首尾相连、围成圈环。
+          再配上一盒特殊配件（O、N、卤素……就是官能团），能拼出的造型自然指数爆炸。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          三个条件相乘：①<strong>四价</strong>——碳自身可无限连接，成链、成环、成网格；
+          ②<strong>C–C 键强（347 kJ/mol）且无极性</strong>——长链在常温不自发断裂、不易被水拆散；
+          ③<strong>同分异构现象</strong>——相同分子式可以排出不同结构，异构体数目随碳数暴涨：
+          <span class="formula">C<sub>4</sub>H<sub>10</sub></span> 2 种、
+          <span class="formula">C<sub>10</sub>H<sub>22</sub></span> 75 种、
+          <span class="formula">C<sub>20</sub>H<sub>42</sub></span> 超过 36 万种。
+          骨架的可能性 × 官能团的种类，两千万种就这么堆出来了。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          碳站在周期表第二周期 ⅣA 的"黄金分割点"：往左的元素价电子太少、倾向失电子成为金属；
+          往右的太多、倾向得电子形成小分子（O₂、N₂）或阴离子。碳不高不低，只肯与人共价，
+          且与 H、O、N、卤素都能形成稳定共价键。更关键的是<strong>碳能形成稳定多重键</strong>
+          （C=C、C≡C）——同族的硅因为 3p 轨道弥散、π 重叠差，几乎造不出稳定 Si=Si；
+          Si–Si 又弱，所以硅的"复杂分子化学"走不通，只好去搭 SiO₂ 岩石。科幻里的"硅基生命"，
+          从化学键能看更像哲学设想而非现实方案。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 烃家族 ============ -->
+  <section id="hydro">
+    <h2>§2 烃家族：只含碳和氢的"纯骨架"</h2>
+    <p>
+      只由碳、氢两种元素组成的化合物叫<span class="term">烃</span><span class="en">hydrocarbon</span>
+      （"碳"去氢旁 + "氢"去气头，读音同"听"）。烃是有机世界的骨架层：按碳骨架里有没有
+      重键，分为<strong>饱和烃</strong>与<strong>不饱和烃</strong>；再来一位自带稳定光环的成员——芳烃。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>家族</th><th>通式</th><th>结构特征</th><th>碳的杂化</th><th>代表物</th><th>生活链接</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>烷烃</strong></td>
+          <td><span class="formula">C<sub>n</sub>H<sub>2n+2</sub></span></td>
+          <td>全部单键（饱和）</td>
+          <td>sp³</td>
+          <td>甲烷 CH₄</td>
+          <td>天然气、打火机丁烷</td>
+        </tr>
+        <tr>
+          <td><strong>烯烃</strong></td>
+          <td><span class="formula">C<sub>n</sub>H<sub>2n</sub></span></td>
+          <td>含一个 C=C 双键</td>
+          <td>sp²</td>
+          <td>乙烯 C₂H₄</td>
+          <td>水果催熟、塑料原料</td>
+        </tr>
+        <tr>
+          <td><strong>炔烃</strong></td>
+          <td><span class="formula">C<sub>n</sub>H<sub>2n−2</sub></span></td>
+          <td>含一个 C≡C 三键</td>
+          <td>sp</td>
+          <td>乙炔 C₂H₂</td>
+          <td>氧炔焰切割钢板</td>
+        </tr>
+        <tr>
+          <td><strong>芳烃</strong></td>
+          <td><span class="formula">C<sub>n</sub>H<sub>2n−6</sub>（苯系）</span></td>
+          <td>含苯环（离域 π）</td>
+          <td>sp²</td>
+          <td>苯 C₆H₆</td>
+          <td>染料与医药的母体</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      注意通式的规律：每多一个双键（或一个环），分子就少 2 个氢。
+      "氢数不够"正是不饱和的标志——第 4 章你会看到，双键正是烯烃全部化学反应的舞台。
+    </p>
+
+    <details class="think">
+      <summary>想一想：把一个青香蕉和几个熟透的苹果放进同一个纸袋，香蕉会更快变熟。为什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：苹果在做什么"广播"？这种信号是什么分子？</p>
+        <p>
+          成熟的果实释放<strong>乙烯</strong>——一个只有两个碳、含 C=C 双键的小分子气体。
+          它是植物自带的"成熟号角"：扩散进香蕉，与受体结合，启动淀粉水解成糖、果胶软化、
+          香气酯合成等一整套程序。果蔬物流正是利用这一点：运输时用保鲜剂吸收乙烯"延寿"，
+          到店后再用乙烯利（释放乙烯的试剂）集中催熟。一个双键小分子，导演了全球水果的日程表。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 官能团总览 ============ -->
+  <section id="fg">
+    <h2>§3 官能团总览：决定性质的主角</h2>
+    <p>
+      把烃骨架想象成一栋楼的水泥框架，那么<span class="term">官能团</span>
+      <span class="en">functional group</span>就是入住的关键住户：它是分子中<strong>决定化学反应性的原子团</strong>。
+      甲醇 <span class="formula">CH<sub>3</sub>OH</span> 与甲烷 <span class="formula">CH<sub>4</sub></span>
+      只差一个 –OH，性质却天差地别：甲醇能与水无限混溶、能被氧化成甲醛，
+      而甲烷几乎"油盐不进"。这就是有机化学的第一定律：<strong>官能团决定性质</strong>。
+    </p>
+
+    <h3>🔬 动手玩：官能团画廊</h3>
+    <p>
+      点击按钮切换官能团：绿色虚线框标出官能团的原子，读数条给出它的名称、结构、代表物和一句"闻起来/用起来"。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="fgSvg" width="560" height="230" viewBox="0 0 560 230" role="img" aria-label="官能团结构画廊"></svg>
+        <div class="fig-controls" id="fgBtns">
+          <button type="button" class="btn ghost" data-g="0">羟基</button>
+          <button type="button" class="btn ghost" data-g="1">醛基</button>
+          <button type="button" class="btn ghost" data-g="2">酮羰基</button>
+          <button type="button" class="btn ghost" data-g="3">羧基</button>
+          <button type="button" class="btn ghost" data-g="4">酯基</button>
+          <button type="button" class="btn ghost" data-g="5">氨基</button>
+          <button type="button" class="btn ghost" data-g="6">卤素</button>
+          <button type="button" class="btn ghost" data-g="7">醚键</button>
+          <button type="button" class="btn ghost" data-g="8">碳碳双键</button>
+        </div>
+        <div class="fig-readout" id="fgReadout"></div>
+      </div>
+      <figcaption>
+        灰色球 R 代表"其余的碳骨架"——官能团总是长在某段骨架上。同一个 R 换上不同官能团，
+        就得到性格迥异的家族成员。
+      </figcaption>
+    </figure>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>官能团</th><th>结构</th><th>代表物</th><th>闻起来 / 用起来</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>羟基</td><td><span class="formula">–OH</span></td><td>乙醇</td><td>酒香；消毒棉球的气味</td></tr>
+        <tr><td>醛基</td><td><span class="formula">–CHO</span></td><td>肉桂醛</td><td>肉桂香；甲醛水溶液即福尔马林</td></tr>
+        <tr><td>酮羰基</td><td><span class="formula">&gt;C=O</span></td><td>丙酮</td><td>洗甲水的气味</td></tr>
+        <tr><td>羧基</td><td><span class="formula">–COOH</span></td><td>乙酸</td><td>醋的酸味；酸性来自它</td></tr>
+        <tr><td>酯基</td><td><span class="formula">–COO–</span></td><td>乙酸乙酯</td><td>果香大都由酯家族贡献</td></tr>
+        <tr><td>氨基</td><td><span class="formula">–NH₂</span></td><td>三甲胺</td><td>鱼腥味；也藏在氨基酸里</td></tr>
+        <tr><td>卤素（X）</td><td><span class="formula">–Cl/Br/I</span></td><td>氯乙烯</td><td>聚合后即 PVC 水管</td></tr>
+        <tr><td>醚键</td><td><span class="formula">–O–</span></td><td>乙醚</td><td>甜味；早期手术麻醉剂</td></tr>
+        <tr><td>碳碳双键</td><td><span class="formula">C=C</span></td><td>乙烯</td><td>催熟水果；加成反应的舞台</td></tr>
+      </tbody>
+    </table>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "有机物 = 天然、安全；无机物 = 人工、有害"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          有机物来自天然，所以温和无害；无机物是化工厂造的，所以危险。"无添加""纯天然"等于安全。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          安全与否取决于<strong>分子本身与剂量</strong>，与出身无关。反例一对：
+          <strong>蓖麻毒素</strong>——从蓖麻籽里提取的纯天然蛋白质，按质量计毒性是氰化钾的数千倍
+          （1978 年"雨伞毒杀案"的凶器就是它）；而<strong>合成维生素 C</strong> 与天然维生素 C
+          是同一个分子（L-抗坏血酸），你的身体完全无法区分两者。天然≠安全，合成≠有害——
+          这是毒理学课的第一句，也是看穿营销话术的显微镜。
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 例题脚手架：同分异构的"三瓶试剂"</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        三瓶失去标签的试剂，分子式分别为：
+        A <span class="formula">C<sub>2</sub>H<sub>6</sub>O</span>（乙醇）、
+        B <span class="formula">C<sub>2</sub>H<sub>4</sub>O<sub>2</sub></span>（乙酸）、
+        C <span class="formula">C<sub>2</sub>H<sub>6</sub>O</span>（二甲醚）。
+        请指出各含什么官能团，并预测：哪瓶能与金属钠放出氢气？哪瓶能使紫色石蕊变红？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">先认官能团：A 乙醇 <span class="formula">CH<sub>3</sub>CH<sub>2</sub>OH</span> → <strong>羟基 –OH</strong>；
+          B 乙酸 <span class="formula">CH<sub>3</sub>COOH</span> → <strong>羧基 –COOH</strong>（羰基与羟基合体）；
+          C 二甲醚 <span class="formula">CH<sub>3</sub>OCH<sub>3</sub></span> → <strong>醚键 –O–</strong>。</li>
+        <li class="step">与钠反应的本质：金属钠置换"活泼氢"。A 的 –OH 上有活泼氢，B 的 –COOH 上有更活泼的氢
+          → <strong>A、B 放氢气，C 不反应</strong>（醚键上的氢都挂在碳上，不活泼）。</li>
+        <li class="step">酸性判断：只有羧基给出明显的酸 → <strong>仅 B 使石蕊变红</strong>，还能与碳酸氢钠放出二氧化碳；A、C 均为中性。</li>
+        <li class="step">✅ 结论 + 彩蛋：A 与 C 分子式完全相同（<span class="formula">C<sub>2</sub>H<sub>6</sub>O</span>）却是两种物质——
+          官能团不同。这正是下一节"同分异构体"的活例子：分子式是"班级人数"，结构才是"座位表"。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：乙醇与水能以任意比例互溶，乙烷却几乎不溶于水。差在哪儿？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：水分子之间靠什么力抱团？乙醇多了哪个"握手"的原子团？</p>
+        <p>
+          水分子之间以<strong>氢键</strong>互相牵引。乙醇的 –OH 既能给出氢键又能接受氢键，
+          可以无缝混进水的"氢键网络"；乙烷是非极性的纯烃，挤不进去——这就是"相似相溶"的微观解释。
+          经验法则：小分子醇、羧酸、胺因能形成氢键而亲水；纯烃骨架越大越怕水。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 同分异构体 ============ -->
+  <section id="iso">
+    <h2>§4 同分异构体：分子式相同 ≠ 分子相同</h2>
+    <p>
+      <span class="term">同分异构体</span><span class="en">isomer</span>指分子式相同、
+      结构不同的化合物。最简单的例子从 4 个碳开始：
+      <span class="formula">C<sub>4</sub>H<sub>10</sub></span> 只有两种排法——
+      直挺挺的<strong>正丁烷</strong>（打火机里那种）与带支链的<strong>异丁烷</strong>。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="isoSvg" width="560" height="280" viewBox="0 0 560 280" role="img" aria-label="烷烃同分异构体球棍模型查看器"></svg>
+        <div class="fig-controls" id="isoBtns">
+          <button type="button" class="btn ghost" data-i="0">正丁烷</button>
+          <button type="button" class="btn ghost" data-i="1">异丁烷</button>
+          <button type="button" class="btn ghost" data-i="2">正戊烷</button>
+          <button type="button" class="btn ghost" data-i="3">异戊烷</button>
+          <button type="button" class="btn ghost" data-i="4">新戊烷</button>
+        </div>
+        <div class="fig-readout" id="isoReadout"></div>
+      </div>
+      <figcaption>
+        球棍模型（灰球 = 碳，白球 = 氢）。观察规律：碳数相同时，<strong>支链越多，分子越"圆"，
+        彼此贴合面越小，色散力越弱，沸点越低</strong>。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 异构体数目的爆炸式增长</div>
+      <span class="formula">C<sub>4</sub>H<sub>10</sub></span> 2 种 →
+      <span class="formula">C<sub>5</sub>H<sub>12</sub></span> 3 种 →
+      <span class="formula">C<sub>6</sub>H<sub>14</sub></span> 5 种 →
+      <span class="formula">C<sub>10</sub>H<sub>22</sub></span> 75 种 →
+      <span class="formula">C<sub>20</sub>H<sub>42</sub></span> 超过 36 万种。
+      还只是"纯烷烃"！这就是 §1 阶梯里"两千万种"的算术来源之一。
+    </div>
+
+    <details class="think">
+      <summary>想一想：C₅H₁₂ 有几种同分异构体？先在纸上画，再看答案。</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：按"直链 → 挪一个甲基 → 挪两个甲基"的系统顺序枚举，才不会漏。</p>
+        <p>
+          <strong>3 种</strong>：正戊烷（直链）、异戊烷（2-甲基丁烷，一条支链）、
+          新戊烷（2,2-二甲基丙烷，两条支链挤在同一碳上）。
+          系统枚举的顺序（先定主链长短，再挪支链位置）是数异构体的基本功——乱画必漏。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 命名入门 ============ -->
+  <section id="name">
+    <h2>§5 烷烃命名入门：给分子发身份证</h2>
+    <p>
+      俗名亲切但不精确："酒精""木精""氯仿"各指什么？不同国家甚至不同行当都有一套叫法。
+      <span class="term">IUPAC 命名法</span><span class="en">IUPAC nomenclature</span>
+      是国际纯粹与应用化学联合会制定的统一规则——分子的"全球通用门牌号"。烷烃命名最简版只需四步：
+    </p>
+    <ol>
+      <li><strong>选最长碳链</strong>作母体：1～10 个碳依次叫甲、乙、丙、丁、戊、己、庚、辛、壬、癸烷（再多直接用数字"十一烷"）。</li>
+      <li><strong>给主链编号</strong>：从离取代基最近的一端开始，使取代基位次尽可能小（"最低位次"原则）。</li>
+      <li><strong>命名取代基</strong>：–CH₃ 叫甲基，–C₂H₅ 叫乙基；位次写在前面，如"2-甲基"。</li>
+      <li><strong>组合</strong>：取代基在前、母体在后；同种取代基合并用二/三计数（如 2,2-二甲基）。</li>
+    </ol>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        给结构 <span class="formula">CH<sub>3</sub>–CH(CH<sub>3</sub>)–CH<sub>2</sub>–CH<sub>3</sub></span> 命名。
+        <em>（每一步先自己想，再点开对照）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 找最长链：横向数 4 个碳（第二个碳还带着 1 个支链碳）。有没有更长的？
+          把支链也算上最多还是 4 → 母体为<strong>丁烷</strong>。（若错选 3 碳主链，就会凭空多出取代基。）</li>
+        <li class="step">💡 编号：从左端数，支链落在 <strong>2 号位</strong>；从右端数则落在 3 号位。2 &lt; 3，
+          按最低位次原则<strong>从左端编号</strong>。</li>
+        <li class="step">💡 取代基：一个 –CH₃ → <strong>2-甲基</strong>。</li>
+        <li class="step">✅ 全名：<strong>2-甲基丁烷</strong>（异戊烷）。自查：主链 4 碳 + 支链 1 碳 = 5 个碳，
+          分子式 C₅H₁₂ ✓——与 §4 查看器里的"异戊烷"是同一个分子。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 俗名好用，但要认得学名</div>
+      酒精 = 乙醇；木精 = 甲醇（几毫升可致失明，假酒案的元凶）；氯仿 = 三氯甲烷；
+      福尔马林 = 甲醛水溶液。俗名往往藏着历史与危险——学名才是全球通用的坐标。
+      读药品与化学品标签时，认学名比记俗名更保命。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>碳的<strong>四价 + 强而无极性的 C–C 键</strong>使它能成链、成环，构筑两千万种化合物；硅因 Si–Si 弱而落选。</li>
+        <li>三种杂化图景：sp³ 正四面体（109.5°）、sp² 平面（120°，双键）、sp 直线（180°，三键）。</li>
+        <li>烃四族：烷（饱和）、烯（双键）、炔（三键）、芳烃（苯环）；每加一个双键少 2 个氢。</li>
+        <li><strong>官能团决定性质</strong>：羟基、醛基、酮羰基、羧基、酯基、氨基、卤素、醚键是第一批要认的脸。</li>
+        <li>分子式相同结构可不同（同分异构体）；支链越多，烷烃沸点越低；命名遵循"最长链 + 最低位次"。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 碳骨架与官能团 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "碳能构筑两千万多种化合物，最关键的原因是？",
+            "options": [
+              "碳原子在宇宙中数量最多",
+              "碳有 4 个价电子、C–C 键强且无极性，能成链成环，再叠加同分异构现象",
+              "碳只能形成离子键，因此组合方式多",
+              "碳是最轻的元素，反应最快"
+            ],
+            "answer": 1,
+            "explain": "四价提供 4 个『接口』，347 kJ/mol 的 C–C 键让长链在常温稳定，再加上同分异构（C₂₀H₄₂ 就有 36 万多种），组合数指数爆炸。宇宙中氢氦远多于碳；碳通常形成共价键而非离子键。"
+          },
+          {
+            "q": "乙烯 CH₂=CH₂ 分子中，每个碳原子的杂化方式与大致键角是？",
+            "options": [
+              "sp³，约 109.5°",
+              "sp²，约 120°",
+              "sp，180°",
+              "不杂化，90°"
+            ],
+            "answer": 1,
+            "explain": "双键碳用 3 个 sp² 轨道形成平面骨架（互成约 120°），未杂化的 p 轨道侧面重叠成 π 键。甲烷才是 sp³/109.5°，乙炔是 sp/180°。"
+          },
+          {
+            "q": "乙酸乙酯 CH₃COOC₂H₅ 中含有的官能团是？",
+            "options": ["羧基 –COOH", "羟基 –OH", "酯基 –COO–", "醛基 –CHO"],
+            "answer": 2,
+            "explain": "–COO– 是酯基。羧基 –COOH 中的羟基已被 –OC₂H₅ 取代，所以分子里既没有游离羟基也没有羧基——官能团要看『连法』，不能只看出现了哪些原子。"
+          },
+          {
+            "q": "C₄H₁₀ 的同分异构体共有几种？",
+            "options": ["1 种", "2 种", "3 种", "4 种"],
+            "answer": 1,
+            "explain": "正丁烷（直链，沸点 −0.5 °C）与异丁烷（支链，沸点 −11.7 °C）两种。碳数再涨一个：C₅H₁₂ 有 3 种，C₆H₁₄ 有 5 种。"
+          },
+          {
+            "q": "结构为 CH₃CH(CH₃)CH₂CH₃ 的分子，正确学名是？",
+            "options": ["正戊烷", "2-甲基丁烷", "3-甲基丁烷", "1-甲基丁烷"],
+            "answer": 1,
+            "explain": "最长链 4 碳 → 母体丁烷；编号从靠近支链一端 → 位次 2；『3-甲基』违反最低位次原则，『1-甲基丁烷』则说明主链没选对（会数出 5 碳主链）。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">02 有机化学 · 导学</span></a>
+      <a class="next" href="02-立体化学.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 2 章 · 立体化学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（官能团画廊 / 异构体查看器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. 官能团画廊 ---------- */
+  var GROUPS = [
+    { name: "羟基", str: "–OH", rep: "乙醇 CH₃CH₂OH",
+      note: "酒香与消毒棉球的气味；能与水形成氢键，任意比例互溶。",
+      hl: { x: 148, y: 34, w: 158, h: 128 },
+      bonds: [[116, 120, 166, 120], [206, 112, 263, 80]],
+      atoms: [["R", 90, 120, 26, "#9ca3af", "#1f2937"], ["O", 190, 120, 24, "#dc2626", "#ffffff"], ["H", 275, 70, 14, "#ffffff", "#1f2937"]] },
+    { name: "醛基", str: "–CHO", rep: "肉桂醛 / 甲醛",
+      note: "肉桂的暖香；甲醛水溶液就是标本柜里的福尔马林。",
+      hl: { x: 160, y: 36, w: 152, h: 142 },
+      bonds: [[116, 150, 178, 150], [192, 128, 192, 82], [208, 128, 208, 82], [222, 150, 266, 150]],
+      atoms: [["R", 90, 150, 26, "#9ca3af", "#1f2937"], ["C", 200, 150, 22, "#374151", "#ffffff"], ["O", 200, 60, 20, "#dc2626", "#ffffff"], ["H", 280, 150, 14, "#ffffff", "#1f2937"]] },
+    { name: "酮羰基", str: ">C=O（碳在链中）", rep: "丙酮 CH₃COCH₃",
+      note: "洗甲水刺鼻又微甜的气味；羰基夹在两个碳骨架之间。",
+      hl: { x: 160, y: 34, w: 168, h: 152 },
+      bonds: [[106, 150, 178, 150], [192, 128, 192, 84], [208, 128, 208, 84], [222, 150, 294, 150]],
+      atoms: [["R", 80, 150, 26, "#9ca3af", "#1f2937"], ["C", 200, 150, 22, "#374151", "#ffffff"], ["O", 200, 58, 20, "#dc2626", "#ffffff"], ["R′", 320, 150, 26, "#94a3b8", "#1f2937"]] },
+    { name: "羧基", str: "–COOH", rep: "乙酸 CH₃COOH",
+      note: "醋的酸味；官能团界的『两栖类』——羰基＋羟基合体，能给出质子显酸性。",
+      hl: { x: 145, y: 46, w: 218, h: 146 },
+      bonds: [[96, 160, 163, 160], [177, 138, 177, 92], [193, 138, 193, 92], [207, 160, 248, 160], [290, 148, 330, 128]],
+      atoms: [["R", 70, 160, 26, "#9ca3af", "#1f2937"], ["C", 185, 160, 22, "#374151", "#ffffff"], ["O", 185, 70, 20, "#dc2626", "#ffffff"], ["O", 272, 160, 24, "#dc2626", "#ffffff"], ["H", 340, 120, 14, "#ffffff", "#1f2937"]] },
+    { name: "酯基", str: "–COO–", rep: "乙酸乙酯 / 乙酸异戊酯",
+      note: "果香家族的主力：香蕉、菠萝、梨的香气大多来自小分子酯。",
+      hl: { x: 135, y: 46, w: 188, h: 146 },
+      bonds: [[86, 160, 153, 160], [167, 138, 167, 92], [183, 138, 183, 92], [197, 160, 238, 160], [284, 160, 334, 160]],
+      atoms: [["R", 60, 160, 26, "#9ca3af", "#1f2937"], ["C", 175, 160, 22, "#374151", "#ffffff"], ["O", 175, 70, 20, "#dc2626", "#ffffff"], ["O", 262, 160, 24, "#dc2626", "#ffffff"], ["R′", 360, 160, 26, "#94a3b8", "#1f2937"]] },
+    { name: "氨基", str: "–NH₂", rep: "三甲胺 / 苯胺",
+      note: "鱼腥味的主角；氮上有孤对电子，显碱性——氨基酸里就有它。",
+      hl: { x: 172, y: 50, w: 146, h: 162 },
+      bonds: [[136, 130, 186, 130], [228, 120, 266, 90], [228, 140, 266, 172]],
+      atoms: [["R", 110, 130, 26, "#9ca3af", "#1f2937"], ["N", 210, 130, 24, "#2563eb", "#ffffff"], ["H", 280, 82, 14, "#ffffff", "#1f2937"], ["H", 280, 180, 14, "#ffffff", "#1f2937"]] },
+    { name: "卤素", str: "–Cl / –Br / –I", rep: "氯乙烯（聚合成 PVC）",
+      note: "本身常无味，但善于『被取代』——是第 3 章亲核取代的主角底物。",
+      hl: { x: 214, y: 86, w: 94, h: 90 },
+      bonds: [[166, 130, 228, 130]],
+      atoms: [["R", 140, 130, 26, "#9ca3af", "#1f2937"], ["Cl", 262, 130, 30, "#16a34a", "#ffffff"]] },
+    { name: "醚键", str: "–O–", rep: "乙醚 C₂H₅OC₂H₅",
+      note: "微甜的气味；曾是外科手术的第一代麻醉剂（1842 年起）。",
+      hl: { x: 196, y: 92, w: 68, h: 78 },
+      bonds: [[116, 130, 206, 130], [254, 130, 344, 130]],
+      atoms: [["R", 90, 130, 26, "#9ca3af", "#1f2937"], ["O", 230, 130, 24, "#dc2626", "#ffffff"], ["R′", 370, 130, 26, "#94a3b8", "#1f2937"]] },
+    { name: "碳碳双键", str: "C=C", rep: "乙烯 CH₂=CH₂",
+      note: "水果的『成熟激素』；π 键活泼，是第 3–4 章加成反应的舞台。",
+      hl: { x: 140, y: 82, w: 200, h: 138 },
+      bonds: [[96, 150, 162, 150], [198, 144, 282, 144], [198, 156, 282, 156], [318, 150, 384, 150], [180, 136, 180, 108], [300, 164, 300, 192]],
+      atoms: [["R", 70, 150, 26, "#9ca3af", "#1f2937"], ["C", 180, 150, 22, "#374151", "#ffffff"], ["C", 300, 150, 22, "#374151", "#ffffff"], ["R′", 410, 150, 26, "#94a3b8", "#1f2937"], ["H", 180, 96, 13, "#ffffff", "#1f2937"], ["H", 300, 204, 13, "#ffffff", "#1f2937"]] }
+  ];
+
+  var fgSvg = document.getElementById("fgSvg");
+  if (fgSvg) {
+    var fgReadout = document.getElementById("fgReadout");
+    var fgBtns = Array.prototype.slice.call(document.querySelectorAll("#fgBtns button"));
+    function drawFg(i) {
+      var g = GROUPS[i];
+      fgSvg.innerHTML = "";
+      el("rect", { x: g.hl.x, y: g.hl.y, width: g.hl.w, height: g.hl.h, rx: 12,
+        fill: "#f0fdf4", stroke: "#15803d", "stroke-width": 2, "stroke-dasharray": "7 5" }, fgSvg);
+      g.bonds.forEach(function (b) {
+        el("line", { x1: b[0], y1: b[1], x2: b[2], y2: b[3], stroke: "#6b7280", "stroke-width": 3 }, fgSvg);
+      });
+      g.atoms.forEach(function (a) {
+        el("circle", { cx: a[1], cy: a[2], r: a[3], fill: a[4], stroke: "rgba(0,0,0,.18)", "stroke-width": 1 }, fgSvg);
+        T(fgSvg, a[1], a[2] + (a[3] > 18 ? 5 : 4), a[0], { size: a[3] > 18 ? 14 : 12, weight: 700, fill: a[5] });
+      });
+      T(fgSvg, 280, 218, "灰色 R / R′ = 任意碳骨架", { size: 11, fill: "#6b7280" });
+      fgReadout.textContent = g.name + " " + g.str + " ｜ 代表物：" + g.rep + " ｜ " + g.note;
+      fgBtns.forEach(function (b, j) {
+        if (j === i) { b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)"; }
+        else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    fgBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawFg(parseInt(b.getAttribute("data-g"), 10)); });
+    });
+    drawFg(0);
+  }
+
+  /* ---------- 2. 烷烃异构体查看器（自动布置氢原子） ---------- */
+  var ISO = [
+    { name: "正丁烷", formula: "C₄H₁₀", bp: "−0.5 °C",
+      note: "直链：分子间贴合面大 → 色散力强 → 沸点较高。",
+      c: [[150, 160], [240, 105], [330, 160], [420, 105]], edges: [[0, 1], [1, 2], [2, 3]] },
+    { name: "异丁烷", formula: "C₄H₁₀", bp: "−11.7 °C",
+      note: "球型支链：贴合面小 → 沸点直降 11 度。",
+      c: [[280, 150], [280, 55], [180, 210], [380, 210]], edges: [[0, 1], [0, 2], [0, 3]] },
+    { name: "正戊烷", formula: "C₅H₁₂", bp: "36.1 °C",
+      note: "五个碳的直链：本章沸点冠军（所以常温是液体）。",
+      c: [[105, 170], [195, 112], [285, 170], [375, 112], [465, 170]], edges: [[0, 1], [1, 2], [2, 3], [3, 4]] },
+    { name: "异戊烷（2-甲基丁烷）", formula: "C₅H₁₂", bp: "27.8 °C",
+      note: "一条支链：沸点让位给正戊烷——正是例 2 命名的那位。",
+      c: [[160, 180], [250, 125], [340, 180], [430, 125], [305, 45]], edges: [[0, 1], [1, 2], [2, 3], [1, 4]] },
+    { name: "新戊烷（2,2-二甲基丙烷）", formula: "C₅H₁₂", bp: "9.5 °C",
+      note: "最球形的排布：中心碳四面开花，沸点最低。",
+      c: [[280, 130], [280, 45], [390, 175], [280, 220], [170, 175]], edges: [[0, 1], [0, 2], [0, 3], [0, 4]] }
+  ];
+
+  var isoSvg = document.getElementById("isoSvg");
+  if (isoSvg) {
+    var isoReadout = document.getElementById("isoReadout");
+    var isoBtns = Array.prototype.slice.call(document.querySelectorAll("#isoBtns button"));
+
+    function layoutH(carbons, edges) {
+      var hs = [];
+      carbons.forEach(function (c, i) {
+        var occ = [];
+        edges.forEach(function (e) {
+          if (e[0] === i || e[1] === i) {
+            var j = e[0] === i ? e[1] : e[0];
+            occ.push(Math.atan2(carbons[j][1] - c[1], carbons[j][0] - c[0]) * 180 / Math.PI);
+          }
+        });
+        var slots = 4 - occ.length;
+        var scored = [0, 60, 120, 180, 240, 300].map(function (a) {
+          var m = 999;
+          occ.forEach(function (o) {
+            var d = Math.abs(((a - o + 540) % 360) - 180);
+            if (d < m) m = d;
+          });
+          return [a, m];
+        });
+        scored.sort(function (p, q) { return q[1] - p[1]; });
+        for (var s = 0; s < slots; s++) {
+          var rad = scored[s][0] * Math.PI / 180;
+          hs.push([c[0] + 52 * Math.cos(rad), c[1] + 52 * Math.sin(rad), i]);
+        }
+      });
+      return hs;
+    }
+
+    function drawIso(i) {
+      var d = ISO[i];
+      isoSvg.innerHTML = "";
+      var carbons = d.c, edges = d.edges, hs = layoutH(carbons, edges);
+      edges.forEach(function (e) {
+        el("line", { x1: carbons[e[0]][0], y1: carbons[e[0]][1], x2: carbons[e[1]][0], y2: carbons[e[1]][1],
+          stroke: "#6b7280", "stroke-width": 4 }, isoSvg);
+      });
+      hs.forEach(function (h) {
+        el("line", { x1: carbons[h[2]][0], y1: carbons[h[2]][1], x2: h[0], y2: h[1],
+          stroke: "#94a3b8", "stroke-width": 2.5 }, isoSvg);
+      });
+      carbons.forEach(function (c) {
+        el("circle", { cx: c[0], cy: c[1], r: 19, fill: "#374151", stroke: "rgba(0,0,0,.2)", "stroke-width": 1 }, isoSvg);
+        T(isoSvg, c[0], c[1] + 5, "C", { size: 13, weight: 700, fill: "#ffffff" });
+      });
+      hs.forEach(function (h) {
+        el("circle", { cx: h[0], cy: h[1], r: 11, fill: "#ffffff", stroke: "#9ca3af", "stroke-width": 1.5 }, isoSvg);
+        T(isoSvg, h[0], h[1] + 4, "H", { size: 11, weight: 700, fill: "#1f2937" });
+      });
+      isoReadout.textContent = d.name + " · " + d.formula + " · 沸点 " + d.bp + " ｜ " + d.note;
+      isoBtns.forEach(function (b, j) {
+        if (j === i) { b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)"; }
+        else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    isoBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawIso(parseInt(b.getAttribute("data-i"), 10)); });
+    });
+    drawIso(0);
+  }
+})();
+</script>
+</body>
+</html>

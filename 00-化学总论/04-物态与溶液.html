@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>物态与溶液 · 化学总论 第 4 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">00 化学总论</a><span class="sep">/</span>
+    <span class="here">第 4 章 · 物态与溶液</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 化学总论 · 第 4 章</div>
+    <h1>物态与溶液：分子的群居生活</h1>
+    <p class="lede">
+      一个水分子无色无形；10²³ 个水分子聚在一起，才有了雨、雾、冰与海洋。
+      本章看两件事：<strong>温度与压强如何指挥粒子的"群居方式"（三态与气体定律）</strong>，
+      以及<strong>物质彼此溶解时如何记账（浓度与稀释）</strong>。化学反应大多发生在溶液里——这章是它们的后台。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 40 分钟</span>
+      <span class="chip">先修：第 1–3 章</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#states">三态与粒子运动</a>
+    <a href="#gas">气体定律</a>
+    <a href="#solution">溶液与浓度</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：同一群演员，三种舞台剧</h2>
+    <p>
+      冰、水、水汽的分子一模一样，区别只在"演出方式"：冰里分子手拉手各就各位（<strong>固定队列</strong>）；
+      水里分子挤在一起还能换位（<strong>亲密但自由</strong>）；水汽里分子各自飞奔（<strong>互不打扰</strong>）。
+      指挥这场换戏的导演，是<strong>温度与压强</strong>。高压锅为什么做饭快？开汽水为什么"呲"一声？
+      都能从本章找到答案。
+    </p>
+    <details class="think">
+      <summary>想一想：为什么湿衣服在夏天比冬天干得快？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：蒸发 = 水分子挣脱液面的"越狱"，越狱需要什么？</p>
+        <p>
+          分子挣脱液面需要足够的<strong>动能</strong>。温度越高，分子的平均动能越大，
+          "够格越狱"的分子比例呈指数上升（这为 04 分支的玻尔兹曼分布埋下伏笔）。
+          所以夏天蒸发快、晾衣快，高压锅内温度高、反应快。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 三态 ============ -->
+  <section id="states">
+    <h2>§1 三态：同一批分子，三种纪律</h2>
+    <table class="tbl">
+      <thead>
+        <tr><th>状态</th><th>分子排列</th><th>分子运动</th><th>形状/体积</th><th>生活例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>固态</strong></td><td>规则紧密排列</td><td>原地振动</td><td>形状固定、体积固定</td><td>冰、铁钉</td></tr>
+        <tr><td><strong>液态</strong></td><td>紧密但无序</td><td>振动 + 换位滑动</td><td>形状随容器、体积固定</td><td>水、水银</td></tr>
+        <tr><td><strong>气态</strong></td><td>相距遥远</td><td>高速直线飞行 + 碰撞</td><td>形状体积都不定、充满容器</td><td>水蒸气、空气</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔬 动手玩：粒子运动模拟器</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="ptCanvas" width="380" height="240" style="border-radius:8px;background:#0f172a;max-width:100%"></canvas>
+        <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+          <span style="font-size:.9rem;color:var(--ink-2)">温度：</span>
+          <input id="ptT" type="range" min="0" max="100" value="25" style="width:200px;accent-color:var(--accent);height:44px" aria-label="温度">
+          <span id="ptTLabel" style="font-size:.9rem;font-weight:700;color:var(--accent-deep);min-width:80px">低温（固态感）</span>
+        </div>
+        <div class="fig-readout" id="ptReadout"></div>
+      </div>
+      <figcaption>
+        拖动温度滑块：低温时粒子挤在底部缓缓蠕动（像固态），中温时四处滑动互相挤碰（液态感），
+        高温时满容器乱飞（气态）。真实相变还要看分子间作用力，这里演示的是<strong>动能与纪律的关系</strong>。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 温度 = 分子平均动能的度量</div>
+      温度不是"热的多少"，而是<strong>分子无规则运动剧烈程度的统计量</strong>。
+      这一个视角统一解释了：蒸发加快、扩散加快、反应加快（04 分支动力学）、固体熔化——全是分子跑得更欢了。
+    </div>
+  </section>
+
+  <!-- ============ §2 气体定律 ============ -->
+  <section id="gas">
+    <h2>§2 气体定律：被压缩的脾气</h2>
+    <p>
+      气体分子占容器绝大部分空间是"空"，所以气体最容易被压缩、也最容易定量描述。
+      两条经典规律（定量实验都出自 17–18 世纪）：
+    </p>
+    <ul>
+      <li><span class="term">玻义耳定律</span><span class="en">Boyle's law</span>：温度不变时，<strong>pV = 常数</strong>——体积压一半，压强翻倍。</li>
+      <li><span class="term">查理定律</span><span class="en">Charles's law</span>：压强不变时，<strong>V ∝ T</strong>（热力学温度）——温度升高，体积膨胀。</li>
+    </ul>
+    <p>
+      合并成一条万能公式——<span class="term">理想气体方程</span>：
+      <span class="formula">pV = nRT</span>（R = 8.314 J·mol⁻¹·K⁻¹，T 必须用开尔文温度 K = °C + 273.15）。
+    </p>
+
+    <h3>🔬 动手玩：注射器压缩实验</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="pistSvg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-label="注射器压缩模拟"></svg>
+        <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+          <span style="font-size:.9rem;color:var(--ink-2)">推杆（体积 V）：</span>
+          <input id="pistV" type="range" min="20" max="80" value="60" style="width:200px;accent-color:var(--accent);height:44px" aria-label="体积">
+        </div>
+        <div class="fig-readout" id="pistReadout"></div>
+      </div>
+      <figcaption>
+        恒温下推动活塞：体积从 V₀ 压到 V，压强按 <span class="formula">p₁V₁ = p₂V₂</span> 变化。
+        注意分子密度（每单位空间的粒子数）同步升高——这就是压强的微观来源：更密的碰撞。
+      </figcaption>
+    </figure>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范：标准状况下的气体体积</div>
+      <div class="worked-problem">标准状况（0 °C、101.325 kPa）下，2 mol 理想气体占多大体积？</div>
+      <ol class="worked-steps">
+        <li class="step">列已知量：n = 2 mol；T = 0 °C = <strong>273.15 K</strong>（开尔文！）；p = 101.325 kPa = 101325 Pa。</li>
+        <li class="step">理想气体方程变形：V = nRT / p。</li>
+        <li class="step">代入：V = 2 × 8.314 × 273.15 ÷ 101325 ≈ <strong>0.0448 m³</strong> = 44.8 L。</li>
+        <li class="step">✅ 结论：标况下 1 mol 任何理想气体 ≈ <strong>22.4 L</strong>（气体摩尔体积），与气体种类无关——因为决定体积的只是分子个数与动能，不是"谁"。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "0 °C 就是 0"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          气体计算里直接把摄氏温度代入公式："T = 25 °C 就填 25"。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          气体定律中的 T 是<strong>热力学温度（开尔文）</strong>：T/K = t/°C + 273.15。
+          0 °C 的分子动能并不为零——真正的"零动能"在 −273.15 °C（绝对零度）。
+          填摄氏温度会让查理定律彻底算错（V 与 T 成正比的比例基准就错了）。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 溶液 ============ -->
+  <section id="solution">
+    <h2>§3 溶液与浓度：液态化学的记账本</h2>
+    <p>
+      <span class="term">溶液</span><span class="en">solution</span> = 溶质（被溶解者）+ 溶剂（溶解者）。
+      糖水里糖是溶质、水是溶剂。描述"多浓"有三种常用语言：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>表示法</th><th>定义</th><th>公式</th><th>典型场景</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>物质的量浓度 c</strong></td><td>单位体积溶液中溶质的摩尔数</td><td><span class="formula">c = n / V</span>（mol/L）</td><td>实验室试剂瓶标签</td></tr>
+        <tr><td><strong>质量分数 w</strong></td><td>溶质质量占溶液质量的百分比</td><td><span class="formula">w = m质 / m液 × 100%</span></td><td>浓硫酸 98%、消毒酒精 75%</td></tr>
+        <tr><td><strong>ppm（百万分之一）</strong></td><td>极稀浓度，mg/L（稀水溶液近似）</td><td><span class="formula">1 ppm = 1 mg/L</span></td><td>水质、空气质量报告</td></tr>
+      </tbody>
+    </table>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 完整示范：配制溶液的用量计算</div>
+      <div class="worked-problem">实验室要配制 250 mL 0.1 mol/L 的 NaCl 溶液，需称取氯化钠多少克？（M = 58.5）</div>
+      <ol class="worked-steps">
+        <li class="step">统一单位：V = 250 mL = 0.250 L。</li>
+        <li class="step">求溶质摩尔数：n = cV = 0.1 × 0.250 = <strong>0.025 mol</strong>。</li>
+        <li class="step">换算质量：m = nM = 0.025 × 58.5 = <strong>1.46 g</strong>。</li>
+        <li class="step">✅ 操作：称 1.46 g NaCl → 溶于少量水 → 转移到 250 mL 容量瓶定容。注意是"最终体积 250 mL"，不是"加 250 mL 水"。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 3 · 引导练习：稀释（和我一起做）</div>
+      <div class="worked-problem">把 100 mL 2 mol/L 的盐酸稀释成 500 mL，稀释后浓度是多少？</div>
+      <ol class="worked-steps">
+        <li class="step">💡 稀释前后什么不变？——溶质的<strong>摩尔数</strong>不变（加盐酸没加酸，只加了水）。</li>
+        <li class="step">💡 写出守恒式 c₁V₁ = c₂V₂ → 2 × 100 = c₂ × 500。</li>
+        <li class="step">💡 解得 c₂ = <strong>0.4 mol/L</strong>。体积变 5 倍，浓度变 1/5。</li>
+        <li class="step">✅ 自查：n = 0.2 mol 不变；0.2 ÷ 0.5 = 0.4 ✓。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 饱和 ≠ 浓</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>"这杯溶液饱和了，所以它一定很浓。"</div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          饱和只说明<strong>该温度下溶质溶解到上限</strong>，上限本身可高可低：
+          饱和的蔗糖水浓得发腻，而饱和的氢氧化钙（石灰水）稀到 0.02 mol/L 以下。
+          "饱和"是<strong>相对溶解度</strong>的概念，"浓稀"是<strong>绝对浓度</strong>的概念，两码事。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：打开汽水瓶盖为什么会涌出气泡？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：瓶盖未开时瓶内压强比大气大多少？气体溶解度与压强有什么关系？</p>
+        <p>
+          灌装时用 2–4 个大气压的二氧化碳"压"进汽水——<strong>压强越大，气体溶解度越大</strong>（亨利定律）。
+          开盖瞬间压强跌回 1 atm，溶解度上限骤降，多余的 CO₂ 必须析出，于是形成气泡涌出。
+          摇晃会加速析出（更多成核点），所以摇晃过的汽水开盖更猛——开汽水先静置，是化学常识。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>三态的本质是分子排列与运动纪律的差异；温度是平均动能的度量。</li>
+        <li>气体两定律 → 理想气体方程 pV = nRT；T 用开尔文；标况摩尔体积 22.4 L/mol。</li>
+        <li>浓度三语言：c = n/V（实验室）、质量分数（工业）、ppm（环境痕量）。</li>
+        <li>稀释的守恒是溶质摩尔数不变：c₁V₁ = c₂V₂。</li>
+        <li>饱和 ≠ 浓；气体溶解度随压强升高（亨利定律——汽水的秘密）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 物态与溶液 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "恒温下把气体体积压缩到原来的一半，压强变为？",
+            "options": ["一半", "不变", "两倍", "四倍"],
+            "answer": 2,
+            "explain": "玻义耳定律 pV = 常数：V 减半 → p 加倍。微观上：分子密度翻倍，每秒撞壁次数翻倍。"
+          },
+          {
+            "q": "标准状况（0 °C，101.325 kPa）下 1 mol 理想气体的体积约为？",
+            "options": ["22.4 L", "1 L", "22.4 mL", "与气体种类有关"],
+            "answer": 0,
+            "explain": "V = nRT/p = 8.314 × 273.15 ÷ 101325 ≈ 0.0224 m³ = 22.4 L，与气体种类无关。"
+          },
+          {
+            "q": "将 5.85 g NaCl（M=58.5）溶于水配成 500 mL 溶液，浓度是？",
+            "options": ["0.1 mol/L", "0.2 mol/L", "0.5 mol/L", "1 mol/L"],
+            "answer": 1,
+            "explain": "n = 5.85/58.5 = 0.1 mol；c = 0.1/0.5 = 0.2 mol/L。"
+          },
+          {
+            "q": "100 mL 2 mol/L 盐水加水稀释到 500 mL，浓度为？",
+            "options": ["1 mol/L", "0.5 mol/L", "0.4 mol/L", "0.2 mol/L"],
+            "answer": 2,
+            "explain": "c₁V₁ = c₂V₂：2 × 100 = c₂ × 500 → c₂ = 0.4 mol/L。溶质摩尔数始终 0.2 mol。"
+          },
+          {
+            "q": "关于'饱和溶液'，下列说法正确的是？",
+            "options": ["饱和溶液一定是浓溶液", "不饱和溶液一定是稀溶液", "饱和 = 该温度下溶质达到溶解上限，与浓稀无关", "饱和溶液不能再溶解任何物质"],
+            "answer": 2,
+            "explain": "饱和是相对溶解度的上限概念：饱和石灰水很稀，饱和糖水很浓。另外，饱和的食盐水仍能溶解酒精——'上限'是针对特定溶质的。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="03-化学反应与化学计量.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 3 章 · 化学反应与化学计量</span></a>
+      <a class="next" href="../01-无机化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">01 无机化学 · 分支导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 本章交互：粒子运动模拟 + 注射器压缩 ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  /* ---------- 1. 粒子运动模拟（canvas） ---------- */
+  var cv = document.getElementById("ptCanvas");
+  if (cv) {
+    var ctx = cv.getContext("2d");
+    var W = cv.width, H = cv.height;
+    var parts = [];
+    for (var i = 0; i < 70; i++) {
+      parts.push({ x: 10 + Math.random() * (W - 20), y: H - 30 + Math.random() * 20,
+                   vx: (Math.random() - .5), vy: (Math.random() - .5), r: 4 });
+    }
+    var tLabel = document.getElementById("ptTLabel"), ptRead = document.getElementById("ptReadout");
+    var slider = document.getElementById("ptT");
+    var temp = 25;
+    function tempColor() {
+      // 从冷蓝到热红
+      var k = temp / 100;
+      var r = Math.round(80 + 175 * k), g = Math.round(150 - 90 * k), b = Math.round(255 - 180 * k);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    function phaseName() {
+      if (temp < 20) return "低温：粒子挤在底部缓缓振动（固态纪律）";
+      if (temp < 55) return "中温：粒子满场滑动、频繁碰撞（液态纪律）";
+      return "高温：粒子高速乱飞充满空间（气态纪律）";
+    }
+    function tick() {
+      var speed = 0.3 + temp / 100 * 4.5;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#0f172a";
+      ctx.fillRect(0, 0, W, H);
+      var col = tempColor();
+      for (var j = 0; j < parts.length; j++) {
+        var p = parts[j];
+        p.x += p.vx * speed; p.y += p.vy * speed;
+        // 低温时的"重力下坠+凝聚力"
+        if (temp < 30) p.y += (H - 40 - p.y) * 0.002 * (30 - temp) / 30 + 0.15 * (1 - temp / 30);
+        if (p.x < p.r) { p.x = p.r; p.vx = Math.abs(p.vx); }
+        if (p.x > W - p.r) { p.x = W - p.r; p.vx = -Math.abs(p.vx); }
+        if (p.y < p.r) { p.y = p.r; p.vy = Math.abs(p.vy); }
+        if (p.y > H - p.r) { p.y = H - p.r; p.vy = -Math.abs(p.vy); }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = col;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    slider.addEventListener("input", function () {
+      temp = parseFloat(slider.value);
+      tLabel.textContent = temp < 20 ? "低温" : temp < 55 ? "中温" : "高温";
+      tLabel.style.color = tempColor();
+      ptRead.textContent = "T ≈ " + Math.round(temp * 3) + " °C（示意）｜ " + phaseName();
+    });
+    tLabel.textContent = "低温（固态感）";
+    ptRead.textContent = "T ≈ 75 °C（示意）｜ " + phaseName();
+    tick();
+  }
+
+  /* ---------- 2. 注射器压缩（SVG） ---------- */
+  var pist = document.getElementById("pistSvg");
+  if (pist) {
+    var pRead = document.getElementById("pistReadout");
+    var pSlider = document.getElementById("pistV");
+    var gasGroup = el("g", {}, pist);
+    var dots = [];
+    for (var d = 0; d < 24; d++) dots.push(el("circle", { r: 5, fill: "#38bdf8" }, gasGroup));
+    function draw() {
+      var V = parseFloat(pSlider.value);           // 相对体积 20–80
+      var x0 = 30, y0 = 30, h = 160;
+      var wMax = 340, w = wMax * V / 80;           // 气柱宽度
+      pist.innerHTML = "";
+      // 筒体
+      el("rect", { x: x0, y: y0, width: wMax, height: h, fill: "#f8fafc", stroke: "#94a3b8", "stroke-width": 2, rx: 6 }, pist);
+      // 气体区域
+      var gg = el("g", {}, pist);
+      // 重新创建粒子
+      for (var d2 = 0; d2 < 24; d2++) {
+        el("circle", { cx: x0 + 8 + Math.random() * (w - 16), cy: y0 + 10 + Math.random() * (h - 20), r: 5, fill: "#38bdf8", opacity: .85 }, gg);
+      }
+      // 活塞
+      var px = x0 + w;
+      el("rect", { x: px, y: y0 - 6, width: 18, height: h + 12, fill: "#64748b", rx: 4 }, pist);
+      el("rect", { x: px + 36, y: y0 + h / 2 - 4, width: wMax - px - 30 + 20, height: 8, fill: "#64748b", rx: 4 }, pist);
+      // 刻度
+      el("text", { x: x0, y: y0 + h + 20, "font-size": 12, fill: "#64748b" }, pist, "V = " + V.toFixed(0) + " 格");
+      var p = 60 * (80 / V);                       // p1V1 = p2V2，60×80 为基准
+      pRead.innerHTML = "p = p₀·V₀/V = 60 × (80/" + V.toFixed(0) + ") = <strong>" + p.toFixed(1) + " kPa（示意）</strong>" +
+        "　｜　粒子密度 ↑ → 撞壁频率 ↑ → 压强 ↑" + (p > 240 ? "　⚠️ 已经很紧了！" : "");
+    }
+    pSlider.addEventListener("input", draw);
+    draw();
+  }
+})();
+</script>
+</body>
+</html>

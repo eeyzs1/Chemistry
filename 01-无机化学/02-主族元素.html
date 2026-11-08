@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>主族元素 · 无机化学 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">01 无机化学</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 主族元素</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 无机化学 · 第 2 章</div>
+    <h1>主族元素：周期表两翼的风景</h1>
+    <p class="lede">
+      生日蛋糕上的烟花、深海潜水员的氦氧呼吸气、打火石里的一星火苗、烟花里洋红色的锶——
+      它们全都来自周期表的<strong>两翼</strong>。本章用第 1 章拿到的"趋势地图"实地考察 s 区与 p 区：
+      左翼是遇水就炸的碱金属一家，右翼是从活泼卤素到"懒得反应"的稀有气体渐变带。
+      你会发现，<strong>一族之内性格如此相似，一族之间脾气又如此不同</strong>——而这一切都能从
+      "Z<sub>eff</sub> 与电子层数的拔河"推出。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：第 1 章 元素周期律</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#sblock">§1 s 区：烈火烹油</a>
+    <a href="#pblock">§2 p 区：渐变的花样</a>
+    <a href="#noble">§3 稀有气体：懒贵族</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：一场家族聚会</h2>
+    <p>
+      想象两场家族聚会。左翼 s 区的聚会：锂还算斯文，钠一进门就和水缸打了起来，
+      钾进门不到一秒就把窗帘点着了——<strong>一个比一个暴躁，而且脾气顺着族往下递增</strong>。
+      右翼 p 区的聚会热闹得多：卤素一族在抢电子，碳族在搭骨架，氮磷氧硫各自表演成键绝活，
+      角落里稀有气体抱臂旁观，谁也不理。
+    </p>
+    <p>
+      第 1 章说过：同族从上到下<strong>电子层递增、半径增大、IE 下降</strong>——金属越来越"大方"；
+      同一横行从左到右 <strong>Z<sub>eff</sub> 增大</strong>——元素越来越"抠门"。本章的全部剧情，
+      都是这两条规则在具体元素身上的演出。先从最暴躁的 s 区开始。
+    </p>
+  </section>
+
+  <!-- ============ §1 s 区 ============ -->
+  <section id="sblock">
+    <h2>§1 s 区：碱金属与碱土金属的烈火烹油</h2>
+    <p>
+      s 区 = 左翼第 1–2 列：ⅠA<span class="term">碱金属</span><span class="en">alkali metals</span>
+      （Li、Na、K、Rb、Cs）与 ⅡA<span class="term">碱土金属</span><span class="en">alkaline earth metals</span>
+      （Be、Mg、Ca、Sr、Ba）。它们的共同画像可以直接用第 1 章的趋势画出：
+      <strong>半径全表最大、IE 全表最低</strong>——最外层那 1~2 个电子"山高皇帝远"，极容易被夺走。
+      于是 s 区金属都是<strong>强还原剂</strong>：遇水放氢、遇氧燃烧、遇卤素成盐，没有温和的选项。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>家族</th><th>代表</th><th>与冷水反应</th><th>趋势解释</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>ⅠA 碱金属</strong></td><td>Na、K</td><td>Na 剧烈；K 更猛，常点燃氢气甚至爆鸣</td><td>同族向下 IE 更低、半径更大 → 越来越容易失电子</td></tr>
+        <tr><td><strong>ⅡA 碱土金属</strong></td><td>Mg、Ca</td><td>Ca 缓慢放氢；Mg 与冷水几乎不反应，与热水才明显</td><td>同周期右移一格，Z<sub>eff</sub> 增大、IE 回升 → 失电子变难</td></tr>
+      </tbody>
+    </table>
+
+    <h3>钠与水：经典中的经典</h3>
+    <p>
+      把绿豆大的一块钠投入滴有酚酞的水中，五连现象一气呵成——
+      <strong>浮、熔、游、响、红</strong>。先记住口诀，下面用动画逐帧拆解：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="naWaterSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="钠与水反应分步动画"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="naNext">下一步 · 看下一个现象</button>
+          <button class="btn ghost" id="naReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="naReadout">【0/5 · 投入】把绿豆大的钠投入滴有酚酞的水中（真实实验务必小量、通风、有防护）</div>
+      </div>
+      <figcaption>
+        钠与水的总反应：<span class="formula">2Na + 2H<sub>2</sub>O → 2NaOH + H<sub>2</sub>↑</span>（放热）。
+        五个现象分别对应钠的五条性质——密度小、熔点低、产物有气体、放热、产物显碱性。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · "浮、熔、游、响、红"，一步都不多余</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 对号入座</span>
+        <p>
+          把五连现象当体检报告逐项读：<strong>浮</strong>＝比水轻；<strong>熔</strong>＝特别容易化（熔点低）+
+          反应放热；<strong>游</strong>＝尾巴在喷气（放出气体）；<strong>响</strong>＝又烫又冒气（放热 + 气泡爆裂）；
+          <strong>红</strong>＝拉出了碱性"排泄物"（NaOH 使酚酞变红）。每个现象都是一条性质的现场直播。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          钠密度 0.97 g/cm³（&lt; 水的 1.0）→ 浮；熔点仅 97.8 °C，而反应放热足以让界面温度超过它 → 熔成小球；
+          反应 <span class="formula">2Na + 2H<sub>2</sub>O → 2NaOH + H<sub>2</sub>↑</span> 不断在球面析出氢气泡，
+          泡在一侧攒得多了就把小球推向另一侧 → 四处游；放热使水局部沸腾、气泡破裂 → 嘶嘶作响；
+          生成的 NaOH 全部溶解 → 遇酚酞显红。钾更猛：放热更快，常把氢气直接点燃，爆鸣成"烟花"。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          反应的电子视角：Na 的 IE 仅 496 kJ/mol，电子经金属表面直接交给水微弱电离出的 H<sup>+</sup>，
+          在球面析出 H<sub>2</sub>——相当于一个短路微电池。析氢位置随机分布，推力方向不断改变，小球便乱窜；
+          放热集中在毫米级的固液界面，局部温度轻松越过熔点。注意"水提供 H<sup>+</sup>"意味着
+          <strong>纯水本身就有微弱的离子</strong>——这正是第 4 章 pH 理论的起点。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "所有金属都比水重"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          铁块、铜块、金条丢进水里都沉底——"金属沉甸甸"天经地义，钠这种金属扔进水里肯定也会沉下去。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          沉浮看<strong>密度</strong>，不看"是不是金属"。密度 = 堆积质量 ÷ 占据体积：碱金属原子半径巨大、
+          金属键又弱（每个原子只贡献 1 个电子"胶水"），晶体堆来格外"蓬松"。钠的密度只有
+          <strong>0.97 g/cm³</strong>，比水还轻，所以浮在水面；锂 0.53、钾 0.86、铷 1.53——前三者都能浮水。
+          而铁 7.9、金 19.3 自然一沉到底。<strong>同族往下原子更重也更蓬松，两条趋势赛跑，体积常常赢了</strong>。
+        </div>
+      </div>
+    </div>
+
+    <h3>钠为什么睡在煤油里</h3>
+    <p>
+      实验室的钠块总是浸在棕色瓶的<strong>煤油</strong>中，用镊子夹出、小刀切割——因为钠的敌人无处不在：
+      常温遇 O<sub>2</sub> 立刻氧化（生成 <span class="formula">Na<sub>2</sub>O</span>，受热燃烧则成
+      <span class="formula">Na<sub>2</sub>O<sub>2</sub></span>），遇水剧烈反应。煤油是惰性的烃类混合物，
+      不含活泼氢、不与钠反应；而钠的密度 0.97 &gt; 煤油约 0.8，恰好<strong>沉在瓶底、与空气和水汽完全隔绝</strong>。
+      顺带一提：锂（0.53）比煤油还轻，浮在煤油上隔绝不彻底，所以改封在<strong>石蜡</strong>里。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">🧯 安全须知（认真读）</div>
+      钠、钾实验必须<strong>小量</strong>（绿豆大）、通风、佩戴护目镜，用镊子取用，绝不徒手。
+      钠着火时<strong>严禁用水或泡沫灭火器</strong>（会引爆氢气），也不能用 CO<sub>2</sub> 灭火器
+      （燃烧产物 Na<sub>2</sub>O<sub>2</sub> 能与 CO<sub>2</sub> 反应放氧）——正确做法是<strong>用干砂覆盖</strong>隔绝空气。
+    </div>
+
+    <h3>🔬 动手玩：焰色试验</h3>
+    <p>
+      s 区（以及 Ca、Sr、Cu 等）金属离子的溶液本身无色，但用铂丝蘸取后在喷灯火焰上灼烧，
+      火焰会染上<strong>元素特征色</strong>——这是检验金属离子的经典手法，也是烟花配色的秘密。
+      点击按钮，给本生灯换不同金属盐试试：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="flameSvg" width="360" height="330" viewBox="0 0 360 330" role="img" aria-label="焰色试验模拟器"></svg>
+        <div class="fig-controls">
+          <button class="btn ghost" id="fl-Li">锂 Li</button>
+          <button class="btn ghost" id="fl-Na">钠 Na</button>
+          <button class="btn ghost" id="fl-K">钾 K</button>
+          <button class="btn ghost" id="fl-Ca">钙 Ca</button>
+          <button class="btn ghost" id="fl-Sr">锶 Sr</button>
+          <button class="btn ghost" id="fl-Cu">铜 Cu</button>
+        </div>
+        <div class="fig-readout" id="flameReadout">🔥 本生灯待命中——点击元素按钮点火</div>
+      </div>
+      <figcaption>
+        原理：灼热给电子能量，它跳上高能级；落回低能级时把能量以光子放出，
+        <span class="formula">ΔE = hν</span>——能级差决定颜色。不同元素能级结构不同，颜色就是"指纹"。
+        注意钾的紫色很浅，实验中要<strong>透过蓝色钴玻璃</strong>观察，滤掉钠杂质黄光的干扰。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：Na⁺、K⁺、Ca²⁺ 的溶液明明无色，火焰怎么就有颜色了？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：颜色是"发出来的"，还是"本身带的"？想想舞台灯与灯泡的关系。</p>
+        <p>
+          溶液无色，是因为常温下电子都待在基态，不吸收可见光。火焰把电子<strong>激发</strong>到高能级，
+          当它跳回来时发射一个光子，光子频率由两能级差决定（ΔE = hν）。钠的跃迁恰好落在 589 nm（黄光），
+          钾主要在 766 nm（近紫外的可见紫端）……所以颜色不是"带"在离子身上的颜料，而是
+          <strong>在火焰里"现场发射"的光</strong>。这也是焰色试验检的是"元素"而非化合键形态的原因——
+          不管钠来自 NaCl 还是 Na₂CO₃，谱线都一样。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 p 区 ============ -->
+  <section id="pblock">
+    <h2>§2 p 区：从硼到氪的渐变带</h2>
+    <p>
+      右翼 p 区横跨第 13–18 列，是全表<strong>成分最复杂</strong>的一带：左上硼是类金属，
+      往下铝是金属，往右氧、氯是非金属，末端稀有气体干脆谁都不理。第 1 章的对角线规律在此一览无余：
+      <strong>右上角非金属性最强，左下角金属性最强，中间是"墙头草"类金属</strong>。本节挑三组代表队：
+      抢电子的卤素、成键多变的氮磷氧硫、搭骨架的碳硅。
+    </p>
+
+    <h3>卤素：抢电子四兄弟</h3>
+    <p>
+      ⅦA 族<span class="term">卤素</span><span class="en">halogens</span>（F、Cl、Br、I）最外层 7 个电子，
+      只差一个就满员——所以单质个个是氧化剂，见电子就抢。但四兄弟实力分明，
+      用第 1 章一条规则即可排出：<strong>同族从上到下非金属性减弱 → 氧化性 F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub></strong>。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>卤素</th><th>常温色态</th><th>氧化性</th><th>氢化物热稳定性</th><th>对应氢卤酸酸性</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>氟 F<sub>2</sub></strong></td><td>淡黄绿色气体</td><td>最强（腐蚀玻璃）</td><td>HF 最稳定（1000 °C 几乎不分解）</td><td>HF 反常地最弱（第 4 章解释）</td></tr>
+        <tr><td><strong>氯 Cl<sub>2</sub></strong></td><td>黄绿色气体</td><td>强</td><td>HCl 稳定</td><td>强酸</td></tr>
+        <tr><td><strong>溴 Br<sub>2</sub></strong></td><td>深红棕色液体</td><td>中等</td><td>HBr 较易分解</td><td>强酸</td></tr>
+        <tr><td><strong>碘 I<sub>2</sub></strong></td><td>紫黑色固体（易升华）</td><td>最弱</td><td>HI 最不稳定（约 300 °C 明显分解）</td><td>HI 最强</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      氧化性次序最直接的应用是<strong>置换反应</strong>：强的能从盐溶液里把弱的顶出来，反之不行。
+      下面例 1 完整示范，例 2 用同一条规则解释"氢化物为什么反着排"。
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：氯水滴入 KBr、KI 溶液</div>
+      <div class="worked-problem">
+        将氯水分别滴入 KBr 溶液和 KI 溶液，各发生什么反应？现象是什么？Br<sub>2</sub> 能否从 KCl 溶液中置换出 Cl<sub>2</sub>？
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>调出规则</strong>：卤素单质氧化性 F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub>（同族从上到下非金属性减弱）。氧化性强的单质能氧化氧化性弱的单质对应的阴离子。</li>
+        <li class="step"><strong>判断方向</strong>：Cl<sub>2</sub> 氧化性强于 Br<sub>2</sub>，所以 Cl<sub>2</sub> 可以把 Br<sup>−</sup> 氧化成 Br<sub>2</sub>，自身还原为 Cl<sup>−</sup>。</li>
+        <li class="step"><strong>写方程式</strong>：<span class="formula">Cl<sub>2</sub> + 2KBr → 2KCl + Br<sub>2</sub></span>（离子方程式 <span class="formula">Cl<sub>2</sub> + 2Br<sup>−</sup> → 2Cl<sup>−</sup> + Br<sub>2</sub></span>）。</li>
+        <li class="step"><strong>记录现象</strong>：溶液由无色变为橙黄色（Br<sub>2</sub> 溶于水的颜色）；滴入 KI 时同理 <span class="formula">Cl<sub>2</sub> + 2KI → 2KCl + I<sub>2</sub></span>，溶液变棕黄，若再加淀粉溶液则变蓝（I<sub>2</sub> 遇淀粉的特征反应）。</li>
+        <li class="step">✅ <strong>回答反向问题</strong>：Br<sub>2</sub> 氧化性弱于 Cl<sub>2</sub>，<strong>不能</strong>从 KCl 中置换出 Cl<sub>2</sub>——置换反应是"以强换弱"的单行道。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：氢化物稳定性排序</div>
+      <div class="worked-problem">
+        HF、HCl、HBr、HI 的热稳定性从强到弱如何排序？为什么恰好与"氢卤酸酸性"的排序相反（酸性 HI 最强）？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：热稳定性看的是 <strong>H—X 键断不断的难度</strong>。键能由哪些因素决定？回想第 1 章——同族从上到下，原子半径怎么变？</li>
+        <li class="step">💡 提示：F → I 半径逐个增大 → H—X 键长逐个拉长 → 键能逐个减小（H—F 约 565、H—Cl 431、H—Br 366、H—I 299 kJ/mol）。</li>
+        <li class="step">💡 提示：键越强越难分解 → 稳定性 <strong>HF &gt; HCl &gt; HBr &gt; HI</strong>。对照实验：HF 千度高温几乎不分解，HI 三百度就明显分解。</li>
+        <li class="step">💡 提示：而"酸性"比的是<strong>在水里拉断 H—X 给出 H<sup>+</sup> 的难易</strong>——键越弱反而越容易给出，所以酸性恰好倒过来 HI 最强。</li>
+        <li class="step">✅ 自查：稳定性看键能（越强越稳），酸性看断键难易（越弱越酸）——<strong>同一条键能数据，两个方向的读法</strong>。为什么 HF 是"反常最弱酸"留到第 4 章定量拆解。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <h3>氮磷氧硫：成键的七十二变</h3>
+    <p>
+      夹在碳族与卤族之间的 N、P、O、S 是 p 区的"变形大师"，同一元素能在不同分子里换出完全不同的键：
+    </p>
+    <ul>
+      <li><strong>氮 N</strong>：N<sub>2</sub> 用<strong>三键</strong>把自己锁死（键能高达 945 kJ/mol）——所以占空气 78% 却"稳如老狗"；但换成 NH<sub>3</sub>，氮带上<strong>孤对电子</strong>，既能结合 H<sup>+</sup> 显碱性（第 4 章），又能向金属离子"捐电子"成配位键（第 3 章 [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>）。</li>
+      <li><strong>磷 P</strong>：白磷是 4 个 P 拼成的<strong>正四面体 P<sub>4</sub></strong> 小分子（剧毒、易自燃）；红磷则是无数 P 链钩成的聚合物（安全火柴的常客）。同一种元素，仅凭"连接方式"就换了个性格。</li>
+      <li><strong>氧 O</strong>：O<sub>2</sub> 双键供养万物；O<sub>3</sub>（臭氧）三个原子抱团，吸收紫外线成为平流层的防晒霜——多一个原子，脾气大变。</li>
+      <li><strong>硫 S</strong>：硫原子最擅长<strong>自己跟自己成键</strong>，8 个 S 头尾相接成王冠形 S<sub>8</sub> 环；弹性硫拉丝，就是环被拉开成链的证据。往上遇氧成 SO<sub>2</sub>/SO<sub>3</sub>，再水化成 H<sub>2</sub>SO<sub>4</sub>——工业之母。</li>
+    </ul>
+
+    <details class="think">
+      <summary>想一想：N₂ 占了大气的 78%，闪电雷雨也只在瞬间打破它——氮为什么这么"懒得反应"？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：比较 N₂ 与 O₂ 的键能：N≡N 约 945，O=O 约 498 kJ/mol。</p>
+        <p>
+          氮的"懒"不是不活泼，而是<strong>三键太贵</strong>：要反应先断键，断 N≡N 需要近千 kJ/mol 的能量门槛，
+          常温下几乎无人付得起。所以固氮成了化学的世纪难题——雷雨放电、根瘤菌、以及哈伯法的铁催化剂
+          都是"替氮付首付"的中间人。一旦首付付清、N 被拆成 NH<sub>3</sub> 等化合物，氮立刻变得活泼，
+          成为炸药、化肥与蛋白质的原料。<strong>惰性与活泼之间，只隔着一个键能</strong>。
+        </p>
+      </div>
+    </details>
+
+    <h3>碳与硅：搭骨架的艺术家</h3>
+    <p>
+      ⅣA 的碳是"成键界"的米开朗琪罗：4 个价电子全拿来共价成键，既可 sp³ 搭<strong>金刚石</strong>的三维网格
+      （自然界最硬），也可 sp² 铺成<strong>石墨</strong>的层状片（层内导电、层间滑动——铅笔芯与电极），
+      卷起来还是碳纳米管。整个有机化学（02 分支）就是碳骨架的百科全书。楼下的硅与碳同族，
+      同样爱搭骨架，但搭出来的风格不同——下面这台"误区粉碎机"正是两者的经典对比。
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "CO₂ 是气体，同族的 SiO₂ 也该差不多"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          碳、硅同属 ⅣA，化学性质应该"一族一个样"：CO₂ 是独立小分子、干冰一热就飞，那沙子 SiO₂ 大概也是易挥发的小分子晶体。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          "同族相似"只给倾向，<strong>不给结构</strong>。C 原子小，C=O 双键又短又强，一个碳配两个氧就心满意足——
+          CO₂ 是独立的三原子小分子，靠微弱的分子间作用力聚成干冰（−78 °C 升华）。
+          Si 原子大了一整圈，Si=O 双键弱得多，于是改用 4 根 Si—O <strong>单键</strong>连接：每个 Si 拉住 4 个 O，
+          每个 O 又桥接 2 个 Si……无限延展成三维网格（<span class="term">原子晶体</span><span class="en">covalent network solid</span>）。
+          石英的熔点超过 1600 °C，与干冰相差近两千度——<strong>同族不等于同命，原子大小改写连接方式，连接方式改写一切</strong>。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 稀有气体 ============ -->
+  <section id="noble">
+    <h2>§3 稀有气体：懒贵族也会动心</h2>
+    <p>
+      周期表最右列的<span class="term">稀有气体</span><span class="en">noble gases</span>
+      （He、Ne、Ar、Kr、Xe、Rn）曾经叫"惰性气体"：最外层满员（He 2 个、其余 8 个），
+      IE 全表最高、得电子倾向几乎为零——<strong>既不肯给，也懒得要</strong>，于是长期被认为绝不形成化合物。
+    </p>
+    <p>
+      转折发生在 1962 年。巴特利特（Neil Bartlett）制备出 O<sub>2</sub><sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup> 后注意到：
+      氙 Xe 的第一电离能（1170 kJ/mol）与 O<sub>2</sub>（约 1175）几乎相同——既然 PtF<sub>6</sub> 能抢走氧的电子，
+      为什么不能抢氙的？他把 Xe 与 PtF<sub>6</sub> 混合，立刻得到橙黄色固体 Xe<sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup>。
+      <strong>第一份稀有气体化合物诞生了</strong>，"惰性"的教条当场作废。此后
+      <span class="formula">XeF<sub>2</sub></span>、<span class="formula">XeF<sub>4</sub></span>、
+      <span class="formula">XeF<sub>6</sub></span> 等相继问世：XeF<sub>2</sub> 是稳定的白色晶体、温和的强氧化剂，
+      在有机合成与蚀刻工艺中仍有用途。注意规律：能被"策反"的是半径较大、核电荷被裹得较松的<strong>重稀有气体</strong>
+      （Xe、Kr、Rn）；He、Ne、Ar 依旧稳如泰山——越往下，外层电子离核越远，越容易被强氧化剂撬走。
+    </p>
+    <p>
+      顺带认一认它们的日常岗位：<strong>He</strong>——气球与深海呼吸气（极难溶于血液、极轻）；
+      <strong>Ne</strong>——霓虹灯的红光；<strong>Ar</strong>——灯泡与氩弧焊的保护气（占空气 0.93%，便宜又惰性）；
+      <strong>Kr/Xe</strong>——高性能闪光灯与麻醉实验研究。"懒"本身也是一种用途：不反应，就是最好的保护。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 本章两翼对照</div>
+      <strong>s 区左翼</strong>：大半径、低 IE、强还原——与水激烈放氢，钠睡煤油，焰色验离子。
+      <strong>p 区右翼</strong>：从类金属渐变到最活泼非金属 F；卤素氧化性 F&gt;Cl&gt;Br&gt;I，
+      氢化物稳定性同向递减；碳硅搭共价骨架；稀有气体"懒"得有理，但 XeF<sub>2</sub> 证明懒贵族也会动心。
+      一切方向仍由第 1 章两条趋势说了算。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>s 区金属 = <strong>强还原剂</strong>：与水反应 <span class="formula">2M + 2H<sub>2</sub>O → 2MOH + H<sub>2</sub>↑</span>，从上到下越来越猛；钠遇水"浮、熔、游、响、红"。</li>
+        <li>钠密度小于水也小于"对手"们的脾气——必须<strong>隔绝空气与水汽保存</strong>（煤油；锂封石蜡）。</li>
+        <li>焰色试验是<strong>电子跃迁发射光子</strong>的物理发光，检验元素种类，与化合形态无关。</li>
+        <li>卤素氧化性 <strong>F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub></strong>：强者置换弱者；氢化物稳定性同向（HF 最稳），酸性强弱恰相反（第 4 章）。</li>
+        <li>N/P/O/S 靠改变连接方式换性格；碳硅以共价单键成骨架——<strong>CO₂ 小分子 vs SiO₂ 三维网格</strong>是结构决定性质的教科书案例。</li>
+        <li>稀有气体的惰性来自满层结构；<strong>XeF<sub>2</sub> 的存在</strong>说明"惰性"只是相对的，重的稀有气体可被强氧化剂征服。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 主族元素 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "实验室把钠块保存在煤油中，最主要的原因是？",
+            "options": [
+              "煤油能降低钠的反应活性",
+              "隔绝空气与水汽，且钠密度大于煤油、沉在底部不与外界接触",
+              "煤油能冷却钠，防止它自发燃烧",
+              "煤油与钠反应生成保护膜"
+            ],
+            "answer": 1,
+            "explain": "钠的敌人是 O₂ 与 H₂O：常温即被氧化，遇水剧烈反应。煤油是惰性烃类，不含活泼氢、不与钠反应；密度约 0.8 小于钠的 0.97，钠沉底被封在液面之下。煤油不改变钠的活性，只是物理隔绝。"
+          },
+          {
+            "q": "下列关于钠与水反应现象的描述，错误的是？",
+            "options": [
+              "钠浮在水面上",
+              "钠熔成闪亮的小球并四处游动",
+              "钠沉入水底缓慢冒泡",
+              "滴有酚酞的溶液变红"
+            ],
+            "answer": 2,
+            "explain": "钠密度 0.97 g/cm³ 小于水，浮在水面而非沉底——'金属都比水重'是误区。其余三项正是口诀'浮、熔、游、响、红'的成员：熔点低遇放热熔成小球，氢气泡推动游动，NaOH 使酚酞变红。"
+          },
+          {
+            "q": "卤素单质的氧化性由强到弱的正确次序是？",
+            "options": [
+              "I₂ > Br₂ > Cl₂ > F₂",
+              "F₂ > Cl₂ > Br₂ > I₂",
+              "Cl₂ > F₂ > Br₂ > I₂",
+              "F₂ > Br₂ > Cl₂ > I₂"
+            ],
+            "answer": 1,
+            "explain": "同族从上到下：电子层增多、半径增大、电负性与电子亲和能都减小，非金属性（夺电子能力）递减——F₂ 最强，I₂ 最弱。这也是氯水能从 KBr/KI 中置换出 Br₂/I₂、而反向不可行的原因。"
+          },
+          {
+            "q": "氢化物的热稳定性 HF > HCl > HBr > HI，主要原因是？",
+            "options": [
+              "氟的非金属性最强，但原子半径从 F 到 I 逐个增大，H—X 键长增加、键能减小",
+              "HF 的相对分子质量最小",
+              "HI 的沸点最高所以最不稳定",
+              "酸的酸性从 HF 到 HI 逐个增强"
+            ],
+            "answer": 0,
+            "explain": "稳定性由 H—X 键能决定：从 F 到 I 半径逐个增大，键长拉长、键能减小（约 565→299 kJ/mol），越往下越易分解。D 说的是酸性排序，与热稳定性恰好是两个方向的指标，不能混为一谈。"
+          },
+          {
+            "q": "XeF₂ 等稀有气体化合物的存在说明了什么？",
+            "options": [
+              "稀有气体其实最活泼",
+              "稀有气体的'惰性'是相对的：满层结构使其极难成键，但较重的 Xe 仍可被强氧化剂夺走电子形成化合物",
+              "周期表的分区是错误的",
+              "Xe 与碱金属属于同一类"
+            ],
+            "answer": 1,
+            "explain": "满层结构赋予稀有气体最高电离能与几乎为零的电子亲和能，所以'懒'；但 Xe 半径大、外层电子被屏蔽较松，IE（1170 kJ/mol）与 O₂ 相当，能被 PtF₆、F₂ 等超强氧化剂征服。惰性是程度问题，不是绝对禁令——He/Ne/Ar 至今仍无稳定化合物。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-元素周期律.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 元素周期律</span></a>
+      <a class="next" href="03-过渡金属与配位化学.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 过渡金属与配位化学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互：焰色试验模拟器 + 钠与水反应分步动画 ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function lighten(hex, f) {
+    var r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    r = Math.min(255, Math.round(r + (255 - r) * f));
+    g = Math.min(255, Math.round(g + (255 - g) * f));
+    b = Math.min(255, Math.round(b + (255 - b) * f));
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+
+  /* ---------- 1. 焰色试验模拟器 ---------- */
+  var FLAMES = [
+    { id: "Li", n: "锂", color: "紫红色", hex: "#d946ef", wl: "≈671 nm", note: "硫酸锂等锂盐的特征色" },
+    { id: "Na", n: "钠", color: "黄色",   hex: "#facc15", wl: "≈589 nm", note: "最亮的干扰色——极微量钠就能染黄火焰，观察其他焰色时常需排除" },
+    { id: "K",  n: "钾", color: "紫色",   hex: "#a855f7", wl: "≈766 nm / 404 nm", note: "紫色很浅，须透过蓝色钴玻璃观察以滤去钠的黄光" },
+    { id: "Ca", n: "钙", color: "砖红色", hex: "#ea580c", wl: "≈622 nm", note: "钙离子的特征砖红" },
+    { id: "Sr", n: "锶", color: "洋红色", hex: "#f43f5e", wl: "≈606–687 nm", note: "烟花红光的主力" },
+    { id: "Cu", n: "铜", color: "绿色",   hex: "#22c55e", wl: "≈526 nm", note: "铜盐的蓝绿色，烟花蓝光也靠铜" }
+  ];
+
+  var fsvg = document.getElementById("flameSvg");
+  if (fsvg) {
+    var fRead = document.getElementById("flameReadout");
+    var activeFlame = null;
+
+    function drawBurner(parent) {
+      el("ellipse", { cx: 180, cy: 300, rx: 52, ry: 9, fill: "#475569" }, parent);
+      el("rect", { x: 170, y: 252, width: 20, height: 46, rx: 3, fill: "#64748b" }, parent);
+      el("circle", { cx: 180, cy: 266, r: 3, fill: "#334155" }, parent);
+      el("rect", { x: 176, y: 244, width: 8, height: 10, fill: "#94a3b8" }, parent);
+      var t = el("text", { x: 250, y: 292, "font-size": 10.5, fill: "#6b7280" }, parent);
+      t.textContent = "本生灯（铂丝蘸盐置于焰心）";
+    }
+
+    function drawFlame(d) {
+      fsvg.innerHTML = "";
+      var defs = el("defs", {}, fsvg);
+      var grad = el("linearGradient", { id: "flameGrad", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      el("stop", { offset: "0%", "stop-color": lighten(d.hex, 0.55), "stop-opacity": 0.95 }, grad);
+      el("stop", { offset: "55%", "stop-color": d.hex, "stop-opacity": 0.75 }, grad);
+      el("stop", { offset: "100%", "stop-color": d.hex, "stop-opacity": 0.12 }, grad);
+      var blur = el("filter", { id: "flameBlur", x: "-60%", y: "-60%", width: "220%", height: "220%" }, defs);
+      el("feGaussianBlur", { stdDeviation: 16 }, blur);
+
+      drawBurner(fsvg);
+
+      if (!d) {
+        var t0 = el("text", { x: 180, y: 150, "text-anchor": "middle", "font-size": 13, fill: "#94a3b8" }, fsvg);
+        t0.textContent = "（未点火）";
+        return;
+      }
+
+      /* 光晕 + 外焰 + 中焰 + 焰心 */
+      el("circle", { cx: 180, cy: 168, r: 86, fill: d.hex, opacity: 0.16, filter: "url(#flameBlur)" }, fsvg);
+      var outer = el("path", {
+        d: "M180,96 C216,146 212,196 198,232 C191,248 180,256 180,256 C180,256 169,248 162,232 C148,196 144,146 180,96 Z",
+        fill: "url(#flameGrad)", class: "anim-pulse"
+      }, fsvg);
+      outer.style.transformOrigin = "180px 256px";
+      el("path", {
+        d: "M180,158 C200,190 198,220 190,240 C186,250 180,254 180,254 C180,254 174,250 170,240 C162,220 160,190 180,158 Z",
+        fill: d.hex, opacity: 0.5
+      }, fsvg);
+      el("ellipse", { cx: 180, cy: 236, rx: 9, ry: 20, fill: "#fff7ed", opacity: 0.85 }, fsvg);
+      el("ellipse", { cx: 180, cy: 252, rx: 6, ry: 9, fill: "#93c5fd", opacity: 0.7 }, fsvg);
+
+      var t1 = el("text", { x: 180, y: 44, "text-anchor": "middle", "font-size": 30, "font-weight": 800, fill: d.hex }, fsvg);
+      t1.textContent = d.n + " " + d.id;
+      var t2 = el("text", { x: 180, y: 70, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "#374151" }, fsvg);
+      t2.textContent = d.color + " · " + d.wl;
+    }
+
+    FLAMES.forEach(function (d) {
+      var btn = document.getElementById("fl-" + d.id);
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        activeFlame = d;
+        drawFlame(d);
+        fRead.textContent = d.n + " " + d.id + " · 焰色 " + d.color + " · 主要谱线 " + d.wl + " · " + d.note;
+        FLAMES.forEach(function (o) {
+          var b = document.getElementById("fl-" + o.id);
+          if (b) {
+            var on = o.id === d.id;
+            b.classList.toggle("ghost", !on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
+          }
+        });
+      });
+    });
+    drawFlame(null);
+  }
+
+  /* ---------- 2. 钠与水反应分步动画 ---------- */
+  var nsvg = document.getElementById("naWaterSvg");
+  if (nsvg) {
+    var nRead = document.getElementById("naReadout");
+    var step = 0; /* 0 投入前 1 浮 2 熔 3 游 4 红 5 完成 */
+    var STEPS = [
+      "【0/5 · 投入】把绿豆大的钠投入滴有酚酞的水中（真实实验务必小量、通风、有防护）",
+      "【1/5 · 浮】钠密度 0.97 g/cm³ 小于水（1.0），轻飘飘浮在水面上",
+      "【2/5 · 熔】反应放热，而钠熔点仅 97.8 °C——钠块熔化成一颗闪亮的小球",
+      "【3/5 · 游 + 响】球面不断生成 H₂ 气泡，推着小球四处乱窜，嘶嘶作响",
+      "【4/5 · 红】生成的 NaOH 溶解，溶液由无色变红——酚酞报出碱性",
+      "【5/5 · 完】总反应：2Na + 2H₂O → 2NaOH + H₂↑（放热）。五个现象全部对应钠的一条性质"
+    ];
+
+    function drawNa() {
+      nsvg.innerHTML = "";
+      /* 烧杯 */
+      el("path", { d: "M80,86 L80,258 Q80,272 96,272 L464,272 Q480,272 480,258 L480,86",
+                   fill: "none", stroke: "#94a3b8", "stroke-width": 4, "stroke-linecap": "round" }, nsvg);
+      el("line", { x1: 72, y1: 86, x2: 488, y2: 86, stroke: "#cbd5e1", "stroke-width": 3 }, nsvg);
+      var tag = el("text", { x: 86, y: 76, "font-size": 11.5, fill: "#6b7280" }, nsvg);
+      tag.textContent = "烧杯：水 + 几滴酚酞";
+
+      /* 水（step≥4 变红） */
+      var water = step >= 4 ? "#fbcfe8" : "#dbeafe";
+      var surf = step >= 4 ? "#f9a8d4" : "#93c5fd";
+      el("rect", { x: 84, y: 150, width: 392, height: 118, rx: 6, fill: water }, nsvg);
+      el("line", { x1: 84, y1: 150, x2: 476, y2: 150, stroke: surf, "stroke-width": 3 }, nsvg);
+
+      /* 气泡（step≥3） */
+      if (step >= 3) {
+        var bs = [[300, 128, 5], [322, 116, 4], [282, 108, 3.5], [338, 138, 3], [258, 132, 4]];
+        bs.forEach(function (b) {
+          var c = el("circle", { cx: b[0], cy: b[1], r: b[2], fill: "#ffffff", opacity: 0.9,
+                                 stroke: "#93c5fd", "stroke-width": 1, class: "anim-float" }, nsvg);
+          c.style.animationDuration = (2 + Math.random() * 2).toFixed(2) + "s";
+        });
+        var ht = el("text", { x: 366, y: 122, "font-size": 12, "font-weight": 700, fill: "#2563eb" }, nsvg);
+        ht.textContent = "H₂↑";
+      }
+
+      /* 钠：0 落下箭头；1 方块半浸；≥2 小球（3 起移位） */
+      if (step === 0) {
+        el("rect", { x: 252, y: 104, width: 16, height: 16, rx: 2, fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 1.5 }, nsvg);
+        el("line", { x1: 260, y1: 126, x2: 260, y2: 144, stroke: "#c2410c", "stroke-width": 2, "stroke-dasharray": "4 3" }, nsvg);
+        var t = el("text", { x: 278, y: 120, "font-size": 11, fill: "#c2410c" }, nsvg);
+        t.textContent = "投入";
+      } else if (step === 1) {
+        el("rect", { x: 252, y: 142, width: 16, height: 14, rx: 2, fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 1.5 }, nsvg);
+        var t1 = el("text", { x: 284, y: 136, "font-size": 12, "font-weight": 700, fill: "#c2410c" }, nsvg);
+        t1.textContent = "浮（ρ=0.97 < 1.0）";
+      } else {
+        var cx = step >= 3 ? 320 : 260, cy = step >= 3 ? 146 : 144;
+        var defs = el("defs", {}, nsvg);
+        var g = el("radialGradient", { id: "ballG", cx: "35%", cy: "30%" }, defs);
+        el("stop", { offset: "0%", "stop-color": "#ffffff" }, g);
+        el("stop", { offset: "55%", "stop-color": "#cbd5e1" }, g);
+        el("stop", { offset: "100%", "stop-color": "#64748b" }, g);
+        var ball = el("circle", { cx: cx, cy: cy, r: 14, fill: "url(#ballG)", stroke: "#475569", "stroke-width": 1.5 }, nsvg);
+        if (step >= 3) {
+          ball.setAttribute("class", "anim-pulse");
+          /* 游动轨迹 */
+          el("path", { d: "M258,142 C282,128 300,158 " + cx + "," + cy, fill: "none",
+                       stroke: "#c2410c", "stroke-width": 1.6, "stroke-dasharray": "5 4", opacity: 0.7 }, nsvg);
+        }
+        var shine = el("text", { x: cx, y: cy - 24, "text-anchor": "middle", "font-size": 11.5, "font-weight": 700, fill: "#c2410c" }, nsvg);
+        shine.textContent = step === 2 ? "熔成小球 · 放热" : (step >= 3 ? "熔球四处游动" : "");
+        if (step === 2) {
+          el("path", { d: "M" + (cx - 30) + ",118 q6,-8 0,-16 M" + (cx + 30) + ",118 q6,-8 0,-16",
+                       fill: "none", stroke: "#ef4444", "stroke-width": 2, opacity: 0.8 }, nsvg);
+        }
+      }
+
+      /* 完成态方程式 */
+      if (step === 5) {
+        var eq = el("text", { x: 280, y: 216, "text-anchor": "middle", "font-size": 19,
+                              "font-weight": 800, fill: "#9a3412" }, nsvg);
+        eq.textContent = "2Na + 2H₂O = 2NaOH + H₂↑";
+        var eq2 = el("text", { x: 280, y: 240, "text-anchor": "middle", "font-size": 12, fill: "#4b5563" }, nsvg);
+        eq2.textContent = "放热 · 生成物 NaOH 使酚酞变红";
+      }
+
+      /* 现象标签（右栏） */
+      var lbl = ["投入", "浮", "熔", "游 + 响", "红", "完"][step];
+      var st = el("text", { x: 470, y: 110, "text-anchor": "end", "font-size": 13, "font-weight": 800, fill: "#9a3412" }, nsvg);
+      st.textContent = "第 " + step + " 步 · " + lbl;
+    }
+
+    var nx = document.getElementById("naNext");
+    if (nx) nx.addEventListener("click", function () {
+      if (step < 5) { step++; drawNa(); nRead.textContent = STEPS[step]; }
+      nx.textContent = step >= 5 ? "已完成 ✓" : "下一步 · 看下一个现象";
+      nx.disabled = step >= 5;
+    });
+    var nr = document.getElementById("naReset");
+    if (nr) nr.addEventListener("click", function () {
+      step = 0; drawNa(); nRead.textContent = STEPS[0];
+      nx.disabled = false; nx.textContent = "下一步 · 看下一个现象";
+    });
+    drawNa();
+  }
+})();
+</script>
+</body>
+</html>

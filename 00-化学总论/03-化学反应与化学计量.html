@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学反应与化学计量 · 化学总论 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">00 化学总论</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 化学反应与化学计量</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 化学总论 · 第 3 章</div>
+    <h1>化学反应与化学计量：化学家的算术</h1>
+    <p class="lede">
+      蜡烛烧完变轻了，铁生锈变重了——物质真的会凭空出现或消失吗？
+      本章回答两个问题：<strong>如何用方程式忠实记账（质量守恒与配平）</strong>，以及
+      <strong>如何在"看不见的分子"与"可称量的克"之间换算（摩尔与化学计量）</strong>。
+      这是后续所有分支定量计算的看家本领。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 50 分钟</span>
+      <span class="chip">先修：第 1、2 章</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#equation">方程式与质量守恒</a>
+    <a href="#mole">摩尔：化学的"打"</a>
+    <a href="#stoich">比例计算与限量反应物</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：拉瓦锡的天平</h2>
+    <p>
+      18 世纪 70 年代，拉瓦锡做了个精密到"较真"的实验：把水放在密闭容器里加热 101 天，
+      水变成了"蒸馏水"再变回水，全程称量——质量分毫未变。他由此确立了一条铁律：
+      <strong>化学反应只是原子重新组合，既不凭空产生、也不凭空消灭质量</strong>。
+      蜡烛变轻不是物质消失，而是化成二氧化碳和水蒸气散进了空气；铁生锈变重，是"吃"进了空气中的氧。
+    </p>
+    <details class="think">
+      <summary>想一想：木炭在密闭玻璃罩中燃烧，反应前后连罩带物总质量如何变化？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：气体出不去，外界物质进不来。</p>
+        <p>
+          总质量<strong>完全不变</strong>——氧气变成二氧化碳，碳变成二氧化碳，只是换了"组合方式"。
+          这正是质量守恒定律：密闭系统中化学反应前后总质量恒等。化学方程式配平的依据就是它。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 方程式 ============ -->
+  <section id="equation">
+    <h2>§1 化学方程式：忠实记账</h2>
+    <p>
+      化学方程式 <span class="formula">2H₂ + O₂ → 2H₂O</span> 读作"每 2 个氢分子与 1 个氧分子反应，
+      生成 2 个水分子"。前面的数字（<span class="term">系数</span>）表示粒子<strong>个数比</strong>，
+      也同时是<strong>摩尔比</strong>——这是下一节计算的钥匙。
+    </p>
+    <p><strong>配平三步法：</strong>① 数清两边每种原子数 → ② 用最小公倍数配最复杂的分子 → ③ 氢氧放最后核对。</p>
+
+    <h3>🔬 动手玩：配平练习器</h3>
+    <figure class="fig">
+      <div class="fig-canvas" id="balBox">
+        <div id="balEq" style="font-family:var(--mono);font-size:1.15rem;margin:6px 0 14px"></div>
+        <div id="balCtl" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"></div>
+        <div class="fig-controls">
+          <button class="btn ghost" id="balPrev">← 上一题</button>
+          <button class="btn ghost" id="balNext">下一题 →</button>
+          <button class="btn" id="balCheck">检查配平</button>
+          <button class="btn ghost" id="balReset">↺ 重置系数</button>
+        </div>
+        <div class="fig-readout" id="balReadout"></div>
+      </div>
+      <figcaption>
+        用 +/− 调整每个物质前的系数，再点"检查配平"。判断标准就是质量守恒：两边每种原子的总数必须相等。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 系数不是装饰</div>
+      <span class="formula">2H₂ + O₂ → 2H₂O</span> 中的 2 : 1 : 2 是<strong>分子数比 = 摩尔比 = 体积比（同温同压气体）</strong>。
+      写错一个系数，后面的所有计算全错——配平是化学算术的地基。
+    </div>
+  </section>
+
+  <!-- ============ §2 摩尔 ============ -->
+  <section id="mole">
+    <h2>§2 摩尔：化学家的"打"</h2>
+    <p>
+      一个水分子约重 3×10⁻²³ g——天平称不出"几个分子"，但化学发生在亿万个分子上。
+      于是化学家发明了一个巨大的计数单位：
+      <span class="term">摩尔</span><span class="en">mole，符号 mol</span>。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 摩尔到底是什么？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          买鸡蛋论"打"（1 打 = 12 个），买纸论"令"（1 令 = 500 张），数分子论"摩尔"
+          （1 mol ≈ 6.02×10²³ 个）。它<strong>只是个数</strong>，和"克"这样的质量单位完全是两码事。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 定义与换算</span>
+        <p>
+          1 mol = <strong>6.02×10²³</strong> 个粒子（<span class="term">阿伏伽德罗常数</span> N<sub>A</sub>）。
+          神奇之处在于：以克为单位、数值等于相对分子质量 M 的质量，恰好含有 N<sub>A</sub> 个分子。
+          于是 <span class="formula">n = m / M</span>（物质的量 = 质量 ÷ 摩尔质量）在"克"与"个"之间架起桥：
+          18 g 水 ≈ 6.02×10²³ 个水分子；44 g 二氧化碳 ≈ 6.02×10²³ 个 CO₂。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 为什么是 6.02×10²³</span>
+        <p>
+          这个数不是随便选的：<strong>¹²C 原子质量的 1/12 定义为原子质量单位 u，而 12 g ¹²C 所含的原子数就是 N<sub>A</sub></strong>。
+          因为 1 u ≈ 1.66×10⁻²⁴ g，两者互为倒数，保证了"数值上 M 克 = 1 mol"这条捷径成立。
+          u 与 g 的关系由实验（如 X 射线晶体密度法、油滴实验溯源）精确测定，2019 年 SI 改革后 N<sub>A</sub> 已成为定义值。
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：摩尔计算器</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+          <label style="font-size:.9rem" for="molSel">物质：</label>
+          <select id="molSel" style="font:inherit;padding:8px 10px;min-height:44px;border:1px solid var(--line);border-radius:8px">
+            <option value="18">水 H₂O（M=18）</option>
+            <option value="44">二氧化碳 CO₂（M=44）</option>
+            <option value="58.5">氯化钠 NaCl（M=58.5）</option>
+            <option value="40">氢氧化钠 NaOH（M=40）</option>
+            <option value="100">碳酸钙 CaCO₃（M=100）</option>
+          </select>
+          <label style="font-size:.9rem" for="molIn">质量 m =</label>
+          <input id="molIn" type="number" min="0" step="any" value="18"
+                 style="font:inherit;width:110px;padding:8px 10px;min-height:44px;border:1px solid var(--line);border-radius:8px">
+          <span style="font-size:.9rem">g</span>
+        </div>
+        <div class="fig-readout" id="molReadout"></div>
+      </div>
+      <figcaption>改选物质或修改质量，实时得到 n = m/M 与分子数 N = n·N_A。</figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 摩尔的身份</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          "1 mol 水是 18 克，所以摩尔是质量单位""1 mol 铁和 1 mol 水一样重"。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          摩尔是<strong>数量单位</strong>：1 mol 任何物质都含 6.02×10²³ 个粒子。
+          1 mol 水重 18 g，1 mol 铁重 56 g——<strong>个数相同，质量不同</strong>（就像 1 打乒乓球和 1 打铅球）。
+          "18 g" 只是摩尔质量 M 恰好让数值漂亮。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 比例计算 ============ -->
+  <section id="stoich">
+    <h2>§3 化学计量比例计算与限量反应物</h2>
+    <p>
+      方程式配好之后，计算就是<strong>按比例换算</strong>。以实验室制氢气为例：
+      <span class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</span>——每 1 mol 锌消耗 2 mol 氯化氢、产出 1 mol 氢气。
+    </p>
+
+    <h3>📐 例题脚手架：完整流程走一遍</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        将 6.5 g 锌放入足量稀盐酸中，最多生成氢气多少摩尔？同时消耗 HCl 多少克？（Zn：65，HCl：36.5）
+      </div>
+      <ol class="worked-steps">
+        <li class="step">写方程式并配平：<span class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</span>。</li>
+        <li class="step">把已知量换算成摩尔：n(Zn) = 6.5 ÷ 65 = <strong>0.1 mol</strong>。</li>
+        <li class="step">按系数比例换算：Zn : HCl : H₂ = 1 : 2 : 1 → n(H₂) = 0.1 mol；n(HCl) = 0.2 mol。</li>
+        <li class="step">把要求的量换回质量：m(HCl) = 0.2 × 36.5 = <strong>7.3 g</strong>。</li>
+        <li class="step">✅ 答案：H₂ 0.1 mol（约 6.02×10²² 个分子，标况下约 2.24 L），消耗 HCl 7.3 g。套路总结：<strong>克 → 摩 → 按比例 → 摩 → 克</strong>。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习：限量反应物（和我一起做）</div>
+      <div class="worked-problem">
+        点燃 3 mol H₂ 与 2 mol O₂（<span class="formula">2H₂ + O₂ → 2H₂O</span>），哪个反应物有剩余？最多生成多少摩尔水？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 思路：把每个反应物"折算"成对方来比。假设 H₂ 全反应，需要 O₂ 多少？系数比 2:1 → 3 mol H₂ 需要 <strong>1.5 mol O₂</strong>。</li>
+        <li class="step">💡 实际有 2 mol O₂ ＞ 1.5 mol → <strong>O₂ 过量，H₂ 是限量反应物</strong>（limp 水桶效应：决定产量的是短板）。</li>
+        <li class="step">💡 按 H₂ 算产物：H₂ : H₂O = 2 : 2 = 1 : 1 → 生成 <strong>3 mol H₂O</strong>，剩余 0.5 mol O₂。</li>
+        <li class="step">✅ 自查：H 用了 3×2=6 个原子，O 用了 3 个，来源 = 3 mol H₂ + 1.5 mol O₂，守恒成立。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么实验室实际收集到的氢气总比理论值少？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：气体会跑到哪里去？反应真的一步不漏吗？</p>
+        <p>
+          三个原因：① <strong>收集不完全</strong>——氢气会溶解少量于水、逸散；
+          ② <strong>副反应</strong>——锌含杂质或与酸发生别的反应；
+          ③ <strong>可逆与未反应完全</strong>。于是定义<strong>产率 = 实际产量 ÷ 理论产量 × 100%</strong>，
+          工业上这条数字直接决定利润，也是分析化学要监控的对象（见 03 分支）。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>质量守恒定律是配平的依据：两边每种原子数必须相等。</li>
+        <li>系数 = 分子数比 = 摩尔比（气体同温同压下还是体积比）。</li>
+        <li>摩尔是数量单位：n = m/M，N = n·N<sub>A</sub>（6.02×10²³）。</li>
+        <li>计算套路：克 → 摩 → 按系数比例 → 摩 → 克。</li>
+        <li>限量反应物决定产量；产率 = 实际 ÷ 理论 × 100%。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 化学反应与化学计量 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "蜡烛在敞口容器中燃烧后剩余物变轻，消失的质量去哪了？",
+            "options": ["违反了质量守恒", "转化为能量凭空消失", "变成 CO₂ 和水蒸气散入空气", "被火焰吞噬"],
+            "answer": 2,
+            "explain": "质量守恒只保证总账平衡：石蜡 + 消耗的氧气 = 生成的 CO₂ + 水蒸气 + 残余物。散入空气的生成物带走了一部分质量。"
+          },
+          {
+            "q": "1 mol CO₂ 中含有多少个氧原子？",
+            "options": ["6.02×10²³", "1.204×10²⁴", "3.01×10²³", "6.02×10²²"],
+            "answer": 1,
+            "explain": "1 mol CO₂ 有 6.02×10²³ 个分子，每个分子含 2 个 O → 2 × 6.02×10²³ = 1.204×10²⁴。"
+          },
+          {
+            "q": "98 g 硫酸（H₂SO₄，M = 98）的物质的量是？",
+            "options": ["0.5 mol", "1 mol", "2 mol", "98 mol"],
+            "answer": 1,
+            "explain": "n = m/M = 98/98 = 1 mol。数值上'多少克 = 摩尔质量'就是 1 mol，这正是 M 定义的便利。"
+          },
+          {
+            "q": "点燃 3 mol H₂ 和 2 mol O₂（2H₂ + O₂ → 2H₂O），下列说法正确的是？",
+            "options": ["O₂ 全部反应完", "H₂ 过量", "O₂ 过量 0.5 mol，最多生成 3 mol 水", "生成 4 mol 水"],
+            "answer": 2,
+            "explain": "3 mol H₂ 只需 1.5 mol O₂，故 O₂ 剩 0.5 mol；H₂ 是限量反应物，按它算得 3 mol 水。"
+          },
+          {
+            "q": "配平 Al + O₂ → Al₂O₃ 后，各物质系数依次为？",
+            "options": ["2, 1, 2", "4, 3, 2", "2, 3, 1", "1, 1, 1"],
+            "answer": 1,
+            "explain": "4Al + 3O₂ → 2Al₂O₃：Al 4=4，O 6=6，守恒成立。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-化学键与分子结构.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 化学键与分子结构</span></a>
+      <a class="next" href="04-物态与溶液.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 4 章 · 物态与溶液</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 本章交互：配平练习器 + 摩尔计算器 ============ */
+(function () {
+  "use strict";
+  var NA = 6.02e23;
+
+  /* ---------- 1. 配平练习器 ---------- */
+  var EQS = [
+    { lhs: [["H₂", {H:2}], ["O₂", {O:2}]], rhs: [["H₂O", {H:2,O:1}]], ans: [2,1,2],
+      note: "氢气燃烧——最小公倍数先配氧：左 2 个 O、右 1 个 O → H₂O 配 2。" },
+    { lhs: [["Fe", {Fe:1}], ["O₂", {O:2}]], rhs: [["Fe₃O₄", {Fe:3,O:4}]], ans: [3,2,1],
+      note: "铁的氧化——Fe₃O₄ 里有 3 个 Fe，先给 Fe 配 3，再配 O₂ 为 2。" },
+    { lhs: [["Al", {Al:1}], ["HCl", {H:1,Cl:1}]], rhs: [["AlCl₃", {Al:1,Cl:3}], ["H₂", {H:2}]], ans: [2,6,2,3],
+      note: "实验室制氢——Cl 出现在 AlCl₃ 中为 3 的倍数，H₂ 为偶数，通分到 6。" }
+  ];
+  var eqIdx = 0, coefs = [];
+  var eqEl = document.getElementById("balEq"), ctlEl = document.getElementById("balCtl"),
+      readEl = document.getElementById("balReadout");
+
+  function fmtAtom(a) { var s = []; for (var k in a) s.push(a[k] + k); return s.join(""); }
+  function loadEq() {
+    coefs = [].concat(EQS[eqIdx].ans.map(function () { return 1; }));
+    readEl.textContent = "第 " + (eqIdx + 1) + " / " + EQS.length + " 题：先判断，再调系数，最后点'检查配平'。";
+    render();
+  }
+  function render() {
+    var eq = EQS[eqIdx];
+    eqEl.innerHTML = "";
+    function span(txt) { var s = document.createElement("span"); s.textContent = txt; eqEl.appendChild(s); return s; }
+    function one(spec, ci) {
+      var c = document.createElement("b");
+      c.style.color = coefs[ci] === eq.ans[ci] ? "var(--ok)" : "var(--accent-deep)";
+      c.textContent = coefs[ci];
+      eqEl.appendChild(c);
+      span(spec[0]);
+    }
+    var ci = 0;
+    eq.lhs.forEach(function (sp, i) { if (i) span(" + "); one(sp, ci++); });
+    span("  →  ");
+    eq.rhs.forEach(function (sp, i) { if (i) span(" + "); one(sp, ci++); });
+
+    ctlEl.innerHTML = "";
+    ci = 0;
+    function mkCtl(label, idx) {
+      var wrap = document.createElement("div");
+      wrap.style.textAlign = "center";
+      var name = document.createElement("div");
+      name.textContent = label;
+      name.style.cssText = "font-size:.85rem;color:var(--ink-2);margin-bottom:4px";
+      wrap.appendChild(name);
+      var minus = document.createElement("button");
+      minus.className = "btn ghost"; minus.textContent = "−"; minus.style.minWidth = "44px";
+      var plus = document.createElement("button");
+      plus.className = "btn ghost"; plus.textContent = "＋"; plus.style.minWidth = "44px";
+      minus.addEventListener("click", function () { if (coefs[idx] > 1) { coefs[idx]--; render(); } });
+      plus.addEventListener("click", function () { if (coefs[idx] < 20) { coefs[idx]++; render(); } });
+      wrap.appendChild(minus);
+      wrap.appendChild(plus);
+      ctlEl.appendChild(wrap);
+    }
+    eq.lhs.forEach(function (sp, i) { mkCtl(sp[0], ci++); });
+    eq.rhs.forEach(function (sp, i) { mkCtl(sp[0], ci++); });
+  }
+  function check() {
+    var eq = EQS[eqIdx], ci = 0, atoms = {}, ok = true;
+    function acc(side, sign) {
+      side.forEach(function (sp) {
+        var n = coefs[ci++];
+        for (var k in sp[1]) {
+          atoms[k] = (atoms[k] || 0) + sign * n * sp[1][k];
+        }
+      });
+    }
+    acc(eq.lhs, 1); acc(eq.rhs, -1);
+    for (var k in atoms) if (atoms[k] !== 0) ok = false;
+    readEl.innerHTML = ok
+      ? "<b style='color:var(--ok)'>✓ 配平正确！</b>" + eq.note
+      : "<b style='color:var(--bad)'>✗ 尚未守恒。</b>当前差额：" + Object.keys(atoms).filter(function (k) { return atoms[k] !== 0; })
+          .map(function (k) { return (atoms[k] > 0 ? "左多 " : "右多 ") + Math.abs(atoms[k]) + " 个" + k; }).join("，") + "。继续调整。";
+  }
+  if (eqEl) {
+    document.getElementById("balPrev").addEventListener("click", function () { eqIdx = (eqIdx + EQS.length - 1) % EQS.length; loadEq(); });
+    document.getElementById("balNext").addEventListener("click", function () { eqIdx = (eqIdx + 1) % EQS.length; loadEq(); });
+    document.getElementById("balCheck").addEventListener("click", check);
+    document.getElementById("balReset").addEventListener("click", loadEq);
+    loadEq();
+  }
+
+  /* ---------- 2. 摩尔计算器 ---------- */
+  var molSel = document.getElementById("molSel"), molIn = document.getElementById("molIn");
+  if (molSel && molIn) {
+    var molRead = document.getElementById("molReadout");
+    function calc() {
+      var M = parseFloat(molSel.value);
+      var m = parseFloat(molIn.value);
+      if (isNaN(m) || m < 0) { molRead.textContent = "请输入有效的质量（≥ 0）"; return; }
+      var n = m / M, N = n * NA;
+      molRead.innerHTML = "n = m ÷ M = " + m + " ÷ " + M + " = <strong>" + n.toFixed(3) + " mol</strong>" +
+        " ｜ 分子数 N = n·N<sub>A</sub> ≈ " + N.toExponential(2).replace("e+", "×10^") + " 个";
+    }
+    molSel.addEventListener("change", calc);
+    molIn.addEventListener("input", calc);
+    calc();
+  }
+})();
+</script>
+</body>
+</html>

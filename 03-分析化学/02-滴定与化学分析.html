@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>滴定与化学分析 · 分析化学 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b03">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">03 分析化学</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 滴定与化学分析</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">03 分析化学 · 第 2 章</div>
+    <h1>滴定与化学分析：用一瓶已知，量一瓶未知</h1>
+    <p class="lede">
+      厨房里的白醋写着"总酸 ≥5.00 g/100 mL"，水质报告写着"总硬度 250 mg/L"，药房的双氧水标着"3%"——
+      这些数字大多出自同一种三分钟就能完成的经典操作：<strong>滴定</strong>。拿一瓶浓度准确已知的溶液，
+      一滴滴加进待测液，直到指示剂突然变色，再由"消耗了多少毫升"反推"含多少物质"。
+      本章讲透滴定的思想、突跃与指示剂、标准溶液与基准物质、万能计算框架
+      <span class="formula">c₁V₁ = n·c₂V₂</span>，并顺路认识氧化还原滴定、EDTA 测硬度与古老的重量法。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：本分支第 1 章＋00 化学总论（溶液浓度）</span>
+      <span class="chip">交互动画 ×1</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#idea">§1 滴定的思想</a>
+    <a href="#curve">§2 曲线、突跃与指示剂</a>
+    <a href="#calc">§3 标准溶液与计算</a>
+    <a href="#types">§4 滴定家族与重量法</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：三分钟测出食醋的"总酸"</h2>
+    <p>
+      超市货架上的白醋，标签上印着"总酸 ≥5.00 g/100 mL"。质检员怎么验？移液管取 10.00 mL 醋样入锥形瓶，
+      滴两滴酚酞，然后从滴定管里把已知浓度的 NaOH 标准溶液一滴滴放下去——快到变色时放慢，
+      最后半滴半滴地加，直到溶液<strong>突然泛起浅粉红且摇不褪</strong>。读数：消耗 16.xx mL。
+      三分钟、一道乘除，总酸含量就出来了。
+    </p>
+    <p>
+      这套操作便宜（一瓶一管一锥形瓶）、可靠（相对误差可低至 0.1–0.2%），一百多年来始终是
+      常量组分测定的主力——它是<strong>化学分析</strong>的代表作：用化学反应的计量关系本身当"计算器"，
+      不需要任何贵重仪器。本章要回答四个问题：滴定凭什么能"数"出物质的量？指示剂为什么恰好在那一滴之间变色？
+      那瓶"已知浓度"从哪来？以及那道万能计算题怎么列？
+    </p>
+  </section>
+
+  <!-- ============ §1 滴定的思想 ============ -->
+  <section id="idea">
+    <h2>§1 滴定的思想：恰好完全反应的那一刻</h2>
+    <p>
+      <span class="term">滴定</span><span class="en">titration</span>的标准定义：
+      将已知准确浓度的<span class="term">标准溶液</span><span class="en">standard solution</span>滴加到待测溶液中，
+      直到两者<strong>恰好按化学计量比完全反应</strong>，然后由消耗的体积和已知浓度，反算待测组分的含量。
+      它的巧妙在于：<strong>把"物质的量"的测量转化为"体积"的测量</strong>——体积是化学实验室里读得最准的量之一
+      （滴定管可估读到 0.01 mL）。
+    </p>
+
+    <p>四个关键词必须一次分清：</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>术语</th><th>含义</th><th>性质</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="term">化学计量点</span><span class="en">stoichiometric point</span></td><td>加入的标准物质与待测物质的量恰好符合反应计量比的那一刻</td><td>理论点，看不见摸不着</td></tr>
+        <tr><td><span class="term">终点</span><span class="en">endpoint</span></td><td>指示剂变色、你实际停手的那一点</td><td>实验观测点</td></tr>
+        <tr><td><span class="term">指示剂</span><span class="en">indicator</span></td><td>随溶液条件（pH 等）突变而变色的"信号灯"</td><td>终点的目视代言人</td></tr>
+        <tr><td><span class="term">突跃</span><span class="en">titration break</span></td><td>计量点前后，pH（或电位等）的急剧变化区</td><td>终点判断的"安全窗口"</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      计量点与终点几乎不可能严格重合，两者之差带来的偏差叫<strong>终点误差</strong>。
+      滴定方法的全部艺术就是一句话：<strong>把终点卡进突跃里</strong>——只要指示剂的变色范围落在突跃范围内，
+      终点误差就能压到 0.1% 上下。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一句话抓住重点</div>
+      滴定 = 用"已知浓度 × 消耗体积"去数"待测物的物质的量"。先认化学反应与计量比，
+      再谈读数与计算——方程式是滴定计算的地基，不是装饰。
+    </div>
+
+    <details class="think">
+      <summary>想一想：滴定管的读数误差约 ±0.02 mL。为什么有经验的操作者会设法让消耗体积落在 20–30 mL 之间，而不是 2 mL？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回顾第 1 章的"绝对误差 vs 相对误差"。</p>
+        <p>
+          读数误差（初读＋终读合计约 ±0.02 mL）是固定不变的：消耗 2 mL 时相对误差高达 ±1%，
+          消耗 20 mL 时只有 ±0.1%——差了十倍。所以要通过调整标准溶液浓度或取样量，
+          把消耗体积安排在滴定管容量的合理区间。这是第 1 章"误差思维"在滴定里的第一次实战。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 滴定曲线、突跃与指示剂 ============ -->
+  <section id="curve">
+    <h2>§2 滴定曲线、突跃与指示剂：那一滴之间发生了什么</h2>
+    <p>
+      以最经典的组合为例：用 0.1000 mol/L NaOH 滴定 20.00 mL 0.1000 mol/L HCl，
+      以加入的 NaOH 体积为横轴、溶液 pH 为纵轴作图，得到<span class="term">滴定曲线</span>
+      <span class="en">titration curve</span>。曲线大部分时间平缓得像散步，唯独在计量点附近近乎垂直地"跳崖"：
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>V(NaOH)</th><th>溶液状态</th><th>pH</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>19.98 mL</td><td>还差 0.02 mL（不足 0.1%）</td><td>4.30</td></tr>
+        <tr><td><strong>20.00 mL</strong></td><td><strong>恰好完全反应——化学计量点</strong></td><td><strong>7.00</strong></td></tr>
+        <tr><td>20.02 mL</td><td>过量 0.02 mL（过量 0.1%）</td><td>9.70</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      也就是说：<strong>半滴之差（约 0.04 mL），pH 从 4.30 冲到 9.70</strong>，氢离子浓度骤降约 25 万倍。
+      这段陡坡就是突跃。下面的模拟器让你亲手拖动那一滴——注意锥形瓶里酚酞的颜色，
+      恰好在突跃的上半段（pH 8.2–10）从无色转成粉红：
+    </p>
+
+    <h3>🔬 动手玩：滴定模拟器</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="titSvg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="NaOH 滴定 HCl 模拟器"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="titPlay">▶ 自动滴定</button>
+          <button class="btn ghost" id="titReset">↺ 重置</button>
+          <label for="titSlider" style="font-size:.88rem;color:var(--ink-2);min-width:130px;text-align:center">
+            V(NaOH)：<strong id="titV">0.00</strong> mL
+          </label>
+        </div>
+        <div class="fig-controls" style="margin-top:0">
+          <input id="titSlider" type="range" min="0" max="40" step="0.02" value="0"
+                 style="width:min(420px,90%);accent-color:var(--accent);height:40px" aria-label="加入 NaOH 的体积">
+        </div>
+        <div class="fig-readout" id="titReadout">V(NaOH) = 0.00 mL ｜ pH = 1.00 ｜ 酚酞：无色 ｜ 未到计量点（酸过量）</div>
+      </div>
+      <figcaption>
+        0.1000 mol/L NaOH 滴定 20.00 mL 0.1000 mol/L HCl。把滑块拖到 19.9–20.1 mL 之间细看：半滴之差，
+        pH 飙升 5 个多单位——曲线的陡坡（突跃）正是酚酞变色的舞台。右侧曲线实时生长，粉色横带是酚酞的变色范围（8.2–10）。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 指示剂为什么会在"那一滴"之间突然变色？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          想一架几乎平衡的天平：左盘的酸是"存量"，你每滴入的碱是"增量"。存量还多时，
+          每滴碱都被立刻"吃掉"，天平纹丝不动；可一旦存量见底，<strong>一粒沙就能让指针从一头猛摆到另一头</strong>。
+          指示剂就是那根指针——它不是慢慢变的，是被"击穿"的。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          计量点前，滴入的 OH⁻ 几乎全部被 H⁺ 中和，pH 由<strong>剩余的 H⁺</strong> 决定，变化平缓；
+          临近计量点时剩余 H⁺ 已被消耗到 10⁻⁵ mol/L 量级，溶液失去了"缓冲余粮"；
+          计量点后哪怕多加半滴碱，OH⁻ 再无对手，直接在溶液里积累——于是
+          在 ±0.02 mL（不足与过量各 0.1%）之间，pH 从 4.30 直冲 9.70。
+          酚酞的变色范围（8.2–10）正好落在这个窗口内，所以颜色"啪"地一下出现。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          突跃不是运气，是被滴体系的<strong>平衡常数与浓度</strong>共同写好的：浓度越高、酸碱越强，
+          计量点两侧的"存量—增量"对比越悬殊，突跃越宽；溶液稀释或被滴物变弱（Ka 小）时，
+          曲线坡度放缓、突跃收窄，甚至窄到没有任何指示剂能卡进去——这就是
+          "0.1 mol/L 是经典滴定浓度"与"极弱酸不能直接滴定"背后的原因（定量判据 c·K<sub>a</sub> ≥ 10⁻⁸，
+          进阶课程再展开）。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 指示剂加得越多，终点越保险？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          多加几滴酚酞，颜色更深更醒目，变色更容易看见——所以指示剂越多越好。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          指示剂本身就是弱有机酸/碱，<strong>也要消耗标准溶液</strong>——加得越多，引入的系统误差越大；
+          而且颜色过深反而遮蔽判断，让"变色"变成"猜色"。常规 1–2 滴足矣。
+          选指示剂看的是"变色范围 ⊂ 突跃范围"，用量则以<strong>少而够看</strong>为原则。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：用 NaOH 滴定醋酸（弱酸）时，化学计量点的 pH 是 7 吗？该选酚酞还是甲基橙？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：计量点时溶液里装的是什么？醋酸钠水解后显什么性？</p>
+        <p>
+          不是 7。计量点时全部醋酸已变成醋酸钠，Ac⁻ 水解使溶液显<strong>弱碱性</strong>
+          （0.1 mol/L 量级时 pH 约 8.7），突跃整体落在碱性侧（约 7.7–9.7）。
+          所以应选<strong>酚酞</strong>（8.2–10，落在突跃内），选甲基橙（3.1–4.4）会提前变色、
+          造成明显负误差。选指示剂永远看突跃位置，不看个人喜好。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 标准溶液、基准物质与计算 ============ -->
+  <section id="calc">
+    <h2>§3 标准溶液、基准物质与万能计算框架</h2>
+
+    <h3>那瓶"已知浓度"从哪里来？</h3>
+    <p>
+      标准溶液有两条来路。<strong>直接配制</strong>：准确称取一定量的<span class="term">基准物质</span>
+      <span class="en">primary standard</span>，溶解后定量转移、定容——浓度算出来，直接可信。
+      <strong>标定</strong><span class="en">standardization</span>：先配成大致浓度，再用基准物质（或另一已知标准液）
+      通过滴定把它的准确浓度"定"出来。大多数标准溶液走第二条路，因为它们配不准：
+      NaOH 固体吸潮、吸收 CO₂；浓盐酸易挥发；KMnO₄ 含杂质且慢慢分解——它们都当不了基准。
+    </p>
+    <p>
+      能当<span class="term">基准物质</span>要过四关：<strong>纯度高</strong>（≥99.9%）、
+      <strong>组成恒定</strong>（与化学式严格一致，含结晶水也必须名实相符）、
+      <strong>性质稳定</strong>（不吸水、不吸 CO₂、不氧化分解）、
+      <strong>摩尔质量尽量大</strong>（称同样物质的量时质量更大，称量相对误差更小）。
+      常见搭配：无水 Na₂CO₃ 标定 HCl，邻苯二甲酸氢钾标定 NaOH，Na₂C₂O₄ 标定 KMnO₄。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 标准溶液不是一劳永逸</div>
+      NaOH 标准溶液放久了会慢慢吸收空气中的 CO₂，浓度悄悄下降。重要实验前应重新标定，
+      平行标定数份（通常 ≥3 次）、相对偏差合格（如 ≤0.2%）才取平均使用——第 1 章的精密度要求在这里落地。
+    </div>
+
+    <h3>万能计算框架：c₁V₁ = n·c₂V₂</h3>
+    <p>
+      设滴定反应 <span class="formula">aA + bB → 产物</span>，到达计量点时
+      <span class="formula">n(A) : n(B) = a : b</span>。于是（浓度单位 mol/L，体积单位 L）：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">c(A)·V(A) = (a/b)·c(B)·V(B)</span>　——比例系数 <span class="formula">a/b</span> 就是计量比
+    </p>
+    <p>
+      强酸强碱 1:1 时退化为 <span class="formula">c₁V₁ = c₂V₂</span>；HCl 与 Na₂CO₃ 是 2:1；
+      KMnO₄ 与 H₂O₂ 是 2:5——<strong>先从方程式抄对比例，再代入数字</strong>，这是滴定计算的全部秘诀。
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：碳酸钠标定盐酸</div>
+      <div class="worked-problem">
+        称取基准无水碳酸钠 0.1325 g（M = 106.0 g/mol），加水溶解，以甲基橙为指示剂，
+        用待标定的盐酸溶液滴定至终点（由黄变橙），消耗 25.00 mL。求盐酸的准确浓度。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">写方程、抄比例：2HCl + Na₂CO₃ → 2NaCl + H₂O + CO₂↑，计量比 n(HCl) : n(Na₂CO₃) = 2 : 1。</li>
+        <li class="step">算基准物质的量：n(Na₂CO₃) = m / M = 0.1325 / 106.0 = 1.250 × 10⁻³ mol。</li>
+        <li class="step">按比例换算：n(HCl) = 2 × 1.250 × 10⁻³ = 2.500 × 10⁻³ mol。</li>
+        <li class="step">求浓度：c(HCl) = n / V = 2.500 × 10⁻³ mol ÷ 0.02500 L = <strong>0.1000 mol/L</strong>。
+          ✅ 有效数字自查：质量 4 位、体积 4 位 → 结果 4 位。实务上会平行标定 3 份、相对偏差 ≤0.2% 才取平均。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 滴定家族与重量法 ============ -->
+  <section id="types">
+    <h2>§4 滴定家族与重量法：不止酸和碱</h2>
+    <p>
+      滴定这把"体积尺子"不挑反应类型，只要计量关系明确、反应完全、速度快、有办法指示终点，就能用。
+      常用四大家族：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>家族</th><th>计量桥梁</th><th>典型任务</th><th>终点指示</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>酸碱滴定</strong></td><td>H⁺ 与 OH⁻ 的中和</td><td>食醋总酸、烧碱纯度、铵盐含氮量</td><td>酚酞、甲基橙等酸碱指示剂</td></tr>
+        <tr><td><strong>氧化还原滴定</strong></td><td>电子转移数</td><td>双氧水、铁含量、水中耗氧量（COD）</td><td>自身指示或氧化还原指示剂</td></tr>
+        <tr><td><strong>配位滴定</strong></td><td>EDTA 与金属离子 1:1 鳌合</td><td>水硬度（钙镁总量）</td><td>铬黑 T 等金属指示剂</td></tr>
+        <tr><td><strong>沉淀滴定</strong></td><td>生成沉淀的计量关系</td><td>银量法测氯（食盐、水质）</td><td>铬酸钾等专属指示剂</td></tr>
+      </tbody>
+    </table>
+
+    <h3>氧化还原滴定：高锰酸钾的"自带信号灯"</h3>
+    <p>
+      酸性溶液中 KMnO₄ 是强氧化剂，紫色很深，而还原产物 Mn²⁺ 几乎无色。用它滴还原性物质
+      （H₂O₂、Fe²⁺、C₂O₄²⁻……）时<strong>不需要另加指示剂</strong>：还原剂耗尽之前，滴下的每一滴紫色都被立即"漂白"；
+      一旦还原剂耗尽，<strong>半滴过量的 MnO₄⁻ 就让整瓶溶液染上浅红</strong>——这叫自身指示剂，
+      约半分钟内不褪色即为终点（放久了褪色是被空气中的还原性物质慢慢消耗，不能误判）。
+      在酸性介质中测 H₂O₂ 的反应：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂↑ + 8H₂O</span>
+    </p>
+    <p>
+      注意计量比 <span class="formula">n(H₂O₂) = (5/2)·n(KMnO₄)</span>。KMnO₄ 本身不够纯、溶液也不稳定，
+      所以它同样不能直接配制，需用基准草酸钠标定后使用。
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：双氧水含量测定</div>
+      <div class="worked-problem">
+        移取医用双氧水原液 10.00 mL，定容至 250.0 mL；再移取 25.00 mL 于锥形瓶，硫酸酸化后，
+        用 0.02000 mol/L KMnO₄ 标准溶液滴定至微红色且 30 s 不褪，消耗 19.60 mL。
+        M(H₂O₂) = 34.00 g/mol。求原液中 H₂O₂ 的质量浓度（g/L）。
+        <em>（提示藏在每一步里，先自己想想再点开）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 先算滴定剂：n(KMnO₄) = 0.02000 × 0.01960 = 3.920 × 10⁻⁴ mol。</li>
+        <li class="step">💡 按计量比换算到这份 25.00 mL 滴定液：n(H₂O₂) = (5/2) × 3.920 × 10⁻⁴ = 9.800 × 10⁻⁴ mol。</li>
+        <li class="step">💡 别漏稀释倍数：250.0 mL 稀释液（= 10.00 mL 原液）中共含 10 倍于此的 H₂O₂ → 9.800 × 10⁻³ mol → c(H₂O₂) = 9.800 × 10⁻³ / 0.01000 = 0.9800 mol/L。</li>
+        <li class="step">✅ 换算质量浓度：ρ = c·M = 0.9800 × 34.00 = <strong>33.32 g/L</strong>（约 3.3%，与医用双氧水规格吻合）。自查：浓度与体积均 4 位有效，结果 4 位；稀释倍数 10 是准确数字，不限制位数。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <h3>EDTA 配位滴定：水硬度一句话</h3>
+    <p>
+      测水硬度（Ca²⁺、Mg²⁺ 总量，结果折算成 CaCO₃ 的 mg/L）用 EDTA 配位滴定：
+      EDTA 与 Ca²⁺、Mg²⁺ 恰好按 <strong>1 : 1</strong> 鳌合，配位后颜色发生改变的铬黑 T 指示终点——
+      计算又回到万能框架 <span class="formula">c(EDTA)·V(EDTA) = n(Ca²⁺+Mg²⁺)</span>，只是比例系数为 1。
+    </p>
+
+    <h3>重量法：把待测物"称"出来</h3>
+    <p>
+      最古老、也最笨重的定量方法——<span class="term">重量分析</span><span class="en">gravimetric analysis</span>：
+      加入沉淀剂让待测组分定量地变成难溶化合物（如 SO₄²⁻ → BaSO₄），再过滤、洗涤、干燥灼烧、冷却称重，
+      由沉淀质量反算含量。它不需要任何"浓度已知"的溶液，只信天平，<strong>慢而极准</strong>，
+      至今仍是仲裁分析与标准方法定值时的压舱石。缺点也明显：流程长、灵度低，只适合常量组分。
+    </p>
+
+    <details class="think">
+      <summary>想一想：高锰酸钾滴定的终点规定为"微红色 30 秒内不褪"。为什么要强调 30 秒？多放一会儿褪了算不算没到终点？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：终点时溶液里那点浅红是谁带来的？空气和尘埃里有没有还原性物质？</p>
+        <p>
+          浅红来自<strong>稍过量的 MnO₄⁻</strong>，说明还原剂已被耗尽、恰好过终点一点点，这就是我们要的信号。
+          但这丝浅红并不牢靠：空气中的还原性气体、尘埃以及光照分解都会慢慢把它褪掉——
+          所以规定"30 秒不褪"：短时间内不褪即认定终点已到；放置几分钟后的褪色是背景消耗，
+          <strong>不算</strong>未到终点，更不能据此继续滴加。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>滴定 = 用已知浓度 × 消耗体积数出待测物的物质的量；硬件只有滴定管、移液管与锥形瓶，常量分析首选。</li>
+        <li>四术语：化学计量点（理论点）、终点（观测点）、指示剂（信号灯）、突跃（计量点前后的 pH 陡变区）。</li>
+        <li>突跃来自"存量见底、增量无对手"：±0.02 mL 之间 pH 可跳 4.30 → 9.70；指示剂变色范围必须落在突跃内。</li>
+        <li>标准溶液靠基准物质（纯、稳、组成恒定、摩尔质量大）直接配制或标定；NaOH、HCl、KMnO₄ 都必须标定。</li>
+        <li>万能框架 c₁V₁ = (a/b)·c₂V₂：先从方程式抄对计量比，再代数字，别忘稀释倍数。</li>
+        <li>KMnO₄ 法自身指示测 H₂O₂/Fe²⁺；EDTA 1:1 配位测水硬度；重量法沉淀称重，慢而极准。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 滴定与化学分析 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "用 0.1 mol/L NaOH 标准溶液滴定 HCl（突跃 pH 4.3–9.7），最合适的指示剂是？",
+            "options": ["酚酞（变色范围 8.2–10.0）", "甲基橙（变色范围 3.1–4.4）", "变色范围在 2.0–3.0 的某种指示剂", "任何指示剂都同样合适"],
+            "answer": 0,
+            "explain": "指示剂的变色范围应落在突跃范围之内。酚酞的 8.2–10.0 完全在 4.3–9.7 窗口内；甲基橙变色范围大部分在突跃以下，会提前变色引入误差（它适合反方向的强酸滴强碱）；范围 2–3 的指示剂更是远远偏离突跃。"
+          },
+          {
+            "q": "化学计量点与终点的关系，正确的是？",
+            "options": ["同一个概念，都指指示剂变色那一点", "计量点是按计量比恰好反应完全的理论点，终点是实验观测到的停点，两者应尽量接近", "终点一定先于计量点出现", "计量点由所选指示剂决定"],
+            "answer": 1,
+            "explain": "计量点由化学反应的计量比决定，是理论值；终点由指示剂变色指示，是观测值。两者之差即终点误差；选对指示剂（变色范围落入突跃）可把终点误差压到 0.1% 量级，但两者并非同一点。"
+          },
+          {
+            "q": "称取基准无水碳酸钠 0.1060 g（M = 106.0 g/mol），用待标定盐酸滴定至甲基橙终点，消耗 20.00 mL。盐酸浓度约为？",
+            "options": ["0.05000 mol/L", "0.1000 mol/L", "0.2000 mol/L", "0.01000 mol/L"],
+            "answer": 1,
+            "explain": "n(Na₂CO₃) = 0.1060/106.0 = 1.000×10⁻³ mol；由 2HCl + Na₂CO₃ 知 n(HCl) = 2.000×10⁻³ mol；c = 2.000×10⁻³/0.02000 = 0.1000 mol/L。忘记乘计量比 2 会得 0.05000，把比例反过来则得 0.2000。"
+          },
+          {
+            "q": "酸性条件下用 KMnO₄ 标准溶液滴定 H₂O₂，不需要另加指示剂，原因是？",
+            "options": ["MnO₄⁻ 本身紫色很深、产物 Mn²⁺ 无色，还原剂耗尽后稍过量即显浅红——自身指示剂", "滴定速度太快，加指示剂来不及摇匀", "酸性条件会破坏所有常见指示剂", "KMnO₄ 是基准物质，滴定绝对准确"],
+            "answer": 0,
+            "explain": "终点前每滴 MnO₄⁻ 都被还原为近无色的 Mn²⁺；还原剂耗尽后半滴过量就使溶液呈浅红（30 s 不褪），物质自己当了信号灯。另外 KMnO₄ 并非基准物质，其标准溶液需用草酸钠标定。"
+          },
+          {
+            "q": "滴定临近终点时，正确的操作是？",
+            "options": ["快速连续滴加，争取在最短时间内完成", "一滴滴加入、最后半滴半滴地加，并不断摇动锥形瓶", "再多加几滴指示剂，让颜色变化更明显", "停止摇动，静置等颜色自己变化"],
+            "answer": 1,
+            "explain": "突跃只有约一两滴的宽度，快滴极易冲过终点；指示剂多加会消耗标准溶液且颜色过深难判断；摇动是为了让局部过量的滴定剂立即分散反应，避免假终点。半滴操作能把终点稳稳卡在突跃之内。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-概论与数据处理.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 概论与数据处理</span></a>
+      <a class="next" href="03-仪器分析三剑客.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 仪器分析三剑客</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（NaOH 滴定 HCl 模拟器） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  var svg = document.getElementById("titSvg");
+  if (svg) {
+    var C = 0.1000, V0 = 20.00;          // 浓度与初始酸体积（mL）
+    var X0 = 270, Y0 = 318, W = 340, H = 272;  // 绘图区
+    var readout = document.getElementById("titReadout");
+    var vLabel = document.getElementById("titV");
+    var slider = document.getElementById("titSlider");
+    var playBtn = document.getElementById("titPlay");
+    var resetBtn = document.getElementById("titReset");
+    var V = 0, playing = false, rafId = null;
+
+    function pHOf(v) {
+      if (v <= 0) return 1.00;
+      if (v < V0 - 1e-9) return -Math.log10(C * (V0 - v) / (V0 + v));
+      if (v <= V0 + 1e-9) return 7.00;
+      return 14 + Math.log10(C * (v - V0) / (V0 + v));
+    }
+    function px(v) { return X0 + W * v / 40; }
+    function py(p) { return Y0 - H * p / 14; }
+
+    function phenolColor(p) {
+      if (p <= 8.2) return "#eef2f7";
+      if (p >= 10) return "#db2777";
+      var t = (p - 8.2) / 1.8;
+      var r = Math.round(251 + (236 - 251) * t);
+      var g = Math.round(207 + (72 - 207) * t);
+      var b = Math.round(232 + (153 - 232) * t);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    function phenolText(p) {
+      if (p < 8.2) return "酚酞：无色";
+      if (p <= 10) return "酚酞：浅粉红（变色中）";
+      return "酚酞：桃红";
+    }
+    function stateText(v) {
+      if (Math.abs(v - V0) <= 0.03) return "⚡ 突跃区：半滴之差，pH 飙升！";
+      if (v < V0) return "未到计量点（酸过量）";
+      if (Math.abs(v - V0) < 1e-9) return "化学计量点 ✓";
+      return "已过计量点（碱过量）";
+    }
+
+    /* ---------- 静态场景 ---------- */
+    el("rect", { x: 0, y: 0, width: 640, height: 360, fill: "#ffffff" }, svg);
+    var plot = el("g", {}, svg);
+
+    // 网格与刻度
+    [0, 2, 4, 6, 8, 10, 12, 14].forEach(function (p) {
+      el("line", { x1: X0, y1: py(p), x2: X0 + W, y2: py(p), stroke: p === 0 ? "#94a3b8" : "#eef2f7",
+        "stroke-width": p === 0 ? 1.6 : 1 }, plot);
+    });
+    [0, 10, 20, 30, 40].forEach(function (v) {
+      el("line", { x1: px(v), y1: Y0, x2: px(v), y2: Y0 + 5, stroke: "#94a3b8", "stroke-width": 1.2 }, plot);
+      var t = el("text", { x: px(v), y: Y0 + 20, "text-anchor": "middle", "font-size": 11, fill: "#6b7280" }, plot);
+      t.textContent = v;
+    });
+    [0, 7, 14].forEach(function (p) {
+      var t = el("text", { x: X0 - 8, y: py(p) + 4, "text-anchor": "end", "font-size": 11, fill: "#6b7280" }, plot);
+      t.textContent = p;
+    });
+    el("line", { x1: X0, y1: Y0, x2: X0, y2: py(14), stroke: "#94a3b8", "stroke-width": 1.6 }, plot);
+    var axX = el("text", { x: X0 + W / 2, y: Y0 + 38, "text-anchor": "middle", "font-size": 12, fill: "#374151" }, plot);
+    axX.textContent = "V(NaOH) / mL";
+    var axY = el("text", { x: X0 - 8, y: py(14) - 10, "text-anchor": "start", "font-size": 12, fill: "#374151" }, plot);
+    axY.textContent = "pH";
+
+    // 酚酞变色带（8.2–10）
+    el("rect", { x: X0, y: py(10), width: W, height: py(8.2) - py(10), fill: "#f9a8d4", opacity: 0.3 }, plot);
+    var ppTxt = el("text", { x: X0 + W - 4, y: py(10) - 5, "text-anchor": "end", "font-size": 10, fill: "#be185d" }, plot);
+    ppTxt.textContent = "酚酞变色范围 8.2–10";
+
+    // 计量点虚线与突跃标注
+    el("line", { x1: px(20), y1: py(14), x2: px(20), y2: Y0, stroke: "#94a3b8", "stroke-width": 1.2, "stroke-dasharray": "5 4" }, plot);
+    var spTxt = el("text", { x: px(20) + 6, y: py(14) + 10, "font-size": 10, fill: "#6b7280" }, plot);
+    spTxt.textContent = "计量点 20.00 mL";
+    var jx = px(20) - 8;
+    el("line", { x1: jx, y1: py(4.3), x2: jx, y2: py(9.7), stroke: "#b91c1c", "stroke-width": 1.8 }, plot);
+    el("polygon", { points: (jx - 4) + "," + (py(4.3) - 1) + " " + (jx + 4) + "," + (py(4.3) - 1) + " " + jx + "," + (py(4.3) + 6), fill: "#b91c1c" }, plot);
+    el("polygon", { points: (jx - 4) + "," + (py(9.7) + 1) + " " + (jx + 4) + "," + (py(9.7) + 1) + " " + jx + "," + (py(9.7) - 6), fill: "#b91c1c" }, plot);
+    var jTxt1 = el("text", { x: jx - 8, y: py(7) - 4, "text-anchor": "end", "font-size": 11, "font-weight": 700, fill: "#b91c1c" }, plot);
+    jTxt1.textContent = "突跃";
+    var jTxt2 = el("text", { x: jx - 8, y: py(7) + 12, "text-anchor": "end", "font-size": 10, fill: "#b91c1c" }, plot);
+    jTxt2.textContent = "±0.02 mL";
+
+    // ---------- 左侧：滴定装置 ----------
+    var lab = el("g", {}, svg);
+    var bx = 95;
+    var labTitle = el("text", { x: bx, y: 16, "text-anchor": "middle", "font-size": 11, "font-weight": 700, fill: "#5b21b6" }, lab);
+    labTitle.textContent = "NaOH 0.1000 mol/L";
+    el("rect", { x: bx - 7, y: 28, width: 14, height: 142, fill: "#ffffff", stroke: "#64748b", "stroke-width": 1.6 }, lab);
+    for (var g = 0; g <= 4; g++) {
+      el("line", { x1: bx + 7, y1: 32 + g * 30, x2: bx + 13, y2: 32 + g * 30, stroke: "#64748b", "stroke-width": 1.2 }, lab);
+    }
+    var tubeLiq = el("rect", { x: bx - 6, y: 32, width: 12, height: 137, fill: "#a78bfa" }, lab);
+    el("polygon", { points: (bx - 7) + ",170 " + (bx + 7) + ",170 " + bx + ",186", fill: "#8b5cf6" }, lab);
+    el("circle", { cx: bx, cy: 192, r: 3.2, fill: "#8b5cf6", class: "anim-pulse" }, lab);
+    // 锥形瓶
+    el("path", { d: "M" + (bx - 11) + ",196 L" + (bx - 11) + ",222 L" + (bx - 51) + ",300 Q" + (bx - 53) + ",308 " + (bx - 43) + ",308 L" + (bx + 43) + ",308 Q" + (bx + 53) + ",308 " + (bx + 51) + ",300 L" + (bx + 11) + ",222 L" + (bx + 11) + ",196", fill: "#ffffff", stroke: "#64748b", "stroke-width": 1.8 }, lab);
+    var flaskLiq = el("path", { d: "M" + (bx - 28) + ",258 L" + (bx + 28) + ",258 L" + (bx + 47) + ",302 L" + (bx - 47) + ",302 Z", fill: "#eef2f7", opacity: 0.92 }, lab);
+    var flaskTxt = el("text", { x: bx, y: 330, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, lab);
+    flaskTxt.textContent = "20.00 mL HCl(0.1000 mol/L)＋酚酞";
+
+    // ---------- 动态元素 ----------
+    var curve = el("path", { d: "", fill: "none", stroke: "#6d28d9", "stroke-width": 2.5 }, svg);
+    var dot = el("circle", { cx: px(0), cy: py(1), r: 5, fill: "#6d28d9", stroke: "#ffffff", "stroke-width": 1.5 }, svg);
+
+    function pathFor(vCur) {
+      var d = "", v = 0, first = true;
+      while (v <= vCur + 1e-9) {
+        var seg = (v > 19.3 && v < 20.7) ? 0.01 : 0.05;
+        var x = px(v).toFixed(1), y = py(pHOf(v)).toFixed(1);
+        d += (first ? "M" : "L") + x + "," + y;
+        first = false;
+        v += seg;
+      }
+      // 补上当前点（滑块任意值）
+      if (vCur > 0) {
+        d += "L" + px(vCur).toFixed(1) + "," + py(pHOf(vCur)).toFixed(1);
+      }
+      return d;
+    }
+
+    function update(v) {
+      V = v;
+      var p = pHOf(v);
+      curve.setAttribute("d", pathFor(v));
+      dot.setAttribute("cx", px(v).toFixed(1));
+      dot.setAttribute("cy", py(p).toFixed(1));
+      var yTop = 32 + (v / 40) * 130;
+      tubeLiq.setAttribute("y", yTop.toFixed(1));
+      tubeLiq.setAttribute("height", (170 - yTop).toFixed(1));
+      flaskLiq.setAttribute("fill", phenolColor(p));
+      vLabel.textContent = v.toFixed(2);
+      readout.textContent = "V(NaOH) = " + v.toFixed(2) + " mL ｜ pH = " + p.toFixed(2) +
+        " ｜ " + phenolText(p) + " ｜ " + stateText(v);
+    }
+
+    function sync() {
+      if (slider) slider.value = V;
+      update(V);
+    }
+
+    function stopPlay() {
+      playing = false;
+      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+      if (playBtn) playBtn.textContent = "▶ 自动滴定";
+    }
+
+    function loop() {
+      if (!playing) return;
+      var dv = (V > 19.4 && V < 20.6) ? 0.05 : 0.3;
+      V = Math.min(40, V + dv);
+      sync();
+      if (V >= 40) { stopPlay(); return; }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    if (playBtn) playBtn.addEventListener("click", function () {
+      if (playing) { stopPlay(); return; }
+      if (V >= 40) V = 0;
+      playing = true;
+      playBtn.textContent = "⏸ 暂停";
+      loop();
+    });
+    if (slider) slider.addEventListener("input", function () {
+      stopPlay();
+      update(parseFloat(slider.value));
+    });
+    if (resetBtn) resetBtn.addEventListener("click", function () {
+      stopPlay();
+      update(0);
+      if (slider) slider.value = 0;
+    });
+
+    update(0);
+  }
+})();
+</script>
+</body>
+</html>

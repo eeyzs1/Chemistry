@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遗传信息的化学 · 生物化学 第 3 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b05">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">05 生物化学</a><span class="sep">/</span>
+    <span class="here">第 3 章 · 遗传信息的化学</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">05 生物化学 · 第 3 章</div>
+    <h1>遗传信息的化学：从双螺旋到蛋白质</h1>
+    <p class="lede">
+      你的每个细胞里都收着约 2 米长的 DNA；全身细胞的 DNA 首尾相连，足够在地日之间往返六十多次。
+      这条 30 亿"字母"写成的长链如何精确复制自己、如何被读出并指挥蛋白质合成？
+      本章沿<strong>复制 → 转录 → 翻译</strong>的中心法则走一遍信息的旅程，
+      再看 PCR 与 CRISPR 如何把这套化学变成改写生命的工具。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：本分支第 1–2 章</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#helix">§1 双螺旋</a>
+    <a href="#replication">§2 复制</a>
+    <a href="#dogma">§3 转录与翻译</a>
+    <a href="#tech">§4 突变与技术</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：30 亿个字母，抄错率百亿分之一</h2>
+    <p>
+      人类基因组约 30 亿碱基对——若每秒读 1 对，要 95 年才读完；
+      信息量约 750 MB，刚好一张光盘。但真正惊人的不是容量，而是<strong>保真度</strong>：
+      复制的原始错误率低至每碱基 10⁻⁹～10⁻¹⁰——相当于抄写一千本百万字的书，只错一个字。
+      这是怎么做到的？答案藏在双螺旋的<strong>化学结构</strong>里：上一章的氢键与碱基互补，
+      正是为"复印"预装的接口。
+    </p>
+    <p>
+      1953 年，沃森与克里克在《Nature》用一页纸宣布双螺旋结构，末尾写道：
+      <em>"它没有逃过我们的注意：我们假设的特定配对，立刻提示了遗传物质可能的复制机制。"</em>
+      ——结构的论文，顺手回答了生物学最大的问题。本章就沿着这条线索走。
+    </p>
+  </section>
+
+  <!-- ============ §1 双螺旋 ============ -->
+  <section id="helix">
+    <h2>§1 双螺旋：一张自带复印说明的图纸</h2>
+    <p>
+      回顾第 1 章：DNA 的骨架由<strong>磷酸二酯键</strong>连成，两条链<strong>反向平行</strong>
+      （一条 5′→3′，另一条 3′→5′），碱基藏在内部，
+      靠氢键严格配对——<span class="formula">A=T</span>（2 个氢键）、
+      <span class="formula">G≡C</span>（3 个氢键）。
+      双螺旋的关键参数：
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>参数</th><th>数值</th><th>化学含义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>螺旋直径</td><td>约 2 nm</td><td>嘌呤（大）必须配嘧啶（小），沟宽恒定</td></tr>
+        <tr><td>每圈碱基对</td><td>约 10 对</td><td>螺距 3.4 nm，紧凑而规整</td></tr>
+        <tr><td>配对方式</td><td>A=T · G≡C</td><td>氢键给体/受体位置严格互补</td></tr>
+        <tr><td>碱基位置</td><td>螺旋内部</td><td>疏水的碱基避水堆积（base stacking），亲水骨架朝外</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 双螺旋的三重巧思</div>
+      ①<strong>每条链都是另一条的模板</strong>——复制原理写在结构里；
+      ②碱基靠<strong>氢键</strong>配对——够稳存档，又能"拉开拉链"；
+      ③信息用 4 个字母<strong>数字化</strong>——抄写时逐字核对，比模拟量精确得多。
+    </div>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么 A 只配 T、G 只配 C？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          碱基配对像<strong>插头与插座</strong>：A 的插头位置恰好对上 T 的插孔，
+          G 对上 C——形状与"电极"（氢键的给体/受体）双匹配，插错要么卡不进、要么点不亮。
+          而且是大双环的嘌呤配小单环的嘧啶——<strong>大配小，宽度才恒定</strong>，
+          A 配 G 会把螺旋撑爆，T 配 C 又会塌陷。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 机制</span>
+        <p>
+          每种碱基边缘的氢键<strong>给体（D）与受体（A）</strong>排列是固定的：
+          A 的图案与 T 恰好互补（D-A 对 A-D，共 2 对氢键），G 与 C 互补（三对氢键）。
+          错配的碱基图案对不上，形成不了几根合格氢键，稳定性大打折扣。
+          于是"配对规则"不是纪律约束，而是<strong>化学几何的必然</strong>——
+          这正是复制保真的第一层保险。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 定量</span>
+        <p>
+          保真不止一层：①热力学——错配双链稳定性差；②动力学——DNA 聚合酶的活性中心只容纳
+          正确配对的几何形状（"诱导契合"再立一功），还带 3′→5′ 校对外切酶，装错立刻剪掉；
+          ③事后还有错配修复系统巡查。三层叠出 10⁻⁹～10⁻¹⁰ 的错误率。
+          另一个可测的推论：<strong>G≡C 氢键多 → 解链温度 T<sub>m</sub> 更高</strong>——
+          GC 含量越高的 DNA 越难解开，这正是 PCR 引物设计要计算 GC 比的原因（§4）。
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么 DNA 用胸腺嘧啶 T，RNA 却用尿嘧啶 U？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：U 比 T 少一个甲基。想想"档案"和"草稿"对稳定性的要求有何不同？</p>
+        <p>
+          U 更"便宜"、更容易合成——RNA 是短命的工作副本，用 U 无妨。
+          DNA 是终身档案，T 多出的甲基让它更稳定、更抗化学水解。
+          更妙的是<strong>修复视角</strong>：胞嘧啶 C 会自发脱氨变成 U——
+          修复酶看到 DNA 里出现 U，立刻知道"这是损坏的 C"，改成 C 即可；
+          若 DNA 本来就用 U，U 是"正品"，错误就无从识别了。
+          一个甲基之差，档案与草稿各得其所。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 复制 ============ -->
+  <section id="replication">
+    <h2>§2 复制：拉开拉链，各补一半</h2>
+    <p>
+      双螺旋既然两条链互补，复制的思路便水到渠成：
+      <span class="term">半保留复制</span><span class="en">semiconservative replication</span>——
+      拉开拉链，每条旧链当模板，各配一条新链。
+      1958 年梅塞尔森与斯塔尔用 ¹⁵N 同位素标记大肠杆菌 DNA，
+      以密度梯度离心跟踪"重链"的去向，干净利落地证明每个子代分子
+      都是<strong>一条旧链 + 一条新链</strong>——被后人称为"生物学最漂亮的实验"。
+    </p>
+    <p>
+      真实的复制叉上有一整支施工队：<strong>解旋酶</strong>（消耗 ATP 拉开双链）、
+      <strong>单链结合蛋白</strong>（稳住暴露的单链）、<strong>拓扑异构酶</strong>（在叉的前方切-转-接，
+      防止螺旋拧成死结）、<strong>DNA 聚合酶</strong>（按模板逐个加核苷酸，只能 5′→3′ 施工）、
+      最后由<strong>连接酶</strong>缝合缺口。看动画：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="dnaSvg" width="640" height="380" viewBox="0 0 640 380" role="img" aria-label="DNA 解链复制动画"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="dnaGo">▶ 连续解链</button>
+          <button class="btn ghost" id="dnaStep">⏭ 步进 1 对</button>
+          <button class="btn ghost" id="dnaReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="dnaReadout"></div>
+      </div>
+      <figcaption>
+        注意<strong>两边新链的节奏不同</strong>：聚合酶只能沿 5′→3′ 方向施工，
+        而复制叉两股模板方向相反——一股（前导链）可以连续延伸；
+        另一股（后随链）只能"倒退着"一段段合成<strong>冈崎片段</strong>，再由连接酶缝合。
+        解旋酶每拉开一对碱基，都要克服氢键并消耗 ATP。
+      </figcaption>
+    </figure>
+
+    <p>
+      速度与精度同样惊人：大肠杆菌的聚合酶每秒添加约 1000 个核苷酸，
+      边装边校对；人类 46 条染色体全表复制一遍，也只在数小时内完成。
+    </p>
+  </section>
+
+  <!-- ============ §3 转录与翻译 ============ -->
+  <section id="dogma">
+    <h2>§3 转录与翻译：中心法则</h2>
+    <p>
+      信息的流动路线被克里克概括为<span class="term">中心法则</span>
+      <span class="en">central dogma</span>：
+      <strong>DNA → RNA → 蛋白质</strong>——原图存档，抄本流通，蛋白质干活。
+      逐步点亮下面这张地图：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="cdSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="中心法则分步导航图">
+          <g id="cdRep" opacity="0.4">
+            <path d="M86,138 C34,116 34,206 82,184" fill="none" stroke="#4338ca" stroke-width="3.5"/>
+            <polygon points="90,184 78,178 80,191" fill="#4338ca"/>
+            <text x="34" y="108" font-size="11" font-weight="700" fill="#4338ca">复制</text>
+          </g>
+          <g id="cdDna" opacity="0.4">
+            <rect x="96" y="140" width="150" height="64" rx="14" fill="#c7d2fe" stroke="#4338ca" stroke-width="2.5"/>
+            <text x="171" y="170" text-anchor="middle" font-size="19" font-weight="800" fill="#3730a3">DNA</text>
+            <text x="171" y="190" text-anchor="middle" font-size="10.5" fill="#4338ca">遗传原图 · 双螺旋</text>
+          </g>
+          <g id="cdTrc" opacity="0.4">
+            <line x1="248" y1="172" x2="300" y2="172" stroke="#b45309" stroke-width="4"/>
+            <polygon points="308,172 295,166 295,178" fill="#b45309"/>
+            <text x="278" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">转录</text>
+          </g>
+          <g id="cdRna" opacity="0.4">
+            <rect x="310" y="140" width="150" height="64" rx="14" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/>
+            <text x="385" y="170" text-anchor="middle" font-size="18" font-weight="800" fill="#92400e">mRNA</text>
+            <text x="385" y="190" text-anchor="middle" font-size="10.5" fill="#b45309">单链工作副本</text>
+          </g>
+          <g id="cdTrl" opacity="0.4">
+            <line x1="462" y1="172" x2="514" y2="172" stroke="#15803d" stroke-width="4"/>
+            <polygon points="522,172 509,166 509,178" fill="#15803d"/>
+            <text x="492" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">翻译</text>
+          </g>
+          <g id="cdPro" opacity="0.4">
+            <rect x="524" y="140" width="110" height="64" rx="14" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/>
+            <text x="579" y="170" text-anchor="middle" font-size="16" font-weight="800" fill="#166534">蛋白质</text>
+            <text x="579" y="190" text-anchor="middle" font-size="10.5" fill="#15803d">折叠成机器</text>
+          </g>
+          <g id="cdRev" opacity="0.4">
+            <path d="M362,134 C312,72 250,72 204,132" fill="none" stroke="#9333ea" stroke-width="3" stroke-dasharray="7 6"/>
+            <polygon points="200,138 210,124 216,135" fill="#9333ea"/>
+            <text x="282" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#9333ea">逆转录（HIV 等病毒）</text>
+          </g>
+          <g id="cdDots"></g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="cdNext">下一步（0/6）</button>
+          <button class="btn ghost" id="cdPrev">上一步</button>
+          <button class="btn ghost" id="cdReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="cdReadout"></div>
+      </div>
+      <figcaption>
+        转录把 4 字母语言抄成 4 字母语言（T→U）；翻译则把 4 字母语言解码成 20 字母语言（氨基酸）——
+        中间的字典就是<strong>遗传密码表</strong>。
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 中心法则"绝对不可逆"？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          中心法则是铁律：信息只能 DNA → RNA → 蛋白质，从不存在反向流动。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          1970 年，特明与巴尔的摩在逆转录病毒中发现<strong>逆转录酶</strong>：能把 RNA 抄回 DNA
+          （HIV 就是靠它入侵基因组，1975 年诺贝尔奖）。但中心法则是<strong>被补充，不是被推翻</strong>——
+          克里克强调的禁区是"信息不能从蛋白质流回核酸"，这条路至今未发现例外。
+          HIV 药物设计正是瞄准了逆转录酶（第 2 章"酶是药靶"的实战版）。
+        </div>
+      </div>
+    </div>
+
+    <h3>三联体密码：4 个字母写 20 个字母</h3>
+    <p>
+      mRNA 上<strong>每 3 个相邻核苷酸</strong>组成一个<span class="term">密码子</span>
+      <span class="en">codon</span>，对应一个氨基酸。64 = 4³ 个密码子编码 20 种氨基酸再加终止信号——
+      有冗余（<span class="term">简并性</span><span class="en">degeneracy</span>），
+      所以不少点突变是"同义突变"，蛋白质分毫不变——
+      这是生命对抄写错误的<strong>内置容错</strong>。AUG 既是蛋氨酸又是"起始信号"。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 一张全地球通用的字典</div>
+      从大肠杆菌到你，用的是<strong>同一套密码表</strong>——共同祖先最硬的证据之一；
+      也正因如此，人类基因才能放进细菌里生产胰岛素：
+      跨物种基因工程是被化学"预先批准"过的。
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么密码子是"三连体"，而不是 2 个或 4 个一组？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：数一数。要装下 20 种氨基酸 + 终止信号，几位数的"地址"才够用？</p>
+        <p>
+          2 个一组只有 4² = 16 种——连 20 种氨基酸都编号不完；3 个一组 4³ = 64 种，
+          够用还有富余（富余换来简并容错）；4 个一组 256 种，冗余过度、读写效率反而下降。
+          生命选了<strong>最小够用</strong>的方案——和工程师的"最经济设计"如出一辙。
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 例题脚手架：从模板链到肽链</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        某 DNA 模板链（模板，即被转录的那条）为 3′-TAC GGA TTC-5′，写出转录出的 mRNA 与肽链。<br>
+        <em>密码子小抄：AUG=蛋氨酸 · CCU=脯氨酸 · AAG=赖氨酸</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">认方向：模板链 3′→5′，所以 mRNA 沿 5′→3′ 逐个配对抄写。</li>
+        <li class="step">逐碱基互补（DNA→RNA 规则：A→U、T→A、G→C、C→G）：TAC → AUG，GGA → CCU，TTC → AAG。</li>
+        <li class="step">得到 mRNA：<strong>5′-AUG CCU AAG-3′</strong>（注意是 U 不是 T）。</li>
+        <li class="step">查表断句（每三码一字）：AUG=蛋氨酸、CCU=脯氨酸、AAG=赖氨酸 → 肽链 <strong>Met–Pro–Lys</strong>。</li>
+        <li class="step">✅ 自查：mRNA 与模板链互换个个互补、方向相反；AUG 起始码位于 5′ 端，合理。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：移码的破坏力</div>
+      <div class="worked-problem">
+        mRNA 起始端为 AUG GGC UCA GAC…。若 DNA 发生缺失，分别导致 mRNA
+        ①丢掉第 4 个碱基（G）②丢掉第 4–6 个碱基（GGC）。两种情况下后续肽链各受何影响？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：翻译的"读框"从起始码起每 3 个一组，像标点固定的电报。</li>
+        <li class="step">💡 提示：情景① AUG | GCU | CAG | AC…——从缺失点起<strong>每个密码子都错位</strong>，氨基酸序列面目全非（移码突变）。</li>
+        <li class="step">💡 提示：情景② AUG | UCA | GAC…——只少了甘氨酸一个字，读框未乱，后面全部照旧。</li>
+        <li class="step">✅ 结论：非 3 倍数的插入/缺失是"移码雪崩"，危害通常远超单个替换；囊性纤维化的 ΔF508 正是 3 bp 缺失——只丢一个苯丙氨酸，却让蛋白折叠崩盘。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 突变与技术 ============ -->
+  <section id="tech">
+    <h2>§4 突变与技术：读懂它，就能改写它</h2>
+    <p>
+      复制纵有百亿分之一的精度，30 亿碱基的巨账仍会出错——这就是<span class="term">突变</span>：
+      <strong>替换</strong>（同义/错义/无义）、<strong>插入与缺失</strong>（移码）。
+      第 1 章的镰刀型贫血就是单点替换：GAG→GTG，谷氨酸换成缬氨酸，
+      一个字母之差改变血红蛋白的形状。突变多半中性或有害，偶尔有益——它们是演化的原料。
+    </p>
+    <p>
+      而"读懂了这套化学"的人类，顺手发明了两件工具：
+    </p>
+    <ul>
+      <li><strong>PCR</strong>（聚合酶链式反应，1983 年穆利斯，1993 年诺奖）：
+        加热 95 ℃ 解链 → 降温让引物配对 → 聚合酶延伸——三步一循环，DNA 每 30 轮放大约 10⁹ 倍。
+        疫情检测、法医 DNA、考古测序都靠它。关键角色是从黄石温泉细菌里请来的
+        <strong>Taq 耐热聚合酶</strong>——普通酶在 95 ℃ 早熟透了（第 2 章的变性），
+        它却住惯了热水澡。</li>
+      <li><strong>CRISPR-Cas9</strong>（2020 年诺贝尔化学奖）：源自细菌"免疫记忆"的
+        <strong>分子剪刀</strong>——向导 RNA 认路，Cas9 剪刀定点切割，细胞修复时顺势改写基因。
+        一句话展望：基因治疗的大门正在打开，而"该不该剪、剪哪里"的伦理题，比化学题更难。</li>
+    </ul>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 吃了转基因食物会"改变我的基因"？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          转基因食物里的"外源基因"吃进去后会整合进我的基因组，我和后代都会被改变。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          任何食物的 DNA——转基因或非转基因——进消化道都被<strong>核酸酶水解成核苷酸</strong>才吸收，
+          与猪肉的基因、白菜的基因同等待遇（你吃了一辈子猪肉，也没长出猪耳朵）。
+          基因的"水平转移"需要病毒或实验室的整套分子机器，
+          而消化道的化学定位是<strong>拆解车间</strong>，不是装配线。转基因的安全性要逐案评估其产物蛋白，
+          但"吃基因改写人"这条路，化学上走不通。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么 PCR 必须用 Taq 这种耐热聚合酶，普通细胞的聚合酶不行吗？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：每一轮循环的第一步是 95 ℃ 加热——回想第 2 章酶的"工作区间"。</p>
+        <p>
+          解链靠加热，意味着聚合酶<strong>每一轮都要被 95 ℃ 烫一次</strong>。
+          普通酶靠氢键、疏水作用维持三维结构（第 1 章），高温下弱键松散、不可逆变性——
+          烫一轮就报废。Taq 聚合酶来自嗜热水生菌
+          <span class="formula">Thermus aquaticus</span>，
+          住在温泉里的它把稳定结构焊得更牢，正好配合"加热-降温"的循环节奏。
+          生命化学的边界知识，直接变成了技术的钥匙。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>双螺旋：反向平行双链，A=T（2 氢键）、G≡C（3 氢键）；配对由<strong>氢键几何与"大配小"</strong>的化学必然决定。</li>
+        <li><strong>半保留复制</strong>：拉开拉链各补一半（Meselson–Stahl 实验）；前导链连续、后随链合成冈崎片段再缝合。</li>
+        <li>保真三层保险：错配热力学劣势 + 聚合酶校对 + 错配修复 → 错误率 10⁻⁹～10⁻¹⁰。</li>
+        <li>中心法则：DNA →（转录）→ RNA →（翻译）→ 蛋白质；逆转录酶补充了 RNA → DNA 的"后门"（HIV、逆转录病毒）。</li>
+        <li>三联体密码：64 个密码子 / 20 种氨基酸，简并即容错；密码表全生物通用——共同祖先的证据、基因工程的许可证。</li>
+        <li>移码突变（非 3 倍数增删）破坏力远超点替换。</li>
+        <li>技术闭环：PCR（耐热聚合酶 + 循环解链）指数放大 DNA；CRISPR-Cas9 用向导 RNA 定点改写——读懂化学，就能改写生命。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 遗传信息的化学 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "DNA 双螺旋中，与腺嘌呤（A）配对的碱基及其氢键数是？",
+            "options": ["G，3 个氢键", "C，3 个氢键", "T，2 个氢键", "U，2 个氢键"],
+            "answer": 2,
+            "explain": "DNA 中 A=T（2 个氢键）、G≡C（3 个）。U 只出现在 RNA 中。氢键数差异还决定了 GC 含量越高、解链温度越高。"
+          },
+          {
+            "q": "“半保留复制”的意思是？",
+            "options": ["子代 DNA 分子全部新合成", "每个子代分子含一条母链和一条新链", "母链被降解后按记忆重建", "两条母链进入同一个子代分子"],
+            "answer": 1,
+            "explain": "拉开拉链后每条旧链当模板各配一条新链——两个子代分子各得一半旧一半新。Meselson–Stahl 用 ¹⁵N 标记证明了这一点。"
+          },
+          {
+            "q": "DNA 模板链为 3′-TAC-5′，转录出的 mRNA 是？",
+            "options": ["3′-ATG-5′", "5′-AUG-3′", "5′-TAC-3′", "5′-UAC-3′"],
+            "answer": 1,
+            "explain": "模板 3′→5′ 被抄成 mRNA 5′→3′：T→A、A→U、C→G，得 5′-AUG-3′（AUG 正是起始密码子）。"
+          },
+          {
+            "q": "后随链要合成“冈崎片段”再缝合，根本原因是？",
+            "options": ["DNA 聚合酶只能沿 5′→3′ 合成，而复制叉两股模板方向相反", "后随链的模板容易断裂", "冈崎片段是突变造成的产物", "RNA 不参与 DNA 复制"],
+            "answer": 0,
+            "explain": "一股模板方向与叉前进方向顺路（前导链，连续）；另一股逆路，聚合酶只能倒退着分段施工，产物即冈崎片段，由连接酶缝合。"
+          },
+          {
+            "q": "PCR 每轮循环都要加热到约 95 ℃，因此必须使用？",
+            "options": ["耐热的 Taq 聚合酶（来自嗜热水生菌）", "解旋酶", "逆转录酶", "限制酶"],
+            "answer": 0,
+            "explain": "95 ℃ 会让普通酶不可逆变性（弱键散架）。Taq 聚合酶产自温泉细菌，天生耐热，才能陪 DNA 走完“变性—退火—延伸”的循环。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="02-酶与代谢.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 2 章 · 酶与代谢</span></a>
+      <a class="next" href="../06-高分子化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">06 高分子化学 · 分支导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（DNA 解链复制动画 / 中心法则 stepper） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* ---------- 1. DNA 解链复制动画 ---------- */
+  var dnaSvg = document.getElementById("dnaSvg");
+  if (dnaSvg) {
+    var dnaReadout = document.getElementById("dnaReadout");
+    var N = 11, TOP = 84, BOT = 344;
+    var LSEQ = ["A", "G", "T", "C", "A", "T", "G", "C", "T", "A", "G"];
+    var COMP = { A: "T", T: "A", G: "C", C: "G" };
+    var BCOL = { A: "#ef4444", T: "#f59e0b", G: "#22c55e", C: "#3b82f6" };
+    var p = 0, raf = null;
+
+    function yOf(i) { return TOP + i * (BOT - TOP) / (N - 1); }
+
+    function box(cx, cy, letter, op) {
+      var o = op === undefined ? 1 : op;
+      el("rect", { x: cx - 15, y: cy - 9, width: 30, height: 18, rx: 4,
+                   fill: BCOL[letter], opacity: o }, dnaSvg);
+      var t = el("text", { x: cx, y: cy + 3.5, "text-anchor": "middle", "font-size": 10,
+                           "font-weight": 800, fill: "#fff", opacity: o }, dnaSvg);
+      t.textContent = letter;
+    }
+
+    function drawDNA() {
+      dnaSvg.innerHTML = "";
+      var forkY = 66 + p * 300;
+      // 图例与标注
+      var keys = ["A", "T", "G", "C"];
+      for (var li = 0; li < 4; li++) {
+        var lx = 20 + li * 52;
+        el("rect", { x: lx, y: 20, width: 12, height: 12, rx: 3, fill: BCOL[keys[li]] }, dnaSvg);
+        var lt = el("text", { x: lx + 17, y: 31, "font-size": 10.5, fill: "#4b5563" }, dnaSvg);
+        lt.textContent = keys[li];
+      }
+      var lab1 = el("text", { x: 150, y: 31, "font-size": 10.5, "font-weight": 700, fill: "#0f766e" }, dnaSvg);
+      lab1.textContent = "前导链（连续）";
+      var lab2 = el("text", { x: 620, y: 31, "text-anchor": "end", "font-size": 10.5,
+                              "font-weight": 700, fill: "#b45309" }, dnaSvg);
+      lab2.textContent = "后随链（冈崎片段）";
+
+      // 各碱基对状态
+      var st = [];
+      for (var i = 0; i < N; i++) {
+        var yy = yOf(i);
+        var t = Math.max(0, Math.min(1, (forkY - yy + 10) / 26));
+        st.push({ y: yy, t: t,
+                  lx: 285 + (120 - 285) * t,
+                  rx: 355 + (520 - 355) * t });
+      }
+      // 母链骨架
+      for (var s = 0; s < N - 1; s++) {
+        el("line", { x1: st[s].lx, y1: st[s].y, x2: st[s + 1].lx, y2: st[s + 1].y,
+                     stroke: "#94a3b8", "stroke-width": 3 }, dnaSvg);
+        el("line", { x1: st[s].rx, y1: st[s].y, x2: st[s + 1].rx, y2: st[s + 1].y,
+                     stroke: "#94a3b8", "stroke-width": 3 }, dnaSvg);
+      }
+      // 氢键 + 母链碱基
+      for (var b = 0; b < N; b++) {
+        var ob = st[b];
+        if (ob.t < 1) {
+          var hx1 = ob.lx + 15, hx2 = ob.rx - 15;
+          var mid = (hx1 + hx2) / 2, half = (hx2 - hx1) / 2 * (1 - ob.t);
+          el("line", { x1: mid - half, y1: ob.y, x2: mid + half, y2: ob.y,
+                       stroke: "#64748b", "stroke-width": 2, "stroke-dasharray": "3 3",
+                       opacity: (1 - ob.t) }, dnaSvg);
+        }
+        box(ob.lx, ob.y, LSEQ[b]);
+        box(ob.rx, ob.y, COMP[LSEQ[b]]);
+      }
+      // 前导新链（左，连续）
+      var prevL = null;
+      for (var n1 = 0; n1 < N; n1++) {
+        var o1 = st[n1];
+        var show1 = Math.max(0, Math.min(1, (forkY - o1.y - 8) / 18));
+        if (show1 > 0) {
+          if (prevL) el("line", { x1: prevL[0], y1: prevL[1], x2: 52, y2: o1.y,
+                                  stroke: "#0d9488", "stroke-width": 3, opacity: show1 }, dnaSvg);
+          box(52, o1.y, COMP[LSEQ[n1]], show1);
+          prevL = [52, o1.y];
+        } else { prevL = null; }
+      }
+      // 后随新链（右，每 4 个一组）
+      var prevR = null;
+      for (var n2 = 0; n2 < N; n2++) {
+        var o2 = st[n2];
+        var show2 = Math.max(0, Math.min(1, (forkY - o2.y - 8) / 18));
+        if (n2 % 4 === 0) prevR = null;
+        if (show2 > 0) {
+          if (prevR) el("line", { x1: prevR[0], y1: prevR[1], x2: 588, y2: o2.y,
+                                  stroke: "#b45309", "stroke-width": 3, opacity: show2 }, dnaSvg);
+          box(588, o2.y, COMP[LSEQ[n2]], show2);
+          prevR = [588, o2.y];
+        }
+      }
+      // 解旋酶
+      var hy = Math.min(forkY, 352);
+      el("circle", { cx: 320, cy: hy, r: 17, fill: "#64748b", opacity: .93 }, dnaSvg);
+      var ht = el("text", { x: 320, y: hy + 3.5, "text-anchor": "middle", "font-size": 9.5,
+                            "font-weight": 700, fill: "#fff" }, dnaSvg);
+      ht.textContent = "解旋酶";
+      // 读数
+      var opened = 0;
+      for (var c = 0; c < N; c++) if (st[c].t >= 1) opened++;
+      dnaReadout.textContent = p <= 0
+        ? "点击按钮，看解旋酶如何拉开拉链、两条新链如何跟进"
+        : "已拉开 " + opened + "/" + N + " 对 ｜ 前导链（左）连续延伸 ｜ 后随链（右）分段合成冈崎片段，连接酶稍后缝合 ｜ 聚合酶只能 5′→3′ 施工";
+    }
+
+    function bindDna(id, fn) {
+      var b = document.getElementById(id);
+      if (b) b.addEventListener("click", fn);
+    }
+    bindDna("dnaGo", function () {
+      if (raf) cancelAnimationFrame(raf);
+      var t0 = null, dur = 5200;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        p = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        drawDNA();
+        if (k < 1) raf = requestAnimationFrame(step);
+      }
+      raf = requestAnimationFrame(step);
+    });
+    bindDna("dnaStep", function () {
+      if (raf) cancelAnimationFrame(raf);
+      p = Math.min(1, p + 1 / N);
+      drawDNA();
+    });
+    bindDna("dnaReset", function () {
+      if (raf) cancelAnimationFrame(raf);
+      p = 0;
+      drawDNA();
+    });
+    drawDNA();
+  }
+
+  /* ---------- 2. 中心法则 stepper ---------- */
+  var cdSvg = document.getElementById("cdSvg");
+  if (cdSvg) {
+    var cdReadout = document.getElementById("cdReadout");
+    var cdNext = document.getElementById("cdNext");
+    var cdPrev = document.getElementById("cdPrev");
+    var cdReset = document.getElementById("cdReset");
+    var IDS = ["cdDna", "cdRna", "cdPro", "cdRep", "cdTrc", "cdTrl", "cdRev"];
+    var STAGES = [
+      { on: [],
+        text: "中心法则：信息在分子间的流动地图——DNA 是原图，RNA 是工作副本，蛋白质是干活的机器。点“下一步”逐步点亮。" },
+      { on: ["cdDna", "cdRep"],
+        text: "① 复制（上一节）：DNA → DNA。细胞分裂前把图纸整本复印——半保留复制，两条母链各领一条新链。" },
+      { on: ["cdDna", "cdRna", "cdTrc"],
+        text: "② 转录：RNA 聚合酶解开一小段 DNA，以模板链抄出 mRNA——配对规则 A→U、T→A、G→C、C→G。" },
+      { on: ["cdRna"],
+        text: "③ mRNA：带着“复印页”离开细胞核（真核细胞），抵达核糖体——它是短命副本，用完即降解，随时能重印。" },
+      { on: ["cdRna", "cdPro", "cdTrl"],
+        text: "④ 翻译：核糖体按三联体密码子逐个读取，tRNA 递来对应氨基酸——第 1 章的肽键就在这里一个个生成。" },
+      { on: IDS,
+        text: "⑤ 全图点亮 + 一条“后门”：逆转录病毒（如 HIV）能把 RNA 抄回 DNA（紫色虚线）——中心法则被补充而非推翻：信息一旦流入蛋白质，不会流回核酸。" }
+    ];
+    var stage = 0;
+
+    var dots = document.getElementById("cdDots");
+    var dotEls = [];
+    if (dots) {
+      for (var i = 0; i < STAGES.length; i++) {
+        var d = el("circle", { cx: 235 + i * 34, cy: 286, r: 7,
+                               fill: "#e5e7eb", stroke: "#cbd5e1", "stroke-width": 1.5 }, dots);
+        dotEls.push(d);
+      }
+    }
+
+    function render() {
+      var act = {};
+      STAGES[stage].on.forEach(function (id) { act[id] = true; });
+      IDS.forEach(function (id) {
+        var g = document.getElementById(id);
+        if (g) g.setAttribute("opacity", act[id] ? "1" : "0.4");
+      });
+      dotEls.forEach(function (d, i) {
+        d.setAttribute("fill", i === stage ? "#0d9488" : (i < stage ? "#99f6e4" : "#e5e7eb"));
+      });
+      cdReadout.textContent = STAGES[stage].text;
+      if (cdNext) {
+        cdNext.textContent = "下一步（" + stage + "/" + STAGES.length + "）";
+        cdNext.disabled = stage >= STAGES.length - 1;
+      }
+      if (cdPrev) cdPrev.disabled = stage <= 0;
+    }
+    if (cdNext) cdNext.addEventListener("click", function () {
+      if (stage < STAGES.length - 1) { stage++; render(); }
+    });
+    if (cdPrev) cdPrev.addEventListener("click", function () {
+      if (stage > 0) { stage--; render(); }
+    });
+    if (cdReset) cdReset.addEventListener("click", function () { stage = 0; render(); });
+    render();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>酸碱与水溶液 · 无机化学 第 4 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">01 无机化学</a><span class="sep">/</span>
+    <span class="here">第 4 章 · 酸碱与水溶液</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 无机化学 · 第 4 章</div>
+    <h1>酸碱与水溶液：一切反应的竞技场</h1>
+    <p class="lede">
+      烧心的夜晚，你吞下一片抗酸药，几分钟后胃里的"火"就熄了——这粒小白片做的事，
+      是化学里最古老的一类反应：<strong>中和</strong>。但"酸"到底是什么？"碱"到底是什么？
+      这个问题人类答了三遍，一遍比一遍深刻。本章沿三级阶梯认识阿伦尼乌斯、布朗斯特-劳里与路易斯，
+      学会用 pH 给整个水溶液世界标上刻度，再看看弱电解质如何"半推半就"、缓冲液如何稳如泰山、
+      沉淀如何在溶解与析出之间走钢丝。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：本分支第 1–3 章 · 00 分支摩尔</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#theories">§1 酸碱理论三级进化</a>
+    <a href="#ph">§2 pH 与强弱电解质</a>
+    <a href="#titration">§3 滴定曲线与沉淀平衡</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：一粒抗酸药的化学</h2>
+    <p>
+      你的胃每天分泌约 1.5 升胃液，其中盐酸浓度约 0.1 mol/L，pH 低到 1.5~2——
+      足以活化消化酶、杀灭绝大多数随食物入侵的细菌。胃壁靠一层黏液碳酸氢盐屏障保护自己，
+      可一旦屏障失守（熬夜、辛辣、药物刺激），盐酸便灼蚀胃壁，这就是"烧心"。
+    </p>
+    <p>
+      抗酸药的手段朴素而高效：<strong>用碱性的氢氧化铝、碳酸镁中和多余的酸</strong>
+      （<span class="formula">Al(OH)<sub>3</sub> + 3HCl → AlCl<sub>3</sub> + 3H<sub>2</sub>O</span>）。
+      但追一个问题就能问出整章内容：氢氧化铝遇酸是碱，可它既不电离出 OH⁻、也不含水——
+      凭什么算"碱"？<strong>"酸碱"的定义，人类先后给出了三个答案</strong>，一个比一个涵盖更广。
+      而要把中和的程度量出来，我们还需要一把刻度尺：pH。
+    </p>
+  </section>
+
+  <!-- ============ §1 理论 ============ -->
+  <section id="theories">
+    <h2>§1 酸碱理论三级进化：从"产地"到"电子"</h2>
+    <p>
+      三个理论不是互相打脸，而是<strong>三层同心圆</strong>：内圈最直观、外圈最普适，
+      每一次外扩都把原来解释不了的角落收编进来。用阶梯逐级攀登：
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 酸与碱到底是什么？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">LEVEL 1 · 阿伦尼乌斯</button>
+        <button class="ladder-tab">LEVEL 2 · 布朗斯特-劳里</button>
+        <button class="ladder-tab">LEVEL 3 · 路易斯</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1884 · 水中电离说</span>
+        <p>
+          <span class="term">阿伦尼乌斯</span><span class="en">Arrhenius</span>：
+          <strong>酸 = 在水中电离出 H<sup>+</sup> 的物质；碱 = 在水中电离出 OH<sup>−</sup> 的物质。</strong>
+          盐酸、硫酸、烧碱（NaOH）全部各就各位，中和反应自然就是 H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O。
+          它直观好用，是初中化学的全部；但很快遇到钉子户——<strong>氨水明明是碱，NH<sub>3</sub> 分子里却没有 OH⁻</strong>；
+          它的 OH⁻ 是抢了水的，不是自己电离的。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1923 · 质子转移说</span>
+        <p>
+          <span class="term">布朗斯特-劳里</span><span class="en">Brønsted–Lowry</span>：
+          <strong>酸 = 质子（H<sup>+</sup>）的给体；碱 = 质子的受体。</strong>
+          NH<sub>3</sub> 接受 H<sup>+</sup> 变 NH<sub>4</sub><sup>+</sup>，名正言顺是碱。
+          酸碱反应的本质被统一为一句话：<strong>质子从酸搬家到碱</strong>。
+          酸放出质子后剩下的部分叫它的<strong>共轭碱</strong>，碱得到质子后变成它的<strong>共轭酸</strong>——
+          例如 HAc / Ac<sup>−</sup>、NH<sub>4</sub><sup>+</sup> / NH<sub>3</sub>，
+          一对"共轭酸碱对"只差一个质子。共轭酸越强，共轭碱越弱（强酸配弱碱）。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1923 · 电子对说</span>
+        <p>
+          <span class="term">路易斯</span><span class="en">Lewis</span>：
+          <strong>酸 = 电子对的接受体；碱 = 电子对的给体。</strong>
+          酸碱反应 = 一方出空轨道、一方出孤对电子，成键。<strong>第 3 章的配位键正是标准的路易斯酸碱反应</strong>：
+          Cu²⁺（路易斯酸，空轨道）遇上 NH<sub>3</sub>（路易斯碱，N 的孤对），就有了深蓝的
+          [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>。连不含质子的 BF<sub>3</sub> + NH<sub>3</sub> 也被收编。
+          三层关系：<strong>阿伦尼乌斯 ⊂ 布朗斯特 ⊂ 路易斯</strong>——内圈能解释的外圈全能，外圈还能解释内圈管不了的。
+          现代无机化学再往前走一步还有"软硬酸碱"理论，把"给体-受体"的匹配做出品味，此为后话。
+        </p>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>理论</th><th>酸</th><th>碱</th><th>漂亮地解释了</th><th>管不了</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>阿伦尼乌斯</strong>（1884）</td><td>水电离出 H⁺</td><td>水电离出 OH⁻</td><td>强酸强碱的中和与 pH</td><td>NH₃ 为何是碱；非水体系</td></tr>
+        <tr><td><strong>布朗斯特-劳里</strong>（1923）</td><td>质子给体</td><td>质子受体</td><td>共轭酸碱对、缓冲溶液、指示剂变色</td><td>无质子体系（如 BF₃）</td></tr>
+        <tr><td><strong>路易斯</strong>（1923）</td><td>电子对受体</td><td>电子对给体</td><td>配合物、CO 中毒、非水溶剂反应</td><td>不给出具体强度次序（需 HSAB 补充）</td></tr>
+      </tbody>
+    </table>
+
+    <details class="think">
+      <summary>想一想：胃药成分碳酸氢钠也是"碱"，但 HCO₃⁻ 竟然还能当"酸"用——它到底是什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：写出它分别遇 H⁺ 和遇 OH⁻ 的反应，看看质子往哪个方向搬。</p>
+        <p>
+          遇酸（胃酸）时它是<strong>碱</strong>：<span class="formula">HCO<sub>3</sub><sup>−</sup> + H<sup>+</sup> → H<sub>2</sub>CO<sub>3</sub> → CO<sub>2</sub>↑ + H<sub>2</sub>O</span>
+          （服药后的打嗝就是 CO₂ 在逃逸）；遇碱时它是<strong>酸</strong>：
+          <span class="formula">HCO<sub>3</sub><sup>−</sup> + OH<sup>−</sup> → CO<sub>3</sub><sup>2−</sup> + H<sub>2</sub>O</span>。
+          这种两头都能干的物质叫<strong>两性物质</strong>，源于共轭链
+          H<sub>2</sub>CO<sub>3</sub> / HCO<sub>3</sub><sup>−</sup> / CO<sub>3</sub><sup>2−</sup>——
+          HCO<sub>3</sub><sup>−</sup> 既是碳酸的共轭碱，又是碳酸根的共轭酸。血液 pH 的稳定，靠的正是这对缓冲（§2）。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 pH ============ -->
+  <section id="ph">
+    <h2>§2 pH：给水溶液装上刻度尺</h2>
+    <p>
+      一切要从水自己的小秘密说起：纯水会微弱地自我交换质子——
+      <span class="formula">H<sub>2</sub>O ⇌ H<sup>+</sup> + OH<sup>−</sup></span>。
+      25 °C 时，只有约五亿分之一的分子这样做，但已足够确立一条铁律
+      <span class="term">水的离子积</span><span class="en">ion product of water</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">K<sub>w</sub> = [H<sup>+</sup>][OH<sup>−</sup>] = 1×10<sup>−14</sup>（25 °C）</span>
+    </p>
+    <p>
+      也就是说，<strong>任何水溶液里 H<sup>+</sup> 与 OH<sup>−</sup> 永远同时存在、且乘积恒定</strong>：
+      酸性不过是 H<sup>+</sup> 占了上风（10<sup>−14</sup> 的预算里分了大头），
+      碱性是 OH<sup>−</sup> 占上风。<span class="term">pH</span><span class="en">potential of hydrogen</span>
+      把这个"分账"变成顺手的一把尺：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">pH = −lg[H<sup>+</sup>]</span>（mol/L）
+    </p>
+    <p>
+      pH 每降 1，[H<sup>+</sup>] 就涨 10 倍——胃酸（pH≈1.5）的 H<sup>+</sup> 浓度是纯水（pH 7）的
+      <strong>三十多万倍</strong>。中性、酸性、碱性的判据由此而来：
+      <strong>[H<sup>+</sup>] = [OH<sup>−</sup>] 为中性；[H<sup>+</sup>] &gt; [OH<sup>−</sup>] 为酸性；反之碱性</strong>。
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "pH = 7 就一定是中性"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          中性 = pH 7，写进教科书的常识，还需要怀疑吗？把溶液 pH 调到 7 就是中性。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          "pH = 7 即中性"只是 <strong>25 °C 时的巧合</strong>。中性的真正判据是
+          <strong>[H<sup>+</sup>] = [OH<sup>−</sup>]</strong>。水的电离吸热，温度升高 K<sub>w</sub> 变大：
+          100 °C 时 K<sub>w</sub> ≈ 5×10<sup>−13</sup>，纯水中 [H<sup>+</sup>] = [OH<sup>−</sup>] ≈ 7×10<sup>−7</sup>，
+          pH ≈ 6.14——<strong>它依然是不折不扣的中性</strong>。数字 7 是温度的函数，等式才是本质。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "酸性溶液里没有 OH⁻"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          溶液既然显酸性，OH⁻ 应该被 H⁺ "赶尽杀绝"了——酸性溶液里 [OH⁻] = 0。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          K<sub>w</sub> 是<strong>永不下班的乘积</strong>：只要还是水溶液，[H<sup>+</sup>][OH<sup>−</sup>] 就恒为 10<sup>−14</sup>（25 °C）。
+          pH 2 的酸里 [OH<sup>−</sup>] = 10<sup>−14</sup>/10<sup>−2</sup> = 10<sup>−12</sup> mol/L——
+          <strong>有，只是被压到了极低</strong>。反过来，pH 12 的碱液里 [H<sup>+</sup>] = 10<sup>−12</sup>，也从不归零。
+          赶尽杀绝的不是对方离子，而是"乘积必须守恒"这条规则本身。
+        </div>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：pH 互动标尺</h3>
+    <p>
+      拖动滑块改变 pH，看 [H<sup>+</sup>] 与 [OH<sup>−</sup>] 如何此消彼长、乘积始终 10<sup>−14</sup>；
+      点击刻度上方的常见物质，直接跳到它的 pH。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="phSvg" width="660" height="200" viewBox="0 0 660 200" role="img" aria-label="pH 互动标尺"></svg>
+        <div class="fig-controls" style="width:100%;max-width:580px">
+          <input id="phSlider" type="range" min="0" max="14" step="0.1" value="7"
+                 style="flex:1;min-width:220px;accent-color:var(--accent);height:44px" aria-label="pH 值">
+          <span class="fig-readout" id="phVal" style="margin-top:0">pH = 7.0</span>
+        </div>
+        <div class="fig-readout" id="phReadout"></div>
+      </div>
+      <figcaption>
+        常见物质参考：胃酸 ≈1.5 · 柠檬汁 ≈2.4 · 纯水（25 °C）=7 · 海水 ≈8.1 · 肥皂水 ≈10。
+        注意滑到两端时对应离子的浓度有多"惨"——pH 0 时 [OH⁻] 只剩 10<sup>−14</sup> mol/L，但从不为零。
+      </figcaption>
+    </figure>
+
+    <h3>📐 例题脚手架：算一算 pH</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）：0.01 mol/L 盐酸的 pH</div>
+      <div class="worked-problem">
+        计算 0.01 mol/L HCl 溶液的 pH，并求该溶液中的 [OH<sup>−</sup>]（25 °C）。
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>判断强弱</strong>：HCl 是强酸，在水中<strong>完全电离</strong>：<span class="formula">HCl → H<sup>+</sup> + Cl<sup>−</sup></span>，每个 HCl 分子交出一个 H⁺。</li>
+        <li class="step"><strong>求 [H⁺]</strong>：[H⁺] = 0.01 mol/L = 1×10<sup>−2</sup> mol/L。（水自身电离贡献的 10<sup>−7</sup> 相比之下可忽略。）</li>
+        <li class="step"><strong>代入定义</strong>：pH = −lg[H⁺] = −lg(10<sup>−2</sup>) = <strong>2</strong>。</li>
+        <li class="step"><strong>用 K<sub>w</sub> 求 [OH⁻]</strong>：[OH⁻] = K<sub>w</sub>/[H⁺] = 10<sup>−14</sup>/10<sup>−2</sup> = <strong>1×10<sup>−12</sup> mol/L</strong>——酸性溶液里 OH⁻ 仍在，只是被压到极低。</li>
+        <li class="step">✅ <strong>自查与延伸</strong>：pH + pOH = 2 + 12 = 14 ✓。若把该溶液稀释 100 倍，pH 升到 4；但无限稀释不会越过 7——水自身的 10⁻⁷ 终将接管（极稀溶液须计入）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <h3>弱电解质：半推半就的醋酸</h3>
+    <p>
+      醋酸（CH<sub>3</sub>OOH，简写 HAc）就没这么痛快了：它是<strong>弱酸</strong>，在水中只<strong>部分电离</strong>——
+      <span class="formula">HAc ⇌ H<sup>+</sup> + Ac<sup>−</sup></span>，平衡时溶液里大头仍是完整的 HAc 分子。
+      所以 0.1 mol/L 醋酸的 pH 只有约 2.9（而同浓度盐酸是 1）：分子们"边拆边复合"，
+      达成一个动态平衡。这个"⇌"是 §3 滴定曲线为什么平缓起步的原因。
+    </p>
+    <p>
+      <strong>缓冲溶液的秘诀</strong>就藏在这个平衡里：同时储备<strong>大量共轭酸碱对</strong>（如 HAc 与其钠盐 NaAc），
+      外来少量强酸强碱便由储备军轮流消化，pH 几乎不动——血液靠 H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>−</sup>
+      把 pH 稳在 7.35~7.45，偏离 0.4 个单位就有生命危险。配缓冲时用到
+      <span class="term">同离子效应</span><span class="en">common-ion effect</span>：
+      向弱电解质溶液中加入含共同离子的强电解质（NaAc 带来 Ac<sup>−</sup>），电离平衡左移、HAc 的电离度减小。
+      定量计算见 03 分析化学分支，这里把原理想透即可。
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）：缓冲液为什么"稳如泰山"</div>
+      <div class="worked-problem">
+        向 1 L 纯水中加 0.01 mol HCl，pH 从 7 暴跌到 2；向 1 L 含 HAc 与 NaAc（均为 0.1 mol/L）的缓冲液中加同样多的酸，pH 几乎不变。为什么？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 提示：缓冲液的库存是什么？——大量共存的<strong>共轭酸碱对</strong>：HAc（酸仓）与 Ac<sup>−</sup>（碱仓），中间隔着平衡 <span class="formula">HAc ⇌ H⁺ + Ac<sup>−</sup></span>。</li>
+        <li class="step">💡 提示：外来强酸 = 突增的 H⁺。平衡往哪边挪？——<strong>左移</strong>：库存的 Ac<sup>−</sup> 立刻与 H<sup>+</sup> 结合成 HAc，把外来酸"吞"进酸仓。纯水没有碱仓，只能任凭 pH 暴跌。</li>
+        <li class="step">💡 提示：外来强碱 = 突增的 OH⁻。OH⁻ 先消耗 H⁺，平衡随即<strong>右移</strong>：酸仓 HAc 补发电离，把 H⁺ 还回来，抵消碱的冲击。</li>
+        <li class="step">💡 提示：为什么强调"少量"？两位仓主各只有 0.1 mol 的库存，外援（0.01 mol）不超过库存时才能从容接盘；若倒入 1 mol 强酸，碱仓清空，缓冲即刻失灵。</li>
+        <li class="step">✅ 自查逻辑：缓冲 = <strong>共轭对的足量储备 + 平衡的自发移动</strong>，抗酸靠共轭碱、抗碱靠共轭酸。血液的 H₂CO₃/HCO₃⁻ 对正是这样日夜值守（定量计算见 03 分析化学分支）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 本章三句真言</div>
+      ① 酸碱反应的本质：<strong>质子搬家</strong>（布朗斯特）或<strong>电子对成键</strong>（路易斯）。
+      ② <strong>pH 差 1 = 浓度差 10 倍</strong>；[H⁺] 与 [OH⁻] 同乘守恒 10⁻¹⁴，谁也不归零。
+      ③ <strong>缓冲 = 共轭酸碱对的足量储备</strong>，酸来碱挡、碱来酸挡。
+    </div>
+  </section>
+
+  <!-- ============ §3 滴定与沉淀 ============ -->
+  <section id="titration">
+    <h2>§3 滴定曲线与沉淀溶解：两个定量窗口</h2>
+    <p>
+      知道了 pH，就能给"中和到什么程度"画出全过程画像：<strong>酸碱滴定</strong>。
+      用 0.1000 mol/L NaOH 滴定 20.00 mL 0.1000 mol/L HCl，逐滴记录 pH，得到化学里最著名的 S 形曲线。
+      拖动滑块，亲眼看 pH 是如何在计量点附近<strong>半滴之间飙升 7 个单位</strong>的：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="titrSvg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="强碱滴定强酸互动曲线"></svg>
+        <div class="fig-controls" style="width:100%;max-width:580px">
+          <label for="titrSlider" style="font-size:.9rem;color:var(--ink-2)">已加 NaOH：<strong id="titVal">0.0 mL</strong></label>
+          <input id="titrSlider" type="range" min="0" max="40" step="0.1" value="0"
+                 style="flex:1;min-width:220px;accent-color:var(--accent);height:44px" aria-label="加入氢氧化钠体积">
+        </div>
+        <div class="fig-readout" id="titrReadout"></div>
+      </div>
+      <figcaption>
+        条件：0.1000 mol/L NaOH 滴定 20.00 mL 0.1000 mol/L HCl（25 °C）。红色阴影为突跃区——
+        计量点前后各半滴，pH 从约 3.6 冲到约 10.4。酚酞（8.2–10 变红）恰在突跃区内变色，故适用；
+        突跃跨越多少个 pH 单位、指示剂如何挑选、弱酸滴定为何突跃更短——这些定量细节见 <strong>03 分析化学分支</strong>。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：为什么曲线在计量点附近"垂直起飞"，而此前此后都近乎平躺？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：算算 19.95 mL 与 20.05 mL 时的 [H⁺]——差了半滴，浓度差多少倍？</p>
+        <p>
+          19.95 mL 时酸略过量，[H⁺] ≈ 2.5×10⁻⁴ mol/L；20.05 mL 时碱略过量，[OH⁻] ≈ 2.5×10⁻⁴，
+          换算 [H⁺] ≈ 4×10⁻¹¹。<strong>半滴之差，[H⁺] 相差近千万倍</strong>——pH 当然要立着跳。
+          此前酸大量过剩，几滴碱只是从"很多"里扣掉一点，相对变化小，pH 缓升；
+          计量点是"谁过量"的交接临界点，主导离子从 H⁺ 一脚跨到 OH⁻，中间没有过渡带。
+          指示剂的工作，就是选在这个陡坡上变色——人眼看到的那"一瞬粉红"，背后是七个数量级的跃迁。
+        </p>
+      </div>
+    </details>
+
+    <h3>沉淀溶解平衡：固体的"饱和湿度"</h3>
+    <p>
+      水溶液的平衡不止酸碱一种。把 AgNO<sub>3</sub> 溶液滴进 NaCl 溶液，立刻生成白色 AgCl 沉淀——
+      但反应并未"干净利落地结束"：沉淀表面同时进行着溶解与析出，最终达到
+      <span class="term">沉淀溶解平衡</span><span class="en">solubility equilibrium</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">AgCl(s) ⇌ Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq)　K<sub>sp</sub> = [Ag<sup>+</sup>][Cl<sup>−</sup>]</span>
+    </p>
+    <p>
+      <span class="term">溶度积</span><span class="en">solubility product, K<sub>sp</sub></span>只随温度变化，
+      数值越小越难溶（AgCl 约 1.8×10<sup>−10</sup>）。判断会不会沉淀，比较两组数：
+      当前溶液的<strong>离子积 Q</strong> 与 K<sub>sp</sub>——Q &gt; K<sub>sp</sub> 析出沉淀；
+      Q = K<sub>sp</sub> 恰好饱和；Q &lt; K<sub>sp</sub> 不沉。利用这条规则，化学家让杂质沉淀除杂、
+      让卤化银感光成像、让牙膏里的 F<sup>−</sup> 把牙釉质中易溶的羟基磷灰石换成更难溶的氟磷灰石抗龋齿。
+      沉淀的生成与溶解也是"平衡"这个大主题在固液界的一支——与电离平衡、滴定曲线共享同一套思维。
+    </p>
+
+    <p>本分支到此收官。带上四件行李出发去有机化学：<strong>趋势地图、主族性格、配位语法、酸碱刻度</strong>——
+    下一分支的每一步反应机理，都会反复用到它们。</p>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>酸碱三级定义层层外扩：<strong>阿伦尼乌斯</strong>（水电离 H⁺/OH⁻）⊂ <strong>布朗斯特-劳里</strong>（质子给体/受体，共轭酸碱对）⊂ <strong>路易斯</strong>（电子对受体/给体，涵盖配位反应）。</li>
+        <li>水的离子积 K<sub>w</sub> = [H⁺][OH⁻] = 10<sup>−14</sup>（25 °C）：<strong>两种离子永远共存、乘积守恒</strong>；中性判据是两者相等，而非 pH 恰为 7。</li>
+        <li>pH = −lg[H⁺]：强酸强碱完全电离、直接代入；<strong>pH 每差 1 = 浓度差 10 倍</strong>。</li>
+        <li>弱酸（HAc）部分电离成动态平衡；<strong>缓冲溶液 = 共轭酸碱对足量储备</strong>，抗酸抗碱；同离子效应使其电离度减小。</li>
+        <li>滴定曲线在计量点附近<strong>半滴内突跃数个 pH 单位</strong>，指示剂须在突跃区内变色（定量见 03 分析化学分支）。</li>
+        <li>K<sub>sp</sub> 定性：Q 与 K<sub>sp</sub> 比大小定沉浮——沉淀、除杂、抗龋齿同一理。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 酸碱与水溶液 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "按布朗斯特-劳里理论，酸的定义是？",
+            "options": [
+              "在水中电离出 H⁺ 的物质",
+              "能给出质子（H⁺）的物质",
+              "能接受电子对的物质",
+              "含有 OH⁻ 的物质"
+            ],
+            "answer": 1,
+            "explain": "布朗斯特-劳里：酸 = 质子给体，碱 = 质子受体。选项 A 是阿伦尼乌斯的定义（只适用于水中的电离）；C 是路易斯酸的定义；D 连 NaOH 之外的碱（如 NH₃）都解释不了。"
+          },
+          {
+            "q": "HCO₃⁻ 的共轭酸是？",
+            "options": ["H₂CO₃", "CO₃²⁻", "H₃O⁺", "CO₂"],
+            "answer": 0,
+            "explain": "共轭酸 = 得到一个质子后的产物：HCO₃⁻ + H⁺ → H₂CO₃。反过来，HCO₃⁻ 失去质子得到 CO₃²⁻，所以 CO₃²⁻ 是它的共轭碱——HCO₃⁻ 因此是两性物质（这也是它能做抗酸药、又能参与血液缓冲的原因）。"
+          },
+          {
+            "q": "0.01 mol/L HCl 溶液的 pH 为？",
+            "options": ["1", "2", "4", "12"],
+            "answer": 1,
+            "explain": "HCl 完全电离，[H⁺] = 0.01 = 10⁻² mol/L，pH = −lg(10⁻²) = 2。若误答 4，可能是把'稀释 100 倍后'的答案搬了过来；12 是同浓度 NaOH 的 pH。"
+          },
+          {
+            "q": "下列说法正确的是？",
+            "options": [
+              "pH = 7 的溶液一定是中性的",
+              "酸性溶液中不存在 OH⁻",
+              "中性的判据是 [H⁺] = [OH⁻]；温度改变时中性溶液的 pH 可以不是 7",
+              "温度升高，水的离子积 Kw 减小"
+            ],
+            "answer": 2,
+            "explain": "A 只在 25 °C 成立：升温 Kw 增大（D 说反了），100 °C 纯水 pH≈6.14 仍中性；B 错——Kw 守恒保证 [OH⁻] = Kw/[H⁺]，pH 2 时仍有 10⁻¹² mol/L 的 OH⁻，从不归零。"
+          },
+          {
+            "q": "向醋酸溶液中加入大量醋酸钠固体，醋酸的电离平衡将？",
+            "options": [
+              "右移，电离度增大",
+              "左移，电离度减小（同离子效应）",
+              "不移动",
+              "先左移后右移到原位"
+            ],
+            "answer": 1,
+            "explain": "NaAc 提供 Ac⁻（HAc 电离的产物之一），产物浓度突增使平衡 HAc ⇌ H⁺ + Ac⁻ 左移，HAc 电离度减小——这就是同离子效应，也正是 HAc/NaAc 能组成缓冲液的原理：溶液里从此有了大量共轭酸碱对储备。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="03-过渡金属与配位化学.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 3 章 · 过渡金属与配位化学</span></a>
+      <a class="next" href="../02-有机化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">02 有机化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互：pH 互动标尺 + 强碱滴强酸曲线绘制器 ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* ---------- 1. pH 互动标尺 ---------- */
+  var phSvg = document.getElementById("phSvg");
+  var phSlider = document.getElementById("phSlider");
+  if (phSvg && phSlider) {
+    var phRead = document.getElementById("phReadout");
+    var phVal = document.getElementById("phVal");
+    var X0 = 40, W = 580, BAR_Y = 92, BAR_H = 34;
+    function xOf(pH) { return X0 + pH / 14 * W; }
+
+    var SUBS = [
+      { name: "胃酸", ph: 1.5 },
+      { name: "柠檬汁", ph: 2.4 },
+      { name: "纯水", ph: 7 },
+      { name: "海水", ph: 8.1 },
+      { name: "肥皂水", ph: 10 }
+    ];
+
+    function sup(n) { return "×10<sup>" + n + "</sup>"; }
+    function sci(v) {
+      if (v <= 0) return "—";
+      var n = Math.floor(Math.log10(v));
+      var a = v / Math.pow(10, n);
+      return a.toFixed(1) + sup(n);
+    }
+    function region(p) {
+      if (p < 3) return "强酸性";
+      if (p < 6.5) return "酸性";
+      if (p <= 7.5) return "近中性";
+      if (p < 10.5) return "碱性";
+      return "强碱性";
+    }
+
+    function renderPh() {
+      var p = parseFloat(phSlider.value);
+      phSvg.innerHTML = "";
+
+      /* 渐变底条 */
+      var defs = el("defs", {}, phSvg);
+      var grad = el("linearGradient", { id: "phGrad", x1: 0, y1: 0, x2: 1, y2: 0 }, defs);
+      [["0%", "#dc2626"], ["18%", "#f97316"], ["38%", "#eab308"], ["50%", "#16a34a"],
+       ["64%", "#0ea5e9"], ["84%", "#6366f1"], ["100%", "#7c3aed"]].forEach(function (s) {
+        el("stop", { offset: s[0], "stop-color": s[1] }, grad);
+      });
+      el("rect", { x: X0, y: BAR_Y, width: W, height: BAR_H, rx: 8, fill: "url(#phGrad)" }, phSvg);
+
+      /* 整数刻度 */
+      for (var i = 0; i <= 14; i++) {
+        var x = xOf(i);
+        el("line", { x1: x, y1: BAR_Y + BAR_H, x2: x, y2: BAR_Y + BAR_H + 8, stroke: "#6b7280", "stroke-width": 1.2 }, phSvg);
+        var t = el("text", { x: x, y: BAR_Y + BAR_H + 24, "text-anchor": "middle", "font-size": 11,
+                             "font-weight": i === 7 ? 800 : 400, fill: i === 7 ? "#111827" : "#4b5563" }, phSvg);
+        t.textContent = i;
+      }
+      var ax = el("text", { x: X0 + W / 2, y: BAR_Y + BAR_H + 44, "text-anchor": "middle",
+                            "font-size": 10.5, fill: "#6b7280" }, phSvg);
+      ax.textContent = "pH（25 °C）— 左酸右碱";
+
+      /* 常见物质旗标（可点击） */
+      SUBS.forEach(function (s, i) {
+        var x = xOf(s.ph);
+        var y = i % 2 === 0 ? 34 : 58;
+        el("line", { x1: x, y1: y + 8, x2: x, y2: BAR_Y, stroke: "#475569", "stroke-width": 1.4 }, phSvg);
+        el("circle", { cx: x, cy: y + 8, r: 3, fill: "#475569" }, phSvg);
+        var t = el("text", { x: x, y: y, "text-anchor": "middle", "font-size": 10.5,
+                             "font-weight": 700, fill: "#334155" }, phSvg);
+        t.textContent = s.name + " " + s.ph;
+        var hit = el("rect", { x: x - 30, y: y - 14, width: 60, height: 24, fill: "transparent", cursor: "pointer" }, phSvg);
+        hit.addEventListener("click", function () {
+          phSlider.value = s.ph;
+          renderPh();
+        });
+      });
+
+      /* 当前 pH 游标 */
+      var x = xOf(p);
+      el("line", { x1: x, y1: BAR_Y - 22, x2: x, y2: BAR_Y + BAR_H + 6, stroke: "#111827", "stroke-width": 2.5 }, phSvg);
+      el("polygon", { points: (x - 7) + "," + (BAR_Y - 22) + " " + (x + 7) + "," + (BAR_Y - 22) + " " + x + "," + (BAR_Y - 10),
+                      fill: "#111827" }, phSvg);
+
+      /* 读数 */
+      var h = Math.pow(10, -p), o = Math.pow(10, p - 14);
+      phVal.textContent = "pH = " + p.toFixed(1);
+      phRead.innerHTML = "[H⁺] = " + sci(h) + " mol/L ｜ [OH⁻] = " + sci(o) +
+        " mol/L ｜ 乘积 = 1×10<sup>−14</sup> 恒定 ｜ " + region(p);
+    }
+    phSlider.addEventListener("input", renderPh);
+    renderPh();
+  }
+
+  /* ---------- 2. 强碱滴强酸曲线绘制器 ---------- */
+  var tSvg = document.getElementById("titrSvg");
+  var tSlider = document.getElementById("titrSlider");
+  if (tSvg && tSlider) {
+    var tRead = document.getElementById("titrReadout");
+    var tVal = document.getElementById("titVal");
+    var L = 52, R = 620, T = 24, B = 292;
+    var VMAX = 40, EQ = 20;
+    function xOf(V) { return L + V / VMAX * (R - L); }
+    function yOf(p) { return B - p / 14 * (B - T); }
+
+    function pHof(V) {
+      if (V < EQ) return -Math.log10(0.1 * (EQ - V) / (EQ + V));
+      if (V === EQ) return 7;
+      return 14 + Math.log10(0.1 * (V - EQ) / (V + EQ));
+    }
+
+    function renderT() {
+      var V = parseFloat(tSlider.value);
+      tSvg.innerHTML = "";
+
+      /* 坐标轴 */
+      el("line", { x1: L, y1: B, x2: R + 6, y2: B, stroke: "#94a3b8", "stroke-width": 1.5 }, tSvg);
+      el("line", { x1: L, y1: B, x2: L, y2: T - 8, stroke: "#94a3b8", "stroke-width": 1.5 }, tSvg);
+      for (var v = 0; v <= VMAX; v += 10) {
+        el("line", { x1: xOf(v), y1: B, x2: xOf(v), y2: B + 6, stroke: "#6b7280", "stroke-width": 1.2 }, tSvg);
+        var vt = el("text", { x: xOf(v), y: B + 20, "text-anchor": "middle", "font-size": 10.5, fill: "#4b5563" }, tSvg);
+        vt.textContent = v;
+      }
+      [0, 7, 14].forEach(function (p) {
+        el("line", { x1: L - 6, y1: yOf(p), x2: L, y2: yOf(p), stroke: "#6b7280", "stroke-width": 1.2 }, tSvg);
+        var pt = el("text", { x: L - 10, y: yOf(p) + 4, "text-anchor": "end", "font-size": 10.5,
+                              "font-weight": p === 7 ? 800 : 400, fill: p === 7 ? "#111827" : "#4b5563" }, tSvg);
+        pt.textContent = p;
+      });
+      el("line", { x1: L, y1: yOf(7), x2: R, y2: yOf(7), stroke: "#cbd5e1", "stroke-width": 1.2, "stroke-dasharray": "5 4" }, tSvg);
+      var xt = el("text", { x: (L + R) / 2, y: B + 40, "text-anchor": "middle", "font-size": 11, fill: "#6b7280" }, tSvg);
+      xt.textContent = "V(NaOH) / mL";
+      var yt = el("text", { x: 16, y: (T + B) / 2, "font-size": 11, fill: "#6b7280",
+                            transform: "rotate(-90 16 " + ((T + B) / 2) + ")" }, tSvg);
+      yt.textContent = "pH";
+
+      /* 突跃区阴影（19.9–20.1 mL） */
+      el("rect", { x: xOf(19.9), y: T, width: xOf(20.1) - xOf(19.9), height: B - T,
+                   fill: "#c2410c", opacity: 0.14 }, tSvg);
+      var jx = xOf(20);
+      el("line", { x1: jx, y1: T, x2: jx, y2: B, stroke: "#c2410c", "stroke-width": 1.2, "stroke-dasharray": "4 4" }, tSvg);
+      var jt = el("text", { x: xOf(20) + 8, y: yOf(11.2), "font-size": 10.5, "font-weight": 700, fill: "#9a3412" }, tSvg);
+      jt.textContent = "计量点 20.00 mL";
+      var jt2 = el("text", { x: xOf(20) + 8, y: yOf(11.2) + 14, "font-size": 10, fill: "#9a3412" }, tSvg);
+      jt2.textContent = "半滴之间 pH 飙升";
+
+      /* 完整曲线（浅灰目标）与已绘制段（加粗） */
+      function pathTo(vEnd) {
+        var d = "";
+        for (var v = 0; v <= vEnd + 1e-9; v += 0.05) {
+          var y = yOf(Math.min(14, Math.max(0, pHof(v))));
+          d += (d ? " L" : "M") + xOf(v).toFixed(1) + "," + y.toFixed(1);
+        }
+        return d;
+      }
+      el("path", { d: pathTo(VMAX), fill: "none", stroke: "#e5e7eb", "stroke-width": 3 }, tSvg);
+      if (V > 0.01) el("path", { d: pathTo(V), fill: "none", stroke: "#c2410c", "stroke-width": 2.6 }, tSvg);
+
+      /* 指示剂变色范围条 */
+      el("rect", { x: R - 18, y: yOf(10), width: 9, height: yOf(8.2) - yOf(10), fill: "#f9a8d4", opacity: 0.9 }, tSvg);
+      var pp = el("text", { x: R - 24, y: (yOf(10) + yOf(8.2)) / 2 + 4, "text-anchor": "end", "font-size": 9.5, fill: "#be185d" }, tSvg);
+      pp.textContent = "酚酞 8.2–10";
+      el("rect", { x: R - 18, y: yOf(4.4), width: 9, height: yOf(3.1) - yOf(4.4), fill: "#fdba74", opacity: 0.9 }, tSvg);
+      var mo = el("text", { x: R - 24, y: (yOf(4.4) + yOf(3.1)) / 2 + 4, "text-anchor": "end", "font-size": 9.5, fill: "#c2410c" }, tSvg);
+      mo.textContent = "甲基橙 3.1–4.4";
+
+      /* 当前点与十字线 */
+      if (V > 0.01) {
+        var p = pHof(V);
+        var px = xOf(V), py = yOf(Math.min(14, Math.max(0, p)));
+        el("line", { x1: px, y1: py, x2: px, y2: B, stroke: "#111827", "stroke-width": 1, "stroke-dasharray": "3 3" }, tSvg);
+        el("line", { x1: L, y1: py, x2: px, y2: py, stroke: "#111827", "stroke-width": 1, "stroke-dasharray": "3 3" }, tSvg);
+        el("circle", { cx: px, cy: py, r: 5.5, fill: "#c2410c", stroke: "#111827", "stroke-width": 1.5 }, tSvg);
+      }
+
+      /* 读数 */
+      tVal.textContent = V.toFixed(1) + " mL";
+      var p2 = pHof(V);
+      var state;
+      if (V < EQ - 0.2) state = "酸过量（HCl 还剩相当于 " + (EQ - V).toFixed(1) + " mL）";
+      else if (Math.abs(V - EQ) <= 0.2) state = "就差一滴！正在穿越突跃区";
+      else state = "碱过量（NaOH 多了 " + (V - EQ).toFixed(1) + " mL 等量）";
+      tRead.textContent = "V = " + V.toFixed(1) + " mL ｜ 瓶内 pH ≈ " +
+        (p2 > 0 ? p2.toFixed(2) : "—") + " ｜ " + state +
+        " ｜ 定量细节（指示剂选择、弱酸滴定、误差分析）见 03 分析化学分支";
+    }
+    tSlider.addEventListener("input", renderT);
+    renderT();
+  }
+})();
+</script>
+</body>
+</html>

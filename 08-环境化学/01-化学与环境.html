@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学与环境 · 环境化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b08">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">08 环境化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 化学与环境</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">08 环境化学 · 第 1 章</div>
+    <h1>化学与环境：给地球做一次化学体检</h1>
+    <p class="lede">
+      我们排放到环境中的化学物质并不会"凭空消失"——它们在空气、水和土壤里继续迁移、反应、
+      转化，再以意想不到的方式回到餐桌与肺泡里。<strong>本章用化学的眼光追踪五大环境议题：
+      温室效应、臭氧层损耗、酸雨、水污染，以及作为"解药"的绿色化学</strong>——从机制到治理，
+      看化学如何既是问题的制造者，又是唯一的解决者。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：00–02 推荐</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#atmos">大气圈与温室效应</a>
+    <a href="#ozone">臭氧层</a>
+    <a href="#acidrain">酸雨</a>
+    <a href="#water">水圈</a>
+    <a href="#green">土壤与绿色化学</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：伦敦的"杀手烟雾"</h2>
+    <p>
+      1952 年 12 月，一场浓雾把伦敦整整包裹了五天。家家户户烧煤取暖，煤烟里的
+      <span class="formula">SO₂</span> 与颗粒物被逆温层封在城市上空无法扩散，
+      约 <strong>4000 人在五天内死去</strong>，随后数月死亡人数累计上万。
+      这场"杀手烟雾"把一个事实推到全人类面前：<strong>排入环境的化学物质不会消失，
+      它们会继续发生反应，再回到我们身边</strong>。
+    </p>
+    <p>
+      <span class="term">环境化学</span><span class="en">environmental chemistry</span>
+      由此成为一门独立学科：研究化学物质在环境中的<strong>来源、迁移、转化、归宿与效应</strong>，
+      并设计治理与预防方案。它是无机、有机、分析化学在真实世界里的"综合考场"。
+    </p>
+    <div class="keypoint">
+      <div class="kp-title">📌 环境化学的"五连问"</div>
+      面对任何环境议题，依次追问：<strong>① 从哪里来（源）？② 去到哪里（迁移）？
+      ③ 会变成什么（转化）？④ 浓度多高（暴露）？⑤ 对谁有何影响（效应）？</strong>
+      本章的温室气体、CFC、酸雨前体物、营养盐，全都套得进这张问题清单。
+    </div>
+  </section>
+
+  <!-- ============ §1 大气圈与温室效应 ============ -->
+  <section id="atmos">
+    <h2>§1 大气圈：万分之四如何撬动全球</h2>
+    <p>
+      先看大气这张"成分表"。注意最后一列——决定谁是温室气体的，不是含量多少，
+      而是分子有没有"抓红外"的本事：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>成分</th><th>体积分数</th><th>能否吸收地面红外线</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">N₂</span></td><td>78.08%</td><td>否（红外透明）</td></tr>
+        <tr><td><span class="formula">O₂</span></td><td>20.95%</td><td>否（红外透明）</td></tr>
+        <tr><td><span class="formula">Ar</span></td><td>0.93%</td><td>否（单原子，无振动）</td></tr>
+        <tr><td><span class="formula">CO₂</span></td><td>约 0.042%（420 ppm）</td><td><strong>是</strong>（强吸收带约 15 μm）</td></tr>
+        <tr><td><span class="formula">H₂O</span>、<span class="formula">CH₄</span>、<span class="formula">O₃</span>、<span class="formula">N₂O</span> 等</td><td>微量</td><td><strong>是</strong></td></tr>
+      </tbody>
+    </table>
+    <p>
+      机制只有两句话：<strong>太阳光（以可见光为主）几乎畅通无阻地到达地面，把地面晒热；
+      地面再把热量以红外线向外发射，却被 CO₂ 等温室气体分子吸收、再向四面八方发射</strong>——
+      其中约一半能量折回地面。就像给地球盖了床被子：进来的容易，出去的难。
+    </p>
+
+    <h3>🔬 动手玩：红外光子的命运</h3>
+    <p>
+      下面的模拟里，橙红色小球是从地面出发的红外"光子"。切换 CO₂ 浓度档位，
+      观察"直接逃逸"的比例与模拟温度如何变化：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ghSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="温室效应红外光子模拟器"></svg>
+        <div class="fig-controls" id="ghCtl">
+          <button class="btn ghost" data-ppm="180">🧊 冰期 180 ppm</button>
+          <button class="btn" data-ppm="280">🏭 工业化前 280 ppm</button>
+          <button class="btn ghost" data-ppm="420">📈 今天 420 ppm</button>
+          <button class="btn ghost" data-ppm="560">⚠️ 翻倍 560 ppm</button>
+        </div>
+        <div class="fig-readout" id="ghReadout"></div>
+      </div>
+      <figcaption>
+        橙色小球即红外光子：碰到 CO₂ 分子就被吸收并向上下各半随机再发射（真实方向是四面八方，此处简化）；
+        越过顶部虚线才算逃逸太空，落回地面则是"保温成功"。CO₂ 分子越多，光子被"折返"的概率越大。
+        温度按"CO₂ 浓度每翻一倍，全球升温约 3 °C"的平衡态估算，未计入海洋吸热的滞后
+        （实际至今较工业化前已升温约 1.2 °C，余下的"欠账"还在路上）。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 只占万分之四的 CO₂，凭什么改变全球气候？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          夏天把车停在太阳下、关上车窗，一小时后车内能比车外热 20 °C：玻璃放可见光进来、
+          却扣住大部分红外。大气里的温室气体就是这层"玻璃"。红外光子要穿过几十千米大气，
+          哪怕"拦截者"只占万分之几，也足以改变整个行星的能量收支——就像往一池清水里滴一滴墨水。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          占大气 99.96% 的 N₂、O₂、Ar 对红外<strong>完全透明</strong>；有吸收能力的
+          CO₂、H₂O、CH₄ 等加起来不足 0.5%，但它们的吸收带恰好覆盖地球热辐射的能量集中区
+          （约 4–50 μm，CO₂ 强吸收带在 15 μm 附近）——不多，却"守在必经之路上"。
+          工业革命以来 CO₂ 从 280 ppm 升到约 420 ppm，全球均温已上升约 1.2 °C：
+          万分之几的浓度变化，撬动的是整个地球的热量天平。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          分子能否吸收红外线，取决于<strong>振动时偶极矩是否变化</strong>。N₂、O₂ 是同核双原子分子，
+          怎么振都不产生偶极变化，所以红外"惰性"；CO₂ 整体虽无极性，但它的弯曲振动与不对称伸缩
+          会让正负电荷中心瞬间错开，对应 15 μm 附近的强吸收。这就是"温室气体多是三原子以上分子"
+          的量子根源——与 04 分支的分子振动光谱是同一件事的两副面孔。
+        </p>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 温室效应本是恩人</div>
+      没有天然温室效应，地表平均温度是 <strong>−18 °C</strong>；有了它才是宜居的
+      <strong>+15 °C</strong>。今天的麻烦不叫"温室效应"，叫<strong>"增强的温室效应"</strong>：
+      人类多排的那部分 CO₂、CH₄ 把收支推向升温（CH₄ 单位质量的百年温室效应约为 CO₂ 的 28 倍）。
+    </div>
+
+    <details class="think">
+      <summary>想一想：水蒸气才是含量最高的温室气体，为什么谈判桌上坐的是 CO₂？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：比较两种气体在大气中的"停留时间"，再想想"谁决定谁"。</p>
+        <p>
+          水汽平均 8–9 天就凝结降落，大气能装多少水汽由<strong>温度</strong>自动决定——
+          温度越高装得越多，人类无法直接长期操控它；而 CO₂ 寿命可达百年以上，
+          排放后持续累积，是人类亲手拧动的"旋钮"。升温→大气水汽增多→温室效应更强，
+          水汽是"放大器"，CO₂ 才是"旋钮"。这就是减排谈判盯住碳的原因。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 臭氧层 ============ -->
+  <section id="ozone">
+    <h2>§2 臭氧层：一颗氯原子的连环破坏</h2>
+    <p>
+      距地面 15–35 km 的平流层里，氧气被高能紫外线持续"光解"，生成一层薄薄的臭氧
+      （若压缩到一个大气压，只有约 3 mm 厚）——这是经典的
+      <span class="term">查普曼机制</span><span class="en">Chapman mechanism</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">O₂ + hν（λ&lt;242 nm）→ 2O</span>　
+      <span class="formula">O + O₂ → O₃</span>
+    </p>
+    <p>
+      这层臭氧吸收太阳紫外线里最凶险的 UV-B，是生物得以登上陆地的"保护伞"。
+      破坏它的，是一段堪称讽刺的故事：<strong>1928 年人类合成了氟利昂（CFC），
+      用来替代有毒易燃的氨和二氧化硫制冷剂</strong>——它不燃、无毒、化学性质极其稳定，
+      被誉为"完美化学品"。恰恰是这份<strong>稳定</strong>成了灾难：CFC 在对流层不分解，
+      长命百岁地一路扩散到平流层，才被强紫外线光解释放氯原子：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Cl· + O₃ → ClO· + O₂</span>　
+      <span class="formula">ClO· + O → Cl· + O₂</span>
+    </p>
+    <p>
+      两步走完，氯原子<strong>完好再生</strong>——这是一套催化循环：
+      净反应 <span class="formula">O₃ + O → 2O₂</span>，
+      一颗氯原子大约能拆毁 <strong>10 万颗臭氧分子</strong>。更糟的是南极：
+      极夜期间零下 80 °C 的"极地平流层云"冰晶表面，氯的储库分子被转化为活泼的
+      Cl₂；每年春天（9–11 月）阳光一回来，Cl₂ 立刻光解成氯原子，
+      于是南极春季出现惊心的"臭氧洞"。1985 年英国科学家法曼在观测数据中发现它；
+      1987 年《蒙特利尔议定书》签订，逐步淘汰 CFC——它至今是<strong>唯一获全球普遍批准
+      的环境公约</strong>，臭氧层预计将在 21 世纪中后期（约 2066 年前后）基本恢复。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 同一个分子，位置决定角色</div>
+      平流层 O₃ 吸收 UV-B，是"保护伞"；<strong>对流层</strong> O₃ 却是光化学烟雾的元凶，
+      刺激呼吸道、损伤作物：<span class="formula">NO₂ + hν → NO + O</span>、
+      <span class="formula">O + O₂ → O₃</span>——同一套光化学，在平流层是补给，
+      在城市上空是污染。评价物质"好坏"，永远先问"在哪里、多少量"。
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "臭氧层破了个洞，所以全球才变暖"？</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          南极上空臭氧破了个洞，紫外线从洞里漏进来把地球晒热——臭氧洞和全球变暖是一回事。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          这是<strong>两个独立的化学问题</strong>：臭氧损耗的元凶是 CFC 等消耗臭氧层物质，
+          发生在平流层，主要危害是 UV-B 增多；变暖的元凶是 CO₂ 等温室气体在近地面拦截红外辐射。
+          事实上臭氧损耗反而使平流层<strong>降温</strong>。两者唯一的共同点是：都源于合成化学品的排放，
+          也都证明全球性公约可以真正起作用。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 酸雨 ============ -->
+  <section id="acidrain">
+    <h2>§3 酸雨：在云滴中"酿造"的强酸</h2>
+    <p>
+      煤燃烧放出 <span class="formula">SO₂</span>，机动车与高温燃烧放出
+      <span class="formula">NOₓ</span>。它们本身只是酸性气体，真正的"酿造"发生在云滴里：
+      SO₂ 被云中的 O₃ 与 H₂O₂ 氧化成 SO₃，遇水即成硫酸；NO₂ 则直接与水反应生成硝酸：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">SO₂ → SO₃ → H₂SO₄</span>（云内氧化）　
+      <span class="formula">3NO₂ + H₂O → 2HNO₃ + NO</span>
+    </p>
+    <p>
+      危害最直观的一幕刻在大理石雕像上——被酸雨淋出的孔洞与失明的五官：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂↑</span>
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 为什么判据是 pH &lt; 5.6，而不是 &lt; 7？</div>
+      大气中约 420 ppm 的 CO₂ 本就会溶入雨滴：
+      <span class="formula">CO₂ + H₂O ⇌ H₂CO₃</span>（弱酸），
+      所以<strong>完全未受污染的雨水 pH 也只有约 5.6</strong>。
+      只有 pH 低于 5.6 才说明掺进了硫酸、硝酸这些"额外的酸"。把判据写成 pH&lt;7，
+      会把全世界每一场雨都误判成酸雨——本底，是环境评价永远绕不开的概念。
+    </div>
+
+    <p>
+      治理酸雨靠的是"以碱制酸"与"把氮气请回去"。<strong>石灰石-石膏法脱硫</strong>：
+      电厂烟气喷淋石灰石浆液，SO₂ 被吸收氧化，最终变成建材石膏：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">SO₂ + CaCO₃ + ½O₂ + 2H₂O → CaSO₄·2H₂O + CO₂</span>
+    </p>
+    <p>
+      <strong>选择性催化还原（SCR）脱硝</strong>：在催化剂上用氨把 NOₓ 还原成无害的氮气——
+      <span class="formula">4NH₃ + 4NO + O₂ → 4N₂ + 6H₂O</span>。
+      经过二十余年持续脱硫脱硝，中国酸雨面积已大幅缩减、重度酸雨城市基本消除，
+      火电厂"超低排放"的烟气洁净程度甚至优于许多燃气电厂。
+    </p>
+
+    <h3>📐 例题脚手架：给电厂算一笔"脱硫账"</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        某燃煤电厂每天烧煤 1000 t，煤的含硫量为 2%。<br>
+        ① 若不脱硫，每天排放 SO₂ 多少吨？② 采用石灰石-石膏法脱硫（效率 95%），
+        每天至少需要石灰石（按 CaCO₃ 计）多少吨？
+      </div>
+      <ol class="worked-steps">
+        <li class="step">写硫的燃烧方程 <span class="formula">S + O₂ → SO₂</span>。
+          每天进入炉膛的硫 = 1000 t × 2% = 20 t。SO₂ 与 S 的质量比 = 64 : 32 = 2，
+          所以 <strong>SO₂ = 20 × 2 = 40 t</strong>。</li>
+        <li class="step">脱硫效率 95% → 需除去的 SO₂ = 40 t × 95% = <strong>38 t</strong>（其余 2 t 仍排放）。</li>
+        <li class="step">脱硫总反应（简化）<span class="formula">SO₂ + CaCO₃ + ½O₂ + 2H₂O → CaSO₄·2H₂O + CO₂</span>：
+          SO₂ 与 CaCO₃ 按<strong>分子数 1 : 1</strong> 反应，质量比 = 64 : 100。</li>
+        <li class="step">CaCO₃ = 38 × 100 ÷ 64 ≈ <strong>59.4 t</strong>。
+          ✅ 核对：约 1.56 t 石灰石/t SO₂，与工程经验值（1.5–1.6）吻合；
+          副产石膏 38 × 172 ÷ 64 ≈ 102 t，可制石膏板——污染物变成了建材。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 水圈 ============ -->
+  <section id="water">
+    <h2>§4 水圈：看不见的氧气战争</h2>
+    <p>
+      判断水质好坏，化学家先给水体"测氧"。三个指标一张表：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>指标</th><th>测什么</th><th>怎么读</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="term">DO</span>（溶解氧）</td><td>水中 O₂ 分子</td><td>越高越好：20 °C 饱和约 9 mg/L，鱼类生存需 ≥ 5</td></tr>
+        <tr><td><span class="term">BOD₅</span>（五日生化需氧量）</td><td>微生物 5 天内分解有机物所消耗的氧</td><td>越高 = 有机污染物越多</td></tr>
+        <tr><td><span class="term">COD</span>（化学需氧量）</td><td>重铬酸钾氧化有机物所消耗的氧</td><td>比 BOD 快出结果，但会把难降解物也"算进来"</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      而"氧气战争"最惨烈的战场是<span class="term">富营养化</span>
+      <span class="en">eutrophication</span>：化肥与生活污水把大量
+      <span class="formula">N</span>、<span class="formula">P</span> 送进湖泊
+      （磷常是淡水的限制因子，这正是各国禁用含磷洗衣粉的原因），藻类疯长成"水华"；
+      藻类死亡沉降后被微生物分解，<strong>大量消耗溶解氧</strong>，鱼虾窒息——
+      营养过剩最终以"缺氧"收场。
+    </p>
+
+    <h3>🔬 动手玩：湖泊的昼夜生死线</h3>
+    <p>
+      拖动滑块调节营养物排放，再切换昼/夜，观察溶解氧与鱼类的命运：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px;margin-bottom:10px">
+          <label for="euSlider" style="font-size:.9rem;color:var(--ink-2)">
+            营养物排放（氮、磷流入）：<strong id="euVal">中</strong>
+          </label>
+          <input id="euSlider" type="range" min="0" max="100" value="35" step="1"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="营养物排放水平">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>0 清洁水体</span><span>100 严重富营养化</span>
+          </div>
+        </div>
+        <svg id="euSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="富营养化湖泊昼夜模拟器"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="euToggle">🌙 切换到夜晚</button>
+        </div>
+        <div class="fig-readout" id="euReadout"></div>
+      </div>
+      <figcaption>
+        白天藻类光合作用放氧（气泡），溶氧可以高到"过饱和"；夜晚所有生物只剩呼吸耗氧。
+        把营养物拉满再切到夜晚——整夜消耗后溶解氧到达最低点，<strong>这正是渔民所说
+        "泛塘"总发生在黎明前的原因</strong>：天亮前的最后一刻，才是最危险的一刻。
+      </figcaption>
+    </figure>
+
+    <p>
+      城市污水厂的"主力部队"其实也是微生物：<span class="term">活性污泥法</span>
+      <span class="en">activated sludge process</span>向曝气池疯狂鼓入空气，
+      让以有机物为食的细菌大军把污染物"吃"成 CO₂ 与 H₂O；再早一步的混凝沉淀
+      （明矾中 Al³⁺ 水解生成 <span class="formula">Al(OH)₃</span> 胶体，吸附悬浮杂质）
+      则同时服务于自来水与深度处理。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 重金属：无法被"降解"的污染</div>
+      有机物能被微生物拆回 CO₂ 与 H₂O，但汞、镉、铅、铬<strong>只能被迁移、不能被消灭</strong>。
+      水俣湾的微生物把 Hg²⁺ 甲基化成脂溶性的 <span class="formula">CH₃Hg⁺</span>，
+      沿食物链逐级放大，顶级捕食者体内浓度可达水体的百万倍量级——
+      1956 年日本水俣病的悲剧正源于此。治理重金属靠的是化学"固定"：
+      调 pH 使之生成氢氧化物沉淀，或用磷酸盐、硫化物锁成极难溶的盐。
+    </div>
+  </section>
+
+  <!-- ============ §5 土壤与绿色化学 ============ -->
+  <section id="green">
+    <h2>§5 土壤与绿色化学：从治污到防污</h2>
+    <p>
+      土壤是环境三圈中的"沉默者"。<span class="term">土壤胶体</span>
+      <span class="en">soil colloid</span>（黏土矿物与腐殖质颗粒）表面带负电，
+      能吸附 Ca²⁺、K⁺、NH₄⁺ 等阳离子——这是土壤保肥的化学本质，也是修复的抓手：
+      施石灰调高 pH 可让重金属沉淀，投加磷酸盐可把它们锁进难溶矿物。农药的演进同理：
+      从 DDT 那样"稳定到无处不在"，到今天按微生物降解半衰期设计的易分解品种。
+    </p>
+    <p>
+      但末端治理再好，也只是"亡羊补牢"。1998 年 Anastas 与 Warner提出
+      <span class="term">绿色化学</span><span class="en">green chemistry</span>十二原则，
+      核心只有一句：<strong>防止污染产生，优于治理污染</strong>。最锋利的一把刀是
+      <span class="term">原子经济性</span><span class="en">atom economy</span>（Trost，1991）——
+      让原料中的原子尽可能全部进入产物，而不是变成废物：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">原子经济性 = 目标产物质量 ÷ 全部原料质量 × 100%</span>
+    </p>
+    <p>
+      经典案例是布洛芬工艺：老路线 6 步、原子利用率约 40%；绿色催化新路线 3 步、
+      约 77%。另一个日常例子是汽车尾气的<strong>三元催化转化器</strong>
+      （Pt/Pd/Rh 催化剂）：<span class="formula">2CO + 2NO → 2CO₂ + N₂</span>，
+      把两种污染同时变成无害物——而铅会让催化剂"中毒"，这正是无铅汽油推广的化学理由之一。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 绿色化学不是化学的"赎罪"</div>
+      它是化学的进化：能不产生的废物就不产生（原子经济性），能用催化就不用计量试剂，
+      能用水就不用有机溶剂，产品用完要能安全降解。<strong>绿色化学把环境代价写进了
+      反应式的设计阶段</strong>——这是化学对"伦敦烟雾"最彻底的回答。
+    </div>
+
+    <details class="think">
+      <summary>想一想：标着"可降解"的塑料袋，是不是就可以放心随手扔？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示："降解"需要什么条件？海洋里具备吗？</p>
+        <p>
+          多数可降解塑料（如聚乳酸 PLA）需要<strong>工业堆肥条件</strong>——约 58 °C、
+          高湿度、特定菌群——才能在数月内分解。落入低温缺氧的海洋，它们照样存留多年，
+          并碎裂成微塑料进入食物链。可降解解决的是"末端去向"，减量、重复使用、循环再生
+          （3R）仍然排在更前面。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>环境化学追问"源→迁移→转化→归宿→效应"，并据此设计治理与预防。</li>
+        <li>温室效应：温室气体对可见光透明、吸收地面红外线；天然温室效应让地表 15 °C，
+          "增强的温室效应"才导致变暖；CO₂ 是旋钮，水汽是放大器。</li>
+        <li>CFC 在平流层释出氯原子，<strong>催化循环</strong>破坏臭氧（1 Cl ≈ 10 万 O₃）；
+          《蒙特利尔议定书》证明全球公约有效。</li>
+        <li>酸雨 = SO₂/NOₓ 在云中氧化成硫酸、硝酸；判据 pH&lt;5.6（CO₂ 本底）；
+          治理靠石灰石-石膏法与 SCR 脱硝。</li>
+        <li>富营养化：N、P 过量→水华→分解耗氧→鱼类窒息（黎明最险）；重金属不可降解、沿食物链放大。</li>
+        <li>绿色化学从源头防污：原子经济性、催化路线、安全溶剂——防止污染优于治理污染。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 化学与环境 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "温室气体使地表变暖，主要是因为它们吸收了下列哪一种辐射？",
+            "options": ["太阳发出的可见光", "地面向外发出的红外线", "平流层臭氧发出的紫外线", "月球反射的太阳光"],
+            "answer": 1,
+            "explain": "温室气体对可见光几乎透明（阳光能进来），但能吸收地面发出的红外线，吸收后再向四面八方发射，约一半能量折回地面。注意与臭氧吸收紫外线区分开。"
+          },
+          {
+            "q": "关于氟利昂（CFC）破坏臭氧层，下列说法正确的是？",
+            "options": ["一个氯原子与一个臭氧分子反应后就失活，一比一同归于尽", "氯原子像催化剂一样反复循环，一个约可破坏十万个臭氧分子", "CFC 在对流层就迅速分解，根本到不了平流层", "南极臭氧洞只是大气环流造成的，与化学反应无关"],
+            "answer": 1,
+            "explain": "Cl· + O₃ → ClO· + O₂、ClO· + O → Cl· + O₂，氯反应完再生，是催化循环。CFC 恰恰因为在对流层太稳定（这正是它当年被当作安全制冷剂的原因），才能一路活到平流层；南极臭氧洞则与极地平流层云上的反应密切相关。"
+          },
+          {
+            "q": "未受污染的正常雨水 pH 约为 5.6 而不是 7，原因是？",
+            "options": ["大气中的 CO₂ 溶入雨滴生成碳酸", "天然本底的二氧化硫", "雷电放电产生的氮氧化物", "海面蒸发带来的盐分"],
+            "answer": 0,
+            "explain": "约 420 ppm 的 CO₂ 溶于雨滴：CO₂ + H₂O ⇌ H₂CO₃（弱酸），使纯雨水呈弱酸性。因此酸雨判据是 pH 小于 5.6 而不是小于 7——本底概念是环境评价的关键。"
+          },
+          {
+            "q": "湖泊发生\"水华\"（藻类疯长）最关键的营养元素组合是？",
+            "options": ["碳和氢", "钙和镁", "铁和锌", "氮和磷"],
+            "answer": 3,
+            "explain": "氮、磷是藻类的肥料，磷常是淡水限制因子——这正是各国禁用含磷洗衣粉的原因。藻类暴发后死亡分解反而大量耗氧，最终以鱼类缺氧死亡收场。"
+          },
+          {
+            "q": "下列做法中最能体现\"绿色化学\"思想的是？",
+            "options": ["把污水稀释到标准以下再排放", "在烟囱末端加装脱硫装置", "在设计阶段就让工艺尽量不产生污染物", "把废料深埋到远离人群的地区"],
+            "answer": 2,
+            "explain": "绿色化学的核心是防止污染产生，而非治理已产生的污染：原子经济性让废物少产生，催化与安全溶剂让过程更清洁。末端治理（如脱硫）必要但属于补救；稀释与转移则只是眼不见为净。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">08 环境化学 · 导学</span></a>
+      <a class="next" href="../09-理论与计算化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">09 理论与计算化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（温室效应模拟 / 富营养化昼夜模拟） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  /* ---------- 1. 温室效应：红外光子模拟器 ---------- */
+  var ghSvg = document.getElementById("ghSvg");
+  if (ghSvg) {
+    var ghReadout = document.getElementById("ghReadout");
+    var GH_GROUND = 246;
+    var gh = { ppm: 280, mols: [], photons: [], escaped: 0, returned: 0, frame: 0 };
+    var ghBtns = document.querySelectorAll("#ghCtl button");
+
+    function ghT(ppm) { return 15 + 3 * Math.log(ppm / 280) / Math.LN2; }
+    function ghCount(ppm) { return 2 + Math.round((ppm - 180) / 40); }
+    function ghBob(m, f) { return Math.sin(f / 34 + m.ph) * 4; }
+
+    var ghPhotonsG = null;
+
+    function ghScene() {
+      ghSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 560, height: 300, fill: "#e0f2fe" }, ghSvg);
+      el("line", { x1: 0, y1: 10, x2: 560, y2: 10, stroke: "#94a3b8", "stroke-width": 1, "stroke-dasharray": "6 6" }, ghSvg);
+      var t1 = el("text", { x: 8, y: 26, "font-size": 10, fill: "#64748b" }, ghSvg);
+      t1.textContent = "大气顶界：红外光子越过虚线即逃逸太空";
+      /* 太阳 */
+      var sun = el("g", { transform: "translate(56,48)" }, ghSvg);
+      var rays = el("g", { class: "anim-spin" }, sun);
+      rays.style.animationDuration = "26s";
+      for (var r = 0; r < 8; r++) {
+        var ra = Math.PI * r / 4;
+        el("line", { x1: 26 * Math.cos(ra), y1: 26 * Math.sin(ra), x2: 34 * Math.cos(ra), y2: 34 * Math.sin(ra), stroke: "#f59e0b", "stroke-width": 3, "stroke-linecap": "round" }, rays);
+      }
+      el("circle", { r: 19, fill: "#fbbf24", stroke: "#f59e0b", "stroke-width": 2 }, sun);
+      var st = el("text", { x: 56, y: 100, "text-anchor": "middle", "font-size": 11, fill: "#92400e", "font-weight": 700 }, ghSvg);
+      st.textContent = "太阳辐射（可见光）";
+      /* 阳光箭头（畅通无阻） */
+      var sl = [[100, 92, 150, 238], [160, 104, 226, 238], [228, 118, 322, 238]];
+      for (var i = 0; i < sl.length; i++) {
+        var x1 = sl[i][0], y1 = sl[i][1], x2 = sl[i][2], y2 = sl[i][3];
+        el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: "#f59e0b", "stroke-width": 2.5, "stroke-linecap": "round", class: "anim-pulse", opacity: .85 }, ghSvg);
+        var ang = Math.atan2(y2 - y1, x2 - x1);
+        var hx = x2 - 12 * Math.cos(ang), hy = y2 - 12 * Math.sin(ang);
+        var pts = x2 + "," + y2 + " " +
+          (hx - 5 * Math.cos(ang - Math.PI / 2)) + "," + (hy - 5 * Math.sin(ang - Math.PI / 2)) + " " +
+          (hx + 5 * Math.cos(ang - Math.PI / 2)) + "," + (hy + 5 * Math.sin(ang - Math.PI / 2));
+        el("polygon", { points: pts, fill: "#f59e0b" }, ghSvg);
+      }
+      /* 地面 */
+      el("rect", { x: 0, y: GH_GROUND, width: 560, height: 8, fill: "#65a30d" }, ghSvg);
+      el("rect", { x: 0, y: GH_GROUND + 8, width: 560, height: 46, fill: "#7c4a1e" }, ghSvg);
+      var gt = el("text", { x: 552, y: 290, "text-anchor": "end", "font-size": 11, fill: "#fde68a", "font-weight": 700 }, ghSvg);
+      gt.textContent = "地面（被晒热，发出红外线）";
+      /* 红外透明的 N₂/O₂ */
+      var npos = [[120, 158], [452, 118]];
+      for (i = 0; i < npos.length; i++) {
+        var gn = el("g", { transform: "translate(" + npos[i][0] + "," + npos[i][1] + ")", opacity: .55 }, ghSvg);
+        el("circle", { r: 17, fill: "none", stroke: "#94a3b8", "stroke-width": 1.2, "stroke-dasharray": "3 4" }, gn);
+        el("circle", { cx: -6, cy: 0, r: 4, fill: "#94a3b8" }, gn);
+        el("circle", { cx: 6, cy: 0, r: 4, fill: "#94a3b8" }, gn);
+        var nt = el("text", { y: 32, "text-anchor": "middle", "font-size": 9, fill: "#64748b" }, gn);
+        nt.textContent = "N₂/O₂：红外透明";
+      }
+      /* CO₂ 分子（数量随浓度变化） */
+      gh.mols = [];
+      var count = ghCount(gh.ppm), tries = 0;
+      while (gh.mols.length < count && tries < 600) {
+        tries++;
+        var m = { x: 40 + Math.random() * 480, y: 56 + Math.random() * 158, ph: Math.random() * 6.28 };
+        var ok = true;
+        for (var j = 0; j < gh.mols.length; j++) {
+          if (Math.hypot(m.x - gh.mols[j].x, m.y - gh.mols[j].y) < 52) { ok = false; break; }
+        }
+        if (m.x < 118 && m.y < 130) ok = false; /* 避开太阳 */
+        if (ok) gh.mols.push(m);
+      }
+      for (i = 0; i < gh.mols.length; i++) {
+        var gm = el("g", { transform: "translate(" + gh.mols[i].x + "," + gh.mols[i].y + ")" }, ghSvg);
+        el("line", { x1: -10, y1: 0, x2: 10, y2: 0, stroke: "#475569", "stroke-width": 1.6 }, gm);
+        el("circle", { cx: -10, cy: 0, r: 4.2, fill: "#ef4444" }, gm);
+        el("circle", { cx: 0, cy: 0, r: 5.4, fill: "#334155" }, gm);
+        el("circle", { cx: 10, cy: 0, r: 4.2, fill: "#ef4444" }, gm);
+        gh.mols[i].g = gm;
+      }
+      var ct = el("text", { x: 8, y: 58, "font-size": 10, fill: "#4d7c0f", "font-weight": 700 }, ghSvg);
+      ct.textContent = "⬤ CO₂ 分子 ×" + gh.mols.length + "（数量随浓度档位变化）";
+      /* 光子层置顶 */
+      ghPhotonsG = el("g", {}, ghSvg);
+    }
+
+    function ghEmit(p) {
+      var dir = Math.random() < 0.5 ? -1 : 1;
+      p.vy = dir * (1.6 + Math.random() * 0.9);
+      p.vx = (Math.random() - 0.5) * 1.4;
+      p.bounces++;
+    }
+
+    function ghRenderReadout() {
+      var total = gh.escaped + gh.returned;
+      var t = ghT(gh.ppm), d = t - 15;
+      var dStr = (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1);
+      ghReadout.textContent = "CO₂ " + gh.ppm + " ppm ｜ " +
+        (total ? "红外直接逃逸 " + Math.round(gh.escaped / total * 100) + "% · 折返地面 " +
+          Math.round(gh.returned / total * 100) + "% ｜ " : "红外光子模拟中…… ｜ ") +
+        "模拟平衡温度 " + t.toFixed(1) + " °C（较工业化前 " + dStr + " °C）";
+    }
+
+    function ghLoop() {
+      gh.frame++;
+      if (gh.frame % 8 === 0 && gh.photons.length < 30) {
+        var p = {
+          x: 30 + Math.random() * 500, y: GH_GROUND - 4, vx: 0,
+          vy: -(1.8 + Math.random() * 0.8), bounces: 0,
+          node: el("circle", { r: 4.2, fill: "#f97316", stroke: "#c2410c", "stroke-width": 1 }, ghPhotonsG)
+        };
+        gh.photons.push(p);
+      }
+      for (var i = gh.photons.length - 1; i >= 0; i--) {
+        var p2 = gh.photons[i];
+        p2.x += p2.vx; p2.y += p2.vy;
+        for (var j = 0; j < gh.mols.length; j++) {
+          var m = gh.mols[j];
+          if (Math.hypot(p2.x - m.x, p2.y - (m.y + ghBob(m, gh.frame))) < 16) { ghEmit(p2); break; }
+        }
+        p2.node.setAttribute("cx", p2.x);
+        p2.node.setAttribute("cy", p2.y);
+        if (p2.y < 12 || p2.y > GH_GROUND - 4) {
+          if (p2.y < 12) gh.escaped++; else gh.returned++;
+          p2.node.remove();
+          gh.photons.splice(i, 1);
+        } else if (p2.x < 6 || p2.x > 554) {
+          p2.vx *= -1;
+        }
+      }
+      for (var k = 0; k < gh.mols.length; k++) {
+        gh.mols[k].g.setAttribute("transform", "translate(" + gh.mols[k].x + "," + (gh.mols[k].y + ghBob(gh.mols[k], gh.frame)) + ")");
+      }
+      ghRenderReadout();
+      requestAnimationFrame(ghLoop);
+    }
+
+    ghBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        gh.ppm = parseInt(b.getAttribute("data-ppm"), 10);
+        ghBtns.forEach(function (x) { x.className = "btn ghost"; });
+        b.className = "btn";
+        gh.photons.forEach(function (p) { p.node.remove(); });
+        gh.photons = []; gh.escaped = 0; gh.returned = 0;
+        ghScene();
+        ghRenderReadout();
+      });
+    });
+    ghBtns.forEach(function (x) { x.className = x.getAttribute("data-ppm") === "280" ? "btn" : "btn ghost"; });
+    ghScene();
+    ghRenderReadout();
+    requestAnimationFrame(ghLoop);
+  }
+
+  /* ---------- 2. 富营养化：湖泊昼夜模拟器 ---------- */
+  var euSvg = document.getElementById("euSvg");
+  if (euSvg) {
+    var euReadout = document.getElementById("euReadout");
+    var euToggle = document.getElementById("euToggle");
+    var euSlider = document.getElementById("euSlider");
+    var euVal = document.getElementById("euVal");
+    var eu = { n: 0.35, day: true, bubbles: [], frame: 0, bubblesG: null };
+
+    function euDO() { return eu.day ? 8 + 5 * eu.n : Math.max(0.5, 8 - 7 * eu.n); }
+    function euNut() { return eu.n < 0.25 ? "低（清洁水体）" : eu.n < 0.55 ? "中（开始富营养化）" : "高（严重富营养化）"; }
+    function euStatus(d) {
+      if (d >= 8) return d > 10.5 ? "过饱和（白天藻类疯狂产氧）" : "溶氧充足";
+      if (d >= 5) return "鱼类正常";
+      if (d >= 3) return "鱼类浮头、呼吸急促";
+      if (d >= 2) return "严重缺氧，鱼虾濒死";
+      return "缺氧泛塘：鱼类窒息死亡";
+    }
+
+    function euFish(x, y, mode) { /* swim | gasp | dead */
+      var g = el("g", { transform: "translate(" + x + "," + y + ")" + (mode === "dead" ? " rotate(-8)" : "") }, euSvg);
+      var body = mode === "dead" ? "#94a3b8" : "#38bdf8";
+      var edge = mode === "dead" ? "#64748b" : "#0284c7";
+      el("ellipse", { rx: 15, ry: 7, fill: body, stroke: edge, "stroke-width": 1.5 }, g);
+      el("polygon", { points: "13,0 24,-7 24,7", fill: body, stroke: edge, "stroke-width": 1 }, g);
+      if (mode === "dead") {
+        el("line", { x1: 5, y1: -3, x2: 10, y2: 2, stroke: "#1f2937", "stroke-width": 1.6 }, g);
+        el("line", { x1: 10, y1: -3, x2: 5, y2: 2, stroke: "#1f2937", "stroke-width": 1.6 }, g);
+      } else {
+        el("circle", { cx: 6, cy: -2, r: 2.4, fill: "#fff" }, g);
+        el("circle", { cx: 6.8, cy: -2, r: 1.1, fill: "#0f172a" }, g);
+        if (mode === "gasp") el("circle", { cx: 16, cy: 0, r: 2.6, fill: "none", stroke: edge, "stroke-width": 1.4 }, g);
+      }
+    }
+
+    function euScene() {
+      euSvg.innerHTML = "";
+      var skyC = eu.day ? "#bfdbfe" : "#1e293b";
+      var w1 = eu.day ? "#60a5fa" : "#3f5573";
+      var w2 = eu.day ? "#1d4ed8" : "#1b2c4d";
+      var tx = eu.day ? "#1e3a8a" : "#dbeafe";
+      el("rect", { x: 0, y: 0, width: 560, height: 64, fill: skyC }, euSvg);
+      el("rect", { x: 0, y: 64, width: 560, height: 120, fill: w1 }, euSvg);
+      el("rect", { x: 0, y: 184, width: 560, height: 116, fill: w2 }, euSvg);
+      if (eu.day) {
+        var sun = el("g", { transform: "translate(64,32)" }, euSvg);
+        var rays = el("g", { class: "anim-spin" }, sun);
+        rays.style.animationDuration = "22s";
+        for (var r = 0; r < 8; r++) {
+          var ra = Math.PI * r / 4;
+          el("line", { x1: 24 * Math.cos(ra), y1: 24 * Math.sin(ra), x2: 31 * Math.cos(ra), y2: 31 * Math.sin(ra), stroke: "#f59e0b", "stroke-width": 2.6, "stroke-linecap": "round" }, rays);
+        }
+        el("circle", { r: 17, fill: "#fbbf24" }, sun);
+        var st = el("text", { x: 64, y: 60, "text-anchor": "middle", "font-size": 10, fill: "#92400e", "font-weight": 700 }, euSvg);
+        st.textContent = "白天：藻类光合作用产氧 O₂ ↑";
+      } else {
+        el("circle", { cx: 64, cy: 30, r: 15, fill: "#f1f5f9" }, euSvg);
+        el("circle", { cx: 73, cy: 25, r: 13, fill: skyC }, euSvg);
+        [[160, 18], [230, 40], [320, 22]].forEach(function (s) {
+          el("circle", { cx: s[0], cy: s[1], r: 1.8, fill: "#f8fafc" }, euSvg);
+        });
+        var nt2 = el("text", { x: 64, y: 60, "text-anchor": "middle", "font-size": 10, fill: "#e2e8f0", "font-weight": 700 }, euSvg);
+        nt2.textContent = "夜晚：所有生物只剩呼吸耗氧 O₂ ↓";
+        [170, 285, 400].forEach(function (ax) {
+          el("line", { x1: ax, y1: 120, x2: ax, y2: 162, stroke: "#fb923c", "stroke-width": 3, "stroke-linecap": "round" }, euSvg);
+          el("polygon", { points: ax + ",176 " + (ax - 7) + ",162 " + (ax + 7) + ",162", fill: "#fb923c" }, euSvg);
+        });
+        var na = el("text", { x: 285, y: 196, "text-anchor": "middle", "font-size": 10.5, fill: "#fed7aa" }, euSvg);
+        na.textContent = "藻类、鱼类、微生物整夜呼吸耗氧";
+      }
+      /* 藻膜与藻类 */
+      if (eu.n > 0.3) el("rect", { x: 0, y: 63, width: 560, height: Math.round(6 + eu.n * 4), fill: "#84cc16", opacity: Math.min(.92, .3 + eu.n) }, euSvg);
+      var nAlgae = Math.round(4 + 44 * eu.n);
+      for (var i = 0; i < nAlgae; i++) {
+        var cc = el("circle", {
+          cx: 16 + Math.random() * 528,
+          cy: 74 + Math.random() * (14 + 100 * eu.n),
+          r: 2.4 + Math.random() * 2.4,
+          fill: "#22c55e", stroke: "#15803d", "stroke-width": .8, opacity: .9
+        }, euSvg);
+        if (i % 7 === 0) cc.setAttribute("class", "anim-float");
+      }
+      /* 底部污泥 */
+      var nSilt = Math.round(16 * eu.n);
+      for (i = 0; i < nSilt; i++) {
+        el("circle", { cx: 12 + Math.random() * 536, cy: 272 + Math.random() * 22, r: 2.5 + Math.random() * 3, fill: "#57534e", opacity: .85 }, euSvg);
+      }
+      if (eu.n > 0.55) {
+        var silt = el("text", { x: 548, y: 264, "text-anchor": "end", "font-size": 10, fill: "#e7e5e4" }, euSvg);
+        silt.textContent = "死藻沉降 · 微生物分解（耗氧大户）";
+      }
+      /* 鱼类状态随溶解氧变化 */
+      var d = euDO();
+      if (d >= 5) { euFish(150, 160, "swim"); euFish(380, 214, "swim"); }
+      else if (d >= 3) {
+        euFish(150, 84, "gasp"); euFish(390, 96, "gasp");
+        var ft = el("text", { x: 150, y: 104, "text-anchor": "middle", "font-size": 10, fill: tx, "font-weight": 700 }, euSvg);
+        ft.textContent = "浮头";
+      } else if (d >= 2) { euFish(150, 84, "gasp"); euFish(380, 80, "dead"); }
+      else { euFish(160, 80, "dead"); euFish(370, 86, "dead"); }
+      /* 气泡层置顶 */
+      eu.bubblesG = el("g", {}, euSvg);
+      eu.bubbles = [];
+      var lg = el("text", { x: 10, y: 22, "font-size": 10.5, fill: eu.day ? "#1e40af" : "#e0e7ff", "font-weight": 700 }, euSvg);
+      lg.textContent = (eu.day ? "☀ 白天" : "🌙 夜晚") + " · 湖泊剖面";
+    }
+
+    function euLoop() {
+      eu.frame++;
+      if (eu.day) {
+        var want = Math.round(2 + 10 * eu.n);
+        while (eu.bubbles.length < want) {
+          eu.bubbles.push({
+            x: 16 + Math.random() * 528,
+            y: 80 + Math.random() * (20 + 90 * eu.n),
+            s: .8 + Math.random() * .9,
+            node: el("circle", { r: 1.6 + Math.random() * 2.4, fill: "#ffffff", opacity: .8, stroke: "#e0f2fe", "stroke-width": .7 }, eu.bubblesG)
+          });
+        }
+        for (var i = 0; i < eu.bubbles.length; i++) {
+          var b = eu.bubbles[i];
+          b.y -= b.s;
+          b.node.setAttribute("cy", b.y);
+          b.node.setAttribute("cx", b.x + Math.sin((eu.frame + b.x) / 18) * 3);
+          if (b.y < 70) { b.y = 80 + Math.random() * (20 + 90 * eu.n); b.x = 16 + Math.random() * 528; }
+        }
+      }
+      requestAnimationFrame(euLoop);
+    }
+
+    function euRender() {
+      var d = euDO();
+      if (euVal) euVal.textContent = eu.n < 0.25 ? "低" : eu.n < 0.55 ? "中" : "高";
+      euReadout.textContent = "营养物：" + euNut() + " ｜ " + (eu.day ? "☀ 白天" : "🌙 夜晚") +
+        " ｜ 溶解氧 " + d.toFixed(1) + " mg/L ｜ " + euStatus(d);
+    }
+
+    if (euSlider) euSlider.addEventListener("input", function () {
+      eu.n = parseInt(euSlider.value, 10) / 100;
+      euScene(); euRender();
+    });
+    if (euToggle) euToggle.addEventListener("click", function () {
+      eu.day = !eu.day;
+      euToggle.textContent = eu.day ? "🌙 切换到夜晚" : "☀ 切换到白天";
+      euScene(); euRender();
+    });
+    euScene();
+    euRender();
+    requestAnimationFrame(euLoop);
+  }
+})();
+</script>
+</body>
+</html>

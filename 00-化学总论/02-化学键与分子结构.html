@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学键与分子结构 · 化学总论 第 2 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">00 化学总论</a><span class="sep">/</span>
+    <span class="here">第 2 章 · 化学键与分子结构</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 化学总论 · 第 2 章</div>
+    <h1>化学键与分子结构：原子为什么要"手拉手"</h1>
+    <p class="lede">
+      食盐一敲就碎，铁条千锤不烂，水到 100 °C 才沸腾而硫化氢 −60 °C 就跑了——
+      这些差异的答案都藏在同一组问题里：<strong>原子靠什么连在一起？连完之后长什么形状？</strong>
+      本章讲透三种基本化学键、分子的形状规则，以及常常被低估的"分子间作用力"。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 40 分钟</span>
+      <span class="chip">先修：第 1 章 原子与元素</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#bondtypes">三种基本化学键</a>
+    <a href="#shape">分子形状</a>
+    <a href="#imf">分子间作用力</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：同样 10 个电子，天壤之别</h2>
+    <p>
+      水（H₂O）和氟化氢旁边住着的邻居——硫化氢（H₂S），组成方式几乎一样：两个氢 + 一个非金属。
+      但水在地球上是液体、能养鱼能下雨；H₂S 却是 −60 °C 就沸腾的毒气。
+      差别不在"含什么原子"，而在<strong>原子如何连接、分子如何相处</strong>。这就是本章的主题。
+    </p>
+    <details class="think">
+      <summary>想一想：为什么钠原子和氯原子碰到一起会"结合"，而两个氖原子却相安无事？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：回想第 1 章的稀有气体——最外层电子数是多少？</p>
+        <p>
+          稀有气体最外层已经<strong>满员</strong>（8 电子，He 为 2），既不缺电子也不多余，
+          没有得失或共享电子的动力。而 Na 最外层只有 1 个电子"多余"、Cl 差 1 个才满员——
+          一给一拿，两全其美。<strong>化学键的本质，是原子奔向稳定电子结构的方式。</strong>
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 三种键 ============ -->
+  <section id="bondtypes">
+    <h2>§1 三种基本化学键</h2>
+    <p>
+      判断键型最有用的工具是<span class="term">电负性</span><span class="en">electronegativity</span>——
+      原子争夺共享电子对的"拔河力气"。力气悬殊就"抢断"（离子键），力气相当就"分享"（共价键）。
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>键型</th><th>形象比喻</th><th>形成方式</th><th>电负性差（经验判据）</th><th>代表</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>离子键</strong></td><td>彻底"抢断"</td><td>电子从一个原子转移到另一个，形成阴阳离子互相吸引</td><td>ΔEN ≳ 1.7</td><td>NaCl、MgO、CaF₂</td></tr>
+        <tr><td><strong>共价键</strong></td><td>拔河僵持、共用绳</td><td>原子共享电子对；有极性/非极性之分</td><td>ΔEN ≲ 1.7</td><td>H₂、H₂O、CH₄</td></tr>
+        <tr><td><strong>金属键</strong></td><td>电子海中的金属阳离子</td><td>价电子脱离具体原子，形成"自由电子海"胶合全部离子</td><td>—（金属内部）</td><td>Cu、Fe、Al</td></tr>
+      </tbody>
+    </table>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 离子键与共价键的边界</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          离子键和共价键是非此即彼的两类，NaCl 里电子<strong>完全</strong>属于氯，H₂ 里电子<strong>绝对</strong>平均。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          键型是一条<strong>连续光谱</strong>：电负性差越大越接近理想离子键，差为零才是理想非极性共价键。
+          NaCl 已很接近离子端，但仍有少量共享成分；H–Cl 则是"偏氯"的极性共价键。
+          ΔEN 判据只是经验法则，不是铁律。
+        </div>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 金属键解释了金属的三大特性</div>
+      自由电子可移动 → <strong>导电导热</strong>；离子层可滑动而不散架 → <strong>延展性</strong>（可锤成箔、拉成丝）；
+      电子海吸收再放出光 → <strong>金属光泽</strong>。共价晶体（如金刚石）没有自由电子，所以又脆又不导电。
+    </div>
+  </section>
+
+  <!-- ============ §2 分子形状 ============ -->
+  <section id="shape">
+    <h2>§2 分子形状：VSEPR 规则</h2>
+    <p>
+      分子不是平面的"结构式画法"，而是三维实体。预测形状最有效的入门工具是
+      <span class="term">价层电子对互斥理论</span><span class="en">VSEPR: Valence Shell Electron Pair Repulsion</span>：
+      <strong>中心原子周围的电子对（成键的 + 孤对的）互相排斥，最终彼此尽量远离。</strong>
+    </p>
+
+    <h3>🔬 动手玩：分子形状切换器</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="molSvg" width="420" height="300" viewBox="0 0 420 300" role="img" aria-label="分子形状示意"></svg>
+        <div class="fig-controls">
+          <button class="btn" data-mol="H2O">H₂O</button>
+          <button class="btn ghost" data-mol="CO2">CO₂</button>
+          <button class="btn ghost" data-mol="CH4">CH₄</button>
+          <button class="btn ghost" data-mol="NH3">NH₃</button>
+        </div>
+        <div class="fig-readout" id="molReadout"></div>
+      </div>
+      <figcaption>
+        注意"孤对电子"（虚线瓣）——它们也占空间且排斥更强，把成键角挤小：CH₄ 的 109.5° 到 NH₃ 被挤到 107°，
+        到 H₂O 只剩 104.5°。
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 为什么水是 V 形而不是直线形？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把氧原子想成一个身边站着两群人的人：两只手各挽着一个氢（成键对），背后还背着两袋行李（孤对）。
+          四方都是"占地方的"，大家只好互相成约 109° 站开——但行李看不见却更霸道，
+          把两个氢挤得更拢，成了 104.5° 的 V 形。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · VSEPR 计算</span>
+        <p>
+          O 有 6 个价电子 + 2 个 H 各出 1 个 → 共 8 个价电子 = 4 对。其中 2 对与氢成键，2 对是孤对。
+          4 对电子的理想排布是<strong>四面体</strong>（互成 109.5°）。排斥力排序：<strong>孤对-孤对 ＞ 孤对-成键 ＞ 成键-成键</strong>，
+          两对孤对把两个 O–H 成键方向压近，键角缩到 104.5°，分子呈 V 形（弯曲形）。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 杂化语言</span>
+        <p>
+          用杂化轨道理论描述：O 的 2s 与三个 2p 轨道杂化成 4 个 sp³ 杂化轨道，分别容纳 2 对孤对和 2 对成键电子，
+          基本四面体指向。V 形是这个电子几何"去掉两个顶点"后的残余骨架。同样的逻辑推出 NH₃（去掉一个顶点→三角锥）
+          与 CH₄（不去顶点→正四面体）。若中心原子只有 2 对电子（如 CO₂ 中的 C），理想排布是直线 180°。
+        </p>
+      </div>
+    </div>
+
+    <h3>📐 例题脚手架：用 VSEPR 预测形状</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">判断 CO₂ 分子的形状与键角。</div>
+      <ol class="worked-steps">
+        <li class="step">中心原子是 C，价电子 4 个；两个 O 各提供成键电子，共形成 <strong>2 个双键</strong>——按 VSEPR 每个双键算 1 组电子对（1 个"方向"）。</li>
+        <li class="step">价层共 <strong>2 组</strong>电子方向，无孤对。2 组互相远离的最佳方式是 <strong>180° 对置</strong>。</li>
+        <li class="step">✅ 结论：直线形，O=C=O，键角 180°。两个 C=O 极性正好反向抵消 → CO₂ 是<strong>非极性分子</strong>（尽管键有极性）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">判断 NH₃ 分子的形状与大致键角。</div>
+      <ol class="worked-steps">
+        <li class="step">💡 N 有 5 个价电子 + 3 个 H 各 1 → 共几对？——<strong>4 对</strong>（3 成键 + 1 孤对）。</li>
+        <li class="step">💡 4 对的理想几何是四面体。但有一对是孤对，会不会把键角撑大还是压小？——孤对排斥更强，<strong>压小</strong>到约 107°。</li>
+        <li class="step">✅ 结论：去掉一个顶点的四面体 = <strong>三角锥形</strong>。分子整体有极性（N 端偏负）。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 3 · 独立练习（你来做）</div>
+      <div class="worked-problem">
+        H₂S（中心 S）是什么形状？和 H₂O 比键角谁大？<strong>先写结论再展开对照。</strong>
+      </div>
+      <div class="worked-controls">
+        <details class="think" style="background:var(--surface);border:1px dashed var(--line);flex:1;min-width:240px">
+          <summary>📝 展开答案</summary>
+          <div class="think-body">
+            <p>
+              S 有 6 个价电子 → 4 对（2 成键 + 2 孤对）→ <strong>V 形</strong>，与 H₂O 同款。
+              但 S 比 O 大，成键电子对更"舒展"，孤对挤压效应减弱，键角略大（H₂S 约 92°，H₂O 为 104.5°）。
+              有趣的是这已经相当接近 90°（纯 p 轨道成键），说明 S 的杂化倾向很弱——深入原理层总有意外的诚实。
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 分子间作用力 ============ -->
+  <section id="imf">
+    <h2>§3 分子间作用力：决定沸点的隐形大手</h2>
+    <p>
+      化学键把原子连成分子；而<strong>分子与分子之间</strong>的吸引力要弱得多，统称
+      <span class="term">分子间作用力</span><span class="en">intermolecular forces</span>，主要包括
+      <span class="term">范德华力</span><span class="en">van der Waals forces</span>（普遍存在，1–10 kJ/mol 量级）
+      和特殊的<span class="term">氢键</span><span class="en">hydrogen bond</span>（10–40 kJ/mol，仍远弱于化学键的 150–1000 kJ/mol）。
+    </p>
+    <p>
+      氢键的形成条件很苛刻：必须由 <strong>H 直接连在 F、O、N</strong> 这三个小而电负性极强的原子上，
+      H 几乎裸露的正电荷才能强烈吸引邻近分子中 F/O/N 上的孤对电子，形成"X–H···Y"桥。
+    </p>
+
+    <h3>🎬 数据说话：氧族氢化物的沸点</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="bpSvg" width="560" height="240" viewBox="0 0 560 240" role="img" aria-label="氧族氢化物沸点对比柱状图"></svg>
+        <div class="fig-controls">
+          <button class="btn ghost" id="bpExplain">💡 为什么 H₂O 反常？</button>
+        </div>
+        <div class="fig-readout" id="bpReadout" style="display:block;max-width:520px">按周期从上到下：H₂O 100 °C ｜ H₂S −60 °C ｜ H₂Se −41 °C ｜ H₂Te −2 °C</div>
+      </div>
+      <figcaption>
+        若只看范德华力（分子越大越强），沸点应从左到右单调上升——H₂S、H₂Se、H₂Te 确实如此。
+        唯独 H₂O 一枝独秀地高出 100 多度：每个水分子能形成约 4 条氢键，把整杯水"缝"成了网络。
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 化学键 ≠ 分子间作用力</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          "冰融化时氢氧键断了""煮沸水会破坏化学键"——分子间作用力常被误称为"键"而与化学键混为一谈。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          熔化/沸腾/溶解破坏的是<strong>分子间作用力</strong>（氢键、范德华力），分子本身完好无损——
+          水蒸气里跑的依然是完整的 H₂O。要断 O–H 共价键需要上千度高温或电解。
+          能量尺度差一个数量级，这是两个世界。
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么冰能浮在水上？（大多数物质固态比液态密度大）</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：氢键的方向性 + 四面体配位。</p>
+        <p>
+          冰中每个水分子与 4 个邻居形成<strong>规则四面体氢键网络</strong>——像一个撑开的中空笼架，
+          空间利用率低。融化时部分氢键断裂，网络塌陷一部分，分子能"挤进"空隙里，
+          密度反而升高（约在 4 °C 达到最大）。冰浮于水，让冬季水生生物在冰层下安然过冬——
+          一个氢键救了整个湖塘生态。
+        </p>
+      </div>
+    </details>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 相似相溶</div>
+      极性分子（水、乙醇）易互溶——它们能互相提供氢键/极性吸引；非极性分子（油脂、汽油）易互溶——靠范德华力抱团。
+      而"油水不溶"正是两边都懒得理对方。指甲油（非极性）溶于丙酮，糖（多羟基、极性）溶于水——全是这个逻辑。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>三种基本键：离子（电子转移）、共价（电子共享，看电负性差）、金属（电子海）。</li>
+        <li>VSEPR：电子对互斥定形状；孤对排斥最强，会压小键角（CH₄ 109.5° → NH₃ 107° → H₂O 104.5°）。</li>
+        <li>分子极性 = 键极性的矢量合成；CO₂ 键极性对称抵消，分子非极性。</li>
+        <li>分子间作用力（范德华 ≪ 氢键 ≪ 化学键）决定熔沸点与溶解性；状态变化只动分子间力，不动分子。</li>
+        <li>氢键成就了水的高沸点、冰的浮力、生命的溶剂。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 化学键与分子结构 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "H–Cl 键属于哪一类？（电负性：H 2.1，Cl 3.0）",
+            "options": ["离子键", "非极性共价键", "极性共价键", "金属键"],
+            "answer": 2,
+            "explain": "ΔEN = 0.9 ＜ 1.7，电子共享但偏向 Cl——极性共价键。"
+          },
+          {
+            "q": "水分子 H₂O 的形状与键角约为？",
+            "options": ["直线形 180°", "V 形 104.5°", "三角锥形 107°", "正四面体 109.5°"],
+            "answer": 1,
+            "explain": "O 有 4 对电子（2 成键 + 2 孤对），孤对把键角从 109.5° 压到 104.5°，呈 V 形。"
+          },
+          {
+            "q": "冰融化成水时，被破坏的是？",
+            "options": ["O–H 共价键", "分子间氢键", "氧的原子核", "氢的质子"],
+            "answer": 1,
+            "explain": "状态变化只动分子间作用力（氢键），分子本身完好。断 O–H 键需要电解或上千度。"
+          },
+          {
+            "q": "下列组合中，键的离子性最强的是？（电负性：Na 0.9，Cl 3.0，H 2.1，O 3.4，C 2.5）",
+            "options": ["H–O", "C–H", "Na–Cl", "O–Cl"],
+            "answer": 2,
+            "explain": "ΔEN：Na–Cl = 2.1 最大，接近理想离子键；H–O = 1.3；C–H = 0.4；O–Cl = 0.5。"
+          },
+          {
+            "q": "H₂O 沸点（100 °C）远高于同族 H₂S（−60 °C）的原因是？",
+            "options": ["H₂O 分子量更大", "H₂O 有分子间氢键网络", "H₂O 有离子键", "H₂S 是线形分子"],
+            "answer": 1,
+            "explain": "S 电负性不够强（2.5）且原子大，H₂S 无法形成氢键，只靠微弱范德华力；水分子间约 4 条氢键成网，挣脱需要高得多的温度。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="01-原子与元素.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 1 章 · 原子与元素</span></a>
+      <a class="next" href="03-化学反应与化学计量.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">第 3 章 · 化学反应与化学计量</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 本章交互：分子形状切换器 + 沸点柱状图 ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent, text) {
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (text !== undefined) n.textContent = text;
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  /* ---------- 1. 分子形状切换器 ---------- */
+  var MOLS = {
+    H2O: { name: "水 H₂O", shape: "V 形（弯曲形）", angle: "104.5°", polar: "极性分子",
+      atoms: [["O", 210, 140, 26, "#ef4444"], ["H", 128, 205, 16, "#60a5fa"], ["H", 292, 205, 16, "#60a5fa"]],
+      bonds: [[210,140,128,205],[210,140,292,205]],
+      lone: [[150,100],[270,100]], note: "2 成键对 + 2 孤对：孤对把键角压到 104.5°" },
+    CO2: { name: "二氧化碳 CO₂", shape: "直线形", angle: "180°", polar: "非极性分子",
+      atoms: [["C", 210, 150, 20, "#334155"], ["O", 92, 150, 24, "#ef4444"], ["O", 328, 150, 24, "#ef4444"]],
+      bonds: [[210,150,92,150],[210,150,328,150]], lone: [], note: "2 组电子方向对置 180°；两个键偶极反向抵消" },
+    CH4: { name: "甲烷 CH₄", shape: "正四面体", angle: "109.5°", polar: "非极性分子",
+      atoms: [["C", 210, 150, 22, "#334155"], ["H", 210, 72, 15, "#60a5fa"], ["H", 130, 196, 15, "#60a5fa"], ["H", 290, 196, 15, "#60a5fa"], ["H", 246, 118, 13, "#93c5fd"]],
+      bonds: [[210,150,210,72],[210,150,130,196],[210,150,290,196],[210,150,246,118]], lone: [],
+      note: "4 个成键对均匀排布；最小的 H 画成示意（实际为正四面体）" },
+    NH3: { name: "氨 NH₃", shape: "三角锥形", angle: "107°", polar: "极性分子",
+      atoms: [["N", 210, 120, 24, "#2563eb"], ["H", 122, 190, 15, "#60a5fa"], ["H", 298, 190, 15, "#60a5fa"], ["H", 210, 218, 15, "#60a5fa"]],
+      bonds: [[210,120,122,190],[210,120,298,190],[210,120,210,218]], lone: [[210, 64]],
+      note: "3 成键对 + 1 孤对：锥形，孤对在锥顶方向" }
+  };
+  var molSvg = document.getElementById("molSvg");
+  if (molSvg) {
+    var molReadout = document.getElementById("molReadout");
+    var cur = "H2O";
+    function drawMol(key) {
+      cur = key;
+      var m = MOLS[key];
+      molSvg.innerHTML = "";
+      // 孤对电子（虚线瓣）
+      m.lone.forEach(function (p) {
+        el("ellipse", { cx: p[0], cy: p[1], rx: 16, ry: 9, fill: "#c7d2fe", opacity: .8, stroke: "#6366f1", "stroke-dasharray": "3 3" }, molSvg);
+        el("circle", { cx: p[0] - 5, cy: p[1], r: 2.5, fill: "#4338ca" }, molSvg);
+        el("circle", { cx: p[0] + 5, cy: p[1], r: 2.5, fill: "#4338ca" }, molSvg);
+      });
+      // 键
+      m.bonds.forEach(function (b) {
+        el("line", { x1: b[0], y1: b[1], x2: b[2], y2: b[3], stroke: "#475569", "stroke-width": 5, "stroke-linecap": "round" }, molSvg);
+      });
+      // 原子
+      m.atoms.forEach(function (a) {
+        el("circle", { cx: a[1], cy: a[2], r: a[3], fill: a[4], stroke: "#fff", "stroke-width": 2 }, molSvg);
+        el("text", { x: a[1], y: a[2] + 5, "text-anchor": "middle", "font-size": 13, "font-weight": 700, fill: "#fff" }, molSvg, a[0]);
+      });
+      // 键角标注
+      el("text", { x: 210, y: 252, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "#b91c1c" }, molSvg, "键角 " + m.angle);
+      molReadout.textContent = m.name + " ｜ 形状：" + m.shape + " ｜ " + m.polar + " ｜ " + m.note;
+      document.querySelectorAll("[data-mol]").forEach(function (b) {
+        b.className = b.getAttribute("data-mol") === key ? "btn" : "btn ghost";
+      });
+    }
+    document.querySelectorAll("[data-mol]").forEach(function (b) {
+      b.addEventListener("click", function () { drawMol(b.getAttribute("data-mol")); });
+    });
+    drawMol("H2O");
+  }
+
+  /* ---------- 2. 沧族氢化物沸点柱状图 ---------- */
+  var bpSvg = document.getElementById("bpSvg");
+  if (bpSvg) {
+    var bpReadout = document.getElementById("bpReadout");
+    var DATA = [["H₂O", 100, "#2563eb"], ["H₂S", -60, "#94a3b8"], ["H₂Se", -41, "#94a3b8"], ["H₂Te", -2, "#94a3b8"]];
+    var x0 = 70, yTop = 30, yBase = 175, w = 70, scale = 1.05;
+    function yFor(t) { return yBase - t * scale * 0.62; }
+    // 坐标轴
+    el("line", { x1: x0 - 20, y1: yBase, x2: 540, y2: yBase, stroke: "#cbd5e1", "stroke-width": 2 }, bpSvg);
+    el("text", { x: 20, y: yBase + 4, "font-size": 12, fill: "#64748b" }, bpSvg, "0 °C");
+    DATA.forEach(function (d, i) {
+      var x = x0 + i * 120;
+      var y = yFor(d[1]);
+      var h = yBase - y;
+      var rect = el("rect", { x: x, y: Math.min(y, yBase), width: w, height: Math.max(Math.abs(h), 2),
+        rx: 4, fill: d[2], opacity: .9 }, bpSvg);
+      rect.style.cursor = "pointer";
+      rect.setAttribute("tabindex", "0");
+      el("text", { x: x + w / 2, y: Math.min(y, yBase) - 8, "text-anchor": "middle", "font-size": 13, "font-weight": 700, fill: "#1f2937" }, bpSvg, d[1] + " °C");
+      el("text", { x: x + w / 2, y: yBase + 20, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: d[2] === "#2563eb" ? "#1d4ed8" : "#475569" }, bpSvg, d[0]);
+      if (d[1] < 0) el("text", { x: x + w / 2, y: Math.min(y, yBase) - 24, "text-anchor": "middle", "font-size": 10, fill: "#94a3b8" }, bpSvg, "（低于 0 °C）");
+      rect.addEventListener("click", function () {
+        bpReadout.textContent = d[0] + "：沸点 " + d[1] + " °C" + (d[0] === "H₂O"
+          ? " —— 氢键网络的功劳：每个水分子可形成约 4 条氢键。"
+          : " —— 无氢键，仅范德华力：分子量越大沸点越高。");
+      });
+    });
+    var btn = document.getElementById("bpExplain");
+    if (btn) btn.addEventListener("click", function () {
+      bpReadout.innerHTML = "化学界名言：<strong>水是化学界的怪咖</strong>。按范德华力预测它本应约 −80 °C 沸腾（地球将是干涸岩石球），" +
+        "氢键让它高出 180 °C——这才有了海洋、云雨与生命。";
+    });
+  }
+})();
+</script>
+</body>
+</html>

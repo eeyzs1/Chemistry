@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>官能团反应巡礼 · 有机化学 第 4 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">02 有机化学</a><span class="sep">/</span>
+    <span class="here">第 4 章 · 官能团反应巡礼</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 有机化学 · 第 4 章</div>
+    <h1>官能团反应巡礼：六大族的看家本领</h1>
+    <p class="lede">
+      第 1 章认识了官能团的脸，第 3 章学会了机理的语言——现在把它们合起来用。
+      本章逐一登门拜访六大族：<strong>烯烃</strong>（加成）、<strong>芳烃</strong>（取代）、
+      <strong>醇</strong>（氧化）、<strong>醛酮</strong>（亲核加成）、<strong>羧酸与酯</strong>（酯化）、
+      <strong>胺</strong>（成盐），每一站都带一个生活链接：人造黄油、酒驾检测、果香酯、肥皂、去腥。
+      收官是一张可点击的<strong>官能团转化地图</strong>。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：第 1–3 章</span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#alkene">§1 烯烃</a>
+    <a href="#arene">§2 芳烃</a>
+    <a href="#alcohol">§3 醇</a>
+    <a href="#carbonyl">§4 醛与酮</a>
+    <a href="#ester">§5 羧酸与酯</a>
+    <a href="#amine">§6 胺</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：厨房与药箱里的官能团</h2>
+    <p>
+      打开厨房：油瓶里的植物油（酯）、醋壶里的乙酸（羧基）、料酒里的乙醇（羟基）、
+      香蕉的香味（酯）、鱼腥（胺）。打开药箱：阿司匹林（羧基＋酯基）、碘伏、维生素 C（烯二醇）。
+      这一章像一场相亲大会：<strong>官能团决定谁能与谁反应</strong>——羟基遇见氧化剂、
+      羰基遇见亲核试剂、胺遇见酸，各自开始自己的故事。带上第 3 章的弯箭头，我们进场。
+    </p>
+  </section>
+
+  <!-- ============ §1 烯烃 ============ -->
+  <section id="alkene">
+    <h2>§1 烯烃：打开双键的加成</h2>
+    <p>
+      双键 = 1 个结实的 σ + 1 个松软的 π。π 电子云暴露在分子表面，是天然的"电子毯"，
+      招引一切缺电子的客人（H⁺、Br₂、H₂O……）。客人落座，π 键断开，
+      两个原子分别接到双键两端——这就是<span class="term">加成反应</span><span class="en">addition</span>。
+    </p>
+    <p>
+      <strong>生活链接一：人造黄油。</strong>植物油的长链脂肪酸带着多个顺式双键，分子被双键"折弯"，
+      堆不紧密，所以是液体。让它们与氢气在镍催化下<strong>加氢</strong>，双键被"熨平"一部分，
+      分子变直、靠拢结晶，就成人造黄油（固态）。加得太猛则产生反式脂肪——现代工艺精确控制加氢深度。
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub> —Ni, Δ→ CH<sub>3</sub>CH<sub>3</sub></span>
+    </p>
+    <p>
+      <strong>生活链接二：塑料袋的起点。</strong>乙烯在催化剂下双键彼此打开、手拉手连成长链——
+      <span class="term">加成聚合</span><span class="en">addition polymerization</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n CH<sub>2</sub>=CH<sub>2</sub> —催化剂→ –[CH<sub>2</sub>–CH<sub>2</sub>]–<sub>n</sub>（聚乙烯）</span>
+    </p>
+    <p>聚乙烯的故事（单体、塑料家族、回收）属于 <a href="../06-高分子化学/index.html">06 高分子化学</a>，这里先埋一颗种子。</p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 加成 vs 取代：一句话分清</div>
+      <strong>加成</strong>是不饱和键的"接待"：π 键打开、来客接上，分子骨架不断、碳数不减；
+      <strong>取代</strong>是"换人"：一个基团走了、另一个顶上。烯烃擅长前者，下一节的苯环却坚决只做后者。
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么植物油是液体，黄油和猪油是固体？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：分子链上的双键会把链"折"成什么形状？直链和弯链哪个堆得紧？</p>
+        <p>
+          植物油富含<strong>不饱和</strong>脂肪酸：顺式双键让链打弯，分子挤不拢，熔点低 → 液体；
+          动物脂肪以<strong>饱和</strong>直链为主，像整齐的筷子捆，色散力强、易结晶 → 固体。
+          "加氢制人造黄油"本质上就是把双键熨平、把弯链拉直——熔点随之升高。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 芳烃 ============ -->
+  <section id="arene">
+    <h2>§2 芳烃：不愿拆散的合唱团</h2>
+    <p>
+      苯 <span class="formula">C<sub>6</sub>H<sub>6</sub></span> 是有机化学最著名的分子。
+      1865 年凯库勒给出"单双键交替的六元环"，但他也困惑：若真如此，苯应该像烯烃那样贪心地加成，
+      实际上苯却异常"高冷"——<strong>加成难，取代易</strong>。真相是：苯的 6 个 π 电子并不属于任何一条边，
+      而是<strong>离域</strong>在整个环的上下，像一场 6 人合唱。
+    </p>
+
+    <h3>🔬 动手玩：苯的三副面孔</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="benzSvg" width="470" height="340" viewBox="0 0 470 340" role="img" aria-label="苯的共振结构切换器"></svg>
+        <div class="fig-controls" id="benzBtns">
+          <button type="button" class="btn ghost" data-b="0">凯库勒式 A</button>
+          <button type="button" class="btn ghost" data-b="1">凯库勒式 B</button>
+          <button type="button" class="btn ghost" data-b="2">离域式（真实）</button>
+        </div>
+        <div class="fig-readout" id="benzReadout"></div>
+      </div>
+      <figcaption>
+        凯库勒 A 与 B 只是纸面上的两种"极限画法"，真实分子是它们的叠加：
+        6 条 C–C 键完全等长（139 pm，介于单键 154 与双键 134 之间）。
+        离域式用内圈表示离域的 6 个 π 电子。
+      </figcaption>
+    </figure>
+
+    <p>
+      苯的代表性反应是<strong>硝化</strong>（亲电取代，浓硫酸催化下生成硝基苯）：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> —浓H<sub>2</sub>SO<sub>4</sub>, Δ→ C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O</span>
+    </p>
+    <p>
+      硝基苯再还原成苯胺（§6 的主角之一）——染料工业的第一条流水线正始于这条反应。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 苯环为什么"加成难、取代易"？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          把 6 个 π 电子想成一支配合默契的合唱团：<strong>加成</strong>相当于拉走两名团员去跟别人组队，
+          合唱当场解散——损失"团魂"；<strong>取代</strong>则是请走一个 H、让新团员顶上，
+          合唱继续。苯环宁可换队员，不肯拆合唱。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 数据</span>
+        <p>
+          "团魂"可以量化为<strong>共振能</strong>：苯的氢化热实测比"环己三烯"预期低约
+          150 kJ/mol——这部分能量就是离域送的红利。若发生加成，产物（环己二烯衍生物）失去离域，
+          能量上很吃亏，能垒高；走取代则全程保留（或最终恢复）芳香离域，路径划算。
+          所以哪怕面对 Br₂，苯也要 FeBr₃ 催化并坚持走取代。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 机理</span>
+        <p>
+          离域 π 体系满足<strong>休克尔规则</strong>（4n+2 个 π 电子，苯为 n=1 的 6 个），
+          形成闭合的稳定壳层。以硝化为例的亲电取代三步：① 硝酸在浓硫酸帮助下派出亲电的
+          <span class="formula">NO<sub>2</sub><sup>+</sup></span>；② π 电子毯俘获它，生成
+          σ 络合物（Wheland 中间体，正电荷离域在整个环上）——这一步牺牲了一部分离域，是决速步；
+          ③ 吐出 H⁺，芳香性满血复活。第 3 章的"中间体"概念在这里照进现实。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 醇 ============ -->
+  <section id="alcohol">
+    <h2>§3 醇：氧化的阶梯</h2>
+    <p>
+      醇的 –OH 连在碳上，按那个碳上还有几个氢，分<strong>伯醇</strong>（–CH₂OH）、
+      <strong>仲醇</strong>（–CHOH–）、<strong>叔醇</strong>（–C(OH)– 无 α-H）。
+      在氧化剂眼里，α-碳上的氢就是"门把手"：有把手，门才能被拉开氧化。
+    </p>
+    <ul>
+      <li><strong>伯醇 → 醛 → 羧酸</strong>：<span class="formula">CH<sub>3</sub>CH<sub>2</sub>OH → CH<sub>3</sub>CHO → CH<sub>3</sub>COOH</span>（酒放久了变醋，就是这两步在空气中微生物帮助下完成）。</li>
+      <li><strong>仲醇 → 酮</strong>（到此为止）：<span class="formula">CH<sub>3</sub>CH(OH)CH<sub>3</sub> → CH<sub>3</sub>COCH<sub>3</sub></span>（丙酮，洗甲水）。</li>
+      <li><strong>叔醇</strong>：没有 α-H，一般氧化剂拉不动；强氧化剂则直接断链。</li>
+    </ul>
+    <p>
+      <strong>生活链接：酒驾检测。</strong>经典呼气检测管里装着浸过酸性重铬酸钾的硅胶：
+      呼出的乙醇蒸气把橙红色的 <span class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup></span>
+      <strong>还原</strong>成绿色的 <span class="formula">Cr<sup>3+</sup></span>——乙醇自己被氧化。
+      变色深浅与乙醇量成正比。现代电化学传感器换成了燃料电池原理，但"乙醇被氧化"这个化学内核没变。
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 甲醇不是"烈一点的酒"</div>
+      工业酒精常掺有甲醇 <span class="formula">CH<sub>3</sub>OH</span>。它同样走"氧化阶梯"，
+      但产物是甲醛与甲酸——攻击视神经、造成酸中毒，<strong>几毫升即可致失明</strong>。
+      同一个 –OH、同一条氧化路，只差一个 CH₂，命运截然不同：假酒案的元凶从来不是乙醇，是甲醇。
+      分子的"身份证"，差一点都不行。
+    </div>
+
+    <h3>📐 例题脚手架：三种醇的氧化产物</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        预测下列三种醇在一般氧化剂（如酸性重铬酸钾）作用下的产物：
+        A 乙醇、B 2-丙醇、C 2-甲基-2-丙醇（(CH₃)₃COH）。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">先分类：看 –OH 所在碳上连了几个碳、还剩几个氢。A：连 1 个碳 + 2 个 H → <strong>伯醇</strong>；
+          B：连 2 个碳 + 1 个 H → <strong>仲醇</strong>；C：连 3 个碳 + 0 个 H → <strong>叔醇</strong>。</li>
+        <li class="step">A 走阶梯：伯醇先氧化成乙醛，条件足继续氧化成<strong>乙酸</strong>（检测管里橙变绿正是它）。</li>
+        <li class="step">B 一步到顶：仲醇氧化成<strong>丙酮</strong>；酮没有 α-H 可再被拉，氧化到此为止。</li>
+        <li class="step">C 拉不动门：叔醇的 α-碳上没有氢，一般条件下<strong>不反应</strong>（不变色）。
+          ✅ 顺便收获一个鉴别法：重铬酸钾能区分叔醇与伯/仲醇。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 醛与酮 ============ -->
+  <section id="carbonyl">
+    <h2>§4 醛与酮：极化的羰基</h2>
+    <p>
+      羰基 <span class="formula">C=O</span> 是碳与氧的双键，但氧的电负性远大于碳，
+      把 π 电子云拉向自己：碳带部分正电（δ+）、氧带部分负电（δ−）。
+      于是富电子的<span class="term">亲核试剂</span><span class="en">nucleophile</span>
+      （如 CN⁻、醇、格氏试剂）专攻那个 δ+ 的碳——这是<span class="term">亲核加成</span>
+      <span class="en">nucleophilic addition</span>，醛酮的看家本领（第 3 章 §3 的镜像剧本，
+      只是这次被进攻的是 C=O）。
+    </p>
+    <p>
+      醛与酮的分野在<strong>再氧化一步</strong>：醛的羰基还挂着一个 H，容易被继续氧化成羧酸
+      ——所以醛有还原性；酮没有这个 H，"免战"。最经典的检验是<span class="term">银镜反应</span>
+      <span class="en">Tollens' test</span>：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>CHO + 2Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> + 3OH<sup>−</sup> → CH<sub>3</sub>COO<sup>−</sup> + 2Ag↓ + 4NH<sub>3</sub> + 2H<sub>2</sub>O</span>
+    </p>
+    <p>
+      醛把银氨溶液里的 Ag⁺ 还原成金属银，在洁净玻璃内壁镀出一面镜子——暖水瓶胆的银膜就是这么镀的。
+      葡萄糖带有醛基（还原糖），早期血糖试纸用的正是同一原理（还原 Cu²⁺ 生成砖红色 Cu₂O）。
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "天然香料和合成香料是不同的物质"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          玫瑰里提取的香料与工厂合成的香料"本质上不同"，天然的一定更香、更安全。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          分子不讲出身。只要<strong>组成与结构（包括立体结构）相同，就是同一物质</strong>：
+          熔点、沸点、红外光谱、香味全部一致。香荚兰豆里的香兰素与合成的香兰素是同一个分子
+          （二者区别只在微量杂质与价格）；调香师甚至能合成出自然界尚未发现的香料。
+          与其问"天然还是合成"，不如看<strong>纯度与剂量</strong>——那才是毒理学的语言
+          （呼应第 1 章的蓖麻毒素与维生素 C）。
+        </div>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        两瓶无标签试剂：乙醛 <span class="formula">CH<sub>3</sub>CHO</span> 与丙酮
+        <span class="formula">CH<sub>3</sub>COCH<sub>3</sub></span>。
+        请用一条化学方法区分它们。<em>（先想"谁的羰基上还挂着 H"，再逐步对照）</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 找差异：乙醛的羰基碳连着 –H（醛）；丙酮的两边都是 –CH₃（酮）。醛可被氧化，酮不易。</li>
+        <li class="step">💡 选试剂：银氨溶液（或新制氢氧化铜）。它专门"提拔"有还原性的醛。</li>
+        <li class="step">💡 现象：产生银镜（或砖红色 Cu₂O 沉淀）的是<strong>乙醛</strong>；无现象的是<strong>丙酮</strong>。</li>
+        <li class="step">✅ 延伸：医院血糖检测利用葡萄糖的醛基还原性，本质上是同一场"还原性考试"。
+          注意：果糖虽是酮糖，但在碱性条件下会异构化出醛基，同样是还原糖——细节留给 05 生物化学。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 羧酸与酯 ============ -->
+  <section id="ester">
+    <h2>§5 羧酸与酯：果香与肥皂</h2>
+    <p>
+      羧基 –COOH 给出质子的能力强（羰基拉电子帮腔），所以羧酸名副其实地酸。
+      它与醇在<strong>浓硫酸催化</strong>下脱水缩合，生成<span class="term">酯</span>——
+      这就是<span class="term">酯化反应</span><span class="en">esterification</span>（可逆）：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>COOH + HOCH<sub>2</sub>CH<sub>3</sub> ⇌ CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O</span>（浓 H₂SO₄ 催化、加热）
+    </p>
+    <p>
+      乙酸乙酯带着菠萝/指甲油的气味；乙酸异戊酯就是标准的"香蕉水"香精——<strong>果实香气大多是小分子酯</strong>。
+      反过来，酯在<strong>碱</strong>中水解叫<span class="term">皂化</span><span class="en">saponification</span>：
+      油脂（三脂肪酸甘油酯）+ NaOH → 高级脂肪酸钠（肥皂主成分）+ 甘油。皂化把可逆反应"拽"到底，
+      因为羧酸根被碱立刻中和、无法逆流。
+    </p>
+
+    <h3>🔬 动手玩：官能团转化路线图</h3>
+    <p>
+      本章所有主角都在图上：<strong>点击任一节点</strong>，与它相关的箭头会高亮，
+      下方卡片显示一个代表方程式。这张图也是本分支的总复习。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mapSvg" width="780" height="440" viewBox="0 0 780 440" role="img" aria-label="官能团转化路线图"></svg>
+        <div class="fig-controls" id="mapBtns">
+          <button type="button" class="btn ghost" data-k="0">烯烃</button>
+          <button type="button" class="btn ghost" data-k="1">醇</button>
+          <button type="button" class="btn ghost" data-k="2">醛</button>
+          <button type="button" class="btn ghost" data-k="3">酮</button>
+          <button type="button" class="btn ghost" data-k="4">羧酸</button>
+          <button type="button" class="btn ghost" data-k="5">酯</button>
+          <button type="button" class="btn ghost" data-k="-1">↺ 清除高亮</button>
+        </div>
+        <div id="mapCard" style="border:1px solid var(--line);border-left:5px solid var(--accent);background:#ffffff;border-radius:8px;padding:12px 16px;text-align:left;margin-top:10px;max-width:100%;min-height:64px">
+          👆 点击地图节点或上方按钮：相关反应箭头高亮，并显示一个代表方程式。
+        </div>
+        <div class="fig-readout" id="mapReadout">当前未选择节点 · 全图共 5 类转化</div>
+      </div>
+      <figcaption>
+        有机合成的本质，就是在这样一张图上找路：从便宜原料出发，一站一站把官能团"改装"成目标分子。
+        06 高分子化学与 10 药物化学会带你走更长的路线。
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>想一想：肥皂为什么能洗掉油污，而清水怎么搓都不行？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：高级脂肪酸钠的分子，一头像什么、另一头又像什么？</p>
+        <p>
+          肥皂分子是"两栖动物"：长烃链一端<strong>亲油</strong>（与油滴混融），羧酸根一端
+          <strong>亲水</strong>（与水抱团）。几十个肥皂分子把小油滴团团围住，烃链插进油里、
+          羧酸头朝外——形成<strong>胶束</strong>。油滴被胶束包裹后能随水冲走，这就是去污的全部秘密。
+          附录式的问题：纯烃链的"油"没有亲水端，所以清水洗不掉。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §6 胺 ============ -->
+  <section id="amine">
+    <h2>§6 胺：碱性小分子</h2>
+    <p>
+      氨 NH₃ 去掉一个 H 换上碳链，就得到<span class="term">胺</span><span class="en">amine</span>：
+      甲胺 CH₃NH₂、苯胺 C₆H₅NH₂……氮上那对<strong>孤对电子</strong>是它们的性格来源——
+      可以抱住质子，所以胺显<strong>碱性</strong>，遇酸成盐：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>NH<sub>2</sub> + HCl → CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>Cl<sup>−</sup></span>（甲胺盐酸盐，固体）
+    </p>
+    <p>
+      <strong>生活链接：去腥。</strong>鱼腥味主要来自挥发性的三甲胺
+      <span class="formula">(CH<sub>3</sub>)<sub>3</sub>N</span>。烹鱼时加醋或柠檬汁，
+      酸把胺"按下"变成不挥发的铵盐——腥味分子飞不进你的鼻子，鱼就"不腥"了。
+      化学解释厨艺，往往就是这么一行方程式。
+    </p>
+    <p>
+      <strong>下一分支的预告：</strong>把氨基与羧基装进同一个分子，就得到
+      <span class="term">氨基酸</span><span class="en">amino acid</span>——蛋白质的积木。
+      20 种标准氨基酸如何缩合成肽链、酶如何工作，是 <a href="../05-生物化学/index.html">05 生物化学</a>的开场戏。
+    </p>
+
+    <details class="think">
+      <summary>想一想：为什么苯胺的碱性远弱于甲胺？（提示：那对孤对电子可能"忙别的"去了）</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：苯环上那片离域 π 云，会不会吸引氮的孤对电子加入合唱？</p>
+        <p>
+          会。苯胺氮上的孤对可以离域进苯环的 π 体系（呼应 §2 的"合唱团"），
+          被"借走"的孤对就腾不出手去抓质子，碱性大打折扣。甲胺没有这种合唱团可加入，
+          孤对全心全意等质子，碱性强得多。同一个官能团，换个骨架，性格就变——
+          这又是"骨架 × 官能团"协同决定性质的好例子。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li><strong>烯烃</strong>加成：加氢造人造黄油（熨平双键提熔点），加聚造聚乙烯（06 伏笔）。</li>
+        <li><strong>苯环</strong>因 π 电子离域（共振能约 150 kJ/mol）而"加成难、取代易"，如硝化。</li>
+        <li><strong>醇</strong>氧化看 α-H：伯醇→醛→羧酸，仲醇→酮，叔醇不动（酒驾检测、甲醇之险）。</li>
+        <li><strong>醛酮</strong>羰基极化 δ+/δ−，遇亲核试剂加成；醛有还原性（银镜反应），酮没有。</li>
+        <li><strong>羧酸与酯</strong>：酯化（浓硫酸催化、可逆）与皂化（NaOH、进行到底）；果香来自酯，肥皂来自皂化。</li>
+        <li><strong>胺</strong>靠孤对显碱性，遇酸成盐去腥；氨基酸＝氨基＋羧基同体，通向 05 生化。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 官能团反应巡礼 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "植物油部分加氢制造人造黄油，反应前后被『熨平』的是什么？",
+            "options": [
+              "酯基被水解了",
+              "碳碳双键被加氢变成单键，弯链变直链，熔点升高",
+              "羟基被氧化成羰基",
+              "苯环发生了取代反应"
+            ],
+            "answer": 1,
+            "explain": "加氢就是 C=C 的催化加成：π 键打开接上两个 H。顺式双键造成的『折弯』被拉直后，分子链能紧密堆叠、熔点升高，于是液体油变成固态脂。"
+          },
+          {
+            "q": "苯容易发生取代而难以加成，根本原因是？",
+            "options": [
+              "苯环上没有双键",
+              "π 电子离域带来约 150 kJ/mol 的额外稳定化，加成会破坏它",
+              "苯的分子量太小",
+              "取代反应放热更多，而加成吸热"
+            ],
+            "answer": 1,
+            "explain": "苯的 6 个 π 电子离域在整个环上（6 条 C–C 键等长 139 pm），氢化热比环己三烯预期低约 150 kJ/mol。加成会牺牲这份『共振能』，取代则保留芳香性，所以苯宁换队员（取代）不拆合唱（加成）。"
+          },
+          {
+            "q": "酒驾呼气检测中乙醇扮演的角色是？",
+            "options": [
+              "氧化剂",
+              "被氧化的还原剂，把橙红色 Cr₂O₇²⁻ 还原成绿色 Cr³⁺",
+              "催化剂",
+              "酸碱指示剂"
+            ],
+            "answer": 1,
+            "explain": "乙醇被氧化（伯醇→醛→羧酸），重铬酸根被还原，颜色由橙红变绿——颜色变化量正比于呼气中的乙醇量。乙醇是被氧化的还原剂，不是氧化剂也不是催化剂。"
+          },
+          {
+            "q": "下列物质中能发生银镜反应的是？",
+            "options": ["丙酮", "乙醛", "乙酸乙酯", "乙醚"],
+            "answer": 1,
+            "explain": "银镜反应检验的是醛基（–CHO）的还原性：乙醛有醛基；丙酮是酮、乙酸乙酯与乙醚都不含醛基。葡萄糖因带醛基也能发生银镜反应。"
+          },
+          {
+            "q": "皂化反应（油脂的水解）需要的试剂与条件是？",
+            "options": [
+              "浓硫酸、加热（酯化条件）",
+              "NaOH 溶液、加热",
+              "食盐水、常温",
+              "乙醇、常温"
+            ],
+            "answer": 1,
+            "explain": "酯在碱（NaOH）中水解叫皂化：生成的羧酸立即被中和成羧酸钠（肥皂），不可逆、能进行到底。浓硫酸是酯化（逆方向）的催化剂与脱水剂。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="03-反应机理入门.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 3 章 · 反应机理入门</span></a>
+      <a class="next" href="../03-分析化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">03 分析化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（苯共振切换器 / 官能团转化路线图） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. 苯的共振切换器 ---------- */
+  var benzSvg = document.getElementById("benzSvg");
+  if (benzSvg) {
+    var benzReadout = document.getElementById("benzReadout");
+    var benzBtns = Array.prototype.slice.call(document.querySelectorAll("#benzBtns button"));
+    var CX = 235, CY = 175, R = 80, RH = 132;
+    var verts = [], hyd = [];
+    for (var i = 0; i < 6; i++) {
+      var a = (90 + 60 * i) * Math.PI / 180;
+      verts.push([CX + R * Math.cos(a), CY + R * Math.sin(a)]);
+      hyd.push([CX + RH * Math.cos(a), CY + RH * Math.sin(a)]);
+    }
+    function innerLine(v1, v2) {
+      var mx = (v1[0] + v2[0]) / 2, my = (v1[1] + v2[1]) / 2;
+      var ox = (CX - mx) * 0.24, oy = (CY - my) * 0.24;
+      el("line", {
+        x1: v1[0] + (v2[0] - v1[0]) * 0.16 + ox, y1: v1[1] + (v2[1] - v1[1]) * 0.16 + oy,
+        x2: v1[0] + (v2[0] - v1[0]) * 0.84 + ox, y2: v1[1] + (v2[1] - v1[1]) * 0.84 + oy,
+        stroke: "#6b7280", "stroke-width": 3
+      }, benzSvg);
+    }
+    function drawBenz(mode) {
+      benzSvg.innerHTML = "";
+      T(benzSvg, 235, 30, "苯 C₆H₆ · 六元环", { size: 14, weight: 700 });
+      for (var i = 0; i < 6; i++) {
+        var v1 = verts[i], v2 = verts[(i + 1) % 6];
+        el("line", { x1: v1[0], y1: v1[1], x2: v2[0], y2: v2[1], stroke: "#6b7280", "stroke-width": 3.5 }, benzSvg);
+      }
+      var dbl = mode === 0 ? [0, 2, 4] : [1, 3, 5];
+      if (mode < 2) dbl.forEach(function (i) { innerLine(verts[i], verts[(i + 1) % 6]); });
+      for (var j = 0; j < 6; j++) {
+        el("line", { x1: verts[j][0], y1: verts[j][1], x2: hyd[j][0], y2: hyd[j][1], stroke: "#94a3b8", "stroke-width": 2.5 }, benzSvg);
+      }
+      if (mode === 2) {
+        el("circle", { cx: CX, cy: CY, r: 48, fill: "none", stroke: "#15803d", "stroke-width": 4 }, benzSvg);
+        var spin = el("g", { class: "anim-spin" }, benzSvg);
+        spin.style.animationDuration = "14s";
+        for (var d = 0; d < 6; d++) {
+          var ad = d * 60 * Math.PI / 180;
+          el("circle", { cx: CX + 48 * Math.cos(ad), cy: CY + 48 * Math.sin(ad), r: 4.5, fill: "#15803d" }, spin);
+        }
+      }
+      for (var k = 0; k < 6; k++) {
+        el("circle", { cx: verts[k][0], cy: verts[k][1], r: 17, fill: "#374151" }, benzSvg);
+        T(benzSvg, verts[k][0], verts[k][1] + 5, "C", { size: 12, weight: 700, fill: "#ffffff" });
+        el("circle", { cx: hyd[k][0], cy: hyd[k][1], r: 11, fill: "#ffffff", stroke: "#9ca3af", "stroke-width": 1.5 }, benzSvg);
+        T(benzSvg, hyd[k][0], hyd[k][1] + 4, "H", { size: 11, weight: 700, fill: "#1f2937" });
+      }
+      if (mode === 0) benzReadout.textContent = "凯库勒式 A：单双键交替的一种画法——只是真实分子的一个『极限式』。";
+      else if (mode === 1) benzReadout.textContent = "凯库勒式 B：双键挪了位置。A 与 B 能量完全相同——说明双键根本不固定在任何一条边上。";
+      else benzReadout.textContent = "真实苯环：6 个 π 电子完全离域（内圈），6 条 C–C 键等长 139 pm（介于单键 154 与双键 134 之间），比『环己三烯』稳定约 150 kJ/mol。";
+      benzBtns.forEach(function (b) {
+        if (parseInt(b.getAttribute("data-b"), 10) === mode) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    benzBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawBenz(parseInt(b.getAttribute("data-b"), 10)); });
+    });
+    drawBenz(0);
+  }
+
+  /* ---------- 2. 官能团转化路线图 ---------- */
+  var mapSvg = document.getElementById("mapSvg");
+  if (mapSvg) {
+    var mapCard = document.getElementById("mapCard");
+    var mapReadout = document.getElementById("mapReadout");
+    var NODES = [
+      { key: "alkene", label: "烯烃", x: 30, y: 190, w: 140, h: 54,
+        eq: "CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O —催化剂→ CH<sub>3</sub>CH<sub>2</sub>OH",
+        note: "乙烯水合：工业上大批量生产乙醇的一条路。π 键打开，官能团由 C=C 变成 –OH——加成是烯烃的看家本领。" },
+      { key: "alcohol", label: "醇", x: 260, y: 190, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CH<sub>2</sub>OH + [O] → CH<sub>3</sub>CHO + H<sub>2</sub>O",
+        note: "伯醇氧化成醛（酒驾检测氧化的正是这一步），醛再氧化成乙酸——『酒放久了变醋』。仲醇同场被氧化成酮：CH<sub>3</sub>CH(OH)CH<sub>3</sub> → CH<sub>3</sub>COCH<sub>3</sub>。" },
+      { key: "aldehyde", label: "醛", x: 470, y: 80, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CHO + 2Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> + 3OH<sup>−</sup> → CH<sub>3</sub>COO<sup>−</sup> + 2Ag↓ + 4NH<sub>3</sub> + 2H<sub>2</sub>O",
+        note: "银镜反应：醛基有还原性，把 Ag⁺ 还原成金属银——暖水瓶胆的银膜就是这样镀上去的，也是醛的专属检验。" },
+      { key: "ketone", label: "酮", x: 470, y: 330, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CH(OH)CH<sub>3</sub> + [O] → CH<sub>3</sub>COCH<sub>3</sub> + H<sub>2</sub>O",
+        note: "仲醇氧化到酮为止：丙酮是洗甲水的主要成分。酮没有醛基那个 H，不发生银镜反应——据此可区分醛与酮。" },
+      { key: "acid", label: "羧酸", x: 630, y: 80, w: 130, h: 54,
+        eq: "CH<sub>3</sub>COOH + HOCH<sub>2</sub>CH<sub>3</sub> ⇌ CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O",
+        note: "酯化：浓硫酸催化并吸水。果实香气大多来自酯——乙酸异戊酯就是香蕉味，菠萝、梨香也各有专属的酯。" },
+      { key: "ester", label: "酯", x: 630, y: 330, w: 130, h: 54,
+        eq: "油脂 + 3NaOH —Δ→ 3 RCOONa（肥皂） + 甘油",
+        note: "皂化：油脂（三脂肪酸甘油酯）在热碱中水解成高级脂肪酸钠与甘油。肥皂分子一头亲油一头亲水，包油成胶束随水冲走。" }
+    ];
+    var EDGES = [
+      { a: 0, b: 1, x1: 170, y1: 217, x2: 260, y2: 217, label: "加水", lx: 215, ly: 207, both: false },
+      { a: 1, b: 2, x1: 382, y1: 203, x2: 470, y2: 134, label: "氧化·伯醇", lx: 408, ly: 152, both: false },
+      { a: 1, b: 3, x1: 382, y1: 231, x2: 470, y2: 330, label: "氧化·仲醇", lx: 404, ly: 296, both: false },
+      { a: 2, b: 4, x1: 590, y1: 107, x2: 630, y2: 107, label: "氧化", lx: 610, ly: 68, both: false },
+      { a: 4, b: 5, x1: 695, y1: 134, x2: 695, y2: 330, label: "酯化 ⇄ 水解", lx: 708, ly: 238, both: true }
+    ];
+
+    var edgeEls = [], nodeEls = [];
+
+    function arrowHead(g, x, y, ang, color) {
+      var s = 10;
+      el("polygon", {
+        points: x + "," + y + " " + (x - s * Math.cos(ang - 0.42)) + "," + (y - s * Math.sin(ang - 0.42)) +
+          " " + (x - s * Math.cos(ang + 0.42)) + "," + (y - s * Math.sin(ang + 0.42)),
+        fill: color
+      }, g);
+    }
+
+    function drawMap(sel) {
+      mapSvg.innerHTML = "";
+      edgeEls = []; nodeEls = [];
+      // 先画边
+      EDGES.forEach(function (e) {
+        var hit = sel !== null && (e.a === sel || e.b === sel);
+        var col = hit ? "#15803d" : "#94a3b8";
+        var w = hit ? 3.5 : 2;
+        var g = el("g", {}, mapSvg);
+        el("line", { x1: e.x1, y1: e.y1, x2: e.x2, y2: e.y2, stroke: col, "stroke-width": w }, g);
+        var ang = Math.atan2(e.y2 - e.y1, e.x2 - e.x1);
+        arrowHead(g, e.x2, e.y2, ang, col);
+        if (e.both) arrowHead(g, e.x1, e.y1, ang + Math.PI, col);
+        T(g, e.lx, e.ly, e.label, { size: 12, weight: hit ? 700 : 400, fill: hit ? "#166534" : "#6b7280" });
+        edgeEls.push(g);
+      });
+      // 再画节点（可点击）
+      NODES.forEach(function (n, i) {
+        var hit = sel === i;
+        var g = el("g", { style: "cursor:pointer" }, mapSvg);
+        el("rect", {
+          x: n.x, y: n.y, width: n.w, height: n.h, rx: 12,
+          fill: hit ? "#f0fdf4" : "#ffffff",
+          stroke: hit ? "#15803d" : "#94a3b8",
+          "stroke-width": hit ? 3 : 2
+        }, g);
+        T(g, n.x + n.w / 2, n.y + n.h / 2 + 5, n.label, { size: 15, weight: 700, fill: hit ? "#166534" : "#1f2937" });
+        g.addEventListener("click", function () { select(i); });
+        nodeEls.push(g);
+      });
+      T(mapSvg, 390, 428, "点击节点查看该类官能团的代表反应（转化箭头随之高亮）", { size: 12, fill: "#6b7280" });
+    }
+
+    function select(i) {
+      drawMap(i);
+      paintBtns(i);
+      var n = NODES[i];
+      mapCard.innerHTML = "<strong style='color:var(--accent-deep)'>" + n.label + "</strong>　" +
+        "<span class='formula'>" + n.eq + "</span><br>" + n.note;
+      mapReadout.textContent = "已选中：" + n.label + "（高亮箭头 = 与它相关的转化路线）";
+    }
+
+    function paintBtns(sel) {
+      Array.prototype.forEach.call(document.querySelectorAll("#mapBtns button"), function (b) {
+        var k = parseInt(b.getAttribute("data-k"), 10);
+        if (k === sel) { b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)"; }
+        else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+
+    var mapBtnEls = document.querySelectorAll("#mapBtns button");
+    Array.prototype.forEach.call(mapBtnEls, function (b) {
+      b.addEventListener("click", function () {
+        var k = parseInt(b.getAttribute("data-k"), 10);
+        if (k < 0) {
+          drawMap(null); paintBtns(null);
+          mapCard.innerHTML = "👆 点击地图节点或上方按钮：相关反应箭头高亮，并显示一个代表方程式。";
+          mapReadout.textContent = "当前未选择节点 · 全图共 5 类转化";
+        } else select(k);
+      });
+    });
+
+    drawMap(null);
+  }
+})();
+</script>
+</body>
+</html>

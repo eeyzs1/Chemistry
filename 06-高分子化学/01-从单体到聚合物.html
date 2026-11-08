@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从单体到聚合物 · 高分子化学 第 1 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b06">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">06 高分子化学</a><span class="sep">/</span>
+    <span class="here">第 1 章 · 从单体到聚合物</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">06 高分子化学 · 第 1 章</div>
+    <h1>从单体到聚合物：小分子连成巨链</h1>
+    <p class="lede">
+      乙烯是个气态小分子，飘忽无形；把它成千上万地首尾相连，就得到能装十升水的塑料桶。
+      本章讲清一件事：<strong>当小分子（单体）互相连接成巨型链分子（聚合物），材料性质会发生质的飞跃</strong>。
+      我们将拆开两条最重要的聚合路线——加成聚合与缩合聚合，看链的形状（线型？交联？）
+      如何决定塑料的软硬、橡胶的弹性，以及为什么有的塑料能反复熔融、有的却一次定型。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 60 分钟</span>
+      <span class="chip">先修：<a href="../02-有机化学/01-碳骨架与官能团.html">02 有机化学 · 官能团</a></span>
+      <span class="chip">交互动画 ×2</span>
+      <span class="chip">自测 4 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#what">什么是聚合物</a>
+    <a href="#addition">加成聚合</a>
+    <a href="#condensation">缩合聚合</a>
+    <a href="#crosslink">交联与硫化</a>
+    <a href="#families">材料家族速览</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：三个"塑料"朋友</h2>
+    <p>
+      撕开面包袋，薄薄一层保鲜膜软得几乎没有形状；拧开矿泉水瓶，瓶身挺括、按压即回弹；
+      掰开旧台灯的黑色开关座，它又硬又脆，掉在地上"咔"地裂开——
+      它们都被叫作"塑料"，性格却天差地别。同样是人工合成的有机大分子，为什么有的软、有的韧、有的脆？
+    </p>
+    <p>
+      答案藏在<strong>分子链的世界</strong>里。保鲜膜里是松散缠结的长链，彼此可以滑动；
+      瓶子里是整齐折叠、局部结晶的链束；开关座里链与链之间被化学键焊死成一张三维大网。
+      要看懂这些，得先回答一个更基本的问题：小分子是怎么"连"成大分子的？
+    </p>
+    <details class="think">
+      <summary>想一想：同样是"碳氢化合物"，为什么石蜡油（小分子混合物）是流动的液体，聚乙烯（长链分子）却是结实的固体？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：想想书页（短纸条）与整本装订好的书（长链）哪个更容易整体挪动。</p>
+        <p>
+          分子越大，链与链之间"贴"在一起的接触面就越大，分子间的色散力（伦敦力）累积起来就非常可观——
+          单个小分子的吸引力弱，所以室温下是液体或气体；而分子量上万的长链，
+          每条链与邻居的相互作用位点成百上千，整体就难以滑动、难以挥发，成为固体。
+          <strong>高分子材料的强度，本质上来自"链条自身共价键的强"加上"链间大量弱相互作用的叠加"。</strong>
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 什么是聚合物 ============ -->
+  <section id="what">
+    <h2>§1 什么是聚合物：分子量是一个分布</h2>
+    <p>
+      <span class="term">单体</span><span class="en">monomer</span>是搭建大厦的砖块；
+      <span class="term">聚合物</span><span class="en">polymer</span>由成百上千个单体单元通过共价键重复连接而成，
+      "poly-mer"的本意就是"多的部分"。一条链中重复单元的个数叫
+      <span class="term">聚合度</span><span class="en">degree of polymerization, DP</span>。
+      DP 为 2～几十的叫低聚物（oligomer），上千才称得上真正的高分子。
+    </p>
+    <p>
+      聚乙烯的重复单元 <span class="formula">−CH<sub>2</sub>−CH<sub>2</sub>−</span> 每个重 28 u（原子质量单位）。
+      若某条链的 DP = 2000，分子量约 56000；DP = 20000，则 560000。由小分子到高分子，
+      <strong>化学组成几乎没有变，变的只是"链有多长"</strong>——这叫量的积累引发质的飞跃。
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 关键观念：分子量是一个分布，不是单一值</div>
+      水分子个个都是 H<sub>2</sub>O，分子量永远是 18；但聚合反应中每条链"何时停止生长"是随机的，
+      产物里长链、短链混杂。因此聚合物<strong>没有单一分子量，只有"平均分子量"和"分子量分布"</strong>：
+      常用数均分子量 <span class="formula">M̄<sub>n</sub></span>（按分子条数平均）与重均分子量
+      <span class="formula">M̄<sub>w</sub></span>（按分子重量加权平均），二者之比
+      <span class="formula">M̄<sub>w</sub>/M̄<sub>n</sub> ≥ 1</span>（分布越宽，比值越大）。
+      加工与性能对分布极敏感：短链多则流动好但强度低，长链多则强韧但难加工。
+    </div>
+
+    <p>
+      顺便纠正一个常见印象：高分子并非都是人工合成。纤维素（棉花与木材的骨架）、淀粉、蛋白质、
+      天然橡胶都是天然高分子；人类合成高分子的历史不过一百多年，而自然界的"聚合物工厂"已运转了几十亿年。
+    </p>
+  </section>
+
+  <!-- ============ §2 加成聚合 ============ -->
+  <section id="addition">
+    <h2>§2 加成聚合：打开双键，连成长链</h2>
+    <p>
+      含碳碳双键的单体（乙烯、氯乙烯、苯乙烯、丙烯等）可以发生
+      <span class="term">加成聚合</span><span class="en">addition polymerization</span>：
+      双键中的 π 键打开，每个单体用腾出的两个"接口"与邻居相连，自身成为链上的一段。
+      整个过程<strong>不失去任何原子</strong>——重复单元的化学式与单体完全相同。
+    </p>
+    <p>
+      工业上最经典的路线是<span class="term">自由基聚合</span><span class="en">free-radical polymerization</span>，
+      像多米诺一样一环推一环，分三步走：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="radSvg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="自由基链式聚合五步演示动画"></svg>
+        <div class="fig-controls">
+          <button class="btn ghost" id="radPrev">← 上一步</button>
+          <button class="btn" id="radNext">下一步 →</button>
+          <button class="btn ghost" id="radReset">↺ 重置</button>
+        </div>
+        <div class="fig-readout" id="radReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        自由基聚合"引发 → 增长 → 终止"全流程示意（以乙烯为例）。点"下一步"依次观看：
+        单体池 → 引发剂裂解 → 链引发 → 链增长 → 双基终止。活性链末端（红点）一旦相遇，链就"熄火"。
+      </figcaption>
+    </figure>
+
+    <ol>
+      <li><strong>引发 initiation</strong>：引发剂（如过氧化二苯甲酰）受热分解，一根共价键匀裂，产生两个带单电子的
+        <span class="term">自由基</span> R·。单电子极活泼，见双键就"咬"上去。</li>
+      <li><strong>增长 propagation</strong>：R· 与单体 CH<sub>2</sub>=CH<sub>2</sub> 的 π 键加成，
+        单体并进链端，链端重新出现一个新自由基——活性像火炬一样传递，链一节节接长。
+        每秒可接上千个单体，通常 0.1～几秒内长成一条完整链。</li>
+      <li><strong>终止 termination</strong>：两个活性链端相遇，单电子两两配对（偶合终止），
+        或一个链端把氢原子抢给另一个（歧化终止），自由基消失，链停止生长。</li>
+    </ol>
+
+    <p>
+      乙烯的聚合简式：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n CH<sub>2</sub>=CH<sub>2</sub> → −[CH<sub>2</sub>−CH<sub>2</sub>]<sub>n</sub>−</span>
+    </p>
+    <p>
+      括号内是重复单元，n 就是聚合度。把其中一个 H 换成 Cl，单体变成氯乙烯，产物就是 PVC；
+      换成苯环，得到聚苯乙烯（泡沫塑料）；换成 CH<sub>3</sub>，得到聚丙烯。
+      <strong>侧基不同，材料性格迥异</strong>——这就是 02 分支"官能团决定性质"在高分子世界的翻版。
+    </p>
+  </section>
+
+  <!-- ============ §3 缩合聚合 ============ -->
+  <section id="condensation">
+    <h2>§3 缩合聚合：逐步连接，挤出小分子</h2>
+    <p>
+      第二条路线不需要双键，而是利用<strong>能互相缩合的官能团</strong>——羧基与羟基成酯、
+      羧基与氨基成酰胺。<span class="term">缩合聚合</span><span class="en">condensation polymerization</span>
+      每连一节就挤掉一个小分子（通常是水），因此也叫逐步聚合（step-growth）：
+      两条任意长度的短链都可以首尾相接，链长<strong>逐步</strong>爬升，与自由基聚合"秒成一条链"截然不同。
+    </p>
+
+    <h3>尼龙-66：历史名场面</h3>
+    <p>
+      1935 年，杜邦公司的卡罗瑟斯把己二胺（两头都是 NH<sub>2</sub>）与己二酸（两头都是 COOH）混合，
+      两端官能团反复缩合成酰胺键 <span class="formula">−CO−NH−</span>，得到聚己二酰己二胺——尼龙-66：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n H<sub>2</sub>N(CH<sub>2</sub>)<sub>6</sub>NH<sub>2</sub> + n HOOC(CH<sub>2</sub>)<sub>4</sub>COOH
+      → −[NH(CH<sub>2</sub>)<sub>6</sub>NHCO(CH<sub>2</sub>)<sub>4</sub>CO]<sub>n</sub>− + 2n H<sub>2</sub>O</span>
+    </p>
+    <p>
+      酰胺键之间能形成大量氢键，把相邻链"锁"在一起——这正是尼龙纤维强度高、
+      1938 年一出世就做成丝袜引爆时尚的原因。
+    </p>
+
+    <h3>PET：饮料瓶的身世</h3>
+    <p>
+      对苯二甲酸（双羧基）与乙二醇（双羟基）缩聚，酯键 <span class="formula">−COO−</span> 连接，
+      挤出水分子，得到聚对苯二甲酸乙二醇酯（PET）。它透明、结实、气密性好，
+      是矿泉水瓶与涤纶纤维的共同前身——同一个聚合物，吹成瓶是容器，拉成丝是衣料。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 加聚与缩聚，到底差在哪？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          <strong>加聚像拉火车</strong>：车头（引发剂自由基）一带头，车厢（单体）就一节节自动挂上，几秒钟连成一列；
+          <strong>缩聚像握手排队</strong>：每个人（单体）都有两只手（两个官能团），任意两个人都能握手，
+          队伍一步步变长，每握一次手还要扔掉一只手套（水分子）。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 对比表</span>
+        <p>
+          <strong>单体要求</strong>：加聚需碳碳双键；缩聚需两个可缩合官能团（如 COOH+OH / COOH+NH<sub>2</sub>）。<br>
+          <strong>副产物</strong>：加聚无小分子副产物，重复单元=单体；缩聚每步生成 H<sub>2</sub>O 等小分子，重复单元"瘦身"。<br>
+          <strong>速度规律</strong>：加聚是链式反应，单体只在瞬间被消耗，链长几乎立刻定型；
+          缩聚是逐步反应，分子量慢慢爬升，需高转化率、精确等摩尔比才能长成高分子。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          链式与逐步的深层区别在于<strong>活性中心是否持续存在</strong>：自由基聚合中，链一旦引发就带着活性中心飞奔，
+          单体转化率不到 1% 时链长已接近最终值，单体/聚合物两代共存；
+          逐步聚合中所有分子始终"等价"，任何两个端基都能反应，体系平均分子量随转化率单调上升
+          （卡罗瑟斯方程 <span class="formula">DP<sub>n</sub> = 1/(1−p)</span>，转化率 p=99% 时 DP 才到 100）。
+          这也解释了为何缩聚工业必须把小分子副产物不断抽走——反应才能被推向高处。
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · "聚合物就是塑料，塑料都一样"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          塑料就是一种东西，所有塑料瓶、塑料袋可以混在一起扔进同一个回收桶。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          "塑料"是成百种聚合物的统称。看瓶底的回收三角标：1 号 PET（饮料瓶）、2 号 HDPE（洗涤剂瓶）、
+          3 号 PVC（管道、雨衣）、4 号 LDPE（保鲜膜、软袋）、5 号 PP（微波餐盒、吸管）、
+          6 号 PS（泡沫餐盒）、7 号其他（如 PC、PLA）。它们的化学组成、熔点、加工方式完全不同，
+          <strong>混放混熔会互相"污染"，显著降低再生料品质</strong>——尤其 PVC 混入 PET 回收体系，
+          氯会导致整批变色变脆。分类回收不是形式主义，是化学要求。
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 例题脚手架：判断聚合方式并写聚合简式</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 氯乙烯 CH<sub>2</sub>=CHCl（看我做）</div>
+      <div class="worked-problem">
+        单体氯乙烯 CH<sub>2</sub>=CHCl 应采用何种聚合方式？写出聚合简式并指明重复单元。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">看单体结构：分子中只有 C=C 双键和侧基 Cl，<strong>没有两个可缩合的官能团</strong>（无 COOH/OH/NH<sub>2</sub>）。→ 排除缩聚。</li>
+        <li class="step">双键是 π 键"接口"——可以发生<strong>加成聚合</strong>，单体不需要被替换任何原子。</li>
+        <li class="step">写简式：n CH<sub>2</sub>=CHCl → −[CH<sub>2</sub>−CHCl]<sub>n</sub>−。双键打开变为单键，Cl 保持挂在侧位。</li>
+        <li class="step">✅ 重复单元 <span class="formula">−CH<sub>2</sub>−CHCl−</span> 与单体组成完全相同（C<sub>2</sub>H<sub>3</sub>Cl），且无小分子副产物——符合加聚特征，答案自洽。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 对苯二甲酸 + 乙二醇（和我一起做）</div>
+      <div class="worked-problem">
+        单体对苯二甲酸 HOOC−C<sub>6</sub>H<sub>4</sub>−COOH 与乙二醇 HO−CH<sub>2</sub>CH<sub>2</sub>−OH
+        制备 PET，属何种聚合？写出聚合简式与副产物。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 看官能团：对苯二甲酸有 <strong>两个 COOH</strong>，乙二醇有 <strong>两个 OH</strong>——"双手"分子，能缩合。</li>
+        <li class="step">💡 有双官能团、无双键 → <strong>缩合聚合</strong>，靠酯化反应连接，键型为酯键 −COO−。</li>
+        <li class="step">💡 简式：n HOOC−C<sub>6</sub>H<sub>4</sub>−COOH + n HO−CH<sub>2</sub>CH<sub>2</sub>−OH → −[OOC−C<sub>6</sub>H<sub>4</sub>−COO−CH<sub>2</sub>CH<sub>2</sub>]<sub>n</sub>− + <strong>2n H<sub>2</sub>O</strong>。</li>
+        <li class="step">✅ 检验：重复单元"瘦了"（少了 2n 个水），有副产物——缩聚特征，符合题目"制 PET"的事实。每次缩合掉一对 H+OH，两个单体连成单元共失 2 个水。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 交联与硫化 ============ -->
+  <section id="crosslink">
+    <h2>§4 交联与硫化：从粘糊到弹性</h2>
+    <p>
+      到目前为止我们说的都是<strong>线型链</strong>——像一根根毛线。生胶（天然橡胶）也是线型链，
+      但它有个尴尬的毛病：夏天发粘、冬天变脆，拉长了回不来。原因在于链与链之间只有弱弱的分子间力，
+      受力时链彼此滑动，无法回弹。
+    </p>
+    <p>
+      1839 年，美国人古德伊尔（Goodyear）偶然把橡胶、硫磺和炉火凑在一起，发现了
+      <span class="term">硫化</span><span class="en">vulcanization</span>：
+      硫原子在相邻链之间搭起共价"桥"（硫桥），线型链被缝合成立体网络——
+      <span class="term">交联</span><span class="en">crosslinking</span>。
+      交联后的橡胶链再也无法整体滑移，拉它时网络被撑开、回弹时网络把它拉回原状：
+      粘糊糊的生胶一跃成为弹性十足的轮胎材料。
+    </p>
+    <p>
+      交联度是连续可调的旋钮：轻微交联 = 软弹（橡皮筋、轮胎）；深度交联 = 硬脆（硬橡胶、电木）。
+      拖动滑块感受这根旋钮：
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="xlSvg" width="620" height="300" viewBox="0 0 620 300" role="img" aria-label="交联度滑块动画：从线型链到交联网络"></svg>
+        <div class="fig-controls">
+          <label for="xlSlider" style="font-size:.9rem;color:var(--ink-2);align-self:center">交联度</label>
+          <input id="xlSlider" type="range" min="0" max="100" value="0" step="1"
+                 style="width:220px;accent-color:var(--accent);height:44px" aria-label="交联度百分比">
+        </div>
+        <div class="fig-readout" id="xlReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        黑色曲线为分子链，橙色短棒为交联桥（如硫桥）。交联度 0% 时链彼此独立可滑移（发粘）；
+        升高后网络逐渐"缝合"。注意：交联是<strong>共价键</strong>，一旦形成便不可逆——这直接引出下一节热塑与热固的分野。
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 交联的三重意义</div>
+      ① 不溶不熔：溶剂溶不穿网络，加热也熔不开（只能分解）；② 弹性回缩：受力时链段被拉直、
+      放松时网络自动收回到最大熵的蜷曲状态；③ 强度可控：交联密度就是材料硬度的"音量旋钮"，从橡皮筋一路拧到硬橡胶。
+    </div>
+
+    <details class="think">
+      <summary>想一想：为什么轻度交联的橡胶有弹性，而过度交联的电木又硬又脆？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：弹性来自"链段还能伸展蜷曲"；脆性来自"谁都动不了"。</p>
+        <p>
+          弹性需要两个条件：链段本身柔软可动（能在拉伸时伸直、放松时蜷回去），
+          <em>同时</em>有足够的交联点防止整链滑移。轻度交联两者兼备，所以拉长能回。
+          交联过密时，相邻交联点之间的自由链段太短，连"伸直"的余地都没有——
+          整块材料变成一张僵硬的大网，受力不均即碎，就成了硬而脆的热固材料。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 材料家族速览 ============ -->
+  <section id="families">
+    <h2>§5 热塑 vs 热固 · 材料家族速览</h2>
+    <p>
+      有了"线型链 vs 交联网"这把钥匙，一个日常问题立刻迎刃而解：
+      <strong>塑料受热会怎样？</strong>
+    </p>
+    <ul>
+      <li><strong>热塑性塑料</strong><span class="en">thermoplastic</span>：线型或支链结构，链间无共价桥。
+        加热时链获得动能互相滑开 → 熔化流动，冷却再固化。可反复熔融，<strong>可回收再造</strong>。
+        PE、PP、PVC、PS、PET、尼龙皆属此类。</li>
+      <li><strong>热固性塑料</strong><span class="en">thermoset</span>：加工时已形成交联网（如酚醛树脂电木、环氧树脂、硫化橡胶）。
+        再加热时链无法滑移，不熔融，只会升温分解炭化 → <strong>一次成型，不可回收再造</strong>。
+        电器开关座、锅把手、电路板基板常用热固料，图的就是耐热不变形。</li>
+    </ul>
+
+    <h3>常见材料家族一览</h3>
+    <table class="tbl">
+      <thead>
+        <tr><th>材料</th><th>回收标号</th><th>单体</th><th>聚合方式</th><th>典型用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PE</strong> 聚乙烯</td><td>2/4 号</td><td>乙烯</td><td>加聚</td><td>薄膜袋、桶、管材</td></tr>
+        <tr><td><strong>PP</strong> 聚丙烯</td><td>5 号</td><td>丙烯</td><td>加聚</td><td>微波餐盒、吸管、绳</td></tr>
+        <tr><td><strong>PVC</strong> 聚氯乙烯</td><td>3 号</td><td>氯乙烯</td><td>加聚</td><td>管道、窗框、雨衣</td></tr>
+        <tr><td><strong>PS</strong> 聚苯乙烯</td><td>6 号</td><td>苯乙烯</td><td>加聚</td><td>泡沫餐盒、文具</td></tr>
+        <tr><td><strong>PET</strong> 聚酯</td><td>1 号</td><td>对苯二甲酸+乙二醇</td><td>缩聚</td><td>饮料瓶、涤纶</td></tr>
+        <tr><td><strong>尼龙-66</strong></td><td>7 号*</td><td>己二胺+己二酸</td><td>缩聚</td><td>纤维、齿轮、丝袜</td></tr>
+        <tr><td><strong>橡胶</strong>（硫化）</td><td>—</td><td>异戊二烯+硫</td><td>加聚+交联</td><td>轮胎、密封件</td></tr>
+        <tr><td><strong>纤维素</strong></td><td>—</td><td>β-葡萄糖</td><td>缩聚（天然）</td><td>棉、纸、粘胶纤维</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.84rem;color:var(--ink-3)">* 尼龙多归入 7 号"其他"；实际回收以当地规则为准。纤维素是天然高分子，非人工合成塑料。</p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 化学品安全提示</div>
+      塑料极大便利了生活，但需注意：① <strong>不要露天焚烧塑料</strong>——PVC 燃烧放出的 HCl 气体与有机氯化物有毒，
+      PS/PU 燃烟也含刺激物；② 打翻的塑料落入环境难以降解，碎片化为<strong>微塑料</strong>会进入水源与食物链，
+      请分类投放回收；③ 泡沫 PS 极易燃烧，远离明火；④ 微波加热请认准 5 号 PP 餐盒——
+      1 号 PET 与发泡餐具不耐热、不宜高温使用。
+    </div>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结</h3>
+      <ul>
+        <li>聚合物 = 单体共价重复连接的巨型分子；<strong>分子量是分布</strong>，只有平均值（M̄<sub>n</sub>、M̄<sub>w</sub>）与宽度（比值≥1）。</li>
+        <li><strong>加成聚合</strong>：碳碳双键打开互连，自由基链式（引发→增长→终止），无副产物，重复单元=单体（乙烯→PE、氯乙烯→PVC）。</li>
+        <li><strong>缩合聚合</strong>：双官能团逐步缩合，每步挤出小分子（水），需高转化率（尼龙-66 酰胺键、PET 酯键）。</li>
+        <li><strong>交联/硫化</strong>：链间共价桥（硫桥）把线型链缝成网络，粘性生胶变弹性橡胶；交联度决定软硬。</li>
+        <li><strong>热塑 vs 热固</strong>：线型链可反复熔融、可回收；交联网不熔只解、一次成型。回收标号 1–7 对应不同家族，务必分类。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 从单体到聚合物 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "聚乙烯的单体是乙烯 CH2=CH2。若一条聚乙烯链的聚合度 DP = 2000，该链分子量约为多少？（乙烯单体分子量 28）",
+            "options": ["28", "5.6×10⁴", "5.6×10⁶", "2000"],
+            "answer": 1,
+            "explain": "分子量 ≈ DP × 单体分子量 = 2000 × 28 = 56000 = 5.6×10⁴。为什么不是 28？因为加聚不丢失原子，链上每个重复单元都完整保留单体的全部原子；为什么不是 2000？聚合度是重复单元的个数，不是分子量本身。"
+          },
+          {
+            "q": "自由基聚合的三个基本步骤，正确顺序是？",
+            "options": ["增长 → 引发 → 终止", "引发 → 增长 → 终止", "引发 → 终止 → 增长", "终止 → 引发 → 增长"],
+            "answer": 1,
+            "explain": "必须先由引发剂裂解产生自由基'点火'（引发），活性链端才能一节节接单体（增长），最后两个活性端相遇配对熄火（终止）。没有引发就没有活性中心；增长贯穿链的一生；终止宣告链定长——顺序不可颠倒。"
+          },
+          {
+            "q": "制备尼龙-66 时，每连接一个重复单元生成的副产物是？",
+            "options": ["没有副产物", "一个 H2", "两个 H2O", "一个 CO2"],
+            "answer": 2,
+            "explain": "己二胺与己二酸缩合，两端各发生一次酰胺化（COOH + NH2 → CONH + H2O），一个重复单元共生成 2 个水分子。缩聚的标志性特征就是'每连一节掉一节小分子'——这也是为什么工业上要不断抽走水，把反应推向高分子。"
+          },
+          {
+            "q": "为什么热固性塑料（如电木）不能像矿泉水瓶那样熔融回收？",
+            "options": ["因为它的分子量太小，加热直接气化", "因为链间已形成共价交联网，加热时链无法相互滑移，只会分解炭化", "因为它是无机物，没有熔点", "因为它熔点低于室温"],
+            "answer": 1,
+            "explain": "熔融的本质是链与链互相滑开、流动。热塑性塑料是线型链，加热即可滑移熔化；热固塑料的链被共价桥缝成一张三维大网，'熔化'需要断化学键——而键一断就不再是原来的材料（分解），所以只能一次成型，无法重熔再造。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="index.html"><span class="pg-dir">← 上一页</span><br><span class="pg-title">06 高分子化学 · 导学</span></a>
+      <a class="next" href="../07-材料化学/index.html"><span class="pg-dir">下一章 →</span><br><span class="pg-title">07 材料化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（自由基聚合 stepper / 交联度滑块） ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+  function txt(parent, x, y, str, size, fill, weight, anchor) {
+    var t = el("text", { x: x, y: y, "font-size": size, fill: fill,
+      "font-weight": weight || 400, "text-anchor": anchor || "start" }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. 自由基聚合 stepper ---------- */
+  var radSvg = document.getElementById("radSvg");
+  if (radSvg) {
+    var radReadout = document.getElementById("radReadout");
+    var stepIdx = 0;
+    var STEPS = [
+      { t: "第 0 步 · 单体池：体系里只有乙烯单体（蓝圈），每个分子都带 C=C 双键，安静地漂浮。",
+        eq: "单体：CH2=CH2（含 π 键待开）" },
+      { t: "第 1 步 · 引发：引发剂（橙色菱形）受热分解，一根键匀裂产生两个自由基 R·（红点=单电子）。",
+        eq: "I → 2 R·" },
+      { t: "第 2 步 · 链引发：R· 咬住一个单体，π 键打开并接入链端，链端重新出现新自由基。",
+        eq: "R· + CH2=CH2 → R−CH2−CH2·" },
+      { t: "第 3 步 · 链增长：活性端接力加单体，链一节节变长——火炬（自由基）一路传递，链几秒内长成。",
+        eq: "R−(CH2)n−CH2· + CH2=CH2 → R−(CH2)n+2−CH2·" },
+      { t: "第 4 步 · 双基终止：两条活性链端相遇，单电子两两配对成 σ 键，自由基消失，链停止生长。",
+        eq: "R−链A· + ·链B−R′ → R−链A−链B−R′（死链）" }
+    ];
+
+    // 单体固定位置（伪随机但确定）
+    var MON_POS = [
+      [70, 60], [150, 45], [230, 70], [310, 50], [390, 68], [470, 48],
+      [90, 130], [170, 115], [250, 135], [330, 118], [410, 132], [490, 112],
+      [110, 200], [190, 215], [270, 195], [350, 212], [430, 198], [510, 210],
+      [70, 262], [560, 70], [555, 140], [545, 240]
+    ];
+
+    function drawMonomer(g, x, y, dim) {
+      el("circle", { cx: x, cy: y, r: 13, fill: dim ? "#e0e7ff" : "#c7d2fe",
+        stroke: dim ? "#a5b4fc" : "#6366f1", "stroke-width": 2 }, g);
+      txt(g, x, y + 4, "C=C", 9, "#3730a3", 700, "middle");
+    }
+
+    function drawRadicalDot(g, x, y, big) {
+      var r = big ? 7 : 5;
+      el("circle", { cx: x, cy: y, r: r, fill: "#ef4444", class: "anim-pulse" }, g);
+    }
+
+    // 链：从 (x0,y0) 向右延伸 len 个珠子
+    function drawChain(g, x0, y0, len, dirSign) {
+      var gap = 24;
+      for (var i = 0; i < len; i++) {
+        var x = x0 + dirSign * gap * i;
+        el("circle", { cx: x, cy: y0, r: 11, fill: "#a5b4fc",
+          stroke: "#6366f1", "stroke-width": 2 }, g);
+        txt(g, x, y0 + 3, "CH2", 7.5, "#1e1b4b", 700, "middle");
+      }
+      return { tipX: x0 + dirSign * gap * (len - 1), gap: gap };
+    }
+
+    function renderRad() {
+      radSvg.innerHTML = "";
+      var bg = el("rect", { x: 0, y: 0, width: 640, height: 300, fill: "#ffffff" }, radSvg);
+      var s = stepIdx;
+
+      if (s === 0) {
+        var g0 = el("g", {}, radSvg);
+        MON_POS.forEach(function (p) { drawMonomer(g0, p[0], p[1], false); });
+        txt(g0, 320, 285, "单体池（n 个 CH2=CH2）", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 1) {
+        var g1 = el("g", {}, radSvg);
+        MON_POS.slice(0, 18).forEach(function (p) { drawMonomer(g1, p[0], p[1], true); });
+        // 引发剂菱形在中央
+        el("rect", { x: 300, y: 120, width: 40, height: 40, transform: "rotate(45 320 140)",
+          fill: "#fdba74", stroke: "#ea580c", "stroke-width": 2 }, g1);
+        txt(g1, 320, 145, "I", 15, "#7c2d12", 800, "middle");
+        // 分裂出的两个自由基
+        drawRadicalDot(g1, 255, 140, true);
+        drawRadicalDot(g1, 385, 140, true);
+        txt(g1, 240, 118, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g1, 402, 118, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g1, 320, 200, "一键裂两半 → 两个 R·", 12, "#9a3412", 700, "middle");
+        txt(g1, 320, 285, "引发剂分解（I → 2 R·）", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 2) {
+        var g2 = el("g", {}, radSvg);
+        MON_POS.slice(0, 18).forEach(function (p) { drawMonomer(g2, p[0], p[1], true); });
+        drawRadicalDot(g2, 200, 150, true);  // R
+        // R 接上一个单体 → 链端出现新自由基
+        var ch2 = drawChain(g2, 232, 150, 1, 1);
+        drawRadicalDot(g2, ch2.tipX + 20, 150, true);
+        txt(g2, 200, 122, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g2, 300, 185, "π 键已打开，链端活性传递", 12, "#9a3412", 700, "middle");
+        txt(g2, 320, 285, "链引发（R· 咬住第一个单体）", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 3) {
+        var g3 = el("g", {}, radSvg);
+        MON_POS.slice(0, 12).forEach(function (p) { drawMonomer(g3, p[0], p[1], true); });
+        var ch3 = drawChain(g3, 150, 150, 8, 1);
+        txt(g3, 136, 122, "R", 13, "#b91c1c", 800, "middle");
+        drawRadicalDot(g3, ch3.tipX + 20, 150, true);
+        txt(g3, ch3.tipX + 40, 155, "活性端", 11, "#b91c1c", 700);
+        txt(g3, 320, 285, "链增长（一秒可接上千单体）", 12, "#4b5563", 700, "middle");
+        // 剩余单体被"吸走"的示意：池子变稀
+      }
+
+      if (s === 4) {
+        var g4 = el("g", {}, radSvg);
+        MON_POS.slice(0, 8).forEach(function (p) { drawMonomer(g4, p[0], p[1], true); });
+        // 两条链相向延伸，端点在中央"握手"
+        var chA = drawChain(g4, 60, 110, 6, 1);
+        var chB = drawChain(g4, 580, 110, 6, -1);
+        txt(g4, 46, 82, "R", 13, "#b91c1c", 800, "middle");
+        txt(g4, 594, 82, "R′", 13, "#b91c1c", 800, "middle");
+        // 握手 σ 键
+        el("line", { x1: chA.tipX + 12, y1: 110, x2: chB.tipX - 12, y2: 110,
+          stroke: "#ef4444", "stroke-width": 3.5, "stroke-linecap": "round" }, g4);
+        el("text", { x: 320, y: 88, "font-size": 14, "font-weight": 800, fill: "#b91c1c",
+          "text-anchor": "middle" }, g4).textContent = "新 σ 键！";
+        // 星芒
+        [[290,110],[350,110]].forEach(function (p) {
+          el("path", { d: "M" + p[0] + " " + (p[1]-14) + " L" + (p[0]+3) + " " + (p[1]-5) +
+            " L" + (p[0]+12) + " " + (p[1]-3) + " L" + (p[0]+4) + " " + (p[1]+3) +
+            " L" + (p[0]+6) + " " + (p[1]+12) + " L" + p[0] + " " + (p[1]+6) +
+            " L" + (p[0]-6) + " " + (p[1]+12) + " L" + (p[0]-4) + " " + (p[1]+3) +
+            " L" + (p[0]-12) + " " + (p[1]-3) + " L" + (p[0]-3) + " " + (p[1]-5) + " Z",
+            fill: "#fca5a5", class: "anim-pulse" }, g4);
+        });
+        txt(g4, 320, 165, "偶合终止：两链相连，活性消失", 12, "#7f1d1d", 700, "middle");
+        txt(g4, 320, 285, "双基终止（死链 · 聚合度就此定格）", 12, "#4b5563", 700, "middle");
+      }
+
+      var d = STEPS[stepIdx];
+      radReadout.innerHTML = "<strong>" + d.t.split("：")[0] + "</strong>：" + d.t.split("：").slice(1).join("：") +
+        "<br><span class='formula' style='margin-left:0'>" + d.eq + "</span>";
+      document.getElementById("radPrev").disabled = stepIdx === 0;
+      document.getElementById("radNext").disabled = stepIdx === STEPS.length - 1;
+    }
+
+    document.getElementById("radNext").addEventListener("click", function () {
+      if (stepIdx < STEPS.length - 1) { stepIdx++; renderRad(); }
+    });
+    document.getElementById("radPrev").addEventListener("click", function () {
+      if (stepIdx > 0) { stepIdx--; renderRad(); }
+    });
+    document.getElementById("radReset").addEventListener("click", function () { stepIdx = 0; renderRad(); });
+    renderRad();
+  }
+
+  /* ---------- 2. 交联度滑块 ---------- */
+  var xlSvg = document.getElementById("xlSvg");
+  if (xlSvg) {
+    var xlReadout = document.getElementById("xlReadout");
+    var xlSlider = document.getElementById("xlSlider");
+    var CHAIN_Y = [50, 110, 170, 230];
+    var CHAIN_COLOR = "#334155";
+    var BRIDGE_COLOR = "#ea580c";
+
+    // 预定义 24 个候选桥位：{x, row}（row=0 连接第0/1条链，row=1 连接 1/2，row=2 连接 2/3）
+    var BRIDGES = [];
+    var bx = 60;
+    for (var i = 0; i < 8; i++) {
+      BRIDGES.push({ x: bx + i * 66, row: i % 3 });
+    }
+    for (var j = 0; j < 8; j++) {
+      BRIDGES.push({ x: 92 + j * 66, row: (j + 1) % 3 });
+    }
+    for (var k = 0; k < 8; k++) {
+      BRIDGES.push({ x: 76 + k * 62, row: (k + 2) % 3 });
+    }
+
+    function chainPath(y) {
+      var d = "M 30 " + y;
+      for (var x = 30; x <= 590; x += 20) {
+        var dy = ((x / 20) % 2 === 0) ? -7 : 7;
+        d += " L " + x + " " + (y + dy);
+      }
+      return d;
+    }
+
+    function stateInfo(pct) {
+      if (pct === 0) return { name: "线型链（生胶/热塑）", desc: "链间只有分子间力，受力互相滑移——发粘、蠕变，加热可熔融流动。" };
+      if (pct < 10) return { name: "轻度缠结", desc: "长链互相缠绕（物理缠结），稍能阻止滑移，但加热仍可熔融——仍是热塑性。" };
+      if (pct < 25) return { name: "轻度交联（弹性体）", desc: "少量共价桥（硫桥）把链缝成松网络——拉长回弹，这是橡皮筋与轮胎的世界。" };
+      if (pct < 50) return { name: "中度交联（硬橡胶）", desc: "桥更密，回弹越来越'硬'，形变小、模量高——密封垫、硬橡胶件。" };
+      if (pct < 75) return { name: "高度交联（热固塑料）", desc: "致密网络，链段几乎动不了——不熔融、硬而韧，如环氧树脂、电木。" };
+      return { name: "极度交联（刚性树脂）", desc: "几乎每个位点都被锁死——又硬又脆，接近三维共价晶体（如酚醛碳化料）。" };
+    }
+
+    function renderXl() {
+      xlSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 620, height: 300, fill: "#ffffff" }, xlSvg);
+      var pct = parseInt(xlSlider.value, 10);
+
+      // 链
+      CHAIN_Y.forEach(function (y) {
+        el("path", { d: chainPath(y), stroke: CHAIN_COLOR, "stroke-width": 3.2,
+          fill: "none", "stroke-linecap": "round" }, xlSvg);
+      });
+
+      // 桥：显示前 pct% 个
+      var nShow = Math.round(BRIDGES.length * pct / 100);
+      for (var i = 0; i < nShow; i++) {
+        var b = BRIDGES[i];
+        var y1 = CHAIN_Y[b.row], y2 = CHAIN_Y[b.row + 1];
+        el("line", { x1: b.x, y1: y1 + 8, x2: b.x, y2: y2 - 8,
+          stroke: BRIDGE_COLOR, "stroke-width": 4, "stroke-linecap": "round" }, xlSvg);
+        el("circle", { cx: b.x, cy: (y1 + y2) / 2, r: 4.5, fill: BRIDGE_COLOR }, xlSvg);
+      }
+
+      var info = stateInfo(pct);
+      var nBridges = nShow;
+      xlReadout.innerHTML = "交联度 <strong>" + pct + "%</strong> ｜ 桥数 " + nBridges + "/" + BRIDGES.length +
+        " ｜ 状态：<strong>" + info.name + "</strong><br><span style='color:var(--ink-2)'>" + info.desc + "</span>";
+    }
+
+    xlSlider.addEventListener("input", renderXl);
+    renderXl();
+  }
+})();
+</script>
+</body>
+</html>

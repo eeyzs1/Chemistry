@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>量子化学与分子结构 · 物理化学 第 4 章</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="位置">
+    <a href="../index.html">化学自学中心</a><span class="sep">/</span>
+    <a href="index.html">04 物理化学</a><span class="sep">/</span>
+    <span class="here">第 4 章 · 量子化学与分子结构</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 物理化学 · 第 4 章（本分支收官）</div>
+    <h1>量子化学与分子结构：微观世界的宪法</h1>
+    <p class="lede">
+      节日的烟花为什么红的是锶、黄的是钠？广告牌霓虹灯的橙红来自氖，实验室的氢灯只发几条分立的红绿线——
+      每种元素都有自己的"光指纹"。可按经典物理，这本指纹根本不该存在：绕核旋转的电子应不断辐射能量、
+      螺旋坠入原子核，世界会在转瞬之间坍缩。<strong>是量子力学救了场</strong>：能量不连续、
+      电子没有轨道只有概率云。本章带你读懂原子的"操作系统"——四个量子数、三条排布规则、
+      分子轨道与杂化，并看清元素周期表为何长成这般模样。
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">建议用时 55 分钟</span>
+      <span class="chip">先修：00 分支 第 1–2 章（原子 · 化学键）</span>
+      <span class="chip">交互动画 ×1（轨道查看器）</span>
+      <span class="chip">自测 5 题</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本章目录">
+    <a href="#intro">导入</a>
+    <a href="#fail">经典物理的失败</a>
+    <a href="#quanta">量子数与轨道</a>
+    <a href="#rules">排布规则与周期表</a>
+    <a href="#mo">分子轨道入门</a>
+    <a href="#hybrid">杂化与分子形状</a>
+    <a href="#summary">小结</a>
+    <a href="#quiz">自测</a>
+  </nav>
+
+  <!-- ============ 导入 ============ -->
+  <section id="intro">
+    <h2>导入：一本不该存在的指纹册</h2>
+    <p>
+      把一小撮盐撒进火焰，火苗蹿出明黄——那是钠原子的签名；烟花里的锶贡献艳红、钡贡献嫩绿、
+      铜贡献幽蓝。天文学家更是靠这套"光指纹"判断亿万光年外恒星的成分：氦就是先在太阳光谱里被发现、
+      才在地球上找到的。<strong>每种元素的原子只发出几种特定频率的光</strong>，像条形码一样独一无二。
+    </p>
+    <p>
+      奇怪的是，这本指纹册在经典物理里"不合法"：按老理论，电子辐射的能量应该连续变化，
+      光谱应该是连续的彩虹，而不是几条孤立的亮线。解开这个谜的钥匙——能量量子化——
+      不仅救活了原子，还顺手解释了化学键、周期表和分子的形状。本章就是这把钥匙的使用说明书。
+    </p>
+  </section>
+
+  <!-- ============ §1 经典物理的失败 ============ -->
+  <section id="fail">
+    <h2>§1 经典物理的失败：两道死亡通知书</h2>
+    <p>
+      1900 年前后的物理学家志得意满，只剩"两朵乌云"。对化学家来说，这两朵乌云压出两道死亡通知书：
+    </p>
+    <ul>
+      <li><strong>原子坍缩问题</strong>：按经典电磁学，绕核旋转的电子是加速电荷，应连续辐射能量、
+        沿螺旋线在约 10⁻¹¹ 秒内坠入原子核——原子瞬间坍缩，万物不复存在。可原子明明稳如泰山。</li>
+      <li><strong>氢光谱问题</strong>：氢原子发光只出现在几条分立谱线上（著名的巴尔末系），
+        而不是连续彩虹。电子的能量像是被"量子化"了——只能住在几个固定的能级上，
+        跳变时才发出 <span class="formula">E = hν</span> 的整份光子。</li>
+    </ul>
+    <p>
+      1913 年玻尔迈出第一步：电子只能处于若干<strong>分立能级</strong>，不辐射；跃迁时才吸收或放出光子。
+      这个模型完美算出了氢光谱，却只对氢有效。真正的答案要等量子力学登场：
+      <strong>电子不是小球，是波</strong>；它的"运动状态"由波函数描述——于是"轨道"被重新发明了。
+    </p>
+
+    <details class="think">
+      <summary>想一想：钠路灯是明黄色，霓虹灯是橙红色。同样是"发光"，颜色为什么各不相同？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：光子的能量 E = hν；颜色对应频率 ν；那频率又由什么决定？</p>
+        <p>
+          由<strong>能级差</strong>决定。每种元素的能级间隔像指纹一样独一无二，电子在两能级间跃迁时放出的
+          光子能量恰好等于这个间隔，ν = ΔE/h。钠的跃迁主要落在黄光区，氖的落在橙红区。
+          反过来，测谱线的位置就能倒推能级差、鉴定元素——光谱分析因此成了化学家的"验钞机"。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 量子数与轨道 ============ -->
+  <section id="quanta">
+    <h2>§2 量子化与四个量子数：原子的操作系统</h2>
+    <p>
+      普朗克发现能量以整份（量子）发射，爱因斯坦把光解释为光子，德布罗意反转枪口：
+      <strong>一切实物粒子都有波动性</strong>，电子的波长与它的动量相当——在原子这么小的笼子里，
+      波动性主宰一切。解电子在原子核周围的"驻波方程"（薛定谔方程），自然生出四个量子数，
+      像四个字段共同定义一个电子状态：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>量子数</th><th>符号与取值</th><th>一句话意义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>主量子数</strong></td><td>n = 1, 2, 3…</td><td>住几楼：决定主能层与轨道大小，能量主要看它</td></tr>
+        <tr><td><strong>角量子数</strong></td><td>l = 0, 1, 2…（n−1），记作 s, p, d, f</td><td>房型：决定轨道形状（球 / 哑铃 / 四叶）与角节面数</td></tr>
+        <tr><td><strong>磁量子数</strong></td><td>m = −l…0…+l（共 2l+1 个）</td><td>朝向：同一形状在空间里共有 2l+1 种取向</td></tr>
+        <tr><td><strong>自旋量子数</strong></td><td>s = ±½</td><td>自旋方向：每个轨道最多住两个电子，自旋必须相反</td></tr>
+      </tbody>
+    </table>
+    <p>
+      由此盘点房源：第 n 层共有 n² 个轨道、最多 2n² 个电子——第一层 2 个、第二层 8 个、第三层 18 个，
+      你在 <a href="../00-化学总论/01-原子与元素.html">00 分支 · 原子与元素</a>里背过的每层容量，原来是量子数的算术。
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 三级阶梯 · 原子"轨道"到底是什么？</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">直觉理解</button>
+        <button class="ladder-tab">标准讲解</button>
+        <button class="ladder-tab">深入原理</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · 类比</span>
+        <p>
+          "轨道"译自 orbit，但它早已不是跑道。想象给原子连拍一百万次"快照"：
+          每张照片上只闪现一个小点，位置忽东忽西；把一百万张底片叠在一起，
+          就浮出一片或浓或淡的<strong>云</strong>——云越浓，电子出现在那里的机会越大。
+          所谓轨道，就是这张"统计叠片"的轮廓，<strong>不是电子的行驶路线</strong>。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · 标准</span>
+        <p>
+          量子力学用波函数 <span class="formula">ψ</span> 描述电子状态，它的模平方
+          <span class="formula">|ψ|²</span> 是<strong>概率密度</strong>——在单位体积内找到电子的概率。
+          "轨道"是薛定谔方程的一个驻波解，由 n、l、m 三个量子数标记。
+          我们画的哑铃、四叶，其实是<strong>边界曲面图</strong>：圈住"电子有 95% 把柄出现在内"
+          的等概率面。s 无角节面所以是球；p 有 1 个角节面被压成两瓣；d 有 2 个，绽成四叶。
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · 本质</span>
+        <p>
+          为什么不能问"电子此刻在哪、往哪跑"？海森堡不确定性原理：
+          <span class="formula">Δx·Δp ≥ ħ/2</span>——位置越准，动量越模糊，<strong>轨迹这个概念本身不成立</strong>。
+          轨道其实是三维驻波，与小提琴弦上的驻波同族：能级分立是"驻波只能有整段波长"的几何后果。
+          再深一层：电子是费米子，波函数必须反对称，交换两个电子会变号——
+          这就是<strong>泡利不相容</strong>的根源：两个电子若状态完全相同，波函数只能为零。
+          原子的一整栋"楼盘规则"，都从波性里长出来。
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 动手玩：轨道查看器</h3>
+    <p>
+      点按钮切换四种代表轨道。蓝色波瓣代表波函数<strong>正相位</strong>、橙色代表<strong>负相位</strong>
+      （相位决定成键时的叠加方式，见 §4），虚线是节面——电子出现概率为零的平面。
+      右侧 readout 同步给出量子数档案。
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="原子轨道形状查看器">
+          <!-- 坐标轴（z 竖直，x 水平，y 斜向） -->
+          <line x1="280" y1="315" x2="280" y2="30" stroke="#94a3b8" stroke-width="1.5"></line>
+          <path d="M280,30 l-4,10 h8 z" fill="#94a3b8"></path>
+          <text x="290" y="38" font-size="12" fill="#6b7280">z</text>
+          <line x1="120" y1="180" x2="440" y2="180" stroke="#94a3b8" stroke-width="1.5" opacity=".35"></line>
+          <text x="448" y="184" font-size="12" fill="#94a3b8">x/y</text>
+          <text id="obTitle" x="500" y="60" text-anchor="middle" font-size="20" font-weight="800" fill="#075985">1s</text>
+          <text x="500" y="86" text-anchor="middle" font-size="12" fill="#6b7280">蓝色 = 正相位 (+)</text>
+          <text x="500" y="106" text-anchor="middle" font-size="12" fill="#6b7280">橙色 = 负相位 (−)</text>
+          <circle cx="500" cy="150" r="10" fill="#fde047" class="anim-pulse"></circle>
+          <text x="500" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="#713f12">原子核</text>
+
+          <!-- 1s -->
+          <g id="ob1s">
+            <circle cx="280" cy="180" r="85" fill="rgba(59,130,246,.18)" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"></circle>
+            <circle cx="280" cy="180" r="52" fill="rgba(59,130,246,.30)" stroke="none"></circle>
+            <circle cx="280" cy="180" r="24" fill="rgba(59,130,246,.45)" stroke="none"></circle>
+            <text x="280" y="184" text-anchor="middle" font-size="15" font-weight="800" fill="#1e3a8a">＋</text>
+          </g>
+          <!-- 2p_z -->
+          <g id="ob2p" style="display:none">
+            <line x1="150" y1="180" x2="410" y2="180" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="6 5"></line>
+            <text x="160" y="170" font-size="11" fill="#b91c1c">节面（ψ = 0）</text>
+            <ellipse cx="280" cy="110" rx="40" ry="58" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="250" rx="40" ry="58" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2"></ellipse>
+            <text x="280" y="116" text-anchor="middle" font-size="15" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="256" text-anchor="middle" font-size="15" font-weight="800" fill="#7c2d12">−</text>
+          </g>
+          <!-- 3d_z2 -->
+          <g id="ob3dz2" style="display:none">
+            <ellipse cx="280" cy="105" rx="34" ry="52" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="255" rx="34" ry="52" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="180" rx="88" ry="26" fill="none" stroke="rgba(249,115,22,.55)" stroke-width="16"></ellipse>
+            <text x="280" y="111" text-anchor="middle" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="261" text-anchor="middle" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="196" y="184" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="352" y="184" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+          </g>
+          <!-- 3d_xy -->
+          <g id="ob3dxy" style="display:none">
+            <ellipse cx="206" cy="106" rx="46" ry="26" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2" transform="rotate(-45 206 106)"></ellipse>
+            <ellipse cx="354" cy="106" rx="46" ry="26" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2" transform="rotate(45 354 106)"></ellipse>
+            <ellipse cx="206" cy="254" rx="46" ry="26" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2" transform="rotate(45 206 254)"></ellipse>
+            <ellipse cx="354" cy="254" rx="46" ry="26" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2" transform="rotate(-45 354 254)"></ellipse>
+            <text x="176" y="92" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="366" y="92" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="176" y="280" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="366" y="280" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="184" text-anchor="middle" font-size="11" fill="#b91c1c">两根节面沿 z 轴与纸面</text>
+          </g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn ob-btn" data-orb="1s">1s（球）</button>
+          <button class="btn ghost ob-btn" data-orb="2p">2p<sub>z</sub>（哑铃）</button>
+          <button class="btn ghost ob-btn" data-orb="3dz2">3d<sub>z²</sub>（双瓣+环）</button>
+          <button class="btn ghost ob-btn" data-orb="3dxy">3d<sub>xy</sub>（四叶）</button>
+        </div>
+        <div class="fig-readout" id="obReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        边界曲面示意（瓣内明暗示意 |ψ|² 的浓淡）。角节面数 = l：s 无节面呈球形；
+        p 的 1 个节面把电子云切成两瓣；d 的 2 个节面切出四叶（d<sub>z²</sub> 是特殊的一员，带一个环形节面）。
+        总节面数 = n − 1，节面越多，电子"折叠"得越剧烈，能量也越高。
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ 误区粉碎机 · 电子云图上的小点</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">误区</span>
+          教科书电子云图里密密麻麻的小点，每一颗就是一颗电子在"现场"。
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">正确</span>
+          一个氢原子只有<strong>一颗</strong>电子。那几万个点是计算机<strong>随机采样</strong>画出的"快照集合"：
+          某处点越密，代表电子在采样中出现在这里的概率越大。它是概率密度 |ψ|² 的可视化，
+          不是电子群体照——就像直方图的一根柱子不是数据本身。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 排布规则与周期表 ============ -->
+  <section id="rules">
+    <h2>§3 三条规则排出整张周期表</h2>
+    <p>
+      房型搞清楚了，接下来的问题是：一栋原子"公寓"里几十个电子怎么分房？只需三条规则：
+    </p>
+    <ul>
+      <li><strong>泡利不相容原理</strong>：一个原子中不存在四个量子数完全相同的两个电子——
+        每个轨道（n、l、m 相同）最多住 2 个电子，且自旋相反。</li>
+      <li><strong>能量最低原理（构造原理）</strong>：电子优先住进能量最低的空轨道，
+        按 1s → 2s → 2p → 3s → 3p → <strong>4s → 3d</strong> → 4p… 的顺序逐层填充
+        （注意 4s 与 3d 存在<strong>能级交错</strong>：4s 略先填）。</li>
+      <li><strong>洪特规则</strong>：填入同一亚层的等价轨道时，电子<strong>分床单住、自旋平行</strong>，
+        直到每床都住上人才开始配对。</li>
+    </ul>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 周期表是构造原理的地图</div>
+      每填完一个亚层，就长出周期表的一段：<strong>s 区两列、p 区六列、d 区十列（过渡金属）、f 区十四列</strong>。
+      族数 ≈ 最外层/价层电子数——00 分支背过的"位置预言性质"，根子全在这三条规则里。
+      量子力学之前，周期表是经验卡片；量子力学之后，它是定理。
+    </div>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ 能级交错两连坑</div>
+      坑一：以为"填满一层才填下一层"——4s 比 3d 先填，所以 K、Ca 的电子在 4s，周期表也由此插入 d 区；
+      坑二：以为"先填的先失"——原子失去电子变阳离子时，<strong>先丢最外层的 4s</strong>，
+      再动 3d。Fe 的排布是 …3d⁶4s²，而 Fe²⁺ 是 …3d⁶，不是 …3d⁴4s²。
+      口诀：<strong>后来者先走（4s 后填先失）</strong>。
+    </div>
+
+    <h3>📐 例题脚手架：洪特规则的例外——铜的排布</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 1 · 完整示范（看我做）</div>
+      <div class="worked-problem">
+        写出 Cu（Z = 29）的电子排布式，并说明它为什么是"洪特规则的例外"；顺带写出 Cr（Z = 24）的排布。
+      </div>
+      <ol class="worked-steps">
+        <li class="step">按构造原理"想当然"排：1s² 2s² 2p⁶ 3s² 3p⁶ <strong>4s² 3d⁹</strong>
+          （数一数：2+2+6+2+6+2+9 = 29 个 ✓）。但注意末尾是 3d⁹——离 d¹⁰ 全满只差一个。</li>
+        <li class="step">比较两种方案的稳定性：4s 与 3d 能量非常接近。若从 4s 挪一个电子进 3d，
+          得到 <strong>3d¹⁰ 4s¹</strong>：d 亚层<strong>全满</strong>（球形对称、能量额外低），
+          比牺牲掉的 4s 配对能更划算。同理 Cr 的 3d⁵ 4s¹ 追求的是 d 亚层<strong>半满</strong>。</li>
+        <li class="step">结论：Cu = 1s² 2s² 2p⁶ 3s² 3p⁶ <strong>3d¹⁰ 4s¹</strong>；
+          Cr = 1s² 2s² 2p⁶ 3s² 3p⁶ <strong>3d⁵ 4s¹</strong>。
+          例外只发生在 d 区寥寥数例（Cr、Cu、Ag、Au、Mo 等），是因为全满/半满的"对称红利"恰好超过了 4s 的配对能。</li>
+        <li class="step">顺手学离子：Cu⁺ = …3d¹⁰（全满，很稳，所以 +1 价常见）；
+          Cu²⁺ = …3d⁹（水合焓补偿了失去第二个电子的代价）。
+          ✅ 自查：排布总数必须等于原子序数——29 与 24 都对上了。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：Fe（…3d⁶4s²）变成 Fe²⁺ 时，失去的是哪两个电子？为什么？</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：电离时被"拉走"的，是最外层、也是被原子核抓得最松的那批。</p>
+        <p>
+          失去的是 <strong>两个 4s 电子</strong>，Fe²⁺ 的排布是 …3d⁶4s⁰。
+          4s 虽然填充得早，但它是最外层、且填完 3d 后能量反超，
+          成为抓得最松的电子——<strong>后填先失</strong>。这也解释了过渡金属的常见价态：
+          失 2 个 4s 就是 +2 价，再失 d 电子才是 +3 价。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 分子轨道 ============ -->
+  <section id="mo">
+    <h2>§4 分子轨道理论入门：整只分子的波</h2>
+    <p>
+      原子轨道讲完了单个原子，分子怎么办？<span class="term">分子轨道理论</span>
+      <span class="en">molecular orbital theory, MO</span>的思路豪迈：原子轨道（波）直接叠加，
+      生成的驻波属于<strong>整只分子</strong>。两枚原子轨道相遇，同相叠加得到能量更低的
+      <span class="term">成键轨道</span><span class="en">bonding orbital</span>，
+      反相叠加得到能量更高的<span class="term">反键轨道</span><span class="en">antibonding orbital</span>
+      （中间多一个节面，好比两根弦反着拧）。电子照旧按三条规则往里填，
+      然后用<span class="term">键级</span><span class="en">bond order</span>记账：
+    </p>
+    <p style="text-align:center">
+      <span class="formula">键级 = (成键电子数 − 反键电子数) / 2</span>
+    </p>
+    <p>
+      键级 0 不成键（He₂ 不存在），1 是单键、2 是双键、3 是叁键。MO 最漂亮的一役是<strong>O₂ 的顺磁性</strong>：
+      按路易斯结构 O=O，所有电子成对，氧气应该毫无磁性；可实验里液氧能被磁铁牢牢吸住——
+      分子里有<strong>未成对电子</strong>！MO 理论按规则填完 12 个价电子，最后两个电子按洪特规则
+      <strong>分占两个反键 π* 轨道且自旋平行</strong>，两个单电子恰如其分地解释了磁性。
+      电子配对理论画不出的世界，MO 一步到位。
+    </p>
+
+    <h3>📐 例题脚手架：算 O₂ 的键级</h3>
+
+    <div class="worked">
+      <div class="worked-head">例 2 · 引导练习（和我一起做）</div>
+      <div class="worked-problem">
+        用分子轨道理论填写 O₂ 的 12 个价电子，计算键级，并解释它的顺磁性。
+        （第二周期 O₂ 的 MO 能级由低到高：σ2s ＜ σ*2s ＜ σ2p ＜ π2p（两个简并）＜ π*2p（两个简并））
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 数价电子：每个 O 有 6 个价电子（2s²2p⁴），O₂ 共 <strong>12</strong> 个。</li>
+        <li class="step">💡 从低到高填：σ2s²（2 个）→ σ*2s²（2 个）→ σ2p²（2 个）→
+          π2p⁴（两套简并轨道各 2 个）——到此用掉 10 个，还剩 2 个，落到<strong>反键 π*2p</strong> 上。</li>
+        <li class="step">💡 最后 2 个电子怎么住？π*2p 是两个能量相同的简并轨道，
+          洪特规则说：<strong>分床单住、自旋平行</strong>。于是 O₂ 里有 2 个未成对电子——顺磁性有了出处。</li>
+        <li class="step">💡 结账：成键电子 = 2(σ2s) + 2(σ2p) + 4(π2p) = 8；反键电子 = 2(σ*2s) + 2(π*2p) = 4。
+          键级 = (8 − 4)/2 = <strong>2</strong>，与经典双键 O=O 的强度一致。
+          ✅ 自查：MO 不仅算出"双键"（键级 2），还多送了一样路易斯给不出的礼物——顺磁性的解释。</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">下一步</button>
+        <button class="btn ghost js-step-all">显示全部</button>
+        <button class="btn ghost js-step-reset">重置</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>想一想：He₂ 为什么不存在？用键级算一算。</summary>
+      <div class="think-body">
+        <p class="think-hint">提示：两个 He 一共 4 个价电子，按 MO 顺序往 σ2s 与 σ*2s 里填。</p>
+        <p>
+          2 个电子填进成键 σ2s，2 个填进反键 σ*2s——成键省下的能量恰好被反键吐出去，
+          键级 = (2−2)/2 = <strong>0</strong>，成键毫无净收益，所以 He₂ 不存在。
+          而 He₂⁺ 只有 3 个电子（键级 ½），居然真的被光谱捕捉到——MO 的账本连"半个键"都能记。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 杂化轨道 ============ -->
+  <section id="hybrid">
+    <h2>§5 杂化轨道：原子的变形记</h2>
+    <p>
+      MO 之外，化学家处理"原子内"还有一件趁手工具：碳明明只有 2 个单电子（2s²2p²），
+      为什么 CH₄ 里能拿出<strong>四根一模一样</strong>的键、指向正四面体的四个顶点？
+      <span class="term">杂化轨道</span><span class="en">hybrid orbital</span>的答案是：
+      成键前，碳的 1 个 s 与 3 个 p 轨道先"搅拌均匀"，重组出若干等价的新轨道——
+      就像一杯黑咖啡加牛奶调出四杯一样的拿铁。常见三种配方：
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>杂化</th><th>配方</th><th>几何形状与键角</th><th>代表分子</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>sp</strong></td><td>1×s + 1×p → 2 个</td><td>直线形，180°</td><td>CO₂、乙炔 C₂H₂、BeCl₂</td></tr>
+        <tr><td><strong>sp²</strong></td><td>1×s + 2×p → 3 个</td><td>平面三角形，120°</td><td>BF₃、乙烯、<strong>石墨</strong>（层内）</td></tr>
+        <tr><td><strong>sp³</strong></td><td>1×s + 3×p → 4 个</td><td>正四面体，109.5°</td><td>CH₄、<strong>金刚石</strong>、H₂O（含孤对，压成 104.5°）</td></tr>
+      </tbody>
+    </table>
+    <p>
+      碳的三副面孔由此打通：<strong>sp³ 的金刚石</strong>四价四面体、坚硬绝缘；
+      <strong>sp² 的石墨</strong>层内三个 σ 键 + 剩下一个 p 轨道肩并肩形成离域 π——
+      电子在整层流动，所以石墨导电、层间松滑；
+      <strong>sp 的碳</strong>绷成直线（乙炔），也是导电碳线的骨架。
+      你在 <a href="../02-有机化学/01-碳骨架与官能团.html">02 分支 · 碳骨架与官能团</a>见过的正四面体与平面三角，
+      现在有了量子力学的底账。双键 = 1 个 σ（头碰头）+ 1 个 π（肩并肩），
+      三键再加一个 π——至此，分子的形状、硬度、导电性都能从轨道说清。
+    </p>
+  </section>
+
+  <!-- ============ 小结 ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 本章小结 · 也为本分支收官</h3>
+      <ul>
+        <li>经典物理判原子"死刑"（坍缩 + 连续光谱）；量子化救场：能量分立，E = hν 对应光谱指纹。</li>
+        <li>四个量子数：n 定层、l 定形（s球/p哑铃/d四叶）、m 定向、s 定自旋；第 n 层最多 2n² 个电子。</li>
+        <li>轨道 = 驻波解，<span class="formula">|ψ|²</span> 是概率密度；电子云小点是采样，不是电子群。</li>
+        <li>泡利 + 构造原理 + 洪特 → 电子排布 → 周期表分区；注意 4s/3d 交错与"后填先失"；
+          Cr、Cu 因半满/全满成为例外。</li>
+        <li>MO：原子轨道叠加成成键/反键轨道；键级 = (成键 − 反键)/2；
+          O₂ 键级 2 且 π* 上两个单电子 → 顺磁性，胜过路易斯结构。</li>
+        <li>杂化 sp/sp²/sp³ 对应直线/三角/四面体，解释金刚石—石墨—乙炔的形状与性质差异。</li>
+        <li>四章合璧：<strong>热力学管方向、动力学管快慢、电化学管兑换、量子化学管根基</strong>——
+          这就是物理化学的全部野心。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 自测 ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ 章末自测 · 量子化学与分子结构 <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "氢原子光谱是一系列分立的亮线，这直接说明什么？",
+            "options": ["电子的能量只能取分立的数值", "电子的动能连续变化", "光谱仪分辨率不够", "质子吸收了部分光"],
+            "answer": 0,
+            "explain": "谱线位置由跃迁能量差决定：E = hν。只出现几条特定频率，意味着能级本身不连续——这正是『量子化』一词的含义，也是玻尔模型的起点。"
+          },
+          {
+            "q": "四个量子数中，决定轨道形状（球 / 哑铃 / 四叶）的是？",
+            "options": ["主量子数 n", "角量子数 l", "磁量子数 m", "自旋量子数 s"],
+            "answer": 1,
+            "explain": "l = 0,1,2 分别对应 s（球形）、p（哑铃）、d（四叶）；n 定主层与大小，m 定空间取向（同形轨道有 2l+1 个朝向），s 定自旋方向。"
+          },
+          {
+            "q": "Cu（Z = 29）的电子排布式是？",
+            "options": ["…3p⁶ 3d⁹ 4s²", "…3p⁶ 3d¹⁰ 4s¹", "…3p⁶ 3d⁸ 4s³", "…3p⁶ 3d¹⁰ 4s²"],
+            "answer": 1,
+            "explain": "d 全满的『对称红利』胜过 4s 的配对能：一个 4s 电子挪进 3d，凑成 3d¹⁰4s¹。Cr（3d⁵4s¹）为半满同理。这类例外仅出现在 d 区少数元素——先按构造原理排，再检查全满/半满。"
+          },
+          {
+            "q": "实验测得 O₂ 具有顺磁性（液氧能被磁铁吸引）。分子轨道理论的解释是？",
+            "options": ["两个自旋平行的单电子分占两个反键 π* 轨道", "O=O 双键电子全部成对", "氧原子核有磁性", "键级其实等于 1"],
+            "answer": 0,
+            "explain": "填完 10 个价电子后，最后 2 个按洪特规则分占两个简并的 π*2p 反键轨道且自旋平行——两个未成对电子带来顺磁性。路易斯结构 O=O 全配对，无法解释这一点，这正是 MO 的成名之战。"
+          },
+          {
+            "q": "CH₄ 分子呈正四面体（键角 109.5°），中心碳原子采用的杂化方式是？",
+            "options": ["sp 杂化", "sp² 杂化", "sp³ 杂化", "不杂化"],
+            "answer": 2,
+            "explain": "1 个 s + 3 个 p 重组为 4 个等价的 sp³ 轨道，指向四面体四个顶点。sp 对应直线（CO₂），sp² 对应平面三角（BF₃、石墨层），sp³ 对应四面体（CH₄、金刚石）。"
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="章节导航">
+      <a href="03-电化学.html"><span class="pg-dir">← 上一章</span><br><span class="pg-title">第 3 章 · 电化学</span></a>
+      <a class="next" href="../05-生物化学/index.html"><span class="pg-dir">下一分支 →</span><br><span class="pg-title">05 生物化学 · 导学</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ 章节自定义交互（轨道查看器） ============ */
+(function () {
+  "use strict";
+  var INFO = {
+    "1s": {
+      title: "1s",
+      text: "1s 轨道：n=1, l=0, m=0 ｜ 球形对称，无节面（总节面数 = n−1 = 0）｜ 任意方向概率相同，最多住 2 个自旋相反的电子"
+    },
+    "2p": {
+      title: "2p_z",
+      text: "2p_z 轨道：n=2, l=1, m=0 ｜ 哑铃形，1 个角节面（xy 平面，ψ=0）｜ 三个 p 轨道分别沿 x / y / z 方向，能量相同（简并）"
+    },
+    "3dz2": {
+      title: "3d_z²",
+      text: "3d_z² 轨道：n=3, l=2, m=0 ｜ 双瓣 + 赤道环（负相位），2 个角节面 ｜ 5 个 d 轨道中最特殊的一员，配合位场理论解释配合物颜色"
+    },
+    "3dxy": {
+      title: "3d_xy",
+      text: "3d_xy 轨道：n=3, l=2 ｜ 四叶花瓣，叶间为节面（x、y 轴方向电子出现概率为零）｜ 四瓣正负相位交替，方向性极强，是 d 区金属成键的主力"
+    }
+  };
+  var GROUPS = { "1s": "ob1s", "2p": "ob2p", "3dz2": "ob3dz2", "3dxy": "ob3dxy" };
+
+  var titleEl = document.getElementById("obTitle");
+  var readout = document.getElementById("obReadout");
+  var btns = document.querySelectorAll(".ob-btn");
+  if (!titleEl || !readout || !btns.length) return;
+
+  function show(key) {
+    Object.keys(GROUPS).forEach(function (k) {
+      var g = document.getElementById(GROUPS[k]);
+      if (g) g.style.display = (k === key) ? "" : "none";
+    });
+    titleEl.textContent = INFO[key].title;
+    readout.textContent = INFO[key].text;
+    Array.prototype.forEach.call(btns, function (b) {
+      b.className = b.getAttribute("data-orb") === key ? "btn" : "btn ghost";
+    });
+  }
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () { show(b.getAttribute("data-orb")); });
+  });
+  show("1s");
+})();
+</script>
+</body>
+</html>
