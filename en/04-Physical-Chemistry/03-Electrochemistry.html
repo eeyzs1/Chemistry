@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Electrochemistry · Physical Chemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">04 Physical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · Electrochemistry</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 Physical Chemistry · Chapter 3</div>
+    <h1>Electrochemistry: The Exchange Counter Between Chemical and Electrical Energy</h1>
+    <p class="lede">
+      When your phone drops from 100% to 20%, the anxiety sets in. Inside that little
+      battery, Chapters 1 and 2 are performing a duet: <strong>electron transfer (redox)</strong> supplies
+      the energy difference, while an ingenious device stops the electrons from being handed
+      over "on the spot" and instead makes them <strong>flow in one direction along a wire</strong> —
+      and that is an electric current. This chapter begins with an 1836 copper–zinc cell:
+      why is the salt bridge indispensable? How do electrode potentials predict the direction
+      of a reaction? How can electrolysis "defy fate" and drive the non-spontaneous? And
+      finally we watch Li⁺ swing back and forth like a rocking chair inside a lithium-ion battery.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 Chemical Thermodynamics · 01 Inorganic Chemistry redox</span>
+      <span class="chip">Interactive animation ×1 (Daniell cell assembly)</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#redox">Redox Review</a>
+    <a href="#cell">Galvanic Cells and the Salt Bridge</a>
+    <a href="#potential">Electrode Potentials and the Nernst Equation</a>
+    <a href="#electrolysis">Electrolysis and Faraday's Law</a>
+    <a href="#lithium">The Lithium-Ion Battery</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Putting "Fire" in a Box</h2>
+    <p>
+      Humans have used fire for hundreds of thousands of years: wood oxidizes and gives off
+      light and heat — but the energy scatters in every direction, impossible to grasp or carry.
+      In 1800 Volta stacked copper and zinc discs in brine and for the first time made
+      <strong>redox happen quietly on metal surfaces</strong>, with the wire gathering the
+      electrons into a current. From then on, "combustion" could be packed into a box: a car
+      engine burning gasoline goes chemical energy → heat → mechanical work, while in a
+      hydrogen fuel-cell vehicle the very same hydrogen–oxygen reaction delivers an electric
+      current directly, roughly doubling the efficiency and leaving nothing but water in the exhaust.
+    </p>
+    <p>
+      Electrochemistry studies the two-way exchange between <strong>chemical energy ⇌ electrical
+      energy</strong>: a spontaneous reaction (ΔG &lt; 0) can be built into a battery that generates
+      electricity, while a non-spontaneous reaction (ΔG &gt; 0) can be driven through by electrolysis.
+      The route for this chapter: first review electron bookkeeping (§1), then dissect the galvanic
+      cell (§2), learn to predict direction with the potential table (§3), put that to work in
+      reverse (§4), and finally step into the lithium battery in your pocket (§5).
+    </p>
+  </section>
+
+  <!-- ============ §1 Redox ============ -->
+  <section id="redox">
+    <h2>§1 Redox Reactions: The Bookkeeping of Electrons</h2>
+    <p>
+      The <span class="term">oxidation number</span> is the "book value" of electrons assigned to an atom.
+      In a reaction, <strong>a rising oxidation number = losing electrons = being oxidized</strong>
+      (that species is the reducing agent, supplying electrons to others);
+      <strong>a falling oxidation number = gaining electrons = being reduced</strong>
+      (that species is the oxidizing agent, collecting electrons from others).
+      Electrons never vanish into thin air: whenever one species loses them another gains them,
+      and the two ledgers must balance.
+    </p>
+    <p>
+      Watch this chapter's star reaction: dip a zinc strip into blue copper(II) sulfate solution,
+      and red-brown copper slowly plates onto the zinc while the blue color of the solution fades:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Zn + Cu<sup>2+</sup> → Zn<sup>2+</sup> + Cu</span>
+       　　Zn: 0 → +2 (loses 2e⁻, oxidized)　Cu: +2 → 0 (gains 2e⁻, reduced)
+    </p>
+    <p>
+      If you simply mix them, the electrons are transferred "on the spot" at the zinc–copper
+      contact surface, and the energy escapes as heat. <strong>The whole trick of electrochemistry
+      is to let oxidation and reduction happen at two separate sites, forcing the electrons to take
+      the long way around through a wire</strong> — so energy that would have dissipated becomes a
+      usable electric current.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: An iron nail and a copper wire are dipped into dilute hydrochloric acid at the same time; bubbles appear only on the nail. Which one is losing electrons? What is the copper doing?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: The bubbles are H₂ — H⁺ gains electrons and is reduced; so who is supplying the electrons?</p>
+        <p>
+          The iron loses electrons: Fe − 2e⁻ → Fe²⁺, and the released electrons are picked up by
+          H⁺ at the surface, producing H₂ bubbles. The copper does not react with dilute
+          hydrochloric acid — it is far more "reluctant" than iron to give up electrons. This
+          <strong>difference in how easily electrons are lost</strong> is exactly what electrode
+          potentials (§3) quantify, and it is why in §2 zinc is happy to serve as the negative
+          electrode while copper only serves as the positive one.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Galvanic cell ============ -->
+  <section id="cell">
+    <h2>§2 Galvanic Cells: Splitting a Redox Reaction Apart</h2>
+    <p>
+      In 1836 Daniell split the reaction above into two halves: <strong>a zinc strip dips into
+      ZnSO₄ solution (left), a copper strip into CuSO₄ solution (right)</strong>; a salt bridge
+      spans the two solutions and a wire connects the two metals — and the lamp lights up. Such
+      a device is called a <span class="term">galvanic (voltaic) cell</span>, and each half of the
+      setup is a <span class="term">half-cell</span>. Electrode naming is the first hurdle of this chapter:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Electrode</th><th>Reaction occurring</th><th>Where the electrons go</th><th>In the Daniell cell</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Negative electrode</strong> = anode</td><td>Oxidation (electron loss)</td><td>Electrons flow out, through the external circuit to the positive electrode</td><td>Zn electrode: Zn − 2e⁻ → Zn²⁺</td></tr>
+        <tr><td><strong>Positive electrode</strong> = cathode</td><td>Reduction (electron gain)</td><td>Accepts the electrons arriving through the external circuit</td><td>Cu electrode: Cu²⁺ + 2e⁻ → Cu</td></tr>
+      </tbody>
+    </table>
+    <div class="keypoint">
+      <div class="kp-title">📌 Memory Anchor</div>
+      <strong>An-ox, red-cat — the anode sings oxidation</strong>: oxidation always occurs at the anode,
+      reduction always at the cathode. As for whether the anode is also the "positive electrode",
+      galvanic and electrolytic cells are exactly opposite — §4 dismantles that trap in detail.
+    </div>
+
+    <h3>🔬 Try It Out: Assemble a Daniell Cell</h3>
+    <p>
+      Assemble the cell step by step with the stepper below: first set up the two half-cells,
+      then add the salt bridge, then close the external circuit, and finally watch how the voltage
+      changes during sustained discharge. Pay attention to the electrode reactions in the readout
+      at each step.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="Daniell cell step-by-step assembly simulation">
+          <!-- Left beaker: ZnSO4 -->
+          <path d="M70,150 h130 v140 a14,14 0 0 1 -14,14 h-102 a14,14 0 0 1 -14,-14 z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></path>
+          <path d="M74,190 h122 v100 a12,12 0 0 1 -12,12 h-98 a12,12 0 0 1 -12,-12 z" fill="#eff6ff" stroke="none"></path>
+          <text x="135" y="322" text-anchor="middle" font-size="12" fill="#4b5563">ZnSO₄ solution</text>
+          <!-- Right beaker: CuSO4 -->
+          <path d="M440,150 h130 v140 a14,14 0 0 1 -14,14 h-102 a14,14 0 0 1 -14,-14 z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></path>
+          <path d="M444,190 h122 v100 a12,12 0 0 1 -12,12 h-98 a12,12 0 0 1 -12,-12 z" fill="#bfdbfe" stroke="none" id="dcSolR"></path>
+          <text x="505" y="322" text-anchor="middle" font-size="12" fill="#4b5563">CuSO₄ solution (blue)</text>
+          <!-- Zinc electrode -->
+          <rect x="118" y="92" width="34" height="200" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="2"></rect>
+          <text x="100" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="#475569">Zn</text>
+          <text x="86" y="140" text-anchor="end" font-size="11" fill="#64748b">negative · anode</text>
+          <!-- Copper electrode -->
+          <rect x="488" y="92" width="34" height="200" rx="4" fill="#fdba74" stroke="#c2410c" stroke-width="2"></rect>
+          <text x="540" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="#c2410c">Cu</text>
+          <text x="554" y="140" font-size="11" fill="#c2410c">positive · cathode</text>
+          <!-- Salt bridge (shown from step 2) -->
+          <g id="dcSalt" style="display:none">
+            <path d="M135,150 v-52 a18,18 0 0 1 18,-18 h314 a18,18 0 0 1 18,18 v52" fill="none" stroke="#cbd5e1" stroke-width="26"></path>
+            <path d="M135,150 v-52 a18,18 0 0 1 18,-18 h314 a18,18 0 0 1 18,18 v52" fill="none" stroke="#f1f5f9" stroke-width="18"></path>
+            <circle cx="230" cy="80" r="7" fill="#7c3aed"></circle>
+            <text x="230" y="98" text-anchor="middle" font-size="10" font-weight="700" fill="#6d28d9">K⁺</text>
+            <circle cx="410" cy="80" r="7" fill="#0e7490"></circle>
+            <text x="410" y="98" text-anchor="middle" font-size="10" font-weight="700" fill="#0e7490">Cl⁻</text>
+            <text x="320" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">Salt bridge (filled with KCl gel)</text>
+          </g>
+          <!-- Salt-bridge ion flow (from step 3) -->
+          <g id="dcIons" style="display:none">
+            <circle r="7" fill="#7c3aed">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M320,80 L462,80"></animateMotion>
+            </circle>
+            <circle r="7" fill="#0e7490">
+              <animateMotion dur="3.4s" repeatCount="indefinite" path="M320,80 L178,80"></animateMotion>
+            </circle>
+          </g>
+          <!-- External circuit (from step 3) -->
+          <g id="dcWire" style="display:none">
+            <polyline points="135,92 135,58 296,58" fill="none" stroke="#1f2937" stroke-width="3"></polyline>
+            <polyline points="344,58 505,58 505,92" fill="none" stroke="#1f2937" stroke-width="3"></polyline>
+            <circle id="dcBulb" cx="320" cy="58" r="24" fill="#fde047" stroke="#f59e0b" stroke-width="2.5"></circle>
+            <path d="M312,62 l4,-10 l4,6 l4,-10 l4,14" fill="none" stroke="#b45309" stroke-width="2"></path>
+            <g id="dcRays" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round">
+              <line x1="320" y1="24" x2="320" y2="12"></line>
+              <line x1="294" y1="34" x2="286" y2="26"></line>
+              <line x1="346" y1="34" x2="354" y2="26"></line>
+            </g>
+            <text x="320" y="104" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e" id="dcVolt">E° = 1.10 V</text>
+            <text x="210" y="46" font-size="11" font-weight="700" fill="#1d4ed8">e⁻ →</text>
+            <g fill="#2563eb">
+              <circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+              <circle r="5"><animateMotion dur="3.2s" begin="-1.1s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+              <circle r="5"><animateMotion dur="3.2s" begin="-2.2s" repeatCount="indefinite" path="M135,90 L135,58 L505,58 L505,90"></animateMotion></circle>
+            </g>
+          </g>
+          <!-- Step 4 annotations -->
+          <g id="dcAnno" style="display:none">
+            <text x="88" y="210" font-size="11" font-weight="700" fill="#475569">Zn²⁺ ↑</text>
+            <text x="452" y="210" font-size="11" font-weight="700" fill="#1e40af">Cu²⁺ ↓ fades</text>
+          </g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn dc-step" data-step="1">① Two half-cells</button>
+          <button class="btn ghost dc-step" data-step="2">② Add the salt bridge</button>
+          <button class="btn ghost dc-step" data-step="3">③ Connect the external circuit</button>
+          <button class="btn ghost dc-step" data-step="4">④ Sustained discharge</button>
+          <button class="btn ghost dc-step" data-step="0">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="dcReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        The blue dots are electrons flowing through the external circuit (actually traveling from the
+        negative Zn electrode through the wire to the positive Cu electrode — opposite to the
+        "conventional current" direction); in the salt bridge, K⁺ drifts toward the cathode compartment
+        (right) and Cl⁻ toward the anode compartment (left), keeping both solutions electrically neutral.
+        The voltage drop in step ④ is a preview of the Nernst effect (§3).
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · What problem does the salt bridge actually solve?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Imagine a crew of porters carrying goods into a warehouse: if they only carry in and never
+          clear out, the doorway soon clogs up and the whole crew grinds to a halt. The left beaker
+          only produces Zn²⁺ (piling up positive charge), the right beaker only consumes Cu²⁺ (leaving
+          excess negative ions behind); <strong>the charge books go unbalanced on both sides and the
+          reaction slams on the brakes in an instant</strong>. The salt bridge is the "clearance
+          channel" that settles both charge accounts in real time, so the carrying can go on and on.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Standard</span>
+        <p>
+          Electrons travel through the wire (the external circuit), but <strong>there are no free
+          electrons in solution</strong> — solutions conduct solely by means of ions (the internal
+          circuit). If the two beakers are not connected, Zn²⁺ piles up in the negative-electrode
+          compartment while SO₄²⁻ becomes relatively excessive in the positive-electrode compartment;
+          within an instant the accumulated potential difference is enough to cancel the chemical
+          driving force, and the current stalls on a millisecond timescale. With a salt bridge filled
+          with KCl gel in place: <strong>K⁺ migrates into the cathode compartment to fill the
+          positive-charge deficit, while Cl⁻ migrates into the anode compartment to neutralize the
+          surplus Zn²⁺</strong>; both solutions stay electrically neutral and the current continues.
+          The salt bridge also stops Cu²⁺ from wandering over to the zinc electrode to react directly,
+          preventing a chemical short circuit.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          A complete cell circuit = <strong>an electronic conductor (the metal wires) + an ionic
+          conductor (the solutions and the salt bridge)</strong> connected in series, with the two
+          kinds of current "changing trains" at the electrode surfaces: the negative electrode hands
+          electrons to the wire and leaves ions to the solution; the positive electrode does the
+          reverse. The salt bridge uses KCl rather than just any salt because K⁺ and Cl⁻ migrate at
+          nearly identical rates, which squeezes the <strong>liquid junction potential</strong> at the
+          interface between the two solutions down to a minimum so it cannot steal from the cell's
+          voltage. Precision measurements even use a "chain" of salt bridges to step across gradually —
+          half the engineering of electrochemistry is a wrestling match with interfaces.
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Replace the salt bridge with a thick copper wire, with its two ends dipped into the two solutions — will the cell still work?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What particles carry the "current" in solution? And in a copper wire?</p>
+        <p>
+          It will not work properly. A copper wire is an <strong>electronic conductor</strong>, whereas
+          electrons cannot migrate freely through a solution — the internal circuit needs an
+          <strong>ion channel</strong>. The moment the copper wire enters the solutions it becomes a new
+          electrode itself, triggering side reactions and extra interface potentials that scramble the
+          cell voltage. The key to the salt bridge is not "conducting" as such, but "conducting by
+          means of ions".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Electrode potential and Nernst ============ -->
+  <section id="potential">
+    <h2>§3 Electrode Potentials: Predicting the Direction of a Reaction</h2>
+    <p>
+      Zinc is "willing" to lose electrons, copper is "unwilling" — and this difference can be
+      quantified. Each redox couple (oxidized form/reduced form, e.g. Cu²⁺/Cu) is assigned a
+      <span class="term">standard electrode potential (E°)</span>: measured against the standard
+      hydrogen electrode (SHE) taken as 0 V, with ion concentrations of 1 mol/L at 25 °C.
+      A few commonly used values:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Couple</th><th>E° / V</th><th>Temperament</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Zn²⁺ / Zn</td><td>−0.76</td><td>The reduced form, Zn, is generous — it loses electrons easily (an active metal)</td></tr>
+        <tr><td>Fe²⁺ / Fe</td><td>−0.44</td><td>Iron also gives up electrons, but is more reserved than zinc</td></tr>
+        <tr><td>Cu²⁺ / Cu</td><td>+0.34</td><td>The oxidized form, Cu²⁺, has an appetite for grabbing electrons</td></tr>
+        <tr><td>Cl₂ / Cl⁻</td><td>+1.36</td><td>Cl₂ is a strong oxidizing agent with a huge appetite for electrons</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The ranking idea in one sentence: <strong>the larger E° is, the stronger the oxidized form
+      (the more eager to gain electrons); the smaller E° is, the stronger the reduced form (the more
+      eager to lose electrons)</strong>. Combine two couples into a cell and judging the direction
+      takes just three steps (see the example below); the criterion is
+      <span class="formula">E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> &gt; 0</span>
+      for a spontaneous reaction. It speaks the same language as the ΔG criterion of Chapter 1:
+      <span class="formula">ΔG° = −nFE°</span> — when E° is positive, ΔG° must be negative.
+      Electrochemistry is really thermodynamics speaking with a "voltage accent".
+    </p>
+
+    <h3>The Nernst Equation: Concentration "Discounts" the Voltage</h3>
+    <p>
+      The standard potential corresponds to the ideal concentration of 1 mol/L. When real
+      concentrations deviate, the potential is corrected by the
+      <span class="term">Nernst equation</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">E = E° + (RT/nF)·ln([oxidized]/[reduced])</span>
+    </p>
+    <p>
+      Qualitatively there are just two rules: <strong>oxidized-form concentration ↑ → E rises;
+      reduced-form concentration ↑ → E falls</strong>. Use them to explain a battery's "aging":
+      during discharge, Zn²⁺ keeps accumulating in the anode compartment, so E<sub>anode</sub> rises;
+      Cu²⁺ keeps being depleted in the cathode compartment, so E<sub>cathode</sub> falls. Squeezed
+      from both ends, <strong>E<sub>cell</sub> = E<sub>cathode</sub> − E<sub>anode</sub> keeps
+      shrinking and the voltage slides all the way down</strong> — when a long-used phone's charge
+      reading "dives", that is the Nernst equation keeping the books.
+    </p>
+
+    <h3>📐 Worked-Example Scaffold: Using the Potential Table to Predict Reaction Direction</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (Watch Me)</div>
+      <div class="worked-problem">
+        Given E°(Zn²⁺/Zn) = −0.76 V, E°(Cu²⁺/Cu) = +0.34 V, and E°(Fe²⁺/Fe) = −0.44 V.
+        (1) Determine whether Zn + Cu²⁺ → Zn²⁺ + Cu is spontaneous; (2) determine whether
+        Fe + Zn²⁺ → Fe²⁺ + Zn is spontaneous.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Find the two couples and compare: (1) involves Zn²⁺/Zn (−0.76) and
+          Cu²⁺/Cu (+0.34). Rule: <strong>for the couple with the larger E°, its oxidized form serves
+          as the oxidizing agent (gains electrons, acts as the positive electrode); for the couple
+          with the smaller E°, its reduced form serves as the reducing agent (loses electrons, acts
+          as the negative electrode)</strong>. Here Cu²⁺ gains electrons and Zn loses them — exactly
+          the direction written in the problem.</li>
+        <li class="step">Compute the cell emf: E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> =
+          0.34 − (−0.76) = <strong>+1.10 V</strong>. E° &gt; 0 → <strong>spontaneous</strong> —
+          this is precisely the voltage of the Daniell cell in §2.</li>
+        <li class="step">Cross-check with thermodynamics: ΔG° = −nFE° = −2 × 96485 × 1.10 ≈
+          <strong>−212 kJ/mol</strong> &lt; 0, fully consistent with Chapter 1's "ΔG &lt; 0 means
+          spontaneous" — the potential criterion and the free-energy criterion are two faces of the
+          same coin.</li>
+        <li class="step">(2) Fe + Zn²⁺: taken as written, the positive electrode would be Zn²⁺/Zn (−0.76)
+          and the negative electrode Fe²⁺/Fe (−0.44), so
+          E°<sub>cell</sub> = −0.76 − (−0.44) = <strong>−0.32 V</strong> &lt; 0 → <strong>not
+          spontaneous</strong>; only the reverse reaction (Zn + Fe²⁺) is spontaneous.
+          ✅ Check your intuition: zinc is more active than iron, so of course zinc is the one losing
+          electrons — the direction criterion agrees with the activity series of metals.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · A battery is a box full of electrons?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          "A battery is like a reservoir, storing a full tank of electrons; charging pours the
+          electrons back in, and when they are used up it is empty."
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          What a battery stores is <strong>chemical energy</strong> — high-energy active materials
+          (zinc and copper ions; lithium and layered oxides). Electrons are merely the flowing
+          carriers: during discharge they surge from the negative electrode through the external
+          circuit to the positive electrode, <strong>circulating around the loop with their number
+          never increasing or decreasing</strong>; what actually gets consumed is the material that
+          is "willing to lose electrons". Charging is not pouring electrons back in either — it is
+          an external supply pushing the reaction <strong>in reverse</strong> to regenerate the
+          high-energy materials, banking the energy back in chemical form.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Electrolysis and Faraday's law ============ -->
+  <section id="electrolysis">
+    <h2>§4 Electrolysis and Faraday's Law: Defying Fate</h2>
+    <p>
+      A galvanic cell generates electricity from a spontaneous reaction;
+      <span class="term">electrolysis</span> turns this around:
+      <strong>an external power supply forcibly drives a non-spontaneous reaction</strong> (ΔG &gt; 0).
+      In an electrolytic cell, the electrode connected to the positive terminal of the supply undergoes
+      oxidation (it is the anode), and the electrode connected to the negative terminal undergoes
+      reduction (it is the cathode) — note that this is the reverse of the galvanic cell:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th></th><th>Anode (oxidation)</th><th>Cathode (reduction)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Galvanic cell</strong> (spontaneous, generates electricity)</td><td>Negative electrode (e.g. Zn)</td><td>Positive electrode (e.g. Cu)</td></tr>
+        <tr><td><strong>Electrolytic cell</strong> (non-spontaneous, consumes electricity)</td><td>Connected to the <strong>positive</strong> terminal of the supply</td><td>Connected to the <strong>negative</strong> terminal of the supply</td></tr>
+      </tbody>
+    </table>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Anode = positive electrode?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          "The anode is the positive electrode and the cathode the negative — memorize it once
+          and it works everywhere."
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Anode and cathode are defined by <strong>reaction type</strong> (oxidation at the anode,
+          reduction at the cathode), while positive and negative electrodes are defined by
+          <strong>potential</strong>. In a galvanic cell the anode happens to be the negative electrode
+          (Zn); in an electrolytic cell the anode is the one connected to the positive terminal.
+          <strong>Ask "oxidation or reduction?" first, positive or negative second</strong>, and the
+          two naming systems will never be mixed up.
+        </div>
+      </div>
+    </div>
+
+    <h3>Faraday's Law: The Exchange Rate Between Charge and Matter</h3>
+    <p>
+      In 1833 Faraday discovered that <strong>the amount of substance deposited (or dissolved) at an
+      electrode is strictly proportional to the electric charge passed</strong>. The conversion chain
+      has only three steps:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Q = I·t</span>　→　
+      <span class="formula">n(e⁻) = Q / F</span>　→　
+      <span class="formula">n(substance) = n(e⁻) / z</span>
+    </p>
+    <p>
+      Here the <span class="term">Faraday constant</span>
+      <span class="formula">F = 96485 C/mol</span> is exactly the total charge of 1 mol of electrons,
+      and z is the number of electrons transferred per ion (z = 2 for Cu²⁺ → Cu). This chain is the
+      metrological backbone of electroplating, the electrolytic refining of copper, and the
+      chlor-alkali industry — in a factory plating bath, "so much charge in, so much copper out",
+      with the accounts settled past the decimal point.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Two Big Pitfalls in Electrolysis Calculations</div>
+      The first is <strong>failing to convert time to seconds</strong>: the t in I·t must be in seconds
+      (2.0 h = 7200 s); multiplying by hours outright puts you off by three orders of magnitude.
+      The second is <strong>forgetting to divide by z</strong>: depositing Cu²⁺ takes two electrons,
+      so however large the charge, you still count only half as much copper. Write the electrode
+      reaction before putting pen to paper and circle the z — both pits can then be sidestepped.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: The Quantitative Ledger of Copper Electroplating</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Work With Me)</div>
+      <div class="worked-problem">
+        During the electrolytic refining of copper, a current of 5.0 A passes through the cathode
+        for 2.0 hours. How many grams of copper are deposited in theory?
+        (M(Cu) = 64 g/mol, F = 96485 C/mol)
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Write the cathode reaction first and circle z: Cu²⁺ + <strong>2</strong>e⁻ → Cu,
+          so z = 2. This step also settles the later "divide by 2".</li>
+        <li class="step">💡 Charge Q = I·t = 5.0 A × (2.0 × 3600 s) = <strong>3.6 × 10⁴ C</strong>.
+          Convert hours to seconds first — no shortcuts.</li>
+        <li class="step">💡 Amount of electrons n(e⁻) = Q / F = 36000 / 96485 ≈ <strong>0.373 mol</strong>.</li>
+        <li class="step">💡 Convert to copper: n(Cu) = n(e⁻)/z = 0.373/2 ≈ 0.187 mol,
+          m = 0.187 × 64 ≈ <strong>12 g</strong>.
+          ✅ Sanity check: 12 g is about the mass of an old coin, plated by a 5 A current over
+          2 hours — a reasonable order of magnitude. As a handy everyday conversion:
+          36000 C ≈ 10 Ah, about one-third of the charge a small power bank delivers.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 Lithium-ion battery ============ -->
+  <section id="lithium">
+    <h2>§5 The Lithium-Ion Battery: The Story of a Rocking Chair</h2>
+    <p>
+      In 1991 Sony brought the lithium-ion battery to market, and phones, laptops, and electric
+      vehicles have been sprinting ahead ever since. Its stroke of genius:
+      <strong>throughout the whole process no metallic lithium is ever deposited — only Li⁺,
+      the smallest metal ion, shuttles back and forth between two "layered warehouses"</strong> —
+      the carbon layers of graphite on one side, the oxide layers of lithium cobalt oxide (LiCoO₂)
+      on the other. The model is popularly called the "rocking-chair battery":
+    </p>
+    <p style="text-align:center">
+      Discharge · negative electrode: <span class="formula">Li<sub>x</sub>C₆ → xLi⁺ + xe⁻ + 6C</span>　
+      Discharge · positive electrode: <span class="formula">Li₁₋ₓCoO₂ + xLi⁺ + xe⁻ → LiCoO₂</span>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="230" viewBox="0 0 640 230" role="img" aria-label="Schematic of the rocking-chair principle of the lithium-ion battery">
+          <!-- Left: graphite negative electrode -->
+          <g transform="translate(120,110)">
+            <rect x="-70" y="-70" width="140" height="140" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"></rect>
+            <line x1="-52" y1="-40" x2="52" y2="-40" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="-16" x2="52" y2="-16" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="8" x2="52" y2="8" stroke="#475569" stroke-width="3"></line>
+            <line x1="-52" y1="32" x2="52" y2="32" stroke="#475569" stroke-width="3"></line>
+            <circle cx="-20" cy="-46" r="5" fill="#7c3aed"></circle>
+            <circle cx="18" cy="-22" r="5" fill="#7c3aed"></circle>
+            <circle cx="0" cy="2" r="5" fill="#7c3aed"></circle>
+            <text y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Graphite (−) with intercalated Li⁺</text>
+          </g>
+          <!-- Right: oxide positive electrode -->
+          <g transform="translate(520,110)">
+            <rect x="-70" y="-70" width="140" height="140" rx="10" fill="#fff7ed" stroke="#fb923c" stroke-width="2"></rect>
+            <line x1="-52" y1="-40" x2="52" y2="-40" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="-16" x2="52" y2="-16" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="8" x2="52" y2="8" stroke="#c2410c" stroke-width="3"></line>
+            <line x1="-52" y1="32" x2="52" y2="32" stroke="#c2410c" stroke-width="3"></line>
+            <circle cx="26" cy="-46" r="5" fill="#7c3aed"></circle>
+            <circle cx="-14" cy="-22" r="5" fill="#7c3aed"></circle>
+            <circle cx="30" cy="2" r="5" fill="#7c3aed"></circle>
+            <text y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c">LiCoO₂ (+) with intercalated Li⁺</text>
+          </g>
+          <!-- Rocking-chair arrows -->
+          <path d="M200,80 Q320,10 440,80" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#dcArrow)"></path>
+          <defs>
+            <marker id="dcArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#15803d"></path>
+            </marker>
+          </defs>
+          <text x="320" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Discharge: Li⁺ → positive electrode · e⁻ via the external circuit</text>
+          <path d="M440,150 Q320,215 200,150" fill="none" stroke="#0369a1" stroke-width="2.5" marker-end="url(#dcArrowB)"></path>
+          <defs>
+            <marker id="dcArrowB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0369a1"></path>
+            </marker>
+          </defs>
+          <text x="320" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">Charge: the external supply pushes Li⁺ back to the negative electrode (electrolysis)</text>
+        </svg>
+      </div>
+      <figcaption>
+        On discharge, Li⁺ leaves the graphite layers, crosses the electrolyte, and intercalates into
+        the oxide layers, while the electrons do work in the external circuit; on charge the external
+        supply drives everything the other way and Li⁺ swings back into the graphite. The two
+        "warehouses" are structurally stable — only the guests move in and out, never the architecture —
+        so a lithium-ion battery can be reversed thousands of times. This is the key to its victory
+        over the early lithium-metal battery (which grew dendrites and caught fire easily).
+      </figcaption>
+    </figure>
+
+    <p>
+      Put this chapter's knowledge in its place: <strong>while discharging it is a galvanic cell</strong>
+      (a spontaneous reaction, with the high-E LiCoO₂ as the positive electrode),
+      <strong>while charging it is an electrolytic cell</strong> (the external supply does the work and
+      pushes Li⁺ back against the gradient); the electrolyte and separator play the role of the
+      "salt bridge" — admitting only Li⁺ and blocking electrons. What you carry in your pocket is
+      the most refined heir of the Daniell cell.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: In winter a phone drains fast outdoors and may even shut down by itself — which concept from this chapter explains it best?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Chapter 2 covered the exponential effect of temperature on rate constants; in this chapter the Nernst equation governs the voltage.</p>
+        <p>
+          Use both threads together: <strong>low temperature sends the rates of ion migration and
+          electrode reactions into a dive</strong> (the kinetics account, Chapter 2), and the
+          battery-management circuit misreads this as "empty"; meanwhile the internal resistance
+          climbs and the output voltage sags (the Nernst and ohmic-drop account). Back in the warmth,
+          rates and voltage recover and the charge reading often "rises" again — it was never energy
+          frozen away, just energy temporarily locked away.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Redox = electron transfer: a rising oxidation number means electron loss (reducing agent), a falling one means electron gain (oxidizing agent).</li>
+        <li>A galvanic cell splits oxidation and reduction between two electrodes:
+          <strong>negative electrode = anode = oxidation</strong>; electrons travel from negative to
+          positive through the external circuit, and conduction inside the solution is by ions.
+          <strong>The salt bridge keeps both solutions electrically neutral — without it the current
+          stops in an instant</strong>.</li>
+        <li>The larger E°, the stronger the oxidized form; the three-step direction test: find the
+          couples → compare E° →
+          <span class="formula">E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub> &gt; 0</span>
+          means spontaneous, equivalent to ΔG° = −nFE°.</li>
+        <li>The Nernst equation, qualitatively: oxidized-form concentration ↑ raises E, reduced-form ↑
+          lowers E; during discharge the voltage keeps sliding down.</li>
+        <li>Electrolysis uses an external supply to drive a non-spontaneous reaction; the anode
+          connects to the positive terminal. Faraday's law:
+          <span class="formula">Q = I·t → n(e⁻) = Q/F → n = n(e⁻)/z</span> (F = 96485 C/mol).</li>
+        <li>The lithium-ion battery = a rocking chair: discharge is galvanic, charge is electrolytic;
+          Li⁺ travels between the graphite and LiCoO₂ layers, with no metallic lithium deposited.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Electrochemistry <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "When a Daniell cell is running, which path do the electrons take around the circuit?",
+            "options": ["From the Cu electrode through the wire to the Zn electrode", "From the Zn electrode through the wire to the Cu electrode, then back through the salt bridge", "Freely shuttling through the two solutions", "From the positive electrode through the wire to the negative electrode"],
+            "answer": 1,
+            "explain": "Zn is the negative electrode (oxidation, electron loss); the electrons flow through the external circuit to the positive Cu electrode (reduction). Note that electrons never enter the salt bridge — conduction in solution is carried by ions, with K⁺ and Cl⁻ heading for the cathode and anode regions respectively."
+          },
+          {
+            "q": "After the salt bridge is removed, the current stops almost immediately. What is the root cause?",
+            "options": ["The wire is broken", "Charge builds up rapidly in both half-cells, and the resulting potential difference cancels the chemical driving force", "The salt bridge is the only path the electrons can take", "The Cu²⁺ is used up"],
+            "answer": 1,
+            "explain": "With no ion channel, positive charge piles up in the anode compartment while negative charge becomes excessive in the cathode compartment; the reversed potential difference that forms in an instant pushes back against the reaction — the salt bridge settles both accounts through the two-way migration of K⁺/Cl⁻, which is what lets the current continue."
+          },
+          {
+            "q": "Given E°(Cu²⁺/Cu) = +0.34 V and E°(Fe²⁺/Fe) = −0.44 V, what are the standard emf and direction of the reaction Fe + Cu²⁺ → Fe²⁺ + Cu?",
+            "options": ["+0.78 V, spontaneous as written", "−0.78 V, not spontaneous as written", "+0.10 V, spontaneous as written", "−0.10 V, not spontaneous as written"],
+            "answer": 0,
+            "explain": "Fe loses electrons and acts as the negative electrode (E° = −0.44); Cu²⁺ gains electrons and acts as the positive electrode (E° = +0.34); E°cell = 0.34 − (−0.44) = +0.78 V > 0, so the reaction is spontaneous as written — hydrometallurgical copper production (iron displacing copper) is exactly this reaction."
+          },
+          {
+            "q": "In the electrolysis of a solution containing Cu²⁺, 0.10 mol of Cu is deposited at the cathode. How many electrons passed through the cathode?",
+            "options": ["0.10 mol", "0.20 mol", "9650 C", "96485 C"],
+            "answer": 1,
+            "explain": "Cu²⁺ + 2e⁻ → Cu: every 1 mol of Cu deposited requires 2 mol of electrons, so 0.10 × 2 = 0.20 mol (about 19297 C). Options C and D go wrong by confusing amount of substance with electric charge."
+          },
+          {
+            "q": "During the charge and discharge of a lithium-ion battery, which description of the behavior of Li⁺ is most accurate?",
+            "options": ["It intercalates/deintercalates back and forth between the graphite and metal-oxide layers, swinging between the two ends of a rocking chair", "It is deposited as metallic lithium on discharge and dissolves again on charge", "It stays inside the positive electrode and never moves", "It is permanently consumed by the battery"],
+            "answer": 0,
+            "explain": "The rocking-chair principle: on discharge Li⁺ leaves the graphite layers and migrates into the LiCoO₂ layers (with the electrons doing work in the external circuit); on charge the external supply pushes it back into the graphite. Li⁺ is cycled rather than consumed, and it is never deposited as metallic lithium — precisely why the battery is safe and long-lived."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Chemical-Kinetics.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Chemical Kinetics</span></a>
+      <a class="next" href="04-Quantum-Chemistry-and-Molecular-Structure.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 4 · Quantum Chemistry and Molecular Structure</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (Daniell cell assembly simulation) ============ */
+(function () {
+  "use strict";
+  var gSalt = document.getElementById("dcSalt");
+  var gIons = document.getElementById("dcIons");
+  var gWire = document.getElementById("dcWire");
+  var gAnno = document.getElementById("dcAnno");
+  var rays  = document.getElementById("dcRays");
+  var bulb  = document.getElementById("dcBulb");
+  var volt  = document.getElementById("dcVolt");
+  var solR  = document.getElementById("dcSolR");
+  var readout = document.getElementById("dcReadout");
+  if (!gSalt || !gWire) return;
+
+  var TEXT = {
+    0: "↺ Reset. Press ① to start assembling.",
+    1: "① Two half-cells: Zn|Zn²⁺ on the left, Cu²⁺|Cu on the right. Isolated from each other, nothing happens — oxidation and reduction have no stage of their own.",
+    2: "② Add the salt bridge: the ion channel is open (K⁺ on standby for the cathode side, Cl⁻ for the anode side). But with the external circuit still open, the electrons have nowhere to go, charge piles up in an instant, and the reaction immediately 'brakes' — the salt bridge alone is not enough.",
+    3: "③ Close the external circuit — the loop is complete! Negative electrode (anode · oxidation): Zn − 2e⁻ → Zn²⁺ | Positive electrode (cathode · reduction): Cu²⁺ + 2e⁻ → Cu | Overall reaction: Zn + Cu²⁺ → Zn²⁺ + Cu | E° = 1.10 V, and the lamp lights.",
+    4: "④ Sustained discharge: Zn²⁺ keeps accumulating in the anode compartment while Cu²⁺ is used up in the cathode compartment (the blue fades). By the Nernst equation: E(cathode) falls while E(anode) rises → the voltage drops below 1.10 V and keeps sliding — the secret of a battery's 'aging'."
+  };
+
+  function setStep(k) {
+    var step = parseInt(k, 10) || 0;
+    gSalt.style.display = step >= 2 ? "" : "none";
+    gIons.style.display = step >= 3 ? "" : "none";
+    gWire.style.display = step >= 3 ? "" : "none";
+    gAnno.style.display = step >= 4 ? "" : "none";
+    if (step >= 3) {
+      bulb.setAttribute("fill", step >= 4 ? "#fef08a" : "#fde047");
+      rays.setAttribute("opacity", step >= 4 ? ".45" : "1");
+      volt.textContent = step >= 4 ? "E < 1.10 V ↓" : "E° = 1.10 V";
+    }
+    solR.setAttribute("fill", step >= 4 ? "#dbeafe" : "#bfdbfe");
+    readout.textContent = TEXT[step];
+    Array.prototype.forEach.call(document.querySelectorAll(".dc-step"), function (b) {
+      b.className = parseInt(b.getAttribute("data-step"), 10) === step ? "btn" : "btn ghost";
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".dc-step"), function (b) {
+    b.addEventListener("click", function () { setStep(b.getAttribute("data-step")); });
+  });
+  setStep(1);
+})();
+</script>
+</body>
+</html>

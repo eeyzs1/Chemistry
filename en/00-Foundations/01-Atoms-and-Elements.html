@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Atoms and Elements · Foundations Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">00 Foundations</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · Atoms and Elements</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 Foundations · Chapter 1</div>
+    <h1>Atoms and Elements: The Building Blocks of Everything</h1>
+    <p class="lede">
+      A glass of water, a wisp of smoke, a star, every single cell in your body — peel back the surface of the macroscopic world
+      and you find the same building blocks everywhere: <strong>atoms</strong>. This chapter takes you inside the atom to meet protons, neutrons, and electrons,
+      to untangle the three most easily confused words — "element," "isotope," and "ion" — and to get your first look at the chemist's most important map, the periodic table.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 45 minutes</span>
+      <span class="chip">Prerequisites: none (starting chapter)</span>
+      <span class="chip">Interactive animation ×3</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#inside">Inside the Atom</a>
+    <a href="#elements">Elements · Isotopes · Ions</a>
+    <a href="#mass">Relative Atomic Mass</a>
+    <a href="#periodic">A First Look at the Periodic Table</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Keep Cutting Until You Can't</h2>
+    <p>
+      Take a lump of sugar, cut it in half, then cut that half in half... Does it ever end? Twenty-four hundred years ago, the Greek philosopher Democritus
+      had no microscope, yet reasoned his way to an answer: <em>at some point you reach a piece that can be divided no further</em> —
+      he called it <span class="term">atomos</span><span class="en">ἄτομος, "indivisible"</span>, and that is where the word "atom" comes from.
+    </p>
+    <p>
+      Modern chemistry confirmed the broad direction of that intuition while correcting the details: the atom is not absolutely indivisible — it has internal structure,
+      but <strong>chemical means genuinely cannot take an atom apart</strong> (splitting the nucleus is nuclear physics' business — see Branch 11).
+      Chemistry is the study of how atoms combine, exchange, and rearrange to stage the myriad changes around us.
+    </p>
+    <details class="think">
+      <summary>Think It Through: A spoonful of sugar is about 4 g and contains roughly 7×10²¹ sugar molecules. What does a number like that even mean?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Try picturing sugar molecules enlarged to the size of sand grains.</p>
+        <p>
+          All the sand on every beach on Earth adds up to an estimated 10¹⁸–10¹⁹ grains.
+          One spoonful of sugar holds hundreds to a thousand times more molecules than that. The hallmark of the atomic world is <strong>huge numbers at minuscule sizes</strong> —
+          exactly the problem the "mole" concept (Chapter 3) will solve.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Inside the atom ============ -->
+  <section id="inside">
+    <h2>§1 Inside the Atom</h2>
+    <p>
+      An atom is built from two "regions": the central <span class="term">nucleus</span>
+      and the <span class="term">electrons</span> around it. The nucleus in turn consists of two kinds of particles —
+      positively charged <span class="term">protons</span> and electrically neutral
+      <span class="term">neutrons</span>.
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Particle</th><th>Charge</th><th>Relative mass</th><th>Location</th><th>What does it determine?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Proton</strong> p⁺</td><td>+1</td><td>≈1836</td><td>Inside the nucleus</td><td><strong>Which element it is</strong> (proton count = atomic number Z)</td></tr>
+        <tr><td><strong>Neutron</strong> n⁰</td><td>0</td><td>≈1839</td><td>Inside the nucleus</td><td>Isotopes and nuclear stability</td></tr>
+        <tr><td><strong>Electron</strong> e⁻</td><td>−1</td><td>≈1/1836</td><td>The space around the nucleus</td><td>Chemical behavior, bonding, and ionic charge</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      The proton count says "who you are" (which element); the electron count says "what charge you carry" (atom or ion);
+      the neutron count says "how heavy you are" (which isotope).
+    </div>
+
+    <h3>🔬 Hands-On: Build Your Own Atom</h3>
+    <p>
+      In the simulator below you can add or remove protons, neutrons, and electrons. Watch closely: <strong>change the proton count and the element changes</strong>;
+      add or remove electrons and the atom turns into a charged ion; neutrons only change the mass number, never the element.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="atomSvg" width="360" height="330" viewBox="0 0 360 330" role="img" aria-label="Atom structure simulator"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="addP">+ Proton</button>
+          <button class="btn ghost" id="subP">− Proton</button>
+          <button class="btn" id="addN">+ Neutron</button>
+          <button class="btn ghost" id="subN">− Neutron</button>
+          <button class="btn" id="addE">+ Electron</button>
+          <button class="btn ghost" id="subE">− Electron</button>
+          <button class="btn ghost" id="resetAtom">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="atomReadout"></div>
+      </div>
+      <figcaption>
+        A Bohr-model demonstration. When protons are added or removed, the electron count follows automatically to keep a neutral atom; then add or remove electrons separately to make ions.
+        (Real electrons do not travel on fixed circular orbits — see the "Misconception Buster" below.)
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Explanation Ladder · Just How Small Is the Nucleus?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Enlarge one atom to the size of a sports stadium: the stands and the pitch are the electron's roaming space,
+          while a <strong>glass marble</strong> sitting at the center of the stadium is the nucleus. The atom is almost entirely "empty" —
+          yet that marble concentrates more than 99.9% of the atom's mass.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Numbers</span>
+        <p>
+          An atom is about 10⁻¹⁰ m (0.1 nm) across, while a nucleus is about 10⁻¹⁵–10⁻¹⁴ m across.
+          The two differ by a factor of <strong>10,000 to 100,000</strong>. If the electron cloud were the stadium (~200 m), the nucleus would measure just 2 cm–2 mm.
+          That is also why, when Rutherford bombarded gold foil with α particles, the vast majority sailed straight through — the interior of an atom is astonishingly empty.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          Why do the positively charged protons huddle together instead of flying apart? Because at distances below 10⁻¹⁵ m there acts a
+          <span class="term">strong nuclear force</span> far stronger than the electrostatic repulsion,
+          and it "glues" the nucleons together. Adding neutrons dilutes the proton–proton repulsion and reinforces the nuclear force, which is why larger nuclei almost always come with neutrons —
+          a first hint of the "band of stability" you will meet in Branch 11 (nuclear chemistry).
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Electron Orbits</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Electrons race around on <strong>fixed circular orbits</strong>, like the Earth around the Sun or a ball on a wire loop — with definite positions and paths you could draw out.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Electrons have no definite path. Quantum mechanics tells us we can only speak of the <strong>probability</strong> of an electron appearing at each point around the nucleus.
+          Paint those probabilities as a "cloud": where the cloud is denser, the electron is more likely to turn up — that is the
+          <span class="term">electron cloud</span> /
+          <span class="term">atomic orbital</span>. Bohr's circular orbits are only a convenient introductory model.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 Elements / Isotopes / Ions ============ -->
+  <section id="elements">
+    <h2>§2 Elements, Isotopes, and Ions: The Three Most Easily Confused Words</h2>
+
+    <h3>Elements: The Proton Count Decides</h3>
+    <p>
+      The one and only criterion for an <span class="term">element</span> is the <strong>number of protons</strong>
+      (that is, the <span class="term">atomic number</span>, Z).
+      Everything with 1 proton is hydrogen; everything with 6 protons is carbon — whatever its charge, however many extra neutrons it carries.
+    </p>
+
+    <h3>Isotopes: Different "Weight Versions" of the Same Element</h3>
+    <p>
+      Atoms with the same proton count but <strong>different neutron counts</strong> are called
+      <span class="term">isotopes</span>. Hydrogen has three naturally occurring isotopes, and each name comes with a story:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="The three isotopes of hydrogen compared">
+          <!-- Protium -->
+          <g transform="translate(110,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-6" cy="0" r="13" fill="#ef4444"/><text x="-6" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">Protium ¹H</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 0n · ordinary hydrogen, 99.98%</text>
+          </g>
+          <!-- Deuterium -->
+          <g transform="translate(320,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-7" cy="0" r="13" fill="#ef4444"/><text x="-7" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle cx="8" cy="-2" r="13" fill="#9ca3af"/><text x="8" y="3" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">Deuterium ²H (D)</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 1n · heavy hydrogen</text>
+          </g>
+          <!-- Tritium -->
+          <g transform="translate(530,100)">
+            <circle r="52" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+            <circle cx="-8" cy="-3" r="13" fill="#ef4444"/><text x="-8" y="2" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">+</text>
+            <circle cx="8" cy="-3" r="13" fill="#9ca3af"/><text x="8" y="-1" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle cx="0" cy="12" r="13" fill="#9ca3af"/><text x="0" y="17" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">n</text>
+            <circle class="anim-float" cx="46" cy="-34" r="7" fill="#2563eb"/><text x="46" y="-3" text-anchor="middle" font-size="11" fill="#1e40af">e⁻</text>
+            <text y="82" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">Tritium ³H (T)</text>
+            <text y="102" text-anchor="middle" font-size="12" fill="#4b5563">1p · 2n · radioactive</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        In the notation <sup>A</sup>X, the top-left A is the mass number = protons + neutrons. Deuterium and tritium are fuels for nuclear fusion (Branch 11),
+        and "heavy water" D₂O, being about 10% heavier than ordinary water, has a host of intriguingly different properties.
+      </figcaption>
+    </figure>
+
+    <h3>Ions: Electrons Gained and Lost</h3>
+    <p>
+      An atom is electrically neutral overall (protons = electrons). The moment it <strong>gains or loses electrons</strong>, it becomes a charged
+      <span class="term">ion</span>: losing electrons leaves it positive — a
+      <span class="term">cation</span>; gaining electrons leaves it negative — an
+      <span class="term">anion</span>. The birth of table salt is the classic scene:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="naclSvg" width="560" height="220" viewBox="0 0 560 220" role="img" aria-label="Electron-transfer animation of sodium and chlorine"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="naclGo">⚡ Electron Transfer</button>
+          <button class="btn ghost" id="naclReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="naclReadout">Na (11p·11e, neutral) + Cl (17p·17e, neutral)</div>
+      </div>
+      <figcaption>
+        Sodium hands its 1 outermost electron to chlorine: Na → Na⁺ (11p · 10e), Cl → Cl⁻ (17p · 18e).
+        The attraction between the oppositely charged ions is the opening scene of the "ionic bond" in the next chapter.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: Counting Particles Inside and Outside the Nucleus</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (Watch Me)</div>
+      <div class="worked-problem">
+        In the chloride ion <sup>35</sup>Cl⁻, how many protons, neutrons, and electrons are there? What is the mass number?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Look up the element symbol: Cl has atomic number Z = 17 → <strong>protons = 17</strong> (an ion's proton count never changes).</li>
+        <li class="step">Mass number A = 35 (top left) → neutrons = A − Z = 35 − 17 = <strong>18</strong>.</li>
+        <li class="step">The charge at top right is −1 → the atom has gained 1 electron → electrons = 17 + 1 = <strong>18</strong>.</li>
+        <li class="step">✅ Conclusion: 17p · 18n · 18e, mass number 35. Check: neutrality pairs 17p with 17e; one extra e means exactly −1. Consistent.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next Step</button>
+        <button class="btn ghost js-step-all">Show All</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Work with Me)</div>
+      <div class="worked-problem">
+        In the magnesium ion <sup>24</sup>Mg²⁺, how many protons, neutrons, and electrons are there? <em>(Hints are tucked into each step — think it through before expanding.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: What is Mg's atomic number? It is element 12 in the periodic table... Protons = <strong>12</strong>.</li>
+        <li class="step">💡 Hint: The mass number sits at top left. Neutrons = A − Z = 24 − 12 = <strong>12</strong>.</li>
+        <li class="step">💡 Hint: The 2+ at top right means "2 electrons lost." Electrons = 12 − 2 = <strong>10</strong>.</li>
+        <li class="step">✅ Self-check: 12p against 10e gives a net charge of +2, matching Mg²⁺.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next Step</button>
+        <button class="btn ghost js-step-all">Show All</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 3 · Independent Practice (Your Turn)</div>
+      <div class="worked-problem">
+        In the aluminium ion <sup>27</sup>Al³⁺, how many protons, neutrons, and electrons are there?
+        <strong>Write your answer on paper first, then expand the solution to compare.</strong>
+      </div>
+      <div class="worked-controls">
+        <details class="think" style="background:var(--surface);border:1px dashed var(--line);flex:1;min-width:240px">
+          <summary>📝 Show the Answer</summary>
+          <div class="think-body">
+            <p>
+              Z = 13 → 13 protons; neutrons = 27 − 13 = 14; Al³⁺ has lost 3 electrons → electrons = 13 − 3 = 10.
+              Check: 13p − 10e → net charge +3 ✓
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Relative atomic mass ============ -->
+  <section id="mass">
+    <h2>§3 Relative Atomic Mass: Why Atomic Weights Are Not Whole Numbers</h2>
+    <p>
+      Chlorine's relative atomic mass in the periodic table is <strong>35.45</strong> — neither 35 nor 36.
+      The reason: natural chlorine is a <strong>mixture of two isotopes</strong> — <sup>35</sup>Cl (about 75.8%) and
+      <sup>37</sup>Cl (about 24.2%). The "atomic weight" measured on a macroscopic sample is their <strong>weighted average</strong>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">M̄ = 34.969 × 75.8% + 36.966 × 24.2% ≈ 35.45</span>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px">
+          <label for="clSlider" style="font-size:.9rem;color:var(--ink-2)">
+            <sup>35</sup>Cl share: <strong id="clPct">75.8%</strong> (the rest is <sup>37</sup>Cl)
+          </label>
+          <input id="clSlider" type="range" min="0" max="100" value="76" step="0.5"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Proportion of chlorine-35">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>0% (all ³⁷Cl)</span><span>100% (all ³⁵Cl)</span>
+          </div>
+        </div>
+        <div class="fig-readout" id="clReadout">Average relative atomic mass ≈ 35.45</div>
+      </div>
+      <figcaption>
+        Drag the slider to change the isotope mixture. Note: whatever the proportions, the average mass of the mixture <strong>always lands between 34.97 and 36.97</strong> —
+        a weighted average can never step outside its endpoints.
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>Think It Through: Since nearly every element has isotopes, why do a few elements have whole-number atomic weights (e.g. F = 19.00)?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Is it "no isotopes", or "only one main isotope"?</p>
+        <p>
+          In nature, fluorine has <strong>exactly one stable isotope</strong>, <sup>19</sup>F (abundance ≈100%),
+          so its atomic weight is a whole multiple of 19 (the exact value 18.998 has to do with the convention that "one atomic mass unit is not strictly 1 u" — a detail you can set aside for now).
+          Similar cases include Na (23), P (31), and Al (27).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Periodic table ============ -->
+  <section id="periodic">
+    <h2>§4 A First Look at the Periodic Table: The Chemist's Map</h2>
+    <p>
+      In 1869, Mendeleev arranged the 63 elements known at the time by atomic weight and saw their properties <strong>recur periodically</strong>.
+      He boldly left gaps in his table and predicted new elements he called "eka-aluminium" and "eka-silicon" — when gallium and germanium were later discovered, their properties matched his predictions astonishingly well,
+      and the periodic table earned its legendary status from then on. Today we know the table's true ordering principle is the <strong>atomic number (proton count)</strong>,
+      and that the periodicity springs from <strong>the layered arrangement of the electrons outside the nucleus</strong> (unpacked in the next chapter).
+    </p>
+
+    <p>Hover over the mini periodic table below (the first 36 elements) and get to know each cell:</p>
+
+    <figure class="fig">
+      <div class="fig-canvas" style="overflow-x:auto;max-width:100%">
+        <div id="miniPtable" style="display:grid;grid-template-columns:repeat(18,46px);grid-auto-rows:52px;gap:3px;min-width:max-content"></div>
+        <div id="ptLegend" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:.78rem;color:var(--ink-2)"></div>
+      </div>
+      <div class="fig-readout" id="ptInfo" style="display:block;text-align:left;max-width:100%">
+        👆 Hover over or click any element cell to see its details (nothing selected yet)
+      </div>
+      <figcaption>
+        A mini periodic table (elements 1–36). Each <strong>row</strong> is a period, with the number of electron shells increasing row by row;
+        each <strong>column</strong> is a group — elements in the same group share the same number of outer electrons and therefore have similar chemical properties.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 How to Read the Table (Beginner's Version)</div>
+      <strong>Period number = number of electron shells; main-group number ≈ number of outer electrons</strong>.
+      Take Na: period 3 → 3 electron shells; group ⅠA → 1 outer electron. That also explains why it so readily loses
+      1 electron to become Na⁺ — its chemical behavior was written into its place in the table long ago.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Helium, He, has only two electrons — so why is it placed in the "noble gas" group on the far right instead of group ⅡA?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Groups are defined by "number of outer electrons" — but don't forget how many electrons the first shell can hold at most.</p>
+        <p>
+          The first electron shell (the K shell) holds at most 2 electrons, and He's is already <strong>filled</strong>.
+          The real definition of the noble-gas group is <strong>a stable, completely filled outermost shell</strong> (2 electrons for He, 8 for the others),
+          not a mechanical "8 outer electrons." A filled shell almost never gains or loses electrons — that is where the noble gases' "inertness" comes from,
+          and it is also the central clue for next chapter's theory of chemical bonding.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>An atom = a nucleus (protons + neutrons) + the electrons around it; the nucleus is minuscule yet carries nearly all the mass.</li>
+        <li><strong>The proton count (Z) defines the element</strong>; the neutron count distinguishes isotopes; the electron count decides the charge (atom or ion).</li>
+        <li>An atomic weight is a <strong>weighted average</strong> over the isotopes, so it often carries decimals.</li>
+        <li>The periodic table is ordered by Z; period ≈ number of electron shells, group ≈ number of outer electrons; position predicts properties.</li>
+        <li>The true picture of electrons is the <strong>electron cloud</strong> (probability); Bohr orbits are only an introductory approximation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · Atoms and Elements <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Which particle determines the identity of an element?",
+            "options": ["Neutron", "Proton", "Electron", "Photon"],
+            "answer": 1,
+            "explain": "The proton count = atomic number Z, the sole criterion of an element's identity. The neutron count only distinguishes isotopes, and the electron count only decides the charge."
+          },
+          {
+            "q": "What is the essential difference between ¹⁴C (carbon-14, used for archaeological dating) and ¹²C?",
+            "options": ["Different proton count", "Different electron count", "Different neutron count", "Completely different chemical properties"],
+            "answer": 2,
+            "explain": "Both are carbon: 6 protons. ¹⁴C has 2 more neutrons (14−6=8 vs 12−6=6). Isotopes have nearly identical chemical properties, which is why a living organism keeps taking in ¹⁴C; when it dies the intake stops, the ¹⁴C decays away, and the clock can be read."
+          },
+          {
+            "q": "An atom is about 10⁻¹⁰ m across and a nucleus about 10⁻¹⁵ m. Which is closest to the ratio of the two diameters?",
+            "options": ["10×", "1,000×", "100,000×", "1 billion×"],
+            "answer": 2,
+            "explain": "10⁻¹⁰ / 10⁻¹⁵ = 10⁵, i.e. 100,000-fold. Analogy: a stadium versus a marble at its center."
+          },
+          {
+            "q": "A sample of chlorine is 75% ³⁵Cl and 25% ³⁷Cl. What is its average relative atomic mass, approximately?",
+            "options": ["35.0", "35.5", "36.0", "36.5"],
+            "answer": 1,
+            "explain": "35×0.75 + 37×0.25 = 26.25 + 9.25 = 35.5. The weighted average leans toward the more abundant isotope."
+          },
+          {
+            "q": "What are the proton and electron counts of the Mg²⁺ ion?",
+            "options": ["12 and 12", "12 and 10", "10 and 12", "14 and 12"],
+            "answer": 1,
+            "explain": "Mg has Z=12, so the proton count is always 12; 2+ means 2 electrons lost → 10e."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">00 Foundations · Overview</span></a>
+      <a class="next" href="02-Chemical-Bonding-and-Molecular-Structure.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 2 · Chemical Bonding and Molecular Structure</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter interactions (atom simulator / NaCl / chlorine isotopes / mini periodic table) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Bohr atom simulator ---------- */
+  var NAMES = ["Hydrogen H","Helium He","Lithium Li","Beryllium Be","Boron B","Carbon C","Nitrogen N","Oxygen O","Fluorine F","Neon Ne",
+               "Sodium Na","Magnesium Mg","Aluminium Al","Silicon Si","Phosphorus P","Sulfur S","Chlorine Cl","Argon Ar","Potassium K","Calcium Ca"];
+  var SHELLS = [2, 8, 8, 2];
+  var CX = 180, CY = 160;
+
+  var atomSvg = document.getElementById("atomSvg");
+  if (atomSvg) {
+    var readout = document.getElementById("atomReadout");
+    var st = { p: 1, n: 0, e: 1 };
+
+    function shellFill(eCount) {
+      var arr = [], left = eCount;
+      for (var i = 0; i < SHELLS.length && left > 0; i++) {
+        arr.push(Math.min(left, SHELLS[i]));
+        left -= SHELLS[i];
+      }
+      return arr;
+    }
+    function ionLabel(p, e) {
+      var d = p - e;
+      if (p === 0) return "No protons: not an atom yet";
+      if (d === 0) return "neutral atom";
+      return d > 0 ? ("cation " + NAMES[p-1].split(" ")[0] + (d>1?d:"") + "⁺") : ("anion " + NAMES[p-1].split(" ")[0] + (-d>1?-d:"") + "⁻");
+    }
+
+    function renderAtom() {
+      atomSvg.innerHTML = "";
+      var fillArr = shellFill(Math.max(0, st.e));
+      var radii = [52, 90, 128, 166];
+      for (var s = 0; s < fillArr.length; s++) {
+        el("circle", { cx: CX, cy: CY, r: radii[s], fill: "none", stroke: "#cbd5e1",
+                       "stroke-width": 1.4, "stroke-dasharray": "4 5" }, atomSvg);
+        var g = el("g", { class: "anim-spin" }, atomSvg);
+        g.style.animationDuration = (7 + s * 3) + "s";
+        if (s % 2 === 1) g.style.animationDirection = "reverse";
+        for (var i = 0; i < fillArr[s]; i++) {
+          var a = 2 * Math.PI * i / fillArr[s] - Math.PI / 2;
+          el("circle", { cx: CX + radii[s] * Math.cos(a), cy: CY + radii[s] * Math.sin(a),
+                          r: 7, fill: "#2563eb", stroke: "#1d4ed8", "stroke-width": 1.5 }, g);
+        }
+      }
+      // Nucleus (protons red, neutrons gray; at most 14 drawn for illustration)
+      var nucleus = el("g", {}, atomSvg);
+      var total = Math.min(st.p + st.n, 14), placed = 0;
+      for (var pi = 0; pi < st.p && placed < total; pi++, placed++) {
+        var ang = 2 * Math.PI * placed / Math.max(total, 1);
+        el("circle", { cx: CX + 9 * Math.cos(ang), cy: CY + 9 * Math.sin(ang), r: 7, fill: "#ef4444" }, nucleus);
+      }
+      for (var ni = 0; placed < total; ni++, placed++) {
+        var ang2 = 2 * Math.PI * placed / Math.max(total, 1);
+        el("circle", { cx: CX + 9 * Math.cos(ang2), cy: CY + 9 * Math.sin(ang2), r: 7, fill: "#94a3b8" }, nucleus);
+      }
+      var label = el("text", { x: CX, y: CY + 40, "text-anchor": "middle", "font-size": 14,
+                               "font-weight": 700, fill: "#1f2937" }, atomSvg);
+      label.textContent = st.p > 0 ? NAMES[st.p - 1] : "—";
+
+      var eConfig = fillArr.join(" · ") || "0";
+      readout.textContent = st.p > 0
+        ? NAMES[st.p - 1] + " | Z=" + st.p + " · A=" + (st.p + st.n) +
+          " | p⁺=" + st.p + " n⁰=" + st.n + " e⁻=" + st.e +
+          " | " + ionLabel(st.p, st.e) + " | electron configuration: " + eConfig
+        : "Add a proton first — then you have an element";
+    }
+
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+    function bind(id, fn) {
+      var b = document.getElementById(id);
+      if (b) b.addEventListener("click", function () { fn(); renderAtom(); });
+    }
+    bind("addP", function () { st.p = clamp(st.p + 1, 0, 20); st.e = st.p; });   // keep neutral by default
+    bind("subP", function () { st.p = clamp(st.p - 1, 0, 20); st.e = st.p; });
+    bind("addN", function () { st.n = clamp(st.n + 1, 0, 30); });
+    bind("subN", function () { st.n = clamp(st.n - 1, 0, 30); });
+    bind("addE", function () { st.e = clamp(st.e + 1, 0, 20); });
+    bind("subE", function () { st.e = clamp(st.e - 1, 0, 20); });
+    bind("resetAtom", function () { st = { p: 1, n: 0, e: 1 }; });
+    renderAtom();
+  }
+
+  /* ---------- 2. NaCl electron-transfer animation ---------- */
+  var naclSvg = document.getElementById("naclSvg");
+  if (naclSvg) {
+    var naReadout = document.getElementById("naclReadout");
+    var moved = false, flying = null;
+    function drawNaCl(state) {
+      naclSvg.innerHTML = "";
+      // Na
+      var naColor = state === 1 ? "#f97316" : "#fb923c";
+      var g1 = el("g", { transform: "translate(130,110)" }, naclSvg);
+      el("circle", { r: 70, fill: state === 1 ? "#ffedd5" : "#fff7ed", stroke: naColor, "stroke-width": 2.5 }, g1);
+      el("text", { y: -18, "text-anchor": "middle", "font-size": 26, "font-weight": 800, fill: "#c2410c" }, g1).textContent = "Na";
+      el("text", { y: 4, "text-anchor": "middle", "font-size": 11, fill: "#7c2d12" }, g1).textContent = "11p · " + (state === 1 ? "10e" : "11e");
+      el("text", { y: 22, "text-anchor": "middle", "font-size": 15, "font-weight": 700, fill: state === 1 ? "#c2410c" : "#9a3412" }, g1).textContent = state === 1 ? "Na⁺ cation" : "Sodium atom";
+      if (state === 0) {
+        var ring = el("g", { class: "anim-spin" }, g1);
+        ring.style.animationDuration = "5s";
+        var nae = el("circle", { cx: 46, cy: -46, r: 7, fill: "#2563eb" }, ring);
+      }
+      // Cl
+      var g2 = el("g", { transform: "translate(430,110)" }, naclSvg);
+      el("circle", { r: 70, fill: state === 1 ? "#dcfce7" : "#f0fdf4", stroke: "#16a34a", "stroke-width": 2.5 }, g2);
+      el("text", { y: -18, "text-anchor": "middle", "font-size": 26, "font-weight": 800, fill: "#15803d" }, g2).textContent = "Cl";
+      el("text", { y: 4, "text-anchor": "middle", "font-size": 11, fill: "#14532d" }, g2).textContent = "17p · " + (state === 1 ? "18e" : "17e");
+      el("text", { y: 22, "text-anchor": "middle", "font-size": 15, "font-weight": 700, fill: "#166534" }, g2).textContent = state === 1 ? "Cl⁻ anion" : "Chlorine atom";
+      var ring2 = el("g", { class: "anim-spin" }, g2);
+      ring2.style.animationDuration = "9s";
+      var nClE = state === 1 ? 8 : 7;
+      for (var i = 0; i < nClE; i++) {
+        var a = 2 * Math.PI * i / nClE - Math.PI / 2;
+        el("circle", { cx: 56 * Math.cos(a), cy: 56 * Math.sin(a), r: 7, fill: "#2563eb" }, ring2);
+      }
+      // the electron in flight
+      if (flying !== null && flying !== undefined) {
+        el("circle", { cx: flying, cy: 60, r: 8, fill: "#2563eb", class: "anim-pulse" }, naclSvg);
+      }
+    }
+    drawNaCl(0);
+    var goBtn = document.getElementById("naclGo");
+    if (goBtn) goBtn.addEventListener("click", function () {
+      if (moved) { drawNaCl(1); naReadout.textContent = "Na⁺ (11p·10e, +1) + Cl⁻ (17p·18e, −1) → opposites attract, forming NaCl"; return; }
+      var x0 = 176, x1 = 374, t0 = null, dur = 1100;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        flying = x0 + (x1 - x0) * ease + Math.sin(k * Math.PI) * -46;
+        drawNaCl(k < 1 ? 0.5 : 1);
+        if (k >= 1) {
+          flying = null; moved = true;
+          naReadout.textContent = "Transfer complete! Na⁺ (11p·10e) and Cl⁻ (17p·18e) — they will now attract each other and form a salt.";
+          return;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+    var rBtn = document.getElementById("naclReset");
+    if (rBtn) rBtn.addEventListener("click", function () {
+      moved = false; flying = null; drawNaCl(0);
+      naReadout.textContent = "Na (11p·11e, neutral) + Cl (17p·17e, neutral)";
+    });
+  }
+
+  /* ---------- 3. Chlorine-isotope mixture slider ---------- */
+  var slider = document.getElementById("clSlider");
+  if (slider) {
+    var clReadout = document.getElementById("clReadout");
+    var pctLabel = document.getElementById("clPct");
+    function updCl() {
+      var x = parseFloat(slider.value);
+      var avg = 34.969 * (x / 100) + 36.966 * (1 - x / 100);
+      pctLabel.textContent = x.toFixed(1) + "%";
+      clReadout.textContent = "Average relative atomic mass ≈ " + avg.toFixed(2) +
+        " (34.969×" + x.toFixed(1) + "% + 36.966×" + (100 - x).toFixed(1) + "%)";
+    }
+    slider.addEventListener("input", updCl);
+    updCl();
+  }
+
+  /* ---------- 4. Mini periodic table (elements 1–36) ---------- */
+  var ELS = [
+    [1,"H","Hydrogen",1.008,"nonmetal",1,1],[2,"He","Helium",4.003,"noble",1,18],
+    [3,"Li","Lithium",6.94,"alkali",2,1],[4,"Be","Beryllium",9.012,"alkaline",2,2],
+    [5,"B","Boron",10.81,"metalloid",2,13],[6,"C","Carbon",12.011,"nonmetal",2,14],
+    [7,"N","Nitrogen",14.007,"nonmetal",2,15],[8,"O","Oxygen",15.999,"nonmetal",2,16],
+    [9,"F","Fluorine",18.998,"halogen",2,17],[10,"Ne","Neon",20.180,"noble",2,18],
+    [11,"Na","Sodium",22.990,"alkali",3,1],[12,"Mg","Magnesium",24.305,"alkaline",3,2],
+    [13,"Al","Aluminium",26.982,"post",3,13],[14,"Si","Silicon",28.085,"metalloid",3,14],
+    [15,"P","Phosphorus",30.974,"nonmetal",3,15],[16,"S","Sulfur",32.06,"nonmetal",3,16],
+    [17,"Cl","Chlorine",35.45,"halogen",3,17],[18,"Ar","Argon",39.95,"noble",3,18],
+    [19,"K","Potassium",39.098,"alkali",4,1],[20,"Ca","Calcium",40.078,"alkaline",4,2],
+    [21,"Sc","Scandium",44.956,"transition",4,3],[22,"Ti","Titanium",47.867,"transition",4,4],
+    [23,"V","Vanadium",50.942,"transition",4,5],[24,"Cr","Chromium",51.996,"transition",4,6],
+    [25,"Mn","Manganese",54.938,"transition",4,7],[26,"Fe","Iron",55.845,"transition",4,8],
+    [27,"Co","Cobalt",58.933,"transition",4,9],[28,"Ni","Nickel",58.693,"transition",4,10],
+    [29,"Cu","Copper",63.546,"transition",4,11],[30,"Zn","Zinc",65.38,"transition",4,12],
+    [31,"Ga","Gallium",69.723,"post",4,13],[32,"Ge","Germanium",72.630,"metalloid",4,14],
+    [33,"As","Arsenic",74.922,"metalloid",4,15],[34,"Se","Selenium",78.971,"nonmetal",4,16],
+    [35,"Br","Bromine",79.904,"halogen",4,17],[36,"Kr","Krypton",83.798,"noble",4,18]
+  ];
+  var CAT = {
+    alkali:     ["Alkali metal", "#fecaca"],
+    alkaline:   ["Alkaline earth metal", "#fed7aa"],
+    transition: ["Transition metal", "#c7d2fe"],
+    post:       ["Post-transition metal", "#e2e8f0"],
+    metalloid:  ["Metalloid", "#fde68a"],
+    nonmetal:   ["Nonmetal", "#bbf7d0"],
+    halogen:    ["Halogen", "#99f6e4"],
+    noble:      ["Noble gas", "#ddd6fe"]
+  };
+  var host = document.getElementById("miniPtable");
+  if (host) {
+    var info = document.getElementById("ptInfo");
+    ELS.forEach(function (d) {
+      var cell = document.createElement("div");
+      cell.style.gridColumn = d[6];
+      cell.style.gridRow = d[5];
+      cell.style.background = CAT[d[4]][1];
+      cell.style.borderRadius = "6px";
+      cell.style.border = "1px solid rgba(0,0,0,.08)";
+      cell.style.display = "flex";
+      cell.style.flexDirection = "column";
+      cell.style.alignItems = "center";
+      cell.style.justifyContent = "center";
+      cell.style.cursor = "pointer";
+      cell.style.transition = "transform .12s ease";
+      cell.tabIndex = 0;
+      cell.setAttribute("role", "button");
+      cell.setAttribute("aria-label", d[2] + " " + d[1] + ", element " + d[0]);
+      cell.innerHTML = "<span style='font-size:.62rem;color:#475569'>" + d[0] + "</span>" +
+                       "<span style='font-size:1rem;font-weight:800;color:#111827'>" + d[1] + "</span>";
+      function show() {
+        cell.style.transform = "scale(1.12)";
+        info.innerHTML = "⚛️ <strong>" + d[2] + " " + d[1] + "</strong> (Z=" + d[0] + ") · relative atomic mass " +
+          d[3] + " · " + CAT[d[4]][0] + " · period " + d[5] + " / column " + d[6];
+      }
+      function hide() { cell.style.transform = ""; }
+      cell.addEventListener("mouseenter", show);
+      cell.addEventListener("mouseleave", hide);
+      cell.addEventListener("focus", show);
+      cell.addEventListener("click", show);
+      host.appendChild(cell);
+    });
+    var legend = document.getElementById("ptLegend");
+    Object.keys(CAT).forEach(function (k) {
+      var item = document.createElement("span");
+      item.style.display = "inline-flex";
+      item.style.alignItems = "center";
+      item.style.gap = "4px";
+      item.innerHTML = "<span style='width:12px;height:12px;border-radius:3px;display:inline-block;background:" +
+        CAT[k][1] + ";border:1px solid rgba(0,0,0,.12)'></span>" + CAT[k][0];
+      legend.appendChild(item);
+    });
+  }
+})();
+</script>
+</body>
+</html>

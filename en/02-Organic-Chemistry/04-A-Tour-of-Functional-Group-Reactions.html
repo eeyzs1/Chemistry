@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>A Tour of Functional Group Reactions · Organic Chemistry Chapter 4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">02 Organic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 4 · A Tour of Functional Group Reactions</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 Organic Chemistry · Chapter 4</div>
+    <h1>A Tour of Functional Group Reactions: The Signature Moves of Six Families</h1>
+    <p class="lede">
+      Chapter 1 taught you to recognize the faces of the functional groups, and Chapter 3 taught you the language of mechanisms — now we put the two together.
+      This chapter pays a house call on six families, one by one: <strong>alkenes</strong> (addition), <strong>arenes</strong> (substitution),
+      <strong>alcohols</strong> (oxidation), <strong>aldehydes and ketones</strong> (nucleophilic addition), <strong>carboxylic acids and esters</strong> (esterification),
+      and <strong>amines</strong> (salt formation), and every stop comes with a real-life link: margarine, breathalyzer testing, fruity esters, soap, and taming fishy odors.
+      The finale is a clickable <strong>map of functional-group interconversions</strong>.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–3</span>
+      <span class="chip">Interactive animation ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#alkene">§1 Alkenes</a>
+    <a href="#arene">§2 Arenes</a>
+    <a href="#alcohol">§3 Alcohols</a>
+    <a href="#carbonyl">§4 Aldehydes and Ketones</a>
+    <a href="#ester">§5 Carboxylic Acids and Esters</a>
+    <a href="#amine">§6 Amines</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Functional Groups in the Kitchen and the Medicine Cabinet</h2>
+    <p>
+      Open the kitchen: vegetable oil in the bottle (esters), acetic acid in the vinegar cruet (carboxyl group), ethanol in the cooking wine (hydroxyl group),
+      the scent of banana (esters), the smell of fish (amines). Open the medicine cabinet: aspirin (carboxyl + ester groups), iodophor, vitamin C (an enediol).
+      This chapter is like a matchmaking mixer: <strong>functional groups decide who may react with whom</strong> — the hydroxyl group meets an oxidizing agent,
+      the carbonyl group meets a nucleophile, the amine meets an acid, and each pair starts its own story. Bring the curved arrows from Chapter 3, and let's step inside.
+    </p>
+  </section>
+
+  <!-- ============ §1 Alkenes ============ -->
+  <section id="alkene">
+    <h2>§1 Alkenes: Addition Opens Up the Double Bond</h2>
+    <p>
+      A double bond = 1 sturdy σ + 1 soft π. The π electron cloud is exposed on the surface of the molecule — a natural "electron blanket"
+      that beckons to every electron-poor guest (H⁺, Br₂, H₂O ...). When a guest takes its seat, the π bond breaks open
+      and its two atoms attach to the two ends of the former double bond — this is <span class="term">addition</span>.
+    </p>
+    <p>
+      <strong>Real-life link #1: margarine.</strong> The long-chain fatty acids in vegetable oils carry several cis double bonds; the double bonds "kink" the molecules,
+      so they cannot pack tightly and remain liquids. Hydrogenate them with hydrogen over a nickel catalyst: part of the double bonds get "ironed flat",
+      the molecules straighten, snuggle together, and crystallize — and you have margarine (a solid). Push the hydrogenation too hard and trans fats form — modern processes control the degree of hydrogenation precisely.
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub> —Ni, Δ→ CH<sub>3</sub>CH<sub>3</sub></span>
+    </p>
+    <p>
+      <strong>Real-life link #2: where plastic bags begin.</strong> Under a catalyst, ethylene molecules open their double bonds to one another and link hand in hand into long chains —
+      <span class="term">addition polymerization</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n CH<sub>2</sub>=CH<sub>2</sub> —catalyst→ –[CH<sub>2</sub>–CH<sub>2</sub>]–<sub>n</sub> (polyethylene)</span>
+    </p>
+    <p>The story of polyethylene (monomers, the plastics family, recycling) belongs to <a href="../06-Polymer-Chemistry/index.html">06 Polymer Chemistry</a>; here we merely plant a seed.</p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Addition vs Substitution: One Sentence to Tell Them Apart</div>
+      <strong>Addition</strong> is how an unsaturated bond "receives" a guest: the π bond opens, the guest attaches, the molecular skeleton never breaks and the carbon count never drops;
+      <strong>substitution</strong> is a "roster swap": one group departs and another takes its place. Alkenes excel at the former; the benzene ring of the next section insists on doing only the latter.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why is vegetable oil a liquid, while butter and lard are solids?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What shape do double bonds along a chain "fold" it into? Which packs more tightly, a straight chain or a bent one?</p>
+        <p>
+          Vegetable oils are rich in <strong>unsaturated</strong> fatty acids: cis double bonds kink the chains, the molecules cannot nestle together, the melting point is low → liquid;
+          animal fats are mostly <strong>saturated</strong> straight chains, packed like neatly bundled chopsticks, with strong dispersion forces and easy crystallization → solid.
+          "Hydrogenating oil into margarine" is essentially ironing the double bonds flat and pulling the kinked chains straight — and the melting point rises accordingly.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Arenes ============ -->
+  <section id="arene">
+    <h2>§2 Arenes: A Choir That Refuses to Break Up</h2>
+    <p>
+      Benzene <span class="formula">C<sub>6</sub>H<sub>6</sub></span> is the most famous molecule in organic chemistry.
+      In 1865 Kekulé proposed "a six-membered ring with alternating single and double bonds", yet even he was puzzled: if that were truly so, benzene should greedily undergo addition like an alkene,
+      yet in reality benzene is remarkably aloof — <strong>addition is hard, substitution is easy</strong>. The truth is that benzene's 6 π electrons belong to no single edge
+      but are <strong>delocalized</strong> above and below the entire ring, like a six-voice choir.
+    </p>
+
+    <h3>🔬 Try It Out: The Three Faces of Benzene</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="benzSvg" width="470" height="340" viewBox="0 0 470 340" role="img" aria-label="Benzene resonance structure switcher"></svg>
+        <div class="fig-controls" id="benzBtns">
+          <button type="button" class="btn ghost" data-b="0">Kekulé structure A</button>
+          <button type="button" class="btn ghost" data-b="1">Kekulé structure B</button>
+          <button type="button" class="btn ghost" data-b="2">Delocalized form (the real one)</button>
+        </div>
+        <div class="fig-readout" id="benzReadout"></div>
+      </div>
+      <figcaption>
+        Kekulé A and B are merely two "limiting ways of drawing" on paper; the real molecule is their superposition:
+        all 6 C–C bonds are exactly equal in length (139 pm, between a single bond at 154 and a double bond at 134).
+        The delocalized form uses an inner circle to depict the 6 delocalized π electrons.
+      </figcaption>
+    </figure>
+
+    <p>
+      Benzene's signature reaction is <strong>nitration</strong> (an electrophilic substitution, catalyzed by concentrated sulfuric acid, giving nitrobenzene):
+    </p>
+    <p style="text-align:center">
+      <span class="formula">C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> —conc. H<sub>2</sub>SO<sub>4</sub>, Δ→ C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O</span>
+    </p>
+    <p>
+      Nitrobenzene can then be reduced to aniline (one of the protagonists of §6) — the dye industry's very first production line began with this reaction.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why Does the Benzene Ring Find "Addition Hard, Substitution Easy"?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Picture the 6 π electrons as a choir that sings in perfect ensemble: <strong>addition</strong> would amount to pulling two members away to team up with outsiders,
+          and the choir would disband on the spot — a loss of "team spirit"; <strong>substitution</strong> merely shows one H the door and lets a new member step in,
+          and the choir sings on. The benzene ring would rather swap members than break up the choir.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          "Team spirit" can be quantified as <strong>resonance energy</strong>: benzene's measured heat of hydrogenation is about
+          150 kJ/mol lower than expected for "cyclohexatriene" — and that energy is the dividend paid by delocalization. If addition occurred, the product (a cyclohexadiene derivative) would lose the delocalization,
+          be badly disadvantaged energetically, and face a high barrier; substitution keeps (or ultimately restores) the aromatic delocalization the whole way, making it the economical route.
+          That is why even when facing Br₂, benzene demands FeBr₃ catalysis and insists on substitution.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Mechanism</span>
+        <p>
+          The delocalized π system satisfies <strong>Hückel's rule</strong> (4n+2 π electrons; benzene has 6, with n = 1),
+          forming a closed, stable shell. Electrophilic substitution, taking nitration as the example, proceeds in three steps: ① helped by concentrated sulfuric acid, nitric acid dispatches the electrophile
+          <span class="formula">NO<sub>2</sub><sup>+</sup></span>; ② the electron blanket captures it, forming
+          the σ complex (the Wheland intermediate, with the positive charge delocalized over the whole ring) — this step sacrifices part of the delocalization and is rate-determining;
+          ③ H⁺ is expelled, and aromaticity is restored to full strength. The "intermediate" concept from Chapter 3 steps into reality here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Alcohols ============ -->
+  <section id="alcohol">
+    <h2>§3 Alcohols: The Ladder of Oxidation</h2>
+    <p>
+      In an alcohol the –OH is attached to a carbon, and by how many hydrogens remain on that carbon we distinguish <strong>primary alcohols</strong> (–CH₂OH),
+      <strong>secondary alcohols</strong> (–CHOH–), and <strong>tertiary alcohols</strong> (–C(OH)–, no α-H).
+      In the eyes of an oxidizing agent, the hydrogen on the α-carbon is the "door handle": only with a handle can the door be pulled open for oxidation.
+    </p>
+    <ul>
+      <li><strong>Primary alcohol → aldehyde → carboxylic acid</strong>: <span class="formula">CH<sub>3</sub>CH<sub>2</sub>OH → CH<sub>3</sub>CHO → CH<sub>3</sub>COOH</span> (wine turning to vinegar as it sits is exactly these two steps, carried out with the help of airborne microbes).</li>
+      <li><strong>Secondary alcohol → ketone</strong> (and it stops there): <span class="formula">CH<sub>3</sub>CH(OH)CH<sub>3</sub> → CH<sub>3</sub>COCH<sub>3</sub></span> (acetone, nail-polish remover).</li>
+      <li><strong>Tertiary alcohols</strong>: no α-H, so ordinary oxidants cannot pull the door open; strong oxidants simply cleave the chain.</li>
+    </ul>
+    <p>
+      <strong>Real-life link: the breathalyzer test.</strong> The classic breath-test tube is packed with silica gel soaked in acidified potassium dichromate:
+      ethanol vapor in the breath <strong>reduces</strong> the orange-red <span class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup></span>
+      to green <span class="formula">Cr<sup>3+</sup></span> — the ethanol itself is oxidized.
+      The depth of the color change is proportional to the amount of ethanol. Modern electrochemical sensors switched to the fuel-cell principle, but the chemical core — "ethanol gets oxidized" — has not changed.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Methanol Is Not "a Slightly Stronger Liquor"</div>
+      Industrial alcohol is often adulterated with methanol <span class="formula">CH<sub>3</sub>OH</span>. It walks the same "oxidation ladder",
+      but its products are formaldehyde and formic acid — attacking the optic nerve and causing acidosis; <strong>a few milliliters can cause blindness</strong>.
+      The same –OH, the same oxidation route, just one CH₂ apart — and the fates are utterly different: the culprit in counterfeit-liquor tragedies was never ethanol; it was methanol.
+      A molecule's "ID card" tolerates not the slightest discrepancy.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: Oxidation Products of Three Alcohols</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Walk-Through (Watch Me)</div>
+      <div class="worked-problem">
+        Predict the products of the following three alcohols under a typical oxidizing agent (e.g. acidified potassium dichromate):
+        A ethanol, B 2-propanol, C 2-methyl-2-propanol ((CH₃)₃COH).
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Classify first: check how many carbons are attached to — and how many hydrogens remain on — the carbon bearing the –OH. A: 1 carbon + 2 H → <strong>primary</strong>;
+          B: 2 carbons + 1 H → <strong>secondary</strong>; C: 3 carbons + 0 H → <strong>tertiary</strong>.</li>
+        <li class="step">A climbs the ladder: the primary alcohol first oxidizes to acetaldehyde, and given sufficient conditions it oxidizes on to <strong>acetic acid</strong> (the orange-to-green change in the test tube is exactly this).</li>
+        <li class="step">B reaches the top in one step: the secondary alcohol oxidizes to <strong>acetone</strong>; a ketone has no α-H left to pull on, so the oxidation stops there.</li>
+        <li class="step">C has no handle to pull: with no hydrogen on the α-carbon, a tertiary alcohol <strong>does not react</strong> under ordinary conditions (no color change).
+          ✅ A bonus identification method: dichromate distinguishes tertiary alcohols from primary/secondary ones.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Aldehydes and Ketones ============ -->
+  <section id="carbonyl">
+    <h2>§4 Aldehydes and Ketones: The Polarized Carbonyl</h2>
+    <p>
+      The carbonyl group <span class="formula">C=O</span> is a double bond between carbon and oxygen, but oxygen's electronegativity far exceeds carbon's,
+      pulling the π electron cloud toward itself: the carbon carries a partial positive charge (δ+) and the oxygen a partial negative charge (δ−).
+      So electron-rich <span class="term">nucleophiles</span>
+      (such as CN⁻, alcohols, and Grignard reagents) home in on that δ+ carbon — this is <span class="term">nucleophilic addition</span>, the signature move of aldehydes and ketones (the mirror script of Chapter 3 §3,
+      except that this time it is the C=O under attack).
+    </p>
+    <p>
+      The dividing line between aldehydes and ketones is <strong>one more step of oxidation</strong>: an aldehyde's carbonyl still carries an H and is easily oxidized onward to a carboxylic acid
+      — which is why aldehydes are reducing; a ketone lacks that H and "declines the duel". The most classic test is the <span class="term">silver mirror test (Tollens' test)</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>CHO + 2Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> + 3OH<sup>−</sup> → CH<sub>3</sub>COO<sup>−</sup> + 2Ag↓ + 4NH<sub>3</sub> + 2H<sub>2</sub>O</span>
+    </p>
+    <p>
+      The aldehyde reduces the Ag⁺ in Tollens' reagent to metallic silver, plating a mirror onto the clean inner wall of the glass — the silver film inside a thermos flask is deposited exactly this way.
+      Glucose carries an aldehyde group (a reducing sugar), and early blood-glucose test strips used the very same principle (reducing Cu²⁺ to brick-red Cu₂O).
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "Natural and Synthetic Fragrances Are Different Substances"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          A fragrance extracted from roses and one synthesized in a factory are "essentially different"; the natural one must smell better and be safer.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Molecules care nothing about pedigree. As long as the <strong>composition and structure (including the stereochemistry) are the same, it is the same substance</strong>:
+          identical melting point, boiling point, IR spectrum, and scent. The vanillin in vanilla beans and synthetic vanillin are the very same molecule
+          (they differ only in trace impurities and price); perfumers can even synthesize fragrances not yet discovered in nature.
+          Rather than asking "natural or synthetic", look at <strong>purity and dose</strong> — that is the language of toxicology
+          (echoing ricin and vitamin C from Chapter 1).
+        </div>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Do It with Me)</div>
+      <div class="worked-problem">
+        Two unlabeled reagent bottles: acetaldehyde <span class="formula">CH<sub>3</sub>CHO</span> and acetone
+        <span class="formula">CH<sub>3</sub>COCH<sub>3</sub></span>.
+        Distinguish them by a single chemical method. <em>(First ask "whose carbonyl still carries an H", then check step by step.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Find the difference: acetaldehyde's carbonyl carbon bears an –H (an aldehyde); in acetone both sides are –CH₃ (a ketone). Aldehydes can be oxidized; ketones resist it.</li>
+        <li class="step">💡 Choose the reagent: Tollens' reagent (or freshly prepared copper(II) hydroxide). It exists precisely to "promote" aldehydes, which have reducing power.</li>
+        <li class="step">💡 The observation: the one giving a silver mirror (or a brick-red Cu₂O precipitate) is <strong>acetaldehyde</strong>; the one showing nothing is <strong>acetone</strong>.</li>
+        <li class="step">✅ Extension: hospital blood-glucose tests exploit the reducing power of glucose's aldehyde group — essentially the same "reducing-power exam".
+          Note: fructose is a ketose, but under alkaline conditions it isomerizes to expose an aldehyde group, so it too is a reducing sugar — the details are left for 05 Biochemistry.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 Carboxylic Acids and Esters ============ -->
+  <section id="ester">
+    <h2>§5 Carboxylic Acids and Esters: Fruity Aromas and Soap</h2>
+    <p>
+      The carboxyl group –COOH donates protons readily (the electron-pulling carbonyl chimes in), so carboxylic acids are acid in more than name.
+      Condensed with an alcohol under <strong>concentrated sulfuric acid catalysis</strong> with loss of water, it gives an <span class="term">ester</span> —
+      this is <span class="term">esterification</span> (reversible):
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>COOH + HOCH<sub>2</sub>CH<sub>3</sub> ⇌ CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O</span> (conc. H₂SO₄ catalyst, heat)
+    </p>
+    <p>
+      Ethyl acetate smells of pineapple/nail-polish remover; isoamyl acetate is the standard "banana" flavoring — <strong>most fruit aromas are small-molecule esters</strong>.
+      In the reverse direction, hydrolysis of an ester in <strong>base</strong> is called <span class="term">saponification</span>:
+      fat (a triglyceride of fatty acids) + NaOH → sodium salts of fatty acids (the main ingredient of soap) + glycerol. Saponification drags the reversible reaction all the way to the finish,
+      because the carboxylic acid is instantly neutralized by the base and cannot flow back.
+    </p>
+
+    <h3>🔬 Try It Out: The Functional-Group Interconversion Map</h3>
+    <p>
+      Every protagonist of this chapter appears on the map: <strong>click any node</strong> and the arrows involving it light up,
+      while the card below shows one representative equation. This map also serves as the grand review of the whole branch.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mapSvg" width="780" height="440" viewBox="0 0 780 440" role="img" aria-label="Functional-group interconversion map"></svg>
+        <div class="fig-controls" id="mapBtns">
+          <button type="button" class="btn ghost" data-k="0">Alkenes</button>
+          <button type="button" class="btn ghost" data-k="1">Alcohols</button>
+          <button type="button" class="btn ghost" data-k="2">Aldehydes</button>
+          <button type="button" class="btn ghost" data-k="3">Ketones</button>
+          <button type="button" class="btn ghost" data-k="4">Carboxylic acids</button>
+          <button type="button" class="btn ghost" data-k="5">Esters</button>
+          <button type="button" class="btn ghost" data-k="-1">↺ Clear highlight</button>
+        </div>
+        <div id="mapCard" style="border:1px solid var(--line);border-left:5px solid var(--accent);background:#ffffff;border-radius:8px;padding:12px 16px;text-align:left;margin-top:10px;max-width:100%;min-height:64px">
+          👆 Click a map node or one of the buttons above: the arrows for the related reactions light up, and a representative equation appears.
+        </div>
+        <div class="fig-readout" id="mapReadout">No node selected · 5 kinds of transformations in the full map</div>
+      </div>
+      <figcaption>
+        The essence of organic synthesis is finding a route across exactly such a map: setting out from cheap feedstocks, you "retrofit" the functional groups station by station until you reach the target molecule.
+        06 Polymer Chemistry and 10 Medicinal Chemistry will take you on longer routes.
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>Think It Through: Why can soap wash grease away, while plain water never scrubs it off no matter how hard you rub?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: In a molecule of sodium fatty-acid salt, what is one end like, and what is the other end like?</p>
+        <p>
+          A soap molecule is "amphibious": the long hydrocarbon chain at one end is <strong>oil-loving</strong> (mingles with oil droplets), while the carboxylate end is
+          <strong>water-loving</strong> (huddles with water). A few dozen soap molecules surround a small oil droplet, hydrocarbon chains tucked into the oil and
+          carboxylate heads facing outward — forming a <strong>micelle</strong>. Once wrapped in micelles, the oil can be rinsed away with water; that is the whole secret of cleaning.
+          A closing aside: pure hydrocarbon "oil" has no water-loving end, which is why plain water cannot wash it away.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §6 Amines ============ -->
+  <section id="amine">
+    <h2>§6 Amines: Small Basic Molecules</h2>
+    <p>
+      Remove one H from ammonia NH₃ and swap in a carbon chain, and you get an <span class="term">amine</span>:
+      methylamine CH₃NH₂, aniline C₆H₅NH₂ ... that <strong>lone pair</strong> on the nitrogen is the source of their personality —
+      it can embrace a proton, so amines are <strong>basic</strong> and form salts with acids:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>NH<sub>2</sub> + HCl → CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>Cl<sup>−</sup></span> (methylamine hydrochloride, a solid)
+    </p>
+    <p>
+      <strong>Real-life link: taming fishy odors.</strong> The smell of fish comes mainly from volatile trimethylamine
+      <span class="formula">(CH<sub>3</sub>)<sub>3</sub>N</span>. When cooking fish, add vinegar or lemon juice:
+      the acid "presses down" the amine into a non-volatile ammonium salt — the odor molecules can no longer fly into your nose, and the fish stops smelling "fishy".
+      Chemistry explaining the culinary arts is often just this one line of equation.
+    </p>
+    <p>
+      <strong>A preview of the next branch:</strong> put an amino group and a carboxyl group into the same molecule, and you get an
+      <span class="term">amino acid</span> — the building block of proteins.
+      How the 20 standard amino acids condense into peptide chains, and how enzymes work, is the opening act of <a href="../05-Biochemistry/index.html">05 Biochemistry</a>.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why is aniline far less basic than methylamine? (Hint: that lone pair may be "busy elsewhere")</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Could the delocalized π cloud of the benzene ring draw nitrogen's lone pair into joining the choir?</p>
+        <p>
+          It could. The lone pair on aniline's nitrogen can delocalize into the benzene ring's π system (echoing the "choir" of §2),
+          and a lone pair "borrowed away" has no hand to spare for grabbing a proton, so the basicity drops sharply. Methylamine has no such choir to join,
+          so its lone pair waits wholeheartedly for a proton, and it is far more basic. The same functional group on a different skeleton changes personality —
+          another fine example of "skeleton × functional group" jointly determining properties.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li><strong>Alkene</strong> addition: hydrogenation makes margarine (ironing double bonds flat raises the melting point); addition polymerization makes polyethylene (a seed planted for 06).</li>
+        <li>The <strong>benzene ring</strong>, because its π electrons are delocalized (resonance energy about 150 kJ/mol), finds "addition hard, substitution easy", as in nitration.</li>
+        <li><strong>Alcohol</strong> oxidation hinges on the α-H: primary → aldehyde → carboxylic acid, secondary → ketone, tertiary no reaction (the breathalyzer test; the methanol hazard).</li>
+        <li>The <strong>aldehyde/ketone</strong> carbonyl is polarized δ+/δ− and undergoes addition with nucleophiles; aldehydes are reducing (the silver mirror test), ketones are not.</li>
+        <li><strong>Carboxylic acids and esters</strong>: esterification (conc. sulfuric acid catalysis, reversible) and saponification (NaOH, driven to completion); fruity aromas come from esters, soap from saponification.</li>
+        <li><strong>Amines</strong> owe their basicity to the lone pair and form salts with acids to tame fishy odors; amino acids = amino group + carboxyl group in one molecule, the road to 05 Biochemistry.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · A Tour of Functional Group Reactions <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "In making margarine by partial hydrogenation of vegetable oil, what exactly gets \"ironed flat\"?",
+            "options": [
+              "The ester groups are hydrolyzed",
+              "The C=C double bonds are hydrogenated into single bonds; the kinked chains straighten and the melting point rises",
+              "The hydroxyl groups are oxidized into carbonyls",
+              "The benzene ring undergoes substitution"
+            ],
+            "answer": 1,
+            "explain": "Hydrogenation is catalytic addition to C=C: the π bond opens and takes up two H atoms. Once the kinks caused by cis double bonds are pulled straight, the chains can stack closely and the melting point rises, so the liquid oil becomes a solid fat."
+          },
+          {
+            "q": "Benzene undergoes substitution readily but addition only with difficulty; what is the fundamental reason?",
+            "options": [
+              "There are no double bonds on the benzene ring",
+              "Delocalization of the π electrons provides about 150 kJ/mol of extra stabilization, which addition would destroy",
+              "Benzene's molecular weight is too small",
+              "Substitution releases more heat, while addition is endothermic"
+            ],
+            "answer": 1,
+            "explain": "Benzene's 6 π electrons are delocalized over the whole ring (all 6 C–C bonds equal at 139 pm), and its heat of hydrogenation is about 150 kJ/mol lower than expected for cyclohexatriene. Addition would sacrifice this \"resonance energy\", while substitution preserves aromaticity — so benzene prefers to swap a member (substitution) rather than break up the choir (addition)."
+          },
+          {
+            "q": "In the breathalyzer breath test, what role does ethanol play?",
+            "options": [
+              "Oxidizing agent",
+              "The reducing agent being oxidized, reducing orange-red Cr₂O₇²⁻ to green Cr³⁺",
+              "Catalyst",
+              "Acid-base indicator"
+            ],
+            "answer": 1,
+            "explain": "Ethanol is oxidized (primary alcohol → aldehyde → carboxylic acid) while dichromate is reduced, the color shifting from orange-red to green — the amount of color change is proportional to the amount of ethanol in the breath. Ethanol is the reducing agent being oxidized, neither an oxidizing agent nor a catalyst."
+          },
+          {
+            "q": "Which of the following gives a positive silver mirror test?",
+            "options": ["Acetone", "Acetaldehyde", "Ethyl acetate", "Diethyl ether"],
+            "answer": 1,
+            "explain": "The silver mirror test checks the reducing power of the aldehyde group (–CHO): acetaldehyde has one; acetone is a ketone, and neither ethyl acetate nor diethyl ether contains an aldehyde group. Glucose also gives the silver mirror test thanks to its aldehyde group."
+          },
+          {
+            "q": "What reagent and conditions does saponification (the hydrolysis of fats) require?",
+            "options": [
+              "Concentrated sulfuric acid, heat (esterification conditions)",
+              "NaOH solution, heat",
+              "Salt water, room temperature",
+              "Ethanol, room temperature"
+            ],
+            "answer": 1,
+            "explain": "Hydrolysis of an ester in base (NaOH) is saponification: the carboxylic acid formed is immediately neutralized into the sodium carboxylate (soap) — irreversible and driven to completion. Concentrated sulfuric acid is the catalyst and dehydrating agent for esterification (the reverse direction)."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="03-Introduction-to-Reaction-Mechanisms.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 3 · Introduction to Reaction Mechanisms</span></a>
+      <a class="next" href="../03-Analytical-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">03 Analytical Chemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions (benzene resonance switcher / functional-group interconversion map) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. Benzene resonance switcher ---------- */
+  var benzSvg = document.getElementById("benzSvg");
+  if (benzSvg) {
+    var benzReadout = document.getElementById("benzReadout");
+    var benzBtns = Array.prototype.slice.call(document.querySelectorAll("#benzBtns button"));
+    var CX = 235, CY = 175, R = 80, RH = 132;
+    var verts = [], hyd = [];
+    for (var i = 0; i < 6; i++) {
+      var a = (90 + 60 * i) * Math.PI / 180;
+      verts.push([CX + R * Math.cos(a), CY + R * Math.sin(a)]);
+      hyd.push([CX + RH * Math.cos(a), CY + RH * Math.sin(a)]);
+    }
+    function innerLine(v1, v2) {
+      var mx = (v1[0] + v2[0]) / 2, my = (v1[1] + v2[1]) / 2;
+      var ox = (CX - mx) * 0.24, oy = (CY - my) * 0.24;
+      el("line", {
+        x1: v1[0] + (v2[0] - v1[0]) * 0.16 + ox, y1: v1[1] + (v2[1] - v1[1]) * 0.16 + oy,
+        x2: v1[0] + (v2[0] - v1[0]) * 0.84 + ox, y2: v1[1] + (v2[1] - v1[1]) * 0.84 + oy,
+        stroke: "#6b7280", "stroke-width": 3
+      }, benzSvg);
+    }
+    function drawBenz(mode) {
+      benzSvg.innerHTML = "";
+      T(benzSvg, 235, 30, "Benzene C₆H₆ · a six-membered ring", { size: 14, weight: 700 });
+      for (var i = 0; i < 6; i++) {
+        var v1 = verts[i], v2 = verts[(i + 1) % 6];
+        el("line", { x1: v1[0], y1: v1[1], x2: v2[0], y2: v2[1], stroke: "#6b7280", "stroke-width": 3.5 }, benzSvg);
+      }
+      var dbl = mode === 0 ? [0, 2, 4] : [1, 3, 5];
+      if (mode < 2) dbl.forEach(function (i) { innerLine(verts[i], verts[(i + 1) % 6]); });
+      for (var j = 0; j < 6; j++) {
+        el("line", { x1: verts[j][0], y1: verts[j][1], x2: hyd[j][0], y2: hyd[j][1], stroke: "#94a3b8", "stroke-width": 2.5 }, benzSvg);
+      }
+      if (mode === 2) {
+        el("circle", { cx: CX, cy: CY, r: 48, fill: "none", stroke: "#15803d", "stroke-width": 4 }, benzSvg);
+        var spin = el("g", { class: "anim-spin" }, benzSvg);
+        spin.style.animationDuration = "14s";
+        for (var d = 0; d < 6; d++) {
+          var ad = d * 60 * Math.PI / 180;
+          el("circle", { cx: CX + 48 * Math.cos(ad), cy: CY + 48 * Math.sin(ad), r: 4.5, fill: "#15803d" }, spin);
+        }
+      }
+      for (var k = 0; k < 6; k++) {
+        el("circle", { cx: verts[k][0], cy: verts[k][1], r: 17, fill: "#374151" }, benzSvg);
+        T(benzSvg, verts[k][0], verts[k][1] + 5, "C", { size: 12, weight: 700, fill: "#ffffff" });
+        el("circle", { cx: hyd[k][0], cy: hyd[k][1], r: 11, fill: "#ffffff", stroke: "#9ca3af", "stroke-width": 1.5 }, benzSvg);
+        T(benzSvg, hyd[k][0], hyd[k][1] + 4, "H", { size: 11, weight: 700, fill: "#1f2937" });
+      }
+      if (mode === 0) benzReadout.textContent = "Kekulé structure A: one way of drawing alternating single and double bonds — merely one \"limiting structure\" of the real molecule.";
+      else if (mode === 1) benzReadout.textContent = "Kekulé structure B: the double bonds have shifted. A and B have exactly the same energy — showing that the double bonds are not fixed to any particular edge at all.";
+      else benzReadout.textContent = "The real benzene ring: all 6 π electrons fully delocalized (the inner circle), all 6 C–C bonds equal at 139 pm (between a single bond at 154 and a double bond at 134), about 150 kJ/mol more stable than \"cyclohexatriene\".";
+      benzBtns.forEach(function (b) {
+        if (parseInt(b.getAttribute("data-b"), 10) === mode) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    benzBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawBenz(parseInt(b.getAttribute("data-b"), 10)); });
+    });
+    drawBenz(0);
+  }
+
+  /* ---------- 2. Functional-group interconversion map ---------- */
+  var mapSvg = document.getElementById("mapSvg");
+  if (mapSvg) {
+    var mapCard = document.getElementById("mapCard");
+    var mapReadout = document.getElementById("mapReadout");
+    var NODES = [
+      { key: "alkene", label: "Alkenes", x: 30, y: 190, w: 140, h: 54,
+        eq: "CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O —catalyst→ CH<sub>3</sub>CH<sub>2</sub>OH",
+        note: "Hydration of ethylene: one route by which ethanol is produced in large volumes industrially. The π bond opens and the functional group changes from C=C to –OH — addition is the alkene's signature move." },
+      { key: "alcohol", label: "Alcohols", x: 260, y: 190, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CH<sub>2</sub>OH + [O] → CH<sub>3</sub>CHO + H<sub>2</sub>O",
+        note: "A primary alcohol oxidizes to an aldehyde (exactly the step oxidized in the breathalyzer test), and the aldehyde oxidizes onward to acetic acid — \"wine left standing turns to vinegar\". A secondary alcohol is oxidized on the same stage to a ketone: CH<sub>3</sub>CH(OH)CH<sub>3</sub> → CH<sub>3</sub>COCH<sub>3</sub>." },
+      { key: "aldehyde", label: "Aldehydes", x: 470, y: 80, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CHO + 2Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> + 3OH<sup>−</sup> → CH<sub>3</sub>COO<sup>−</sup> + 2Ag↓ + 4NH<sub>3</sub> + 2H<sub>2</sub>O",
+        note: "The silver mirror test: the aldehyde group has reducing power and reduces Ag⁺ to metallic silver — the silver film inside a thermos flask is plated this way, and this is the aldehyde's exclusive test." },
+      { key: "ketone", label: "Ketones", x: 470, y: 330, w: 120, h: 54,
+        eq: "CH<sub>3</sub>CH(OH)CH<sub>3</sub> + [O] → CH<sub>3</sub>COCH<sub>3</sub> + H<sub>2</sub>O",
+        note: "Oxidation of a secondary alcohol stops at the ketone: acetone is the main ingredient of nail-polish remover. A ketone lacks the aldehyde's H and gives no silver mirror — on this basis aldehydes and ketones are told apart." },
+      { key: "acid", label: "Carboxylic acids", x: 630, y: 80, w: 130, h: 54,
+        eq: "CH<sub>3</sub>COOH + HOCH<sub>2</sub>CH<sub>3</sub> ⇌ CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O",
+        note: "Esterification: concentrated sulfuric acid catalyzes and removes water. Most fruit aromas come from esters — isoamyl acetate is banana, and pineapple and pear each have their own signature ester." },
+      { key: "ester", label: "Esters", x: 630, y: 330, w: 130, h: 54,
+        eq: "Fat + 3NaOH —Δ→ 3 RCOONa (soap) + glycerol",
+        note: "Saponification: fats (triglycerides of fatty acids) hydrolyze in hot alkali into sodium fatty-acid salts and glycerol. A soap molecule is oil-loving at one end and water-loving at the other, wrapping oil into micelles that rinse away with water." }
+    ];
+    var EDGES = [
+      { a: 0, b: 1, x1: 170, y1: 217, x2: 260, y2: 217, label: "hydration", lx: 215, ly: 207, both: false },
+      { a: 1, b: 2, x1: 382, y1: 203, x2: 470, y2: 134, label: "1° oxidation", lx: 408, ly: 152, both: false },
+      { a: 1, b: 3, x1: 382, y1: 231, x2: 470, y2: 330, label: "2° oxidation", lx: 404, ly: 296, both: false },
+      { a: 2, b: 4, x1: 590, y1: 107, x2: 630, y2: 107, label: "oxidation", lx: 610, ly: 68, both: false },
+      { a: 4, b: 5, x1: 695, y1: 134, x2: 695, y2: 330, label: "esterification ⇄ hydrolysis", lx: 708, ly: 238, both: true }
+    ];
+
+    var edgeEls = [], nodeEls = [];
+
+    function arrowHead(g, x, y, ang, color) {
+      var s = 10;
+      el("polygon", {
+        points: x + "," + y + " " + (x - s * Math.cos(ang - 0.42)) + "," + (y - s * Math.sin(ang - 0.42)) +
+          " " + (x - s * Math.cos(ang + 0.42)) + "," + (y - s * Math.sin(ang + 0.42)),
+        fill: color
+      }, g);
+    }
+
+    function drawMap(sel) {
+      mapSvg.innerHTML = "";
+      edgeEls = []; nodeEls = [];
+      // draw the edges first
+      EDGES.forEach(function (e) {
+        var hit = sel !== null && (e.a === sel || e.b === sel);
+        var col = hit ? "#15803d" : "#94a3b8";
+        var w = hit ? 3.5 : 2;
+        var g = el("g", {}, mapSvg);
+        el("line", { x1: e.x1, y1: e.y1, x2: e.x2, y2: e.y2, stroke: col, "stroke-width": w }, g);
+        var ang = Math.atan2(e.y2 - e.y1, e.x2 - e.x1);
+        arrowHead(g, e.x2, e.y2, ang, col);
+        if (e.both) arrowHead(g, e.x1, e.y1, ang + Math.PI, col);
+        T(g, e.lx, e.ly, e.label, { size: 12, weight: hit ? 700 : 400, fill: hit ? "#166534" : "#6b7280" });
+        edgeEls.push(g);
+      });
+      // then the nodes (clickable)
+      NODES.forEach(function (n, i) {
+        var hit = sel === i;
+        var g = el("g", { style: "cursor:pointer" }, mapSvg);
+        el("rect", {
+          x: n.x, y: n.y, width: n.w, height: n.h, rx: 12,
+          fill: hit ? "#f0fdf4" : "#ffffff",
+          stroke: hit ? "#15803d" : "#94a3b8",
+          "stroke-width": hit ? 3 : 2
+        }, g);
+        T(g, n.x + n.w / 2, n.y + n.h / 2 + 5, n.label, { size: 15, weight: 700, fill: hit ? "#166534" : "#1f2937" });
+        g.addEventListener("click", function () { select(i); });
+        nodeEls.push(g);
+      });
+      T(mapSvg, 390, 428, "Click a node to see a representative reaction of that functional-group class (the transformation arrows light up accordingly)", { size: 12, fill: "#6b7280" });
+    }
+
+    function select(i) {
+      drawMap(i);
+      paintBtns(i);
+      var n = NODES[i];
+      mapCard.innerHTML = "<strong style='color:var(--accent-deep)'>" + n.label + "</strong> · " +
+        "<span class='formula'>" + n.eq + "</span><br>" + n.note;
+      mapReadout.textContent = "Selected: " + n.label + " (highlighted arrows = the transformation routes involving it)";
+    }
+
+    function paintBtns(sel) {
+      Array.prototype.forEach.call(document.querySelectorAll("#mapBtns button"), function (b) {
+        var k = parseInt(b.getAttribute("data-k"), 10);
+        if (k === sel) { b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)"; }
+        else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+
+    var mapBtnEls = document.querySelectorAll("#mapBtns button");
+    Array.prototype.forEach.call(mapBtnEls, function (b) {
+      b.addEventListener("click", function () {
+        var k = parseInt(b.getAttribute("data-k"), 10);
+        if (k < 0) {
+          drawMap(null); paintBtns(null);
+          mapCard.innerHTML = "👆 Click a map node or one of the buttons above: the arrows for the related reactions light up, and a representative equation appears.";
+          mapReadout.textContent = "No node selected · 5 kinds of transformations in the full map";
+        } else select(k);
+      });
+    });
+
+    drawMap(null);
+  }
+})();
+</script>
+</body>
+</html>

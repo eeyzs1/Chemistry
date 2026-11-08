@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>The Big Three of Instrumental Analysis · Analytical Chemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b03">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">03 Analytical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · The Big Three of Instrumental Analysis</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">03 Analytical Chemistry · Chapter 3 (final chapter of this branch)</div>
+    <h1>The Big Three of Instrumental Analysis: Spectroscopy, Chromatography, and Mass Spectrometry</h1>
+    <p class="lede">
+      Testing formaldehyde in a freshly renovated home, screening produce for pesticide residues, checking athletes' urine for banned drugs — the analyte often sits below one part per million,
+      and the titration "volume ruler" fails completely here. Modern analytical laboratories conquer the world with three weapons:
+      <strong>spectroscopy</strong> makes molecules "show their ID card" (which light they absorb, and how much), <strong>chromatography</strong> takes molecules that are mixed together and
+      "lines them up apart", and <strong>mass spectrometry</strong> "weighs" every molecule and "reads out its isotope signature". This chapter teaches the Big Three in one sweep
+      and answers a question that runs through the whole chapter: is what the instrument hands us directly a <strong>signal</strong>, or an <strong>answer</strong>?
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 50 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–2 of this branch + 00 Foundations (isotopes)</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter table of contents">
+    <a href="#intro">Introduction</a>
+    <a href="#spec">§1 Spectroscopy and the Beer–Lambert Law</a>
+    <a href="#ir">§2 The IR Fingerprint Region and AAS</a>
+    <a href="#chrom">§3 Chromatography: Separate First</a>
+    <a href="#ms">§4 Mass Spectrometry: Weighing Molecules</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: The Parts-Per-Million World</h2>
+    <p>
+      National standards set the limit for nitrate in drinking water at 10 mg/L and for lead at 0.01 mg/L — the latter is equivalent to dissolving
+      one paper clip in a standard swimming pool. Try titration? The volume of titrant consumed would be too small to read off the buret scale.
+      Welcome to the world of <strong>trace and ultratrace</strong> analysis, where analytical chemists reach for the arsenal of the instrument age:
+      shine light into the sample and see what it absorbs (spectroscopy), feed the mixture into a tube and let it sort itself out (chromatography),
+      then turn each molecule into an ion and weigh the ions one by one (mass spectrometry).
+    </p>
+    <p>
+      But no matter how expensive the instrument or how dazzling the screen, one iron rule laid down in Chapter 1 keeps reappearing here:
+      <strong>an instrument outputs a signal, not a concentration</strong> — converting that signal into an answer always rests on calibration that "trades the known for the unknown".
+      With that sentence in hand, let the Big Three take the stage.
+    </p>
+  </section>
+
+  <!-- ============ §1 Spectroscopy and the Beer-Lambert law ============ -->
+  <section id="spec">
+    <h2>§1 Spectroscopic Analysis: UV-Vis and the Beer–Lambert Law</h2>
+    <p>
+      <span class="term">Spectroscopy</span> studies the interaction of light with matter.
+      A molecule can absorb only photons of <strong>specific energies</strong> (energy = hν, exactly equal to the gap between two energy levels),
+      so "which wavelengths it absorbs, and how much" serves as the molecule's ID card and weighing scale.
+      The most widely used entry point is <span class="term">UV-Vis absorption spectroscopy</span>:
+      pass a beam of monochromatic light through the sample cell and compare the intensity of the light entering and leaving.
+    </p>
+    <p>
+      Define the <span class="term">transmittance</span>
+      <span class="formula">T = I / I₀</span> (the ratio of transmitted to incident intensity)
+      and the <span class="term">absorbance</span>
+      <span class="formula">A = −lg T = lg(I₀/I)</span>. In 1852, Beer and Lambert found that
+      the absorbance of a dilute solution is proportional to both concentration and path length —
+    </p>
+    <p style="text-align:center">
+      <span class="formula">A = ε·b·c</span> (<span class="term">Beer–Lambert law</span>)
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Symbol</th><th>Meaning</th><th>Units</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A</strong></td><td>Absorbance</td><td>Dimensionless</td><td>Linear in concentration; the practical optimum range is 0.2–0.8</td></tr>
+        <tr><td><strong>ε</strong></td><td>Molar absorptivity</td><td>L·mol⁻¹·cm⁻¹</td><td>The substance's "absorbing power" at a given wavelength; strong chromophores reach 10⁴–10⁵</td></tr>
+        <tr><td><strong>b</strong></td><td>Cuvette path length</td><td>cm</td><td>Usually 1.00 cm; double the thickness and A doubles</td></tr>
+        <tr><td><strong>c</strong></td><td>Solution concentration</td><td>mol/L</td><td>Holds within the dilute-solution range; too concentrated and the plot bends</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Why go to the trouble of defining A instead of just using transmittance? Because T falls off <strong>exponentially</strong> with c (double the concentration and the light dims exponentially),
+      which plots as a curve; after taking the logarithm, A is a <strong>straight line</strong> in c — easy to plot, easy to fit, easy to read back from.
+      In the demo below the cuvette darkens as the concentration rises; note that the outgoing beam dims at the same time while the A reading climbs linearly:
+    </p>
+
+    <h3>🔬 Try it out: Beer–Lambert Law Slider</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="beerSvg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="Beer–Lambert law demonstrator"></svg>
+        <div class="fig-controls">
+          <label for="beerSlider" style="font-size:.88rem;color:var(--ink-2)">
+            Concentration c: <strong id="beerC">1.0×10⁻⁴</strong> mol/L
+          </label>
+          <input id="beerSlider" type="range" min="0" max="10" step="0.1" value="1"
+                 style="width:min(380px,80%);accent-color:var(--accent);height:40px" aria-label="solution concentration">
+        </div>
+        <div class="fig-readout" id="beerReadout">c = 1.0×10⁻⁴ mol/L | A = εbc = 4.2×10³ × 1.00 × 1.0×10⁻⁴ = 0.42 | T = 10⁻ᴬ = 38%</div>
+      </div>
+      <figcaption>
+        Take ε = 4.2×10³ L·mol⁻¹·cm⁻¹ and b = 1.00 cm. The higher the concentration, the darker the cuvette and the weaker the transmitted light (exponential dimming),
+        yet the A reading grows linearly — precisely why spectrophotometry works with A rather than T.
+      </figcaption>
+    </figure>
+
+    <div class="worked">
+      <div class="worked-head">Worked Example 1 · Full demonstration (watch me): Finding concentration from absorbance</div>
+      <div class="worked-problem">
+        A colored solution measured in a 1.00 cm cuvette at a specified wavelength gives an absorbance A = 0.420.
+        The molar absorptivity of the analyte at this wavelength is ε = 4.2×10³ L·mol⁻¹·cm⁻¹. Find the concentration.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Rearrange the equation: from A = εbc, <span class="formula">c = A / (ε·b)</span>.</li>
+        <li class="step">Substitute: <span class="formula">c = 0.420 / (4.2×10³ × 1.00) = 1.0×10⁻⁴ mol/L</span>.</li>
+        <li class="step">Check the range: A = 0.42 falls inside the optimal window of 0.2–0.8, so the reading is reliable; if A is too small, increase the cuvette path length or preconcentrate; if A is too large, dilute.</li>
+        <li class="step">✅ Significant-figure self-check: A has three digits, ε has two → the result gets two: c = 1.0×10⁻⁴ mol/L.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Worked Example 2 · Guided practice (work along with me): Reading back from a calibration curve</div>
+      <div class="worked-problem">
+        Measuring iron in water by spectrophotometry: a series of standard solutions is prepared, giving
+        A = 0.12/0.24/0.36/0.48 for c = 2/4/6/8 mg/L. Under the same conditions an unknown water sample gives A = 0.33.
+        Find the iron content of the sample. <em>(Hints are tucked into each step — think it over yourself before revealing them.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 First verify linearity: A/c = 0.12/2 = 0.24/4 = 0.06 (L/mg), equal everywhere → the calibration curve is a straight line through the origin, A = 0.06c.</li>
+        <li class="step">💡 Read back the concentration: c = A / 0.06 = 0.33 / 0.06 = <strong>5.5 mg/L</strong>.</li>
+        <li class="step">💡 Check the range: 5.5 mg/L lies within the standard series 2–8 mg/L — interpolation is safe; if the unknown falls outside the standard range, dilute it or extend the series; never extrapolate.</li>
+        <li class="step">✅ Report 5.5 mg/L (two significant figures). This is exactly the instrumental, hands-on version of Chapter 1's "calibration curve: trade the known for the unknown".</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · A high-end instrument prints the answer directly — no calibration needed?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          An instrument that costs a fortune comes with a built-in "mg/L" printout — the result just pops out. If the instrument is advanced enough,
+          who needs a calibration curve, who needs internal standards — you never even have to open the manual.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          An instrument always outputs a <strong>signal</strong> (absorbance, peak area, ion counts), never a concentration.
+          Converting a signal into an amount always requires standards of known concentration (external calibration curve, internal standard, standard addition); instruments drift,
+          detectors age, and sample matrices interfere — the calibration idea of "trading the known for the unknown" has not changed once between Chapter 1 and this chapter.
+          That concentration on the printout is merely the instrument looking up its built-in calibration curve for you.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Two blue solutions of the same concentration, one with a 1 cm path and one with a 2 cm path — which looks bluer? What about the transmitted light?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Every centimeter the light travels "eats" the same fraction — what kind of relationship does constant-fraction attenuation imply?</p>
+        <p>
+          The 2 cm one is the bluer. Light intensity decays <strong>exponentially</strong>: each centimeter of travel absorbs a fixed fraction,
+          so I = I₀·10<sup>−kbc</sup> — this is where "Lambert's" half of the law (A proportional to b) comes from;
+          "Beer's" half says concentration c acts in exactly the same way. Only when the two multiply do we get the clean linearity of A = εbc.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 The IR fingerprint region and AAS ============ -->
+  <section id="ir">
+    <h2>§2 The Infrared "Fingerprint Region" and Atomic Absorption: Two More Faces of Spectroscopy</h2>
+
+    <h3>Infrared Spectroscopy: An Experimental Probe of Functional Groups</h3>
+    <p>
+      Switch the wavelength to infrared light (4000–400 cm⁻¹) and molecules no longer undergo electronic transitions; instead their <strong>vibrations</strong> are excited —
+      the groups of atoms behave like small balls joined by springs, each bond has its own "natural frequency" and absorbs only infrared photons of matching frequency.
+      Infrared spectroscopy (IR) thus puts the <span class="term">functional group</span>
+      right on the table (in <a href="../02-Organic-Chemistry/index.html">02 Organic Chemistry</a> you met their reactive personalities; IR does the "roll call"):
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Functional group</th><th>Characteristic absorption / cm⁻¹</th><th>What the peak looks like</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>O—H (alcohols, phenols, water)</td><td>3200–3600</td><td>A broad, rounded "big dome"</td></tr>
+        <tr><td>N—H (amines, amides)</td><td>3300–3500</td><td>Medium intensity, somewhat sharp</td></tr>
+        <tr><td>C—H</td><td>2850–3000</td><td>A cluster of small sharp peaks</td></tr>
+        <tr><td>C=O (ketones, aldehydes, acids, esters, amides)</td><td>1650–1750</td><td>Narrow and strong — the most conspicuous peak in the whole spectrum</td></tr>
+        <tr><td>C—O (ethers, alcohols)</td><td>1000–1300</td><td>Fairly strong</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The high-wavenumber segment (4000–1300 cm⁻¹) acts like a "functional-group bulletin board"; the low-wavenumber segment (1300–400 cm⁻¹) is the
+      <span class="term">fingerprint region</span> — a grand chorus of all the molecule's vibrations:
+      let the structure differ by as little as one methyl group and the whole stretch of the spectrum changes beyond recognition. <strong>Compare the sample spectrum against a reference spectral library,
+      and confirm "this exact compound" the way police match fingerprints</strong> — that is where the name "fingerprint region" comes from.
+    </p>
+
+    <h3>Atomic Absorption Spectroscopy (AAS): In One Sentence</h3>
+    <p>
+      Want to measure <strong>trace metals</strong> (lead, cadmium, copper, zinc)? Atomize the sample into a vapor of ground-state atoms
+      and pass a <strong>characteristic line</strong> from that element's hollow-cathode lamp through the vapor — ground-state atoms are the pickiest of eaters, taking only the bite at their own wavelength,
+      and the absorbance is again proportional to the atom concentration. AAS is sensitive and highly selective, a classic screening tool for heavy metals in water and food.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Butanol and diethyl ether have the same formula (C₄H₁₀O) — can a single IR spectrum tell them apart?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: The difference between them lies in the functional group — what is attached next to the O? Which functional group has a "signature peak"?</p>
+        <p>
+          Yes — and in a single step. Butanol has O—H: a broad peak at 3200–3600 cm⁻¹ plus a C—O peak at 1000–1100 cm⁻¹;
+          diethyl ether has only C—O and no O—H. One glance at the "functional-group bulletin board" settles it — this is IR's unique edge over other methods:
+          <strong>it names functional groups outright</strong>. A further check in the fingerprint region can even confirm exactly which structural isomer it is.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Chromatography ============ -->
+  <section id="chrom">
+    <h2>§3 Chromatography: Separate First, Detect Later</h2>
+    <p>
+      Spectroscopy has one soft spot: with a mixture, the spectra of the components stack on top of one another, like a dozen people grabbing for the same microphone.
+      <span class="term">Chromatography</span> answers with <strong>separate first, detect later</strong>:
+      let the mixture flow with the <span class="term">mobile phase</span> across a layer of
+      <span class="term">stationary phase</span>;
+      each component differs in how much it likes to "pop in and out" of the two phases, which on the macroscopic scale shows up as <strong>different migration speeds</strong> —
+      so components setting off from the same starting point arrive at the end of the column in batches, each forming its own independent chromatographic peak.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · How can chromatography "separate" substances that were mixed together?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Picture the chromatographic column as a long street lined with shops, and the mobile phase as a crowd of pedestrians pushing everyone along. Three kinds of pedestrians set off at the same time:
+          those with zero urge to shop walk from one end straight to the other; those who enter every shop move a few steps and then linger for ages; those in between duck into a shop now and then.
+          By the time they leave the street they have naturally sorted into three groups — <strong>the components that "love staying in the stationary phase" always arrive last</strong>.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          The quantity that measures how much a component "loves the stationary phase" is the <span class="term">partition coefficient</span>
+          <span class="formula">K = c(stationary phase) / c(mobile phase)</span>. Components with large K spend most of their time held up in the stationary phase
+          and migrate slowly on average; those with small K cruise along with the mobile phase. Given a long enough column, speed differences accumulate into time differences —
+          each component elutes at its own <span class="term">retention time (t<sub>R</sub>)</span>:
+          under fixed conditions t<sub>R</sub> is the component's "temporal fingerprint" (the <strong>qualitative</strong> basis),
+          while peak area is proportional to the component's amount (the <strong>quantitative</strong> basis — still converted through a calibration curve).
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          The quality of a separation is measured by the <strong>resolution</strong> <span class="formula">R = 2(t<sub>R2</sub>−t<sub>R1</sub>)/(w₁+w₂)</span>:
+          peaks must be both "far apart" and "narrow". Peaks broaden because molecules in the column face three sources of dispersion —
+          eddy diffusion (unequal path lengths), longitudinal molecular diffusion, and resistance to mass transfer between the phases (the van Deemter equation describes the combined effect of the three).
+          Column efficiency is characterized by the number of theoretical plates N. Choosing a longer column, finer packing, or a faster flow
+          is in essence a race against these three broadening processes — that is the entire art of chromatographic method development.
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 Try it out: Chromatographic Separation Animation</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="chromCanvas" width="640" height="310" style="display:block" aria-label="Three-component chromatographic separation animation" role="img"></canvas>
+        <div class="fig-controls">
+          <button class="btn" id="chromPlay">▶ Rerun the separation</button>
+        </div>
+        <div class="fig-readout" id="chromReadout">Three components injected together: red, green, and blue have successively larger partition coefficients and migrate progressively more slowly...</div>
+      </div>
+      <figcaption>
+        About the components — <strong style="color:#ef4444">red component ①</strong>: smallest K, barely enters the stationary phase, first to elute at t₁;
+        <strong style="color:#16a34a">green component ②</strong>: intermediate K, elutes at t₂;
+        <strong style="color:#2563eb">blue component ③</strong>: largest K, repeatedly held up in the stationary phase, last to elute at t₃.
+        The peaks grow steadily wider as a result of longitudinal molecular diffusion; the <strong>area</strong> of each peak (not its height) is proportional to the component's amount.
+      </figcaption>
+    </figure>
+
+    <p>
+      The two great families of chromatography are sorted by mobile phase: <span class="term">gas chromatography (GC)</span> uses a carrier gas,
+      <span class="term">high-performance liquid chromatography (HPLC)</span> uses a liquid (driven at high pressure). A one-line mnemonic for choosing:
+      <strong>if it vaporizes and tolerates heat, use GC (fast, sensitive, economical); if it will not vaporize or fears heat, use HPLC (nearly universal)</strong>.
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th></th><th>Gas chromatography, GC</th><th>High-performance liquid chromatography, HPLC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Mobile phase</strong></td><td>Carrier gas (He, N₂)</td><td>Liquid (water/methanol/acetonitrile, etc., driven by a high-pressure pump)</td></tr>
+        <tr><td><strong>Sample requirements</strong></td><td>Must vaporize and be thermally stable</td><td>Only needs to dissolve in the mobile phase; thermally labile and macromolecular samples are fine</td></tr>
+        <tr><td><strong>Typical tasks</strong></td><td>Liquor flavor profiles, residual solvents, oil and gas composition, first-pass doping screens</td><td>Drugs, amino acids, vitamins, food additives, proteins</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      Chromatography's revolution lives in the word "<strong>separation</strong>": it turns "quantifying a mixture" into "measuring the signals of pure components".
+      Retention time for identification, peak area for quantification — those two phrases hold up half of the modern analytical laboratory;
+      once chromatography is coupled with mass spectrometry (GC-MS, LC-MS), it carries qualitative and quantitative analysis on one pair of shoulders.
+    </div>
+  </section>
+
+  <!-- ============ §4 Mass spectrometry ============ -->
+  <section id="ms">
+    <h2>§4 Mass Spectrometry: Weighing Molecules and Reading Isotope Signatures</h2>
+    <p>
+      The idea of <span class="term">mass spectrometry (MS)</span> is crisply direct:
+      <strong>ionize</strong> the sample molecules (usually an energetic electron knocks an electron off the molecule, leaving a positively charged molecular ion),
+      then use electric and magnetic fields to send the ions separate ways by <span class="term">mass-to-charge ratio (m/z)</span>
+      (the ion's mass divided by its number of charges); the detector counts them one by one — yielding a "stick diagram" with m/z on the horizontal axis.
+    </p>
+    <p>
+      Read the spectrum in three steps: at the <strong>high-mass end</strong>, find the <span class="term">molecular ion peak</span>
+      — its m/z is the relative molecular mass (M);
+      read <strong>fragment peaks</strong> for their fragmentation patterns to infer functional groups and how the skeleton is connected (even firmer when combined with IR and NMR);
+      <strong>isotope peaks</strong> are ironclad evidence of elemental composition — this is exactly where
+      <a href="../00-Foundations/01-Atoms-and-Elements.html">00 Foundations Chapter 1, "Isotopes"</a> gets to shine:
+      the resolution of MS is enough to split isotope ions differing in mass by 1–2 into adjacent peaks.
+    </p>
+    <p>The two most practical isotope rules:</p>
+    <ul>
+      <li><strong>Contains one Cl</strong>: natural abundances of ³⁵Cl and ³⁷Cl are about 75.8% : 24.2% ≈ <strong>3 : 1</strong>,
+        so on the spectrum the M and M+2 peaks appear in an intensity ratio of about 3:1.</li>
+      <li><strong>Contains one Br</strong>: ⁷⁹Br and ⁸¹Br are each about 50%, giving M and M+2 <strong>twin peaks of equal height</strong>, recognizable at a glance.</li>
+    </ul>
+    <p>
+      Carbon's ¹³C (about 1.1%) leaves a small peak at M+1 whose size grows with the number of carbon atoms.
+      With this the Big Three join into one: spectroscopy recognizes functional groups, chromatography does the separating, mass spectrometry pins down the molecule —
+      hyphenated instruments (GC-MS, LC-MS) plus chemometric data processing are the farther territory marked on the "sub-branch map" of the branch overview page.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: In the mass spectrum of a certain haloalkane, the peaks at m/z 128 and 130 have an intensity ratio of about 3:1. Which element does it contain? What if the ratio were 1:1?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Recall 00 Foundations — what natural isotopes do chlorine and bromine each have, and in what abundance ratios?</p>
+        <p>
+          A 3:1 M / M+2 doublet is the signature of <strong>a single chlorine atom</strong> (³⁵Cl about 75.8%, ³⁷Cl about 24.2%).
+          If it were 1:1, that would point to <strong>a single bromine atom</strong> (⁷⁹Br and ⁸¹Br each about half).
+          Without running a single chemical reaction, one mass spectrum hands over key evidence about elemental composition — such is the power of the "isotope signature".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>UV-Vis: the Beer–Lambert law <span class="formula">A = εbc</span>; A is linear in concentration, optimal window 0.2–0.8; quantification still relies on reading back from a calibration curve.</li>
+        <li>IR: the functional-group region names the groups (broad O—H peak, sharp strong C=O peak, etc.), and the fingerprint region confirms the compound against reference spectra; AAS in one sentence — ground-state atoms eat their characteristic line, measuring trace metals.</li>
+        <li>Chromatography: differences in partition coefficients → differential migration → retention time t<sub>R</sub> for identification and peak area for quantification; use GC if it vaporizes, HPLC for heat-sensitive macromolecules.</li>
+        <li>Mass spectrometry: separates by m/z; the molecular ion peak gives the relative molecular mass, fragment peaks suggest the structure, and isotope peaks identify elements (Cl 3:1, Br 1:1).</li>
+        <li>The iron rule stands: an instrument gives a signal, not an answer — every quantification needs calibration that "trades the known for the unknown".</li>
+        <li>The Big Three in alliance (GC-MS / LC-MS) + chemometrics form the mainstay of the modern analytical laboratory and the next stop on the sub-branch map.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · The Big Three of Instrumental Analysis <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "A solution measured in a 1.00 cm cuvette gives A = 0.84, with ε = 4.2×10³ L·mol⁻¹·cm⁻¹. Its concentration is approximately?",
+            "options": ["2.0×10⁻⁴ mol/L", "1.0×10⁻⁴ mol/L", "4.2×10⁻⁴ mol/L", "8.4×10⁻³ mol/L"],
+            "answer": 0,
+            "explain": "c = A/(εb) = 0.84 / (4.2×10³ × 1.00) = 2.0×10⁻⁴ mol/L. When substituting, mind the units of ε and use b in cm so the result comes out in mol/L."
+          },
+          {
+            "q": "On a chromatogram, what are the respective bases for identification and quantification?",
+            "options": ["Peak height gives amount; elution time gives structure", "Retention time for identification (compared against standards), peak area for quantification", "More peaks mean a purer sample", "The first peak to elute has the largest amount"],
+            "answer": 1,
+            "explain": "Under fixed conditions the retention time is a component's \"temporal fingerprint\"; comparing it with a standard identifies the component. Peak area is proportional to amount and, combined with a calibration curve or an internal standard, quantifies it. Peak height also depends on peak width, and elution order is determined solely by partition behavior, not by amount."
+          },
+          {
+            "q": "Which of the following samples is best measured by gas chromatography (GC)?",
+            "options": ["Amino acids in blood (nonvolatile, heat-sensitive)", "Proteins and peptides", "Volatile components such as ethanol in liquor", "An aqueous vitamin C solution"],
+            "answer": 2,
+            "explain": "GC requires the sample to vaporize and be thermally stable: volatile components like ethanol fit perfectly, and GC is fast and sensitive. Amino acids, proteins, and vitamin C are nonvolatile or heat-sensitive and should go through HPLC."
+          },
+          {
+            "q": "In the mass spectrum of a compound, the M and M+2 peaks are nearly equal in intensity (about 1:1). It most likely contains?",
+            "options": ["One Cl", "One Br", "Two Cl", "One ¹³C"],
+            "answer": 1,
+            "explain": "⁷⁹Br and ⁸¹Br each have natural abundances of about 50%, so a molecule with one Br gives an equal-height M / M+2 doublet. One Cl gives about 3:1; two Cl give M, M+2, and M+4 peaks (about 9:6:1); ¹³C contributes only a small M+1 peak of about 1.1% × the number of carbons."
+          },
+          {
+            "q": "Which attitude toward using expensive instruments is correct?",
+            "options": ["If the instrument is advanced enough, quantitative results print out directly — no calibration needed", "The higher the sensitivity the better; samples need no pretreatment at all", "A single power-on self-test once a year is enough", "All quantification still requires calibration with a standard curve or internal standard; the instrument provides only a signal"],
+            "answer": 3,
+            "explain": "Instruments output signals (absorbance, peak area, ion counts); converting them into amounts requires standards of known concentration (external standard / internal standard / standard addition). Instrument drift, detector aging, and matrix effects can bend the ruler at any moment. The idea of calibration has not changed from Chapter 1 to this chapter."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Titration-and-Classical-Analysis.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Titration and Classical Analysis</span></a>
+      <a class="next" href="../04-Physical-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">04 Physical Chemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (Beer-Lambert slider / chromatography separation animation) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function mixColor(c1, c2, t) {
+    return "rgb(" + Math.round(lerp(c1[0], c2[0], t)) + "," +
+      Math.round(lerp(c1[1], c2[1], t)) + "," + Math.round(lerp(c1[2], c2[2], t)) + ")";
+  }
+
+  /* ---------- 1. Beer-Lambert law slider ---------- */
+  var beerSvg = document.getElementById("beerSvg");
+  if (beerSvg) {
+    var EPS = 4200, B = 1.00;
+    var cLabel = document.getElementById("beerC");
+    var slider = document.getElementById("beerSlider");
+    var readout = document.getElementById("beerReadout");
+
+    el("rect", { x: 0, y: 0, width: 640, height: 300, fill: "#ffffff" }, beerSvg);
+
+    // light source
+    el("circle", { cx: 70, cy: 150, r: 22, fill: "#fbbf24", stroke: "#f59e0b", "stroke-width": 2.5 }, beerSvg);
+    for (var r = 0; r < 8; r++) {
+      var ang = Math.PI * 2 * r / 8;
+      el("line", { x1: 70 + 28 * Math.cos(ang), y1: 150 + 28 * Math.sin(ang),
+        x2: 70 + 38 * Math.cos(ang), y2: 150 + 38 * Math.sin(ang),
+        stroke: "#f59e0b", "stroke-width": 2.5 }, beerSvg);
+    }
+    var lampTxt = el("text", { x: 70, y: 208, "text-anchor": "middle", "font-size": 12, fill: "#92400e" }, beerSvg);
+    lampTxt.textContent = "Light source I₀";
+
+    // incident beam
+    el("line", { x1: 108, y1: 150, x2: 244, y2: 150, stroke: "#f59e0b", "stroke-width": 8 }, beerSvg);
+    el("polygon", { points: "244,142 258,150 244,158", fill: "#f59e0b" }, beerSvg);
+
+    // cuvette
+    el("rect", { x: 262, y: 66, width: 112, height: 168, fill: "#ffffff", stroke: "#64748b", "stroke-width": 2.5, rx: 5 }, beerSvg);
+    var liquid = el("rect", { x: 268, y: 72, width: 100, height: 156, fill: "#e9d5ff", rx: 3 }, beerSvg);
+    el("line", { x1: 262, y1: 60, x2: 262, y2: 240, stroke: "#94a3b8", "stroke-width": 1 }, beerSvg);
+    el("line", { x1: 374, y1: 60, x2: 374, y2: 240, stroke: "#94a3b8", "stroke-width": 1 }, beerSvg);
+    var cuvTxt = el("text", { x: 318, y: 262, "text-anchor": "middle", "font-size": 12, fill: "#4b5563" }, beerSvg);
+    cuvTxt.textContent = "Cuvette b = 1.00 cm";
+    var cTxt = el("text", { x: 318, y: 52, "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: "#5b21b6" }, beerSvg);
+    cTxt.textContent = "c = 1.0×10⁻⁴ mol/L";
+
+    // outgoing beam (dynamic opacity)
+    var beamOut = el("line", { x1: 380, y1: 150, x2: 508, y2: 150, stroke: "#f59e0b", "stroke-width": 8, opacity: 1 }, beerSvg);
+    var beamArr = el("polygon", { points: "508,142 522,150 508,158", fill: "#f59e0b", opacity: 1 }, beerSvg);
+
+    // detector
+    el("rect", { x: 528, y: 118, width: 92, height: 64, rx: 8, fill: "#f1f5f9", stroke: "#64748b", "stroke-width": 2 }, beerSvg);
+    var detTxt = el("text", { x: 574, y: 140, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, beerSvg);
+    detTxt.textContent = "Detector";
+    var aTxt = el("text", { x: 574, y: 165, "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: "#5b21b6" }, beerSvg);
+    aTxt.textContent = "A = 0.42";
+    var tTxt = el("text", { x: 574, y: 200, "text-anchor": "middle", "font-size": 12, fill: "#6b7280" }, beerSvg);
+    tTxt.textContent = "T = 38%";
+
+    var PALE = [245, 243, 255], DEEP = [76, 29, 149];
+    function sup(cVal) {
+      var A = EPS * B * cVal * 1e-4;
+      var T = Math.pow(10, -A);
+      liquid.setAttribute("fill", mixColor(PALE, DEEP, cVal / 10));
+      var op = Math.max(0.06, T);
+      var w = (4 + 6 * T).toFixed(1);
+      beamOut.setAttribute("opacity", op.toFixed(3));
+      beamOut.setAttribute("stroke-width", w);
+      beamArr.setAttribute("opacity", op.toFixed(3));
+      aTxt.textContent = "A = " + A.toFixed(2);
+      tTxt.textContent = "T = " + Math.round(T * 100) + "%";
+      cTxt.textContent = "c = " + cVal.toFixed(1) + "×10⁻⁴ mol/L";
+      cLabel.textContent = cVal.toFixed(1) + "×10⁻⁴";
+      readout.textContent = "c = " + cVal.toFixed(1) + "×10⁻⁴ mol/L | A = εbc = 4.2×10³ × 1.00 × " +
+        cVal.toFixed(1) + "×10⁻⁴ = " + A.toFixed(2) + " | T = 10⁻ᴬ = " + Math.round(Math.pow(10, -A) * 100) + "%";
+    }
+    if (slider) {
+      slider.addEventListener("input", function () { sup(parseFloat(slider.value)); });
+      sup(parseFloat(slider.value));
+    }
+  }
+
+  /* ---------- 2. Chromatography separation animation (canvas) ---------- */
+  var cv = document.getElementById("chromCanvas");
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext("2d");
+    var readout = document.getElementById("chromReadout");
+    var playBtn = document.getElementById("chromPlay");
+
+    var COL = { x0: 40, x1: 400, y0: 62, y1: 152 };          // column region
+    var PLT = { x0: 432, x1: 622, yBase: 262, yTop: 56 };    // chromatogram region
+    var TMAX = 100;
+    var COMP = [
+      { name: "red component ①", tR: 30, sigma: 5, H: 74, color: "#ef4444", rgba: [239, 68, 68] },
+      { name: "green component ②", tR: 55, sigma: 6, H: 52, color: "#16a34a", rgba: [22, 163, 74] },
+      { name: "blue component ③", tR: 85, sigma: 8, H: 60, color: "#2563eb", rgba: [37, 99, 235] }
+    ];
+    COMP.forEach(function (c) { c.v = (COL.x1 - COL.x0 - 5) / c.tR; });
+
+    var startTime = null, rafId = null, reduced = false;
+    try {
+      reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (e) { reduced = false; }
+
+    function gauss(x, mu, s) { return Math.exp(-(x - mu) * (x - mu) / (2 * s * s)); }
+    function signal(tau) {
+      var s = 0;
+      for (var i = 0; i < COMP.length; i++) s += COMP[i].H * gauss(tau, COMP[i].tR, COMP[i].sigma);
+      return s;
+    }
+    function pxT(tau) { return PLT.x0 + (PLT.x1 - PLT.x0) * tau / TMAX; }
+    function pyS(s) { return PLT.yBase - s; }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.textBaseline = "alphabetic";
+
+      // column body and stationary-phase texture
+      ctx.fillStyle = "#f8fafc";
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      roundRect(COL.x0 - 8, COL.y0, COL.x1 - COL.x0 + 16, COL.y1 - COL.y0, 10);
+      ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = "#eef2f7";
+      ctx.lineWidth = 1;
+      for (var sy = COL.y0 + 8; sy < COL.y1 - 4; sy += 7) {
+        ctx.beginPath();
+        ctx.moveTo(COL.x0, sy);
+        ctx.lineTo(COL.x1, sy);
+        ctx.stroke();
+      }
+
+      // labels
+      ctx.fillStyle = "#4b5563";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("Mobile phase + components →", (COL.x0 + COL.x1) / 2, COL.y0 - 10);
+      ctx.fillStyle = "#6b7280";
+      ctx.textAlign = "left";
+      ctx.fillText("Column (inside the tube: stationary phase)", COL.x0 - 4, COL.y1 + 18);
+
+      // component bands inside the column
+      for (var i = 0; i < COMP.length; i++) {
+        var cx = COL.x0 + 4 + COMP[i].v * t;
+        if (cx < COL.x1 - 2) {
+          var cy = (COL.y0 + COL.y1) / 2;
+          var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 17);
+          grad.addColorStop(0, "rgba(" + COMP[i].rgba.join(",") + ",0.9)");
+          grad.addColorStop(1, "rgba(" + COMP[i].rgba.join(",") + ",0)");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(cx, cy, 17, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // detector
+      ctx.strokeStyle = "#b91c1c";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(COL.x1 + 10, COL.y0 - 8);
+      ctx.lineTo(COL.x1 + 10, COL.y1 + 8);
+      ctx.stroke();
+      ctx.fillStyle = "#b91c1c";
+      ctx.textAlign = "center";
+      ctx.font = "bold 12px sans-serif";
+      ctx.fillText("Detector", COL.x1 + 10, COL.y0 - 16);
+
+      // chromatogram axes
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(PLT.x0, PLT.yTop);
+      ctx.lineTo(PLT.x0, PLT.yBase);
+      ctx.lineTo(PLT.x1, PLT.yBase);
+      ctx.stroke();
+      ctx.fillStyle = "#4b5563";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText("Signal", PLT.x0 - 6, PLT.yTop + 10);
+      ctx.textAlign = "center";
+      ctx.fillText("Retention time t →", (PLT.x0 + PLT.x1) / 2, PLT.yBase + 34);
+
+      // retention-time reference lines and labels
+      ctx.setLineDash([4, 4]);
+      for (var j = 0; j < COMP.length; j++) {
+        ctx.strokeStyle = COMP[j].color;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(pxT(COMP[j].tR), PLT.yBase);
+        ctx.lineTo(pxT(COMP[j].tR), pyS(COMP[j].H));
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.font = "bold 12px sans-serif";
+      var tLabels = ["t₁", "t₂", "t₃"];
+      for (var k = 0; k < COMP.length; k++) {
+        ctx.fillStyle = COMP[k].color;
+        ctx.textAlign = "center";
+        ctx.fillText(tLabels[k], pxT(COMP[k].tR), PLT.yBase + 16);
+      }
+
+      // individual peak per component (elapsed portion only)
+      for (var m = 0; m < COMP.length; m++) {
+        var c = COMP[m];
+        ctx.beginPath();
+        var started = false;
+        for (var tau = Math.max(0, c.tR - 3.2 * c.sigma); tau <= Math.min(t, c.tR + 3.2 * c.sigma); tau += 0.2) {
+          var yy = pyS(c.H * gauss(tau, c.tR, c.sigma));
+          if (!started) { ctx.moveTo(pxT(tau), PLT.yBase); started = true; }
+          ctx.lineTo(pxT(tau), yy);
+        }
+        if (started) {
+          ctx.lineTo(pxT(Math.min(t, c.tR + 3.2 * c.sigma)), PLT.yBase);
+          ctx.closePath();
+          ctx.fillStyle = "rgba(" + c.rgba.join(",") + ",0.30)";
+          ctx.fill();
+        }
+      }
+      // total signal curve (up to current t)
+      ctx.strokeStyle = "#1f2937";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (var tau2 = 0; tau2 <= t; tau2 += 0.25) {
+        var y2 = pyS(signal(tau2));
+        if (tau2 === 0) ctx.moveTo(pxT(tau2), y2); else ctx.lineTo(pxT(tau2), y2);
+      }
+      ctx.lineTo(pxT(t), PLT.yBase);
+      ctx.stroke();
+    }
+
+    function roundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    var DUR = 9000; // milliseconds
+    function frame(now) {
+      if (startTime === null) startTime = now;
+      var t = Math.min(TMAX, (now - startTime) / DUR * TMAX);
+      draw(t);
+      var done = COMP.filter(function (c) { return t >= c.tR; });
+      readout.textContent = done.length === 0
+        ? "t = " + t.toFixed(0) + ": the three components are still moving through the column, speed differences gradually pulling them apart..."
+        : "t = " + t.toFixed(0) + ": eluted so far — " + done.map(function (c) { return c.name; }).join(", ") +
+          (done.length < 3 ? ", separation still in progress in the column..." : ". Separation complete: t₁ < t₂ < t₃; retention time identifies, peak area quantifies.");
+      if (t >= TMAX) { rafId = null; return; }
+      rafId = requestAnimationFrame(frame);
+    }
+    function start() {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (reduced) { draw(TMAX); readout.textContent = "Separation complete (shown directly per your system's reduced-motion setting): red, green, and blue elute in order at t₁ < t₂ < t₃; retention time identifies, peak area quantifies."; return; }
+      startTime = null;
+      rafId = requestAnimationFrame(frame);
+    }
+    if (playBtn) playBtn.addEventListener("click", start);
+    start();
+  }
+})();
+</script>
+</body>
+</html>

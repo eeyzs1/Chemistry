@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Main-Group Elements · Inorganic Chemistry Chapter 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">01 Inorganic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 2 · Main-Group Elements</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 Inorganic Chemistry · Chapter 2</div>
+    <h1>Main-Group Elements: The View from the Two Wings of the Periodic Table</h1>
+    <p class="lede">
+      The sparklers on a birthday cake, the helium–oxygen breathing gas of deep-sea divers, the tiny flame in a lighter flint, the carmine strontium in fireworks —
+      they all come from the <strong>two wings</strong> of the periodic table. Armed with the "map of trends" from Chapter 1, this chapter surveys the s block and the p block in the field:
+      the left wing is the family of alkali metals that explode on contact with water; the right wing is a gradient belt running from the reactive halogens to the "can't-be-bothered" noble gases.
+      You will find that <strong>within a group the personalities are strikingly alike, while between groups the temperaments differ wildly</strong> — and all of it can be derived from
+      the tug-of-war between Z<sub>eff</sub> and the number of electron shells.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 55 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 The Periodic Law</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#sblock">§1 The s Block: Fire and Fury</a>
+    <a href="#pblock">§2 The p Block: A Gradient of Many Faces</a>
+    <a href="#noble">§3 Noble Gases: The Lazy Aristocrats</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: A Family Reunion</h2>
+    <p>
+      Imagine two family reunions. At the s-block party on the left wing: lithium is fairly well-mannered, sodium picks a fight with the water tank the moment it walks in,
+      and potassium sets the curtains on fire within a second of arriving — <strong>each one more hot-tempered than the last, with the temper rising down the group</strong>.
+      The p-block party on the right wing is far livelier: the halogen family is snatching electrons, the carbon group is raising frameworks, nitrogen, phosphorus, oxygen, and sulfur each perform their bonding stunts,
+      and in the corner the noble gases stand with folded arms, ignoring everyone.
+    </p>
+    <p>
+      Chapter 1 established that down a group, <strong>electron shells increase, radii grow, and IE falls</strong> — the metals become ever more "generous";
+      across a row from left to right, <strong>Z<sub>eff</sub> increases</strong> — the elements become ever more "stingy." The entire plot of this chapter
+      is these two rules performing on real elements. We start with the most hot-tempered block of all: the s block.
+    </p>
+  </section>
+
+  <!-- ============ §1 s block ============ -->
+  <section id="sblock">
+    <h2>§1 The s Block: The Fire and Fury of the Alkali and Alkaline-Earth Metals</h2>
+    <p>
+      The s block = columns 1–2 on the left wing: group ⅠA <span class="term">alkali metals</span>
+      (Li, Na, K, Rb, Cs) and group ⅡA <span class="term">alkaline-earth metals</span>
+      (Be, Mg, Ca, Sr, Ba). Their shared portrait can be drawn straight from the Chapter 1 trends:
+      <strong>the largest radii and the lowest IEs in the whole table</strong> — the 1–2 outermost electrons live "far from the throne," beyond the nucleus's easy reach, and are extremely easy to take away.
+      As a result, all s-block metals are <strong>strong reducing agents</strong>: hydrogen with water, flames with oxygen, salts with halogens — there is no mild option.
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Family</th><th>Representatives</th><th>Reaction with cold water</th><th>Trend explanation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>ⅠA alkali metals</strong></td><td>Na, K</td><td>Na reacts violently; K is even fiercer, often igniting the hydrogen and even detonating it with a bang</td><td>Down the group, IE falls and radius grows → losing electrons gets ever easier</td></tr>
+        <tr><td><strong>ⅡA alkaline-earth metals</strong></td><td>Mg, Ca</td><td>Ca releases hydrogen slowly; Mg barely reacts with cold water, only noticeably with hot water</td><td>One column right within the period, Z<sub>eff</sub> rises and IE recovers → losing electrons gets harder</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sodium and Water: The Classic of Classics</h3>
+    <p>
+      Drop a pea-sized piece of sodium into water tinged with phenolphthalein, and five phenomena follow in one seamless sequence —
+      <strong>float, melt, dart, hiss, red</strong>. Memorize the mnemonic first; the animation below takes it apart frame by frame:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="naWaterSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="Step-by-step animation of the sodium–water reaction"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="naNext">Next step · See the next phenomenon</button>
+          <button class="btn ghost" id="naReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="naReadout">[0/5 · Drop in] Drop a pea-sized piece of sodium into water tinged with phenolphthalein (in a real experiment: small amounts, ventilation, and protection are mandatory)</div>
+      </div>
+      <figcaption>
+        The overall reaction of sodium with water: <span class="formula">2Na + 2H<sub>2</sub>O → 2NaOH + H<sub>2</sub>↑</span> (exothermic).
+        The five phenomena correspond one-to-one with five properties of sodium — low density, low melting point, a gaseous product, heat release, and a basic product.
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · "Float, melt, dart, hiss, red" — not one step wasted</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Match Them Up</span>
+        <p>
+          Read the five phenomena like a medical report, item by item: <strong>float</strong> = lighter than water; <strong>melt</strong> = melts exceptionally easily (low melting point)
+          + the reaction releases heat; <strong>dart</strong> = a jet of gas at the tail (a gas is given off); <strong>hiss</strong> = hot and bubbling (heat + bursting bubbles);
+          <strong>red</strong> = a basic "calling card" left behind (NaOH turns phenolphthalein red). Each phenomenon is a live broadcast of one property.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · The Data</span>
+        <p>
+          Sodium's density is 0.97 g/cm³ (&lt; water's 1.0) → it floats; its melting point is only 97.8 °C, and the heat released easily pushes the interface temperature past that → it melts into a ball;
+          the reaction <span class="formula">2Na + 2H<sub>2</sub>O → 2NaOH + H<sub>2</sub>↑</span> keeps releasing hydrogen bubbles at the ball's surface,
+          and when enough accumulate on one side they push the ball toward the other → it darts around; the heat makes the water boil locally and the bubbles burst → hissing;
+          the NaOH formed dissolves completely → phenolphthalein turns red. Potassium is fiercer: it releases heat faster, often igniting the hydrogen outright with an explosive "firework" bang.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          The reaction in electron terms: Na's IE is only 496 kJ/mol, so electrons pass directly from the metal surface to the H<sup>+</sup> that water faintly ionizes to give,
+          and H<sub>2</sub> deposits on the ball's surface — in effect a short-circuited micro-battery. Hydrogen evolves at randomly distributed spots, the thrust keeps changing direction, and the ball scurries wildly;
+          the heat concentrates at the millimeter-scale solid–liquid interface, so the local temperature sails past the melting point. Note that "water supplies H<sup>+</sup>" means
+          <strong>pure water itself contains a few ions</strong> — exactly the starting point of the pH theory in Chapter 4.
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "All metals are heavier than water"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Iron blocks, copper blocks, gold bars — toss any of them into water and they sink — "metal means heavy" seems only natural, so sodium, being a metal, must surely sink too.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Floating or sinking is decided by <strong>density</strong>, not by "being a metal." Density = packed mass ÷ occupied volume: alkali-metal atoms have enormous radii
+          and weak metallic bonding (each atom contributes only 1 electron of "glue"), so their crystals pack remarkably "fluffy." Sodium's density is only
+          <strong>0.97 g/cm³</strong>, lighter than water, so it floats on the surface; lithium 0.53, potassium 0.86, rubidium 1.53 — the first three all float on water.
+          Iron at 7.9 and gold at 19.3, naturally, sink straight to the bottom. <strong>Down a group the atoms get heavier but also fluffier: the two trends race, and volume usually wins.</strong>
+        </div>
+      </div>
+    </div>
+
+    <h3>Why Sodium Sleeps Under Kerosene</h3>
+    <p>
+      In the laboratory, sodium is always kept submerged in <strong>kerosene</strong> in brown bottles, fetched out with tweezers and cut with a knife — because sodium's enemies are everywhere:
+      at room temperature it oxidizes the instant it meets O<sub>2</sub> (forming <span class="formula">Na<sub>2</sub>O</span>; when heated and burning it becomes
+      <span class="formula">Na<sub>2</sub>O<sub>2</sub></span>), and it reacts violently with water. Kerosene is an inert mixture of hydrocarbons,
+      contains no active hydrogen, and does not react with sodium; meanwhile sodium's density of 0.97 &gt; kerosene's ~0.8, so it settles exactly at the bottom of the bottle, <strong>completely cut off from air and moisture</strong>.
+      Incidentally: lithium (0.53) is lighter than kerosene and would float on it — an imperfect seal — so it is instead sealed in <strong>paraffin</strong>.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">🧯 Safety Notes (read this carefully)</div>
+      Sodium and potassium experiments must use <strong>small amounts</strong> (pea-sized), good ventilation, and safety goggles; handle with tweezers, never bare hands.
+      If sodium catches fire, <strong>never use water or foam extinguishers</strong> (they would detonate the hydrogen), and do not use CO<sub>2</sub> extinguishers either
+      (the combustion product Na<sub>2</sub>O<sub>2</sub> reacts with CO<sub>2</sub> to release oxygen) — the correct response is to <strong>smother it with dry sand</strong> to cut off the air.
+    </div>
+
+    <h3>🔬 Try It Out: The Flame Test</h3>
+    <p>
+      Solutions of s-block (and Ca, Sr, Cu, etc.) metal ions are colorless in themselves, but when picked up on a platinum wire and burned in a burner flame,
+      the flame takes on an <strong>element-specific color</strong> — the classic method for testing metal ions, and the secret behind firework palettes.
+      Click the buttons to give the Bunsen burner different metal salts and see:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="flameSvg" width="360" height="330" viewBox="0 0 360 330" role="img" aria-label="Flame test simulator"></svg>
+        <div class="fig-controls">
+          <button class="btn ghost" id="fl-Li">Lithium Li</button>
+          <button class="btn ghost" id="fl-Na">Sodium Na</button>
+          <button class="btn ghost" id="fl-K">Potassium K</button>
+          <button class="btn ghost" id="fl-Ca">Calcium Ca</button>
+          <button class="btn ghost" id="fl-Sr">Strontium Sr</button>
+          <button class="btn ghost" id="fl-Cu">Copper Cu</button>
+        </div>
+        <div class="fig-readout" id="flameReadout">🔥 Bunsen burner on standby — click an element button to ignite</div>
+      </div>
+      <figcaption>
+        Principle: the heat gives an electron energy, and it jumps to a higher level; falling back to a lower level, it releases the energy as a photon,
+        <span class="formula">ΔE = hν</span> — the gap between levels fixes the color. Different elements have different level structures, so the color is a "fingerprint."
+        Note that potassium's violet is very pale; in experiments it must be viewed <strong>through blue cobalt glass</strong> to filter out the interference from the yellow light of sodium impurities.
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>Think It Through: Solutions of Na⁺, K⁺, and Ca²⁺ are colorless — so where does the flame's color come from?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Is the color "emitted" or "carried within"? Think about stage lights versus an ordinary light bulb.</p>
+        <p>
+          The solutions are colorless because at room temperature the electrons all sit in the ground state and absorb no visible light. The flame <strong>excites</strong> electrons to higher levels;
+          when they jump back down they each emit a photon whose frequency is set by the gap between the two levels (ΔE = hν). Sodium's transition lands right at 589 nm (yellow light),
+          potassium's mainly at 766 nm (the violet edge of the visible, near ultraviolet) ... so the color is not a pigment the ion "carries," but
+          <strong>light "emitted on the spot" in the flame</strong>. This is also why the flame test detects the "element" rather than its bonding form —
+          whether the sodium comes from NaCl or Na₂CO₃, the spectral lines are identical.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 p block ============ -->
+  <section id="pblock">
+    <h2>§2 The p Block: The Gradient Belt from Boron to Krypton</h2>
+    <p>
+      The p block on the right wing spans columns 13–18 and is the most compositionally mixed strip of the entire table: at the upper left, boron is a metalloid;
+      below it, aluminum is a metal; to the right, oxygen and chlorine are nonmetals; and at the far end the noble gases simply ignore everyone. The diagonal rule from Chapter 1 is on full display here:
+      <strong>nonmetallic character is strongest at the upper right, metallic character at the lower left, with fence-sitting metalloids in between</strong>. This section fields three representative teams:
+      the electron-grabbing halogens; the bond-shapeshifting nitrogen, phosphorus, oxygen, and sulfur; and the framework-raising carbon and silicon.
+    </p>
+
+    <h3>Halogens: Four Brothers in the Electron Grab</h3>
+    <p>
+      Group ⅦA <span class="term">halogens</span> (F, Cl, Br, I) hold 7 outermost electrons,
+      just one short of a full house — so each of the free elements is an oxidizer, snatching electrons on sight. But the four brothers are far from equal in strength,
+      and a single rule from Chapter 1 ranks them: <strong>down the group, nonmetallic character weakens → oxidizing power F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub></strong>.
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Halogen</th><th>Appearance at room temperature</th><th>Oxidizing power</th><th>Thermal stability of the hydride</th><th>Acidity of the corresponding hydrohalic acid</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Fluorine F<sub>2</sub></strong></td><td>Pale yellow-green gas</td><td>Strongest (etches glass)</td><td>HF most stable (barely decomposes even at 1000 °C)</td><td>HF anomalously the weakest (explained in Chapter 4)</td></tr>
+        <tr><td><strong>Chlorine Cl<sub>2</sub></strong></td><td>Yellow-green gas</td><td>Strong</td><td>HCl stable</td><td>Strong acid</td></tr>
+        <tr><td><strong>Bromine Br<sub>2</sub></strong></td><td>Deep red-brown liquid</td><td>Moderate</td><td>HBr decomposes rather easily</td><td>Strong acid</td></tr>
+        <tr><td><strong>Iodine I<sub>2</sub></strong></td><td>Violet-black solid (sublimes readily)</td><td>Weakest</td><td>HI least stable (decomposes noticeably around 300 °C)</td><td>HI strongest</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      The most direct application of the oxidizing order is the <strong>displacement reaction</strong>: the stronger halogen can push the weaker one out of its salt solution, never the reverse.
+      Example 1 below demonstrates in full; Example 2 uses the same rule to explain "why the hydrides rank the other way."
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me): chlorine water added to KBr and KI solutions</div>
+      <div class="worked-problem">
+        Chlorine water is added dropwise to separate solutions of KBr and KI. What reaction occurs in each? What is observed? Can Br<sub>2</sub> displace Cl<sub>2</sub> from a KCl solution?
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>Call up the rule</strong>: the oxidizing power of the free halogens is F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub> (nonmetallic character weakens down the group). The free element with the stronger oxidizing power can oxidize the anion of the weaker one.</li>
+        <li class="step"><strong>Judge the direction</strong>: Cl<sub>2</sub> is a stronger oxidizer than Br<sub>2</sub>, so Cl<sub>2</sub> can oxidize Br<sup>−</sup> to Br<sub>2</sub>, itself being reduced to Cl<sup>−</sup>.</li>
+        <li class="step"><strong>Write the equations</strong>: <span class="formula">Cl<sub>2</sub> + 2KBr → 2KCl + Br<sub>2</sub></span> (ionic equation <span class="formula">Cl<sub>2</sub> + 2Br<sup>−</sup> → 2Cl<sup>−</sup> + Br<sub>2</sub></span>).</li>
+        <li class="step"><strong>Record the observations</strong>: the solution turns from colorless to orange-yellow (the color of Br<sub>2</sub> dissolved in water); with KI, likewise <span class="formula">Cl<sub>2</sub> + 2KI → 2KCl + I<sub>2</sub></span>, the solution turns brown-yellow, and adding starch solution turns it blue (the characteristic reaction of I<sub>2</sub> with starch).</li>
+        <li class="step">✅ <strong>Answer the reverse question</strong>: Br<sub>2</sub> is a weaker oxidizer than Cl<sub>2</sub> and <strong>cannot</strong> displace Cl<sub>2</sub> from KCl — displacement is a one-way street of "the strong evicting the weak."</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me): ranking the hydrides by stability</div>
+      <div class="worked-problem">
+        Rank HF, HCl, HBr, and HI by thermal stability from strongest to weakest. Why is this exactly the reverse of the "hydrohalic acid" acidity ranking (acidity strongest for HI)?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: thermal stability is about how hard it is to <strong>break the H—X bond</strong>. What determines bond energy? Recall Chapter 1 — down a group, what happens to the atomic radius?</li>
+        <li class="step">💡 Hint: from F to I the radius grows stepwise → the H—X bond lengthens stepwise → the bond energy falls stepwise (H—F ~565, H—Cl 431, H—Br 366, H—I 299 kJ/mol).</li>
+        <li class="step">💡 Hint: the stronger the bond, the harder the decomposition → stability <strong>HF &gt; HCl &gt; HBr &gt; HI</strong>. Cross-check with experiment: HF survives a thousand degrees almost untouched, while HI decomposes visibly at three hundred.</li>
+        <li class="step">💡 Hint: "acidity" measures how easily the H—X bond is torn open in water to release H<sup>+</sup> — the weaker the bond, the easier the release, so the acidity ranking runs exactly opposite, with HI strongest.</li>
+        <li class="step">✅ Self-check: stability reads bond energy (stronger = more stable), acidity reads ease of bond breaking (weaker = more acidic) — <strong>one set of bond-energy data, read in two directions</strong>. Why HF is the "anomalously weakest acid" is saved for the quantitative treatment in Chapter 4.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <h3>Nitrogen, Phosphorus, Oxygen, Sulfur: The Shape-Shifters of Bonding</h3>
+    <p>
+      Sandwiched between the carbon group and the halogens, N, P, O, and S are the p block's "shape-shifting masters" — the same element can wear completely different bonds in different molecules:
+    </p>
+    <ul>
+      <li><strong>Nitrogen N</strong>: N<sub>2</sub> locks itself shut with a <strong>triple bond</strong> (bond energy a towering 945 kJ/mol) — which is why it fills 78% of the air yet stays "steady as a rock"; but switch to NH<sub>3</sub>, where nitrogen carries a <strong>lone pair</strong>, and it can both bind H<sup>+</sup> to act as a base (Chapter 4) and "donate electrons" to metal ions as a coordinate bond (Chapter 3: [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>).</li>
+      <li><strong>Phosphorus P</strong>: white phosphorus is a small tetrahedral <strong>P<sub>4</sub></strong> molecule of 4 P atoms (deadly poison, ignites spontaneously); red phosphorus is a polymer of countless hooked-together P chains (a regular in safety matches). The same element, a whole new personality — purely from "how it connects."</li>
+      <li><strong>Oxygen O</strong>: the O<sub>2</sub> double bond provisions the living world; O<sub>3</sub> (ozone) huddles three atoms together and absorbs ultraviolet light as the stratosphere's sunscreen — one extra atom, a whole new temper.</li>
+      <li><strong>Sulfur S</strong>: sulfur atoms are champions of bonding to themselves, 8 S atoms linking head-to-tail into the crown-shaped S<sub>8</sub> ring; elastic sulfur drawing into threads is the proof of rings pulled open into chains. Add oxygen to get SO<sub>2</sub>/SO<sub>3</sub>, hydrate that to H<sub>2</sub>SO<sub>4</sub> — the mother of industry.</li>
+    </ul>
+
+    <details class="think">
+      <summary>Think It Through: N₂ fills 78% of the atmosphere, and even thunderstorms pry it open only for an instant — why is nitrogen so "reluctant to react"?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Compare the bond energies of N₂ and O₂: N≡N ~945, O=O ~498 kJ/mol.</p>
+        <p>
+          Nitrogen's "laziness" is not inactivity but the <strong>prohibitive price of the triple bond</strong>: to react, bonds must break first, and breaking N≡N demands an energy toll
+          of nearly a thousand kJ/mol, which almost no one can pay at room temperature. That is why nitrogen fixation became chemistry's century-defining problem — thunderstorm discharges,
+          root-nodule bacteria, and the iron catalyst of the Haber process are all brokers "paying nitrogen's down payment." Once the down payment is settled and N is converted into NH<sub>3</sub>
+          and other compounds, nitrogen turns instantly reactive, feeding explosives, fertilizers, and proteins. <strong>Between inertness and activity lies nothing but a bond energy.</strong>
+        </p>
+      </div>
+    </details>
+
+    <h3>Carbon and Silicon: Artists of the Skeleton</h3>
+    <p>
+      Group ⅣA carbon is the Michelangelo of the bonding world: all 4 valence electrons go into covalent bonds — sp³ to build <strong>diamond</strong>'s three-dimensional network
+      (nature's hardest material), sp² to lay down <strong>graphite</strong>'s layered sheets (conducting within layers, gliding between them — pencil leads and electrodes),
+      and rolled up, carbon nanotubes. All of organic chemistry (branch 02) is an encyclopedia of carbon skeletons. Silicon, one floor down in the same group,
+      also loves raising frameworks, though in a different style — the Misconception Buster below is their classic comparison.
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "CO₂ is a gas, so group-mate SiO₂ should be similar"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Carbon and silicon both sit in group ⅣA, so their chemistry should be "one style per family": CO₂ is a freestanding small molecule and dry ice flies off at the first heat, so sand — SiO₂ — is probably also a volatile molecular crystal of small molecules.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          "Family resemblance" grants tendencies, <strong>not structures</strong>. The C atom is small and its C=O double bond is short and strong; one carbon with two oxygens is perfectly content —
+          CO₂ is a freestanding three-atom molecule, condensed into dry ice by weak intermolecular forces (sublimes at −78 °C).
+          The Si atom is a whole size larger, and its Si=O double bond is much weaker, so it opts instead for 4 Si—O <strong>single bonds</strong>: each Si grips 4 O,
+          each O bridges 2 Si ... extending without end into a three-dimensional network (<span class="term">covalent network solid</span>).
+          Quartz melts above 1600 °C, nearly two thousand degrees away from dry ice — <strong>same group does not mean same destiny: atomic size rewrites how atoms connect, and how atoms connect rewrites everything</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Noble gases ============ -->
+  <section id="noble">
+    <h2>§3 Noble Gases: Even Lazy Aristocrats Can Be Wooed</h2>
+    <p>
+      In the table's rightmost column sit the <span class="term">noble gases</span>
+      (He, Ne, Ar, Kr, Xe, Rn), once called "inert gases": outer shells full (2 electrons for He, 8 for the rest),
+      the highest IEs in the table, essentially zero appetite for gaining electrons — <strong>unwilling to give, too lazy to take</strong> — so they were long held to form no compounds whatsoever.
+    </p>
+    <p>
+      The turning point came in 1962. After preparing O<sub>2</sub><sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup>, Neil Bartlett noticed:
+      xenon's first ionization energy (1170 kJ/mol) is nearly identical to O<sub>2</sub>'s (~1175) — if PtF<sub>6</sub> could snatch electrons from oxygen,
+      why not from xenon? He mixed Xe with PtF<sub>6</sub> and at once obtained the orange-yellow solid Xe<sup>+</sup>[PtF<sub>6</sub>]<sup>−</sup>.
+      <strong>The first noble-gas compound was born</strong>, and the dogma of "inertness" collapsed on the spot. Thereafter
+      <span class="formula">XeF<sub>2</sub></span>, <span class="formula">XeF<sub>4</sub></span>,
+      <span class="formula">XeF<sub>6</sub></span> and more followed: XeF<sub>2</sub> is a stable white crystalline solid, a gentle yet potent oxidizer
+      still used in organic synthesis and etching. Note the pattern: the ones that can be "turned" are the <strong>heavier noble gases</strong> with larger radii and more loosely held outer electrons
+      (Xe, Kr, Rn); He, Ne, and Ar remain rock-solid — the further down, the farther the outer electrons from the nucleus, and the easier for a strong oxidizer to pry them away.
+    </p>
+    <p>
+      While we are at it, note their everyday posts: <strong>He</strong> — balloons and deep-sea breathing gas (barely soluble in blood, extremely light);
+      <strong>Ne</strong> — the red glow of neon signs; <strong>Ar</strong> — protective gas in light bulbs and argon-arc welding (0.93% of air, cheap and inert);
+      <strong>Kr/Xe</strong> — high-performance flash lamps and anesthesia research. "Laziness" itself is a use: not reacting is the best protection.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Two Wings of This Chapter, Side by Side</div>
+      <strong>s block, left wing</strong>: large radii, low IEs, strongly reducing — violent hydrogen release with water, sodium sleeping under kerosene, flame colors identifying ions.
+      <strong>p block, right wing</strong>: a gradient running from metalloids to the most reactive nonmetal F; halogen oxidizing power F&gt;Cl&gt;Br&gt;I,
+      with hydride stability falling in step; carbon and silicon raising covalent skeletons; noble gases "lazy" for good reason — yet XeF<sub>2</sub> proves even lazy aristocrats can be wooed.
+      Every direction still answers to the two trends of Chapter 1.
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>s-block metals = <strong>strong reducing agents</strong>: reacting with water as <span class="formula">2M + 2H<sub>2</sub>O → 2MOH + H<sub>2</sub>↑</span>, ever fiercer down the group; sodium in water — "float, melt, dart, hiss, red."</li>
+        <li>Sodium is lighter than water — and lighter still than the tempers of its "opponents" — so it must be stored <strong>isolated from air and moisture</strong> (under kerosene; lithium sealed in paraffin).</li>
+        <li>The flame test is physical light emission by <strong>electron transitions releasing photons</strong>; it identifies the element and is independent of its chemical form.</li>
+        <li>Halogen oxidizing power <strong>F<sub>2</sub> &gt; Cl<sub>2</sub> &gt; Br<sub>2</sub> &gt; I<sub>2</sub></strong>: the strong displace the weak; hydride stability runs the same way (HF most stable), while acid strength runs exactly opposite (Chapter 4).</li>
+        <li>N/P/O/S change character by changing how they connect; carbon and silicon build skeletons of covalent single bonds — <strong>CO₂ small molecules vs SiO₂ three-dimensional networks</strong> is the textbook case of structure determining properties.</li>
+        <li>The noble gases' inertness comes from their filled shells; <strong>the existence of XeF<sub>2</sub></strong> shows that "inertness" is only relative — the heavier noble gases can be won over by strong oxidizers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · Main-Group Elements <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "In the laboratory, sodium is stored under kerosene. What is the most important reason?",
+            "options": [
+              "Kerosene lowers sodium's reactivity",
+              "It shuts out air and moisture, and since sodium is denser than kerosene it sinks to the bottom, out of contact with the surroundings",
+              "Kerosene cools the sodium and keeps it from spontaneously igniting",
+              "Kerosene reacts with sodium to form a protective film"
+            ],
+            "answer": 1,
+            "explain": "Sodium's enemies are O₂ and H₂O: it oxidizes at room temperature and reacts violently with water. Kerosene is an inert hydrocarbon mixture with no active hydrogen and does not react with sodium; its density of about 0.8 is below sodium's 0.97, so the sodium sinks and is sealed beneath the liquid surface. Kerosene does not change sodium's reactivity — it only provides physical isolation."
+          },
+          {
+            "q": "Which of the following descriptions of the sodium–water reaction is INCORRECT?",
+            "options": [
+              "The sodium floats on the water surface",
+              "The sodium melts into a shiny ball and darts around",
+              "The sodium sinks to the bottom and bubbles slowly",
+              "The solution with phenolphthalein added turns red"
+            ],
+            "answer": 2,
+            "explain": "Sodium's density of 0.97 g/cm³ is less than water's, so it floats on the surface rather than sinking — 'all metals are heavier than water' is the misconception. The other three options are members of the mnemonic 'float, melt, dart, hiss, red': low melting point plus reaction heat melt it into a ball, hydrogen bubbles propel it around, and NaOH turns phenolphthalein red."
+          },
+          {
+            "q": "Which is the correct order of oxidizing power of the free halogens, from strongest to weakest?",
+            "options": [
+              "I₂ > Br₂ > Cl₂ > F₂",
+              "F₂ > Cl₂ > Br₂ > I₂",
+              "Cl₂ > F₂ > Br₂ > I₂",
+              "F₂ > Br₂ > Cl₂ > I₂"
+            ],
+            "answer": 1,
+            "explain": "Down the group: electron shells increase, radii grow, electronegativity and electron affinity both decrease, and nonmetallic character (electron-taking ability) declines — F₂ strongest, I₂ weakest. This is also why chlorine water can displace Br₂/I₂ from KBr/KI while the reverse is impossible."
+          },
+          {
+            "q": "The thermal stability of the hydrides HF > HCl > HBr > HI is mainly because?",
+            "options": [
+              "Fluorine is the most nonmetallic, but atomic radius increases stepwise from F to I, so the H—X bond lengthens and the bond energy decreases",
+              "HF has the smallest relative molecular mass",
+              "HI has the highest boiling point and is therefore the least stable",
+              "Acidity increases stepwise from HF to HI"
+            ],
+            "answer": 0,
+            "explain": "Stability is determined by the H—X bond energy: from F to I the radius grows stepwise, the bond lengthens, and the bond energy falls (about 565→299 kJ/mol), so decomposition gets easier down the group. Option D describes the acidity ranking — an indicator pointing in exactly the opposite direction from thermal stability, and the two must not be conflated."
+          },
+          {
+            "q": "What does the existence of noble-gas compounds such as XeF₂ demonstrate?",
+            "options": [
+              "Noble gases are actually the most reactive of all",
+              "The 'inertness' of the noble gases is relative: filled shells make bonding extremely difficult, but the heavier Xe can still be stripped of electrons by strong oxidizers to form compounds",
+              "The block divisions of the periodic table are wrong",
+              "Xe belongs to the same category as the alkali metals"
+            ],
+            "answer": 1,
+            "explain": "Filled shells give the noble gases the highest ionization energies and almost zero electron affinity, hence their 'laziness'; but Xe has a large radius and loosely held outer electrons, an IE (1170 kJ/mol) comparable to that of O₂, and can be conquered by super-strong oxidizers such as PtF₆ and F₂. Inertness is a matter of degree, not an absolute ban — He/Ne/Ar still have no stable compounds to this day."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="01-The-Periodic-Law.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 1 · The Periodic Law</span></a>
+      <a class="next" href="03-Transition-Metals-and-Coordination-Chemistry.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 3 · Transition Metals and Coordination Chemistry</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity: flame test simulator + step-by-step sodium–water animation ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+  function lighten(hex, f) {
+    var r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    r = Math.min(255, Math.round(r + (255 - r) * f));
+    g = Math.min(255, Math.round(g + (255 - g) * f));
+    b = Math.min(255, Math.round(b + (255 - b) * f));
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+
+  /* ---------- 1. Flame test simulator ---------- */
+  var FLAMES = [
+    { id: "Li", n: "Lithium", color: "crimson", hex: "#d946ef", wl: "≈671 nm", note: "the characteristic color of lithium salts such as lithium sulfate" },
+    { id: "Na", n: "Sodium", color: "yellow",   hex: "#facc15", wl: "≈589 nm", note: "the brightest interferent — the faintest trace of sodium yellows the flame, and it usually must be ruled out when observing other flame colors" },
+    { id: "K",  n: "Potassium", color: "violet",   hex: "#a855f7", wl: "≈766 nm / 404 nm", note: "the violet is faint; view through blue cobalt glass to filter out sodium's yellow light" },
+    { id: "Ca", n: "Calcium", color: "brick red", hex: "#ea580c", wl: "≈622 nm", note: "the characteristic brick red of calcium ions" },
+    { id: "Sr", n: "Strontium", color: "carmine", hex: "#f43f5e", wl: "≈606–687 nm", note: "the workhorse of red fireworks" },
+    { id: "Cu", n: "Copper", color: "green",   hex: "#22c55e", wl: "≈526 nm", note: "the blue-green of copper salts; blue fireworks rely on copper too" }
+  ];
+
+  var fsvg = document.getElementById("flameSvg");
+  if (fsvg) {
+    var fRead = document.getElementById("flameReadout");
+    var activeFlame = null;
+
+    function drawBurner(parent) {
+      el("ellipse", { cx: 180, cy: 300, rx: 52, ry: 9, fill: "#475569" }, parent);
+      el("rect", { x: 170, y: 252, width: 20, height: 46, rx: 3, fill: "#64748b" }, parent);
+      el("circle", { cx: 180, cy: 266, r: 3, fill: "#334155" }, parent);
+      el("rect", { x: 176, y: 244, width: 8, height: 10, fill: "#94a3b8" }, parent);
+      var t = el("text", { x: 250, y: 292, "font-size": 10.5, fill: "#6b7280" }, parent);
+      t.textContent = "Bunsen burner (salt-coated platinum wire held in the flame)";
+    }
+
+    function drawFlame(d) {
+      fsvg.innerHTML = "";
+      var defs = el("defs", {}, fsvg);
+      var grad = el("linearGradient", { id: "flameGrad", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      el("stop", { offset: "0%", "stop-color": lighten(d.hex, 0.55), "stop-opacity": 0.95 }, grad);
+      el("stop", { offset: "55%", "stop-color": d.hex, "stop-opacity": 0.75 }, grad);
+      el("stop", { offset: "100%", "stop-color": d.hex, "stop-opacity": 0.12 }, grad);
+      var blur = el("filter", { id: "flameBlur", x: "-60%", y: "-60%", width: "220%", height: "220%" }, defs);
+      el("feGaussianBlur", { stdDeviation: 16 }, blur);
+
+      drawBurner(fsvg);
+
+      if (!d) {
+        var t0 = el("text", { x: 180, y: 150, "text-anchor": "middle", "font-size": 13, fill: "#94a3b8" }, fsvg);
+        t0.textContent = "(not lit)";
+        return;
+      }
+
+      /* glow + outer flame + middle flame + flame core */
+      el("circle", { cx: 180, cy: 168, r: 86, fill: d.hex, opacity: 0.16, filter: "url(#flameBlur)" }, fsvg);
+      var outer = el("path", {
+        d: "M180,96 C216,146 212,196 198,232 C191,248 180,256 180,256 C180,256 169,248 162,232 C148,196 144,146 180,96 Z",
+        fill: "url(#flameGrad)", class: "anim-pulse"
+      }, fsvg);
+      outer.style.transformOrigin = "180px 256px";
+      el("path", {
+        d: "M180,158 C200,190 198,220 190,240 C186,250 180,254 180,254 C180,254 174,250 170,240 C162,220 160,190 180,158 Z",
+        fill: d.hex, opacity: 0.5
+      }, fsvg);
+      el("ellipse", { cx: 180, cy: 236, rx: 9, ry: 20, fill: "#fff7ed", opacity: 0.85 }, fsvg);
+      el("ellipse", { cx: 180, cy: 252, rx: 6, ry: 9, fill: "#93c5fd", opacity: 0.7 }, fsvg);
+
+      var t1 = el("text", { x: 180, y: 44, "text-anchor": "middle", "font-size": 30, "font-weight": 800, fill: d.hex }, fsvg);
+      t1.textContent = d.n + " " + d.id;
+      var t2 = el("text", { x: 180, y: 70, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "#374151" }, fsvg);
+      t2.textContent = d.color + " · " + d.wl;
+    }
+
+    FLAMES.forEach(function (d) {
+      var btn = document.getElementById("fl-" + d.id);
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        activeFlame = d;
+        drawFlame(d);
+        fRead.textContent = d.n + " " + d.id + " · flame color " + d.color + " · main spectral lines " + d.wl + " · " + d.note;
+        FLAMES.forEach(function (o) {
+          var b = document.getElementById("fl-" + o.id);
+          if (b) {
+            var on = o.id === d.id;
+            b.classList.toggle("ghost", !on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
+          }
+        });
+      });
+    });
+    drawFlame(null);
+  }
+
+  /* ---------- 2. Step-by-step sodium–water animation ---------- */
+  var nsvg = document.getElementById("naWaterSvg");
+  if (nsvg) {
+    var nRead = document.getElementById("naReadout");
+    var step = 0; /* 0 before dropping 1 float 2 melt 3 dart 4 red 5 done */
+    var STEPS = [
+      "[0/5 · Drop in] Drop a pea-sized piece of sodium into water tinged with phenolphthalein (in a real experiment: small amounts, ventilation, and protection are mandatory)",
+      "[1/5 · Float] Sodium's density of 0.97 g/cm³ is below water's (1.0), so it floats lightly on the surface",
+      "[2/5 · Melt] The reaction releases heat, and sodium's melting point is only 97.8 °C — the piece melts into a shiny ball",
+      "[3/5 · Dart + hiss] H₂ bubbles keep forming on the ball's surface, pushing it this way and that, hissing loudly",
+      "[4/5 · Red] The NaOH produced dissolves, and the solution turns from colorless to red — phenolphthalein reports a base",
+      "[5/5 · Done] Overall reaction: 2Na + 2H₂O → 2NaOH + H₂↑ (exothermic). Each of the five phenomena corresponds to one property of sodium"
+    ];
+
+    function drawNa() {
+      nsvg.innerHTML = "";
+      /* beaker */
+      el("path", { d: "M80,86 L80,258 Q80,272 96,272 L464,272 Q480,272 480,258 L480,86",
+                   fill: "none", stroke: "#94a3b8", "stroke-width": 4, "stroke-linecap": "round" }, nsvg);
+      el("line", { x1: 72, y1: 86, x2: 488, y2: 86, stroke: "#cbd5e1", "stroke-width": 3 }, nsvg);
+      var tag = el("text", { x: 86, y: 76, "font-size": 11.5, fill: "#6b7280" }, nsvg);
+      tag.textContent = "Beaker: water + a few drops of phenolphthalein";
+
+      /* water (turns red at step ≥ 4) */
+      var water = step >= 4 ? "#fbcfe8" : "#dbeafe";
+      var surf = step >= 4 ? "#f9a8d4" : "#93c5fd";
+      el("rect", { x: 84, y: 150, width: 392, height: 118, rx: 6, fill: water }, nsvg);
+      el("line", { x1: 84, y1: 150, x2: 476, y2: 150, stroke: surf, "stroke-width": 3 }, nsvg);
+
+      /* bubbles (step ≥ 3) */
+      if (step >= 3) {
+        var bs = [[300, 128, 5], [322, 116, 4], [282, 108, 3.5], [338, 138, 3], [258, 132, 4]];
+        bs.forEach(function (b) {
+          var c = el("circle", { cx: b[0], cy: b[1], r: b[2], fill: "#ffffff", opacity: 0.9,
+                                 stroke: "#93c5fd", "stroke-width": 1, class: "anim-float" }, nsvg);
+          c.style.animationDuration = (2 + Math.random() * 2).toFixed(2) + "s";
+        });
+        var ht = el("text", { x: 366, y: 122, "font-size": 12, "font-weight": 700, fill: "#2563eb" }, nsvg);
+        ht.textContent = "H₂↑";
+      }
+
+      /* sodium: 0 falling arrow; 1 half-submerged square; ≥2 ball (moves from step 3) */
+      if (step === 0) {
+        el("rect", { x: 252, y: 104, width: 16, height: 16, rx: 2, fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 1.5 }, nsvg);
+        el("line", { x1: 260, y1: 126, x2: 260, y2: 144, stroke: "#c2410c", "stroke-width": 2, "stroke-dasharray": "4 3" }, nsvg);
+        var t = el("text", { x: 278, y: 120, "font-size": 11, fill: "#c2410c" }, nsvg);
+        t.textContent = "Drop in";
+      } else if (step === 1) {
+        el("rect", { x: 252, y: 142, width: 16, height: 14, rx: 2, fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 1.5 }, nsvg);
+        var t1 = el("text", { x: 284, y: 136, "font-size": 12, "font-weight": 700, fill: "#c2410c" }, nsvg);
+        t1.textContent = "Float (ρ=0.97 < 1.0)";
+      } else {
+        var cx = step >= 3 ? 320 : 260, cy = step >= 3 ? 146 : 144;
+        var defs = el("defs", {}, nsvg);
+        var g = el("radialGradient", { id: "ballG", cx: "35%", cy: "30%" }, defs);
+        el("stop", { offset: "0%", "stop-color": "#ffffff" }, g);
+        el("stop", { offset: "55%", "stop-color": "#cbd5e1" }, g);
+        el("stop", { offset: "100%", "stop-color": "#64748b" }, g);
+        var ball = el("circle", { cx: cx, cy: cy, r: 14, fill: "url(#ballG)", stroke: "#475569", "stroke-width": 1.5 }, nsvg);
+        if (step >= 3) {
+          ball.setAttribute("class", "anim-pulse");
+          /* darting trajectory */
+          el("path", { d: "M258,142 C282,128 300,158 " + cx + "," + cy, fill: "none",
+                       stroke: "#c2410c", "stroke-width": 1.6, "stroke-dasharray": "5 4", opacity: 0.7 }, nsvg);
+        }
+        var shine = el("text", { x: cx, y: cy - 24, "text-anchor": "middle", "font-size": 11.5, "font-weight": 700, fill: "#c2410c" }, nsvg);
+        shine.textContent = step === 2 ? "Melts into a ball · exothermic" : (step >= 3 ? "Molten ball darts around" : "");
+        if (step === 2) {
+          el("path", { d: "M" + (cx - 30) + ",118 q6,-8 0,-16 M" + (cx + 30) + ",118 q6,-8 0,-16",
+                       fill: "none", stroke: "#ef4444", "stroke-width": 2, opacity: 0.8 }, nsvg);
+        }
+      }
+
+      /* completed-state equation */
+      if (step === 5) {
+        var eq = el("text", { x: 280, y: 216, "text-anchor": "middle", "font-size": 19,
+                              "font-weight": 800, fill: "#9a3412" }, nsvg);
+        eq.textContent = "2Na + 2H₂O = 2NaOH + H₂↑";
+        var eq2 = el("text", { x: 280, y: 240, "text-anchor": "middle", "font-size": 12, fill: "#4b5563" }, nsvg);
+        eq2.textContent = "Exothermic · the product NaOH turns phenolphthalein red";
+      }
+
+      /* phenomenon label (right column) */
+      var lbl = ["Drop in", "Float", "Melt", "Dart + hiss", "Red", "Done"][step];
+      var st = el("text", { x: 470, y: 110, "text-anchor": "end", "font-size": 13, "font-weight": 800, fill: "#9a3412" }, nsvg);
+      st.textContent = "Step " + step + " · " + lbl;
+    }
+
+    var nx = document.getElementById("naNext");
+    if (nx) nx.addEventListener("click", function () {
+      if (step < 5) { step++; drawNa(); nRead.textContent = STEPS[step]; }
+      nx.textContent = step >= 5 ? "Done ✓" : "Next step · See the next phenomenon";
+      nx.disabled = step >= 5;
+    });
+    var nr = document.getElementById("naReset");
+    if (nr) nr.addEventListener("click", function () {
+      step = 0; drawNa(); nRead.textContent = STEPS[0];
+      nx.disabled = false; nx.textContent = "Next step · See the next phenomenon";
+    });
+    drawNa();
+  }
+})();
+</script>
+</body>
+</html>

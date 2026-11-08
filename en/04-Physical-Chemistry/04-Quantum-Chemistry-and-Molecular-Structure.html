@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Quantum Chemistry and Molecular Structure · Physical Chemistry Chapter 4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">04 Physical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 4 · Quantum Chemistry and Molecular Structure</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 Physical Chemistry · Chapter 4 (branch finale)</div>
+    <h1>Quantum Chemistry and Molecular Structure: The Constitution of the Microscopic World</h1>
+    <p class="lede">
+      Why are the reds in festival fireworks strontium and the yellows sodium? The orange-red of neon
+      signs comes from neon, and the hydrogen lamp in the laboratory emits only a few discrete red and
+      green lines — every element has its own "light fingerprint". Yet under classical physics this
+      fingerprint should not exist at all: an electron circling the nucleus ought to radiate away its
+      energy and spiral into the nucleus, and the world would collapse in a flash.
+      <strong>Quantum mechanics saved the day</strong>: energy comes in discrete portions, and electrons
+      have no orbits, only probability clouds. This chapter teaches you to read the atom's "operating
+      system" — four quantum numbers, three filling rules, molecular orbitals and hybridization — and
+      shows why the periodic table came to look the way it does.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 55 minutes</span>
+      <span class="chip">Prerequisites: 00 Foundations, Chapters 1–2 (Atoms · Chemical Bonding)</span>
+      <span class="chip">Interactive animation ×1 (orbital viewer)</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#fail">The Failure of Classical Physics</a>
+    <a href="#quanta">Quantum Numbers and Orbitals</a>
+    <a href="#rules">Filling Rules and the Periodic Table</a>
+    <a href="#mo">First Steps in MO Theory</a>
+    <a href="#hybrid">Hybridization and Molecular Shape</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: A Fingerprint Album That Should Not Exist</h2>
+    <p>
+      Toss a pinch of salt into a flame and the flame flares brilliant yellow — that is the signature of
+      sodium atoms; in fireworks, strontium supplies the crimson, barium the tender green, and copper the
+      ghostly blue. Astronomers rely on this same "light fingerprint" to deduce the composition of stars
+      hundreds of millions of light-years away: helium was discovered in the Sun's spectrum before it was
+      ever found on Earth. <strong>The atoms of each element emit light at only a few specific
+      frequencies</strong>, as unique as a barcode.
+    </p>
+    <p>
+      Strangely, this fingerprint album is "illegal" under classical physics: by the old theory, the
+      energy radiated by an electron should vary continuously, so the spectrum should be a continuous
+      rainbow rather than a few isolated bright lines. The key that unlocks the puzzle — the
+      quantization of energy — not only rescued the atom but went on to explain the chemical bond, the
+      periodic table, and the shapes of molecules. This chapter is the user's manual for that key.
+    </p>
+  </section>
+
+  <!-- ============ §1 The failure of classical physics ============ -->
+  <section id="fail">
+    <h2>§1 The Failure of Classical Physics: Two Death Notices</h2>
+    <p>
+      Around 1900 physicists were well pleased with themselves; only "two small clouds" remained on the
+      horizon. For chemists, those two clouds pressed out two death notices:
+    </p>
+    <ul>
+      <li><strong>The collapsing atom</strong>: By classical electromagnetism, an electron orbiting the
+        nucleus is an accelerating charge and should radiate energy continuously, spiraling inward to
+        fall into the nucleus within about 10⁻¹¹ s — the atom would collapse instantly and nothing would
+        exist. Yet atoms are plainly rock-steady.</li>
+      <li><strong>The hydrogen spectrum</strong>: Light from hydrogen atoms appears in only a few discrete
+        lines (the famous Balmer series), not as a continuous rainbow. The electron's energy seems to be
+        "quantized" — it may live only on a few fixed energy levels, emitting a whole photon of
+        <span class="formula">E = hν</span> only when it jumps.</li>
+    </ul>
+    <p>
+      In 1913 Bohr took the first step: electrons can sit only in certain <strong>discrete energy
+      levels</strong>, where they do not radiate; they absorb or emit photons only when they jump between
+      levels. The model computed the hydrogen spectrum perfectly — but worked for hydrogen alone. The
+      real answer had to await quantum mechanics: <strong>the electron is not a little ball but a
+      wave</strong>; its "state of motion" is described by a wavefunction — and so the "orbit" had to be
+      reinvented.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Sodium street lamps shine bright yellow; neon signs glow orange-red. Both are "glowing" — so why the different colors?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: a photon's energy is E = hν; color corresponds to the frequency ν; and what sets that frequency?</p>
+        <p>
+          The <strong>energy-level difference</strong> sets it. The level spacings of each element are as
+          unique as fingerprints: a photon released in a transition between two levels carries exactly
+          that spacing, ν = ΔE/h. Sodium's transitions fall mostly in the yellow; neon's in the
+          orange-red. Read the other way, measuring where the lines fall recovers the level spacings and
+          identifies the element — which is how spectroscopy became the chemist's "banknote verifier".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Quantum numbers and orbitals ============ -->
+  <section id="quanta">
+    <h2>§2 Quantization and the Four Quantum Numbers: The Atom's Operating System</h2>
+    <p>
+      Planck found that energy is emitted in whole portions (quanta); Einstein interpreted light as
+      photons; then de Broglie reversed the logic: <strong>every particle of matter has wave
+      character</strong>, and an electron's wavelength goes hand in hand with its momentum — in a cage as
+      small as an atom, wave character rules everything. Solving the "standing-wave equation" (the
+      Schrödinger equation) for an electron around a nucleus naturally brings forth four quantum numbers,
+      like four fields that together define one electron state:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Quantum number</th><th>Symbol and values</th><th>Meaning in one sentence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Principal quantum number</strong></td><td>n = 1, 2, 3…</td><td>Which floor you live on: sets the main shell and the orbital's size; energy depends chiefly on it</td></tr>
+        <tr><td><strong>Azimuthal (angular-momentum) quantum number</strong></td><td>l = 0, 1, 2… (n−1), written s, p, d, f</td><td>Room type: sets the orbital shape (sphere / dumbbell / four lobes) and the number of angular nodes</td></tr>
+        <tr><td><strong>Magnetic quantum number</strong></td><td>m = −l…0…+l (2l+1 in all)</td><td>Orientation: a given shape has 2l+1 orientations in space</td></tr>
+        <tr><td><strong>Spin quantum number</strong></td><td>s = ±½</td><td>Spin direction: each orbital holds at most two electrons, and their spins must be opposite</td></tr>
+      </tbody>
+    </table>
+    <p>
+      That inventories the housing: shell n contains n² orbitals and at most 2n² electrons — 2 in the
+      first shell, 8 in the second, 18 in the third. The per-shell capacities you memorized in
+      <a href="../00-Foundations/01-Atoms-and-Elements.html">Branch 00 · Atoms and Elements</a> turn out
+      to be simple arithmetic of the quantum numbers.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 A Ladder of Three Rungs · What exactly is an atomic "orbital"?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          The word "orbital" descends from orbit, but it is no longer a racetrack. Imagine taking a
+          million "snapshots" of an atom one after another: in each frame a single small dot flashes, now
+          east, now west; stack the million negatives together and a <strong>cloud</strong> of varying
+          density emerges — the denser the cloud, the greater the chance of finding the electron there.
+          An orbital is the outline of that "statistical stack", <strong>not the electron's path of
+          travel</strong>.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Standard</span>
+        <p>
+          Quantum mechanics describes the electron's state with the wavefunction <span class="formula">ψ</span>;
+          its squared modulus <span class="formula">|ψ|²</span> is the <strong>probability density</strong>
+          — the probability of finding the electron in a unit volume. An "orbital" is a standing-wave
+          solution of the Schrödinger equation, labeled by the three quantum numbers n, l, and m. The
+          dumbbells and four-leaf clovers we draw are really <strong>boundary-surface plots</strong>:
+          constant-probability surfaces enclosing the region where the electron has a 95% chance of being
+          found. An s orbital has no angular node and is therefore spherical; a p orbital has 1 angular
+          node and is squeezed into two lobes; a d orbital has 2 and blossoms into four lobes.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          Why can't we ask "where is the electron right now, and which way is it heading"? Heisenberg's
+          uncertainty principle: <span class="formula">Δx·Δp ≥ ħ/2</span> — the more precisely the
+          position is fixed, the blurrier the momentum, so <strong>the very notion of a trajectory
+          fails</strong>. An orbital is really a three-dimensional standing wave, kin to the standing
+          wave on a violin string: discrete energy levels are the geometric consequence of "a standing
+          wave must fit whole wavelengths". One layer deeper: electrons are fermions, the wavefunction
+          must be antisymmetric, and it changes sign when two electrons are exchanged — this is the root
+          of the <strong>Pauli exclusion principle</strong>: if two electrons were in exactly the same
+          state, the wavefunction could only be zero. The atom's entire "housing code" grows out of wave
+          character.
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 Try It Out: The Orbital Viewer</h3>
+    <p>
+      Click the buttons to switch among four representative orbitals. Blue lobes mark the
+      <strong>positive phase</strong> of the wavefunction and orange the <strong>negative phase</strong>
+      (phase governs how orbitals superpose when bonds form; see §4); the dashed lines are nodal
+      surfaces — planes where the probability of finding the electron is zero. The readout on the right
+      gives the matching quantum-number profile.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="Atomic orbital shape viewer">
+          <!-- Axes (z vertical, x horizontal, y oblique) -->
+          <line x1="280" y1="315" x2="280" y2="30" stroke="#94a3b8" stroke-width="1.5"></line>
+          <path d="M280,30 l-4,10 h8 z" fill="#94a3b8"></path>
+          <text x="290" y="38" font-size="12" fill="#6b7280">z</text>
+          <line x1="120" y1="180" x2="440" y2="180" stroke="#94a3b8" stroke-width="1.5" opacity=".35"></line>
+          <text x="448" y="184" font-size="12" fill="#94a3b8">x/y</text>
+          <text id="obTitle" x="500" y="60" text-anchor="middle" font-size="20" font-weight="800" fill="#075985">1s</text>
+          <text x="500" y="86" text-anchor="middle" font-size="12" fill="#6b7280">Blue = positive phase (+)</text>
+          <text x="500" y="106" text-anchor="middle" font-size="12" fill="#6b7280">Orange = negative phase (−)</text>
+          <circle cx="500" cy="150" r="10" fill="#fde047" class="anim-pulse"></circle>
+          <text x="500" y="155" text-anchor="middle" font-size="10" font-weight="700" fill="#713f12">Nucleus</text>
+
+          <!-- 1s -->
+          <g id="ob1s">
+            <circle cx="280" cy="180" r="85" fill="rgba(59,130,246,.18)" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"></circle>
+            <circle cx="280" cy="180" r="52" fill="rgba(59,130,246,.30)" stroke="none"></circle>
+            <circle cx="280" cy="180" r="24" fill="rgba(59,130,246,.45)" stroke="none"></circle>
+            <text x="280" y="184" text-anchor="middle" font-size="15" font-weight="800" fill="#1e3a8a">＋</text>
+          </g>
+          <!-- 2p_z -->
+          <g id="ob2p" style="display:none">
+            <line x1="150" y1="180" x2="410" y2="180" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="6 5"></line>
+            <text x="160" y="170" font-size="11" fill="#b91c1c">Nodal plane (ψ = 0)</text>
+            <ellipse cx="280" cy="110" rx="40" ry="58" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="250" rx="40" ry="58" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2"></ellipse>
+            <text x="280" y="116" text-anchor="middle" font-size="15" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="256" text-anchor="middle" font-size="15" font-weight="800" fill="#7c2d12">−</text>
+          </g>
+          <!-- 3d_z2 -->
+          <g id="ob3dz2" style="display:none">
+            <ellipse cx="280" cy="105" rx="34" ry="52" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="255" rx="34" ry="52" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2"></ellipse>
+            <ellipse cx="280" cy="180" rx="88" ry="26" fill="none" stroke="rgba(249,115,22,.55)" stroke-width="16"></ellipse>
+            <text x="280" y="111" text-anchor="middle" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="261" text-anchor="middle" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="196" y="184" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="352" y="184" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+          </g>
+          <!-- 3d_xy -->
+          <g id="ob3dxy" style="display:none">
+            <ellipse cx="206" cy="106" rx="46" ry="26" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2" transform="rotate(-45 206 106)"></ellipse>
+            <ellipse cx="354" cy="106" rx="46" ry="26" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2" transform="rotate(45 354 106)"></ellipse>
+            <ellipse cx="206" cy="254" rx="46" ry="26" fill="rgba(249,115,22,.45)" stroke="#ea580c" stroke-width="2" transform="rotate(45 206 254)"></ellipse>
+            <ellipse cx="354" cy="254" rx="46" ry="26" fill="rgba(59,130,246,.45)" stroke="#2563eb" stroke-width="2" transform="rotate(-45 354 254)"></ellipse>
+            <text x="176" y="92" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="366" y="92" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="176" y="280" font-size="14" font-weight="800" fill="#7c2d12">−</text>
+            <text x="366" y="280" font-size="14" font-weight="800" fill="#1e3a8a">＋</text>
+            <text x="280" y="184" text-anchor="middle" font-size="11" fill="#b91c1c">Two nodal planes: along z and the page</text>
+          </g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn ob-btn" data-orb="1s">1s (sphere)</button>
+          <button class="btn ghost ob-btn" data-orb="2p">2p<sub>z</sub> (dumbbell)</button>
+          <button class="btn ghost ob-btn" data-orb="3dz2">3d<sub>z²</sub> (two lobes + ring)</button>
+          <button class="btn ghost ob-btn" data-orb="3dxy">3d<sub>xy</sub> (four lobes)</button>
+        </div>
+        <div class="fig-readout" id="obReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        Boundary-surface sketches (the shading inside the lobes suggests how dense |ψ|² is). The number
+        of angular nodes = l: an s orbital has none and is spherical; a p orbital's single node slices
+        the electron cloud into two lobes; a d orbital's two nodes carve out four lobes
+        (d<sub>z²</sub> is the odd one out, carrying a ring-shaped node). The total number of nodes =
+        n − 1: the more nodes, the more violently the electron is "folded", and the higher its energy.
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · The dots in electron-cloud pictures</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Each of the densely packed dots in textbook electron-cloud pictures is one electron caught
+          "at the scene".
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">The truth</span>
+          A hydrogen atom has only <strong>one</strong> electron. Those tens of thousands of dots are a
+          "collection of snapshots" drawn by <strong>random sampling</strong>: the denser the dots in a
+          region, the more often the electron turned up there during sampling. It is a visualization of
+          the probability density |ψ|², not a group photo of electrons — just as one bar of a histogram
+          is not the data itself.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Filling rules and the periodic table ============ -->
+  <section id="rules">
+    <h2>§3 Three Rules Lay Out the Whole Periodic Table</h2>
+    <p>
+      With room types settled, the next question is: how are the dozens of electrons in an atomic
+      "apartment block" assigned their rooms? Only three rules are needed:
+    </p>
+    <ul>
+      <li><strong>Pauli exclusion principle</strong>: No two electrons in an atom have identical sets of
+        all four quantum numbers — each orbital (same n, l, m) holds at most 2 electrons, and they must
+        have opposite spins.</li>
+      <li><strong>Aufbau (lowest-energy) principle</strong>: Electrons move into the lowest-energy empty
+        orbitals first, filling level by level in the order 1s → 2s → 2p → 3s → 3p →
+        <strong>4s → 3d</strong> → 4p… (note the <strong>energy-level crossing</strong> of 4s and 3d:
+        4s fills slightly first).</li>
+      <li><strong>Hund's rule</strong>: When electrons enter the equivalent orbitals of the same subshell,
+        they <strong>take separate beds with parallel spins</strong>; pairing starts only after every bed
+        has a tenant.</li>
+    </ul>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The periodic table is a map of the Aufbau principle</div>
+      Each completed subshell grows one segment of the periodic table: <strong>two columns in the s
+      block, six in the p block, ten in the d block (the transition metals), fourteen in the f
+      block</strong>. Group number ≈ the number of outermost/valence electrons — the "position predicts
+      properties" rule memorized in Branch 00 is rooted entirely in these three rules. Before quantum
+      mechanics the periodic table was an empirical card file; after quantum mechanics it is a theorem.
+    </div>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Two traps in the energy-level crossing</div>
+      Trap 1: believing "one shell must fill before the next begins" — 4s fills before 3d, which is why
+      K and Ca keep their electrons in 4s, and why the d block is spliced into the table at just that
+      point. Trap 2: believing "first filled, first lost" — when an atom loses electrons to become a
+      cation, it <strong>sheds the outermost 4s first</strong> and only then touches 3d. Fe is
+      …3d⁶4s², but Fe²⁺ is …3d⁶, not …3d⁴4s². Mnemonic: <strong>last in, first out (4s, filled
+      later, is lost first)</strong>.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: An Exception to Hund's Rule — the Configuration of Copper</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        Write the electron configuration of Cu (Z = 29), explain why it counts as an "exception to
+        Hund's rule", and, while you are at it, write the configuration of Cr (Z = 24).
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Fill "as expected" from the Aufbau principle: 1s² 2s² 2p⁶ 3s² 3p⁶
+          <strong>4s² 3d⁹</strong> (count them: 2+2+6+2+6+2+9 = 29 ✓). But note the ending, 3d⁹ —
+          one electron short of a full d¹⁰.</li>
+        <li class="step">Compare the stability of the two schemes: 4s and 3d lie very close in energy.
+          Moving one electron from 4s into 3d gives <strong>3d¹⁰ 4s¹</strong>: a <strong>full</strong> d
+          subshell (spherically symmetric, extra low in energy) is worth more than the 4s pairing energy
+          sacrificed. Likewise, Cr's 3d⁵ 4s¹ pursues a <strong>half-full</strong> d subshell.</li>
+        <li class="step">Conclusion: Cu = 1s² 2s² 2p⁶ 3s² 3p⁶ <strong>3d¹⁰ 4s¹</strong>;
+          Cr = 1s² 2s² 2p⁶ 3s² 3p⁶ <strong>3d⁵ 4s¹</strong>.
+          The exceptions occur only in a handful of d-block cases (Cr, Cu, Ag, Au, Mo, …) because the
+          "symmetry bonus" of a full or half-full subshell happens to exceed the 4s pairing energy.</li>
+        <li class="step">Ions while we are here: Cu⁺ = …3d¹⁰ (full, very stable — hence the common +1
+          state); Cu²⁺ = …3d⁹ (the hydration enthalpy pays for the cost of losing the second
+          electron). ✅ Self-check: the configuration totals must equal the atomic numbers — both 29 and
+          24 check out.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: When Fe (…3d⁶4s²) becomes Fe²⁺, which two electrons are lost, and why?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: the ones "pulled away" during ionization are the outermost — the ones the nucleus grips most loosely.</p>
+        <p>
+          The <strong>two 4s electrons</strong> go, so Fe²⁺ is …3d⁶4s⁰.
+          Although 4s fills early, it is the outermost shell, and once 3d is occupied its energy rises
+          above 3d's, making it the loosest-gripped electron — <strong>filled last, lost first</strong>.
+          This also explains the common oxidation states of the transition metals: losing the two 4s
+          electrons gives +2; losing d electrons as well is what gives +3.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Molecular orbitals ============ -->
+  <section id="mo">
+    <h2>§4 First Steps in Molecular-Orbital Theory: Waves for the Whole Molecule</h2>
+    <p>
+      Atomic orbitals account for single atoms — but what about molecules?
+      <span class="term">molecular-orbital (MO) theory</span> takes the bold view: the atomic orbitals
+      (waves) simply superpose, and the standing waves that result belong to <strong>the molecule as a
+      whole</strong>. When two atomic orbitals meet, in-phase superposition gives the lower-energy
+      <span class="term">bonding orbital</span>, and out-of-phase superposition gives the higher-energy
+      <span class="term">antibonding orbital</span> (with an extra node in between — like two strings
+      twisted against each other). Electrons fill the result by the same three rules as ever, and the
+      books are kept with the <span class="term">bond order</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">bond order = (bonding electrons − antibonding electrons) / 2</span>
+    </p>
+    <p>
+      Bond order 0 means no bond (He₂ does not exist); 1 is a single bond, 2 a double bond, 3 a triple
+      bond. MO theory's most beautiful victory is <strong>the paramagnetism of O₂</strong>: in the Lewis
+      structure O=O every electron is paired, so oxygen ought to show no magnetism at all; yet in the
+      laboratory liquid oxygen is held fast by a magnet — the molecule contains
+      <strong>unpaired electrons</strong>! MO theory fills in the 12 valence electrons by the rules; the
+      last two, obeying Hund's rule, <strong>occupy two antibonding π* orbitals separately with parallel
+      spins</strong>, and those two single electrons account for the magnetism exactly. A world the
+      electron-pairing picture cannot draw, MO theory delivers in one step.
+    </p>
+
+    <h3>📐 Worked-Example Scaffold: Computing the Bond Order of O₂</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (work it with me)</div>
+      <div class="worked-problem">
+        Use molecular-orbital theory to place O₂'s 12 valence electrons, compute the bond order, and
+        explain its paramagnetism. (For second-period O₂ the MO levels, from bottom up:
+        σ2s &lt; σ*2s &lt; σ2p &lt; π2p (two degenerate) &lt; π*2p (two degenerate))
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Count the valence electrons: each O has 6 (2s²2p⁴), so O₂ has
+          <strong>12</strong> in all.</li>
+        <li class="step">💡 Fill from the bottom up: σ2s² (2) → σ*2s² (2) → σ2p² (2) →
+          π2p⁴ (2 in each of the two degenerate pairs) — 10 used to this point, 2 remain, and they land
+          in the <strong>antibonding π*2p</strong>.</li>
+        <li class="step">💡 How do the last 2 electrons settle in? π*2p is a degenerate pair of equal
+          energy, and Hund's rule says: <strong>separate beds, parallel spins</strong>. So O₂ carries 2
+          unpaired electrons — the origin of its paramagnetism.</li>
+        <li class="step">💡 Settle the books: bonding electrons = 2(σ2s) + 2(σ2p) + 4(π2p) = 8;
+          antibonding electrons = 2(σ*2s) + 2(π*2p) = 4.
+          Bond order = (8 − 4)/2 = <strong>2</strong>, consistent with the strength of the classical
+          O=O double bond.
+          ✅ Self-check: MO not only computes the "double bond" (bond order 2) but adds a gift Lewis
+          structures cannot give — the explanation of the paramagnetism.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why does He₂ not exist? Do the bond-order bookkeeping.</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: two He atoms have 4 valence electrons in all; fill σ2s and σ*2s in MO order.</p>
+        <p>
+          Two electrons go into the bonding σ2s and two into the antibonding σ*2s — the energy saved by
+          bonding is handed straight back by antibonding. Bond order = (2−2)/2 = <strong>0</strong>:
+          no net gain from bonding, so He₂ does not exist.
+          He₂⁺, with only 3 electrons (bond order ½), has actually been caught by spectroscopy — the
+          MO ledger can even book "half a bond".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 Hybrid orbitals ============ -->
+  <section id="hybrid">
+    <h2>§5 Hybrid Orbitals: The Atom's Metamorphosis</h2>
+    <p>
+      Alongside MO, chemists keep another handy tool for what happens "inside the atom": carbon plainly
+      has only 2 unpaired electrons (2s²2p²), so how does CH₄ produce <strong>four identical
+      bonds</strong> pointing at the four corners of a regular tetrahedron? The answer of the
+      <span class="term">hybrid orbital</span>: before bonding, carbon's one s and three p orbitals are
+      first "stirred evenly" and recombined into a set of equivalent new orbitals — like one cup of
+      black coffee plus milk whisked into four identical lattes. Three common recipes:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Hybridization</th><th>Recipe</th><th>Geometry and bond angle</th><th>Typical molecules</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>sp</strong></td><td>1×s + 1×p → 2 orbitals</td><td>Linear, 180°</td><td>CO₂, acetylene C₂H₂, BeCl₂</td></tr>
+        <tr><td><strong>sp²</strong></td><td>1×s + 2×p → 3 orbitals</td><td>Trigonal planar, 120°</td><td>BF₃, ethylene, <strong>graphite</strong> (within layers)</td></tr>
+        <tr><td><strong>sp³</strong></td><td>1×s + 3×p → 4 orbitals</td><td>Tetrahedral, 109.5°</td><td>CH₄, <strong>diamond</strong>, H₂O (lone pairs squeeze it to 104.5°)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Carbon's three faces connect up here: <strong>sp³ diamond</strong> is four-coordinate and
+      tetrahedral, hard and insulating; in <strong>sp² graphite</strong>, three σ bonds within each layer
+      plus the one remaining p orbital side-by-side form a delocalized π system — electrons flow across
+      the whole layer, so graphite conducts and its layers slip loosely over one another;
+      <strong>sp carbon</strong> is strung into a straight line (acetylene) and is the backbone of
+      conducting carbon wires. The tetrahedra and trigonal planes you met in
+      <a href="../02-Organic-Chemistry/01-Carbon-Skeletons-and-Functional-Groups.html">Branch 02 · Carbon
+      Skeletons and Functional Groups</a> now have their quantum-mechanical audit trail.
+      A double bond = 1 σ (head-on) + 1 π (side-by-side), and a triple bond adds one more π — at this
+      point, a molecule's shape, hardness, and conductivity can all be read from its orbitals.
+    </p>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary · and the Finale of This Branch</h3>
+      <ul>
+        <li>Classical physics sentenced the atom to death (collapse + a continuous spectrum);
+          quantization saved the day: energy is discrete, and E = hν maps onto the spectral fingerprint.</li>
+        <li>Four quantum numbers: n fixes the shell, l the shape (s sphere / p dumbbell / d four lobes),
+          m the orientation, s the spin; shell n holds at most 2n² electrons.</li>
+        <li>An orbital is a standing-wave solution, and <span class="formula">|ψ|²</span> is the probability density; the dots in
+          electron-cloud pictures are samples, not a crowd of electrons.</li>
+        <li>Pauli + Aufbau + Hund → electron configurations → the blocks of the periodic table; watch
+          the 4s/3d crossing and "filled last, lost first";
+          Cr and Cu are exceptions for the sake of half-full/full subshells.</li>
+        <li>MO: atomic orbitals superpose into bonding/antibonding orbitals;
+          bond order = (bonding − antibonding)/2;
+          O₂ has bond order 2 with two single electrons in π* → paramagnetism, outclassing Lewis
+          structures.</li>
+        <li>Hybridization sp/sp²/sp³ corresponds to linear/trigonal/tetrahedral, explaining the
+          differences in shape and properties among diamond, graphite, and acetylene.</li>
+        <li>The four chapters together: <strong>thermodynamics governs direction, kinetics governs
+          speed, electrochemistry governs exchange, quantum chemistry governs the foundations</strong> —
+          such is the whole ambition of physical chemistry.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Quantum Chemistry and Molecular Structure <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "The hydrogen atomic spectrum is a series of discrete bright lines. What does this directly tell us?",
+            "options": ["The electron's energy can take only discrete values", "The electron's kinetic energy varies continuously", "The spectrometer's resolution is insufficient", "The protons absorbed some of the light"],
+            "answer": 0,
+            "explain": "Line positions are set by transition energy differences: E = hν. That only a few specific frequencies appear means the energy levels themselves are discontinuous — precisely what \"quantized\" means, and the starting point of Bohr's model."
+          },
+          {
+            "q": "Among the four quantum numbers, which determines the orbital shape (sphere / dumbbell / four lobes)?",
+            "options": ["The principal quantum number n", "The azimuthal quantum number l", "The magnetic quantum number m", "The spin quantum number s"],
+            "answer": 1,
+            "explain": "l = 0, 1, 2 correspond respectively to s (spherical), p (dumbbell), and d (four lobes); n fixes the shell and size, m the spatial orientation (an orbital of a given shape has 2l+1 orientations), and s the spin direction."
+          },
+          {
+            "q": "What is the electron configuration of Cu (Z = 29)?",
+            "options": ["…3p⁶ 3d⁹ 4s²", "…3p⁶ 3d¹⁰ 4s¹", "…3p⁶ 3d⁸ 4s³", "…3p⁶ 3d¹⁰ 4s²"],
+            "answer": 1,
+            "explain": "The \"symmetry bonus\" of a full d subshell beats the 4s pairing energy: one 4s electron moves into 3d to make 3d¹⁰4s¹. Cr (3d⁵4s¹) does the same for a half-full subshell. Such exceptions occur only in a few d-block elements — fill by the Aufbau principle first, then check for full/half-full subshells."
+          },
+          {
+            "q": "Experiment shows that O₂ is paramagnetic (liquid oxygen is attracted to a magnet). What is molecular-orbital theory's explanation?",
+            "options": ["Two unpaired electrons with parallel spins occupy two antibonding π* orbitals separately", "The O=O double-bond electrons are all paired", "The oxygen nuclei are magnetic", "The bond order is really 1"],
+            "answer": 0,
+            "explain": "After the first 10 valence electrons are placed, the last 2 occupy the two degenerate π*2p antibonding orbitals separately with parallel spins, as Hund's rule requires — the two unpaired electrons give the paramagnetism. The fully paired Lewis structure O=O cannot explain this: MO theory's claim to fame."
+          },
+          {
+            "q": "The CH₄ molecule is a regular tetrahedron (bond angle 109.5°). What hybridization does the central carbon atom use?",
+            "options": ["sp hybridization", "sp² hybridization", "sp³ hybridization", "No hybridization"],
+            "answer": 2,
+            "explain": "One s + three p recombine into 4 equivalent sp³ orbitals pointing at the four corners of a tetrahedron. sp gives linear (CO₂); sp² trigonal planar (BF₃, the graphite layers); sp³ tetrahedral (CH₄, diamond)."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="03-Electrochemistry.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 3 · Electrochemistry</span></a>
+      <a class="next" href="../05-Biochemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">05 Biochemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (orbital viewer) ============ */
+(function () {
+  "use strict";
+  var INFO = {
+    "1s": {
+      title: "1s",
+      text: "1s orbital: n=1, l=0, m=0 | Spherically symmetric, no nodes (total nodes = n−1 = 0) | The same probability in every direction; holds at most 2 electrons of opposite spin"
+    },
+    "2p": {
+      title: "2p_z",
+      text: "2p_z orbital: n=2, l=1, m=0 | Dumbbell-shaped, with 1 angular node (the xy plane, ψ=0) | The three p orbitals point along x / y / z and share the same energy (degenerate)"
+    },
+    "3dz2": {
+      title: "3d_z²",
+      text: "3d_z² orbital: n=3, l=2, m=0 | Two lobes + an equatorial ring (negative phase), 2 angular nodes | The most unusual of the five d orbitals; with ligand-field theory it explains the colors of complexes"
+    },
+    "3dxy": {
+      title: "3d_xy",
+      text: "3d_xy orbital: n=3, l=2 | Four petals, with nodal planes between them (zero probability of finding the electron along the x and y axes) | The four lobes alternate in phase; strongly directional, a mainstay of bonding in d-block metals"
+    }
+  };
+  var GROUPS = { "1s": "ob1s", "2p": "ob2p", "3dz2": "ob3dz2", "3dxy": "ob3dxy" };
+
+  var titleEl = document.getElementById("obTitle");
+  var readout = document.getElementById("obReadout");
+  var btns = document.querySelectorAll(".ob-btn");
+  if (!titleEl || !readout || !btns.length) return;
+
+  function show(key) {
+    Object.keys(GROUPS).forEach(function (k) {
+      var g = document.getElementById(GROUPS[k]);
+      if (g) g.style.display = (k === key) ? "" : "none";
+    });
+    titleEl.textContent = INFO[key].title;
+    readout.textContent = INFO[key].text;
+    Array.prototype.forEach.call(btns, function (b) {
+      b.className = b.getAttribute("data-orb") === key ? "btn" : "btn ghost";
+    });
+  }
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () { show(b.getAttribute("data-orb")); });
+  });
+  show("1s");
+})();
+</script>
+</body>
+</html>

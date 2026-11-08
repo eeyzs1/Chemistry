@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Titration and Classical Analysis · Analytical Chemistry Chapter 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b03">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">03 Analytical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 2 · Titration and Classical Analysis</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">03 Analytical Chemistry · Chapter 2</div>
+    <h1>Titration and Classical Analysis: Measuring the Unknown with a Bottle of the Known</h1>
+    <p class="lede">
+      The white vinegar in your kitchen reads "total acidity ≥5.00 g/100 mL", the water-quality report reads "total hardness 250 mg/L", and the hydrogen peroxide at the pharmacy is labeled "3%" —
+      most of these numbers come from the same classic procedure that takes three minutes to perform: <strong>titration</strong>. Take a solution of accurately known concentration,
+      add it drop by drop to the solution being measured until the indicator suddenly changes color, then work backward from "how many milliliters were consumed" to "how much substance is present".
+      This chapter thoroughly covers the idea of titration, jumps and indicators, standard solutions and primary standards, and the universal calculation framework
+      <span class="formula">c₁V₁ = n·c₂V₂</span>, and along the way introduces redox titrations, EDTA hardness determination, and the venerable gravimetric method.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 55 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 of this branch + 00 Foundations (solution concentrations)</span>
+      <span class="chip">Interactive animation ×1</span>
+      <span class="chip">Self-test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#idea">§1 The Idea of Titration</a>
+    <a href="#curve">§2 Curves, Jumps, and Indicators</a>
+    <a href="#calc">§3 Standard Solutions and Calculations</a>
+    <a href="#types">§4 The Titration Family and Gravimetry</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Measuring the "Total Acidity" of Vinegar in Three Minutes</h2>
+    <p>
+      The white vinegar on the supermarket shelf has "total acidity ≥5.00 g/100 mL" printed on its label. How does a quality inspector verify it? Pipette 10.00 mL of the vinegar into a conical flask,
+      add two drops of phenolphthalein, then let NaOH standard solution of known concentration run down from the burette drop by drop — slow down as the color approaches,
+      and finally add half-drops at a time until the solution <strong>suddenly flushes pale pink and the color survives swirling</strong>. Read the burette: 16.xx mL consumed.
+      Three minutes and one multiplication and division later, the total acidity is in hand.
+    </p>
+    <p>
+      The setup is cheap (one bottle, one burette, one conical flask) and reliable (relative error as low as 0.1–0.2%), and for more than a hundred years it has remained the workhorse for
+      determining major components — it is the showcase of <strong>classical analysis</strong>: the stoichiometric relationship of a chemical reaction itself serves as the "calculator",
+      with no expensive instruments required. This chapter answers four questions: How can a titration "count" out an amount of substance? Why does the indicator change color precisely within that one drop?
+      Where does that bottle of "known concentration" come from? And how do you set up that universal calculation?
+    </p>
+  </section>
+
+  <!-- ============ §1 The Idea of Titration ============ -->
+  <section id="idea">
+    <h2>§1 The Idea of Titration: The Moment of Exactly Complete Reaction</h2>
+    <p>
+      The formal definition of <span class="term">titration</span>: a
+      <span class="term">standard solution</span> of accurately known concentration is added to the solution being measured,
+      until the two have <strong>reacted completely in exactly the stoichiometric ratio</strong>; the amount of the analyte is then back-calculated from the volume consumed and the known concentration.
+      Its elegance lies in <strong>converting the measurement of an "amount of substance" into a measurement of "volume"</strong> — and volume is one of the quantities that can be read most accurately
+      in a chemistry laboratory (a burette can be estimated to 0.01 mL).
+    </p>
+
+    <p>Four key terms must be told apart once and for all:</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Term</th><th>Meaning</th><th>Nature</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="term">stoichiometric point</span></td><td>the moment when the amount of standard added exactly matches the reaction stoichiometry of the analyte</td><td>a theoretical point — invisible and intangible</td></tr>
+        <tr><td><span class="term">endpoint</span></td><td>the point where the indicator changes color and you actually stop</td><td>an experimentally observed point</td></tr>
+        <tr><td><span class="term">indicator</span></td><td>a "signal lamp" that changes color when a solution condition (pH, etc.) shifts abruptly</td><td>the visual stand-in for the endpoint</td></tr>
+        <tr><td><span class="term">titration jump</span></td><td>the region of abrupt pH (or potential, etc.) change around the stoichiometric point</td><td>the "safety window" for judging the endpoint</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      The stoichiometric point and the endpoint can almost never coincide exactly; the bias their difference introduces is the <strong>endpoint error</strong>.
+      The whole art of titrimetric methods comes down to one sentence: <strong>pin the endpoint inside the jump</strong> — as long as the indicator's transition range falls within the jump region,
+      the endpoint error can be held to around 0.1%.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      A titration = using "known concentration × volume consumed" to count out "the amount of analyte". Identify the chemical reaction and its stoichiometric ratio first,
+      and only then talk about readings and calculations — the balanced equation is the foundation of titration calculations, not decoration.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: A burette reading error is about ±0.02 mL. Why do experienced operators arrange for the delivered volume to fall between 20–30 mL rather than 2 mL?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Revisit "absolute error vs relative error" from Chapter 1.</p>
+        <p>
+          The reading error (initial plus final readings, about ±0.02 mL in total) is fixed: with 2 mL delivered the relative error reaches ±1%,
+          while with 20 mL it is only ±0.1% — a tenfold difference. That is why the standard-solution concentration or the sample size is adjusted
+          to place the delivered volume in a sensible range of the burette's capacity. This is the first field application of the "error mindset" from Chapter 1 to titration.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Titration curves, jumps, and indicators ============ -->
+  <section id="curve">
+    <h2>§2 Titration Curves, Jumps, and Indicators: What Happens Within a Single Drop</h2>
+    <p>
+      Take the most classic combination: 0.1000 mol/L NaOH titrating 20.00 mL of 0.1000 mol/L HCl.
+      Plot the volume of NaOH added on the horizontal axis and the solution pH on the vertical axis, and you get the <span class="term">titration curve</span>.
+      For most of its length the curve strolls along as gently as a walk; only near the stoichiometric point does it "jump off a cliff" almost vertically:
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>V(NaOH)</th><th>Solution state</th><th>pH</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>19.98 mL</td><td>still 0.02 mL short (0.1% deficient)</td><td>4.30</td></tr>
+        <tr><td><strong>20.00 mL</strong></td><td><strong>exactly complete reaction — the stoichiometric point</strong></td><td><strong>7.00</strong></td></tr>
+        <tr><td>20.02 mL</td><td>0.02 mL in excess (0.1% excess)</td><td>9.70</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      In other words: <strong>a difference of half a drop (about 0.04 mL) drives the pH from 4.30 up to 9.70</strong> — the hydrogen ion concentration plummets by a factor of about 250,000.
+      This steep slope is the jump. The simulator below lets you drag that drop with your own hand — watch the color of the phenolphthalein in the conical flask,
+      which turns from colorless to pink exactly on the upper half of the jump (pH 8.2–10):
+    </p>
+
+    <h3>🔬 Try It Out: Titration Simulator</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="titSvg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="NaOH titrating HCl simulator"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="titPlay">▶ Auto-titrate</button>
+          <button class="btn ghost" id="titReset">↺ Reset</button>
+          <label for="titSlider" style="font-size:.88rem;color:var(--ink-2);min-width:130px;text-align:center">
+            V(NaOH): <strong id="titV">0.00</strong> mL
+          </label>
+        </div>
+        <div class="fig-controls" style="margin-top:0">
+          <input id="titSlider" type="range" min="0" max="40" step="0.02" value="0"
+                 style="width:min(420px,90%);accent-color:var(--accent);height:40px" aria-label="Volume of NaOH added">
+        </div>
+        <div class="fig-readout" id="titReadout">V(NaOH) = 0.00 mL | pH = 1.00 | Phenolphthalein: colorless | Before the stoichiometric point (excess acid)</div>
+      </div>
+      <figcaption>
+        0.1000 mol/L NaOH titrating 20.00 mL of 0.1000 mol/L HCl. Drag the slider into the 19.9–20.1 mL range and look closely: half a drop apart,
+        the pH soars by more than 5 units — the steep portion of the curve (the jump) is precisely the stage for phenolphthalein's color change. The curve on the right grows in real time; the pink horizontal band is the transition range of phenolphthalein (8.2–10).
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why does the indicator change color so abruptly "within that one drop"?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Picture a nearly balanced scale: the acid on the left pan is the "stock", and each drop of base you add is the "increment". While the stock is plentiful,
+          every drop of base is instantly "eaten up" and the scale does not budge; but once the stock runs out, <strong>a single grain of sand can swing the pointer hard from one side to the other</strong>.
+          The indicator is that pointer — it does not change gradually, it gets "punched through".
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          Before the stoichiometric point, nearly all the OH⁻ delivered is neutralized by H⁺, so the pH is governed by the <strong>residual H⁺</strong> and changes only gently;
+          near the point, the residual H⁺ has been consumed down to the 10⁻⁵ mol/L level, and the solution has lost its "buffer reserve";
+          after the point, even an extra half-drop of base leaves the OH⁻ with no opponent, and it simply accumulates in the solution — so
+          between ±0.02 mL (0.1% short and 0.1% excess), the pH races from 4.30 straight up to 9.70.
+          Phenolphthalein's transition range (8.2–10) falls exactly inside this window, which is why the color appears with a snap.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          The jump is not luck; it is written jointly by the <strong>equilibrium constants and concentrations</strong> of the system being titrated: the higher the concentration and the stronger the acid and base,
+          the more lopsided the "stock vs increment" contrast on either side of the stoichiometric point, and the wider the jump; dilute the solution or weaken the analyte (small K<sub>a</sub>),
+          and the curve's slope eases while the jump narrows — it can even become too narrow for any indicator to fit inside. This is the reason behind
+          "0.1 mol/L is the classic titration concentration" and "very weak acids cannot be titrated directly" (the quantitative criterion c·K<sub>a</sub> ≥ 10⁻⁸
+          is left for advanced courses).
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · The more indicator you add, the safer the endpoint?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          A few extra drops of phenolphthalein give a deeper, more eye-catching color that makes the change easier to see — so more indicator must be better.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          An indicator is itself a weak organic acid/base and <strong>also consumes standard solution</strong> — the more you add, the larger the systematic error introduced;
+          moreover, an overly deep color actually obscures the judgment, turning "spotting the change" into "guessing the color". One or two drops are enough for routine work.
+          Choose an indicator by asking whether "transition range ⊂ jump range", and use as little as still shows clearly.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: When acetic acid (a weak acid) is titrated with NaOH, is the pH at the stoichiometric point 7? Should you choose phenolphthalein or methyl orange?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What is in the flask at the stoichiometric point? Is a solution of sodium acetate acidic or basic after hydrolysis?</p>
+        <p>
+          No, it is not 7. At the stoichiometric point all the acetic acid has become sodium acetate, and hydrolysis of Ac⁻ leaves the solution <strong>weakly basic</strong>
+          (about pH 8.7 at the 0.1 mol/L level), with the whole jump sitting on the basic side (about 7.7–9.7).
+          So you should choose <strong>phenolphthalein</strong> (8.2–10, inside the jump); methyl orange (3.1–4.4) would change color too early
+          and cause a sizeable negative error. Indicator choice always follows the position of the jump, never personal preference.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Standard solutions, primary standards, and calculations ============ -->
+  <section id="calc">
+    <h2>§3 Standard Solutions, Primary Standards, and the Universal Calculation Framework</h2>
+
+    <h3>Where does that bottle of "known concentration" come from?</h3>
+    <p>
+      A standard solution arrives by one of two routes. <strong>Direct preparation</strong>: accurately weigh a quantity of a
+      <span class="term">primary standard</span>, dissolve it, transfer quantitatively, and dilute to the mark — the concentration is calculated and trustworthy at once.
+      <strong>Standardization</strong>: prepare the solution at an approximate concentration first, then use a primary standard (or another standard solution of known concentration)
+      to titrate its accurate concentration into place. Most standard solutions take the second route, because they cannot be prepared accurately:
+      solid NaOH picks up moisture and absorbs CO₂; concentrated hydrochloric acid is volatile; KMnO₄ contains impurities and slowly decomposes — none of them can serve as a primary standard.
+    </p>
+    <p>
+      A substance must pass four tests to serve as a <span class="term">primary standard</span>: <strong>high purity</strong> (≥99.9%),
+      <strong>constant composition</strong> (strictly matching the chemical formula — crystal water included must be true to its name),
+      <strong>stability</strong> (absorbing no water or CO₂, neither oxidizing nor decomposing),
+      and <strong>a molar mass as large as possible</strong> (the same amount of substance then weighs more, reducing the relative weighing error).
+      Common pairings: anhydrous Na₂CO₃ to standardize HCl, potassium hydrogen phthalate to standardize NaOH, and Na₂C₂O₄ to standardize KMnO₄.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ A standard solution is not a one-time deal</div>
+      Left standing, a NaOH standard solution slowly absorbs CO₂ from the air and its concentration quietly drops. Re-standardize before important experiments,
+      running several parallel standardizations (usually ≥3) and averaging only when the relative deviation is satisfactory (e.g., ≤0.2%) — the precision requirements of Chapter 1 land right here.
+    </div>
+
+    <h3>The universal calculation framework: c₁V₁ = n·c₂V₂</h3>
+    <p>
+      Let the titration reaction be <span class="formula">aA + bB → products</span>; at the stoichiometric point,
+      <span class="formula">n(A) : n(B) = a : b</span>. Therefore (concentration in mol/L, volume in L):
+    </p>
+    <p style="text-align:center">
+      <span class="formula">c(A)·V(A) = (a/b)·c(B)·V(B)</span> — the coefficient <span class="formula">a/b</span> is just the stoichiometric ratio
+    </p>
+    <p>
+      For a 1:1 strong acid–strong base pair it reduces to <span class="formula">c₁V₁ = c₂V₂</span>;
+      HCl and Na₂CO₃ are 2:1;
+      KMnO₄ and H₂O₂ are 2:5 — <strong>copy the ratio correctly from the equation first, then substitute the numbers</strong>: that is the entire secret of titration calculations.
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (Watch Me): Standardizing hydrochloric acid with sodium carbonate</div>
+      <div class="worked-problem">
+        A 0.1325 g sample of primary-standard anhydrous sodium carbonate (M = 106.0 g/mol) is weighed, dissolved in water, and titrated with the hydrochloric acid solution to be standardized,
+        using methyl orange as indicator, to the endpoint (yellow to orange); 25.00 mL is consumed. Find the accurate concentration of the hydrochloric acid.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Write the equation and copy the ratio: 2HCl + Na₂CO₃ → 2NaCl + H₂O + CO₂↑; the stoichiometric ratio is n(HCl) : n(Na₂CO₃) = 2 : 1.</li>
+        <li class="step">Count the primary standard: n(Na₂CO₃) = m / M = 0.1325 / 106.0 = 1.250 × 10⁻³ mol.</li>
+        <li class="step">Convert via the ratio: n(HCl) = 2 × 1.250 × 10⁻³ = 2.500 × 10⁻³ mol.</li>
+        <li class="step">Find the concentration: c(HCl) = n / V = 2.500 × 10⁻³ mol ÷ 0.02500 L = <strong>0.1000 mol/L</strong>.
+          ✅ Significant-figure check: 4 digits in mass, 4 in volume → 4 in the result. In practice, 3 parallel standardizations are run and the average accepted only when the relative deviation is ≤0.2%.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 The titration family and gravimetry ============ -->
+  <section id="types">
+    <h2>§4 The Titration Family and Gravimetry: Not Just Acids and Bases</h2>
+    <p>
+      Titration, this "volume ruler", is not picky about reaction type: it works as long as the stoichiometric relationship is clear, the reaction goes to completion, the speed is fast, and there is a way to signal the endpoint.
+      Four families are in common use:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Family</th><th>Stoichiometric bridge</th><th>Typical tasks</th><th>Endpoint detection</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Acid–base titration</strong></td><td>Neutralization of H⁺ with OH⁻</td><td>Total acidity of vinegar, caustic soda purity, nitrogen content of ammonium salts</td><td>Acid–base indicators such as phenolphthalein, methyl orange</td></tr>
+        <tr><td><strong>Redox titration</strong></td><td>Electrons transferred</td><td>Hydrogen peroxide, iron content, chemical oxygen demand (COD) of water</td><td>Self-indication or redox indicators</td></tr>
+        <tr><td><strong>Complexometric titration</strong></td><td>1:1 chelation of EDTA with metal ions</td><td>Water hardness (total Ca + Mg)</td><td>Metallochromic indicators such as eriochrome black T</td></tr>
+        <tr><td><strong>Precipitation titration</strong></td><td>Stoichiometry of precipitate formation</td><td>Chloride by argentometry (salt, water quality)</td><td>Specific indicators such as potassium chromate</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Redox titrations: permanganate's built-in signal lamp</h3>
+    <p>
+      In acidic solution KMnO₄ is a strong oxidant with a deep purple color, while its reduction product Mn²⁺ is nearly colorless. When it is used to titrate reducing species
+      (H₂O₂, Fe²⁺, C₂O₄²⁻, ...) <strong>no separate indicator is needed</strong>: before the reductant is exhausted, every purple drop delivered is instantly "bleached";
+      the moment the reductant runs out, <strong>half a drop of excess MnO₄⁻ tints the whole flask pale pink</strong> — this is called a self-indicator,
+      and a color that does not fade for about half a minute marks the endpoint (fading after long standing is slow consumption by reducing substances in the air and must not be misread).
+      The reaction for determining H₂O₂ in acidic medium:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂↑ + 8H₂O</span>
+    </p>
+    <p>
+      Note the stoichiometric ratio <span class="formula">n(H₂O₂) = (5/2)·n(KMnO₄)</span>. KMnO₄ itself is not pure enough and its solutions are not stable,
+      so it likewise cannot be prepared directly; it must be standardized against primary-standard sodium oxalate before use.
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Do It with Me): Determining the content of hydrogen peroxide</div>
+      <div class="worked-problem">
+        Pipette 10.00 mL of a medical hydrogen peroxide stock solution and dilute to the mark in a 250.0 mL volumetric flask; then pipette 25.00 mL into a conical flask, acidify with sulfuric acid,
+        and titrate with 0.02000 mol/L KMnO₄ standard solution to a faint pink that persists for 30 s; 19.60 mL is consumed.
+        M(H₂O₂) = 34.00 g/mol. Find the mass concentration (g/L) of H₂O₂ in the original solution.
+        <em>(Hints are hidden in each step — think for yourself before revealing them.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Titrant first: n(KMnO₄) = 0.02000 × 0.01960 = 3.920 × 10⁻⁴ mol.</li>
+        <li class="step">💡 Apply the stoichiometric ratio to this 25.00 mL aliquot: n(H₂O₂) = (5/2) × 3.920 × 10⁻⁴ = 9.800 × 10⁻⁴ mol.</li>
+        <li class="step">💡 Don't forget the dilution factor: the full 250.0 mL of dilute solution (= 10.00 mL of stock) contains 10 times this much H₂O₂ → 9.800 × 10⁻³ mol → c(H₂O₂) = 9.800 × 10⁻³ / 0.01000 = 0.9800 mol/L.</li>
+        <li class="step">✅ Convert to mass concentration: ρ = c·M = 0.9800 × 34.00 = <strong>33.32 g/L</strong> (about 3.3%, matching the medical hydrogen peroxide specification). Check: concentration and volume each carry 4 significant figures, so the result has 4; the dilution factor 10 is an exact number and does not limit the count.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <h3>EDTA complexometric titration: water hardness in one sentence</h3>
+    <p>
+      Water hardness (the total of Ca²⁺ and Mg²⁺, reported as mg/L of CaCO₃) is measured by EDTA complexometric titration:
+      EDTA chelates Ca²⁺ and Mg²⁺ in exactly a <strong>1 : 1</strong> ratio, and eriochrome black T, which changes color once it is complexed, signals the endpoint —
+      the calculation returns to the universal framework <span class="formula">c(EDTA)·V(EDTA) = n(Ca²⁺+Mg²⁺)</span>, only with a ratio coefficient of 1.
+    </p>
+
+    <h3>Gravimetry: weighing the analyte out</h3>
+    <p>
+      The oldest and most laborious quantitative method — <span class="term">gravimetric analysis</span>:
+      add a precipitating agent so that the analyte is quantitatively converted into a sparingly soluble compound (e.g., SO₄²⁻ → BaSO₄), then filter, wash, dry and ignite, cool and weigh,
+      and back-calculate the content from the mass of the precipitate. It needs no solution of "known concentration" and trusts only the balance — <strong>slow but extremely accurate</strong>,
+      and still the ballast of arbitration analysis and of value assignment for standard methods. Its weaknesses are just as obvious: a long procedure and low sensitivity make it suitable only for major components.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: The endpoint of a permanganate titration is defined as "a faint pink that does not fade within 30 seconds". Why stress the 30 seconds? If the color fades after standing longer, does that mean the endpoint had not been reached?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Who is responsible for that trace of pink in the solution at the endpoint? Are there reducing substances in air and dust?</p>
+        <p>
+          The faint pink comes from <strong>a slight excess of MnO₄⁻</strong>, showing that the reductant has been exhausted and the endpoint has just barely been passed — exactly the signal we want.
+          But this thread of pink is not durable: reducing gases in the air, dust, and photodecomposition will slowly bleach it —
+          hence the rule "no fading for 30 seconds": if the color holds over a short interval, the endpoint is declared reached; fading after standing for several minutes is background consumption,
+          which does <strong>not</strong> count as "endpoint not yet reached", and must never be used as a reason to keep titrating.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>A titration = counting out the amount of analyte from known concentration × volume consumed; the hardware is only a burette, a pipette, and a conical flask — the first choice for macro analysis.</li>
+        <li>Four terms: stoichiometric point (theoretical point), endpoint (observed point), indicator (signal lamp), jump (the steep pH-change region around the stoichiometric point).</li>
+        <li>The jump comes from "stock exhausted, increment unopposed": between ±0.02 mL the pH can leap 4.30 → 9.70; an indicator's transition range must fall inside the jump.</li>
+        <li>Standard solutions come from direct preparation with a primary standard (pure, stable, constant composition, large molar mass) or from standardization; NaOH, HCl, and KMnO₄ must all be standardized.</li>
+        <li>The universal framework c₁V₁ = (a/b)·c₂V₂: copy the stoichiometric ratio correctly from the equation first, then substitute the numbers, and never forget the dilution factor.</li>
+        <li>The KMnO₄ method is self-indicating for H₂O₂/Fe²⁺; EDTA chelates 1:1 for water hardness; gravimetry precipitates and weighs — slow but extremely accurate.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Titration and Classical Analysis <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "HCl is titrated with 0.1 mol/L NaOH standard solution (jump pH 4.3–9.7). The most suitable indicator is:",
+            "options": ["Phenolphthalein (transition range 8.2–10.0)", "Methyl orange (transition range 3.1–4.4)", "Some indicator with a transition range of 2.0–3.0", "Any indicator is equally suitable"],
+            "answer": 0,
+            "explain": "The indicator's transition range should fall within the jump range. Phenolphthalein's 8.2–10.0 lies entirely inside the 4.3–9.7 window; most of methyl orange's transition range lies below the jump, so it would change color too early and introduce error (it suits the reverse direction, strong acid titrating strong base); an indicator with a 2–3 range strays even further from the jump."
+          },
+          {
+            "q": "Which statement about the relationship between the stoichiometric point and the endpoint is correct?",
+            "options": ["They are the same concept, both denoting the point where the indicator changes color", "The stoichiometric point is the theoretical point of exactly complete reaction per the stoichiometric ratio, the endpoint is the experimentally observed stopping point, and the two should be as close as possible", "The endpoint always appears before the stoichiometric point", "The stoichiometric point is determined by the indicator chosen"],
+            "answer": 1,
+            "explain": "The stoichiometric point is fixed by the stoichiometric ratio of the chemical reaction and is a theoretical value; the endpoint is signaled by the indicator's color change and is an observed value. Their difference is the endpoint error; choosing the right indicator (transition range inside the jump) can push the endpoint error down to the 0.1% level, but the two are not the same point."
+          },
+          {
+            "q": "A 0.1060 g sample of primary-standard anhydrous sodium carbonate (M = 106.0 g/mol) is titrated with HCl to be standardized to the methyl orange endpoint, consuming 20.00 mL. The HCl concentration is approximately:",
+            "options": ["0.05000 mol/L", "0.1000 mol/L", "0.2000 mol/L", "0.01000 mol/L"],
+            "answer": 1,
+            "explain": "n(Na₂CO₃) = 0.1060/106.0 = 1.000×10⁻³ mol; from 2HCl + Na₂CO₃, n(HCl) = 2.000×10⁻³ mol; c = 2.000×10⁻³/0.02000 = 0.1000 mol/L. Forgetting to multiply by the stoichiometric ratio 2 gives 0.05000, and inverting the ratio gives 0.2000."
+          },
+          {
+            "q": "When H₂O₂ is titrated with KMnO₄ standard solution under acidic conditions, no separate indicator is needed. Why?",
+            "options": ["MnO₄⁻ itself is intensely purple and the product Mn²⁺ is colorless, so a slight excess after the reductant is exhausted shows pink — a self-indicator", "The titration runs so fast that an added indicator cannot be mixed in evenly", "Acidic conditions destroy all common indicators", "KMnO₄ is a primary standard, so the titration is absolutely accurate"],
+            "answer": 0,
+            "explain": "Before the endpoint every drop of MnO₄⁻ is reduced to nearly colorless Mn²⁺; once the reductant is exhausted, half a drop of excess tints the solution pink (persisting 30 s) — the substance serves as its own signal lamp. Note also that KMnO₄ is not a primary standard; its standard solution must be standardized against sodium oxalate."
+          },
+          {
+            "q": "As a titration approaches its endpoint, the correct practice is to:",
+            "options": ["Add rapidly and continuously to finish in the shortest possible time", "Add drop by drop, finally half-drop by half-drop, while constantly swirling the conical flask", "Add a few more drops of indicator to make the color change more obvious", "Stop swirling and let the color change on its own while standing"],
+            "answer": 1,
+            "explain": "The jump is only about one or two drops wide, so fast delivery easily overshoots the endpoint; extra indicator consumes standard solution and an overly deep color is hard to judge; swirling disperses the locally excess titrant so it reacts immediately, avoiding a false endpoint. Half-drop technique pins the endpoint firmly within the jump."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="01-Introduction-and-Data-Treatment.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 1 · Introduction and Data Treatment</span></a>
+      <a class="next" href="03-The-Big-Three-of-Instrumental-Analysis.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 3 · The Big Three of Instrumental Analysis</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (NaOH titrating HCl simulator) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  var svg = document.getElementById("titSvg");
+  if (svg) {
+    var C = 0.1000, V0 = 20.00;          // concentration and initial acid volume (mL)
+    var X0 = 270, Y0 = 318, W = 340, H = 272;  // plot area
+    var readout = document.getElementById("titReadout");
+    var vLabel = document.getElementById("titV");
+    var slider = document.getElementById("titSlider");
+    var playBtn = document.getElementById("titPlay");
+    var resetBtn = document.getElementById("titReset");
+    var V = 0, playing = false, rafId = null;
+
+    function pHOf(v) {
+      if (v <= 0) return 1.00;
+      if (v < V0 - 1e-9) return -Math.log10(C * (V0 - v) / (V0 + v));
+      if (v <= V0 + 1e-9) return 7.00;
+      return 14 + Math.log10(C * (v - V0) / (V0 + v));
+    }
+    function px(v) { return X0 + W * v / 40; }
+    function py(p) { return Y0 - H * p / 14; }
+
+    function phenolColor(p) {
+      if (p <= 8.2) return "#eef2f7";
+      if (p >= 10) return "#db2777";
+      var t = (p - 8.2) / 1.8;
+      var r = Math.round(251 + (236 - 251) * t);
+      var g = Math.round(207 + (72 - 207) * t);
+      var b = Math.round(232 + (153 - 232) * t);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    function phenolText(p) {
+      if (p < 8.2) return "Phenolphthalein: colorless";
+      if (p <= 10) return "Phenolphthalein: pale pink (changing)";
+      return "Phenolphthalein: pink";
+    }
+    function stateText(v) {
+      if (Math.abs(v - V0) <= 0.03) return "⚡ Jump region: half a drop apart, pH soars!";
+      if (v < V0) return "Before the stoichiometric point (excess acid)";
+      if (Math.abs(v - V0) < 1e-9) return "Stoichiometric point ✓";
+      return "Past the stoichiometric point (excess base)";
+    }
+
+    /* ---------- static scene ---------- */
+    el("rect", { x: 0, y: 0, width: 640, height: 360, fill: "#ffffff" }, svg);
+    var plot = el("g", {}, svg);
+
+    // grid and ticks
+    [0, 2, 4, 6, 8, 10, 12, 14].forEach(function (p) {
+      el("line", { x1: X0, y1: py(p), x2: X0 + W, y2: py(p), stroke: p === 0 ? "#94a3b8" : "#eef2f7",
+        "stroke-width": p === 0 ? 1.6 : 1 }, plot);
+    });
+    [0, 10, 20, 30, 40].forEach(function (v) {
+      el("line", { x1: px(v), y1: Y0, x2: px(v), y2: Y0 + 5, stroke: "#94a3b8", "stroke-width": 1.2 }, plot);
+      var t = el("text", { x: px(v), y: Y0 + 20, "text-anchor": "middle", "font-size": 11, fill: "#6b7280" }, plot);
+      t.textContent = v;
+    });
+    [0, 7, 14].forEach(function (p) {
+      var t = el("text", { x: X0 - 8, y: py(p) + 4, "text-anchor": "end", "font-size": 11, fill: "#6b7280" }, plot);
+      t.textContent = p;
+    });
+    el("line", { x1: X0, y1: Y0, x2: X0, y2: py(14), stroke: "#94a3b8", "stroke-width": 1.6 }, plot);
+    var axX = el("text", { x: X0 + W / 2, y: Y0 + 38, "text-anchor": "middle", "font-size": 12, fill: "#374151" }, plot);
+    axX.textContent = "V(NaOH) / mL";
+    var axY = el("text", { x: X0 - 8, y: py(14) - 10, "text-anchor": "start", "font-size": 12, fill: "#374151" }, plot);
+    axY.textContent = "pH";
+
+    // phenolphthalein transition band (8.2–10)
+    el("rect", { x: X0, y: py(10), width: W, height: py(8.2) - py(10), fill: "#f9a8d4", opacity: 0.3 }, plot);
+    var ppTxt = el("text", { x: X0 + W - 4, y: py(10) - 5, "text-anchor": "end", "font-size": 10, fill: "#be185d" }, plot);
+    ppTxt.textContent = "Phenolphthalein range 8.2–10";
+
+    // stoichiometric-point dashed line and jump annotation
+    el("line", { x1: px(20), y1: py(14), x2: px(20), y2: Y0, stroke: "#94a3b8", "stroke-width": 1.2, "stroke-dasharray": "5 4" }, plot);
+    var spTxt = el("text", { x: px(20) + 6, y: py(14) + 10, "font-size": 10, fill: "#6b7280" }, plot);
+    spTxt.textContent = "Stoich. point 20.00 mL";
+    var jx = px(20) - 8;
+    el("line", { x1: jx, y1: py(4.3), x2: jx, y2: py(9.7), stroke: "#b91c1c", "stroke-width": 1.8 }, plot);
+    el("polygon", { points: (jx - 4) + "," + (py(4.3) - 1) + " " + (jx + 4) + "," + (py(4.3) - 1) + " " + jx + "," + (py(4.3) + 6), fill: "#b91c1c" }, plot);
+    el("polygon", { points: (jx - 4) + "," + (py(9.7) + 1) + " " + (jx + 4) + "," + (py(9.7) + 1) + " " + jx + "," + (py(9.7) - 6), fill: "#b91c1c" }, plot);
+    var jTxt1 = el("text", { x: jx - 8, y: py(7) - 4, "text-anchor": "end", "font-size": 11, "font-weight": 700, fill: "#b91c1c" }, plot);
+    jTxt1.textContent = "Jump";
+    var jTxt2 = el("text", { x: jx - 8, y: py(7) + 12, "text-anchor": "end", "font-size": 10, fill: "#b91c1c" }, plot);
+    jTxt2.textContent = "±0.02 mL";
+
+    // ---------- left: the titration apparatus ----------
+    var lab = el("g", {}, svg);
+    var bx = 95;
+    var labTitle = el("text", { x: bx, y: 16, "text-anchor": "middle", "font-size": 11, "font-weight": 700, fill: "#5b21b6" }, lab);
+    labTitle.textContent = "NaOH 0.1000 mol/L";
+    el("rect", { x: bx - 7, y: 28, width: 14, height: 142, fill: "#ffffff", stroke: "#64748b", "stroke-width": 1.6 }, lab);
+    for (var g = 0; g <= 4; g++) {
+      el("line", { x1: bx + 7, y1: 32 + g * 30, x2: bx + 13, y2: 32 + g * 30, stroke: "#64748b", "stroke-width": 1.2 }, lab);
+    }
+    var tubeLiq = el("rect", { x: bx - 6, y: 32, width: 12, height: 137, fill: "#a78bfa" }, lab);
+    el("polygon", { points: (bx - 7) + ",170 " + (bx + 7) + ",170 " + bx + ",186", fill: "#8b5cf6" }, lab);
+    el("circle", { cx: bx, cy: 192, r: 3.2, fill: "#8b5cf6", class: "anim-pulse" }, lab);
+    // conical flask
+    el("path", { d: "M" + (bx - 11) + ",196 L" + (bx - 11) + ",222 L" + (bx - 51) + ",300 Q" + (bx - 53) + ",308 " + (bx - 43) + ",308 L" + (bx + 43) + ",308 Q" + (bx + 53) + ",308 " + (bx + 51) + ",300 L" + (bx + 11) + ",222 L" + (bx + 11) + ",196", fill: "#ffffff", stroke: "#64748b", "stroke-width": 1.8 }, lab);
+    var flaskLiq = el("path", { d: "M" + (bx - 28) + ",258 L" + (bx + 28) + ",258 L" + (bx + 47) + ",302 L" + (bx - 47) + ",302 Z", fill: "#eef2f7", opacity: 0.92 }, lab);
+    var flaskTxt = el("text", { x: bx, y: 330, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, lab);
+    flaskTxt.textContent = "20.00 mL HCl (0.1000 mol/L) + phenolphthalein";
+
+    // ---------- dynamic elements ----------
+    var curve = el("path", { d: "", fill: "none", stroke: "#6d28d9", "stroke-width": 2.5 }, svg);
+    var dot = el("circle", { cx: px(0), cy: py(1), r: 5, fill: "#6d28d9", stroke: "#ffffff", "stroke-width": 1.5 }, svg);
+
+    function pathFor(vCur) {
+      var d = "", v = 0, first = true;
+      while (v <= vCur + 1e-9) {
+        var seg = (v > 19.3 && v < 20.7) ? 0.01 : 0.05;
+        var x = px(v).toFixed(1), y = py(pHOf(v)).toFixed(1);
+        d += (first ? "M" : "L") + x + "," + y;
+        first = false;
+        v += seg;
+      }
+      // append the current point (arbitrary slider value)
+      if (vCur > 0) {
+        d += "L" + px(vCur).toFixed(1) + "," + py(pHOf(vCur)).toFixed(1);
+      }
+      return d;
+    }
+
+    function update(v) {
+      V = v;
+      var p = pHOf(v);
+      curve.setAttribute("d", pathFor(v));
+      dot.setAttribute("cx", px(v).toFixed(1));
+      dot.setAttribute("cy", py(p).toFixed(1));
+      var yTop = 32 + (v / 40) * 130;
+      tubeLiq.setAttribute("y", yTop.toFixed(1));
+      tubeLiq.setAttribute("height", (170 - yTop).toFixed(1));
+      flaskLiq.setAttribute("fill", phenolColor(p));
+      vLabel.textContent = v.toFixed(2);
+      readout.textContent = "V(NaOH) = " + v.toFixed(2) + " mL | pH = " + p.toFixed(2) +
+        " | " + phenolText(p) + " | " + stateText(v);
+    }
+
+    function sync() {
+      if (slider) slider.value = V;
+      update(V);
+    }
+
+    function stopPlay() {
+      playing = false;
+      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+      if (playBtn) playBtn.textContent = "▶ Auto-titrate";
+    }
+
+    function loop() {
+      if (!playing) return;
+      var dv = (V > 19.4 && V < 20.6) ? 0.05 : 0.3;
+      V = Math.min(40, V + dv);
+      sync();
+      if (V >= 40) { stopPlay(); return; }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    if (playBtn) playBtn.addEventListener("click", function () {
+      if (playing) { stopPlay(); return; }
+      if (V >= 40) V = 0;
+      playing = true;
+      playBtn.textContent = "⏸ Pause";
+      loop();
+    });
+    if (slider) slider.addEventListener("input", function () {
+      stopPlay();
+      update(parseFloat(slider.value));
+    });
+    if (resetBtn) resetBtn.addEventListener("click", function () {
+      stopPlay();
+      update(0);
+      if (slider) slider.value = 0;
+    });
+
+    update(0);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Acids, Bases, and Aqueous Solutions · Inorganic Chemistry Chapter 4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">01 Inorganic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 4 · Acids, Bases, and Aqueous Solutions</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 Inorganic Chemistry · Chapter 4</div>
+    <h1>Acids, Bases, and Aqueous Solutions: The Arena Where Every Reaction Plays Out</h1>
+    <p class="lede">
+      On a heartburn night you swallow an antacid tablet, and minutes later the "fire" in your stomach is out — what that little white tablet performs
+      is one of the oldest reactions in chemistry: <strong>neutralization</strong>. But what exactly is an "acid"? What exactly is a "base"?
+      Humanity has answered this question three times, each answer deeper than the last. This chapter climbs a three-step ladder to meet Arrhenius, Brønsted–Lowry, and Lewis,
+      learns to fit the whole aqueous world with a pH scale, then watches weak electrolytes yield only halfway, buffers stand rock-steady,
+      and precipitates walk a tightrope between dissolving and dropping out.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time 55 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–3 of this branch · moles from the 00 branch</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#theories">§1 Three-stage evolution of acid–base theory</a>
+    <a href="#ph">§2 pH and strong vs. weak electrolytes</a>
+    <a href="#titration">§3 Titration curves and precipitation equilibria</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: The Chemistry of an Antacid Tablet</h2>
+    <p>
+      Your stomach secretes about 1.5 liters of gastric juice every day, its hydrochloric acid concentration about 0.1 mol/L and its pH as low as 1.5–2 —
+      enough to activate digestive enzymes and kill the overwhelming majority of bacteria that invade with food.
+      The stomach wall protects itself with a mucus–bicarbonate barrier, but once the barrier fails (late nights, spicy food, drug irritation),
+      the hydrochloric acid burns into the stomach lining — that is "heartburn".
+    </p>
+    <p>
+      The antacid's method is plain and effective: <strong>neutralize the excess acid with the basic aluminum hydroxide and magnesium carbonate</strong>
+      (<span class="formula">Al(OH)<sub>3</sub> + 3HCl → AlCl<sub>3</sub> + 3H<sub>2</sub>O</span>).
+      But chase one follow-up question and the whole chapter tumbles out: aluminum hydroxide acts as a base toward acid, yet it ionizes to release no OH⁻ and contains no water —
+      on what grounds does it count as a "base"? <strong>Humanity has given three successive answers to the definition of "acid and base"</strong>, each covering wider ground.
+      And to measure how far neutralization has gone, we still need a ruler: pH.
+    </p>
+  </section>
+
+  <!-- ============ §1 Theory ============ -->
+  <section id="theories">
+    <h2>§1 Three-Stage Evolution of Acid–Base Theory: From "Origin" to "Electrons"</h2>
+    <p>
+      The three theories do not refute one another — they are <strong>three concentric circles</strong>: the innermost is the most intuitive, the outermost the most general,
+      and each outward expansion absorbs the corners the previous circle could not explain. Climb the ladder one rung at a time:
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-step ladder · What exactly are acids and bases?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">LEVEL 1 · Arrhenius</button>
+        <button class="ladder-tab">LEVEL 2 · Brønsted–Lowry</button>
+        <button class="ladder-tab">LEVEL 3 · Lewis</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1884 · ionization in water</span>
+        <p>
+          <span class="term">Arrhenius</span>:
+          <strong>an acid = a substance that ionizes in water to release H<sup>+</sup>; a base = a substance that ionizes in water to release OH<sup>−</sup>.</strong>
+          Hydrochloric acid, sulfuric acid, and caustic soda (NaOH) all fall neatly into place, and neutralization is naturally H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O.
+          Intuitive and convenient, this is the whole of middle-school chemistry; but it soon runs into stubborn holdouts — <strong>ammonia solution is plainly a base, yet the NH<sub>3</sub> molecule contains no OH⁻</strong>;
+          its OH⁻ is seized from water, not ionized out of itself.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1923 · proton transfer</span>
+        <p>
+          <span class="term">Brønsted–Lowry</span>:
+          <strong>an acid = a donor of protons (H<sup>+</sup>); a base = a proton acceptor.</strong>
+          NH<sub>3</sub> accepts H<sup>+</sup> to become NH<sub>4</sub><sup>+</sup>, qualifying beyond dispute as a base.
+          The essence of acid–base reactions is unified into one sentence: <strong>the proton moves house from the acid to the base</strong>.
+          What remains after an acid releases its proton is called its <strong>conjugate base</strong>; a base that gains a proton becomes its <strong>conjugate acid</strong> —
+          for example HAc / Ac<sup>−</sup> and NH<sub>4</sub><sup>+</sup> / NH<sub>3</sub>,
+          a "conjugate acid–base pair" differing by exactly one proton. The stronger the conjugate acid, the weaker its conjugate base (a strong acid is paired with a weak base).
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">1923 · electron pairs</span>
+        <p>
+          <span class="term">Lewis</span>:
+          <strong>an acid = an electron-pair acceptor; a base = an electron-pair donor.</strong>
+          An acid–base reaction = one side supplies an empty orbital, the other a lone pair, and a bond forms. <strong>The coordinate bonds of Chapter 3 are textbook Lewis acid–base reactions</strong>:
+          Cu²⁺ (Lewis acid, empty orbitals) meets NH<sub>3</sub> (Lewis base, the lone pair on N), and the deep-blue
+          [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> appears. Even proton-free BF<sub>3</sub> + NH<sub>3</sub> is brought into the fold.
+          The three layers nest: <strong>Arrhenius ⊂ Brønsted ⊂ Lewis</strong> — the outer circle explains everything the inner one can, plus everything the inner one cannot.
+          Modern inorganic chemistry takes one more step with "hard and soft acids and bases" theory, refining the art of donor–acceptor matching — a story for another day.
+        </p>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Theory</th><th>Acid</th><th>Base</th><th>Explains beautifully</th><th>Cannot handle</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Arrhenius</strong> (1884)</td><td>Ionizes in water to give H⁺</td><td>Ionizes in water to give OH⁻</td><td>Neutralization and pH of strong acids and bases</td><td>Why NH₃ is a base; non-aqueous systems</td></tr>
+        <tr><td><strong>Brønsted–Lowry</strong> (1923)</td><td>Proton donor</td><td>Proton acceptor</td><td>Conjugate acid–base pairs, buffer solutions, indicator color changes</td><td>Proton-free systems (e.g. BF₃)</td></tr>
+        <tr><td><strong>Lewis</strong> (1923)</td><td>Electron-pair acceptor</td><td>Electron-pair donor</td><td>Coordination complexes, CO poisoning, reactions in non-aqueous solvents</td><td>Gives no ranking of strengths (needs HSAB as a supplement)</td></tr>
+      </tbody>
+    </table>
+
+    <details class="think">
+      <summary>Think It Through: sodium bicarbonate, an ingredient of stomach medicines, also counts as a "base" — yet HCO₃⁻ can even act as an "acid". What exactly is it?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: write its reactions with H⁺ and with OH⁻ respectively, and see which way the proton moves.</p>
+        <p>
+          Toward an acid (gastric acid) it is a <strong>base</strong>: <span class="formula">HCO<sub>3</sub><sup>−</sup> + H<sup>+</sup> → H<sub>2</sub>CO<sub>3</sub> → CO<sub>2</sub>↑ + H<sub>2</sub>O</span>
+          (the burp after taking the medicine is CO₂ escaping); toward a base it is an <strong>acid</strong>:
+          <span class="formula">HCO<sub>3</sub><sup>−</sup> + OH<sup>−</sup> → CO<sub>3</sub><sup>2−</sup> + H<sub>2</sub>O</span>.
+          A substance that can work at both ends is called an <strong>amphoteric substance</strong>, rooted in the conjugate chain
+          H<sub>2</sub>CO<sub>3</sub> / HCO<sub>3</sub><sup>−</sup> / CO<sub>3</sub><sup>2−</sup> —
+          HCO<sub>3</sub><sup>−</sup> is both the conjugate base of carbonic acid and the conjugate acid of the carbonate ion. Blood pH is steadied by exactly this buffering pair (§2).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 pH ============ -->
+  <section id="ph">
+    <h2>§2 pH: Fitting Aqueous Solutions with a Ruler</h2>
+    <p>
+      It all begins with water's own little secret: pure water faintly swaps protons with itself —
+      <span class="formula">H<sub>2</sub>O ⇌ H<sup>+</sup> + OH<sup>−</sup></span>, an autoionization.
+      At 25 °C only about one molecule in five hundred million does so, but that is already enough to establish an iron law,
+      the <span class="term">ion product of water</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">K<sub>w</sub> = [H<sup>+</sup>][OH<sup>−</sup>] = 1×10<sup>−14</sup> (25 °C)</span>
+    </p>
+    <p>
+      In other words, <strong>in any aqueous solution H<sup>+</sup> and OH<sup>−</sup> always coexist, and their product is constant</strong>:
+      acidity is merely H<sup>+</sup> holding the upper hand (taking the lion's share of the 10<sup>−14</sup> budget),
+      basicity is OH<sup>−</sup> on top. <span class="term">pH</span><span class="en">potential of hydrogen</span>
+      turns this "division of the spoils" into a handy ruler:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">pH = −lg[H<sup>+</sup>]</span> (mol/L)
+    </p>
+    <p>
+      Every drop of 1 in pH means [H<sup>+</sup>] rises tenfold — the H<sup>+</sup> concentration of gastric acid (pH ≈ 1.5) is
+      <strong>more than three hundred thousand times</strong> that of pure water (pH 7).
+      From this come the criteria for neutral, acidic, and basic:
+      <strong>[H<sup>+</sup>] = [OH<sup>−</sup>] is neutral; [H<sup>+</sup>] &gt; [OH<sup>−</sup>] is acidic; the reverse is basic</strong>.
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · pH = 7 always means neutral</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Neutral means pH 7 — common knowledge written into the textbooks; does it really need doubting? Setting a solution's pH to 7 makes it neutral.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          "pH = 7 means neutral" is only a <strong>coincidence at 25 °C</strong>. The true criterion for neutrality is
+          <strong>[H<sup>+</sup>] = [OH<sup>−</sup>]</strong>. The ionization of water is endothermic, so K<sub>w</sub> grows as temperature rises:
+          at 100 °C, K<sub>w</sub> ≈ 5×10<sup>−13</sup>, pure water has [H<sup>+</sup>] = [OH<sup>−</sup>] ≈ 7×10<sup>−7</sup>,
+          and pH ≈ 6.14 — <strong>yet it is still perfectly, unambiguously neutral</strong>. The number 7 is a function of temperature; the equality is the essence.
+        </div>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · there is no OH⁻ in an acidic solution</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Since the solution is acidic, OH⁻ should have been "wiped out" by H⁺ — so in an acidic solution [OH⁻] = 0.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          K<sub>w</sub> is a product that never clocks out: as long as the solution is aqueous, [H<sup>+</sup>][OH<sup>−</sup>] stays fixed at 10<sup>−14</sup> (25 °C).
+          In an acid at pH 2, [OH<sup>−</sup>] = 10<sup>−14</sup>/10<sup>−2</sup> = 10<sup>−12</sup> mol/L —
+          <strong>it is there, merely squeezed to an extreme low</strong>. Conversely, in a basic solution at pH 12, [H<sup>+</sup>] = 10<sup>−12</sup>, and it too never reaches zero.
+          What never gets wiped out is not the opposing ion but the rule itself: "the product must hold constant".
+        </div>
+      </div>
+    </div>
+
+    <h3>🔬 Try It Out: Interactive pH Scale</h3>
+    <p>
+      Drag the slider to change the pH and watch how [H<sup>+</sup>] and [OH<sup>−</sup>] ebb and flow while their product stays at 10<sup>−14</sup>;
+      click a common substance above the scale to jump straight to its pH.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="phSvg" width="660" height="200" viewBox="0 0 660 200" role="img" aria-label="Interactive pH scale"></svg>
+        <div class="fig-controls" style="width:100%;max-width:580px">
+          <input id="phSlider" type="range" min="0" max="14" step="0.1" value="7"
+                 style="flex:1;min-width:220px;accent-color:var(--accent);height:44px" aria-label="pH value">
+          <span class="fig-readout" id="phVal" style="margin-top:0">pH = 7.0</span>
+        </div>
+        <div class="fig-readout" id="phReadout"></div>
+      </div>
+      <figcaption>
+        Common substances for reference: gastric acid ≈1.5 · lemon juice ≈2.4 · pure water (25 °C) =7 · seawater ≈8.1 · soapy water ≈10.
+        Notice how "starved" the relevant ion becomes at the two ends of the scale — at pH 0, [OH<sup>−</sup>] is down to 10<sup>−14</sup> mol/L, yet never zero.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: calculating pH</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me do it): the pH of 0.01 mol/L hydrochloric acid</div>
+      <div class="worked-problem">
+        Calculate the pH of a 0.01 mol/L HCl solution, and find [OH<sup>−</sup>] in that solution (25 °C).
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>Classify strong vs. weak</strong>: HCl is a strong acid and <strong>ionizes completely</strong> in water: <span class="formula">HCl → H<sup>+</sup> + Cl<sup>−</sup></span>; every HCl molecule hands over one H⁺.</li>
+        <li class="step"><strong>Find [H⁺]</strong>: [H⁺] = 0.01 mol/L = 1×10<sup>−2</sup> mol/L. (The 10<sup>−7</sup> contributed by water's own ionization is negligible by comparison.)</li>
+        <li class="step"><strong>Substitute into the definition</strong>: pH = −lg[H⁺] = −lg(10<sup>−2</sup>) = <strong>2</strong>.</li>
+        <li class="step"><strong>Use K<sub>w</sub> to find [OH⁻]</strong>: [OH⁻] = K<sub>w</sub>/[H⁺] = 10<sup>−14</sup>/10<sup>−2</sup> = <strong>1×10<sup>−12</sup> mol/L</strong> — OH⁻ is still present in the acidic solution, just pressed extremely low.</li>
+        <li class="step">✅ <strong>Check and extend</strong>: pH + pOH = 2 + 12 = 14 ✓. Diluting this solution 100-fold raises the pH to 4; but infinite dilution never crosses 7 — water's own 10⁻⁷ eventually takes over (it must be counted in very dilute solutions).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <h3>Weak electrolytes: acetic acid's halfhearted ionization</h3>
+    <p>
+      Acetic acid (CH<sub>3</sub>COOH, abbreviated HAc) is not so forthright: it is a <strong>weak acid</strong> and only <strong>partly ionizes</strong> in water —
+      <span class="formula">HAc ⇌ H<sup>+</sup> + Ac<sup>−</sup></span> — and at equilibrium the bulk of the solution is still intact HAc molecules.
+      That is why 0.1 mol/L acetic acid has a pH of only about 2.9 (while hydrochloric acid of the same concentration gives 1): the molecules "dissociate and recombine" as they go,
+      reaching a dynamic equilibrium. This "⇌" is why the titration curve in §3 starts out flat.
+    </p>
+    <p>
+      <strong>The secret of buffer solutions</strong> hides in this very equilibrium: stock <strong>a large reserve of a conjugate acid–base pair</strong> at the same time (for example HAc and its sodium salt NaAc),
+      and small amounts of incoming strong acid or base are digested in turn by the reserve army while the pH barely moves — blood relies on H<sub>2</sub>CO<sub>3</sub>/HCO<sub>3</sub><sup>−</sup>
+      to hold its pH at 7.35–7.45, where a deviation of 0.4 units becomes life-threatening. Preparing a buffer uses the
+      <span class="term">common-ion effect</span>:
+      add a strong electrolyte containing a shared ion to the weak electrolyte solution (NaAc brings Ac<sup>−</sup>), the ionization equilibrium shifts left, and the degree of ionization of HAc decreases.
+      For the quantitative calculations see the 03 Analytical Chemistry branch; here it is enough to think the principle through.
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me): why a buffer stands rock-steady</div>
+      <div class="worked-problem">
+        Add 0.01 mol of HCl to 1 L of pure water and the pH crashes from 7 to 2; add the same amount of acid to 1 L of buffer containing HAc and NaAc (both 0.1 mol/L) and the pH hardly changes. Why?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: what is the buffer's inventory? — Large coexisting stocks of a <strong>conjugate acid–base pair</strong>: HAc (the acid store) and Ac<sup>−</sup> (the base store), connected by the equilibrium <span class="formula">HAc ⇌ H<sup>+</sup> + Ac<sup>−</sup></span>.</li>
+        <li class="step">💡 Hint: an incoming strong acid = a sudden surge of H⁺. Which way does the equilibrium move? — <strong>Left</strong>: the stockpiled Ac<sup>−</sup> immediately combines with H<sup>+</sup> to form HAc, "swallowing" the foreign acid into the acid store. Pure water has no base store, so its pH is left free to crash.</li>
+        <li class="step">💡 Hint: an incoming strong base = a sudden surge of OH⁻. The OH⁻ first consumes H⁺, and the equilibrium promptly shifts <strong>right</strong>: the acid store HAc ionizes some more, giving the H⁺ back and cancelling the base's impact.</li>
+        <li class="step">💡 Hint: why stress "a small amount"? Each storekeeper holds only 0.1 mol of stock, and the outside help (0.01 mol) can be absorbed calmly only while it stays within the inventory; pour in 1 mol of strong acid and the base store is emptied — the buffer fails at once.</li>
+        <li class="step">✅ Check the logic: a buffer = <strong>a generous reserve of a conjugate pair + the spontaneous shift of an equilibrium</strong>; the conjugate base defends against acid, the conjugate acid against base. Blood's H₂CO₃/HCO₃⁻ pair keeps watch day and night in exactly this way (for quantitative calculations see the 03 Analytical Chemistry branch).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Three mantras of this chapter</div>
+      ① The essence of an acid–base reaction: <strong>a proton moving house</strong> (Brønsted) or <strong>an electron pair forming a bond</strong> (Lewis).
+      ② <strong>A pH difference of 1 = a concentration difference of 10</strong>; [H⁺] and [OH⁻] share a conserved product of 10⁻¹⁴, and neither ever goes to zero.
+      ③ <strong>A buffer = a generous reserve of a conjugate acid–base pair</strong>: the base wards off incoming acid, the acid wards off incoming base.
+    </div>
+  </section>
+
+  <!-- ============ §3 Titration and precipitation ============ -->
+  <section id="titration">
+    <h2>§3 Titration Curves and Precipitation–Dissolution: Two Quantitative Windows</h2>
+    <p>
+      Once pH is in hand, we can draw a full portrait of "how far neutralization has gone": the <strong>acid–base titration</strong>.
+      Titrate 20.00 mL of 0.1000 mol/L HCl with 0.1000 mol/L NaOH, record the pH drop by drop, and you get the most famous S-shaped curve in chemistry.
+      Drag the slider and see with your own eyes how the pH rockets through <strong>7 units within half a drop</strong> near the equivalence point:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="titrSvg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="Interactive curve of a strong base titrating a strong acid"></svg>
+        <div class="fig-controls" style="width:100%;max-width:580px">
+          <label for="titrSlider" style="font-size:.9rem;color:var(--ink-2)">NaOH added: <strong id="titVal">0.0 mL</strong></label>
+          <input id="titrSlider" type="range" min="0" max="40" step="0.1" value="0"
+                 style="flex:1;min-width:220px;accent-color:var(--accent);height:44px" aria-label="Volume of sodium hydroxide added">
+        </div>
+        <div class="fig-readout" id="titrReadout"></div>
+      </div>
+      <figcaption>
+        Conditions: 0.1000 mol/L NaOH titrating 20.00 mL of 0.1000 mol/L HCl (25 °C). The red shading marks the jump region —
+        half a drop on either side of the equivalence point, where the pH shoots from about 3.6 to about 10.4. Phenolphthalein (turns red over 8.2–10) changes color right inside the jump region, which is why it is suitable;
+        how many pH units the jump spans, how an indicator is chosen, and why a weak-acid titration has a shorter jump — for these quantitative details see the <strong>03 Analytical Chemistry branch</strong>.
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>Think It Through: why does the curve "take off vertically" near the equivalence point while lying almost flat before and after?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: work out [H⁺] at 19.95 mL and at 20.05 mL — half a drop apart, so by what factor does the concentration differ?</p>
+        <p>
+          At 19.95 mL the acid is slightly in excess and [H⁺] ≈ 2.5×10⁻⁴ mol/L; at 20.05 mL the base is slightly in excess, [OH⁻] ≈ 2.5×10⁻⁴,
+          which converts to [H⁺] ≈ 4×10⁻¹¹. <strong>Half a drop apart, [H⁺] differs by nearly a factor of ten million</strong> — of course the pH jumps upright.
+          Before that, acid is in large excess and a few drops of base merely shave a little off "a lot", so the relative change is small and the pH creeps up;
+          the equivalence point is the handover threshold of "who is in excess", where the dominant ion steps straight from H⁺ to OH⁻ with no transition zone in between.
+          An indicator's job is to change color on exactly this steep slope — the "flash of pink" your eye catches rests on a transition across seven orders of magnitude.
+        </p>
+      </div>
+    </details>
+
+    <h3>Precipitation–dissolution equilibrium: a solid's "saturation humidity"</h3>
+    <p>
+      Acid–base is not the only equilibrium in aqueous solution. Drip AgNO<sub>3</sub> solution into NaCl solution and white AgCl precipitate forms at once —
+      but the reaction has not "ended cleanly": dissolution and deposition proceed simultaneously on the precipitate's surface, until a
+      <span class="term">precipitation–dissolution equilibrium</span> is reached:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">AgCl(s) ⇌ Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq)  K<sub>sp</sub> = [Ag<sup>+</sup>][Cl<sup>−</sup>]</span>
+    </p>
+    <p>
+      The <span class="term">solubility product</span><span class="en">K<sub>sp</sub></span> changes only with temperature,
+      and the smaller its value the harder the salt is to dissolve (AgCl about 1.8×10<sup>−10</sup>). To judge whether a precipitate will form, compare two numbers:
+      the <strong>ion product Q</strong> of the current solution and K<sub>sp</sub> — Q &gt; K<sub>sp</sub> and a precipitate deposits;
+      Q = K<sub>sp</sub> and the solution is exactly saturated; Q &lt; K<sub>sp</sub> and nothing settles out. With this rule, chemists precipitate impurities away for purification,
+      put silver halides to work in photographic imaging, and let the F<sup>−</sup> in toothpaste replace the more soluble hydroxyapatite in tooth enamel with the less soluble fluorapatite to fight cavities.
+      The formation and dissolution of precipitates is one more branch of the grand theme of "equilibrium" at the solid–liquid interface — sharing the same way of thinking as ionization equilibria and titration curves.
+    </p>
+
+    <p>This branch concludes here. Pack four pieces of luggage and set out for organic chemistry: <strong>the trend map, main-group personalities, the grammar of coordination, and the acid–base scale</strong> —
+      every reaction mechanism in the next branch will draw on them again and again.</p>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The three definitions of acids and bases expand ring by ring: <strong>Arrhenius</strong> (ionize in water to H⁺/OH⁻) ⊂ <strong>Brønsted–Lowry</strong> (proton donor/acceptor, conjugate acid–base pairs) ⊂ <strong>Lewis</strong> (electron-pair acceptor/donor, covering coordination reactions).</li>
+        <li>The ion product of water K<sub>w</sub> = [H⁺][OH⁻] = 10<sup>−14</sup> (25 °C): <strong>the two ions always coexist and their product is conserved</strong>; the criterion for neutrality is that they are equal, not that pH is exactly 7.</li>
+        <li>pH = −lg[H⁺]: strong acids and bases ionize completely, so substitute directly; <strong>a pH difference of 1 = a concentration difference of 10</strong>.</li>
+        <li>A weak acid (HAc) ionizes partially into a dynamic equilibrium; <strong>a buffer solution = a generous reserve of a conjugate acid–base pair</strong>, resisting both acid and base; the common-ion effect decreases its degree of ionization.</li>
+        <li>A titration curve <strong>jumps several pH units within half a drop</strong> near the equivalence point, so an indicator must change color inside the jump region (for the quantitative treatment see the 03 Analytical Chemistry branch).</li>
+        <li>K<sub>sp</sub> qualitatively: compare Q with K<sub>sp</sub> to decide whether a solid forms or dissolves — precipitation, purification, and cavity prevention follow the same principle.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Self-Test · Acids, Bases, and Aqueous Solutions <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "According to Brønsted–Lowry theory, an acid is defined as?",
+            "options": [
+              "a substance that ionizes in water to release H⁺",
+              "a substance that can donate a proton (H⁺)",
+              "a substance that can accept an electron pair",
+              "a substance containing OH⁻"
+            ],
+            "answer": 1,
+            "explain": "Brønsted–Lowry: an acid = a proton donor, a base = a proton acceptor. Option A is the Arrhenius definition (limited to ionization in water); C is the definition of a Lewis acid; D cannot even account for bases other than NaOH (such as NH₃)."
+          },
+          {
+            "q": "What is the conjugate acid of HCO₃⁻?",
+            "options": ["H₂CO₃", "CO₃²⁻", "H₃O⁺", "CO₂"],
+            "answer": 0,
+            "explain": "The conjugate acid = the product after gaining one proton: HCO₃⁻ + H⁺ → H₂CO₃. Conversely, HCO₃⁻ loses a proton to give CO₃²⁻, so CO₃²⁻ is its conjugate base — which makes HCO₃⁻ an amphoteric substance (this is also why it can serve as an antacid and take part in blood buffering)."
+          },
+          {
+            "q": "What is the pH of a 0.01 mol/L HCl solution?",
+            "options": ["1", "2", "4", "12"],
+            "answer": 1,
+            "explain": "HCl ionizes completely, [H⁺] = 0.01 = 10⁻² mol/L, so pH = −lg(10⁻²) = 2. If you answered 4, you may have carried over the answer for \"after 100-fold dilution\"; 12 is the pH of NaOH at the same concentration."
+          },
+          {
+            "q": "Which of the following statements is correct?",
+            "options": [
+              "A solution with pH = 7 must be neutral",
+              "No OH⁻ exists in an acidic solution",
+              "The criterion for neutrality is [H⁺] = [OH⁻]; when the temperature changes, the pH of a neutral solution need not be 7",
+              "As temperature rises, the ion product of water Kw decreases"
+            ],
+            "answer": 2,
+            "explain": "A holds only at 25 °C: heating increases Kw (D has it backwards), and at 100 °C pure water still has pH ≈ 6.14 yet remains neutral; B is wrong — the conservation of Kw guarantees [OH⁻] = Kw/[H⁺], so at pH 2 there are still 10⁻¹² mol/L of OH⁻, never zero."
+          },
+          {
+            "q": "If a large amount of solid sodium acetate is added to an acetic acid solution, the ionization equilibrium of acetic acid will?",
+            "options": [
+              "shift right, with a greater degree of ionization",
+              "shift left, with a smaller degree of ionization (common-ion effect)",
+              "not shift",
+              "shift left first, then back right to its original position"
+            ],
+            "answer": 1,
+            "explain": "NaAc supplies Ac⁻ (one of the products of HAc ionization); the sudden rise in product concentration shifts the equilibrium HAc ⇌ H⁺ + Ac⁻ left, and the degree of ionization of HAc decreases — this is the common-ion effect, and it is precisely why HAc/NaAc can form a buffer: the solution now holds a large reserve of a conjugate acid–base pair."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="03-Transition-Metals-and-Coordination-Chemistry.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 3 · Transition Metals and Coordination Chemistry</span></a>
+      <a class="next" href="../02-Organic-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">02 Organic Chemistry · Branch Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions: interactive pH scale + curve plotter for a strong base titrating a strong acid ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Interactive pH scale ---------- */
+  var phSvg = document.getElementById("phSvg");
+  var phSlider = document.getElementById("phSlider");
+  if (phSvg && phSlider) {
+    var phRead = document.getElementById("phReadout");
+    var phVal = document.getElementById("phVal");
+    var X0 = 40, W = 580, BAR_Y = 92, BAR_H = 34;
+    function xOf(pH) { return X0 + pH / 14 * W; }
+
+    var SUBS = [
+      { name: "Gastric acid", ph: 1.5 },
+      { name: "Lemon juice", ph: 2.4 },
+      { name: "Pure water", ph: 7 },
+      { name: "Seawater", ph: 8.1 },
+      { name: "Soapy water", ph: 10 }
+    ];
+
+    function sup(n) { return "×10<sup>" + n + "</sup>"; }
+    function sci(v) {
+      if (v <= 0) return "—";
+      var n = Math.floor(Math.log10(v));
+      var a = v / Math.pow(10, n);
+      return a.toFixed(1) + sup(n);
+    }
+    function region(p) {
+      if (p < 3) return "strongly acidic";
+      if (p < 6.5) return "acidic";
+      if (p <= 7.5) return "near-neutral";
+      if (p < 10.5) return "basic";
+      return "strongly basic";
+    }
+
+    function renderPh() {
+      var p = parseFloat(phSlider.value);
+      phSvg.innerHTML = "";
+
+      /* gradient bar */
+      var defs = el("defs", {}, phSvg);
+      var grad = el("linearGradient", { id: "phGrad", x1: 0, y1: 0, x2: 1, y2: 0 }, defs);
+      [["0%", "#dc2626"], ["18%", "#f97316"], ["38%", "#eab308"], ["50%", "#16a34a"],
+       ["64%", "#0ea5e9"], ["84%", "#6366f1"], ["100%", "#7c3aed"]].forEach(function (s) {
+        el("stop", { offset: s[0], "stop-color": s[1] }, grad);
+      });
+      el("rect", { x: X0, y: BAR_Y, width: W, height: BAR_H, rx: 8, fill: "url(#phGrad)" }, phSvg);
+
+      /* integer tick marks */
+      for (var i = 0; i <= 14; i++) {
+        var x = xOf(i);
+        el("line", { x1: x, y1: BAR_Y + BAR_H, x2: x, y2: BAR_Y + BAR_H + 8, stroke: "#6b7280", "stroke-width": 1.2 }, phSvg);
+        var t = el("text", { x: x, y: BAR_Y + BAR_H + 24, "text-anchor": "middle", "font-size": 11,
+                             "font-weight": i === 7 ? 800 : 400, fill: i === 7 ? "#111827" : "#4b5563" }, phSvg);
+        t.textContent = i;
+      }
+      var ax = el("text", { x: X0 + W / 2, y: BAR_Y + BAR_H + 44, "text-anchor": "middle",
+                            "font-size": 10.5, fill: "#6b7280" }, phSvg);
+      ax.textContent = "pH (25 °C) — acidic on the left, basic on the right";
+
+      /* common-substance flags (clickable) */
+      SUBS.forEach(function (s, i) {
+        var x = xOf(s.ph);
+        var y = i % 2 === 0 ? 34 : 58;
+        el("line", { x1: x, y1: y + 8, x2: x, y2: BAR_Y, stroke: "#475569", "stroke-width": 1.4 }, phSvg);
+        el("circle", { cx: x, cy: y + 8, r: 3, fill: "#475569" }, phSvg);
+        var t = el("text", { x: x, y: y, "text-anchor": "middle", "font-size": 10.5,
+                             "font-weight": 700, fill: "#334155" }, phSvg);
+        t.textContent = s.name + " " + s.ph;
+        var hit = el("rect", { x: x - 30, y: y - 14, width: 60, height: 24, fill: "transparent", cursor: "pointer" }, phSvg);
+        hit.addEventListener("click", function () {
+          phSlider.value = s.ph;
+          renderPh();
+        });
+      });
+
+      /* current pH cursor */
+      var x = xOf(p);
+      el("line", { x1: x, y1: BAR_Y - 22, x2: x, y2: BAR_Y + BAR_H + 6, stroke: "#111827", "stroke-width": 2.5 }, phSvg);
+      el("polygon", { points: (x - 7) + "," + (BAR_Y - 22) + " " + (x + 7) + "," + (BAR_Y - 22) + " " + x + "," + (BAR_Y - 10),
+                      fill: "#111827" }, phSvg);
+
+      /* readout */
+      var h = Math.pow(10, -p), o = Math.pow(10, p - 14);
+      phVal.textContent = "pH = " + p.toFixed(1);
+      phRead.innerHTML = "[H⁺] = " + sci(h) + " mol/L | [OH⁻] = " + sci(o) +
+        " mol/L | product = 1×10<sup>−14</sup>, constant | " + region(p);
+    }
+    phSlider.addEventListener("input", renderPh);
+    renderPh();
+  }
+
+  /* ---------- 2. Curve plotter: strong base titrating strong acid ---------- */
+  var tSvg = document.getElementById("titrSvg");
+  var tSlider = document.getElementById("titrSlider");
+  if (tSvg && tSlider) {
+    var tRead = document.getElementById("titrReadout");
+    var tVal = document.getElementById("titVal");
+    var L = 52, R = 620, T = 24, B = 292;
+    var VMAX = 40, EQ = 20;
+    function xOf(V) { return L + V / VMAX * (R - L); }
+    function yOf(p) { return B - p / 14 * (B - T); }
+
+    function pHof(V) {
+      if (V < EQ) return -Math.log10(0.1 * (EQ - V) / (EQ + V));
+      if (V === EQ) return 7;
+      return 14 + Math.log10(0.1 * (V - EQ) / (V + EQ));
+    }
+
+    function renderT() {
+      var V = parseFloat(tSlider.value);
+      tSvg.innerHTML = "";
+
+      /* axes */
+      el("line", { x1: L, y1: B, x2: R + 6, y2: B, stroke: "#94a3b8", "stroke-width": 1.5 }, tSvg);
+      el("line", { x1: L, y1: B, x2: L, y2: T - 8, stroke: "#94a3b8", "stroke-width": 1.5 }, tSvg);
+      for (var v = 0; v <= VMAX; v += 10) {
+        el("line", { x1: xOf(v), y1: B, x2: xOf(v), y2: B + 6, stroke: "#6b7280", "stroke-width": 1.2 }, tSvg);
+        var vt = el("text", { x: xOf(v), y: B + 20, "text-anchor": "middle", "font-size": 10.5, fill: "#4b5563" }, tSvg);
+        vt.textContent = v;
+      }
+      [0, 7, 14].forEach(function (p) {
+        el("line", { x1: L - 6, y1: yOf(p), x2: L, y2: yOf(p), stroke: "#6b7280", "stroke-width": 1.2 }, tSvg);
+        var pt = el("text", { x: L - 10, y: yOf(p) + 4, "text-anchor": "end", "font-size": 10.5,
+                              "font-weight": p === 7 ? 800 : 400, fill: p === 7 ? "#111827" : "#4b5563" }, tSvg);
+        pt.textContent = p;
+      });
+      el("line", { x1: L, y1: yOf(7), x2: R, y2: yOf(7), stroke: "#cbd5e1", "stroke-width": 1.2, "stroke-dasharray": "5 4" }, tSvg);
+      var xt = el("text", { x: (L + R) / 2, y: B + 40, "text-anchor": "middle", "font-size": 11, fill: "#6b7280" }, tSvg);
+      xt.textContent = "V(NaOH) / mL";
+      var yt = el("text", { x: 16, y: (T + B) / 2, "font-size": 11, fill: "#6b7280",
+                            transform: "rotate(-90 16 " + ((T + B) / 2) + ")" }, tSvg);
+      yt.textContent = "pH";
+
+      /* jump-region shading (19.9–20.1 mL) */
+      el("rect", { x: xOf(19.9), y: T, width: xOf(20.1) - xOf(19.9), height: B - T,
+                   fill: "#c2410c", opacity: 0.14 }, tSvg);
+      var jx = xOf(20);
+      el("line", { x1: jx, y1: T, x2: jx, y2: B, stroke: "#c2410c", "stroke-width": 1.2, "stroke-dasharray": "4 4" }, tSvg);
+      var jt = el("text", { x: xOf(20) + 8, y: yOf(11.2), "font-size": 10.5, "font-weight": 700, fill: "#9a3412" }, tSvg);
+      jt.textContent = "Equivalence point 20.00 mL";
+      var jt2 = el("text", { x: xOf(20) + 8, y: yOf(11.2) + 14, "font-size": 10, fill: "#9a3412" }, tSvg);
+      jt2.textContent = "pH soars within half a drop";
+
+      /* full curve (light-gray target) and the drawn segment (bold) */
+      function pathTo(vEnd) {
+        var d = "";
+        for (var v = 0; v <= vEnd + 1e-9; v += 0.05) {
+          var y = yOf(Math.min(14, Math.max(0, pHof(v))));
+          d += (d ? " L" : "M") + xOf(v).toFixed(1) + "," + y.toFixed(1);
+        }
+        return d;
+      }
+      el("path", { d: pathTo(VMAX), fill: "none", stroke: "#e5e7eb", "stroke-width": 3 }, tSvg);
+      if (V > 0.01) el("path", { d: pathTo(V), fill: "none", stroke: "#c2410c", "stroke-width": 2.6 }, tSvg);
+
+      /* indicator color-range bars */
+      el("rect", { x: R - 18, y: yOf(10), width: 9, height: yOf(8.2) - yOf(10), fill: "#f9a8d4", opacity: 0.9 }, tSvg);
+      var pp = el("text", { x: R - 24, y: (yOf(10) + yOf(8.2)) / 2 + 4, "text-anchor": "end", "font-size": 9.5, fill: "#be185d" }, tSvg);
+      pp.textContent = "Phenolphthalein 8.2–10";
+      el("rect", { x: R - 18, y: yOf(4.4), width: 9, height: yOf(3.1) - yOf(4.4), fill: "#fdba74", opacity: 0.9 }, tSvg);
+      var mo = el("text", { x: R - 24, y: (yOf(4.4) + yOf(3.1)) / 2 + 4, "text-anchor": "end", "font-size": 9.5, fill: "#c2410c" }, tSvg);
+      mo.textContent = "Methyl orange 3.1–4.4";
+
+      /* current point and crosshairs */
+      if (V > 0.01) {
+        var p = pHof(V);
+        var px = xOf(V), py = yOf(Math.min(14, Math.max(0, p)));
+        el("line", { x1: px, y1: py, x2: px, y2: B, stroke: "#111827", "stroke-width": 1, "stroke-dasharray": "3 3" }, tSvg);
+        el("line", { x1: L, y1: py, x2: px, y2: py, stroke: "#111827", "stroke-width": 1, "stroke-dasharray": "3 3" }, tSvg);
+        el("circle", { cx: px, cy: py, r: 5.5, fill: "#c2410c", stroke: "#111827", "stroke-width": 1.5 }, tSvg);
+      }
+
+      /* readout */
+      tVal.textContent = V.toFixed(1) + " mL";
+      var p2 = pHof(V);
+      var state;
+      if (V < EQ - 0.2) state = "Acid in excess (HCl equivalent to " + (EQ - V).toFixed(1) + " mL still remaining)";
+      else if (Math.abs(V - EQ) <= 0.2) state = "Just one drop to go! Crossing the jump region";
+      else state = "Base in excess (NaOH over by the equivalent of " + (V - EQ).toFixed(1) + " mL)";
+      tRead.textContent = "V = " + V.toFixed(1) + " mL | pH in the flask ≈ " +
+        (p2 > 0 ? p2.toFixed(2) : "—") + " | " + state +
+        " | for quantitative details (indicator choice, weak-acid titrations, error analysis) see the 03 Analytical Chemistry branch";
+    }
+    tSlider.addEventListener("input", renderT);
+    renderT();
+  }
+})();
+</script>
+</body>
+</html>

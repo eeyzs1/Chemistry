@@ -3,7 +3,7 @@
    —— 所有教程页面统一引用：assets/tutor.js
    职责：三级讲解阶梯 / 例题脚手架步进 / 自测引擎 / 目录高亮 /
          共享 SVG 辅助 el() / 视口感知动画循环 autoloop /
-         自测最佳成绩与分支进度徽章 / 回到顶部
+         自测最佳成绩与分支进度徽章 / 回到顶部 / 中英双语切换
    约定：每个功能独立初始化并容错，任何组件损坏不影响其他功能
    ============================================================ */
 (function () {
@@ -335,6 +335,89 @@
     show();
   }
 
+  /* ---------- 7. 中英双语切换 ---------- */
+  /* 页面对应表：[body class, 中文文件名, 英文文件名]；class 为空串表示根目录页。
+     命中后在面包屑右侧注入 EN / 中文 切换按钮；未命中则静默跳过。 */
+  var LANG_PAIRS = [
+    ["", "index.html", "index.html"],
+    ["b00", "index.html", "index.html"],
+    ["b00", "01-原子与元素.html", "01-Atoms-and-Elements.html"],
+    ["b00", "02-化学键与分子结构.html", "02-Chemical-Bonding-and-Molecular-Structure.html"],
+    ["b00", "03-化学反应与化学计量.html", "03-Chemical-Reactions-and-Stoichiometry.html"],
+    ["b00", "04-物态与溶液.html", "04-States-of-Matter-and-Solutions.html"],
+    ["b01", "index.html", "index.html"],
+    ["b01", "01-元素周期律.html", "01-The-Periodic-Law.html"],
+    ["b01", "02-主族元素.html", "02-Main-Group-Elements.html"],
+    ["b01", "03-过渡金属与配位化学.html", "03-Transition-Metals-and-Coordination-Chemistry.html"],
+    ["b01", "04-酸碱与水溶液.html", "04-Acids-Bases-and-Aqueous-Chemistry.html"],
+    ["b02", "index.html", "index.html"],
+    ["b02", "01-碳骨架与官能团.html", "01-Carbon-Skeletons-and-Functional-Groups.html"],
+    ["b02", "02-立体化学.html", "02-Stereochemistry.html"],
+    ["b02", "03-反应机理入门.html", "03-Introduction-to-Reaction-Mechanisms.html"],
+    ["b02", "04-官能团反应巡礼.html", "04-A-Tour-of-Functional-Group-Reactions.html"],
+    ["b03", "index.html", "index.html"],
+    ["b03", "01-概论与数据处理.html", "01-Introduction-and-Data-Treatment.html"],
+    ["b03", "02-滴定与化学分析.html", "02-Titration-and-Classical-Analysis.html"],
+    ["b03", "03-仪器分析三剑客.html", "03-The-Big-Three-of-Instrumental-Analysis.html"],
+    ["b04", "index.html", "index.html"],
+    ["b04", "01-化学热力学.html", "01-Chemical-Thermodynamics.html"],
+    ["b04", "02-化学动力学.html", "02-Chemical-Kinetics.html"],
+    ["b04", "03-电化学.html", "03-Electrochemistry.html"],
+    ["b04", "04-量子化学与分子结构.html", "04-Quantum-Chemistry-and-Molecular-Structure.html"],
+    ["b05", "index.html", "index.html"],
+    ["b05", "01-生物分子四大家族.html", "01-The-Four-Families-of-Biomolecules.html"],
+    ["b05", "02-酶与代谢.html", "02-Enzymes-and-Metabolism.html"],
+    ["b05", "03-遗传信息的化学.html", "03-The-Chemistry-of-Genetic-Information.html"],
+    ["b06", "index.html", "index.html"],
+    ["b06", "01-从单体到聚合物.html", "01-From-Monomers-to-Polymers.html"],
+    ["b07", "index.html", "index.html"],
+    ["b07", "01-材料的化学世界.html", "01-The-Chemical-World-of-Materials.html"],
+    ["b08", "index.html", "index.html"],
+    ["b08", "01-化学与环境.html", "01-Chemistry-and-the-Environment.html"],
+    ["b09", "index.html", "index.html"],
+    ["b09", "01-用计算机做实验.html", "01-Experiments-in-Silico.html"],
+    ["b10", "index.html", "index.html"],
+    ["b10", "01-药物设计的化学.html", "01-The-Chemistry-of-Drug-Design.html"],
+    ["b11", "index.html", "index.html"],
+    ["b11", "01-原子核的化学.html", "01-Chemistry-of-the-Atomic-Nucleus.html"]
+  ];
+  var LANG_ZH_FOLDERS = {
+    b00: "00-化学总论", b01: "01-无机化学", b02: "02-有机化学", b03: "03-分析化学",
+    b04: "04-物理化学", b05: "05-生物化学", b06: "06-高分子化学", b07: "07-材料化学",
+    b08: "08-环境化学", b09: "09-理论与计算化学", b10: "10-药物化学", b11: "11-核化学与放射化学"
+  };
+  var LANG_EN_FOLDERS = {
+    b00: "00-Foundations", b01: "01-Inorganic-Chemistry", b02: "02-Organic-Chemistry",
+    b03: "03-Analytical-Chemistry", b04: "04-Physical-Chemistry", b05: "05-Biochemistry",
+    b06: "06-Polymer-Chemistry", b07: "07-Materials-Chemistry", b08: "08-Environmental-Chemistry",
+    b09: "09-Theoretical-and-Computational-Chemistry", b10: "10-Medicinal-Chemistry",
+    b11: "11-Nuclear-and-Radiochemistry"
+  };
+
+  function initLangSwitch() {
+    var crumbs = document.querySelector(".crumbs");
+    if (!crumbs) return;
+    var isZh = (document.documentElement.lang || "").indexOf("zh") === 0;
+    var b = (document.body.className.match(/b\d{2}/) || [""])[0];
+    var file = location.pathname.split("/").pop() || "index.html";
+    try { file = decodeURIComponent(file); } catch (e) {}
+    var hit = null;
+    for (var i = 0; i < LANG_PAIRS.length; i++) {
+      if (LANG_PAIRS[i][0] === b && LANG_PAIRS[i][isZh ? 1 : 2] === file) { hit = LANG_PAIRS[i]; break; }
+    }
+    if (!hit) return;
+    var href = b
+      ? (isZh ? "../en/" + LANG_EN_FOLDERS[b] + "/" + hit[2]
+              : "../" + LANG_ZH_FOLDERS[b] + "/" + hit[1])
+      : (isZh ? "en/index.html" : "index.html");
+    var a = document.createElement("a");
+    a.className = "langswitch";
+    a.href = href;
+    a.textContent = isZh ? "EN" : "中文";
+    a.setAttribute("aria-label", isZh ? "English version" : "中文版");
+    crumbs.appendChild(a);
+  }
+
   /* ---------- 启动 ---------- */
   ready(function () {
     try { initLadders(null); } catch (e) { console.warn(e); }
@@ -343,6 +426,7 @@
     try { initTocSpy(); } catch (e) { console.warn(e); }
     try { initLessonProgress(null); } catch (e) { console.warn(e); }
     try { initBackTop(); } catch (e) { console.warn(e); }
+    try { initLangSwitch(); } catch (e) { console.warn(e); }
   });
 
   /* 暴露给章节页自定义动画使用 */

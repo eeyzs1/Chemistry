@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>The Four Families of Biomolecules · Biochemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b05">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">05 Biochemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · The Four Families of Biomolecules</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">05 Biochemistry · Chapter 1</div>
+    <h1>The Four Families of Biomolecules: A Tour of Life's Building Materials</h1>
+    <p class="lede">
+      The molecules that make up life look bewilderingly varied, yet they all answer to just four families:
+      <strong>proteins, nucleic acids, carbohydrates, and lipids</strong>.
+      This chapter introduces the "building blocks" and "linkages" of each family — how amino acids string together
+      into working machines, how nucleotides write the manual of heredity, how glucose polymerizes into granaries
+      and rebar, and how fatty acids build cell membranes. Grasp the main thread of "monomer → polymer",
+      and you are already halfway to succeeding at biochemistry.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: 00 Foundations Chapters 1–2 · 02 Organic Chapter 1</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#protein">§1 Proteins</a>
+    <a href="#nucleic">§2 Nucleic Acids</a>
+    <a href="#sugar">§3 Carbohydrates</a>
+    <a href="#lipid">§4 Lipids</a>
+    <a href="#unify">§5 The Unifying Logic</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: You Are Rebuilt from the Molecules You Eat</h2>
+    <p>
+      The egg you ate for breakfast becomes a digestive enzyme in your stomach a few hours later; the rice becomes
+      blood glucose and liver glycogen; the fats in nuts quietly slip into your cell membranes. At every moment your
+      body is taking "food molecules" apart, recombining them, and reusing them — and every molecule working on this
+      never-ending construction site comes <strong>entirely from the four families</strong>:
+    </p>
+    <ul>
+      <li><strong>Proteins</strong> — the machines and the workers: enzymes, transporters, antibodies, structural scaffolding;</li>
+      <li><strong>Nucleic acids</strong> — the blueprints and the archive: the manual that says "how to build the machines";</li>
+      <li><strong>Carbohydrates</strong> — firewood and rebar: energy ready to burn, and the load-bearing walls of plants;</li>
+      <li><strong>Lipids</strong> — walls and granaries: masters of the cell membrane, and the most energy-dense reserves.</li>
+    </ul>
+    <p>
+      The first three families are built in a strikingly consistent way: <strong>small monomers are "condensed", with
+      water removed, one by one into long chains</strong>; only the lipids take a different road —
+      <strong>small molecules "self-assemble" into large structures through physical forces</strong>.
+      This contrast is the soul of the chapter; §5 returns to it for a closer look.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why did life on Earth choose carbon as its backbone, rather than its group-mate silicon?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: compare the strengths of the C–C and Si–Si bonds; then ask what state CO₂ and SiO₂ each take.</p>
+        <p>
+          Silicon can indeed form four bonds too, but: <strong>the Si–Si bond is weaker</strong> (about 226 kJ/mol, versus
+          about 347 kJ/mol for C–C), so long chains break easily; silicon's oxide <span class="formula">SiO₂</span> is a hard
+          three-dimensional network solid (quartz), whereas <span class="formula">CO₂</span> is a gas — organisms can simply
+          exhale it and keep the cycle going, which is wonderfully convenient; and the silanes are unstable in water.
+          Life on Earth is <strong>mild chemistry in aqueous solution</strong>, and carbon is the only element that can
+          deliver "stable chains + reactivity at ordinary temperatures + recyclable products" all at once.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Proteins ============ -->
+  <section id="protein">
+    <h2>§1 Proteins: The Molecular Machines That Do the Work</h2>
+
+    <h3>Amino Acids: 20 Standard Parts</h3>
+    <p>
+      At the center of every amino acid sits the same <strong>α-carbon</strong>, which reaches out four hands to grip:
+      an amino group (−NH₂), a carboxyl group (−COOH), a hydrogen atom, and — most crucially — the
+      <span class="term">R group</span>.
+      <strong>All the differences among the 20 amino acids lie in the R group</strong>: some are charged and
+      hydrophilic (lysine, for example), some are hydrophobic (phenylalanine), and some contain sulfur and can form
+      "disulfide bridges" (cysteine). The temperament of the R groups decides the personality of the protein.
+    </p>
+
+    <h3>The Peptide Bond: Condensation into Chains</h3>
+    <p>
+      When the <strong>carboxyl group</strong> of one amino acid meets the <strong>amino group</strong> of another and
+      a molecule of water is removed, the resulting <strong>−CO−NH−</strong> linkage is called the
+      <span class="term">peptide bond</span>. This is the amide bond you met in Branch 02 — biology simply reuses it,
+      over and over, in its own way. The builder below lets you "condense" a peptide chain with your own hands:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="pepSvg" width="640" height="170" viewBox="0 0 640 170" role="img" aria-label="Peptide chain builder"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="pepAdd">＋ Amino acid</button>
+          <button class="btn ghost" id="pepSub">－ Amino acid</button>
+          <button class="btn ghost" id="pepReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="pepReadout"></div>
+      </div>
+      <figcaption>
+        Each peptide bond formed removes 1 molecule of water, so <strong>number of peptide bonds = number of amino
+        acids − 1</strong>. The chain has a direction: from the N-terminus (amino end) to the C-terminus (carboxyl end).
+        The colored balls stand for distinct R groups.
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Structural Hierarchy: From a Line to a Machine</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          A protein is like a bead necklace with magic in it: pulled straight, it is just <strong>a string of
+          beads</strong> (the sequence); let go, and it automatically <strong>curls locally into springs and folds into
+          sheets</strong>; finally <strong>the whole strand hugs itself into a compact shape</strong>; some even need
+          several strands <strong>fitted together</strong> before they are finished. The primary structure is the
+          "factory setting" — the higher structures follow on their own.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          <strong>Primary</strong> = the amino acid sequence (peptide bonds, covalent). <strong>Secondary</strong> =
+          regular local coiling: the α-helix and β-sheet (held by <strong>hydrogen bonds</strong> between backbone
+          groups). <strong>Tertiary</strong> = the three-dimensional shape of the whole folded chain (set jointly by
+          the hydrophobic effect, hydrogen bonds, ionic bonds, and disulfide bonds). <strong>Quaternary</strong> =
+          several peptide chains (subunits) assembled into a complex, as in hemoglobin = 4 subunits ferrying 4
+          molecules of oxygen. The higher the level, the "weaker" the forces holding the structure — and that is
+          deliberate; see §5.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          Why does sequence determine structure? Because the torsion angles at each α-carbon of the peptide backbone
+          have only a few "energy valleys" (the allowed regions of the Ramachandran plot), and the repulsions and
+          attractions among R groups then sift the allowed conformations down to a precious few. In principle,
+          <strong>predicting the three-dimensional structure from the amino acid sequence</strong> was biology's great
+          problem for fifty years — in 2020, AlphaFold largely solved it with AI: a handshake between computation and
+          chemistry.
+        </p>
+      </div>
+    </div>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="200" viewBox="0 0 640 200" role="img" aria-label="Diagram of the four levels of protein structure">
+          <!-- primary -->
+          <g transform="translate(80,75)">
+            <line x1="-46" y1="0" x2="46" y2="0" stroke="#94a3b8" stroke-width="2"/>
+            <circle cx="-45" cy="0" r="6" fill="#0d9488"/><circle cx="-30" cy="0" r="6" fill="#f59e0b"/>
+            <circle cx="-15" cy="0" r="6" fill="#6366f1"/><circle cx="0" cy="0" r="6" fill="#84cc16"/>
+            <circle cx="15" cy="0" r="6" fill="#ec4899"/><circle cx="30" cy="0" r="6" fill="#0891b2"/>
+            <circle cx="45" cy="0" r="6" fill="#a855f7"/>
+            <text y="42" text-anchor="middle" font-size="11" fill="#4b5563">Primary · sequence</text>
+          </g>
+          <!-- secondary -->
+          <g transform="translate(240,75)">
+            <path d="M-42,2 q8,-26 16,0 q8,26 16,0 q8,-26 16,0 q8,26 16,0" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+            <polyline points="-40,36 -28,28 -16,36 -4,28 8,36 20,28 32,36 44,28" fill="none" stroke="#0369a1" stroke-width="3" stroke-linejoin="round"/>
+            <text y="60" text-anchor="middle" font-size="11" fill="#4b5563">Secondary · helix/sheet</text>
+          </g>
+          <!-- tertiary -->
+          <g transform="translate(405,70)">
+            <path d="M-28,-6 C-34,-26 -8,-38 8,-30 C26,-24 36,-2 24,14 C14,28 -10,34 -22,22 C-36,10 -24,4 -28,-6 Z"
+                  fill="#ccfbf1" stroke="#0d9488" stroke-width="2.5"/>
+            <circle cx="-6" cy="-6" r="4" fill="#f59e0b"/><circle cx="10" cy="6" r="4" fill="#6366f1"/>
+            <circle cx="-12" cy="10" r="4" fill="#ec4899"/>
+            <text y="52" text-anchor="middle" font-size="11" fill="#4b5563">Tertiary · overall fold</text>
+          </g>
+          <!-- quaternary -->
+          <g transform="translate(560,68)">
+            <circle cx="-4" cy="-10" r="18" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.5"/>
+            <circle cx="14" cy="0" r="16" fill="#fef3c7" stroke="#b45309" stroke-width="2.5"/>
+            <circle cx="-16" cy="6" r="14" fill="#e0e7ff" stroke="#4338ca" stroke-width="2.5"/>
+            <text y="48" text-anchor="middle" font-size="11" fill="#4b5563">Quaternary · subunits</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        Hemoglobin is the star of quaternary structure: its 4 subunits work cooperatively — once the first oxygen
+        binds, the other three bind more easily. "Teamwork" lets it load up fast in the lungs and unload fast in the
+        tissues.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Key Idea in One Sentence</div>
+      <strong>Sequence determines structure, and structure determines function</strong>. Swap out one critical amino
+      acid (glutamate → valine in sickle-cell anemia), the shape deforms and the function collapses — a protein's
+      "destiny" is written in its primary structure.
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Why a Cooked Egg Can't Turn Back</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          When heat "denatures" a protein it has been <strong>broken down into amino acids</strong>; as long as no
+          more heat is applied, the egg white will turn transparent again once it cools.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Denaturation destroys the <strong>secondary, tertiary, and quaternary spatial structure</strong> (thermal
+          motion tears apart the weak interactions — hydrogen bonds, hydrophobic effects), while
+          <strong>the peptide bonds stay intact and the sequence remains unbroken</strong>. After denaturation,
+          hydrophobic groups once buried inside are exposed; the molecules tangle with one another and aggregate into
+          a precipitate — that is why the egg white turns white. Having dozens of tangled threads all untangle
+          precisely and each refold back into its own shape at once is essentially impossible — which is why
+          <strong>a cooked egg never turns raw again</strong> on cooling. True "breakdown" requires enzymes or acid to
+          hydrolyze the peptide bonds.
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: The Arithmetic of Condensation</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (Watch Me)</div>
+      <div class="worked-problem">
+        Ten amino acids (average relative molecular mass 128) condense into a decapeptide: how many peptide bonds
+        form? How many water molecules are lost? What is the approximate relative molecular mass of the decapeptide?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">In a linear decapeptide, peptide bonds join neighboring amino acids: <strong>number of peptide bonds = 10 − 1 = 9</strong>.</li>
+        <li class="step">Each peptide bond formed releases 1 molecule of H₂O (18 u): <strong>9 water molecules lost in total = 162 u</strong>.</li>
+        <li class="step">Condensation adds or removes no other atoms: <strong>M ≈ 10 × 128 − 162 = 1280 − 162 = 1118</strong>.</li>
+        <li class="step">✅ Check: 1118 ÷ 10 ≈ 112 per residue, matching the rule-of-thumb value of 110 used in biochemistry — reasonable.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Do It with Me)</div>
+      <div class="worked-problem">
+        For a peptide chain of 100 amino acids, how many distinct sequences are theoretically possible? (The total
+        number of atoms in the universe is about 10⁸⁰.)
+        <em>(Hints are hidden in each step — think it through yourself before revealing.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: with just 2 amino acids, each position has 20 choices → 20 × 20 = 400 sequences; 3 gives 20³. This is the multiplication principle.</li>
+        <li class="step">💡 Hint: 100 positions, 20 choices each → <strong>20¹⁰⁰</strong> sequences in all.</li>
+        <li class="step">💡 Hint: convert to a power of ten. log₁₀20 ≈ 1.3, so 20¹⁰⁰ = 10^(100×1.3) ≈ <strong>10¹³⁰</strong>.</li>
+        <li class="step">✅ Conclusion: 10¹³⁰ ≫ 10⁸⁰ — the number of possible proteins far exceeds the number of atoms in the universe. Nature uses only a droplet of this sequence space, and that droplet is precisely the raw-material storehouse of evolution and diversity.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 Nucleic Acids ============ -->
+  <section id="nucleic">
+    <h2>§2 Nucleic Acids: The Long Chains That Write the Manual</h2>
+    <p>
+      The building block of nucleic acids is the <span class="term">nucleotide</span>, and each nucleotide is a
+      three-piece set: <strong>phosphate + a five-carbon sugar + a nitrogenous base</strong>.
+      There are two sugars (ribose / deoxyribose) and five bases (A, T, C, G, U), which combine into two classes of
+      molecules:
+    </p>
+    <ul>
+      <li><strong>DNA</strong> (deoxyribonucleic acid): the four bases A, T, C, G; double-stranded; <strong>the archive</strong> — the master copy of heredity;</li>
+      <li><strong>RNA</strong> (ribonucleic acid): U stands in for T; usually single-stranded; <strong>the working copy</strong> — for duplication, message-carrying, and getting the job done (the star of Chapter 3).</li>
+    </ul>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="280" viewBox="0 0 640 280" role="img" aria-label="Diagram of DNA base pairing">
+          <!-- backbones -->
+          <path d="M150,18 C176,70 176,210 150,262" fill="none" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+          <path d="M490,18 C464,70 464,210 490,262" fill="none" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+          <text x="128" y="16" font-size="11" fill="#6b7280">5′</text>
+          <text x="128" y="276" font-size="11" fill="#6b7280">3′</text>
+          <text x="496" y="16" font-size="11" fill="#6b7280">3′</text>
+          <text x="496" y="276" font-size="11" fill="#6b7280">5′</text>
+          <!-- A=T -->
+          <line x1="163" y1="60" x2="295" y2="60" stroke="#ef4444" stroke-width="6"/>
+          <line x1="477" y1="60" x2="345" y2="60" stroke="#f59e0b" stroke-width="6"/>
+          <line x1="295" y1="60" x2="345" y2="60" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="307" cy="60" r="2.6" fill="#475569"/><circle cx="333" cy="60" r="2.6" fill="#475569"/>
+          <text x="229" y="64" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">A</text>
+          <text x="411" y="64" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">T</text>
+          <!-- G≡C -->
+          <line x1="163" y1="112" x2="283" y2="112" stroke="#22c55e" stroke-width="6"/>
+          <line x1="477" y1="112" x2="357" y2="112" stroke="#3b82f6" stroke-width="6"/>
+          <line x1="283" y1="112" x2="357" y2="112" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="296" cy="112" r="2.6" fill="#475569"/><circle cx="320" cy="112" r="2.6" fill="#475569"/><circle cx="344" cy="112" r="2.6" fill="#475569"/>
+          <text x="223" y="116" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">G</text>
+          <text x="417" y="116" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">C</text>
+          <!-- T=A -->
+          <line x1="163" y1="164" x2="295" y2="164" stroke="#f59e0b" stroke-width="6"/>
+          <line x1="477" y1="164" x2="345" y2="164" stroke="#ef4444" stroke-width="6"/>
+          <line x1="295" y1="164" x2="345" y2="164" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="307" cy="164" r="2.6" fill="#475569"/><circle cx="333" cy="164" r="2.6" fill="#475569"/>
+          <text x="229" y="168" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">T</text>
+          <text x="411" y="168" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">A</text>
+          <!-- C≡G -->
+          <line x1="163" y1="216" x2="283" y2="216" stroke="#3b82f6" stroke-width="6"/>
+          <line x1="477" y1="216" x2="357" y2="216" stroke="#22c55e" stroke-width="6"/>
+          <line x1="283" y1="216" x2="357" y2="216" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="296" cy="216" r="2.6" fill="#475569"/><circle cx="320" cy="216" r="2.6" fill="#475569"/><circle cx="344" cy="216" r="2.6" fill="#475569"/>
+          <text x="223" y="220" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">C</text>
+          <text x="417" y="220" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">G</text>
+        </svg>
+      </div>
+      <figcaption>
+        The backbones are joined covalently by <strong>phosphodiester bonds</strong> (like peptide bonds, products of
+        condensation); the two strands pair through <strong>hydrogen bonds</strong>: A=T with two hydrogen bonds,
+        G≡C with three. <strong>Weak bonds are used here deliberately</strong> — stable enough to keep the master copy
+        of heredity safe, yet able to unzip like a zipper during replication (Chapter 3).
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Information in Base Four</div>
+      DNA writes its information with the four "letters" A/T/C/G; a gene is simply a sequence a few hundred to a few
+      thousand letters long. <strong>Nucleic acids store information; proteins execute function</strong> — a division
+      of labor between the two great families that Chapter 3 will finally connect.
+    </div>
+  </section>
+
+  <!-- ============ §3 Carbohydrates ============ -->
+  <section id="sugar">
+    <h2>§3 Carbohydrates: Firewood and Rebar</h2>
+    <p>
+      Carbohydrates follow the approximate general formula <span class="formula">Cₙ(H₂O)ₙ</span> — hence the name
+      "carbohydrate". They are graded by size: <strong>monosaccharides</strong> (glucose, fructose, ribose — yes, the
+      sugar in RNA), <strong>disaccharides</strong> (sucrose = glucose + fructose; maltose; lactose), and
+      <strong>polysaccharides</strong> (hundreds to thousands of glucose units polymerized). Monosaccharides connect
+      through <span class="term">glycosidic bonds</span> — condensation yet again.
+    </p>
+    <p>
+      Among the polysaccharides is a textbook story of isomerism: <strong>starch, glycogen, and cellulose are all
+      built from glucose alone</strong>, differing only in the "angle" of the linkages —
+    </p>
+    <ul>
+      <li><strong>Starch</strong> (plant energy store): α-1,4 glycosidic bonds form helical chains that humans can digest;</li>
+      <li><strong>Glycogen</strong> (animal energy store): α-linkages plus heavy branching — a "quick-access energy account";</li>
+      <li><strong>Cellulose</strong> (plant structure): β-1,4 glycosidic bonds; the chains are drawn straight and bundled by hydrogen bonds into cables — the rebar of wood and cotton.</li>
+    </ul>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Is Cellulose "Useless"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Starch and cellulose are both polymers of glucose, so they are nutritionally identical; since humans cannot
+          digest cellulose, it is just "waste".
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          The linkage decides their fate: the human body has α-amylase but no cellulase to cut β-1,4 bonds, so
+          cellulose yields no energy for us. Yet it is far from waste — <strong>dietary fiber</strong> stimulates
+          intestinal movement and serves as "rations" for the gut microbiome to ferment (the resulting short-chain
+          fatty acids benefit the body). Cattle and sheep can eat grass because <strong>microbes</strong> in their
+          rumen supply the cellulase. The finest lesson in "structural difference → functional difference".
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why does rice taste sweeter the longer you chew it?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: starch is not sweet, but maltose is. Who is at work beyond your jaws?</p>
+        <p>
+          Salivary <strong>α-amylase</strong> hydrolyzes the α-1,4 bonds of starch into maltose and other small sugars
+          while you chew — enzymatic hydrolysis is exactly the reverse of condensation (Chapter 2 has the details).
+          The longer you chew, the more hydrolysis, and naturally the sweeter it tastes.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Lipids ============ -->
+  <section id="lipid">
+    <h2>§4 Lipids: Walls and Granaries</h2>
+    <p>
+      Lipids are a "loose family" — they are not polymers, they have no common monomer, and they share just one
+      trait: <strong>hydrophobicity</strong> (they shun water). Two representative members:
+    </p>
+    <ul>
+      <li><strong>Triacylglycerol</strong> (fat): glycerol + 3 fatty acids joined by ester bonds. Energy-storage
+        density reaches 9 kcal/g (carbohydrates manage only 4) — because fatty acids are highly "reduced" and nearly
+        oxygen-free, burning them is hydrogen-rich and hot. The drawback: they burn slowly, suiting them to slow
+        energy supply.</li>
+      <li><strong>Phospholipid</strong>: replace one fatty acid of a triacylglycerol with a <strong>phosphate
+        group</strong> — the "oil tank" instantly becomes a "wall brick". One end loves water (the phosphate head)
+        and one end shuns it (the two fatty-acid tails): this is called <span class="term">amphipathic</span>.</li>
+    </ul>
+    <p>
+      Place amphipathic molecules in water and the miracle happens by itself — run the experiment below:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="lipSvg" width="640" height="250" viewBox="0 0 640 250" role="img" aria-label="Animation of phospholipids self-assembling into a membrane"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="lipToggle">💧 Place in water</button>
+        </div>
+        <div class="fig-readout" id="lipReadout">Dry environment: phospholipids drift randomly with no order</div>
+      </div>
+      <figcaption>
+        Green heads = phosphate (hydrophilic); brown twin tails = fatty-acid hydrocarbon chains (hydrophobic).
+        In water, the heads turn outward to "grab" water while the tails huddle together to "hide" from it, and a
+        bilayer forms <strong>spontaneously</strong> — the prototype of the cell membrane.
+        Note: this step <strong>needs no enzyme or machinery whatsoever</strong> — the laws of physics do the
+        construction free of charge.
+      </figcaption>
+    </figure>
+
+    <p>
+      A real cell membrane is this "bilayer" plus the membrane proteins embedded in it (the fluid mosaic model),
+      with <strong>cholesterol</strong> blended in to tune fluidity — too rigid and it cracks, too fluid and it leaks;
+      cholesterol is the "shock absorber".
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why does dish soap wash away grease?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: what do detergent molecules and phospholipids have in common?</p>
+        <p>
+          The active ingredients of dish soap are also <strong>amphipathic molecules</strong>: hydrophobic tails stab
+          into the oil droplets while hydrophilic heads face the water, wrapping large droplets into small micelles
+          that rinse away. This is <strong>the very same physics</strong> by which phospholipids self-assemble into
+          membranes — life simply puts the laws of physics to their sharpest use.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 Unifying Logic ============ -->
+  <section id="unify">
+    <h2>§5 The Unifying Logic: Two Ways to Build</h2>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Family</th><th>Monomer / building block</th><th>Linkage</th><th>Representative functions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Proteins</strong></td><td>Amino acids (20 kinds)</td><td>Peptide bonds (condensation)</td><td>Catalysis, transport, structure, immunity, signaling</td></tr>
+        <tr><td><strong>Nucleic acids</strong></td><td>Nucleotides (a 4-letter alphabet)</td><td>Phosphodiester bonds (condensation)</td><td>Storing and transmitting genetic information</td></tr>
+        <tr><td><strong>Polysaccharides</strong></td><td>Monosaccharides such as glucose</td><td>Glycosidic bonds (condensation)</td><td>Energy storage (starch/glycogen), structure (cellulose)</td></tr>
+        <tr><td><strong>Lipids</strong></td><td>Fatty acids, glycerol, etc. (not polymers)</td><td>Ester bonds + noncovalent self-assembly</td><td>Energy storage, membrane framework, signaling molecules</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Strong Bonds Fix the Sequence, Weak Bonds Set the Shape</div>
+      Three families weld the sequence in place with <strong>covalent bonds</strong> (peptide, phosphodiester,
+      glycosidic) — the information must not scramble; they then erect the three-dimensional shape with
+      <strong>weak interactions</strong> (hydrogen bonds, hydrophobic effects, ionic bonds) — a shape that can be
+      dismantled and reassembled on demand. The "reversibility" of weak bonds is not a flaw; it is exactly the
+      balance between flexibility and precision that life requires.
+    </div>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Polymerization vs. Self-Assembly: Two Ways to Build</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Proteins, nucleic acids, and polysaccharides are like <strong>beads threaded on a string</strong> — monomers
+          strung by a covalent "thread" into necklaces with a definite order, and when a bead is misstrung, enzymes
+          must unpick and restring it. Lipids are like <strong>a handful of tiny magnetic beads</strong> — no thread
+          needed; scattered into water, they line up and clump together on their own, enclosing rings of "fencing"
+          (membranes, micelles). One builds with chemical bonds; the other gets free construction from the laws of
+          physics.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Mechanism</span>
+        <p>
+          For the first three families, polymerization is <strong>enzyme-catalyzed condensation</strong>: it needs
+          energy and templates (DNA, enzymes), yields products with definite sequences, and its reverse is hydrolysis
+          — the body "dismantles" and "builds" around the clock. Lipids take the <strong>self-assembly</strong> route:
+          each molecule stands alone, with no monomer–polymer relationship; in water, amphipathic molecules line up
+          spontaneously into bilayers, and the molecules keep drifting laterally within the layer. Membranes can
+          therefore self-repair and can split — indispensable for cell division.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          The engine of self-assembly is <strong>entropy</strong>: a water molecule pressed against a hydrophobic
+          surface is forced into a tidy "cage", at a cost in entropy; the hydrophobic tails cluster, releasing the
+          trapped water back into the freely tumbling bulk phase — <strong>entropy-driven</strong> (ΔG &lt; 0).
+          The same force pushes a protein's hydrophobic residues into its interior — <strong>membrane assembly and
+          protein folding are two faces of one principle</strong>. Water is thus not just a solvent; it is a
+          "co-author" of life's structures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The four families: proteins (machines), nucleic acids (blueprints), carbohydrates (fuel and rebar), lipids (walls and granaries).</li>
+        <li><strong>Amino acids → peptide bonds (condensation) → proteins</strong>; number of peptide bonds = number of amino acids − 1; sequence determines structure, structure determines function.</li>
+        <li>The four levels of protein structure: primary sequence (covalent), secondary helices/sheets (hydrogen bonds), tertiary overall shape, quaternary subunit assembly.</li>
+        <li>Nucleotides (phosphate + sugar + base) chain together via phosphodiester bonds; DNA's two strands pair through hydrogen bonds A=T and G≡C — weak bonds make "unzipping" easy.</li>
+        <li>Starch/glycogen/cellulose share glucose as monomer; the difference between <strong>α and β glycosidic bonds</strong> decides "edible" versus "inedible".</li>
+        <li>Phospholipid amphipathicity → <strong>spontaneous</strong> bilayers in water (entropy-driven); lipids rely on self-assembly, not polymerization.</li>
+        <li>The grand rule: <strong>strong covalent bonds fix the sequence, weak interactions set the shape</strong> — precision and reversibility in one.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · The Four Families of Biomolecules <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Which chemical bond joins two amino acids?",
+            "options": ["Hydrogen bond", "Peptide bond", "Glycosidic bond", "Phosphodiester bond"],
+            "answer": 1,
+            "explain": "The carboxyl group of one amino acid condenses with the amino group of another, forming a peptide bond (−CO−NH−). Hydrogen bonds stabilize secondary and tertiary structure, glycosidic bonds link monosaccharides, and phosphodiester bonds link nucleotides."
+          },
+          {
+            "q": "When 10 amino acids condense into a decapeptide, how many water molecules are lost and how many peptide bonds form?",
+            "options": ["10 waters, 10 peptide bonds", "9 waters, 9 peptide bonds", "8 waters, 9 peptide bonds", "9 waters, 10 peptide bonds"],
+            "answer": 1,
+            "explain": "For a linear peptide: number of peptide bonds = number of amino acids − 1 = 9; each peptide bond releases 1 water molecule, so 9 H₂O as well."
+          },
+          {
+            "q": "In double-stranded DNA, which base pairs with adenine (A)?",
+            "options": ["Guanine (G)", "Cytosine (C)", "Thymine (T)", "Uracil (U)"],
+            "answer": 2,
+            "explain": "In DNA, A=T (2 hydrogen bonds) and G≡C (3 hydrogen bonds). Uracil (U) appears in RNA in place of T — note the question asks about DNA."
+          },
+          {
+            "q": "What is the root cause of humans being able to digest starch but not cellulose?",
+            "options": ["The type of glycosidic bond linking the glucose differs, and humans lack the enzyme that hydrolyzes β-1,4 bonds", "Cellulose has too large a relative molecular mass", "Cellulose is insoluble in water and therefore cannot react", "Cellulose is not a carbohydrate"],
+            "answer": 0,
+            "explain": "Both share glucose as their monomer; the difference lies in α-1,4 versus β-1,4 glycosidic bonds. Humans have α-amylase but no cellulase. Cellulose still benefits health in its role as dietary fiber."
+          },
+          {
+            "q": "What is the direct cause of phospholipids spontaneously arranging into a bilayer in water?",
+            "options": ["Covalent bonds form between the phospholipids", "Phospholipid amphipathicity: hydrophilic heads face the water while hydrophobic tails cluster together, releasing the trapped water molecules", "Water molecules push the phospholipids around until they collide", "Phospholipids carry large like charges and attract one another"],
+            "answer": 1,
+            "explain": "Amphipathicity plus entropy: the hydrophobic tails cluster and release the water held in ordered 'water cages', making the system more disordered (an entropy gain), so the bilayer forms spontaneously. This is the origin of cell membranes — and a hint that water is a co-author of life's structures."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">05 Biochemistry · Overview</span></a>
+      <a class="next" href="02-Enzymes-and-Metabolism.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 2 · Enzymes and Metabolism</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions (peptide builder / phospholipid self-assembly) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Peptide builder ---------- */
+  var pepSvg = document.getElementById("pepSvg");
+  if (pepSvg) {
+    var pepReadout = document.getElementById("pepReadout");
+    var AAS = ["Gly", "Ala", "Val", "Ser", "Leu", "Cys", "Phe", "Lys", "Ile", "Thr"];
+    var RC = ["#0d9488", "#f59e0b", "#6366f1", "#84cc16", "#ec4899",
+              "#0891b2", "#a855f7", "#eab308", "#14b8a6", "#f97316"];
+    var n = 5;
+
+    function drawPep() {
+      pepSvg.innerHTML = "";
+      var y = 92, x0 = 52, x1 = 588;
+      var step = (x1 - x0) / (n - 1);
+      var tip = el("text", { x: 320, y: 22, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, pepSvg);
+      tip.textContent = "Condensation: 1 molecule of H₂O is removed at each peptide bond";
+      for (var i = 0; i < n; i++) {
+        var x = x0 + i * step;
+        // R group
+        el("line", { x1: x, y1: y - 16, x2: x, y2: y - 30, stroke: "#94a3b8", "stroke-width": 1.5 }, pepSvg);
+        el("circle", { cx: x, cy: y - 37, r: 7, fill: RC[i], opacity: .9 }, pepSvg);
+        // backbone bead
+        el("circle", { cx: x, cy: y, r: 16, fill: "#ffffff", stroke: RC[i], "stroke-width": 2.5 }, pepSvg);
+        var t = el("text", { x: x, y: y + 4, "text-anchor": "middle", "font-size": 9.5,
+                             "font-weight": 700, fill: "#1f2937" }, pepSvg);
+        t.textContent = AAS[i];
+        // peptide bond
+        if (i < n - 1) {
+          el("line", { x1: x + 16, y1: y, x2: x + step - 16, y2: y,
+                       stroke: "#ef4444", "stroke-width": 3 }, pepSvg);
+          if (i === 0) {
+            var bt = el("text", { x: x + step / 2, y: y + 30, "text-anchor": "middle",
+                                  "font-size": 10.5, "font-weight": 700, fill: "#b91c1c" }, pepSvg);
+            bt.textContent = "Peptide bond";
+            el("circle", { cx: x + step / 2, cy: y - 44, r: 3.5, fill: "#bae6fd", stroke: "#0369a1", "stroke-width": 1 }, pepSvg);
+            var wt = el("text", { x: x + step / 2, y: y - 60, "text-anchor": "middle",
+                                  "font-size": 10, fill: "#0369a1" }, pepSvg);
+            wt.textContent = "−H₂O";
+          }
+        }
+      }
+      var nt = el("text", { x: 12, y: y + 4, "text-anchor": "middle", "font-size": 10, fill: "#6b7280" }, pepSvg);
+      nt.textContent = "N";
+      var ct = el("text", { x: 628, y: y + 4, "text-anchor": "middle", "font-size": 10, fill: "#6b7280" }, pepSvg);
+      ct.textContent = "C";
+
+      pepReadout.textContent = n + " amino acids | peptide bonds: " + (n - 1) + " | water lost: " + (n - 1) +
+        " H₂O (" + ((n - 1) * 18) + " u) | at 128 u per amino acid → chain ≈ " +
+        (n * 128 - (n - 1) * 18) + " u";
+    }
+    function bindPep(id, fn) {
+      var b = document.getElementById(id);
+      if (b) b.addEventListener("click", function () { fn(); drawPep(); });
+    }
+    bindPep("pepAdd", function () { n = Math.min(10, n + 1); });
+    bindPep("pepSub", function () { n = Math.max(2, n - 1); });
+    bindPep("pepReset", function () { n = 5; });
+    drawPep();
+  }
+
+  /* ---------- 2. Phospholipid self-assembly ---------- */
+  var lipSvg = document.getElementById("lipSvg");
+  if (lipSvg) {
+    var lipReadout = document.getElementById("lipReadout");
+    var toggleBtn = document.getElementById("lipToggle");
+    var wet = false, raf = null;
+
+    var DRY = [[80, 60, 25], [190, 150, -40], [300, 90, 10], [410, 170, 70], [530, 70, -15],
+               [120, 190, -70], [350, 62, 45], [500, 182, 120], [590, 140, -100], [60, 130, 160]];
+    var WET = [];
+    for (var i = 0; i < 5; i++) WET.push([110 + i * 110, 80, 0]);
+    for (var j = 0; j < 5; j++) WET.push([110 + j * 110, 170, 180]);
+
+    var cur = DRY.map(function (p) { return { x: p[0], y: p[1], a: p[2] }; });
+    var from = null, to = null;
+
+    // water + core labels (opacity transition)
+    var watTop = el("g", { opacity: 0 }, lipSvg);
+    watTop.style.transition = "opacity .8s ease";
+    el("rect", { x: 40, y: 28, width: 560, height: 26, rx: 8, fill: "#bae6fd" }, watTop);
+    var t1 = el("text", { x: 320, y: 46, "text-anchor": "middle", "font-size": 11, fill: "#075985" }, watTop);
+    t1.textContent = "Water (a hydrophilic heaven)";
+    var watBot = el("g", { opacity: 0 }, lipSvg);
+    watBot.style.transition = "opacity .8s ease";
+    el("rect", { x: 40, y: 196, width: 560, height: 26, rx: 8, fill: "#bae6fd" }, watBot);
+    var t2 = el("text", { x: 320, y: 214, "text-anchor": "middle", "font-size": 11, fill: "#075985" }, watBot);
+    t2.textContent = "Water (a hydrophilic heaven)";
+    var core = el("text", { x: 275, y: 130, "text-anchor": "middle", "font-size": 10.5,
+                            "font-weight": 700, fill: "#9a3412", opacity: 0 }, lipSvg);
+    core.style.transition = "opacity .8s ease";
+    core.textContent = "Hydrophobic core";
+
+    var groups = [];
+    for (var k = 0; k < 10; k++) {
+      var g = el("g", {}, lipSvg);
+      el("line", { x1: -3.5, y1: 9, x2: -6, y2: 44, stroke: "#b45309", "stroke-width": 3.5, "stroke-linecap": "round" }, g);
+      el("line", { x1: 3.5, y1: 9, x2: 6, y2: 44, stroke: "#b45309", "stroke-width": 3.5, "stroke-linecap": "round" }, g);
+      el("circle", { r: 9, fill: "#0d9488", stroke: "#115e59", "stroke-width": 1.5 }, g);
+      var p = el("text", { y: 3.5, "text-anchor": "middle", "font-size": 8.5, "font-weight": 800, fill: "#fff" }, g);
+      p.textContent = "P";
+      groups.push(g);
+    }
+
+    function place() {
+      for (var i = 0; i < 10; i++) {
+        groups[i].setAttribute("transform", "translate(" + cur[i].x + "," + cur[i].y + ") rotate(" + cur[i].a + ")");
+      }
+    }
+    place();
+
+    if (toggleBtn) toggleBtn.addEventListener("click", function () {
+      wet = !wet;
+      var target = wet ? WET : DRY;
+      from = cur.map(function (c) { return { x: c.x, y: c.y, a: c.a }; });
+      to = target.map(function (p) { return { x: p[0], y: p[1], a: p[2] }; });
+      watTop.setAttribute("opacity", wet ? 0.85 : 0);
+      watBot.setAttribute("opacity", wet ? 0.85 : 0);
+      core.setAttribute("opacity", wet ? 1 : 0);
+      toggleBtn.textContent = wet ? "🧲 Remove the water (reset)" : "💧 Place in water";
+      lipReadout.textContent = wet
+        ? "In water: hydrophilic heads reach outward for water, hydrophobic tails tuck inward → a bilayer forms spontaneously (the prototype of a cell membrane)"
+        : "Dry environment: phospholipids drift randomly with no order";
+      var t0 = null, dur = 850;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        for (var i = 0; i < 10; i++) {
+          cur[i].x = from[i].x + (to[i].x - from[i].x) * ease;
+          cur[i].y = from[i].y + (to[i].y - from[i].y) * ease;
+          cur[i].a = from[i].a + (to[i].a - from[i].a) * ease;
+        }
+        place();
+        if (k < 1) raf = requestAnimationFrame(step);
+      }
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(step);
+    });
+  }
+})();
+</script>
+</body>
+</html>

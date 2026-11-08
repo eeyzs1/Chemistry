@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>From Monomers to Polymers · Polymer Chemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b06">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">06 Polymer Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · From Monomers to Polymers</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">06 Polymer Chemistry · Chapter 1</div>
+    <h1>From Monomers to Polymers: Small Molecules Link into Giant Chains</h1>
+    <p class="lede">
+      Ethylene is a small gaseous molecule, fleeting and formless; join hundreds of thousands of them head to tail and you get a plastic bucket that holds ten liters of water.
+      This chapter makes one thing clear: <strong>when small molecules (monomers) link into giant chain molecules (polymers), material properties take a qualitative leap</strong>.
+      We will take apart the two most important polymerization routes — addition and condensation polymerization — and see how chain architecture (linear? cross-linked?)
+      determines the stiffness of plastics and the spring of rubbers, and why some plastics can be remelted again and again while others set once and for all.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: <a href="../02-Organic-Chemistry/01-Carbon-Skeletons-and-Functional-Groups.html">02 Organic Chemistry · Functional Groups</a></span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 4 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#what">What Is a Polymer</a>
+    <a href="#addition">Addition Polymerization</a>
+    <a href="#condensation">Condensation Polymerization</a>
+    <a href="#crosslink">Cross-Linking and Vulcanization</a>
+    <a href="#families">A Quick Tour of the Material Families</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Three “Plastic” Friends</h2>
+    <p>
+      Tear open a bread bag: the thin film of cling wrap is so soft it barely holds a shape; unscrew a bottle of mineral water and the body is crisp, springing right back under a press;
+      snap the black switch base of an old desk lamp and it is hard and brittle, cracking with a “crack” when it hits the floor —
+      all of them are called “plastics”, yet their temperaments are worlds apart. All are synthetic organic macromolecules, so why are some soft, some tough, and some brittle?
+    </p>
+    <p>
+      The answer hides in <strong>the world of molecular chains</strong>. In the cling film, loosely entangled long chains can slide past one another;
+      in the bottle, neatly folded, partially crystalline bundles of chains; in the switch base, the chains are welded together by chemical bonds into one huge three-dimensional net.
+      To read all this, we must first answer a more basic question: how do small molecules “link up” into giant ones?
+    </p>
+    <details class="think">
+      <summary>Think It Through: Both are “hydrocarbons” — why is paraffin oil (a mixture of small molecules) a free-flowing liquid, while polyethylene (long-chain molecules) is a sturdy solid?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Think about which is easier to move as a whole — a few loose strips of paper (short molecules) or an entire bound book (long chains).</p>
+        <p>
+          The bigger the molecule, the larger the contact surface where chains “hug”, and the intermolecular dispersion forces (London forces) accumulate into something formidable —
+          a single small molecule attracts its neighbors only weakly, so at room temperature it is a liquid or a gas; but a long chain with a molar mass in the tens of thousands
+          offers hundreds or thousands of interaction sites with its neighbors, so the bulk can barely slide or volatilize, and it becomes a solid.
+          <strong>The strength of a polymeric material comes, in essence, from “the strong covalent bonds inside each chain” plus “the summation of a great many weak interactions between chains”.</strong>
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 What Is a Polymer ============ -->
+  <section id="what">
+    <h2>§1 What Is a Polymer: Molar Mass Is a Distribution</h2>
+    <p>
+      A <span class="term">monomer</span> is the brick from which the edifice is built;
+      a <span class="term">polymer</span> consists of hundreds or thousands of monomer units repeatedly joined by covalent bonds —
+      the literal sense of “poly-mer” is “many parts”. The number of repeat units in a chain is called the
+      <span class="term">degree of polymerization (DP)</span>.
+      Chains with a DP of 2 up to a few dozen are called oligomers; only in the thousands does a chain deserve the name of a true high polymer.
+    </p>
+    <p>
+      Each repeat unit of polyethylene, <span class="formula">−CH<sub>2</sub>−CH<sub>2</sub>−</span>, weighs 28 u (atomic mass units).
+      For a chain with DP = 2000 the molar mass is about 56000; at DP = 20000, 560000. From small molecule to polymer,
+      <strong>the chemical composition barely changes — all that changes is “how long the chain is”</strong> — a case of quantitative accumulation triggering a qualitative leap.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Key Concept: Molar Mass Is a Distribution, Not a Single Value</div>
+      Every water molecule is H<sub>2</sub>O with a molar mass of 18, always; but in a polymerization, when each chain “stops growing” is random,
+      and the product mixes long and short chains. A polymer therefore has <strong>no single molar mass, only an “average molar mass” and a “molar-mass distribution”</strong>:
+      the customary number-average molar mass <span class="formula">M̄<sub>n</sub></span> (averaged over the count of molecules) and the weight-average molar mass
+      <span class="formula">M̄<sub>w</sub></span> (averaged with each molecule weighted by its mass); their ratio
+      <span class="formula">M̄<sub>w</sub>/M̄<sub>n</sub> ≥ 1</span> (the broader the distribution, the larger the ratio).
+      Processing and properties are extremely sensitive to the distribution: many short chains mean easy flow but low strength; many long chains mean strength and toughness but hard processing.
+    </div>
+
+    <p>
+      By the way, one common impression deserves correcting: not all polymers are man-made. Cellulose (the framework of cotton and wood), starch, proteins,
+      and natural rubber are all natural polymers; humans have been making synthetic polymers for barely a hundred years, while nature's “polymer factories” have been running for billions of years.
+    </p>
+  </section>
+
+  <!-- ============ §2 Addition Polymerization ============ -->
+  <section id="addition">
+    <h2>§2 Addition Polymerization: Open the Double Bond, Link into a Long Chain</h2>
+    <p>
+      Monomers that contain carbon–carbon double bonds (ethylene, vinyl chloride, styrene, propylene, and the like) can undergo
+      <span class="term">addition polymerization</span>:
+      the π bond of the double bond opens, each monomer connects to its neighbors through the two freed “sockets”, and the monomer itself becomes one segment of the chain.
+      The whole process <strong>loses no atoms whatsoever</strong> — the repeat unit has exactly the same formula as the monomer.
+    </p>
+    <p>
+      The classic industrial route is <span class="term">free-radical polymerization</span>,
+      which topples forward like dominoes, one ring pushing the next, in three steps:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="radSvg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="Five-step demonstration animation of free-radical chain polymerization"></svg>
+        <div class="fig-controls">
+          <button class="btn ghost" id="radPrev">← Previous step</button>
+          <button class="btn" id="radNext">Next step →</button>
+          <button class="btn ghost" id="radReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="radReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        A full walkthrough of free-radical polymerization — “initiation → propagation → termination” (using ethylene as the example). Click “Next step” to watch in sequence:
+        monomer pool → initiator decomposition → chain initiation → chain propagation → bimolecular termination. Once two active chain ends (red dots) meet, the chain “goes dark”.
+      </figcaption>
+    </figure>
+
+    <ol>
+      <li><strong>Initiation</strong>: the initiator (dibenzoyl peroxide, for example) decomposes on heating; one covalent bond splits homolytically, producing two
+        <span class="term">free radicals</span> R·, each carrying a single unpaired electron. That unpaired electron is fiercely reactive and “bites” onto any double bond it meets.</li>
+      <li><strong>Propagation</strong>: R· adds across the π bond of the monomer CH<sub>2</sub>=CH<sub>2</sub>;
+        the monomer is incorporated at the chain end, and a brand-new radical reappears there — the activity passes along like a torch as the chain lengthens segment by segment.
+        Thousands of monomers can be added each second; a complete chain typically forms within 0.1 to a few seconds.</li>
+      <li><strong>Termination</strong>: two active chain ends meet and the unpaired electrons pair up two by two (coupling termination),
+        or one chain end plucks a hydrogen atom and hands it to the other (disproportionation termination); the radicals vanish and the chain stops growing.</li>
+    </ol>
+
+    <p>
+      The simplified equation for the polymerization of ethylene:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n CH<sub>2</sub>=CH<sub>2</sub> → −[CH<sub>2</sub>−CH<sub>2</sub>]<sub>n</sub>−</span>
+    </p>
+    <p>
+      Inside the brackets is the repeat unit, and n is the degree of polymerization. Replace one H with Cl and the monomer becomes vinyl chloride — the product is PVC;
+      replace it with a benzene ring and you get polystyrene (foam plastic); replace it with CH<sub>3</sub> and you get polypropylene.
+      <strong>Different side groups, radically different material personalities</strong> — this is the polymer-world rerun of “functional groups determine properties” from branch 02.
+    </p>
+  </section>
+
+  <!-- ============ §3 Condensation Polymerization ============ -->
+  <section id="condensation">
+    <h2>§3 Condensation Polymerization: Link Step by Step, Squeeze Out a Small Molecule</h2>
+    <p>
+      The second route needs no double bond; it relies on <strong>functional groups that can condense with one another</strong> — carboxyl with hydroxyl to form an ester,
+      carboxyl with amino to form an amide. In <span class="term">condensation polymerization</span>
+      every new link squeezes out a small molecule (usually water), which is why it is also called step-growth polymerization:
+      two short chains of any length can join end to end, and chain length climbs <strong>step by step</strong> — a stark contrast to the “a finished chain in seconds” of radical polymerization.
+    </p>
+
+    <h3>Nylon 6,6: A Historic Scene</h3>
+    <p>
+      In 1935, Carothers at the DuPont company mixed hexamethylenediamine (an NH<sub>2</sub> at both ends) with adipic acid (a COOH at both ends);
+      the end groups condensed again and again into amide bonds <span class="formula">−CO−NH−</span>, giving poly(hexamethylene adipamide) — nylon 6,6:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">n H<sub>2</sub>N(CH<sub>2</sub>)<sub>6</sub>NH<sub>2</sub> + n HOOC(CH<sub>2</sub>)<sub>4</sub>COOH
+      → −[NH(CH<sub>2</sub>)<sub>6</sub>NHCO(CH<sub>2</sub>)<sub>4</sub>CO]<sub>n</sub>− + 2n H<sub>2</sub>O</span>
+    </p>
+    <p>
+      The amide groups can form vast numbers of hydrogen bonds that “lock” neighboring chains together — precisely why nylon fiber is so strong, and why
+      it stormed the fashion world as stockings the moment it appeared in 1938.
+    </p>
+
+    <h3>PET: The Story of the Beverage Bottle</h3>
+    <p>
+      Terephthalic acid (two carboxyls) condenses with ethylene glycol (two hydroxyls), joined by ester bonds <span class="formula">−COO−</span>
+      and squeezing out water molecules, to give poly(ethylene terephthalate) (PET). It is transparent, tough, and an excellent gas barrier,
+      the shared ancestor of the mineral-water bottle and of polyester fiber — one and the same polymer: blown into a bottle it is a container; drawn into fiber it is clothing.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Addition vs. Condensation — Where Exactly Do They Differ?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          <strong>Addition polymerization is like coupling a train</strong>: once the locomotive (the initiator radical) leads, the carriages (monomers) hitch on automatically one by one, and a full train forms in seconds;
+          <strong>condensation polymerization is like a handshake line</strong>: every person (monomer) has two hands (two functional groups), any two people can shake hands,
+          the line lengthens step by step, and each handshake throws away a glove (a water molecule).
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Comparison Table</span>
+        <p>
+          <strong>Monomer requirement</strong>: addition needs a carbon–carbon double bond; condensation needs two condensable functional groups (e.g. COOH+OH / COOH+NH<sub>2</sub>).<br>
+          <strong>Byproduct</strong>: addition has no small-molecule byproduct and the repeat unit = the monomer; condensation generates a small molecule such as H<sub>2</sub>O at every step, and the repeat unit “slims down”.<br>
+          <strong>Rate pattern</strong>: addition is a chain reaction — monomers are consumed in an instant and the chain length is fixed almost immediately;
+          condensation is a stepwise reaction — the molar mass climbs slowly, and only high conversion plus an exact equimolar feed yield a high polymer.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          The deep difference between chain and step growth lies in <strong>whether the active center persists</strong>: in free-radical polymerization, once a chain is initiated it races on carrying its active center —
+          at less than 1% monomer conversion the chain is already near its final length, with monomer and polymer coexisting as two generations;
+          in step-growth polymerization all molecules remain “equivalent” — any two end groups can react, and the average molar mass of the system rises steadily with conversion
+          (the Carothers equation <span class="formula">DP<sub>n</sub> = 1/(1−p)</span>; only at conversion p = 99% does DP reach 100).
+          This also explains why condensation plants must keep drawing off the small-molecule byproduct — only then can the reaction be pushed toward higher molar mass.
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · “A polymer is just plastic, and all plastics are the same”</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Plastic is one single thing, so all plastic bottles and bags can go into the same recycling bin.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          “Plastic” is an umbrella name for hundreds of polymers. Read the recycling triangle on the bottom of the bottle: #1 PET (beverage bottles), #2 HDPE (detergent bottles),
+          #3 PVC (pipes, raincoats), #4 LDPE (cling film, soft bags), #5 PP (microwave containers, straws),
+          #6 PS (foam clamshells), #7 other (e.g. PC, PLA). Their chemical compositions, melting points, and processing methods are entirely different,
+          <strong>melting a jumble of them together “contaminates” the batch and markedly lowers the quality of the recyclate</strong> — above all when PVC sneaks into the PET recycling stream,
+          its chlorine discolors and embrittles the whole batch. Sorting is not a formality; it is a chemical requirement.
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: Identify the Polymerization Route and Write the Equation</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Vinyl chloride CH<sub>2</sub>=CHCl (watch me do it)</div>
+      <div class="worked-problem">
+        Which polymerization route suits the monomer vinyl chloride, CH<sub>2</sub>=CHCl? Write the simplified equation and identify the repeat unit.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Read the monomer's structure: the molecule has only a C=C double bond and a Cl side group, and <strong>no pair of condensable functional groups</strong> (no COOH/OH/NH<sub>2</sub>). → Rule out condensation polymerization.</li>
+        <li class="step">The double bond is a π-bond “socket” — the monomer can undergo <strong>addition polymerization</strong>, and no atom needs to be displaced.</li>
+        <li class="step">Write the equation: n CH<sub>2</sub>=CHCl → −[CH<sub>2</sub>−CHCl]<sub>n</sub>−. The double bond opens into a single bond, and the Cl stays attached at the side.</li>
+        <li class="step">✅ The repeat unit <span class="formula">−CH<sub>2</sub>−CHCl−</span> has exactly the composition of the monomer (C<sub>2</sub>H<sub>3</sub>Cl), and there is no small-molecule byproduct — the hallmarks of addition polymerization, so the answer is self-consistent.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Terephthalic acid + ethylene glycol (do it with me)</div>
+      <div class="worked-problem">
+        The monomers terephthalic acid HOOC−C<sub>6</sub>H<sub>4</sub>−COOH and ethylene glycol HO−CH<sub>2</sub>CH<sub>2</sub>−OH
+        are used to make PET. What kind of polymerization is this? Write the simplified equation and the byproduct.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Read the functional groups: terephthalic acid has <strong>two COOH</strong>, ethylene glycol has <strong>two OH</strong> — “two-handed” molecules, able to condense.</li>
+        <li class="step">💡 Two functional groups and no double bond → <strong>condensation polymerization</strong>, joined by esterification with ester bonds −COO−.</li>
+        <li class="step">💡 Equation: n HOOC−C<sub>6</sub>H<sub>4</sub>−COOH + n HO−CH<sub>2</sub>CH<sub>2</sub>−OH → −[OOC−C<sub>6</sub>H<sub>4</sub>−COO−CH<sub>2</sub>CH<sub>2</sub>]<sub>n</sub>− + <strong>2n H<sub>2</sub>O</strong>.</li>
+        <li class="step">✅ Check: the repeat unit has “slimmed down” (by 2n waters) and a byproduct is formed — the signature of condensation, matching the task of making PET. Each condensation discards one H+OH pair; a unit built from two monomers loses 2 waters in total.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Cross-Linking and Vulcanization ============ -->
+  <section id="crosslink">
+    <h2>§4 Cross-Linking and Vulcanization: From Sticky Goo to Elasticity</h2>
+    <p>
+      Everything so far has been about <strong>linear chains</strong> — like so many strands of yarn. Raw rubber (natural rubber) is also a linear chain,
+      but it suffers an awkward defect: sticky in summer, brittle in winter, and stretched lengths never return. The reason is that only weak intermolecular forces act between the chains,
+      so under load they slide past one another and cannot spring back.
+    </p>
+    <p>
+      In 1839 the American Goodyear chanced to bring rubber, sulfur, and a hot stove together and discovered
+      <span class="term">vulcanization</span>:
+      sulfur atoms throw covalent “bridges” (sulfur bridges) between neighboring chains, and the linear chains are stitched into a three-dimensional network —
+      <span class="term">cross-linking</span>.
+      Once cross-linked, the rubber chains can no longer slide as a whole: pull, and the network is stretched open; release, and the network pulls everything back into shape —
+      gooey raw rubber leaps to become a superbly elastic tire material.
+    </p>
+    <p>
+      The degree of cross-linking is a continuously adjustable knob: light cross-linking = soft and springy (rubber bands, tires); deep cross-linking = hard and brittle (hard rubber, Bakelite).
+      Drag the slider and feel this knob at work:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="xlSvg" width="620" height="300" viewBox="0 0 620 300" role="img" aria-label="Cross-linking slider animation: from linear chains to a cross-linked network"></svg>
+        <div class="fig-controls">
+          <label for="xlSlider" style="font-size:.9rem;color:var(--ink-2);align-self:center">Cross-linking</label>
+          <input id="xlSlider" type="range" min="0" max="100" value="0" step="1"
+                 style="width:220px;accent-color:var(--accent);height:44px" aria-label="Cross-linking percentage">
+        </div>
+        <div class="fig-readout" id="xlReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        The black curves are molecular chains; the short orange bars are cross-link bridges (e.g. sulfur bridges). At 0% cross-linking the chains are independent and can slide (tacky);
+        as the value rises the network is gradually “stitched together”. Note: a cross-link is a <strong>covalent bond</strong> — once formed it is irreversible, which leads straight to the thermoplastic-versus-thermoset divide of the next section.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Threefold Meaning of Cross-Linking</div>
+      ① Insoluble and infusible: no solvent can swell through the network, and heating cannot melt it open (it can only decompose); ② elastic recoil: under stress the chain segments are pulled straight,
+      and on release the network snaps back on its own to the maximum-entropy coiled state; ③ tunable strength: cross-link density is the “volume knob” of hardness, twistable all the way from rubber band to hard rubber.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why is lightly cross-linked rubber elastic, while over-cross-linked Bakelite is hard and brittle?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: elasticity comes from “chain segments that can still stretch and coil”; brittleness comes from “no one can move at all”.</p>
+        <p>
+          Elasticity needs two conditions: chain segments that are themselves soft and mobile (able to straighten when stretched and coil back when relaxed),
+          <em>and at the same time</em> enough cross-link points to stop whole chains from sliding. Lightly cross-linked rubber has both, which is why a stretch can spring back.
+          When cross-links are too dense, the free segments between neighboring cross-link points are too short to leave any room even to “straighten” —
+          the whole block becomes one stiff mega-network that shatters under uneven stress: a hard, brittle thermoset material.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 A Quick Tour of the Material Families ============ -->
+  <section id="families">
+    <h2>§5 Thermoplastic vs. Thermoset · A Quick Tour of the Material Families</h2>
+    <p>
+      With the key of “linear chains vs. cross-linked networks” in hand, an everyday question answers itself at once:
+      <strong>what happens to a plastic when it is heated?</strong>
+    </p>
+    <ul>
+      <li><strong>Thermoplastics</strong>: linear or branched architecture, with no covalent bridges between chains.
+        On heating the chains gain kinetic energy and slide apart → the material melts and flows, then re-solidifies on cooling. It can be melted repeatedly and <strong>can be recycled and remade</strong>.
+        PE, PP, PVC, PS, PET, and nylon all belong here.</li>
+      <li><strong>Thermosets</strong>: the cross-linked network has already formed during processing (e.g. phenolic-resin Bakelite, epoxy resins, vulcanized rubber).
+        On reheating the chains cannot slide; the material does not melt but only decomposes and chars as the temperature climbs → <strong>formed once, never remelted or remade</strong>.
+        Electrical switch bases, pot handles, and circuit-board substrates are usually thermosets, chosen for exactly this heat-proof, shape-keeping quality.</li>
+    </ul>
+
+    <h3>The Common Material Families at a Glance</h3>
+    <table class="tbl">
+      <thead>
+        <tr><th>Material</th><th>Recycling code</th><th>Monomer</th><th>Polymerization route</th><th>Typical uses</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PE</strong> polyethylene</td><td>#2/#4</td><td>ethylene</td><td>addition</td><td>film bags, buckets, pipe</td></tr>
+        <tr><td><strong>PP</strong> polypropylene</td><td>#5</td><td>propylene</td><td>addition</td><td>microwave containers, straws, rope</td></tr>
+        <tr><td><strong>PVC</strong> poly(vinyl chloride)</td><td>#3</td><td>vinyl chloride</td><td>addition</td><td>pipes, window frames, raincoats</td></tr>
+        <tr><td><strong>PS</strong> polystyrene</td><td>#6</td><td>styrene</td><td>addition</td><td>foam clamshells, stationery</td></tr>
+        <tr><td><strong>PET</strong> polyester</td><td>#1</td><td>terephthalic acid + ethylene glycol</td><td>condensation</td><td>beverage bottles, polyester fiber</td></tr>
+        <tr><td><strong>nylon 6,6</strong></td><td>#7*</td><td>hexamethylenediamine + adipic acid</td><td>condensation</td><td>fiber, gears, stockings</td></tr>
+        <tr><td><strong>Rubber</strong> (vulcanized)</td><td>—</td><td>isoprene + sulfur</td><td>addition + cross-linking</td><td>tires, seals</td></tr>
+        <tr><td><strong>Cellulose</strong></td><td>—</td><td>β-glucose</td><td>condensation (natural)</td><td>cotton, paper, viscose fiber</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.84rem;color:var(--ink-3)">* Nylon is usually grouped under #7 “other”; actual recycling follows local rules. Cellulose is a natural polymer, not a synthetic plastic.</p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Chemical Safety Notes</div>
+      Plastics have made life immensely easier, but keep in mind: ① <strong>never burn plastic in the open</strong> — burning PVC releases toxic HCl gas and organochlorine compounds,
+      and the smoke from PS/PU is also irritant; ② plastic discarded into the environment barely degrades and fragments into <strong>microplastics</strong> that enter water sources and the food chain —
+      please sort it for recycling; ③ foam PS catches fire very easily: keep it away from open flame; ④ for microwave heating, look for #5 PP containers —
+      #1 PET and foamed tableware are not heat-resistant and should not be used at high temperature.
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>A polymer is a giant molecule of monomers repeatedly joined by covalent bonds; <strong>molar mass is a distribution</strong>, described only by averages (M̄<sub>n</sub>, M̄<sub>w</sub>) and its width (ratio ≥ 1).</li>
+        <li><strong>Addition polymerization</strong>: carbon–carbon double bonds open and interlink; a free-radical chain mechanism (initiation → propagation → termination), no byproduct, repeat unit = monomer (ethylene → PE, vinyl chloride → PVC).</li>
+        <li><strong>Condensation polymerization</strong>: bifunctional monomers condense step by step, squeezing out a small molecule (water) at each step; high conversion is required (nylon 6,6 amide bonds, PET ester bonds).</li>
+        <li><strong>Cross-linking / vulcanization</strong>: covalent bridges between chains (sulfur bridges) stitch linear chains into a network, turning sticky raw rubber into elastic rubber; the degree of cross-linking sets hardness.</li>
+        <li><strong>Thermoplastic vs. thermoset</strong>: linear chains can be remelted and recycled; networks never melt, only decompose, and are formed once. Recycling codes 1–7 mark different families — always sort them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · From Monomers to Polymers <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "The monomer of polyethylene is ethylene, CH2=CH2. If a polyethylene chain has a degree of polymerization DP = 2000, roughly what is the molar mass of that chain? (The ethylene monomer has a molar mass of 28.)",
+            "options": ["28", "5.6×10⁴", "5.6×10⁶", "2000"],
+            "answer": 1,
+            "explain": "Molar mass ≈ DP × monomer molar mass = 2000 × 28 = 56000 = 5.6×10⁴. Why not 28? Because addition polymerization loses no atoms: every repeat unit on the chain keeps all the atoms of its monomer. Why not 2000? The degree of polymerization counts repeat units — it is not a molar mass itself."
+          },
+          {
+            "q": "What is the correct order of the three basic steps of free-radical polymerization?",
+            "options": ["Propagation → Initiation → Termination", "Initiation → Propagation → Termination", "Initiation → Termination → Propagation", "Termination → Initiation → Propagation"],
+            "answer": 1,
+            "explain": "The initiator must first split to produce radicals and 'light the fire' (initiation); only then can the active chain end add monomers one by one (propagation); finally two active ends meet, pair up, and go out (termination). Without initiation there is no active center; propagation lasts the chain's whole life; termination fixes the chain's length — the order cannot be shuffled."
+          },
+          {
+            "q": "When nylon 6,6 is made, what byproduct is formed for each repeat unit created?",
+            "options": ["No byproduct", "One H2", "Two H2O", "One CO2"],
+            "answer": 2,
+            "explain": "Hexamethylenediamine condenses with adipic acid: amidation happens at both ends (COOH + NH2 → CONH + H2O), so one repeat unit generates 2 water molecules in total. The signature of condensation polymerization is 'every new link ejects a small molecule' — exactly why industry keeps drawing off water to push the reaction toward high polymer."
+          },
+          {
+            "q": "Why can't a thermoset (such as Bakelite) be recycled by melting the way a water bottle is?",
+            "options": ["Because its molar mass is too small, so it just vaporizes on heating", "Because covalent cross-linked networks already exist between its chains; on heating the chains cannot slide past one another and can only decompose and char", "Because it is inorganic and has no melting point", "Because its melting point is below room temperature"],
+            "answer": 1,
+            "explain": "Melting is at bottom chains sliding apart and flowing. Thermoplastics are linear chains: heat them and they slide and melt. In a thermoset the chains are stitched by covalent bridges into one three-dimensional mega-network, and 'melting' would mean breaking chemical bonds — once the bonds break, it is no longer the same material (it decomposes). Hence a thermoset is formed once and can never be remelted and remade."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">06 Polymer Chemistry · Overview</span></a>
+      <a class="next" href="../07-Materials-Chemistry/index.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">07 Materials Chemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions (free-radical polymerization stepper / cross-linking slider) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* Shared SVG helper, defined in assets/tutor.js */
+  function txt(parent, x, y, str, size, fill, weight, anchor) {
+    var t = el("text", { x: x, y: y, "font-size": size, fill: fill,
+      "font-weight": weight || 400, "text-anchor": anchor || "start" }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. Free-radical polymerization stepper ---------- */
+  var radSvg = document.getElementById("radSvg");
+  if (radSvg) {
+    var radReadout = document.getElementById("radReadout");
+    var stepIdx = 0;
+    var STEPS = [
+      { t: "Step 0 · Monomer pool: only ethylene monomers (blue circles) are present; every molecule carries a C=C double bond and drifts along quietly.",
+        eq: "Monomer: CH2=CH2 (π bond waiting to open)" },
+      { t: "Step 1 · Initiation: the initiator (orange diamond) decomposes on heating; one bond splits evenly to give two radicals R· (red dot = the unpaired electron).",
+        eq: "I → 2 R·" },
+      { t: "Step 2 · Chain initiation: R· bites onto a monomer, the π bond opens and the monomer joins the chain end, where a fresh radical reappears.",
+        eq: "R· + CH2=CH2 → R−CH2−CH2·" },
+      { t: "Step 3 · Chain propagation: the active end adds monomers in relay and the chain grows segment by segment — the torch (the radical) passes along, and a full chain forms within seconds.",
+        eq: "R−(CH2)n−CH2· + CH2=CH2 → R−(CH2)n+2−CH2·" },
+      { t: "Step 4 · Bimolecular termination: two active chain ends meet, the unpaired electrons pair two by two into a σ bond, the radicals vanish, and the chain stops growing.",
+        eq: "R−chainA· + ·chainB−R′ → R−chainA−chainB−R′ (dead chain)" }
+    ];
+
+    // Fixed monomer positions (pseudo-random but deterministic)
+    var MON_POS = [
+      [70, 60], [150, 45], [230, 70], [310, 50], [390, 68], [470, 48],
+      [90, 130], [170, 115], [250, 135], [330, 118], [410, 132], [490, 112],
+      [110, 200], [190, 215], [270, 195], [350, 212], [430, 198], [510, 210],
+      [70, 262], [560, 70], [555, 140], [545, 240]
+    ];
+
+    function drawMonomer(g, x, y, dim) {
+      el("circle", { cx: x, cy: y, r: 13, fill: dim ? "#e0e7ff" : "#c7d2fe",
+        stroke: dim ? "#a5b4fc" : "#6366f1", "stroke-width": 2 }, g);
+      txt(g, x, y + 4, "C=C", 9, "#3730a3", 700, "middle");
+    }
+
+    function drawRadicalDot(g, x, y, big) {
+      var r = big ? 7 : 5;
+      el("circle", { cx: x, cy: y, r: r, fill: "#ef4444", class: "anim-pulse" }, g);
+    }
+
+    // Chain: extends rightward from (x0,y0) with len beads
+    function drawChain(g, x0, y0, len, dirSign) {
+      var gap = 24;
+      for (var i = 0; i < len; i++) {
+        var x = x0 + dirSign * gap * i;
+        el("circle", { cx: x, cy: y0, r: 11, fill: "#a5b4fc",
+          stroke: "#6366f1", "stroke-width": 2 }, g);
+        txt(g, x, y0 + 3, "CH2", 7.5, "#1e1b4b", 700, "middle");
+      }
+      return { tipX: x0 + dirSign * gap * (len - 1), gap: gap };
+    }
+
+    function renderRad() {
+      radSvg.innerHTML = "";
+      var bg = el("rect", { x: 0, y: 0, width: 640, height: 300, fill: "#ffffff" }, radSvg);
+      var s = stepIdx;
+
+      if (s === 0) {
+        var g0 = el("g", {}, radSvg);
+        MON_POS.forEach(function (p) { drawMonomer(g0, p[0], p[1], false); });
+        txt(g0, 320, 285, "Monomer pool (n CH2=CH2)", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 1) {
+        var g1 = el("g", {}, radSvg);
+        MON_POS.slice(0, 18).forEach(function (p) { drawMonomer(g1, p[0], p[1], true); });
+        // Initiator diamond at the center
+        el("rect", { x: 300, y: 120, width: 40, height: 40, transform: "rotate(45 320 140)",
+          fill: "#fdba74", stroke: "#ea580c", "stroke-width": 2 }, g1);
+        txt(g1, 320, 145, "I", 15, "#7c2d12", 800, "middle");
+        // The two radicals from the split
+        drawRadicalDot(g1, 255, 140, true);
+        drawRadicalDot(g1, 385, 140, true);
+        txt(g1, 240, 118, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g1, 402, 118, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g1, 320, 200, "One bond splits in two → two R·", 12, "#9a3412", 700, "middle");
+        txt(g1, 320, 285, "Initiator decomposition (I → 2 R·)", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 2) {
+        var g2 = el("g", {}, radSvg);
+        MON_POS.slice(0, 18).forEach(function (p) { drawMonomer(g2, p[0], p[1], true); });
+        drawRadicalDot(g2, 200, 150, true);  // R
+        // R adds one monomer → a new radical appears at the chain end
+        var ch2 = drawChain(g2, 232, 150, 1, 1);
+        drawRadicalDot(g2, ch2.tipX + 20, 150, true);
+        txt(g2, 200, 122, "R·", 13, "#b91c1c", 800, "middle");
+        txt(g2, 300, 185, "π bond opened; activity relayed to the chain end", 12, "#9a3412", 700, "middle");
+        txt(g2, 320, 285, "Chain initiation (R· bites the first monomer)", 12, "#4b5563", 700, "middle");
+      }
+
+      if (s === 3) {
+        var g3 = el("g", {}, radSvg);
+        MON_POS.slice(0, 12).forEach(function (p) { drawMonomer(g3, p[0], p[1], true); });
+        var ch3 = drawChain(g3, 150, 150, 8, 1);
+        txt(g3, 136, 122, "R", 13, "#b91c1c", 800, "middle");
+        drawRadicalDot(g3, ch3.tipX + 20, 150, true);
+        txt(g3, ch3.tipX + 40, 155, "active end", 11, "#b91c1c", 700);
+        txt(g3, 320, 285, "Chain propagation (thousands of monomers per second)", 12, "#4b5563", 700, "middle");
+        // Schematic of the remaining monomers being "drawn in": the pool thins
+      }
+
+      if (s === 4) {
+        var g4 = el("g", {}, radSvg);
+        MON_POS.slice(0, 8).forEach(function (p) { drawMonomer(g4, p[0], p[1], true); });
+        // Two chains grow toward each other; their tips "shake hands" at the center
+        var chA = drawChain(g4, 60, 110, 6, 1);
+        var chB = drawChain(g4, 580, 110, 6, -1);
+        txt(g4, 46, 82, "R", 13, "#b91c1c", 800, "middle");
+        txt(g4, 594, 82, "R′", 13, "#b91c1c", 800, "middle");
+        // The handshake σ bond
+        el("line", { x1: chA.tipX + 12, y1: 110, x2: chB.tipX - 12, y2: 110,
+          stroke: "#ef4444", "stroke-width": 3.5, "stroke-linecap": "round" }, g4);
+        el("text", { x: 320, y: 88, "font-size": 14, "font-weight": 800, fill: "#b91c1c",
+          "text-anchor": "middle" }, g4).textContent = "New σ bond!";
+        // Starburst
+        [[290,110],[350,110]].forEach(function (p) {
+          el("path", { d: "M" + p[0] + " " + (p[1]-14) + " L" + (p[0]+3) + " " + (p[1]-5) +
+            " L" + (p[0]+12) + " " + (p[1]-3) + " L" + (p[0]+4) + " " + (p[1]+3) +
+            " L" + (p[0]+6) + " " + (p[1]+12) + " L" + p[0] + " " + (p[1]+6) +
+            " L" + (p[0]-6) + " " + (p[1]+12) + " L" + (p[0]-4) + " " + (p[1]+3) +
+            " L" + (p[0]-12) + " " + (p[1]-3) + " L" + (p[0]-3) + " " + (p[1]-5) + " Z",
+            fill: "#fca5a5", class: "anim-pulse" }, g4);
+        });
+        txt(g4, 320, 165, "Coupling termination: two chains joined, activity gone", 12, "#7f1d1d", 700, "middle");
+        txt(g4, 320, 285, "Bimolecular termination (dead chain · DP frozen for good)", 12, "#4b5563", 700, "middle");
+      }
+
+      var d = STEPS[stepIdx];
+      radReadout.innerHTML = "<strong>" + d.t.split(":")[0] + "</strong>: " + d.t.split(":").slice(1).join(":") +
+        "<br><span class='formula' style='margin-left:0'>" + d.eq + "</span>";
+      document.getElementById("radPrev").disabled = stepIdx === 0;
+      document.getElementById("radNext").disabled = stepIdx === STEPS.length - 1;
+    }
+
+    document.getElementById("radNext").addEventListener("click", function () {
+      if (stepIdx < STEPS.length - 1) { stepIdx++; renderRad(); }
+    });
+    document.getElementById("radPrev").addEventListener("click", function () {
+      if (stepIdx > 0) { stepIdx--; renderRad(); }
+    });
+    document.getElementById("radReset").addEventListener("click", function () { stepIdx = 0; renderRad(); });
+    renderRad();
+  }
+
+  /* ---------- 2. Cross-linking slider ---------- */
+  var xlSvg = document.getElementById("xlSvg");
+  if (xlSvg) {
+    var xlReadout = document.getElementById("xlReadout");
+    var xlSlider = document.getElementById("xlSlider");
+    var CHAIN_Y = [50, 110, 170, 230];
+    var CHAIN_COLOR = "#334155";
+    var BRIDGE_COLOR = "#ea580c";
+
+    // Predefine 24 candidate bridge sites: {x, row} (row=0 joins chains 0/1, row=1 joins 1/2, row=2 joins 2/3)
+    var BRIDGES = [];
+    var bx = 60;
+    for (var i = 0; i < 8; i++) {
+      BRIDGES.push({ x: bx + i * 66, row: i % 3 });
+    }
+    for (var j = 0; j < 8; j++) {
+      BRIDGES.push({ x: 92 + j * 66, row: (j + 1) % 3 });
+    }
+    for (var k = 0; k < 8; k++) {
+      BRIDGES.push({ x: 76 + k * 62, row: (k + 2) % 3 });
+    }
+
+    function chainPath(y) {
+      var d = "M 30 " + y;
+      for (var x = 30; x <= 590; x += 20) {
+        var dy = ((x / 20) % 2 === 0) ? -7 : 7;
+        d += " L " + x + " " + (y + dy);
+      }
+      return d;
+    }
+
+    function stateInfo(pct) {
+      if (pct === 0) return { name: "Linear chains (raw rubber / thermoplastic)", desc: "Only intermolecular forces between chains; under load they slide past one another — tacky and prone to creep, but it melts and flows on heating." };
+      if (pct < 10) return { name: "Light entanglement", desc: "The long chains are tangled together (physical entanglement), which resists sliding somewhat, but they still melt on heating — still a thermoplastic." };
+      if (pct < 25) return { name: "Lightly cross-linked (elastomer)", desc: "A few covalent bridges (sulfur bridges) stitch the chains into a loose network — stretch it and it springs back; the world of rubber bands and tires." };
+      if (pct < 50) return { name: "Moderately cross-linked (hard rubber)", desc: "Bridges denser; the recoil feels increasingly 'hard' — small deformation, high modulus — gaskets and hard-rubber parts." };
+      if (pct < 75) return { name: "Heavily cross-linked (thermoset)", desc: "A dense network in which chain segments can barely move — no melting, hard and tough, like epoxy resins and Bakelite." };
+      return { name: "Extremely cross-linked (rigid resin)", desc: "Almost every site is locked down — hard and brittle, close to a three-dimensional covalent solid (e.g. carbonized phenolic)." };
+    }
+
+    function renderXl() {
+      xlSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 620, height: 300, fill: "#ffffff" }, xlSvg);
+      var pct = parseInt(xlSlider.value, 10);
+
+      // Chains
+      CHAIN_Y.forEach(function (y) {
+        el("path", { d: chainPath(y), stroke: CHAIN_COLOR, "stroke-width": 3.2,
+          fill: "none", "stroke-linecap": "round" }, xlSvg);
+      });
+
+      // Bridges: show the first pct% of them
+      var nShow = Math.round(BRIDGES.length * pct / 100);
+      for (var i = 0; i < nShow; i++) {
+        var b = BRIDGES[i];
+        var y1 = CHAIN_Y[b.row], y2 = CHAIN_Y[b.row + 1];
+        el("line", { x1: b.x, y1: y1 + 8, x2: b.x, y2: y2 - 8,
+          stroke: BRIDGE_COLOR, "stroke-width": 4, "stroke-linecap": "round" }, xlSvg);
+        el("circle", { cx: b.x, cy: (y1 + y2) / 2, r: 4.5, fill: BRIDGE_COLOR }, xlSvg);
+      }
+
+      var info = stateInfo(pct);
+      var nBridges = nShow;
+      xlReadout.innerHTML = "Cross-linking <strong>" + pct + "%</strong> | Bridges " + nBridges + "/" + BRIDGES.length +
+        " | State: <strong>" + info.name + "</strong><br><span style='color:var(--ink-2)'>" + info.desc + "</span>";
+    }
+
+    xlSlider.addEventListener("input", renderXl);
+    renderXl();
+  }
+})();
+</script>
+</body>
+</html>

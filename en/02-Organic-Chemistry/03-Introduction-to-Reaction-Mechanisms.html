@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Introduction to Reaction Mechanisms · Organic Chemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">02 Organic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · Introduction to Reaction Mechanisms</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 Organic Chemistry · Chapter 3</div>
+    <h1>Introduction to Reaction Mechanisms: Curved Arrows and Three Classic Scripts</h1>
+    <p class="lede">
+      A chemical equation only tells you "where from, where to"; the <strong>reaction mechanism</strong>
+      tells you "how it got there". This chapter first teaches you the chemist's secret language — the
+      <strong>curved arrow</strong> (it depicts the movement of electron pairs) — and then introduces three
+      classic scripts: <strong>free-radical chain substitution</strong>, <strong>nucleophilic substitution SN1/SN2</strong>,
+      and <strong>electrophilic addition with Markovnikov's rule</strong>. Finally it untangles three
+      high-frequency terms: activation energy, transition state, and intermediate.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 70 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–2</span>
+      <span class="chip">Interactive animation ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#arrow">§1 The Language of Curved Arrows</a>
+    <a href="#radical">§2 Free-Radical Chain Substitution</a>
+    <a href="#sn">§3 Nucleophilic Substitution SN1/SN2</a>
+    <a href="#add">§4 Electrophilic Addition and Markovnikov's Rule</a>
+    <a href="#energy">§5 Energy Profiles: Transition States and Intermediates</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: The Equation Is the Outcome, the Mechanism Is the Journey</h2>
+    <p>
+      Open a navigation app and it tells you "12 km in total" — that is the equation: point of departure
+      and destination, both spelled out. But it does not tell you whether the route ran through a tunnel
+      or up a winding mountain road, or at which service area you rested along the way. The reaction
+      mechanism is precisely that <strong>complete driving route</strong>: where the electrons set out from,
+      which intermediate stations they pass through, and how many energy-barrier "passes" they climb over.
+    </p>
+    <p>
+      Why is it worth learning? Because a mechanism lets you <strong>predict</strong>: will switching the
+      solvent make the reaction faster? Will the product come out as a 50:50 mixture of left and right
+      hands? Accident investigations (for example, why polymerization inhibitors are added to reaction
+      vessels) depend on it entirely. The three scripts in this chapter cover most of the stage of organic
+      reactions, and the admission ticket to all of them is a pen: <strong>knowing how to draw curved arrows</strong>.
+    </p>
+  </section>
+
+  <!-- ============ §1 The Language of Curved Arrows ============ -->
+  <section id="arrow">
+    <h2>§1 Curved Arrows: The Electrons' Line of March</h2>
+    <p>
+      Organic chemists record the migration of electrons with <span class="term">curved arrows</span>.
+      There are only three rules, and not one of them may be broken:
+    </p>
+    <ol>
+      <li><strong>The arrow starts where electrons are abundant</strong>: a lone pair, a π bond, a negative charge (–);</li>
+      <li><strong>The arrow points to where electrons are scarce</strong>: a positive charge (+), an electron-deficient atom, or a bond about to form;</li>
+      <li><strong>The arrow depicts the movement of "electron pairs"</strong>, not of atoms, and certainly not of energy flow.
+        A double-barbed arrow denotes a pair of electrons; a single-barbed (half) arrow denotes a single
+        electron — the special notation of the free-radical script (see §2).</li>
+    </ol>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="280" viewBox="0 0 640 280" role="img" aria-label="Two basic examples of curved arrows">
+          <defs>
+            <marker id="arrR" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#b91c1c"/>
+            </marker>
+          </defs>
+          <!-- Example 1: NH3 + H+ -->
+          <g>
+            <text x="320" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">Example 1: lone pair → proton (forming an ammonium salt)</text>
+            <line x1="105" y1="95" x2="80" y2="60" stroke="#6b7280" stroke-width="3"/>
+            <line x1="105" y1="95" x2="130" y2="60" stroke="#6b7280" stroke-width="3"/>
+            <line x1="105" y1="95" x2="105" y2="135" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="105" cy="95" r="20" fill="#2563eb"/>
+            <text x="105" y="101" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">N</text>
+            <circle cx="80" cy="60" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="80" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="130" cy="60" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="130" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="105" cy="135" r="12" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+            <text x="105" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2937">H</text>
+            <text x="170" y="100" font-size="16" font-weight="700" fill="#1f2937">+</text>
+            <circle cx="235" cy="95" r="15" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+            <text x="235" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">H⁺</text>
+            <path d="M 118 70 C 150 30 200 30 228 78" fill="none" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrR)"/>
+            <text x="175" y="150" font-size="12" fill="#b91c1c">lone pair → empty orbital</text>
+            <text x="285" y="100" font-size="16" font-weight="700" fill="#1f2937">→</text>
+            <text x="330" y="88" font-size="14" font-weight="700" fill="#1f2937">NH₄⁺</text>
+            <text x="330" y="112" font-size="12" fill="#4b5563">N "lends" its lone pair to H⁺, forming the fourth N–H bond</text>
+          </g>
+          <!-- Example 2: π bond + H+ -->
+          <g>
+            <text x="320" y="185" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">Example 2: π bond → proton (the birth of a carbocation)</text>
+            <line x1="95" y1="240" x2="155" y2="240" stroke="#6b7280" stroke-width="3"/>
+            <line x1="95" y1="233" x2="155" y2="233" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="95" cy="240" r="16" fill="#374151"/>
+            <text x="95" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="155" cy="240" r="16" fill="#374151"/>
+            <text x="155" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">C</text>
+            <text x="245" y="245" font-size="16" font-weight="700" fill="#1f2937">+ H⁺</text>
+            <path d="M 118 220 C 150 185 200 190 226 225" fill="none" stroke="#b91c1c" stroke-width="3" marker-end="url(#arrR)"/>
+            <text x="175" y="196" font-size="12" fill="#b91c1c">π electron pair → H⁺</text>
+            <text x="330" y="245" font-size="16" font-weight="700" fill="#1f2937">→</text>
+            <text x="375" y="233" font-size="14" font-weight="700" fill="#1f2937">CH₃–CH₂⁺</text>
+            <text x="375" y="257" font-size="12" fill="#4b5563">The π bond breaks and the positive charge lands on carbon — a carbocation</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        A curved arrow always goes "from rich to poor". Example 2 is especially important: the π bond,
+        acting as the electron source, pulls H⁺ toward itself. This is the first step of electrophilic
+        addition in §4, and the way the overwhelming majority of carbocations are born.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Three Questions for Every Curved Arrow</div>
+      Where does it leave from? (lone pair / π / negative charge) → Where does it go to?
+      (positive charge / electron-deficient atom / new bond) → What is moving? (<strong>an electron
+      pair</strong>, not a nucleus). Answer these three questions before drawing any mechanism, and your
+      arrows cannot go wrong.
+    </div>
+  </section>
+
+  <!-- ============ §2 Free-Radical Chain Substitution ============ -->
+  <section id="radical">
+    <h2>§2 Script One: Free-Radical Chain Substitution (Chlorination of Methane)</h2>
+    <p>
+      Mix methane with chlorine gas and keep them in the dark, and nothing happens; the moment sunlight
+      strikes, they react explosively to give chloromethane and hydrogen chloride:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>4</sub> + Cl<sub>2</sub> —hν→ CH<sub>3</sub>Cl + HCl</span> (ΔH ≈ −104 kJ/mol, exothermic)
+    </p>
+    <p>
+      This "explodes-only-in-the-light" reaction follows the script of the <span class="term">free radical</span>
+      (an atom or group carrying a single unpaired electron, written ·), played out in three acts:
+      <strong>initiation, propagation, termination</strong>. Click the three act buttons below to watch
+      the whole stage:
+    </p>
+
+    <h3>🔬 Try It Out: The Three-Act Stage of a Chain Reaction</h3>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="chainSvg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="Three-stage demonstration of free-radical chain substitution"></svg>
+        <div class="fig-controls" id="chainBtns">
+          <button type="button" class="btn ghost" data-s="init">① Initiation</button>
+          <button type="button" class="btn ghost" data-s="grow">② Propagation</button>
+          <button type="button" class="btn ghost" data-s="term">③ Termination</button>
+        </div>
+        <div class="fig-readout" id="chainReadout"></div>
+      </div>
+      <figcaption>
+        Green sphere = chlorine, gray sphere = carbon, white sphere = hydrogen; the flickering black
+        dot = an unpaired electron. Notice the elegance of the "propagation" act: each step
+        <strong>consumes one radical while creating another</strong> — that is exactly what "chain" means.
+      </figcaption>
+    </figure>
+
+    <p>
+      Taken together, the three acts explain a counterintuitive fact: <strong>a single photon can trigger
+      thousands upon thousands of substitutions</strong>. Initiation happens only once, yet propagation can
+      cycle 10⁴–10⁶ times, until some termination reaction breaks the chain. Industrial production of
+      chloromethane and related solvents, and halogenation of alkanes in the laboratory, all follow this route.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why is a little "inhibitor" added to commercially sold styrene monomer? What does it guard against during transport?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What happens when styrene's C=C meets a free radical? (Recall the polymerization to be covered in Branch 06.)</p>
+        <p>
+          Styrene's vinyl group is very easily "attacked" by radicals, starting a chain polymerization: a
+          single radical can set off an entire polymer chain, leaving a viscous lump at best, or at worst a
+          runaway exothermic polymerization. Inhibitors (such as hydroquinone) are "radical scavengers":
+          they preferentially combine with the occasional stray radical and destroy it at the initiation
+          stage — in essence, a man-made "termination reaction". Distill the inhibitor off before use, and
+          the polymerization can start cleanly.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Nucleophilic Substitution ============ -->
+  <section id="sn">
+    <h2>§3 Script Two: Nucleophilic Substitution, SN1 and SN2</h2>
+    <p>
+      In an alkyl halide R–X, the carbon is slightly positive (δ+) because of the halogen's
+      electron-withdrawing effect, so it attracts a <span class="term">nucleophile</span> (Nu⁻,
+      "nucleus-loving") bearing a lone pair or a negative charge, while the halogen departs in the role of
+      the <span class="term">leaving group</span> X⁻. For example:
+      <span class="formula">CH<sub>3</sub>Br + OH⁻ → CH<sub>3</sub>OH + Br⁻</span>.
+      Reactions of this "swap one group for another" type are called nucleophilic substitutions, and they
+      come in two completely different routes:
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Feature</th><th>SN2 (bimolecular nucleophilic substitution)</th><th>SN1 (unimolecular nucleophilic substitution)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Steps</strong></td><td>One concerted step</td><td>Two steps: ionization first, then attack</td></tr>
+        <tr><td><strong>Intermediate</strong></td><td>None (only a transition state)</td><td>Carbocation R⁺ (an energy valley)</td></tr>
+        <tr><td><strong>Rate law</strong></td>
+          <td><span class="formula">v = k[RX][Nu⁻]</span>, both molecules count</td>
+          <td><span class="formula">v = k[RX]</span>, depends only on the alkyl halide</td></tr>
+        <tr><td><strong>Stereochemical outcome</strong></td>
+          <td>Backside attack → inversion of configuration ("umbrella flip")</td>
+          <td>Planar R⁺ attacked from both faces → racemization</td></tr>
+        <tr><td><strong>Substrate preference</strong></td><td>Methyl and primary halides (little steric hindrance)</td><td>Tertiary halides (R⁺ more stable)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔬 Try It Out: The SN1 / SN2 Energy-Profile Switcher</h3>
+    <p>
+      Click the buttons to switch mechanisms and watch how the shape of the energy curve differs:
+      <strong>SN2 is a single hump</strong> (one transition state), while <strong>SN1 is two humps with a
+      valley between</strong> (two transition states, with a genuinely existing carbocation in the middle).
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="enSvg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-label="Reaction energy profile switcher for SN1 and SN2"></svg>
+        <div class="fig-controls" id="enBtns">
+          <button type="button" class="btn ghost" data-m="sn2">SN2 energy profile</button>
+          <button type="button" class="btn ghost" data-m="sn1">SN1 energy profile</button>
+        </div>
+        <div class="fig-readout" id="enReadout"></div>
+      </div>
+      <figcaption>
+        The two profiles start (reactants) and finish (products) at nearly the same places — the
+        difference lies entirely in <strong>the road in between</strong>. A transition state (‡) sits at a
+        curve maximum: its lifetime is essentially zero and it cannot be isolated; an intermediate is the
+        valley between two peaks, short-lived but genuinely there (§5 has the details). The
+        rate-determining step = the tallest of the hills.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: Interrogating a Mechanism with Rate Data</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Walk-Through (Watch Me)</div>
+      <div class="worked-problem">
+        A certain alkyl halide RX is hydrolyzed in aqueous solution. Experiment 1: doubling [RX] doubles
+        the rate; experiment 2: doubling [OH⁻] leaves the rate unchanged. Does the reaction follow SN1 or
+        SN2? What stereochemical outcome can you predict?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Set up the yardsticks first: for SN2 the rate law is v = k[RX][Nu⁻] (the two molecules must collide to react); for SN1 it is v = k[RX] (the ionization step goes it alone).</li>
+        <li class="step">Experiment 1: [RX] ×2 → rate ×2, so the reaction is first order in RX. Both mechanisms are still compatible — nothing decided yet.</li>
+        <li class="step">Experiment 2: [OH⁻] ×2 → rate unchanged, so the nucleophile <strong>does not take part in the rate-determining step</strong> → rule out SN2.</li>
+        <li class="step">✅ Conclusion: SN1 — the rate-determining step is the ionization of the C–X bond to a carbocation. Prediction: the substrate is most likely a tertiary halide (R⁺ is stable);
+          the carbocation is planar, so OH⁻ attacks either face with equal probability → <strong>racemization</strong> (if that carbon is a stereocenter, the optical rotation will vanish).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Rate Law Is a Mechanism's Fingerprint</div>
+      Change the concentrations and watch how the rate responds — this is the instrument chemists most
+      often use to "interrogate" a mechanism. A bimolecular mechanism always leaves a second-order rate
+      law behind; a unimolecular mechanism leaves only a first-order one. The "third interrogation" —
+      isotopes and stereochemistry — supplies the other two instruments (see the ladder in §5).
+    </div>
+  </section>
+
+  <!-- ============ §4 Electrophilic Addition ============ -->
+  <section id="add">
+    <h2>§4 Script Three: Electrophilic Addition and Markovnikov's Rule</h2>
+    <p>
+      The π electron cloud of a double bond is like a blanket of electrons lying bare on the surface of
+      the molecule, custom-made to attract electron-deficient <span class="term">electrophiles</span>
+      (E⁺, "electron-loving"). Take the addition of HBr to propene: in the first step the π electron
+      blanket makes overtures to H⁺ (the curved arrow starts from the π bond), generating a carbocation;
+      then Br⁻ attacks — an addition in two steps.
+    </p>
+    <p>
+      The crucial fork comes in the first step: to which end does the H add? The two possibilities give
+      two different carbocations:
+    </p>
+    <ul>
+      <li>H to the terminal carbon → the positive charge lands on the <strong>middle carbon</strong>: a secondary carbocation (two C's send hyperconjugation "support");</li>
+      <li>H to the middle carbon → the positive charge lands on the <strong>terminal carbon</strong>: a primary carbocation (only one line of support).</li>
+    </ul>
+    <p>
+      The carbocation stability order is <strong>tertiary &gt; secondary &gt; primary &gt; CH₃⁺</strong>
+      (alkyl groups are like passers-by holding umbrellas, spreading the positive charge through
+      hyperconjugation and inductive effects). The system naturally takes the more stable route → the
+      major product is 2-bromopropane. This is <span class="term">Markovnikov's rule</span>:
+      <strong>the hydrogen adds to the double-bond carbon that already bears more hydrogens</strong>.
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CH<sub>3</sub>–CH=CH<sub>2</sub> + HBr → CH<sub>3</sub>–CHBr–CH<sub>3</sub></span> (major product)
+    </p>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Do It with Me)</div>
+      <div class="worked-problem">
+        Predict the major product of the addition of HCl to <span class="formula">CH<sub>3</sub>CH<sub>2</sub>CH=CH<sub>2</sub></span> (1-butene), and justify your answer.
+        <em>(Walk through the electron flow on your own first, then check step by step.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Find the electron source: the π bond (electron-rich) → find the electron sink: H⁺ (the δ+ end of HCl). Draw the curved arrow from the π bond to H.</li>
+        <li class="step">💡 Two possible additions: H to the terminal carbon C1 → positive charge on C2 (a <strong>secondary</strong> carbocation);
+          H to C2 → positive charge on C1 (primary). Stability: secondary &gt; primary → take the first route.</li>
+        <li class="step">💡 Cl⁻ attacks the positive charge on C2 → major product <span class="formula">CH<sub>3</sub>CH<sub>2</sub>CHClCH<sub>3</sub></span> (2-chlorobutane).</li>
+        <li class="step">✅ Double-check with Markovnikov's rule: "H adds to the carbon with more H's" — the terminal carbon C1 carries two H's, and indeed the H added there ✓.
+          The two viewpoints (carbocation stability / the Markovnikov mnemonic) confirm one another.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Add a small amount of peroxide (ROOR) to the system, and the addition of HBr to propene suddenly goes "anti-Markovnikov". Why?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What do peroxides easily break into? (Recall Script One in §2.)</p>
+        <p>
+          The mechanism switches scripts entirely: from the ionic carbocation route to the
+          <strong>free-radical route</strong>. The first step becomes addition of Br· to the double bond —
+          and it chooses the terminal carbon, so that the radical lands on the <strong>middle carbon</strong>
+          (a secondary radical, more stable than a primary one); the radical then abstracts H from HBr to
+          finish the job. Net effect: Br ends up on the terminal carbon and H on the middle carbon —
+          precisely anti-Markovnikov. Note that this "peroxide effect" works almost exclusively for HBr
+          (the bond energies of HCl and HI cannot cooperate with these two steps). One and the same net
+          equation, two mechanisms, two product ratios — that is the theme of the next section's ladder.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 Energy Profiles ============ -->
+  <section id="energy">
+    <h2>§5 Activation Energy, Transition State, and Intermediate: Three Easily Confused Terms</h2>
+    <p>
+      Three characters on the energy profile, examined year after year — one sentence each to tell them apart:
+    </p>
+    <ul>
+      <li><span class="term">activation energy</span><span class="en">E<sub>a</sub></span>:
+        the energy needed to "climb" from the reactants up to the hilltop. The larger E<sub>a</sub>, the
+        fewer molecules get over, and the slower the reaction.</li>
+      <li><span class="term">transition state</span><span class="en">‡</span>:
+        the <strong>maximum</strong> of the curve. A critical geometry with old bonds half-broken and new
+        bonds half-formed; its lifetime is essentially zero, and it <strong>cannot be isolated or
+        stored</strong> — it can only be glimpsed indirectly through spectroscopy.</li>
+      <li><span class="term">intermediate</span>:
+        the <strong>valley</strong> between two peaks. Carbocations and radicals, for example — genuinely
+        existing molecules with short chemical lifetimes (microseconds to milliseconds), but they can be
+        caught by fast spectroscopy, and even kept alive a little longer at low temperature.</li>
+    </ul>
+    <p>
+      The rule for telling them apart: <strong>a maximum is not a species; only a minimum is</strong>. In a
+      multi-step reaction, the steepest hill (the highest transition state) sets the overall rate — the
+      rate-determining step. SN1's first hill (ionization) is its tollbooth.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why Can Reactions with the Same Equation Have Completely Different Mechanisms?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Two villages sit on opposite sides of a mountain: village A (reactants) and village B (products).
+          The equation says only "from A to B" — not whether you climbed the northern slope or detoured
+          through the southern valley. Some travel on foot (one leg, straight through), some stop to rest
+          at a service area along the way (an intermediate), and still others form relay teams (chains) —
+          the villager roster and the destination are identical, yet the routes are worlds apart.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Experiment</span>
+        <p>
+          Chemists carry three "lie detectors": <strong>① kinetics</strong> — how the rate depends on
+          concentration directly exposes the participants in the rate-determining step (the SN1/SN2
+          verdict in Example 1); <strong>② stereochemistry</strong> — SN2 inverts, SN1 racemizes; the
+          configuration of the product takes the stand; <strong>③ isotope labeling</strong> — give one atom
+          a "traceable isotope ID" and see where in the product it ends up. Only with all three lines of
+          evidence can a mechanism stand firm.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Potential-Energy Surface</span>
+        <p>
+          Unfold the positions of all the atoms in a molecule into a many-dimensional "potential-energy
+          surface": reactants and products are two basins on that surface, and the paths connecting the
+          two basins can be <strong>more than one</strong>, each path with its own sequence of transition
+          states. Temperature, solvent, and concentration decide the "traffic volume" on each path — they
+          can even switch the main road entirely, as when peroxides shift HBr from the ionic route to the
+          radical one. A mechanism is therefore not philosophy but a <strong>falsifiable model</strong>: it
+          always reserves the right to be overthrown by a new experiment. The quantitative tools (the
+          Arrhenius equation, transition-state theory) await you in the 04 Physical Chemistry branch.
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "A balanced equation tells us how the reaction happens"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Once the equation has been written out, the reaction steps must be self-evident; balancing the coefficients is the same as understanding the reaction.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          The equation is a <strong>ledger of totals</strong>: it records only the initial and final states, never the path.
+          The hydrolyses of methyl bromide and tert-butyl chloride have almost identical equations
+          (RCl + H₂O → ROH + HCl), yet the former goes by SN2 (rate varies with OH⁻, configuration inverts)
+          and the latter by SN1 (rate independent of OH⁻, racemization). A mechanism must be inferred from
+          experiment — kinetics, stereochemistry, isotopes — and it is always the current best model, not
+          an imperial edict. Balancing is bookkeeping; the mechanism is the detective work.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Raising the temperature gives the biggest boost to reactions with a large activation energy. Why?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What is it that temperature provides? If the climbers gain more stamina, which path benefits most?</p>
+        <p>
+          Temperature raises the molecules' kinetic-energy reserves. For a reaction with a large
+          E<sub>a</sub>, "those able to make the climb" are vanishingly few to begin with (the far right
+          tail of the Boltzmann distribution); raising the temperature multiplies the number in that tail —
+          the boost is amplified exponentially. For a reaction with a small E<sub>a</sub>, most molecules
+          could already climb, so the room for improvement is limited. The quantitative relationship is
+          described by the Arrhenius equation <span class="formula">k = Ae<sup>−Ea/RT</sup></span>
+          (covered in detail in Branch 04) — note that E<sub>a</sub> appears in the exponent: the
+          sensitivity is enormous.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li><strong>Curved arrows</strong> are drawn from electron-rich sites (lone pair / π / negative charge) toward electron-poor ones; double-barbed = an electron pair, single-barbed = a single electron.</li>
+        <li>Free-radical chain substitution in three acts: initiation (photolysis gives Cl·) → propagation (H- or Cl-abstraction, radical regenerated) → termination (radicals combine).</li>
+        <li>SN2: one step, v = k[RX][Nu], inversion of configuration; SN1: two steps, v = k[RX], a carbocation intermediate, racemization.</li>
+        <li>Electrophilic addition goes through the more stable carbocation (tertiary &gt; secondary &gt; primary) → Markovnikov's rule; peroxides can flip HBr to the anti-Markovnikov script.</li>
+        <li>Transition state = the maximum (not isolable); intermediate = the valley (a real species); the highest hill sets the rate (the rate-determining step).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Introduction to Reaction Mechanisms <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "What do the curved arrows in a mechanism represent?",
+            "options": [
+              "The direction the atomic nuclei move",
+              "The direction electron pairs (or a single electron) move",
+              "Rotation of the molecule as a whole in solution",
+              "The path by which energy flows from reactants to products"
+            ],
+            "answer": 1,
+            "explain": "Curved arrows depict electrons: a double-barbed arrow shows a pair of electrons migrating from an electron-rich site (lone pair, π bond, negative charge) to an electron-poor one. They do not show atoms moving, nor the direction of energy flow."
+          },
+          {
+            "q": "What characterizes the 'propagation' steps of a free-radical chain reaction?",
+            "options": [
+              "Absorbing a photon to generate radicals",
+              "Each step consumes one radical while generating a new one, and the cycle can repeat thousands of times",
+              "Two radicals combining into a stable molecule",
+              "Occurring only once, at the start of the reaction"
+            ],
+            "answer": 1,
+            "explain": "Propagation is the engine of the chain: Cl· abstracts H to become ·CH₃, and ·CH₃ abstracts Cl to become Cl· again — the radical is passed along like a relay baton, and a chain initiated by one photon can cycle 10⁴–10⁶ times. Absorbing a photon is 'initiation'; radical combination is 'termination'."
+          },
+          {
+            "q": "What is the overall rate law for an SN2 reaction?",
+            "options": [
+              "v = k[RX][Nu⁻]",
+              "v = k[RX]",
+              "v = k[Nu⁻]",
+              "v = k[RX]²[Nu⁻]"
+            ],
+            "answer": 0,
+            "explain": "The rate-determining (and only) step of SN2 requires a bimolecular collision between the nucleophile and the alkyl halide, so the rate is proportional to both concentrations. v = k[RX] is the hallmark of SN1."
+          },
+          {
+            "q": "If the reaction center is a chiral carbon, what is the typical stereochemistry of the product after SN1 substitution?",
+            "options": [
+              "100% inversion of configuration",
+              "100% retention of configuration",
+              "Racemization — roughly 50:50 inversion and retention",
+              "The product escapes entirely as a gas"
+            ],
+            "answer": 2,
+            "explain": "SN1 first ionizes to a planar, trigonal carbocation; the nucleophile attacks either face with equal probability, giving the two configurations in about a 1:1 ratio — racemization, with loss of optical rotation. 100% inversion is the signature of backside attack in SN2."
+          },
+          {
+            "q": "What is the major product of the addition of HBr to CH₃CH=CH₂ (no peroxides)?",
+            "options": [
+              "1-bromopropane",
+              "2-bromopropane",
+              "1,2-dibromopropane",
+              "No reaction occurs"
+            ],
+            "answer": 1,
+            "explain": "By Markovnikov's rule, H adds to the terminal carbon, which bears more hydrogens, generating the more stable secondary carbocation; Br⁻ then attaches to the middle carbon → 2-bromopropane is the major product. 1,2-dibromopropane is the product of addition of Br₂."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Stereochemistry.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Stereochemistry</span></a>
+      <a class="next" href="04-A-Tour-of-Functional-Group-Reactions.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 4 · A Tour of Functional Group Reactions</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter interactivity (three-act chain-reaction stage / SN1-SN2 energy-profile switcher) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helpers, defined in assets/tutor.js */
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+  function ball(g, x, y, r, fill, label, tc, size) {
+    el("circle", { cx: x, cy: y, r: r, fill: fill, stroke: "rgba(0,0,0,.18)", "stroke-width": 1 }, g);
+    T(g, x, y + 4, label, { size: size || 13, weight: 700, fill: tc || "#ffffff" });
+  }
+  function bond(g, x1, y1, x2, y2, w, c) {
+    el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: c || "#6b7280", "stroke-width": w || 3 }, g);
+  }
+  function radDot(g, x, y) {
+    el("circle", { cx: x, cy: y, r: 4.5, fill: "#111827", class: "anim-pulse" }, g);
+  }
+  function arrow(g, x1, y1, x2, y2, c) {
+    bond(g, x1, y1, x2, y2, 2.5, c || "#4b5563");
+    var a = Math.atan2(y2 - y1, x2 - x1);
+    var s = 9;
+    el("polygon", { points: x2 + "," + y2 + " " + (x2 - s * Math.cos(a - 0.42)) + "," + (y2 - s * Math.sin(a - 0.42)) +
+      " " + (x2 - s * Math.cos(a + 0.42)) + "," + (y2 - s * Math.sin(a + 0.42)), fill: c || "#4b5563" }, g);
+  }
+  var CL = "#16a34a", CB = "#374151", HB = "#ffffff", HT = "#1f2937";
+
+  /* ---------- 1. Three-act chain-reaction stage ---------- */
+  var chainSvg = document.getElementById("chainSvg");
+  if (chainSvg) {
+    var chainReadout = document.getElementById("chainReadout");
+    var chainBtns = Array.prototype.slice.call(document.querySelectorAll("#chainBtns button"));
+
+    function cl2(g, x, y) {
+      bond(g, x - 24, y, x + 24, y, 4);
+      ball(g, x - 24, y, 20, CL, "Cl", "#ffffff", 12);
+      ball(g, x + 24, y, 20, CL, "Cl", "#ffffff", 12);
+    }
+    function ch4(g, x, y) {
+      bond(g, x, y, x - 34, y - 30, 2.5); bond(g, x, y, x + 34, y - 30, 2.5);
+      bond(g, x, y, x - 34, y + 30, 2.5); bond(g, x, y, x + 34, y + 30, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x - 34, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x + 34, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x - 34, y + 30, 10, HB, "H", HT, 10);
+      ball(g, x + 34, y + 30, 10, HB, "H", HT, 10);
+    }
+    function ch3(g, x, y, dotPos) {
+      bond(g, x, y, x - 32, y - 30, 2.5); bond(g, x, y, x + 32, y - 30, 2.5); bond(g, x, y, x, y + 38, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x - 32, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x + 32, y - 30, 10, HB, "H", HT, 10);
+      ball(g, x, y + 38, 10, HB, "H", HT, 10);
+      if (dotPos) radDot(g, x + 18, y - 44);
+    }
+    function ch3cl(g, x, y) {
+      bond(g, x, y, x + 40, y, 3); bond(g, x, y, x - 30, y - 32, 2.5);
+      bond(g, x, y, x - 30, y + 32, 2.5); bond(g, x, y, x, y - 40, 2.5);
+      ball(g, x, y, 16, CB, "C");
+      ball(g, x + 40, y, 19, CL, "Cl", "#ffffff", 11);
+      ball(g, x - 30, y - 32, 10, HB, "H", HT, 10);
+      ball(g, x - 30, y + 32, 10, HB, "H", HT, 10);
+      ball(g, x, y - 40, 10, HB, "H", HT, 10);
+    }
+    function clRad(g, x, y) {
+      ball(g, x, y, 20, CL, "Cl", "#ffffff", 12);
+      radDot(g, x + 20, y - 22);
+    }
+    function hcl(g, x, y) {
+      bond(g, x - 20, y, x + 18, y, 3);
+      ball(g, x - 20, y, 10, HB, "H", HT, 10);
+      ball(g, x + 18, y, 19, CL, "Cl", "#ffffff", 11);
+    }
+
+    var SCENES = {
+      init: function () {
+        var g = chainSvg;
+        T(g, 320, 32, "Act ① · Initiation: light cleaves Cl₂ into two radicals", { size: 14, weight: 700, fill: "#166534" });
+        cl2(g, 120, 160);
+        el("polyline", { points: "210,140 230,175 252,130 274,178 296,140", fill: "none", stroke: "#ca8a04", "stroke-width": 3 }, g);
+        T(g, 253, 205, "hν", { size: 16, weight: 700, fill: "#a16207" });
+        arrow(g, 330, 160, 390, 160, "#b45309");
+        clRad(g, 450, 110);
+        clRad(g, 520, 210);
+        T(g, 320, 290, "Covalent-bond 'homolysis': each Cl takes one electron away → two radical sparks", { size: 13, fill: "#4b5563" });
+        return "Initiation: Cl₂ absorbs a photon and undergoes homolysis, producing 2 Cl·. This act needs only a trace of light — the spark is small, but the next act will amplify it.";
+      },
+      grow: function () {
+        var g = chainSvg;
+        T(g, 320, 30, "Act ② · Propagation: H-abstraction and Cl-transfer, a radical relay", { size: 14, weight: 700, fill: "#166534" });
+        // Row 1
+        clRad(g, 60, 100); T(g, 110, 105, "＋", { size: 16, weight: 700 });
+        ch4(g, 190, 100);
+        arrow(g, 250, 100, 300, 100);
+        hcl(g, 340, 100); T(g, 395, 105, "＋", { size: 16, weight: 700 });
+        ch3(g, 470, 100, true);
+        T(g, 470, 160, "·CH₃", { size: 12, fill: "#4b5563" });
+        T(g, 190, 158, "CH₄", { size: 12, fill: "#4b5563" });
+        // Row 2
+        ch3(g, 60, 225, true); T(g, 60, 283, "·CH₃", { size: 12, fill: "#4b5563" });
+        T(g, 110, 230, "＋", { size: 16, weight: 700 });
+        cl2(g, 190, 225);
+        arrow(g, 250, 225, 300, 225);
+        ch3cl(g, 350, 225); T(g, 350, 283, "CH₃Cl", { size: 12, fill: "#4b5563" });
+        T(g, 420, 230, "＋", { size: 16, weight: 700 });
+        clRad(g, 490, 225);
+        T(g, 275, 80, "① H abstraction", { size: 12, fill: "#6b7280" });
+        T(g, 275, 205, "② Cl transfer", { size: 12, fill: "#6b7280" });
+        // Cycle arrow
+        el("path", { d: "M 520 255 C 420 315 160 315 60 138", fill: "none", stroke: "#b45309",
+          "stroke-width": 2.5, "stroke-dasharray": "7 6" }, g);
+        T(g, 330, 310, "Cl· regenerated → back to ①, the cycle can repeat thousands of times", { size: 12, fill: "#b45309", weight: 700 });
+        return "Propagation: ① Cl· abstracts a hydrogen from CH₄ to give HCl and ·CH₃; ② ·CH₃ abstracts chlorine from Cl₂ to give CH₃Cl and release a fresh Cl·. Net result of the two steps: one Cl₂ and one CH₄ consumed, one CH₃Cl produced — the radical is not diminished one bit, and the chain goes on.";
+      },
+      term: function () {
+        var g = chainSvg;
+        T(g, 320, 30, "Act ③ · Termination: radicals meet, the chain goes dark", { size: 14, weight: 700, fill: "#166534" });
+        var rows = [[75, "cl", "cl", "Cl₂"], [155, "cl", "me", "CH₃Cl"], [235, "me", "me", "CH₃CH₃"]];
+        rows.forEach(function (r) {
+          var y = r[0];
+          if (r[1] === "cl") clRad(g, 70, y); else ch3(g, 70, y, true);
+          T(g, 120, y + 5, "＋", { size: 16, weight: 700 });
+          if (r[2] === "cl") clRad(g, 200, y); else ch3(g, 200, y, true);
+          arrow(g, 260, y, 315, y);
+          if (r[3] === "Cl₂") cl2(g, 400, y);
+          else if (r[3] === "CH₃Cl") ch3cl(g, 390, y);
+          else {
+            bond(g, 380, y, 430, y, 3);
+            ball(g, 380, y, 15, CB, "C"); ball(g, 430, y, 15, CB, "C");
+            T(g, 405, y + 38, "ethane (trace by-product)", { size: 11, fill: "#4b5563" });
+          }
+        });
+        T(g, 530, 155, "two radicals", { size: 11, fill: "#6b7280" });
+        T(g, 530, 172, "→ two stable molecules", { size: 11, fill: "#6b7280" });
+        T(g, 320, 295, "The longer the chain, the higher the radical concentration → the greater the chance of encounter → a steady state is finally reached", { size: 13, fill: "#4b5563" });
+        return "Termination: any two radicals that combine (Cl·+Cl·, Cl·+·CH₃, ·CH₃+·CH₃) form stable molecules, extinguishing the chain for good. The third combination gives ethane — which is why trace ethane can always be detected among the chlorination products: the 'signature' of a chain mechanism.";
+      }
+    };
+
+    function drawChain(stage) {
+      chainSvg.innerHTML = "";
+      chainReadout.textContent = SCENES[stage]();
+      chainBtns.forEach(function (b) {
+        if (b.getAttribute("data-s") === stage) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    chainBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawChain(b.getAttribute("data-s")); });
+    });
+    drawChain("init");
+  }
+
+  /* ---------- 2. SN1 / SN2 energy-profile switcher ---------- */
+  var enSvg = document.getElementById("enSvg");
+  if (enSvg) {
+    var enReadout = document.getElementById("enReadout");
+    var enBtns = Array.prototype.slice.call(document.querySelectorAll("#enBtns button"));
+
+    function axis() {
+      el("line", { x1: 60, y1: 292, x2: 618, y2: 292, stroke: "#94a3b8", "stroke-width": 2 }, enSvg);
+      el("line", { x1: 60, y1: 292, x2: 60, y2: 40, stroke: "#94a3b8", "stroke-width": 2 }, enSvg);
+      var yl = el("text", { x: 30, y: 165, "text-anchor": "middle", "font-size": 13, fill: "#4b5563",
+        transform: "rotate(-90 30 165)" }, enSvg);
+      yl.textContent = "Potential energy E →";
+      T(enSvg, 340, 332, "Reaction progress →", { size: 13, fill: "#4b5563" });
+      T(enSvg, 78, 314, "Reactants", { size: 12, fill: "#1f2937", anchor: "start" });
+      T(enSvg, 600, 314, "Products", { size: 12, fill: "#1f2937", anchor: "end" });
+    }
+    function ea(x, y1, y2, label) {
+      el("line", { x1: x, y1: y1, x2: x, y2: y2, stroke: "#b45309", "stroke-width": 2.2 }, enSvg);
+      el("polygon", { points: x + "," + y2 + " " + (x - 5) + "," + (y2 + 9) + " " + (x + 5) + "," + (y2 + 9), fill: "#b45309" }, enSvg);
+      el("polygon", { points: x + "," + y1 + " " + (x - 5) + "," + (y1 - 9) + " " + (x + 5) + "," + (y1 - 9), fill: "#b45309" }, enSvg);
+      T(enSvg, x + 14, (y1 + y2) / 2, label, { size: 13, weight: 700, fill: "#b45309", anchor: "start" });
+    }
+    function tsDash(x, yTop, label, sub) {
+      el("line", { x1: x, y1: yTop, x2: x, y2: 292, stroke: "#cbd5e1", "stroke-width": 1.5, "stroke-dasharray": "5 5" }, enSvg);
+      T(enSvg, x, yTop - 10, label, { size: 13, weight: 700, fill: "#b45309" });
+      if (sub) T(enSvg, x, yTop - 27, sub, { size: 11, fill: "#6b7280" });
+    }
+
+    function drawEn(mode) {
+      enSvg.innerHTML = "";
+      axis();
+      if (mode === "sn2") {
+        el("path", { d: "M60,262 C180,258 200,78 320,78 C440,78 470,272 590,272",
+          fill: "none", stroke: "#15803d", "stroke-width": 4 }, enSvg);
+        tsDash(320, 78, "Transition state ‡", "old bond half-broken · new bond half-formed");
+        ea(150, 262, 78, "Ea");
+        T(enSvg, 90, 250, "R–X + Nu⁻", { size: 12, fill: "#374151", anchor: "start" });
+        T(enSvg, 585, 258, "Nu–R + X⁻", { size: 12, fill: "#374151", anchor: "end" });
+        T(enSvg, 320, 176, "One concerted step: no intermediate", { size: 12, fill: "#166534", weight: 700 });
+        enReadout.textContent = "SN2 (one concerted step): v = k[RX][Nu⁻] · the rate depends on both molecules · a single transition state, no intermediate · the nucleophile attacks from the back face → inversion of configuration (like an umbrella blown inside-out by the wind).";
+      } else {
+        el("path", { d: "M60,275 C130,270 152,72 215,72 C280,72 292,186 330,186 C368,186 392,112 445,112 C500,112 520,282 590,282",
+          fill: "none", stroke: "#15803d", "stroke-width": 4 }, enSvg);
+        tsDash(215, 72, "Transition state ‡① (rate-determining)");
+        tsDash(445, 112, "Transition state ‡②");
+        el("line", { x1: 330, y1: 186, x2: 330, y2: 292, stroke: "#cbd5e1", "stroke-width": 1.5, "stroke-dasharray": "5 5" }, enSvg);
+        el("circle", { cx: 330, cy: 186, r: 7, fill: "#15803d" }, enSvg);
+        T(enSvg, 330, 214, "Intermediate: carbocation R⁺", { size: 13, weight: 700, fill: "#166534" });
+        T(enSvg, 330, 231, "(a real energy valley between the two peaks)", { size: 11, fill: "#6b7280" });
+        ea(140, 275, 72, "Ea (rate-det.)");
+        T(enSvg, 90, 263, "R–X (slow ionization)", { size: 12, fill: "#374151", anchor: "start" });
+        T(enSvg, 585, 268, "Nu–R + X⁻", { size: 12, fill: "#374151", anchor: "end" });
+        enReadout.textContent = "SN1 (two steps): v = k[RX] · the rate depends only on the alkyl halide · step 1, slow ionization to a carbocation (the tallest hill = the rate-determining step); step 2, fast attack · the planar R⁺ is attacked from both faces → racemization.";
+      }
+      enBtns.forEach(function (b) {
+        if (b.getAttribute("data-m") === mode) {
+          b.style.background = "var(--accent)"; b.style.color = "#fff"; b.style.borderColor = "var(--accent)";
+        } else { b.style.background = ""; b.style.color = ""; b.style.borderColor = ""; }
+      });
+    }
+    enBtns.forEach(function (b) {
+      b.addEventListener("click", function () { drawEn(b.getAttribute("data-m")); });
+    });
+    drawEn("sn2");
+  }
+})();
+</script>
+</body>
+</html>

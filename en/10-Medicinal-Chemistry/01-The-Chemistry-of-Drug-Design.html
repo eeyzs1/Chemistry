@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>The Chemistry of Drug Design · Medicinal Chemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b10">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">10 Medicinal Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · The Chemistry of Drug Design</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">10 Medicinal Chemistry · Chapter 1</div>
+    <h1>The Chemistry of Drug Design: Forging a Key</h1>
+    <p class="lede">
+      A single 500 mg tablet packs roughly 10²¹ identical molecules. Once swallowed, they drift with the
+      bloodstream, brushing aimlessly past every corner of the body — yet they almost only 'stop and get to
+      work' at the diseased site. How? Because <strong>a drug is not a bomb but a precision molecular
+      tool</strong>: its shape and charge are exactly complementary to the disease-causing target, like a key
+      sliding into a lock. This chapter uses one 'key' to string together the whole landscape of medicinal
+      chemistry — targets and molecular recognition, the ADME journey through the body, structure–activity
+      relationships, classic cases, and finally modern design methods.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: 02 Organic Chemistry (functional groups · chirality) + 05 Biochemistry (enzymes · receptors)</span>
+      <span class="chip">Interactive animation ×1</span>
+      <span class="chip">Self-test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#targets">Targets and Molecular Recognition</a>
+    <a href="#adme">ADME Pharmacokinetics</a>
+    <a href="#sar">Structure–Activity Relationships</a>
+    <a href="#cases">Classic Cases</a>
+    <a href="#chirality">The Lesson of Chirality</a>
+    <a href="#modern">Modern Design</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: A Tablet Has No Navigation System</h2>
+    <p>
+      Many people imagine drugs as missiles: they know the way, lock on, and strike. The truth is more
+      romantic — every drug molecule is a <strong>powerless key</strong>, pushed by the bloodstream into
+      random collisions with every corner of the body. After millions of collisions, the vast majority
+      bounce off in vain; only on meeting that one lock whose 'bitting matches exactly' — the
+      <span class="term">drug target</span> — does the key slide in, settle down, and do its work.
+      What we call 'the medicine cures the disease' is really the statistical outcome of
+      <strong>selective residence</strong>.
+    </p>
+    <p>
+      This simple picture immediately raises three questions, and they form this chapter's roadmap:
+      How do the key and the lock recognize each other (§1)? How does the key reach the lock before
+      being washed away or destroyed (§2)? And what happens if one notch of the bitting is filed away (§3–§4)?
+    </p>
+    <details class="think">
+      <summary>Think It Through: If drugs work by 'shape matching', why not build a 'master key' that opens many targets at once and cures a hundred diseases with one drug?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: The human body makes tens of thousands of its own proteins. What do their 'keyholes' look like? Are they all alike?</p>
+        <p>
+          Quite the opposite — <strong>a good drug must 'pick its locks', not 'open every lock in
+          sight'</strong>. A master key means binding to many unrelated proteins, nudging every lock a
+          little, and side effects follow. The classic lesson is the first-generation antihistamines:
+          they block allergy in the periphery, but they also slip into the brain and lock the receptors
+          responsible for drowsiness, leaving patients groggy. <strong>Selectivity</strong> (hit only the
+          target that should be hit) and <strong>affinity</strong> (hit it hard enough) are equally core
+          metrics for a new drug.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Targets and molecular recognition ============ -->
+  <section id="targets">
+    <h2>§1 Targets and Molecular Recognition: How Drugs Work</h2>
+    <p>
+      The targets of the vast majority of drugs in the human body sit on three classes of biological
+      macromolecules. What they have in common: each carries a 'cleft' or 'pit' (a binding site) where
+      an endogenous signaling molecule or substrate is supposed to dock — and the drug molecule poses as it.
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Target type</th><th>What it is</th><th>What the drug typically does</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Receptor</strong></td>
+          <td>A 'signal receiver' on the cell surface or inside the cell, usually a transmembrane protein</td>
+          <td>Occupy the site and mimic the natural signal (agonists) or block the signal (antagonists)</td>
+          <td>Adrenergic receptors ↔ salbutamol asthma inhalers</td>
+        </tr>
+        <tr>
+          <td><strong>Enzyme</strong></td>
+          <td>A molecular machine that catalyzes biochemical reactions</td>
+          <td>Clog the active site as a 'false substrate' and stall the reaction</td>
+          <td>HMG-CoA reductase ↔ statin lipid-lowering drugs</td>
+        </tr>
+        <tr>
+          <td><strong>Ion channel</strong></td>
+          <td>A transmembrane ion gate controlling Na⁺/K⁺/Ca²⁺ flow</td>
+          <td>Jam the gate and change how long it stays open or closed</td>
+          <td>Voltage-gated sodium channels ↔ the local anesthetic lidocaine</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>From Lock and Key to Induced Fit</h3>
+    <p>
+      In 1894 the sugar chemist Fischer proposed the famous <span class="term">lock-and-key model</span>:
+      enzyme and substrate fit like lock and key, rigidly complementary and perfectly matched.
+      It explained specificity, but not why one enzyme can accept all sorts of analogues. In 1958 Koshland
+      proposed <span class="term">induced fit</span>: a protein is not a dead lock; as the ligand
+      approaches, the pocket and the ligand <strong>subtly reshape each other</strong>, like a glove
+      closing around the hand sliding into it. Today the two are read together:
+      <strong>complementarity is the prerequisite, flexibility is the norm</strong>.
+    </p>
+    <p>So what forces actually 'slide the key into the lock'? Mainly four kinds of non-covalent interaction (echoing the intermolecular forces of Branch 02):</p>
+    <ul>
+      <li><strong>Hydrogen bonds</strong> — strongly directional, each contributing roughly 1–3 kcal/mol; the key to 'aligning the bitting';</li>
+      <li><strong>Electrostatic interactions</strong> — opposite charges attract, strong and long-range; salt bridges are the classic case;</li>
+      <li><strong>The hydrophobic effect</strong> — nonpolar groups snuggle together and push ordered water molecules back into solution (an entropy gain),
+        often the biggest driver of binding;</li>
+      <li><strong>van der Waals forces</strong> — each one feeble on its own, but the more closely the shapes fit and the larger the contact surface, the more they add up.</li>
+    </ul>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      Drug–target binding = a double match of <strong>shape + interactions</strong>: shape decides
+      'whether it can bind'; the number and strength of the interactions decide 'how tightly it binds'.
+      The more <strong>negative</strong> the binding energy (ΔG), the higher the affinity —
+      at room temperature, each difference of about 1.4 kcal/mol in binding energy means roughly a 10-fold difference in affinity.
+    </div>
+
+    <h3>🔬 Try It Out: Fitting a Key to the Pocket</h3>
+    <p>
+      The receptor pocket below has three colored sites (red = hydrogen-bond donor, blue = hydrogen-bond
+      acceptor) and a yellow hydrophobic strip. Which of the three candidate molecules can slide in?
+      Try docking each one and watch the binding-energy score —
+      remember: <strong>wrong shape is an instant veto; a missing set of interactions costs you dearly</strong>.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="dockSvg" width="560" height="340" viewBox="0 0 560 340" role="img"
+             aria-label="Ligand–receptor docking simulator: three candidate molecules try to enter the receptor pocket"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="dockA" type="button">Try molecule A (blocky)</button>
+          <button class="btn" id="dockB" type="button">Try molecule B (L-shaped)</button>
+          <button class="btn" id="dockC" type="button">Try molecule C (L-shaped, one group missing)</button>
+          <button class="btn ghost" id="dockReset" type="button">↺ Reset</button>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:.78rem;color:var(--ink-2);margin-top:10px">
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#dc2626;display:inline-block"></span>Receptor · hydrogen-bond donor site</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#2563eb;display:inline-block"></span>Receptor · hydrogen-bond acceptor site</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:14px;height:8px;background:#facc15;border:1px solid #ca8a04;display:inline-block"></span>Pocket hydrophobic region</span>
+          <span style="display:inline-flex;align-items:center;gap:5px"><span style="display:inline-block;width:24px;border-top:2.5px dashed #334155"></span>Hydrogen bonds formed</span>
+        </div>
+        <div class="fig-readout" id="dockReadout">👆 Pick a candidate molecule and try to fit it into the receptor pocket on the right</div>
+      </div>
+      <figcaption>
+        Reading the score: the more negative the binding energy, the tighter the binding. Molecule B beats
+        molecule A by a factor of roughly a million and molecule C by roughly a thousand —
+        and the entire gap comes down to 'shape complementarity + site matching'. In real research such
+        scoring is done by molecular docking software (see §6), but the logic of the judgment is exactly
+        the feel you just exercised.
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why does a swallowed drug seem to 'recognize' where the disease is?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Billions of identical keys sweep past every lock in the body with the bloodstream. For the vast
+          majority of locks the keyhole has the wrong shape and the key cannot enter, so it is washed onward.
+          Only the 'special lock' at the diseased site (a target protein present in abundance) matches the
+          bitting, and there the key lingers longest — it looks as if the drug 'recognizes' the site, but in
+          truth 'only there can it stay'.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Molecular complementarity + target differences</span>
+        <p>
+          Selectivity comes from the intersection of two conditions. ① <strong>Molecular complementarity</strong>:
+          hydrogen bonds, electrostatics, hydrophobic contacts, and van der Waals forces must match as a set
+          (like molecule B in the demo just now); otherwise binding is too weak to hold. ② <strong>Target
+          differences</strong>: the disease-causing target must be absent from, or clearly different in, healthy
+          human tissue — bacteria must build their own cell walls (human cells have none), inflamed tissue
+          overexpresses COX-2, and some cancer cells depend heavily on particular kinases.
+          <strong>Selective toxicity is simply cashing in on those differences</strong>.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The chemistry of distribution and metabolism</span>
+        <p>
+          Strictly speaking, a drug has no 'awareness' at all: it distributes passively with blood flow and
+          concentration gradients, colliding with the target millions of times. Only when the fit is
+          complementary — the dissociation rate (k<sub>off</sub>) slow enough, the residence time long
+          enough — does the pharmacological effect accumulate. Meanwhile the liver's CYP450 enzyme system
+          keeps oxidizing the foreign molecule and the kidneys keep flushing it out — the drug must maintain
+          a sufficient concentration 'before it is cleared'. So a good drug = the product of
+          <strong>affinity × selectivity × ADME</strong>; miss one factor and the product falls to zero.
+          The molecule that binds most strongly in a test tube often never reaches its target at all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 ADME ============ -->
+  <section id="adme">
+    <h2>§2 ADME: A Tablet's Journey Through the Body</h2>
+    <p>
+      A new compound's survival odds are brutal: most die not from 'binding too weakly' but from 'not making
+      it in the body'. The four checkpoints of pharmacokinetics are jointly called
+      <strong>ADME</strong> (echoing the metabolism chapter of <a href="../05-Biochemistry/index.html">05 Biochemistry</a>):
+    </p>
+    <ul>
+      <li><strong>A · Absorption</strong> — entry into the bloodstream from the site of administration: molecules that are too large or too polar
+        cannot cross the gut wall; and even once inside, a share may be skimmed off first by the liver's 'first-pass effect'.</li>
+      <li><strong>D · Distribution</strong> — delivery to tissues via the bloodstream: only fat-soluble molecules can cross the blood–brain barrier;
+        yet binding plasma proteins too tightly leaves the drug 'escorted in transit, never allowed off'.</li>
+      <li><strong>M · Metabolism</strong> — the liver's CYP450 oxidizes the molecule (phase I), then attaches large polar groups such as glucuronic acid
+        (phase II); activity usually falls, water solubility rises, and the molecule is ready to disembark. A few drugs, though, are 'prodrugs'
+        activated only after metabolism.</li>
+      <li><strong>E · Excretion</strong> — the kidneys filter the drug out into urine, or it exits via bile into the gut. Metabolism + excretion
+        together set a drug's <strong>half-life</strong> in the body.</li>
+    </ul>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Test tube ≠ human body</div>
+      A measured 'binding energy of −12 kcal/mol' in a test tube means nothing if the molecule is not
+      absorbed when taken orally and is metabolized within five minutes. One-sentence version:
+      <strong>a good drug must 'arrive, stay, work, and leave'</strong> — only after passing all four gates,
+      A, D, M and E, does it earn the right to talk about efficacy.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why do many drugs need to be taken 3–4 times a day, while statins need only one tablet a day?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: The dosing interval is based on the 'half-life' of the drug's blood concentration — and what determines that half-life?</p>
+        <p>
+          Metabolism (M) and excretion (E) keep clearing the drug: every half-life, the blood concentration
+          halves. Short-half-life drugs must be re-dosed frequently to keep the concentration inside the
+          'effective window'. Statins have long half-lives, and their effect lags the blood concentration —
+          once the enzyme is inhibited, the down-tuning of cholesterol synthesis lasts a whole day, so one
+          tablet a day suffices. Sustained-release capsules (a trick from pharmaceutics) do the reverse:
+          they 'hold back the drug's release', effectively lengthening the half-life.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 SAR ============ -->
+  <section id="sar">
+    <h2>§3 Structure–Activity Relationships: Change One Group, Change Its Fate</h2>
+    <p>
+      The <span class="term">structure–activity relationship (SAR)</span>
+      asks a single question: each time the molecular structure is cut, how does the activity change?
+      Its founding story happens to be a textbook case of the 'false substrate' strategy as well.
+    </p>
+
+    <h3>Sulfonamides: The Antibiotic Dug Out of a Dye Cabinet</h3>
+    <p>
+      In 1932, while testing a batch of red dyes, the German pathologist Domagk found that the dye
+      <span class="formula">Prontosil</span> kept mice infected with streptococci alive — yet in a test tube
+      it had no bactericidal power at all. The riddle was soon solved: in the body the dye is metabolically
+      <strong>cleaved</strong>, releasing the true protagonist,
+      <span class="formula">sulfanilamide</span> (p-aminobenzenesulfonamide). Sulfanilamide looks strikingly
+      like the bacteria's folate-building raw material <strong>PABA</strong> (p-aminobenzoic acid): the
+      bacteria cannot recognize the impostor, and use it to assemble a 'blueprint' from which no folate can
+      be made — cut off from the building blocks of DNA synthesis, they starve to death. The human body, by
+      contrast, never uses PABA to make its own folate — it takes folate straight from food.
+      <strong>No such pathway means no such target</strong>, so sulfanilamides slaughter bacteria while
+      sparing the human body. Domagk received the 1939 Nobel Prize in Physiology or Medicine for this work.
+    </p>
+    <p>
+      Better still, the substituent on the sulfonamide nitrogen can be swapped almost at will — tuning
+      solubility, acidity, and metabolic rate — so one lead molecule snowballed into the entire
+      'sulfonamide family' (thousands of derivatives). Turning 'modify structure → measure activity → find
+      the pattern' into a systematic method is SAR; pushing further into quantitative mathematical models
+      (QSAR) gives today's computer-aided optimization.
+    </p>
+
+    <h3>📐 Worked-Example Scaffold: Choosing a Key for the Pocket</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example · Full walk-through (pocket-mapping problem)</div>
+      <div class="worked-problem">
+        The active pocket of an enzyme is mapped as follows: ① the pocket mouth is about 8 Å wide, ringed by
+        hydrophobic residues at the entrance; ② at the bottom sits one hydrogen-bond donor (—NH);
+        ③ midway along, one amino acid side chain carries a negative charge. Candidate molecules —<br>
+        A: slender and elongated, an —OH at the tail, several methyls on the surface; B: a rigid sphere 12 Å
+        in diameter, covered in hydroxyl groups; C: slender and elongated, a
+        <span class="formula">C=O</span> at the tail, an <span class="formula">—NH₃⁺</span> midway, plus two
+        methyl groups. Which is most likely to become the lead compound?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">First pass the <strong>shape gate</strong> (an instant veto): the mouth is only 8 Å wide, and B,
+          at 12 Å across, slams straight into the wall and is out — exactly the fate of molecule A in the demo just now.</li>
+        <li class="step">Next count the <strong>interaction matches</strong>: the donor —NH at the pocket floor needs the ligand to
+          provide an acceptor atom → A's —OH works, C's <span class="formula">C=O</span> is even stronger; the negatively
+          charged residue midway needs a positive partner on the ligand → only C's <span class="formula">—NH₃⁺</span> fits the bill.</li>
+        <li class="step">Finally check the <strong>hydrophobic fit</strong>: the hydrophobic ring at the entrance favors nonpolar groups →
+          A's several methyls ✓, C's two methyls ✓, both fit.</li>
+        <li class="step">✅ Conclusion: C wins — shape match + three complementary pairs (C=O↔—NH, —NH₃⁺↔the negative residue,
+          CH₃↔the hydrophobic ring). A, missing the electrostatic pair, comes second; B is out on shape. Next step: synthesize
+          a series of C analogues, test their activity, and build the SAR.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Classic cases ============ -->
+  <section id="cases">
+    <h2>§4 Classic Cases: Three Famous Keys</h2>
+
+    <h3>Aspirin: A 'Permanent Seal' by Acetylation</h3>
+    <p>
+      The ancient willow-bark pain remedy owed its power to salicylic acid — which, unfortunately, irritates
+      the stomach. In 1897 Hoffmann, a chemist at Bayer, attached an acetyl group to it (making
+      <span class="formula">acetylsalicylic acid</span>): same potency, far less gastric irritation. The
+      mechanism emerged only decades later: aspirin <strong>acetylates</strong> a serine in the active
+      center of cyclooxygenase (COX) — covalent and irreversible, effectively sealing the enzyme with a
+      label that cannot be peeled off. Platelets have no nucleus and cannot manufacture fresh enzyme, so a
+      tiny dose suffices for long-lasting suppression of thrombus formation: the same molecule relieves
+      fever, pain, and inflammation at high doses and blocks platelets at low doses.
+    </p>
+
+    <h3>Penicillin: The Strained Four-Membered Ring</h3>
+    <p>
+      In 1928 Fleming returned from holiday to find staphylococci wiped out all around a single Penicillium
+      spore on a culture dish. Penicillin's killing stroke lies in the <span class="term">β-lactam ring</span>:
+      a four-membered ring whose bond angles are forcibly squeezed to 90°, as tension-loaded as a wound
+      spring. Its shape closely mimics the substrate of the bacterial cell-wall cross-linking reaction (the
+      D-Ala–D-Ala dipeptide); once the transpeptidase bites down, the strained ring springs open on the spot
+      and <strong>covalently locks</strong> the serine in the enzyme's active center —
+      'suicide' inhibition. Cell-wall cross-linking fails, and bacteria swell with water and burst.
+      Resistant bacteria counter by secreting β-lactamases that dismantle the spring in advance;
+      'suicide inhibitors' such as clavulanic acid in turn protect the ring — an arms race that continues to this day.
+    </p>
+
+    <h3>Statins: Competitors That Mimic the Substrate</h3>
+    <p>
+      In 1976 the Japanese microbiologist Akira Endo found the first statin in a mold. The open-chain part
+      of these molecules is a dead ringer for HMG-CoA, the substrate of HMG-CoA reductase, the rate-limiting
+      enzyme of cholesterol synthesis — a textbook competitive inhibitor: it occupies the active site but
+      'does not react', the production line idles, and blood lipids fall. Atorvastatin (Lipitor) became one
+      of the best-selling drugs in history — from mold metabolite to 'drug of the century', with SAR
+      optimization paving the road the whole way.
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · 'Natural medicines are safer than synthetic ones'</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Natural = gentle, nontoxic, take as you please; made in a lab = a 'chemical', bound to be harmful.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Safety is decided by the <strong>molecule itself and the dose</strong>, not by its origin. Arsenic
+          (arsenic trioxide) is perfectly natural yet acutely toxic; aconitine and aristolochic acid are
+          natural poisons too. Conversely, natural products can be the starting point of great drugs —
+          paclitaxel comes from yew bark, yet because it barely dissolves in water it must be chemically
+          modified and specially formulated before it can be injected; artemisinin, too, became easier to
+          use only after structural optimization (artemether). Fittingly, under strict dose control, lethal
+          arsenic is now delivered as an arsenic trioxide injection to treat acute promyelocytic leukemia —
+          <strong>remedy or poison depends entirely on the molecule, the dose, and how it is used</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 Chirality ============ -->
+  <section id="chirality">
+    <h2>§5 The Lesson of Chirality: One Tablet, Two Drugs</h2>
+    <p>
+      Recall <a href="../02-Organic-Chemistry/index.html">Branch 02 · Stereochemistry</a>: different spatial
+      arrangements of the four groups on a chiral carbon give two molecules that are mirror images yet can
+      never be superimposed no matter how you turn them (enantiomers). In an achiral environment (boiling
+      water, filter paper) they are indistinguishable; but proteins are folded from L-amino acids and are
+      <strong>thoroughly chiral locks</strong> — the left-glove/right-glove distinction is magnified here
+      into two completely different pharmacological effects.
+    </p>
+    <p>
+      In the late 1950s the anti-nausea sedative <strong>thalidomide</strong> was widely prescribed in Europe
+      for morning sickness, advertised as 'safe and harmless'. In 1961 the truth came out: it had caused over
+      ten thousand babies to be born with 'seal-limb' (phocomelia) deformities. Later research pointed to
+      chirality — the <span class="formula">(R)</span> isomer is responsible for the sedation, while the
+      <span class="formula">(S)</span> isomer disrupts the angiogenesis that drives limb-bud development in
+      the fetus. Crueler still, the two isomers <strong>interconvert</strong> in the body: even if only the
+      'good hand' is administered, the 'bad hand' slowly forms anyway. After the tragedy, the rule that every
+      enantiomer of a chiral drug must be evaluated separately for efficacy and safety was written into drug
+      regulation worldwide, and it ignited the industrial boom in asymmetric synthesis and chiral resolution.
+      (An ironic epilogue: under strict contraception protocols, thalidomide has returned to use for erythema
+      nodosum leprosum and multiple myeloma — the molecule has no morals; the way it is used makes all the difference.)
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Chirality is part of the drug's effect</div>
+      For a drug candidate that contains a chiral center, <strong>every enantiomer must be evaluated as an
+      independent new drug</strong>: one may be good and the other bad (thalidomide); only one may be the
+      true drug (most cases); or the two may act hand in hand. Structure determines properties — and
+      stereostructure is structure too.
+    </div>
+  </section>
+
+  <!-- ============ §6 Modern design ============ -->
+  <section id="modern">
+    <h2>§6 Modern Methods: Three Ways to Find a Needle in a Haystack</h2>
+    <p>In the classic era, drugs mostly came from 'luck + extraction'; today there are at least three systematic approaches to sieving out a good key.</p>
+    <ul>
+      <li><strong>High-throughput screening (HTS)</strong> — robots 'try the key' one by one across compound libraries of hundreds of
+        thousands to millions, measuring activity in bulk on microplates. Hit rates are tiny, but the method needs no prior
+        knowledge, so even obscure targets can yield surprises. The 'hits' it pans out are polished by SAR into 'leads',
+        and finally optimized into drugs.</li>
+      <li><strong>Structure-based drug design</strong> — first obtain the 3D structure of the target protein (X-ray crystallography,
+        cryo-EM, or an AlphaFold prediction), then run <span class="term">molecular docking</span>
+        in the computer: exactly as you did in the §1 demo, candidate molecules are rotated into the pocket,
+        scored, and ranked. The anti-influenza drug oseltamivir (Tamiflu) was tailor-made against the neuraminidase pocket.</li>
+      <li><strong>PROTACs and degradation therapy</strong> — in one sentence: instead of merely 'plugging up' the target protein, hand
+        one arm each to the recruited E3 ubiquitin ligase and the target protein, tagging the target with a 'ubiquitin
+        degradation label' so the cell's own proteasome dismantles it whole — an upgrade from 'effective only while bound'
+        to 'tag once, degrade catalytically'.</li>
+    </ul>
+    <p style="margin-bottom:0">
+      The tools change; the logic does not: <strong>shape + interactions + ADME</strong>. AI-generated
+      molecules and DNA-encoded libraries (DEL) encoding trillions of compounds merely compute the same
+      problem faster — the chemistry of keys and locks remains the foundation of drug design.
+    </p>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The first step of drug action is <strong>molecular recognition</strong>: three classes of targets — receptors,
+          enzymes, ion channels; lock-and-key speaks of complementarity, induced fit of flexibility; hydrogen bonds,
+          electrostatics, hydrophobic contacts, and van der Waals forces together set the binding energy — the more negative, the tighter.</li>
+        <li>A drug 'recognizing' the diseased site is an illusion: no navigation, passive distribution — the effect accumulates
+          through <strong>target differences + selective residence</strong>.</li>
+        <li><strong>ADME</strong> in one sentence: able to arrive (A), stay (D), work (M), and leave (E) —
+          pass all four gates before calling it a drug.</li>
+        <li><strong>SAR</strong>: vary a group, watch the activity. Sulfanilamide poses as PABA and tricks bacteria into
+          building 'fake folate'; the selective toxicity exists because humans lack this pathway.</li>
+        <li>Three famous keys, three modes of inhibition: aspirin covalently acetylates COX; penicillin's β-lactam
+          'suicide'-locks the transpeptidase; statins competitively occupy the site by mimicking the substrate.</li>
+        <li><strong>Chirality is efficacy</strong>: thalidomide's two enantiomers — one good, one bad — interconvert in vivo;
+          every enantiomer must be evaluated on its own.</li>
+        <li>Modern methods (HTS / structure-based docking / PROTACs) are new tools; 'shape + interactions + ADME' is the old foundation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · The Chemistry of Drug Design <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Which statement about the 'lock-and-key model' and 'induced fit' is correct?",
+            "options": [
+              "The two are fully equivalent, differing only in name",
+              "The lock-and-key model treats the receptor pocket as rigid; induced fit emphasizes mutual conformational adjustment of both partners during binding",
+              "Induced fit holds that a drug must form covalent bonds with the receptor",
+              "The lock-and-key model holds that the receptor pocket can change shape arbitrarily"
+            ],
+            "answer": 1,
+            "explain": "Fischer's lock-and-key model explains specificity by 'rigid complementarity'; Koshland's induced fit adds that as a ligand approaches, the conformations of the pocket and the ligand adjust to each other — the lock bends slightly for the key. The two are successive refinements, not opposites."
+          },
+          {
+            "q": "In ADME, what does the letter M stand for?",
+            "options": ["Distribution", "Metabolism", "Absorption", "Excretion"],
+            "answer": 1,
+            "explain": "M = Metabolism: mainly hepatic oxidation by CYP450 (phase I), followed by attachment of polar groups such as glucuronic acid (phase II), easing clearance by the kidney (E, excretion). A is absorption and D is distribution."
+          },
+          {
+            "q": "Sulfonamides inhibit bacteria yet are hardly toxic to human cells — why?",
+            "options": [
+              "Sulfonamides decompose and are inactivated as soon as they enter the blood",
+              "Sulfonamides resemble PABA and pose as the raw material so bacteria cannot make folate; humans get folate directly from food and lack this pathway",
+              "Sulfonamides specifically dissolve bacterial cell walls",
+              "Human cell membranes are completely impermeable to sulfonamides"
+            ],
+            "answer": 1,
+            "explain": "A classic of selective toxicity: bacteria must synthesize folate themselves from PABA, and the sulfonamide displaces the raw material to cut the supply; humans obtain folate directly from the diet — the target is absent in humans, hence the safety. Option C is penicillin's logic."
+          },
+          {
+            "q": "What is the key reason the β-lactam ring of penicillin can kill bacteria?",
+            "options": [
+              "The strained four-membered ring resembles D-Ala–D-Ala; on ring opening it covalently locks the transpeptidase, blocking cell-wall cross-linking",
+              "A stable six-membered aromatic ring inhibits the enzyme through reversible hydrogen bonds",
+              "A metal ion inside the ring catalyzes cell-wall hydrolysis",
+              "The methyl group on the ring is an indispensable pharmacophore element"
+            ],
+            "answer": 0,
+            "explain": "Bond angles in the four-membered ring are squeezed to about 90°, like a wound spring; penicillin mimics D-Ala–D-Ala, the substrate of cell-wall cross-linking, and once the transpeptidase bites, the ring springs open and covalently acylates the enzyme's active center — cross-linking fails and the bacteria swell and burst."
+          },
+          {
+            "q": "What is the core lesson the thalidomide tragedy taught medicinal chemistry?",
+            "options": [
+              "Natural medicines are safer than synthetic ones",
+              "Oral administration inevitably causes deformities",
+              "The color of a tablet affects embryonic development",
+              "Mirror-image enantiomers can be 'two different drugs' and can interconvert in vivo, so each enantiomer of a chiral drug must be evaluated separately for safety and efficacy"
+            ],
+            "answer": 3,
+            "explain": "The (R) isomer is sedative, the (S) isomer teratogenic, and the two interconvert in the body — even giving the 'good hand' alone cannot avoid the risk. Since then, drug regulators worldwide have required each enantiomer to receive a full evaluation, which also drove the asymmetric-synthesis industry."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">10 Medicinal Chemistry · Overview</span></a>
+      <a class="next" href="../11-Nuclear-and-Radiochemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">11 Nuclear and Radiochemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter custom interaction (ligand–receptor docking simulator) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  var svg = document.getElementById("dockSvg");
+  var readout = document.getElementById("dockReadout");
+  if (!svg || !readout) return;
+
+  var RED = "#dc2626", BLUE = "#2563eb", BOND = "#334155";
+  var LC = { A: ["#d8b4fe", "#7e22ce"], B: ["#86efac", "#15803d"], C: ["#fdba74", "#c2410c"] };
+  var animating = false;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Receptor pocket: L-shaped cavity (horizontal channel y128–192 + vertical cavity above x420–468, y52–128) */
+  function drawReceptor() {
+    svg.innerHTML = "";
+    el("path", {
+      d: "M 300,24 L 516,24 Q 536,24 536,44 L 536,296 Q 536,316 516,316 L 300,316 " +
+         "L 300,192 L 468,192 L 468,52 L 420,52 L 420,128 L 300,128 Z",
+      fill: "#e2e8f0", stroke: "#94a3b8", "stroke-width": 2, "stroke-linejoin": "round"
+    }, svg);
+    el("text", { x: 418, y: 254, "text-anchor": "middle", "font-size": 14, "font-weight": 700, fill: "#475569" }, svg).textContent = "Target protein (receptor)";
+    el("text", { x: 418, y: 274, "text-anchor": "middle", "font-size": 10.5, fill: "#64748b" }, svg).textContent = "Binding pocket opens to the left";
+
+    /* Site ①: hydrogen-bond donor on the roof of the vertical cavity (red) */
+    el("line", { x1: 440, y1: 53, x2: 440, y2: 57, stroke: RED, "stroke-width": 2 }, svg);
+    el("circle", { cx: 440, cy: 58, r: 3.5, fill: RED }, svg);
+    el("text", { x: 450, y: 55, "font-size": 10, "font-weight": 700, fill: RED }, svg).textContent = "①";
+    /* Site ②: hydrogen-bond acceptor on the floor of the channel (blue) */
+    el("line", { x1: 376, y1: 191, x2: 376, y2: 187, stroke: BLUE, "stroke-width": 2 }, svg);
+    el("circle", { cx: 376, cy: 186.5, r: 3.5, fill: BLUE }, svg);
+    el("text", { x: 376, y: 206, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: BLUE }, svg).textContent = "②";
+    /* Site ③: hydrogen-bond acceptor on the roof of the channel (blue) */
+    el("line", { x1: 352, y1: 129, x2: 352, y2: 133, stroke: BLUE, "stroke-width": 2 }, svg);
+    el("circle", { cx: 352, cy: 133.5, r: 3.5, fill: BLUE }, svg);
+    el("text", { x: 352, y: 123, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: BLUE }, svg).textContent = "③";
+    /* Hydrophobic region: yellow strip on the floor */
+    el("rect", { x: 400, y: 186, width: 62, height: 6, fill: "#facc15", stroke: "#ca8a04", "stroke-width": .75, opacity: .9 }, svg);
+    el("text", { x: 431, y: 206, "text-anchor": "middle", "font-size": 9.5, fill: "#a16207" }, svg).textContent = "Hydrophobic";
+  }
+
+  /* Candidate molecules (local coordinates; group origin = top-left of the horizontal bar) */
+  function drawLigand(which, g) {
+    var c = LC[which];
+    var common = { fill: c[0], stroke: c[1], "stroke-width": 2 };
+    if (which === "A") {
+      el("rect", { x: 0, y: 0, width: 84, height: 84, rx: 12 }, g).setAttribute("style", "fill:" + c[0] + ";stroke:" + c[1] + ";stroke-width:2");
+      el("circle", Object.assign({ cx: 84, cy: 18, r: 8 }, common), g);
+      el("circle", Object.assign({ cx: 89, cy: 44, r: 9 }, common), g);
+      el("circle", Object.assign({ cx: 84, cy: 70, r: 8 }, common), g);
+      var ta = el("text", { x: 40, y: 50, "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: c[1] }, g);
+      ta.textContent = "A";
+    } else {
+      if (which === "B") el("rect", Object.assign({ x: 114, y: -64, width: 40, height: 64, rx: 6 }, common), g);
+      if (which === "C") el("rect", Object.assign({ x: 114, y: -34, width: 40, height: 34, rx: 6 }, common), g);
+      el("rect", Object.assign({ x: 0, y: 0, width: 156, height: 26, rx: 6 }, common), g);
+      /* Groups on the ligand: donor red / acceptor blue / hydrophobic patch yellow */
+      el("circle", { cx: 70, cy: 23, r: 4, fill: RED, stroke: "#7f1d1d", "stroke-width": 1 }, g);
+      el("circle", { cx: 46, cy: 3, r: 4, fill: RED, stroke: "#7f1d1d", "stroke-width": 1 }, g);
+      if (which === "B") el("circle", { cx: 134, cy: -58, r: 4, fill: BLUE, stroke: "#1e3a8a", "stroke-width": 1 }, g);
+      el("rect", { x: 94, y: 26, width: 62, height: 5, fill: "#facc15", stroke: "#ca8a04", "stroke-width": .75 }, g);
+      var t = el("text", { x: 20, y: 13, "font-size": 12, "font-weight": 800, fill: c[1] }, g);
+      t.textContent = which;
+    }
+  }
+
+  /* Docking result overlay (global coordinates) */
+  function drawResult(which) {
+    if (which === "A") {
+      [["✗", 300, 146], ["✗", 300, 178]].forEach(function (m) {
+        var t = el("text", { x: m[1], y: m[2], "text-anchor": "middle", "font-size": 15, "font-weight": 800, fill: "#b91c1c", class: "anim-pulse" }, svg);
+        t.textContent = m[0];
+      });
+      var lab = el("text", { x: 258, y: 116, "text-anchor": "middle", "font-size": 11, "font-weight": 700, fill: "#b91c1c" }, svg);
+      lab.textContent = "Shape clash!";
+    } else if (which === "B") {
+      [[440, 62, 440, 81], [376, 173, 376, 182], [352, 138, 352, 144]].forEach(function (l) {
+        el("line", { x1: l[0], y1: l[1], x2: l[2], y2: l[3], stroke: BOND, "stroke-width": 2.5, "stroke-dasharray": "4 3" }, svg);
+      });
+    } else {
+      [[376, 173, 376, 182], [352, 138, 352, 144]].forEach(function (l) {
+        el("line", { x1: l[0], y1: l[1], x2: l[2], y2: l[3], stroke: BOND, "stroke-width": 2.5, "stroke-dasharray": "4 3" }, svg);
+      });
+      el("line", { x1: 440, y1: 63, x2: 440, y2: 102, stroke: "#b91c1c", "stroke-width": 2, "stroke-dasharray": "2 4", opacity: .55 }, svg);
+      var q = el("text", { x: 452, y: 88, "font-size": 15, "font-weight": 800, fill: "#b91c1c", class: "anim-pulse" }, svg);
+      q.textContent = "？";
+      var lab2 = el("text", { x: 440, y: 118, "text-anchor": "middle", "font-size": 10, "font-weight": 700, fill: "#b91c1c" }, svg);
+      lab2.textContent = "Site ① unpaired";
+    }
+  }
+
+  function drawIdle() {
+    drawReceptor();
+    var g = el("g", { class: "anim-float", transform: "translate(42,146)" }, svg);
+    drawLigand("B", g);
+    readout.textContent = "👆 Pick a candidate molecule and try to fit it into the receptor pocket on the right";
+  }
+
+  var MSG = {
+    A: "✗ Molecule A: its blocky bulk exceeds the pocket mouth — it hits the wall and cannot enter → binding energy ≈ −0.8 kcal/mol (too weak; washed away by the bloodstream)",
+    B: "✓ Molecule B: shape complementarity + 3 hydrogen bonds + hydrophobic contact → binding energy ≈ −9.5 kcal/mol (strong binding · lead candidate)",
+    C: "△ Molecule C: close in shape, but site ① deep in the pocket has no partner group → binding energy ≈ −5.3 kcal/mol (moderate · starting point for SAR optimization)"
+  };
+
+  function tryDock(which) {
+    if (animating) return;
+    animating = true;
+    drawReceptor();
+    var y = which === "A" ? 116 : 146;
+    var x0 = 42;
+    var x1 = which === "A" ? 202 : 306;   /* A: crashes at the pocket mouth; B/C: slide into the channel */
+    var g = el("g", { transform: "translate(" + x0 + "," + y + ")" }, svg);
+    drawLigand(which, g);
+    var dur = reduce ? 1 : 900;
+    var t0 = null;
+    function frame(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      g.setAttribute("transform", "translate(" + (x0 + (x1 - x0) * e) + "," + y + ")");
+      if (k < 1) { requestAnimationFrame(frame); return; }
+      drawResult(which);
+      readout.textContent = MSG[which];
+      animating = false;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  [["dockA", "A"], ["dockB", "B"], ["dockC", "C"]].forEach(function (p) {
+    var b = document.getElementById(p[0]);
+    if (b) b.addEventListener("click", function () { tryDock(p[1]); });
+  });
+  var rb = document.getElementById("dockReset");
+  if (rb) rb.addEventListener("click", function () { if (!animating) drawIdle(); });
+
+  drawIdle();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemical Kinetics · Physical Chemistry Chapter 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">04 Physical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 2 · Chemical Kinetics</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 Physical Chemistry · Chapter 2</div>
+    <h1>Chemical Kinetics: The Stopwatch of Change</h1>
+    <p class="lede">
+      The same bottle of fresh milk turns sour in a day on the counter, keeps for a week in the fridge,
+      and can even last for months in the freezer. Thermodynamics long ago passed the death sentence on
+      "spoilage" (ΔG &lt; 0), yet it never says <strong>when</strong> the sentence is carried out —
+      the previous chapter governed direction; this one governs time.
+      <strong>Chemical kinetics studies how fast reactions go and by what path</strong>:
+      How is a rate defined and measured? By what factors do concentration, temperature, and catalysts
+      each accelerate it? Why does a mere 10 °C of warming double the rate? The answer hides in the
+      "long tail" of the molecular energy distribution.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 Chemical Thermodynamics</span>
+      <span class="chip">Interactive animations ×2 (energy distribution · energy-level diagram)</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#rate">Reaction Rates</a>
+    <a href="#order">Rate Equations and Orders</a>
+    <a href="#temp">Temperature and Activation Energy</a>
+    <a href="#catal">Catalysts and Mechanisms</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Speed Is Chemistry Too</h2>
+    <p>
+      An iron nail rusts over days, a steel plant melts a heat of steel in tens of minutes, and an airbag
+      inflates fully within 30 milliseconds of a crash — all of them are oxidation reactions, yet their
+      speeds differ by sixteen orders of magnitude. What decides the difference is not "should it happen"
+      (thermodynamics' turf) but "how the molecules meet one another and how they cross the threshold"
+      (kinetics' turf).
+    </p>
+    <p>
+      The two questions look parallel but are in fact complementary: thermodynamics says "only the downhill
+      road is open", while kinetics says "coming down the mountain still means crossing a pass — how high
+      the pass is and how many get over it decide when you reach the foot of the mountain". This chapter
+      unfolds in the order "first measure the speed (§1) → find the pattern (§2) → explain temperature (§3)
+      → bring in the catalyst (§4)", and at the end you will understand why the refrigerator, the match,
+      the catalytic converter, and the enzyme are, at bottom, four disguises of one and the same thing.
+    </p>
+  </section>
+
+  <!-- ============ §1 Rate of Reaction ============ -->
+  <section id="rate">
+    <h2>§1 Rate of Reaction: Clocking Change</h2>
+    <p>
+      A rate is simply "how fast the concentration changes". For reactants we take how fast they are
+      consumed, for products how fast they accumulate — always as a positive value:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">v = |Δc / Δt|</span>, most commonly in units of <span class="formula">mol·L⁻¹·s⁻¹</span>
+    </p>
+    <p>
+      Take ammonia synthesis: <span class="formula">N₂ + 3H₂ → 2NH₃</span>. Every 1 mol of N₂ consumed
+      necessarily comes with 3 mol of H₂ consumed and 2 mol of NH₃ formed, so the speeds the three species
+      "report" are not the same — H₂ is consumed three times as fast as N₂, and NH₃ is formed twice as
+      fast as N₂. To put everyone on the same scale, we agree to <strong>divide by the respective
+      stoichiometric coefficients</strong>: <span class="formula">v(N₂)/1 = v(H₂)/3 = v(NH₃)/2</span>,
+      so that the rate has the same value whichever species is used to express it.
+    </p>
+    <p>
+      How do we "see" a rate experimentally? Any property that varies monotonically with concentration can
+      serve as the stopwatch: <strong>pressure</strong> (reactions with a change in the number of gas
+      moles), <strong>color</strong> (e.g. the fading of KMnO₄), <strong>electrical conductivity</strong>
+      (changing ion concentrations), <strong>volume</strong> (a gas burette). The essence of a kinetics
+      experiment is exactly this: plot the "concentration–time" curve, and its slope is the rate.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: For the reaction 2N₂O₅ → 4NO₂ + O₂, which is larger — the rate expressed through the consumption of N₂O₅, or the rate expressed through the formation of O₂? By how many times?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: one O₂ is "born" only for every two N₂O₅ that "disappear".</p>
+        <p>
+          The rate of formation of O₂ is <strong>1/2</strong> of the rate of consumption of N₂O₅ (or, put
+          the other way, the N₂O₅ rate is twice the O₂ rate). In the same reaction at the same instant, the
+          rates of different species can differ several-fold — so a reported rate must always state
+          "expressed in terms of which species", or be converted to a single scale via the stoichiometric
+          coefficients.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Rate Equations and Orders ============ -->
+  <section id="order">
+    <h2>§2 The Rate Equation and the Order of Reaction: The Pattern Comes from Experiment</h2>
+    <p>
+      Writing the relationship between rate and concentration as a mathematical expression gives the
+      <span class="term">rate equation</span>. For a common reaction:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">v = k[A]<sup>m</sup>[B]<sup>n</sup></span>
+    </p>
+    <p>
+      where <span class="formula">k</span> is the <span class="term">rate constant</span> — it changes as
+      soon as the temperature or the catalyst changes; the exponents m and n are the orders of reaction
+      with respect to A and B, and m + n is the overall order. Zeroth order (concentration does not affect
+      the rate), first order, second order, order 1.5 … all genuinely exist.
+    </p>
+    <p>
+      The most crucial rule: <strong>orders are determined by experiment and must never be read off the
+      coefficients of the equation</strong>. Most reactions do not complete in a single step but go
+      through several (see §4), and the rate is set by the slowest of them, which often fails to match
+      the overall equation's coefficients. Classic counterexamples: the experimental rate equation for
+      H₂ + Br₂ → 2HBr is complicated enough to carry fractional powers and ratio terms, while the
+      superficially "simple" NO₂ + CO → NO + CO₂ is measured at low temperature to follow
+      v = k[NO₂]² — flatly independent of [CO].
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Copying Orders from Coefficients = Giving Away Free Marks</div>
+      Seeing aA + bB → products and writing v = k[A]<sup>a</sup>[B]<sup>b</sup> is the most classic of
+      mistakes. The only exception is an <span class="term">elementary reaction</span> — a reaction
+      completed in a single step — where the coefficients may be used (this is the law of mass action).
+      Whether an overall reaction qualifies is decided by <strong>experiment alone</strong>.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: Determining the Orders from Experimental Data</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Guided Practice (work it with me)</div>
+      <div class="worked-problem">
+        At 25 °C, the initial rates of the reaction 2A + B → 2C were measured as follows. Find m, n, and
+        the rate constant k, and write the rate equation.
+        <table class="tbl" style="margin:10px 0 0">
+          <thead><tr><th>Experiment</th><th>[A]₀ / (mol·L⁻¹)</th><th>[B]₀ / (mol·L⁻¹)</th><th>Initial rate v / (mol·L⁻¹·s⁻¹)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>0.10</td><td>0.10</td><td>0.010</td></tr>
+            <tr><td>2</td><td>0.20</td><td>0.10</td><td>0.040</td></tr>
+            <tr><td>3</td><td>0.20</td><td>0.30</td><td>0.120</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Pick a pair to compare: compare 1 with 2 — [B] is held fixed while [A] doubles
+          (0.10→0.20), and the rate goes from 0.010 to 0.040, a <strong>4-fold</strong> change.
+          2<sup>m</sup> = 4 → m = <strong>2</strong>.</li>
+        <li class="step">💡 Now compare 2 with 3 — this time [A] is fixed and [B] becomes 3 times as large
+          (0.10→0.30), and the rate goes from 0.040 to 0.120, exactly <strong>3-fold</strong>.
+          3<sup>n</sup> = 3 → n = <strong>1</strong>.</li>
+        <li class="step">💡 The rate equation is <span class="formula">v = k[A]²[B]</span>, and the overall
+          order is 3. Note that the equation's coefficients read "2A + B" — copying them would give
+          v = k[A]²[B], which in this example coincides only by luck; mistake the shortcut for a guarantee
+          and the next problem will trip you. Orders are always decided by the data.</li>
+        <li class="step">💡 Substitute the data of experiment 1 to find k: 0.010 = k × (0.10)² × 0.10 =
+          k × 0.0010 → k = <strong>10 L²·mol⁻²·s⁻¹</strong>.
+          ✅ Self-check: verify with experiment 3 — 10×(0.20)²×0.30 = 10×0.012 = 0.120 ✓, matching
+          the data.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: The experimental rate equation for the decomposition of H₂O₂ is v = k[H₂O₂], unrelated to the coefficient 2 in "2H₂O₂ → 2H₂O + O₂". What does this hint at?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: what if the step that sets the pace requires only one H₂O₂ molecule…</p>
+        <p>
+          The rate depends only on the first power of [H₂O₂], which means <strong>the rate-determining
+          step (see §4) involves just one H₂O₂ molecule</strong>, not two H₂O₂ colliding head-on. In fact
+          the reaction proceeds in several steps, with intermediates such as I⁻ acting as go-betweens.
+          A rate equation is a clue in a detective story: read backwards, it helps chemists reconstruct
+          the reaction mechanism.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Temperature and Activation Energy ============ -->
+  <section id="temp">
+    <h2>§3 Temperature and Activation Energy: The Exponential Speedometer</h2>
+
+    <h3>Collision Theory: What Kind of Collision Counts as "Effective"</h3>
+    <p>
+      The first act of a reaction is molecules colliding. But the molecules collide billions of billions
+      of times every second, and after the overwhelming majority they simply part ways —
+      <span class="term">collision theory</span> says that only an
+      <span class="term">effective collision</span> satisfying two conditions at once can set a reaction
+      going:
+    </p>
+    <ul>
+      <li><strong>Enough energy</strong>: the relative kinetic energy must clear a certain threshold, and
+        this threshold — the difference between the minimum energy of an activated molecule and the
+        average energy of the reactants — is the <span class="term">activation energy, E<sub>a</sub></span>;</li>
+      <li><strong>Correct orientation</strong>: the molecules must meet at the proper angle — if the
+        reactive sites fail to line up, even abundant energy is wasted on the collision.</li>
+    </ul>
+
+    <h3>The Arrhenius Equation: The Threshold Written into an Exponent</h3>
+    <p>
+      In 1889, Arrhenius condensed the picture above into a formula:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">k = A·e<sup>−E<sub>a</sub>/RT</sup></span>
+    </p>
+    <p>
+      A is the "frequency factor" (how often collisions happen and what fraction have the right
+      orientation), and the exponential term <span class="formula">e<sup>−E<sub>a</sub>/RT</sup></span>
+      is the "fraction with enough energy". E<sub>a</sub> sits in <strong>the numerator of the
+      exponent</strong> while T sits inside the product in the denominator — this is the mathematical
+      root of why a tiny change in temperature turns the rate upside down. Rule of thumb:
+      <strong>near room temperature, every 10 °C rise roughly doubles the rate</strong>.
+    </p>
+
+    <h3>🔬 Try It Out: The Molecular Energy Distribution Curve</h3>
+    <p>
+      Drag the temperature slider and watch how the whole distribution shifts right and broadens, and how
+      the <strong>shaded area</strong> beyond the activation-energy line (the fraction of molecules with
+      enough energy) swells dramatically. This curve is called the Maxwell–Boltzmann distribution, the
+      hidden protagonist behind all of this chapter's "temperature magic".
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mbSvg" width="640" height="270" viewBox="0 0 640 270" role="img" aria-label="Schematic of the molecular kinetic energy distribution changing with temperature">
+          <!-- Axes -->
+          <line x1="60" y1="210" x2="614" y2="210" stroke="#94a3b8" stroke-width="1.5"></line>
+          <line x1="60" y1="210" x2="60" y2="26" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="608" y="230" text-anchor="end" font-size="12" fill="#4b5563">Molecular kinetic energy →</text>
+          <text x="20" y="120" font-size="12" fill="#4b5563" transform="rotate(-90 20 120)">Number of molecules at this energy</text>
+          <!-- Activation energy line -->
+          <line x1="468" y1="210" x2="468" y2="36" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6 4"></line>
+          <text x="468" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">Activation energy Eₐ</text>
+          <!-- 200 K reference curve (grey) -->
+          <path id="mbRef" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5 4"></path>
+          <!-- Current curve and shading -->
+          <path id="mbShade" fill="rgba(3,105,161,.30)" stroke="none"></path>
+          <path id="mbCurve" fill="none" stroke="#0369a1" stroke-width="3"></path>
+          <text id="mbTlabel" font-size="12" font-weight="700" fill="#075985"></text>
+          <text id="mbRefLabel" font-size="11" fill="#94a3b8"></text>
+        </svg>
+        <div class="fig-controls">
+          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:300px">
+            Temperature T = <b id="mbTv">300</b> K (drag to watch the shaded area change)
+            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Temperature slider">
+          </label>
+        </div>
+        <div class="fig-readout" id="mbReadout"></div>
+      </div>
+      <figcaption>
+        Schematic (proportions adjusted for visual clarity). The grey dashed curve is always the 200 K
+        reference distribution; the blue curve shifts right, broadens, and dips slightly at its peak as
+        the temperature rises — but what actually governs the rate is not "the mean kinetic energy rose
+        3%"; it is the several-fold swelling of the right-tail area beyond the Eₐ line.
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 A Ladder of Three Rungs · Warm by 10 °C and the rate doubles — the temperature rose a mere 3%, so what justifies that?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Imagine a class with a mean score of 60 and a pass line of 90. On the final exam the mean rises
+          by just 3 points (up 5%), yet the number of students passing may <strong>double</strong> —
+          because the "borderline students" crowded at 88 and 89 are the densest group, and a small
+          rightward shift of the mean pushes a whole batch of them over the line. Molecular energy works
+          the same way: the mean kinetic energy rises only 3% with temperature, yet the molecules piled
+          up just below the activation-energy line are precisely the densest crowd, so a tiny rightward
+          shift of the distribution sends <strong>molecules over the line in droves</strong>.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Numbers</span>
+        <p>
+          Mean kinetic energy ∝ T: 298 K → 308 K is a rise of only 3.4%. But the rate constant answers
+          to the Arrhenius equation. Take E<sub>a</sub> = 50 kJ/mol (a typical magnitude) and
+          R = 8.314 J·mol⁻¹·K⁻¹: on warming, e<sup>−E<sub>a</sub>/RT</sup> grows by a factor of
+          <span class="formula">e<sup>Eₐ/R × (1/298 − 1/308)</sup></span>; the exponent equals
+          50000/8.314 × 10/(298×308) ≈ 0.655, and e<sup>0.655</sup> ≈ <strong>1.9 times</strong> —
+          precisely where the "doubling" rule of thumb comes from. The temperature change is amplified
+          by the exponent: 3% goes in, 100% comes out.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          The Boltzmann factor <span class="formula">e<sup>−Eₐ/RT</sup></span> comes from statistical
+          mechanics: the fraction of molecules with energy ≥ E<sub>a</sub> decays
+          <strong>exponentially in energy</strong>. The tail of the distribution curve is a long
+          exponential tail — the head (the low-energy region) is crowded with molecules while the tail is
+          sparsely populated; as temperature shifts the distribution rightward, <strong>the head
+          contributes little while the tail's share explodes</strong>. This is also why reactions with a
+          larger E<sub>a</sub> are more temperature-sensitive (the doubling rule is most accurate near
+          E<sub>a</sub> ≈ 50 kJ/mol; the actual factor ranges from about 1.2 to 4, and "doubling" is only
+          an empirical average near room temperature).
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: A woodpile will not burn on its own, yet striking one match can set the whole pile alight. What exactly does the fire-lighter provide?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: what "admission fee" does the match's flame pay on behalf of the molecules at the wood's surface?</p>
+        <p>
+          What it provides is <strong>the admission fee of activation energy</strong>. The flame pushes a
+          local batch of molecules over the barrier; a little wood burns first, and the heat released
+          pushes more molecules over the line — the reaction pays its own "ignition fee", and once lit
+          it sustains itself. An engine's spark plug, a lighter's flint, and the barrier lowered by
+          protein-digesting enzymes all play the same role:
+          <strong>advancing E<sub>a</sub> up front</strong>. How much net heat can be released once the
+          fire is burning is ΔH's business (previous chapter).
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 Worked-Example Scaffold: Mental Arithmetic with the "Doubling Rule"</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Full Demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        A reaction takes 8 hours to complete at 20 °C. About how long would it take at 50 °C?
+        (Do the arithmetic in your head with the rule of thumb "every 10 °C rise roughly doubles the rate".)
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Identify the tool: the rule of thumb is a relation about <strong>rates</strong>,
+          while the problem gives a <strong>time</strong>. Time is inversely proportional to rate (for
+          the same "amount of reaction", a larger v means a smaller t), so first compute the rate
+          factor, then take its reciprocal.</li>
+        <li class="step">Count the steps: 50 − 20 = 30 °C = three "10 °C steps",
+          so the rate increases by about 2³ = <strong>8 times</strong>.</li>
+        <li class="step">Convert to time: rate ×8 → time ÷8: 8 hours ÷ 8 = <strong>1 hour</strong>.</li>
+        <li class="step">✅ Self-check and limits: the mental arithmetic is reasonable (8 h → 1 h). Note
+          that this is a <strong>rough estimate</strong> — if the reaction's E<sub>a</sub> departs from
+          50 kJ/mol, the factor departs from 2; at high temperature, side reactions and decomposition
+          come to meddle as well. Use the rule for "order-of-magnitude judgment", never for precise
+          calculation.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Catalysts and Mechanisms ============ -->
+  <section id="catal">
+    <h2>§4 Catalysts and Reaction Mechanisms: The Art of the Shortcut</h2>
+
+    <h3>Catalysts: A New Route, Not a New Destination</h3>
+    <p>
+      A <span class="term">catalyst</span> can speed up a reaction enormously, and its secret fits in one
+      sentence: <strong>it takes part in the reaction, provides a new pathway of lower activation energy,
+      and is regenerated unscathed at the end</strong>. Lower the threshold from 80 kJ/mol to 45 kJ/mol
+      and, by the Arrhenius calculation, the rate at 298 K can rise by a factor on the order of a
+      million — while the initial and final states of the reaction have not moved one bit.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Eternal Identity on the Energy-Level Diagram</div>
+      The difference between the activation energy of the forward reaction and that of the reverse
+      reaction is the reaction heat:
+      <span class="formula">ΔH = E<sub>a</sub>(forward) − E<sub>a</sub>(reverse)</span>.
+      A catalyst lowers the two E<sub>a</sub> values <strong>by equal amounts</strong>, so ΔH is
+      unchanged, ΔG is unchanged, and the equilibrium constant and the equilibrium position are all
+      unchanged — <strong>a catalyst only helps you reach equilibrium sooner, not reach an equilibrium
+      further away</strong>.
+    </div>
+
+    <h3>🔬 Try It Out: The Energy-Level Diagram Switcher</h3>
+    <p>
+      Switch among the three views "uncatalyzed / catalyzed / comparison": the blue curve is the tall
+      peak of the original route, and the green curve is the "winding mountain road" the catalyst
+      provides (two lower humps). However you switch, the platform heights of reactants and products —
+      that is, ΔH — never change.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="Energy-level diagram of catalyzed and uncatalyzed pathways">
+          <!-- Vertical axis -->
+          <line x1="52" y1="270" x2="52" y2="30" stroke="#94a3b8" stroke-width="1.5"></line>
+          <path d="M52,30 l-4,10 h8 z" fill="#94a3b8"></path>
+          <text x="58" y="36" font-size="12" fill="#4b5563">Potential energy</text>
+          <!-- Reactant plateau -->
+          <line x1="70" y1="250" x2="190" y2="250" stroke="#1f2937" stroke-width="3"></line>
+          <text x="130" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Reactants</text>
+          <!-- Product plateau -->
+          <line x1="450" y1="160" x2="575" y2="160" stroke="#1f2937" stroke-width="3"></line>
+          <text x="512" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937">Products</text>
+          <!-- Uncatalyzed pathway -->
+          <g id="ecUn">
+            <path d="M190,250 C260,40 380,40 450,160" fill="none" stroke="#0369a1" stroke-width="3"></path>
+            <text x="320" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">Transition state (uncatalyzed)</text>
+            <line x1="238" y1="250" x2="238" y2="78" stroke="#0369a1" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <line x1="231" y1="250" x2="245" y2="250" stroke="#0369a1" stroke-width="1.5"></line>
+            <line x1="231" y1="78" x2="245" y2="78" stroke="#0369a1" stroke-width="1.5"></line>
+            <text x="248" y="160" font-size="12" font-weight="700" fill="#0369a1">Eₐ = 80</text>
+          </g>
+          <!-- Catalyzed pathway -->
+          <g id="ecCat" style="display:none">
+            <path d="M190,250 C225,140 255,140 285,200 C305,240 340,240 375,150 C400,105 425,105 450,160" fill="none" stroke="#15803d" stroke-width="3"></path>
+            <text x="240" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Intermediate</text>
+            <line x1="222" y1="250" x2="222" y2="168" stroke="#15803d" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <text x="150" y="200" font-size="12" font-weight="700" fill="#15803d">Eₐ′ = 45</text>
+            <text x="330" y="92" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">The lower pass carved out by the catalyst</text>
+          </g>
+          <!-- ΔH marker (constant) -->
+          <line x1="600" y1="250" x2="600" y2="160" stroke="#b45309" stroke-width="1.8"></line>
+          <path d="M600,160 l-4,-9 h8 z" fill="#b45309"></path>
+          <text x="588" y="210" text-anchor="end" font-size="12" font-weight="700" fill="#b45309">ΔH = −90 (unchanged)</text>
+          <!-- Horizontal axis -->
+          <line x1="52" y1="270" x2="614" y2="270" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="608" y="290" text-anchor="end" font-size="12" fill="#4b5563">Reaction progress →</text>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="ecBtnUn">Uncatalyzed</button>
+          <button class="btn ghost" id="ecBtnCat">Catalyzed</button>
+          <button class="btn ghost" id="ecBtnBoth">Overlay comparison</button>
+        </div>
+        <div class="fig-readout" id="ecReadout"></div>
+      </div>
+      <figcaption>
+        The catalyst lowers Eₐ from 80 kJ/mol to 45 kJ/mol, and the two pathways share exactly the same
+        start and end points. At 298 K, estimating with k = A·e<sup>−Eₐ/RT</sup> (with A unchanged), the
+        rate rises by about e<sup>35000/(8.314×298)</sup> ≈ 1.2×10⁶ fold. The reverse reaction's Eₐ
+        drops in step from 170 to 135 kJ/mol — <strong>both directions catalyzed equally, the
+        equilibrium unmoved</strong>.
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · The Two Masks of a Catalyst</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception 1</span>
+          "A catalyst does not take part in the reaction; it just stands by and watches."
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">The truth</span>
+          A catalyst <strong>participates deeply</strong>: it forms intermediates with the reactants and
+          reroutes the reaction (the green winding road in the diagram above); it is simply
+          <strong>regenerated in full</strong> in later steps, which is why macroscopically it "never
+          appears in the equation, and its amount never dwindles". Participating yet unconsumed — the
+          two are not contradictory.
+        </div>
+      </div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception 2</span>
+          "Adding a catalyst raises the yield."
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">The truth</span>
+          A catalyst changes only <strong>Eₐ and k</strong>, not ΔH, ΔG, or the equilibrium constant K;
+          the equilibrium conversion does not budge — equilibrium is simply <strong>reached
+          sooner</strong>. To raise the yield you must move the temperature, pressure, or concentrations
+          — that is the territory of ΔG and equilibrium from the previous chapter.
+        </div>
+      </div>
+    </div>
+
+    <h3>Reaction Mechanisms and the Rate-Determining Step: The Slowest Station on the Line</h3>
+    <p>
+      The overall equation is only the "headline balance"; the <strong>step-by-step ledger</strong> at
+      the molecular level is called the <span class="term">reaction mechanism</span>. For example,
+      NO₂ + CO → NO + CO₂ (at low temperature) proceeds in two steps:
+    </p>
+    <p style="text-align:center">
+      ① <span class="formula">NO₂ + NO₂ → NO₃ + NO</span> (slow)
+      ② <span class="formula">NO₃ + CO → NO₂ + CO₂</span> (fast)
+    </p>
+    <p>
+      The overall rate is set by <strong>the slowest step</strong> — just as the output of an assembly
+      line is capped by its slowest station; that step is called the
+      <span class="term">rate-determining step</span>. In the mechanism above the slow step contains
+      only two NO₂, so experimentally v = k[NO₂]², independent of [CO] — the mystery from §2 of "orders
+      do not follow the coefficients" is solved here: <strong>the exponents of the rate equation reveal
+      the face of the rate-determining step</strong>. Enzymes are nature's most ingenious catalysts
+      precisely because they rewrite the rate-determining steps of reactions that would otherwise occur
+      once in tens of millions of years (such as nitrogen fixation) down to the millisecond scale.
+    </p>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Rate <span class="formula">v = |Δc/Δt|</span>; when the same reaction is expressed with different species, convert to a single scale via the stoichiometric coefficients.</li>
+        <li>Rate equation <span class="formula">v = k[A]<sup>m</sup>[B]<sup>n</sup></span>:
+          the orders are determined by <strong>experiment</strong>; only an elementary reaction may have them written from the coefficients.</li>
+        <li>An effective collision = sufficient energy (≥ Eₐ) + correct orientation; Eₐ is the energy barrier and is a different thing from ΔH.</li>
+        <li>Arrhenius <span class="formula">k = A·e<sup>−Eₐ/RT</sup></span>:
+          temperature sits in the exponent, and a 10 °C rise roughly doubles the rate — the root cause is the exploding share of the energy distribution's tail.</li>
+        <li>A catalyst participates in the reaction, lowers Eₐ, provides a new pathway, and is regenerated at the end; it changes neither ΔH, ΔG, nor the equilibrium, and it catalyzes forward and reverse alike.</li>
+        <li>An overall reaction proceeds in steps, with the rate set by the rate-determining step; read backwards, the rate equation is evidence for inferring the mechanism.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Chemical Kinetics <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Near room temperature, a 10 °C rise roughly doubles the reaction rate. The main reason is?",
+            "options": ["The mean molecular kinetic energy rises by about 3%", "The fraction of molecules exceeding the activation energy increases several-fold", "The molecular collision frequency doubles", "The activation energy of the reaction decreases"],
+            "answer": 1,
+            "explain": "The mean kinetic energy rises only about 3% with T, and the collision frequency also grows only weakly with temperature; the real protagonist is the exponential swelling of the tail area beyond the Eₐ line once the Maxwell–Boltzmann distribution shifts right. The activation energy does not change with temperature."
+          },
+          {
+            "q": "In the rate equation v = k[A]^m[B]^n, the orders m and n should be decided by what?",
+            "options": ["The coefficients of A and B in the chemical equation", "Experimental data", "The Arrhenius equation", "The sign of ΔG"],
+            "answer": 1,
+            "explain": "Overall reactions usually proceed in steps, with the rate set by the rate-determining step, which often fails to match the overall equation's coefficients (e.g. NO₂+CO at low temperature, v=k[NO₂]²). Only elementary reactions may have their rate equations written from the coefficients."
+          },
+          {
+            "q": "A reaction takes 32 minutes to complete at 25 °C. Using the rule that the rate roughly doubles per 10 °C rise, about how long does it take at 55 °C?",
+            "options": ["8 minutes", "4 minutes", "16 minutes", "2 minutes"],
+            "answer": 1,
+            "explain": "55−25=30 °C, i.e. 3 steps; rate ×2³=8, so time ÷8: 32/8=4 minutes. Be sure to convert to a rate factor first and then take the reciprocal — dividing by 3 directly is a common mistake."
+          },
+          {
+            "q": "After a catalyst is added, which of the following quantities changes?",
+            "options": ["ΔH", "The equilibrium constant K", "The activation energy Eₐ (of the pathway taken)", "ΔG"],
+            "answer": 2,
+            "explain": "A catalyst provides a new low-barrier pathway, so the Eₐ actually traversed drops markedly; but the initial and final states are unchanged, so ΔH, ΔG, K, and the equilibrium position are all unchanged — it only shortens the time needed to reach equilibrium."
+          },
+          {
+            "q": "For the reaction NO₂ + CO → NO + CO₂, experiment gives v = k[NO₂]², independent of [CO]. The most reasonable explanation is?",
+            "options": ["The concentration of CO is too large", "The rate-determining step involves only NO₂, while CO participates in a fast step", "CO is a catalyst", "The reaction is zeroth order"],
+            "answer": 1,
+            "explain": "The mechanistic explanation: the slow step NO₂+NO₂→NO₃+NO contains only NO₂; the NO₃ then reacts rapidly with CO. The rate equation is written from the rate-determining step, so the fast step and the concentration of CO never appear in it — a classic case of kinetics working backwards to infer a mechanism."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="01-Chemical-Thermodynamics.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 1 · Chemical Thermodynamics</span></a>
+      <a class="next" href="03-Electrochemistry.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 3 · Electrochemistry</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions (energy distribution curve · energy-level diagram switcher) ============ */
+(function () {
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+
+  /* ---------- 1. Maxwell–Boltzmann energy distribution ---------- */
+  var sT = document.getElementById("mbT");
+  if (sT) {
+    var curve = document.getElementById("mbCurve");
+    var shade = document.getElementById("mbShade");
+    var refPath = document.getElementById("mbRef");
+    var tLabel = document.getElementById("mbTlabel");
+    var tv = document.getElementById("mbTv");
+    var readout = document.getElementById("mbReadout");
+    var EA = 75;                 /* Position of the activation energy (arbitrary units) */
+    var X0 = 60, XW = 544;       /* Plot area: x 60..604 */
+    var Y0 = 210, HGT = 165;     /* Baseline and curve height */
+
+    function px(x) { return X0 + x / 100 * XW; }
+    /* Normalized shape function: larger s puts the curve further right and wider (peak at x = s) */
+    function ny(x, s) { return (x / s) * Math.exp(1 - x / s); }
+    function py(y) { return Y0 - y * HGT; }
+
+    /* 200 K reference curve (s = 200/12) */
+    var sRef = 200 / 12;
+    var dRef = "";
+    for (var x = 0; x <= 100; x += 1) {
+      dRef += (x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(ny(x, sRef)).toFixed(1);
+    }
+    refPath.setAttribute("d", dRef);
+    var refLabel = document.getElementById("mbRefLabel");
+    if (refLabel) {
+      refLabel.setAttribute("x", px(sRef) + 8);
+      refLabel.setAttribute("y", py(1) - 6);
+      refLabel.textContent = "200 K (reference)";
+    }
+
+    function fraction(s) {
+      return (EA / s + 1) * Math.exp(-EA / s);
+    }
+    var f0 = fraction(sRef);
+
+    function upd() {
+      var T = parseFloat(sT.value);
+      var s = T / 12;
+      tv.textContent = T.toFixed(0);
+      var d = "", dShade = "";
+      for (var x = 0; x <= 100; x += 1) {
+        var pt = (x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(ny(x, s)).toFixed(1);
+        if (x < EA) { d += pt; }
+        else { dShade += (x === Math.ceil(EA) ? "M" + px(EA).toFixed(1) + "," + Y0 + " L" : "") + pt; d += pt; }
+      }
+      curve.setAttribute("d", d);
+      shade.setAttribute("d", dShade + "L" + px(100).toFixed(1) + "," + Y0 + " Z");
+      var f = fraction(s);
+      tLabel.setAttribute("x", px(s) - 10);
+      tLabel.setAttribute("y", py(1) - 8);
+      tLabel.textContent = "T = " + T.toFixed(0) + " K";
+      readout.textContent = "T = " + T.toFixed(0) + " K | fraction of molecules with energy ≥ Eₐ ≈ " +
+        (f * 100).toFixed(1) + "% (only " + (f0 * 100).toFixed(1) +
+        "% at 200 K) | relative rate ≈ " + (f / f0).toFixed(1) + " times (200 K baseline, illustrative)";
+    }
+    sT.addEventListener("input", upd);
+    upd();
+  }
+
+  /* ---------- 2. Energy-level diagram switcher ---------- */
+  var gUn = document.getElementById("ecUn");
+  var gCat = document.getElementById("ecCat");
+  if (gUn && gCat) {
+    var bUn = document.getElementById("ecBtnUn");
+    var bCat = document.getElementById("ecBtnCat");
+    var bBoth = document.getElementById("ecBtnBoth");
+    var ro = document.getElementById("ecReadout");
+    var ALL = [[bUn, "un"], [bCat, "cat"], [bBoth, "both"]];
+    var TEXT = {
+      un: "Uncatalyzed: Eₐ = 80 kJ/mol | ΔH = −90 kJ/mol (exothermic)",
+      cat: "Catalyzed: Eₐ drops to 45 kJ/mol | ΔH is still −90 kJ/mol — the catalyst changes neither the reaction heat nor ΔG",
+      both: "Comparison: Eₐ lowered by 35 kJ/mol; at 298 K the rate rises by about e^(35000/8.314×298) ≈ 1.2×10⁶ fold; the plateaus (ΔH) do not budge"
+    };
+    function setMode(mode) {
+      gUn.style.display = (mode === "cat") ? "none" : "";
+      gCat.style.display = (mode === "un") ? "none" : "";
+      ALL.forEach(function (p) {
+        var on = p[1] === mode;
+        p[0].className = on ? "btn" : "btn ghost";
+      });
+      ro.textContent = TEXT[mode];
+    }
+    ALL.forEach(function (p) {
+      p[0].addEventListener("click", function () { setMode(p[1]); });
+    });
+    setMode("un");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemistry · Chemistry Self-Study Center</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .portal-hero{
+    border-radius:14px; border:1px solid var(--line);
+    background:linear-gradient(135deg,#ecfeff,#f0f9ff 55%,var(--surface));
+    padding:42px 34px 38px; margin:18px 0 30px; box-shadow:var(--shadow-1);
+    position:relative; overflow:hidden;
+  }
+  .portal-hero::after{
+    content:""; position:absolute; right:-60px; top:-60px; width:240px; height:240px;
+    border-radius:50%; border:2px dashed rgba(14,116,144,.18); animation:spin 40s linear infinite;
+  }
+  .portal-hero::before{
+    content:""; position:absolute; right:20px; top:30px; width:120px; height:120px;
+    border-radius:50%; border:2px dotted rgba(14,116,144,.25); animation:spin 26s linear infinite reverse;
+  }
+  .portal-hero h1{font-size:2.3rem;margin-bottom:10px;}
+  .portal-hero .lede{font-size:1.06rem;color:var(--ink-2);max-width:44em;}
+  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:22px 0;}
+  .branch-card{
+    display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;
+    background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);
+    border-radius:12px;padding:20px 20px 16px;box-shadow:var(--shadow-1);min-height:150px;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .branch-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);}
+  .branch-card .bc-no{font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--accent-deep);}
+  .branch-card .bc-title{font-size:1.12rem;font-weight:700;}
+  .branch-card .bc-desc{font-size:.88rem;color:var(--ink-2);flex:1;}
+  .branch-card .bc-meta{font-size:.76rem;color:var(--ink-3);display:flex;gap:12px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:10px;}
+  .sec-title{display:flex;align-items:center;gap:10px;margin:38px 0 6px;font-size:1.3rem;}
+  .sec-title .bar{display:inline-block;width:8px;height:22px;border-radius:3px;background:var(--brand);}
+  .route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0;padding:16px 18px;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;}
+  .route .r-name{font-weight:700;font-size:.9rem;color:var(--accent-deep);margin-right:6px;}
+  .route .node{background:var(--accent-soft,#ecfeff);border:1px solid var(--line);border-radius:999px;
+    padding:4px 12px;font-size:.84rem;font-weight:600;color:var(--ink-2);}
+  .route .arr{color:var(--ink-3);font-weight:700;}
+  .feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:18px 0;}
+  .feat .f{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.88rem;color:var(--ink-2);}
+  .feat .f b{display:block;color:#111827;margin-bottom:4px;font-size:.95rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <span class="here">🏠 Chemistry Self-Study Center</span>
+    <a class="langswitch" href="../index.html" aria-label="中文版">中文</a>
+  </nav>
+
+  <header class="portal-hero">
+    <h1>🧪 Chemistry Self-Study Center</h1>
+    <p class="lede">
+      A fully offline interactive chemistry library: <strong>12 branches, 28 chapters of tutorials</strong>.
+      Every concept is taught through a three-level ladder of intuition → standard treatment → deeper theory,
+      supported by a Misconception Buster, worked-example scaffolds, and interactive animations. From zero to a full map of chemistry.
+    </p>
+    <p style="margin-top:16px">
+      <a class="btn" href="00-Foundations/index.html">Start here →</a>
+      <a class="btn ghost" href="README.md" style="margin-left:8px">See the branch map (README)</a>
+    </p>
+  </header>
+
+  <h2 class="sec-title"><span class="bar"></span>The Twelve Branches</h2>
+  <p style="color:var(--ink-2)">The first six form the traditional core-plus-foundations skeleton; the last six are interdisciplinary and specialized branches. Click a card to open its branch overview.</p>
+
+  <div class="branch-grid">
+    <a class="branch-card" style="--accent:#475569;--accent-deep:#334155;--accent-soft:#f1f5f9" href="00-Foundations/index.html">
+      <span class="bc-no">Branch 00 · Foundation</span>
+      <span class="bc-title">Foundations of Chemistry</span>
+      <span class="bc-desc">Atoms, chemical bonding, stoichiometry, solutions — the shared language of every branch.</span>
+      <span class="bc-meta"><span>4 chapters</span><span>Prerequisites: none</span><span>Introductory</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#c2410c;--accent-deep:#9a3412;--accent-soft:#fff7ed" href="01-Inorganic-Chemistry/index.html">
+      <span class="bc-no">Branch 01 · Core Five</span>
+      <span class="bc-title">Inorganic Chemistry</span>
+      <span class="bc-desc">The periodic law, main-group and transition metals, coordination chemistry, acids/bases and aqueous chemistry.</span>
+      <span class="bc-meta"><span>4 chapters</span><span>Prerequisites: 00</span><span>Intro → advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#15803d;--accent-deep:#166534;--accent-soft:#f0fdf4" href="02-Organic-Chemistry/index.html">
+      <span class="bc-no">Branch 02 · Core Five</span>
+      <span class="bc-title">Organic Chemistry</span>
+      <span class="bc-desc">Carbon skeletons, functional groups, stereochemistry, and reaction mechanisms — the art of building molecules.</span>
+      <span class="bc-meta"><span>4 chapters</span><span>Prerequisites: 00</span><span>Intro → advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#6d28d9;--accent-deep:#5b21b6;--accent-soft:#f5f3ff" href="03-Analytical-Chemistry/index.html">
+      <span class="bc-no">Branch 03 · Core Five</span>
+      <span class="bc-title">Analytical Chemistry</span>
+      <span class="bc-desc">What is in a sample and how much: error theory, titration, spectroscopy, chromatography, and mass spectrometry.</span>
+      <span class="bc-meta"><span>3 chapters</span><span>Prerequisites: 00</span><span>Intro → advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#0369a1;--accent-deep:#075985;--accent-soft:#f0f9ff" href="04-Physical-Chemistry/index.html">
+      <span class="bc-no">Branch 04 · Core Five</span>
+      <span class="bc-title">Physical Chemistry</span>
+      <span class="bc-desc">Thermodynamics, kinetics, electrochemistry, quantum chemistry — the direction, speed, and essence of change.</span>
+      <span class="bc-meta"><span>4 chapters</span><span>Prerequisites: 00–02</span><span>Advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#0d9488;--accent-deep:#0f766e;--accent-soft:#f0fdfa" href="05-Biochemistry/index.html">
+      <span class="bc-no">Branch 05 · Core Five</span>
+      <span class="bc-title">Biochemistry</span>
+      <span class="bc-desc">Proteins, nucleic acids, enzymes, and metabolism — how life's chemical machinery runs.</span>
+      <span class="bc-meta"><span>3 chapters</span><span>Prerequisites: 00, 02</span><span>Intro → advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#a21caf;--accent-deep:#86198f;--accent-soft:#fdf4ff" href="06-Polymer-Chemistry/index.html">
+      <span class="bc-no">Branch 06 · Interdisciplinary</span>
+      <span class="bc-title">Polymer Chemistry</span>
+      <span class="bc-desc">From monomers to polymers: addition and condensation polymerization; the world of plastics, rubbers, and fibers.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 02</span><span>Introductory</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#b45309;--accent-deep:#92400e;--accent-soft:#fffbeb" href="07-Materials-Chemistry/index.html">
+      <span class="bc-no">Branch 07 · Interdisciplinary</span>
+      <span class="bc-title">Materials Chemistry</span>
+      <span class="bc-desc">Crystals and defects, semiconductors, nanomaterials, and energy materials.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 01, 04</span><span>Introductory</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#4d7c0f;--accent-deep:#3f6212;--accent-soft:#f7fee7" href="08-Environmental-Chemistry/index.html">
+      <span class="bc-no">Branch 08 · Interdisciplinary</span>
+      <span class="bc-title">Environmental Chemistry</span>
+      <span class="bc-desc">The atmosphere and ozone, the greenhouse effect, water pollution, and green chemistry.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 00–02</span><span>Introductory</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#4338ca;--accent-deep:#3730a3;--accent-soft:#eef2ff" href="09-Theoretical-and-Computational-Chemistry/index.html">
+      <span class="bc-no">Branch 09 · Interdisciplinary</span>
+      <span class="bc-title">Theoretical and Computational Chemistry</span>
+      <span class="bc-desc">The Schrödinger equation, molecular dynamics, and AI: running experiments inside a computer.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 04</span><span>Advanced</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#be185d;--accent-deep:#9d174d;--accent-soft:#fdf2f8" href="10-Medicinal-Chemistry/index.html">
+      <span class="bc-no">Branch 10 · Interdisciplinary</span>
+      <span class="bc-title">Medicinal Chemistry</span>
+      <span class="bc-desc">Drug targets, structure–activity relationships, and drug design: from aspirin to new-drug R&D.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 02, 05</span><span>Introductory</span></span>
+    </a>
+    <a class="branch-card" style="--accent:#a16207;--accent-deep:#854d0e;--accent-soft:#fefce8" href="11-Nuclear-and-Radiochemistry/index.html">
+      <span class="bc-no">Branch 11 · Interdisciplinary</span>
+      <span class="bc-title">Nuclear and Radiochemistry</span>
+      <span class="bc-desc">Radioactive decay, half-life, fission and fusion, isotope applications and radiation protection.</span>
+      <span class="bc-meta"><span>1 intro chapter</span><span>Prerequisites: 00</span><span>Introductory</span></span>
+    </a>
+  </div>
+
+  <h2 class="sec-title"><span class="bar"></span>Three Study Routes</h2>
+  <div class="route"><span class="r-name">📚 Systematic route</span>
+    <span class="node">00 Foundations</span><span class="arr">→</span><span class="node">01 Inorganic</span><span class="arr">→</span><span class="node">02 Organic</span><span class="arr">→</span><span class="node">04 Physical</span><span class="arr">→</span><span class="node">03 Analytical</span><span class="arr">→</span><span class="node">05 Biochemistry</span><span class="arr">→</span><span class="node">06–11 by interest</span>
+  </div>
+  <div class="route"><span class="r-name">🧬 Life-science route</span>
+    <span class="node">00 Foundations</span><span class="arr">→</span><span class="node">02 Organic</span><span class="arr">→</span><span class="node">05 Biochemistry</span><span class="arr">→</span><span class="node">10 Medicinal</span>
+  </div>
+  <div class="route"><span class="r-name">⚙️ Physical-sciences & materials route</span>
+    <span class="node">00 Foundations</span><span class="arr">→</span><span class="node">01 Inorganic</span><span class="arr">→</span><span class="node">04 Physical</span><span class="arr">→</span><span class="node">07 Materials</span><span class="arr">→</span><span class="node">09 Theory & Computation</span>
+  </div>
+
+  <h2 class="sec-title"><span class="bar"></span>Six Components in Every Chapter</h2>
+  <div class="feat">
+    <div class="f"><b>🪜 Three-level explanation ladder</b>Intuition → Standard Treatment → Deeper Theory — switch depth on demand.</div>
+    <div class="f"><b>⚠️ Misconception Buster</b>The most common wrong ideas, corrected.</div>
+    <div class="f"><b>📐 Worked-Example Scaffold</b>Worked demo → guided hints → independent practice.</div>
+    <div class="f"><b>💭 Think It Through</b>Socratic prompts: predict first, then compare.</div>
+    <div class="f"><b>🎬 Interactive animations</b>Orbitals, titrations, energy diagrams, decay — driven by buttons and sliders.</div>
+    <div class="f"><b>✅ End-of-chapter self-test</b>Instant scoring + per-question explanations; 80% before moving on.</div>
+  </div>
+
+  <p style="color:var(--ink-3);font-size:.86rem;margin-top:34px">
+    💡 All pages open offline — just double-click them in your browser. For detailed notes on the branch taxonomy and study paths, see
+    <a href="README.md">README.md</a>.
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Transition Metals and Coordination Chemistry · Inorganic Chemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b01">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">01 Inorganic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · Transition Metals and Coordination Chemistry</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">01 Inorganic Chemistry · Chapter 3</div>
+    <h1>Transition Metals and Coordination Chemistry: The Colorful Belt in the Middle</h1>
+    <p class="lede">
+      The red of ruby is chromium, and so is the green of emerald; blue copper sulfate, yellow rust,
+      purple permanganate, and the hemoglobin that ferries oxygen through your veins —
+      the broad d-block <strong>belt</strong> across the middle of the periodic table supplies most of nature's colors
+      and the key reactions of life. This chapter first looks at the three hallmarks of the d-block metals
+      (multiple oxidation states, colored compounds, ready catalysis), then teaches a brand-new language —
+      the <strong>coordination complex</strong>: central ion, ligands, coordination number. Finally, the
+      "d-orbital splitting" of crystal field theory lets you see in one step why a colorless ion takes on vivid color
+      the moment it meets a ligand.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 55 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–2</span>
+      <span class="chip">Interactive animation ×1</span>
+      <span class="chip">Self-test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#dblock">§1 Three Hallmarks of the d Block</a>
+    <a href="#complex">§2 Composition and Naming of Complexes</a>
+    <a href="#cft">§3 Crystal Fields and Color</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Half the Shelves in a Paint Shop</h2>
+    <p>
+      Step into a paint shop: ultramarine, cobalt blue, chromium green, cadmium red, iron yellow... Count the
+      elements named on the labels — most come from columns 3–12 in the middle of the periodic table.
+      The elements in this "belt" are called <span class="term">transition metals</span> —
+      "transition" refers to how their properties bridge the reactive s-block metals and the p-block elements,
+      and to the fact that their electrons are <strong>filling the d orbitals of the second-outermost shell one by one</strong>
+      (recall the reflection question in Chapter 1 §1: 4s fills before 3d, so d electrons "live in an inner shell
+      yet join the lineup partway through").
+    </p>
+    <p>
+      These "inner-shell" d electrons are precisely what give transition metals three superpowers:
+      <strong>multiple oxidation states, vivid colors, and outstanding catalytic ability</strong>.
+      To truly read the colors, though, we must first learn a new "molecular grammar" — coordination chemistry.
+      Its object of study, the <span class="term">coordination complex</span>, is shaped like a nesting doll:
+      a metal ion sits at the center while a ring of molecules or ions joins hands around it. Do not underestimate
+      this structure — heme, chlorophyll, and vitamin B<sub>12</sub> are all complexes.
+    </p>
+  </section>
+
+  <!-- ============ §1 d block ============ -->
+  <section id="dblock">
+    <h2>§1 Three Hallmarks of the d Block: Variable Oxidation States, Color, and Catalysis</h2>
+    <p>
+      <strong>Hallmark one: multiple oxidation states.</strong> Main-group metals usually have just one "respectable"
+      oxidation state (Na⁺, Mg²⁺, Al³⁺), yet transition metals change oxidation states as naturally as changing
+      clothes: iron has Fe²⁺/Fe³⁺, copper has Cu⁺/Cu²⁺, and manganese runs all the way from +2 to +7
+      (the Mn in KMnO<sub>4</sub> is +7). The reason is that same set of d electrons:
+      <strong>the second-outermost d subshell and the outermost s subshell are close in energy, so electrons from
+      both shells can join the fight</strong> — giving up a few more or a few less does no real damage.
+    </p>
+    <p>
+      <strong>Hallmark two: colored compounds.</strong> d-block solutions are the most photogenic part of any
+      chemistry lab — here is a table of the regulars:
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Species</th><th>Color</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">Cu<sup>2+</sup></span> (aqua)</td><td>Blue</td><td>The star of §3</td></tr>
+        <tr><td><span class="formula">Fe<sup>2+</sup></span> / <span class="formula">Fe<sup>3+</sup></span></td><td>Pale green / yellow</td><td>One element, two faces</td></tr>
+        <tr><td><span class="formula">Co<sup>2+</sup></span> / <span class="formula">Ni<sup>2+</sup></span></td><td>Pink / green</td><td>The cobalt in indicating silica gel "reports" humidity</td></tr>
+        <tr><td><span class="formula">MnO<sub>4</sub><sup>−</sup></span></td><td>Purple (intense)</td><td>The color comes from charge transfer; see §3</td></tr>
+        <tr><td><span class="formula">CrO<sub>4</sub><sup>2−</sup></span> / <span class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup></span></td><td>Yellow / orange</td><td>Acidity switches between the two faces</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>Hallmark three: catalysis.</strong> Variable oxidation states let a transition metal "accept first,
+      deliver later": an iron catalyst helps N<sub>2</sub> and H<sub>2</sub> build ammonia step by step
+      (the Haber process, which feeds half the world's population); V<sub>2</sub>O<sub>5</sub> shuttles back and
+      forth between oxidation states in the contact process for sulfuric acid; the Pt and Pd in car-exhaust
+      cleanup convert CO and NO into harmless gases; and the active center of nearly every enzyme in your body
+      is occupied by a transition metal.
+      <strong>Reaching out a d orbital to give the reactants a pull, then withdrawing intact — that is a catalyst's gift.</strong>
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why do main-group metals rarely show multiple oxidation states, while transition metals often have five or six?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Recall Chapter 1 — after Na loses its one outermost electron, what structure is left? Is it easy to break into that?</p>
+        <p>
+          After losing its 3s electron, Na has the closed-shell structure of Ne; touching an electron in the second
+          shell would raise the ionization energy by an order of magnitude — so main-group elements are
+          "one oxidation state for life". Transition metals are different: they lose the ns electrons first in
+          reactions, and the remaining (n−1)d electrons are close to one another in energy and can be lost one at a
+          time — <strong>losing 2, 3, ... the cost climbs a "gentle slope" rather than a "cliff"</strong>.
+          More oxidation states = more redox roles = capital for catalysis; the three hallmarks are really three
+          faces of one fact (the d electrons sit at flexible energies).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Complexes ============ -->
+  <section id="complex">
+    <h2>§2 The Composition, Structure, and Naming of Complexes</h2>
+    <p>
+      Add ammonia dropwise to a copper(II) sulfate solution and, beyond the color change, something more
+      fundamental happens: the ammonia molecules use the <span class="term">lone pair</span> on their nitrogen
+      atoms to grab Cu²⁺, forming a new kind of species — "metal ion plus surrounding molecules". Structures of
+      this kind are called <strong>complexes</strong> (also coordination compounds), and they have three
+      essential parts:
+    </p>
+    <ul>
+      <li><strong>Central ion (or atom)</strong>: the metal presiding at the center, e.g. Cu²⁺, Fe³⁺ —
+        the "tenant" that furnishes empty orbitals;
+      </li>
+      <li><strong>Ligand</strong>: the routers positioned around the center, e.g. H<sub>2</sub>O, NH<sub>3</sub>, CN⁻ —
+        the atom directly bonded to the center is called the <strong>donor atom</strong>
+        (N in NH<sub>3</sub>, C in CN⁻);
+      </li>
+      <li><strong>Coordination number</strong>: the number of donor atoms bonded directly to the center —
+        commonly 4 (square planar / tetrahedral) and 6 (octahedral).
+      </li>
+    </ul>
+    <p>
+      The bond between ligand and center is called a <span class="term">coordinate bond</span>:
+      <strong>the shared electron pair is provided entirely by the ligand</strong>, while the central ion
+      contributes only an empty orbital. It is still a covalent bond at heart — just one with a single "investor".
+      Note the direction of that sentence — the ligand supplies the electron pair, making it an expert donor;
+      the central ion accepts the pair. This foreshadowing unfolds into the Lewis acid–base theory in Chapter 4.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="Spatial structures of two classic complexes">
+          <defs>
+            <marker id="mkS" markerWidth="7" markerHeight="7" refX="5" refY="2.6" orient="auto">
+              <path d="M0,0 L5.6,2.6 L0,5.2 z" fill="#475569"></path>
+            </marker>
+          </defs>
+          <!-- Left: [Cu(NH3)4]2+ square planar -->
+          <text x="150" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#111827">[Cu(NH₃)₄]²⁺</text>
+          <line x1="150" y1="150" x2="150" y2="74" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="226" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="150" y2="226" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <line x1="150" y1="150" x2="74" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+          <circle cx="150" cy="150" r="17" fill="#ea580c" stroke="#9a3412" stroke-width="2"></circle>
+          <text x="150" y="156" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">Cu²⁺</text>
+          <circle cx="150" cy="66" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="224" cy="150" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="150" cy="234" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <circle cx="76" cy="150" r="9" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"></circle>
+          <text x="150" y="48" text-anchor="middle" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="248" y="154" text-anchor="start" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="150" y="258" text-anchor="middle" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="52" y="154" text-anchor="end" font-size="10.5" fill="#2563eb">NH₃</text>
+          <text x="150" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#374151">Square planar · Coordination number 4</text>
+          <!-- Right: [Fe(CN)6]3- octahedral -->
+          <text x="470" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#111827">[Fe(CN)₆]³⁻</text>
+          <g>
+            <line x1="470" y1="150" x2="470" y2="86" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="470" y2="214" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="396" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="544" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="529" y2="91" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#mkS)"></line>
+            <line x1="470" y1="150" x2="411" y2="209" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#mkS)"></line>
+          </g>
+          <circle cx="470" cy="150" r="17" fill="#b45309" stroke="#92400e" stroke-width="2"></circle>
+          <text x="470" y="156" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">Fe³⁺</text>
+          <g font-size="10.5">
+            <circle cx="470" cy="76" r="8.5" fill="#475569"></circle><circle cx="470" cy="60" r="8.5" fill="#2563eb"></circle>
+            <text x="487" y="72" fill="#475569">CN⁻</text>
+            <circle cx="470" cy="224" r="8.5" fill="#475569"></circle><circle cx="470" cy="240" r="8.5" fill="#2563eb"></circle>
+            <text x="487" y="240" fill="#475569">CN⁻</text>
+            <circle cx="390" cy="150" r="8.5" fill="#475569"></circle><circle cx="374" cy="150" r="8.5" fill="#2563eb"></circle>
+            <text x="392" y="136" fill="#475569">CN⁻</text>
+            <circle cx="550" cy="150" r="8.5" fill="#475569"></circle><circle cx="566" cy="150" r="8.5" fill="#2563eb"></circle>
+            <text x="536" y="136" fill="#475569">CN⁻</text>
+            <circle cx="536" cy="86" r="8.5" fill="#475569"></circle><circle cx="547" cy="75" r="8.5" fill="#2563eb"></circle>
+            <circle cx="404" cy="214" r="8.5" fill="#475569"></circle><circle cx="393" cy="225" r="8.5" fill="#2563eb"></circle>
+          </g>
+          <text x="470" y="288" text-anchor="middle" font-size="12.5" font-weight="700" fill="#374151">Octahedral · Coordination number 6 (dashed lines are the oblique bonds)</text>
+          <!-- Legend -->
+          <g font-size="10.5" fill="#4b5563">
+            <circle cx="288" cy="60" r="7" fill="#ea580c"></circle><text x="300" y="64" fill="#4b5563">Central ion</text>
+            <circle cx="288" cy="80" r="7" fill="#2563eb"></circle><text x="300" y="84" fill="#4b5563">Donor atom N</text>
+            <circle cx="288" cy="100" r="7" fill="#475569"></circle><text x="300" y="104" fill="#4b5563">Donor atom C</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        The arrows show the direction in which the coordinate bond's electron pair flows: <strong>from the ligand toward the central ion</strong>.
+        The cyanide ion CN⁻ coordinates through its carbon end (C's lone pair is the more "generous").
+        The whole inner sphere carries a charge: in [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> the 4 NH<sub>3</sub> molecules are
+        all neutral, so the +2 comes entirely from Cu²⁺; in [Fe(CN)<sub>6</sub>]<sup>3−</sup> the 6 CN⁻ total −6,
+        and with Fe³⁺ at +3 the inner sphere carries a net charge of −3.
+      </figcaption>
+    </figure>
+
+    <h3>Inner Sphere, Outer Sphere, and a First Look at Naming</h3>
+    <p>
+      When writing a complex's formula, use <strong>square brackets to enclose the "inner sphere"</strong>
+      (the core held together by coordinate bonds); outside the brackets is the "outer sphere" (loosely associated
+      through ionic bonds). For example, <span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span>:
+      inner sphere [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> plus outer sphere SO<sub>4</sub><sup>2−</sup>.
+      On dissolving in water the outer sphere dissociates, while <strong>the inner sphere essentially stays
+      intact</strong> — so the solution shows the complex's own color.
+    </p>
+    <p>
+      For naming, memorize one template: <strong>(ligand-count prefix + ligand name + central metal name +
+      oxidation state in Roman numerals in parentheses)</strong>; if the complex ion is an anion, the metal name
+      additionally takes the ending "-ate". Let's walk through two examples:
+    </p>
+    <ul>
+      <li><span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span> → <strong>tetraamminecopper(II) sulfate</strong> (the outer-sphere sulfate is named last; tetraammine = 4 NH<sub>3</sub>; copper is in oxidation state II);</li>
+      <li><span class="formula">K<sub>3</sub>[Fe(CN)<sub>6</sub>]</span> → <strong>potassium hexacyanidoferrate(III)</strong> (the inner sphere is an anion, so the metal name takes "-ate" — ferrate; iron is in oxidation state III).</li>
+    </ul>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full Demonstration (Watch Me): Taking K₃[Fe(CN)₆] Apart</div>
+      <div class="worked-problem">
+        Identify the inner and outer spheres of <span class="formula">K<sub>3</sub>[Fe(CN)<sub>6</sub>]</span>, the
+        central ion and its oxidation state, the ligand and donor atom, and the coordination number — then name the compound.
+      </div>
+      <ol class="worked-steps">
+        <li class="step"><strong>Find the brackets</strong>: inside the square brackets, [Fe(CN)<sub>6</sub>]<sup>3−</sup> is the inner sphere; the 3 K<sup>+</sup> outside are the outer sphere. The outer-sphere charge is opposite and equal in magnitude → the inner sphere carries −3.</li>
+        <li class="step"><strong>Fix the central oxidation state</strong>: inside, the 6 CN<sup>−</sup> total −6 and the inner sphere is −3; let iron be x: x + (−6) = −3 → <strong>x = +3, so the center is Fe³⁺</strong>.</li>
+        <li class="step"><strong>Identify the ligand</strong>: the ligand is cyanide CN<sup>−</sup>; the donor atom is <strong>carbon, C</strong> (the lone pair sits at the C end), and each CN⁻ contributes 1 donor atom.</li>
+        <li class="step"><strong>Count the coordination number</strong>: the 6 CN⁻ each contribute one C → <strong>coordination number = 6</strong>, giving octahedral geometry.</li>
+        <li class="step">✅ <strong>Name it</strong>: the inner sphere is an anion → the metal takes "-ate": potassium hexacyanidoferrate(III). Self-check: the 3 outer-sphere K<sup>+</sup> (+3) exactly neutralize the inner sphere's −3, so the compound is electrically neutral ✓</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided Practice (Do It with Me): Taking [Cu(NH₃)₄]SO₄ Apart</div>
+      <div class="worked-problem">
+        Identify the central ion and oxidation state, ligand, coordination number, and inner-sphere charge of
+        <span class="formula">[Cu(NH<sub>3</sub>)<sub>4</sub>]SO<sub>4</sub></span>, then name it.
+        <em>(Hints are tucked into every step.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: look at the inner-sphere charge first. The outer sphere has just 1 SO<sub>4</sub><sup>2−</sup> → the inner sphere [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup> carries +2.</li>
+        <li class="step">💡 Hint: the 4 NH<sub>3</sub> ligands are all <strong>neutral molecules</strong> (0 charge), contributing nothing to the inner-sphere charge → the +2 comes entirely from copper → the center is <strong>Cu²⁺</strong> (oxidation state II).</li>
+        <li class="step">💡 Hint: the donor atom is the <strong>nitrogen, N</strong>, of NH<sub>3</sub>; the 4 N atoms each take one site → coordination number = 4, with square planar geometry (see the figure above).</li>
+        <li class="step">💡 Hint: apply the template "ligand-count prefix + ligand name + metal name (oxidation state)" → "tetraamminecopper(II)", with the outer-sphere sulfate following → <strong>tetraamminecopper(II) sulfate</strong>.</li>
+        <li class="step">✅ Self-check: inner sphere +2 neutralizes outer sphere −2, electrically neutral ✓. Note "ammine" versus "amine": the ligand is the ammonia molecule NH<sub>3</sub>, spelled "ammine" (double m) in complex names; "amine" refers to organic compounds (Branch 02).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: CO carries no charge and shows no basicity — on what grounds can it serve as a ligand? The chemistry of carbon-monoxide poisoning hides in this very question</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: a ligand's ticket of admission is not charge but a lone pair. Does CO's carbon end have one?</p>
+        <p>
+          Yes — and an exceptionally strong one. The lone pair on CO's carbon end not only coordinates but can
+          also accept d electrons back from the metal (a "back bond"), giving it more than 200 times the binding
+          strength of O<sub>2</sub> for the Fe²⁺ in heme — and that is exactly how carbon-monoxide poisoning works:
+          <strong>CO commandeers the oxygen-transport seat, and O<sub>2</sub> is left queuing outside</strong>.
+          The key to emergency treatment is a hyperbaric oxygen chamber, whose high partial pressure pushes CO off
+          the site. Victory in ligand competition often comes down to how strongly each lone pair "plays its hand" —
+          remember this picture; you will meet it again in the acid–base contest of Chapter 4.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Crystal field and color ============ -->
+  <section id="cft">
+    <h2>§3 A First Look at Crystal Field Theory: d-Orbital Splitting Makes Color</h2>
+    <p>
+      The source of all this color is a question of geometry. In a free metal ion the 5 d orbitals
+      (d<sub>xy</sub>, d<sub>xz</sub>, d<sub>yz</sub>, d<sub>z²</sub>, d<sub>x²−y²</sub>) are exactly equal in
+      energy; but when 6 ligands close in from six directions (octahedral geometry), the two orbitals that point
+      at the ligands (d<sub>z²</sub> and d<sub>x²−y²</sub>, together called e<sub>g</sub>) run head-on into the
+      negative charge clouds and are pushed up in energy, while the three that keep clear of the ligands
+      (d<sub>xy</sub> and its companions, together called t<sub>2g</sub>) drop relatively lower — this is
+      <span class="term">d-orbital splitting</span>, and the energy gap between the two sets is written
+      <span class="formula">Δ<sub>o</sub></span> (the splitting energy).
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="250" viewBox="0 0 640 250" role="img" aria-label="Diagram of d-orbital splitting in an octahedral field">
+          <!-- Free ion -->
+          <text x="120" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">Free ion</text>
+          <g>
+            <circle cx="40" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="80" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="120" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="160" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+            <circle cx="200" cy="110" r="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"></circle>
+          </g>
+          <text x="120" y="146" text-anchor="middle" font-size="10.5" fill="#6b7280">All 5 d orbitals equal in energy (fivefold degenerate)</text>
+          <!-- Transition arrow -->
+          <path d="M232,110 L300,110" stroke="#475569" stroke-width="2" marker-end="url(#mkC)"></path>
+          <text x="266" y="94" text-anchor="middle" font-size="10.5" fill="#475569">6 ligands close in</text>
+          <text x="266" y="132" text-anchor="middle" font-size="10.5" fill="#475569">(octahedral field)</text>
+          <!-- After splitting -->
+          <text x="470" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">In the ligand field (split)</text>
+          <g>
+            <circle cx="400" cy="60" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"></circle>
+            <circle cx="448" cy="60" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"></circle>
+            <circle cx="376" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+            <circle cx="424" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+            <circle cx="472" cy="168" r="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"></circle>
+          </g>
+          <text x="560" y="56" text-anchor="start" font-size="10.5" fill="#dc2626">e (z², x²−y²)</text>
+          <text x="560" y="70" text-anchor="start" font-size="9.5" fill="#6b7280">Facing ligands → raised</text>
+          <text x="560" y="164" text-anchor="start" font-size="10.5" fill="#16a34a">t (xy, xz, yz)</text>
+          <text x="560" y="178" text-anchor="start" font-size="9.5" fill="#6b7280">Avoiding ligands → lowered</text>
+          <line x1="510" y1="76" x2="510" y2="152" stroke="#9a3412" stroke-width="2" marker-end="url(#mkC)"></line>
+          <line x1="510" y1="152" x2="510" y2="76" stroke="#9a3412" stroke-width="2" marker-end="url(#mkC)"></line>
+          <text x="528" y="120" text-anchor="start" font-size="13" font-weight="800" fill="#9a3412">Δ</text>
+          <text x="424" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">An electron absorbs visible light of energy exactly Δ and jumps from the lower set to the upper set</text>
+          <defs>
+            <marker id="mkC" markerWidth="7" markerHeight="7" refX="5" refY="2.6" orient="auto">
+              <path d="M0,0 L5.6,2.6 L0,5.2 z" fill="#475569"></path>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <figcaption>
+        Splitting in an octahedral field (e and t are the group-theory labels for the two orbital sets — as a
+        beginner, just read them as "upper set / lower set"). The size of the splitting energy Δ is set by each
+        ligand's <strong>"field strength"</strong>: for common ligands, from weak to strong,
+        <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span> (a fragment of the spectrochemical series).
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Step Ladder · A colorless ion plus ligands — where does the color come from?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Think of white light as a full row of piano keys. An ordinary free ion is like an
+          <strong>unretuned piano</strong> — there is no pitch difference between the keys, so no visible light can
+          "play" it, and it stays colorless. When ligands arrive, it is as if someone raised two of the keys:
+          <strong>a fixed pitch difference now exists</strong>. Light whose energy exactly matches that difference
+          gets absorbed (the note sounds); a band of color goes missing from the white light, and your eye sees the
+          remaining <strong>complementary color</strong>. The pitch difference (Δ) is set by the ligand —
+          swapping ligands means retuning the piano.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · d–d transition</span>
+        <p>
+          Back to the electrons: the ligand field splits the 5 d orbitals into an upper set (e<sub>g</sub>) and a
+          lower set (t<sub>2g</sub>) separated by Δ. An electron of Cu²⁺ (d⁹) can absorb
+          <strong>a photon whose energy exactly equals Δ</strong> and jump from the lower set to the upper —
+          this is the <span class="term">d–d transition</span>. As white light passes through, the absorbed band
+          vanishes, and the solution shows the complementary color of what was taken out. For the aqua copper ion,
+          Δ corresponds to absorbing orange-red light → you see blue; switch to NH<sub>3</sub> ligands and Δ grows,
+          shifting the absorption toward orange-yellow → you see a deeper royal blue.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Quantitative and Exceptions</span>
+        <p>
+          Photon energy <span class="formula">E = hν = hc/λ</span>: the larger Δ, the shorter the absorbed
+          wavelength, and the observed color shifts by the complement rule. In the ligand-strength ranking
+          (a spectrochemical-series fragment) <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>,
+          CN<sup>−</sup> is strongest because, beyond electrostatics, its π system can siphon off metal d electrons
+          (back-donation), widening the split further. Two important exceptions to remember: ① when the d orbitals
+          are completely full or completely empty (e.g. Zn²⁺ d¹⁰, Sc³⁺ d⁰) <strong>there are no electrons to jump,
+          or no vacancies to jump into, so the complex is colorless</strong>; ② yet MnO<sub>4</sub><sup>−</sup>
+          (Mn +7, d⁰) is intensely purple — that is not a d–d transition but the stronger "charge transfer"
+          (an O electron momentarily jumps toward Mn), whose absorption is a hundred times more intense and whose
+          color is far more vivid.
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "A substance's color comes from added pigments"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          A blue bottle holds a blue dye, a green solution has green pigment stirred in — copper(II) sulfate
+          solution is so blue, surely some "copper pigment" has dissolved into it.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          The color of a transition-metal solution <strong>needs no pigment at all</strong>: d electrons absorb
+          specific visible bands according to Δ (the d–d transition), and the remaining light enters your eye —
+          color is the <strong>negative of selective absorption (the complementary color)</strong>. Cu²⁺ absorbs
+          orange-red and looks blue; Fe³⁺ absorbs violet-blue and looks yellow; MnO<sub>4</sub><sup>−</sup> absorbs
+          yellow-green and looks purple. The proof is that the color changes with Δ once ligands are added —
+          if it were merely "mixed-in pigment", swapping ligands should not swap colors.
+        </div>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "The color deepened when ammonia was added — it's just more concentrated, right?"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Pale blue to deep blue — same as brewing stronger coffee. The ammonia just "concentrated" the Cu²⁺;
+          the copper ion is still the same copper ion.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          What changed is <strong>the chemical species itself</strong>: the ligand went from H<sub>2</sub>O to
+          NH<sub>3</sub>, [Cu(H<sub>2</sub>O)<sub>4</sub>]<sup>2+</sup> → [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>.
+          The NH<sub>3</sub> ligand field is stronger → Δ is larger → the absorption peak shifts to shorter
+          wavelengths (orange-red → orange-yellow) → the complementary color shifts to a deeper royal blue.
+          The simulator below makes this "seat swap" visible from start to finish — and dilute hydrochloric acid
+          can evict the newcomer and restore the original seat.
+        </div>
+      </div>
+    </div>
+
+    <h3>🔬 Try It Out: Ligand-Substitution Simulator</h3>
+    <p>
+      On the left is what you would see in the test tube; on the right is a running commentary at the molecular
+      level. Click "Next step" to add reagent dropwise, stage by stage, and watch for the crucial
+      <strong>pale-blue precipitate</strong> in the middle — many textbooks skip it, but in a real experiment it
+      always appears first.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ligandSvg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="Step-by-step simulation of ligand substitution with ammonia and copper(II) sulfate"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="lgNext">Next step · Add reagent</button>
+          <button class="btn ghost" id="lgReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="ligandReadout">[1/5 · Initial] Copper(II) sulfate solution: [Cu(H₂O)₄]²⁺ is pale blue — the water ligand field is weak, Δ is small, and longer-wavelength orange-red light is absorbed</div>
+      </div>
+      <figcaption>
+        In a real experiment the aqua copper ion is closer to the distorted octahedron [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>;
+        here we follow the conventional four-coordinate shorthand. Remember the ligand-strength fragment
+        <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>:
+        stronger ligand → larger Δ → shorter-wavelength absorption → deeper color. The "acid restoration" in the
+        final step is a preview of the acid–base contest in Chapter 4.
+      </figcaption>
+    </figure>
+
+    <details class="think">
+      <summary>Think It Through: Zn²⁺ also forms the complex [Zn(NH₃)₄]²⁺ with NH₃ — so why is its solution nearly colorless?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: count the d electrons on a Zn atom (Zn is element 30: Ar core + 3d¹⁰4s²).</p>
+        <p>
+          Zn²⁺ is <strong>d¹⁰, completely full</strong>: the lower set of orbitals is fully occupied — and so is
+          the upper set — leaving no vacancy for an electron to jump into, <strong>so the d–d transition cannot
+          happen</strong>; visible light is barely absorbed and the solution is colorless. Likewise Sc³⁺ (d⁰) has
+          no electrons to jump and is also colorless. Turned around, the color itself leaks information about the
+          d-electron count: <strong>only with d between 0 and 10 is there a "stage" to jump onto</strong>.
+          That is why "colored" is the d-block's signature, while the s block and the zinc group stand out by
+          going bare-faced.
+        </p>
+      </div>
+    </details>
+
+    <div class="warn">
+      <div class="kp-title">🧯 Cyanide Safety Warning (Must Read)</div>
+      The CN⁻ in this section is strictly on paper — <strong>never attempt any experiment involving cyanides
+      yourself</strong>. CN⁻ coordinates extremely strongly: inside the body it locks tightly onto the Fe³⁺ in
+      cytochrome oxidase, crashing the respiratory chain on the spot; a few milligrams can be fatal, and contact
+      with acid releases the highly toxic gas HCN. In industry, cyanide-containing wastewater must be detoxified
+      by oxidation before discharge. "The strongest coordinating ability" is a beautiful blue in a test tube —
+      and a deadly robbery inside the body; the power of chemistry cuts both ways.
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The three hallmarks of the transition metals share one root: <strong>flexible d-electron energies</strong> → multiple oxidation states (Mn reaches +7), color (d–d transitions), and catalysis (ammonia synthesis, exhaust cleanup, enzyme active centers).</li>
+        <li>The three essentials of a complex: <strong>central ion</strong> (furnishes empty orbitals), <strong>ligands</strong> (furnish lone pairs), <strong>coordination number</strong> (commonly 4 square planar, 6 octahedral); the coordinate bond is a covalent bond with a "single investor".</li>
+        <li>Inside the square brackets is the <strong>inner sphere</strong> (held together by coordinate bonds); outside is the outer sphere. Naming template: "ligand-count prefix + ligand name + metal name (oxidation state)", with an "-ate" ending when the inner sphere is an anion.</li>
+        <li>A first look at crystal field theory: the ligands split the 5 d orbitals into two sets with energy gap Δ; <strong>electrons absorb visible light of energy exactly Δ (a d–d transition), and the solution appears in the complementary color of the absorbed light</strong>.</li>
+        <li>Ligand-strength fragment <strong>H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></strong>: change the ligand → change Δ → change the color; d⁰/d¹⁰ are colorless; the intense purple of MnO<sub>4</sub><sup>−</sup> comes from stronger charge transfer.</li>
+        <li>CO poisoning and cyanide poisoning are both <strong>ligand competition</strong> for Fe sites — coordination chemistry is quite literally a matter of life and death.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Transition Metals and Coordination Chemistry <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Which of the following statements about transition metals is wrong?",
+            "options": [
+              "They commonly show multiple oxidation states, because (n−1)d and ns electrons are close in energy and both can take part",
+              "Their compounds are often colored, related to d-electron transitions",
+              "They often serve as catalysts, related to variable oxidation states and the ability to bind reactants temporarily",
+              "Aqueous solutions of all transition-metal ions are necessarily deeply colored"
+            ],
+            "answer": 3,
+            "explain": "Not everyone gets color: with d full or empty (Zn²⁺ d¹⁰, Sc³⁺ d⁰) there is no d–d transition and the solution is colorless; moreover d–d absorption is weak, so the color is often pale (Fe²⁺ is only pale green). A, B, and C are shared features of the d block."
+          },
+          {
+            "q": "In K₃[Fe(CN)₆], what are the central ion, ligand, and coordination number?",
+            "options": [
+              "Fe³⁺, CN⁻, 6",
+              "Fe²⁺, CN⁻, 6",
+              "Fe³⁺, CN⁻, 3",
+              "K⁺, CN⁻, 6"
+            ],
+            "answer": 0,
+            "explain": "The inner sphere [Fe(CN)₆]³⁻ carries −3: the 6 CN⁻ total −6, so Fe is +3. The six cyanides each coordinate through their C end → coordination number 6 (octahedral). K⁺ is only the outer sphere and does not coordinate."
+          },
+          {
+            "q": "Who provides the shared electron pair of a coordinate bond?",
+            "options": [
+              "The central ion and the ligand each contribute half",
+              "Entirely by the ligand's donor atom (a lone pair)",
+              "Entirely by the central ion",
+              "By the outer-sphere ions"
+            ],
+            "answer": 1,
+            "explain": "The coordinate bond is a covalent bond with a 'single investor': the ligand's donor atom (N in NH₃, C in CN⁻) supplies a lone pair into an empty orbital of the central ion. Outer-sphere ions only neutralize the charge ionically and do not coordinate."
+          },
+          {
+            "q": "According to crystal field theory, why is [Cu(NH₃)₄]²⁺ more deeply colored than [Cu(H₂O)₄]²⁺?",
+            "options": [
+              "NH₃ is itself a blue molecule",
+              "The ammonia concentrated the copper",
+              "The NH₃ ligand field is stronger, the splitting energy Δ is larger, the absorption shifts to shorter wavelengths, and the complementary color is deeper",
+              "The number of d electrons on Cu²⁺ changed"
+            ],
+            "answer": 2,
+            "explain": "It is the same Cu²⁺ (d⁹); what changed is the ligand: in the spectrochemical series H₂O < NH₃ < CN⁻, NH₃ enlarges Δ, so the d–d transition absorbs higher energy (shorter wavelength, orange-red → orange-yellow), and the observed complementary color shifts to deep royal blue. The species changed — it is not concentration, and certainly not a blue molecule."
+          },
+          {
+            "q": "Complexes of Zn²⁺ (such as [Zn(NH₃)₄]²⁺) are nearly colorless. Why?",
+            "options": [
+              "The ligand NH₃ is colorless",
+              "Zn²⁺ absorbs no light at all",
+              "Zn²⁺ has a full d¹⁰ configuration: the lower set is full and so is the upper, so no d–d transition can occur",
+              "The ligand field is too weak; Δ equals zero"
+            ],
+            "answer": 2,
+            "explain": "With d¹⁰, each of the 5 d orbitals holds one pair — the lower set t is full and the upper set e is full too, leaving no vacancy for an electron to jump into, so visible light is barely absorbed and the complex is colorless. Δ is not zero (the orbitals still split); there is simply 'no stage to jump onto'. Likewise d⁰ (Sc³⁺) has no electrons to jump."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Main-Group-Elements.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Main Group Elements</span></a>
+      <a class="next" href="04-Acids-Bases-and-Aqueous-Chemistry.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 4 · Acids, Bases, and Aqueous Chemistry</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interaction: ligand-substitution simulator ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* Shared SVG helper, defined in assets/tutor.js */
+
+  var svg = document.getElementById("ligandSvg");
+  if (!svg) return;
+  var readout = document.getElementById("ligandReadout");
+  var step = 0; /* 0 initial 1 a little ammonia, precipitate 2 excess ammonia, deep blue 3 comparison 4 acid restores */
+
+  var STEPS = [
+    "[1/5 · Initial] Copper(II) sulfate solution: [Cu(H₂O)₄]²⁺ is pale blue — the water ligand field is weak, Δ is small, and longer-wavelength orange-red light is absorbed",
+    "[2/5 · A few drops of ammonia] NH₃·H₂O ⇌ NH₄⁺ + OH⁻; the OH⁻ grabs Cu²⁺ first: Cu²⁺ + 2OH⁻ → Cu(OH)₂↓, and a pale-blue flocculent precipitate appears",
+    "[3/5 · Excess ammonia] The more strongly coordinating NH₃ displaces water one by one: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]²⁺ + 2OH⁻; the precipitate dissolves and the solution turns deep royal blue",
+    "[4/5 · Comparison] Still the same Cu²⁺! Ligand H₂O → NH₃, Δ grows, and the absorption shifts from orange-red toward orange-yellow — it is the 'species' that deepened, not added pigment",
+    "[5/5 · Dilute hydrochloric acid added] H⁺ carries the NH₃ off: [Cu(NH₃)₄]²⁺ + 4H⁺ → [Cu(H₂O)₄]²⁺ + 4NH₄⁺; the solution returns to pale blue — ligand substitution is a reversible tug-of-war (a preview of Lewis acids and bases in Chapter 4)"
+  ];
+
+  var liq = [ /* [top color, bottom color] */
+    ["#bfdbfe", "#60a5fa"],  /* 0 pale blue */
+    ["#b6d4f0", "#5b9fd6"],  /* 1 supernatant still pale blue (slightly cloudy) */
+    ["#3b82f6", "#1e3a8a"],  /* 2 deep royal blue */
+    ["#3b82f6", "#1e3a8a"],  /* 3 same as 2 */
+    ["#bfdbfe", "#60a5fa"]   /* 4 restored pale blue */
+  ];
+  var gap = [10, 12, 26, 26, 10]; /* Δ schematic gap (px) */
+
+  function drawTube(colors) {
+    /* Dropper */
+    var reagent = step === 1 || step === 2 ? "ammonia" : (step === 4 ? "dilute HCl" : null);
+    if (reagent) {
+      el("circle", { cx: 112, cy: 22, r: 8, fill: "#94a3b8" }, svg);
+      el("rect", { x: 106, y: 26, width: 12, height: 24, rx: 3, fill: "#cbd5e1", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: 112, cy: 62, r: 4, fill: reagent === "ammonia" ? "#93c5fd" : "#fca5a5", class: "anim-pulse" }, svg);
+      var rt = el("text", { x: 128, y: 36, "font-size": 11, fill: "#6b7280" }, svg);
+      rt.textContent = "Add " + reagent;
+    }
+    /* Test tube */
+    el("path", { d: "M76,56 L76,252 Q76,268 92,268 L132,268 Q148,268 148,252 L148,56",
+                 fill: "none", stroke: "#94a3b8", "stroke-width": 3, "stroke-linecap": "round" }, svg);
+    el("line", { x1: 68, y1: 56, x2: 156, y2: 56, stroke: "#cbd5e1", "stroke-width": 3 }, svg);
+    /* Liquid (gradient) */
+    var defs = el("defs", {}, svg);
+    var grad = el("linearGradient", { id: "liqG", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+    el("stop", { offset: "0%", "stop-color": colors[0] }, grad);
+    el("stop", { offset: "100%", "stop-color": colors[1] }, grad);
+    el("path", { d: "M82,110 L82,252 Q82,262 92,262 L132,262 Q142,262 142,252 L142,110 Z", fill: "url(#liqG)" }, svg);
+    /* Precipitate (step 1 only) */
+    if (step === 1) {
+      var blobs = [[98, 250, 7, 5], [116, 245, 8, 6], [130, 252, 6, 5], [90, 236, 5, 4], [124, 230, 6, 4]];
+      blobs.forEach(function (b) {
+        el("ellipse", { cx: b[0], cy: b[1], rx: b[2], ry: b[3], fill: "#bae6fd", stroke: "#7dd3fc", "stroke-width": 1 }, svg);
+      });
+      [[102, 180, 3], [120, 158, 2.5], [92, 208, 3.5]].forEach(function (c) {
+        el("circle", { cx: c[0], cy: c[1], r: c[2], fill: "#bae6fd", opacity: 0.85 }, svg);
+      });
+      var pt = el("text", { x: 112, y: 132, "text-anchor": "middle", "font-size": 10.5, "font-weight": 700, fill: "#1e40af" }, svg);
+      pt.textContent = "Cu(OH)₂↓";
+    }
+    /* Test-tube status label */
+    var tags = ["① Pale blue", "② Pale-blue precipitate", "③ Deep royal blue", "③ Deep royal blue", "④ Restored pale blue"];
+    var lt = el("text", { x: 112, y: 292, "text-anchor": "middle", "font-size": 12.5, "font-weight": 800, fill: "#9a3412" }, svg);
+    lt.textContent = tags[step];
+  }
+
+  function ligandNode(kind, x, y) {
+    if (kind === "H2O") {
+      el("circle", { cx: x, cy: y, r: 9, fill: "#ef4444", stroke: "#b91c1c", "stroke-width": 1.5 }, svg);
+      el("circle", { cx: x - 8, cy: y - 8, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x + 8, cy: y - 8, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      var t = el("text", { x: x, y: y + 26, "text-anchor": "middle", "font-size": 10, fill: "#374151" }, svg);
+      t.textContent = "H₂O";
+    } else {
+      el("circle", { cx: x, cy: y, r: 9, fill: "#2563eb", stroke: "#1d4ed8", "stroke-width": 1.5 }, svg);
+      el("circle", { cx: x - 9, cy: y - 6, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x + 9, cy: y - 6, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      el("circle", { cx: x, y: y - 11, r: 4, fill: "#fff", stroke: "#94a3b8", "stroke-width": 1 }, svg);
+      var t2 = el("text", { x: x, y: y + 26, "text-anchor": "middle", "font-size": 10, fill: "#374151" }, svg);
+      t2.textContent = "NH₃";
+    }
+  }
+
+  function drawMolecule() {
+    var cx = 420, cy = 150;
+    var species = [
+      "[Cu(H₂O)₄]²⁺", "Cu(OH)₂ ↓ flocculent precipitate (polymeric network, schematic)", "[Cu(NH₃)₄]²⁺",
+      "[Cu(NH₃)₄]²⁺", "[Cu(H₂O)₄]²⁺"
+    ][step];
+    var st = el("text", { x: cx, y: 46, "text-anchor": "middle", "font-size": 14.5, "font-weight": 800, fill: "#111827" }, svg);
+    st.textContent = species;
+
+    /* Coordinate-bond arrow marker */
+    var defs = el("defs", {}, svg);
+    var mk = el("marker", { id: "mkL", markerWidth: 7, markerHeight: 7, refX: 5, refY: 2.6, orient: "auto" }, defs);
+    el("path", { d: "M0,0 L5.6,2.6 L0,5.2 z", fill: "#475569" }, mk);
+
+    var pos = [[cx, 76], [cx + 74, cy], [cx, 224], [cx - 74, cy]];
+    var kind = (step === 2 || step === 3) ? "NH3" : "H2O";
+
+    if (step === 1) {
+      /* Precipitate schematic: grayed-out center + two OH⁻ */
+      pos.forEach(function (p, i) {
+        if (i % 2 === 1) return;
+        ligandNode("H2O", p[0], p[1]);
+      });
+      el("line", { x1: cx, y1: cy, x2: cx + 52, y2: cy, stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      el("line", { x1: cx, y1: cy, x2: cx - 52, y2: cy, stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      [["OH⁻", cx + 66, cy], ["OH⁻", cx - 66, cy]].forEach(function (o) {
+        el("circle", { cx: o[1], cy: o[2], r: 10, fill: "#f472b6", stroke: "#be185d", "stroke-width": 1.5 }, svg);
+        var t = el("text", { x: o[1], y: o[2] + 4, "text-anchor": "middle", "font-size": 8.5, "font-weight": 700, fill: "#fff" }, svg);
+        t.textContent = "OH";
+      });
+      el("circle", { cx: cx, cy: cy, r: 17, fill: "#94a3b8", stroke: "#64748b", "stroke-width": 2 }, svg);
+      var ct = el("text", { x: cx, y: cy + 5, "text-anchor": "middle", "font-size": 10.5, "font-weight": 800, fill: "#fff" }, svg);
+      ct.textContent = "Cu²⁺";
+      el("ellipse", { cx: cx, cy: cy, rx: 96, ry: 88, fill: "none", stroke: "#94a3b8", "stroke-width": 1.5, "stroke-dasharray": "6 5" }, svg);
+    } else {
+      /* Normal four-coordinate */
+      pos.forEach(function (p) {
+        el("line", { x1: p[0] + (cx - p[0]) * 0.28, y1: p[1] + (cy - p[1]) * 0.28,
+                     x2: cx + (p[0] - cx) * 0.24, y2: cy + (p[1] - cy) * 0.24,
+                     stroke: "#94a3b8", "stroke-width": 2, "marker-end": "url(#mkL)" }, svg);
+      });
+      el("circle", { cx: cx, cy: cy, r: 17, fill: "#ea580c", stroke: "#9a3412", "stroke-width": 2 }, svg);
+      var ct2 = el("text", { x: cx, y: cy + 5, "text-anchor": "middle", "font-size": 10.5, "font-weight": 800, fill: "#fff" }, svg);
+      ct2.textContent = "Cu²⁺";
+      pos.forEach(function (p) { ligandNode(kind, p[0], p[1]); });
+    }
+
+    /* Small Δ diagram */
+    var dyy = 282, g = gap[step];
+    el("line", { x1: cx - 34, y1: dyy, x2: cx + 24, y2: dyy, stroke: "#15803d", "stroke-width": 3.5 }, svg);
+    el("line", { x1: cx - 34, y1: dyy - g, x2: cx + 24, y2: dyy - g, stroke: "#dc2626", "stroke-width": 2.5 }, svg);
+    var lo = el("text", { x: cx + 30, y: dyy + 4, "font-size": 10, fill: "#15803d" }, svg);
+    lo.textContent = "t lower set";
+    var hi = el("text", { x: cx + 30, y: dyy - g + 4, "font-size": 10, fill: "#dc2626" }, svg);
+    hi.textContent = "e upper set";
+    var dt = el("text", { x: cx - 50, y: dyy - g / 2 + 5, "font-size": 13, "font-weight": 800, fill: "#9a3412" }, svg);
+    dt.textContent = "Δ";
+    var cap = el("text", { x: cx, y: 306, "text-anchor": "middle", "font-size": 10.5, fill: "#4b5563" }, svg);
+    cap.textContent = step === 1 ? "Cu's coordination environment is disrupted in the precipitate" :
+      (g > 18 ? "Large Δ → absorbs orange-yellow light → deep royal blue" : "Small Δ → absorbs orange-red light → pale blue");
+  }
+
+  function render() {
+    svg.innerHTML = "";
+    drawTube(liq[step]);
+    drawMolecule();
+    /* Comparison badges (step 3) */
+    if (step === 3) {
+      el("circle", { cx: 588, cy: 96, r: 11, fill: "#93c5fd", stroke: "#2563eb", "stroke-width": 1.5 }, svg);
+      var t1 = el("text", { x: 588, y: 122, "text-anchor": "middle", "font-size": 9, fill: "#4b5563" }, svg);
+      t1.textContent = "H₂O · pale blue";
+      el("circle", { cx: 588, cy: 150, r: 11, fill: "#1d4ed8", stroke: "#1e3a8a", "stroke-width": 1.5 }, svg);
+      var t2 = el("text", { x: 588, y: 176, "text-anchor": "middle", "font-size": 9, fill: "#4b5563" }, svg);
+      t2.textContent = "NH₃ · deep blue";
+    }
+    readout.textContent = STEPS[step];
+  }
+
+  var nx = document.getElementById("lgNext");
+  if (nx) nx.addEventListener("click", function () {
+    if (step < 4) { step++; render(); }
+    nx.textContent = step >= 4 ? "Done ✓" : "Next step · Add reagent";
+    nx.disabled = step >= 4;
+  });
+  var rs = document.getElementById("lgReset");
+  if (rs) rs.addEventListener("click", function () {
+    step = 0; render();
+    nx.disabled = false; nx.textContent = "Next step · Add reagent";
+  });
+  render();
+})();
+</script>
+</body>
+</html>

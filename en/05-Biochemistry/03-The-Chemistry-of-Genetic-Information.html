@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>The Chemistry of Genetic Information · Biochemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b05">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">05 Biochemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · The Chemistry of Genetic Information</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">05 Biochemistry · Chapter 3</div>
+    <h1>The Chemistry of Genetic Information: From the Double Helix to Proteins</h1>
+    <p class="lede">
+      Every one of your cells stores about 2 meters of DNA; strung end to end, the DNA in all your cells could travel back and forth between the Earth and the Sun more than sixty times.
+      How does this 3-billion-"letter" chain copy itself with such precision — and how is it read out to direct protein synthesis?
+      This chapter follows the information's journey along the central dogma of <strong>replication → transcription → translation</strong>,
+      then sees how PCR and CRISPR turn this chemistry into tools for rewriting life.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–2 of this branch</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#helix">§1 The Double Helix</a>
+    <a href="#replication">§2 Replication</a>
+    <a href="#dogma">§3 Transcription and Translation</a>
+    <a href="#tech">§4 Mutations and Technologies</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: 3 Billion Letters, One Error in Ten Billion</h2>
+    <p>
+      The human genome contains about 3 billion base pairs — reading one pair per second would take 95 years;
+      the information amounts to roughly 750 MB, just about one CD. But what is truly astonishing is not the capacity, it is the <strong>fidelity</strong>:
+      the raw error rate of replication is as low as 10⁻⁹–10⁻¹⁰ per base — equivalent to copying a thousand books of a million words each and making only a single mistake.
+      How is this achieved? The answer hides in the <strong>chemical structure</strong> of the double helix: the hydrogen bonding and base complementarity of the previous chapter
+      are precisely the factory-installed interface for "photocopying".
+    </p>
+    <p>
+      In 1953, Watson and Crick announced the double-helix structure in a one-page paper in Nature, closing with the words:
+      <em>"It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for genetic material."</em>
+      — a structural paper that, in passing, answered biology's biggest question. This chapter follows that thread.
+    </p>
+  </section>
+
+  <!-- ============ §1 The Double Helix ============ -->
+  <section id="helix">
+    <h2>§1 The Double Helix: A Blueprint with Its Own Copying Instructions</h2>
+    <p>
+      Recall from Chapter 1: DNA's backbone is joined by <strong>phosphodiester bonds</strong>, and the two strands are <strong>antiparallel</strong>
+      (one runs 5′→3′, the other 3′→5′); the bases tuck away in the interior,
+      pairing strictly through hydrogen bonds — <span class="formula">A=T</span> (2 hydrogen bonds) and
+      <span class="formula">G≡C</span> (3 hydrogen bonds).
+      The key parameters of the double helix:
+    </p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Parameter</th><th>Value</th><th>Chemical meaning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Helix diameter</td><td>~2 nm</td><td>A purine (large) must pair with a pyrimidine (small); the groove width stays constant</td></tr>
+        <tr><td>Base pairs per turn</td><td>~10 pairs</td><td>Pitch of 3.4 nm — compact and regular</td></tr>
+        <tr><td>Pairing pattern</td><td>A=T · G≡C</td><td>Hydrogen-bond donor/acceptor positions are strictly complementary</td></tr>
+        <tr><td>Base location</td><td>Helix interior</td><td>Hydrophobic bases stack away from water (base stacking); the hydrophilic backbone faces outward</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Three Elegant Moves Built into the Double Helix</div>
+      ①<strong>Each strand is a template for the other</strong> — the principle of replication is written into the structure;
+      ②bases pair through <strong>hydrogen bonds</strong> — stable enough for archival storage, yet easy to "unzip";
+      ③information is <strong>digitized</strong> in a 4-letter alphabet — each letter can be checked one by one during copying, far more precisely than an analog copy.
+    </div>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why does A pair only with T, and G only with C?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Base pairing works like a <strong>plug and socket</strong>: the prongs on A line up exactly with the holes on T,
+          and G with C — both the shape and the "electrodes" (the hydrogen-bond donors and acceptors) must match; a wrong plug either will not go in or will not light up.
+          Moreover, a large double-ring purine pairs with a small single-ring pyrimidine — <strong>big pairs with small, so the width stays constant</strong>;
+          pairing A with G would burst the helix open, while pairing T with C would leave it collapsed.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Mechanism</span>
+        <p>
+          The arrangement of hydrogen-bond <strong>donors (D) and acceptors (A)</strong> along each base's edge is fixed:
+          A's pattern is exactly complementary to T's (D-A meets A-D, 2 hydrogen bonds in all), and G is complementary to C (three hydrogen bonds).
+          Mismatched bases present non-complementary patterns, cannot form proper hydrogen bonds, and lose a great deal of stability.
+          The "pairing rules" are therefore not a matter of discipline but a <strong>necessity of chemical geometry</strong> —
+          the first layer of insurance behind replication fidelity.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Quantitative</span>
+        <p>
+          Fidelity has more than one layer: ① thermodynamics — mismatched duplexes are less stable; ② kinetics — the active site of DNA polymerase accommodates
+          only the geometry of a correctly paired base (induced fit scores another win), and it carries a 3′→5′ proofreading exonuclease that clips out wrong insertions at once;
+          ③ afterward, mismatch repair systems patrol the DNA. Three layers stacked together yield an error rate of 10⁻⁹–10⁻¹⁰.
+          Another measurable corollary: <strong>more G≡C hydrogen bonds → a higher melting temperature T<sub>m</sub></strong> —
+          the higher a DNA's GC content, the harder it is to separate, which is exactly why PCR primer design requires calculating the GC ratio (§4).
+        </p>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why does DNA use thymine (T) while RNA uses uracil (U)?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: U is T minus one methyl group. How do the stability demands of an "archive" and a "draft" differ?</p>
+        <p>
+          U is "cheaper" and easier to synthesize — RNA is a short-lived working copy, so using U is fine.
+          DNA is the lifelong archive, and T's extra methyl group makes it more stable and more resistant to chemical hydrolysis.
+          Even cleverer is the <strong>repair perspective</strong>: cytosine (C) spontaneously deaminates into U —
+          when repair enzymes see a U in DNA, they immediately know "this is a damaged C" and simply restore it to C;
+          if DNA normally used U, every U would be "genuine" and the error would be undetectable.
+          A single methyl group difference gives the archive and the draft exactly what each needs.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Replication ============ -->
+  <section id="replication">
+    <h2>§2 Replication: Unzip the Helix, Rebuild Each Half</h2>
+    <p>
+      Since the two strands of the double helix are complementary, the strategy of replication follows naturally:
+      <span class="term">semiconservative replication</span> —
+      unzip the helix, let each old strand serve as a template, and pair each with a new strand.
+      In 1958, Meselson and Stahl labeled E. coli DNA with the ¹⁵N isotope
+      and used density-gradient centrifugation to track where the "heavy" strands went, showing cleanly that every daughter molecule
+      consists of <strong>one old strand + one new strand</strong> — an experiment later celebrated as "the most beautiful experiment in biology".
+    </p>
+    <p>
+      At a real replication fork there is a whole construction crew: <strong>helicase</strong> (spends ATP to pull the two strands apart),
+      <strong>single-strand binding proteins</strong> (hold the exposed single strands steady), <strong>topoisomerase</strong> (cuts, swivels, and rejoins ahead of the fork
+      to keep the helix from twisting into knots), <strong>DNA polymerase</strong> (adds nucleotides one by one along the template, and can only build 5′→3′),
+      and finally <strong>ligase</strong>, which sews up the nicks. Watch the animation:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="dnaSvg" width="640" height="380" viewBox="0 0 640 380" role="img" aria-label="DNA unwinding and replication animation"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="dnaGo">▶ Unwind continuously</button>
+          <button class="btn ghost" id="dnaStep">⏭ Step 1 pair</button>
+          <button class="btn ghost" id="dnaReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="dnaReadout"></div>
+      </div>
+      <figcaption>
+        Notice that <strong>the two new strands proceed at different rhythms</strong>: the polymerase can only build in the 5′→3′ direction,
+        while the two template strands at the fork run in opposite directions — one (the leading strand) can be extended continuously;
+        the other (the lagging strand) can only be synthesized "backwards" in segments called <strong>Okazaki fragments</strong>, which ligase later sews together.
+        Every base pair the helicase pulls apart costs ATP to overcome the hydrogen bonds.
+      </figcaption>
+    </figure>
+
+    <p>
+      Speed and accuracy are equally astonishing: E. coli's polymerase adds about 1000 nucleotides per second,
+      proofreading as it goes; all 46 human chromosomes are copied in a matter of hours.
+    </p>
+  </section>
+
+  <!-- ============ §3 Transcription and Translation ============ -->
+  <section id="dogma">
+    <h2>§3 Transcription and Translation: The Central Dogma</h2>
+    <p>
+      Crick summarized the route information flows as the <span class="term">central dogma</span>:
+      <strong>DNA → RNA → protein</strong> — the original is archived, copies circulate, and proteins do the work.
+      Light up the map below step by step:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="cdSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="Central dogma step-by-step diagram">
+          <g id="cdRep" opacity="0.4">
+            <path d="M86,138 C34,116 34,206 82,184" fill="none" stroke="#4338ca" stroke-width="3.5"/>
+            <polygon points="90,184 78,178 80,191" fill="#4338ca"/>
+            <text x="34" y="108" font-size="11" font-weight="700" fill="#4338ca">Replication</text>
+          </g>
+          <g id="cdDna" opacity="0.4">
+            <rect x="96" y="140" width="150" height="64" rx="14" fill="#c7d2fe" stroke="#4338ca" stroke-width="2.5"/>
+            <text x="171" y="170" text-anchor="middle" font-size="19" font-weight="800" fill="#3730a3">DNA</text>
+            <text x="171" y="190" text-anchor="middle" font-size="10.5" fill="#4338ca">Master blueprint · Double helix</text>
+          </g>
+          <g id="cdTrc" opacity="0.4">
+            <line x1="248" y1="172" x2="300" y2="172" stroke="#b45309" stroke-width="4"/>
+            <polygon points="308,172 295,166 295,178" fill="#b45309"/>
+            <text x="278" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">Transcription</text>
+          </g>
+          <g id="cdRna" opacity="0.4">
+            <rect x="310" y="140" width="150" height="64" rx="14" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/>
+            <text x="385" y="170" text-anchor="middle" font-size="18" font-weight="800" fill="#92400e">mRNA</text>
+            <text x="385" y="190" text-anchor="middle" font-size="10.5" fill="#b45309">Single-stranded working copy</text>
+          </g>
+          <g id="cdTrl" opacity="0.4">
+            <line x1="462" y1="172" x2="514" y2="172" stroke="#15803d" stroke-width="4"/>
+            <polygon points="522,172 509,166 509,178" fill="#15803d"/>
+            <text x="492" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Translation</text>
+          </g>
+          <g id="cdPro" opacity="0.4">
+            <rect x="524" y="140" width="110" height="64" rx="14" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/>
+            <text x="579" y="170" text-anchor="middle" font-size="16" font-weight="800" fill="#166534">Protein</text>
+            <text x="579" y="190" text-anchor="middle" font-size="10.5" fill="#15803d">Folds into machines</text>
+          </g>
+          <g id="cdRev" opacity="0.4">
+            <path d="M362,134 C312,72 250,72 204,132" fill="none" stroke="#9333ea" stroke-width="3" stroke-dasharray="7 6"/>
+            <polygon points="200,138 210,124 216,135" fill="#9333ea"/>
+            <text x="282" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#9333ea">Reverse transcription (HIV etc.)</text>
+          </g>
+          <g id="cdDots"></g>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="cdNext">Next (0/6)</button>
+          <button class="btn ghost" id="cdPrev">Previous</button>
+          <button class="btn ghost" id="cdReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="cdReadout"></div>
+      </div>
+      <figcaption>
+        Transcription copies the 4-letter language into another 4-letter language (T→U); translation decodes the 4-letter language into a 20-letter one (the amino acids) —
+        the dictionary in between is the <strong>genetic code table</strong>.
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Is the central dogma "absolutely irreversible"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          The central dogma is an iron law: information can only flow DNA → RNA → protein; reverse flow never happens.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          In 1970, Temin and Baltimore discovered <strong>reverse transcriptase</strong> in retroviruses: an enzyme that copies RNA back into DNA
+          (HIV relies on it to invade the genome; Nobel Prize 1975). But the central dogma was <strong>supplemented, not overturned</strong> —
+          the forbidden route Crick emphasized is "information cannot flow from proteins back into nucleic acids," and no exception has ever been found.
+          HIV drug design takes aim precisely at reverse transcriptase (a real-world version of Chapter 2's "enzymes as drug targets").
+        </div>
+      </div>
+    </div>
+
+    <h3>The Triplet Code: Twenty Letters Written with Four</h3>
+    <p>
+      On mRNA, <strong>every 3 adjacent nucleotides</strong> form a <span class="term">codon</span>
+      specifying one amino acid. The 64 = 4³ codons encode 20 amino acids plus stop signals —
+      there is redundancy (<span class="term">degeneracy</span>),
+      so many point mutations are "synonymous" and leave the protein completely unchanged —
+      life's <strong>built-in fault tolerance</strong> against copying errors. AUG is both methionine and the start signal.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 One Dictionary Shared by the Entire Planet</div>
+      From E. coli to you, <strong>the same code table</strong> is in use — one of the hardest pieces of evidence for a common ancestor;
+      it is also exactly why a human gene can be placed inside bacteria to produce insulin:
+      cross-species genetic engineering has been "pre-approved" by chemistry.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why are codons triplets rather than groups of 2 or 4?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Do the counting. To accommodate 20 amino acids + stop signals, how many digits does the "address" need?</p>
+        <p>
+          Groups of 2 give only 4² = 16 possibilities — not even enough to number 20 amino acids; groups of 3 give 4³ = 64,
+          enough with room to spare (the surplus buys degeneracy and fault tolerance); groups of 4 give 256, where redundancy is excessive and read–write efficiency actually falls.
+          Life chose the <strong>smallest sufficient</strong> scheme — exactly an engineer's "most economical design".
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 Worked-Example Scaffold: From Template Strand to Peptide Chain</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me)</div>
+      <div class="worked-problem">
+        A DNA template strand (the strand that is transcribed) reads 3′-TAC GGA TTC-5′. Write out the mRNA transcribed from it and the peptide chain.<br>
+        <em>Codon cheat sheet: AUG = methionine · CCU = proline · AAG = lysine</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Get oriented: the template strand runs 3′→5′, so the mRNA is copied base by base along 5′→3′.</li>
+        <li class="step">Pair base by base (DNA→RNA rules: A→U, T→A, G→C, C→G): TAC → AUG, GGA → CCU, TTC → AAG.</li>
+        <li class="step">The mRNA is: <strong>5′-AUG CCU AAG-3′</strong> (note U, not T).</li>
+        <li class="step">Consult the table and parse in triplets (three letters per word): AUG = methionine, CCU = proline, AAG = lysine → peptide <strong>Met–Pro–Lys</strong>.</li>
+        <li class="step">✅ Self-check: the mRNA is fully complementary to the template strand and runs in the opposite direction; the AUG start codon sits at the 5′ end, as expected.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me): The destructive power of frameshifts</div>
+      <div class="worked-problem">
+        An mRNA begins AUG GGC UCA GAC…. Suppose deletions in the DNA cause the mRNA to
+        ① lose the 4th base (G), or ② lose the 4th–6th bases (GGC). How is the peptide that follows affected in each case?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: translation's reading frame moves in groups of 3 from the start codon, like a telegram with fixed punctuation.</li>
+        <li class="step">💡 Hint: Scenario ① AUG | GCU | CAG | AC… — from the point of deletion onward <strong>every codon is misaligned</strong>, and the amino acid sequence changes beyond recognition (a frameshift mutation).</li>
+        <li class="step">💡 Hint: Scenario ② AUG | UCA | GAC… — only one word, glycine, is missing; the reading frame is undisturbed and everything after it reads as before.</li>
+        <li class="step">✅ Conclusion: insertions/deletions that are not multiples of 3 trigger a "frameshift avalanche", usually far more damaging than a single substitution; the ΔF508 of cystic fibrosis is exactly a 3 bp deletion — it removes just one phenylalanine, yet wrecks the protein's folding.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Mutations and Technologies ============ -->
+  <section id="tech">
+    <h2>§4 Mutations and Technologies: Read It, and You Can Rewrite It</h2>
+    <p>
+      Even with one-error-in-ten-billion precision, a ledger of 3 billion bases still accrues mistakes — these are <span class="term">mutations</span>:
+      <strong>substitutions</strong> (synonymous/missense/nonsense), <strong>insertions and deletions</strong> (frameshifts).
+      Chapter 1's sickle-cell anemia is a single-point substitution: GAG→GTG swaps glutamate for valine,
+      and a one-letter difference changes the shape of hemoglobin. Most mutations are neutral or harmful, occasionally beneficial — they are the raw material of evolution.
+    </p>
+    <p>
+      And humans, having "learned to read this chemistry", went ahead and invented two tools:
+    </p>
+    <ul>
+      <li><strong>PCR</strong> (polymerase chain reaction; Mullis, 1983; Nobel Prize 1993):
+        heat to 95 ℃ to melt the strands → cool so primers anneal → polymerase extends — three steps per cycle, and after 30 rounds the DNA is amplified about 10⁹-fold.
+        Pandemic testing, forensic DNA, and ancient-DNA sequencing all rest on it. The key player is the
+        <strong>heat-tolerant Taq polymerase</strong> recruited from bacteria in Yellowstone's hot springs — ordinary enzymes are thoroughly cooked at 95 ℃ (Chapter 2's denaturation),
+        while Taq is right at home in a hot bath.</li>
+      <li><strong>CRISPR-Cas9</strong> (Nobel Prize in Chemistry 2020): a pair of
+        <strong>molecular scissors</strong> derived from bacterial "immune memory" — the guide RNA finds the address, the Cas9 scissors cut at that exact spot, and the cell's repair machinery rewrites the gene in passing.
+        One-sentence outlook: the door to gene therapy is opening, and the ethical questions — "should we cut, and where?" — are harder than the chemistry.</li>
+    </ul>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Will eating GM food "change my genes"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          The "foreign genes" in genetically modified food integrate into my genome once eaten, changing both me and my descendants.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Any food's DNA — GM or non-GM — is <strong>hydrolyzed by nucleases into nucleotides</strong> in the digestive tract before being absorbed,
+          treated exactly like pork genes or cabbage genes (you have eaten pork all your life without growing pig ears).
+          "Horizontal transfer" of genes requires a virus or a laboratory's full suite of molecular machinery,
+          while the digestive tract's chemical job description is a <strong>dismantling workshop</strong>, not an assembly line. The safety of GM organisms must be assessed case by case for the proteins they produce,
+          but the route of "eating a gene to rewrite a human" is, chemically, a dead end.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why must PCR use a heat-tolerant polymerase like Taq — won't an ordinary cellular polymerase do?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: The first step of every cycle is heating to 95 ℃ — recall Chapter 2's enzyme "working range".</p>
+        <p>
+          Melting by heat means the polymerase <strong>takes a 95 ℃ scalding every single cycle</strong>.
+          Ordinary enzymes hold their three-dimensional structure together with hydrogen bonds and hydrophobic interactions (Chapter 1); at high temperature the weak bonds loosen and the protein denatures irreversibly —
+          one scalding and it is spent. Taq polymerase comes from the thermophile
+          <span class="formula">Thermus aquaticus</span>;
+          living in hot springs, it welds its stable structure more tightly — a perfect match for the "heat–cool" rhythm of the cycle.
+          Knowledge gathered at the boundaries of life's chemistry turned directly into a key for technology.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Double helix: two antiparallel strands, A=T (2 hydrogen bonds), G≡C (3 hydrogen bonds); pairing is a chemical necessity dictated by <strong>hydrogen-bond geometry and "big pairs with small"</strong>.</li>
+        <li><strong>Semiconservative replication</strong>: unzip and rebuild each half (the Meselson–Stahl experiment); the leading strand is continuous, while the lagging strand makes Okazaki fragments that are sewn together afterward.</li>
+        <li>Three layers of fidelity insurance: thermodynamic penalty for mismatches + polymerase proofreading + mismatch repair → an error rate of 10⁻⁹–10⁻¹⁰.</li>
+        <li>Central dogma: DNA →(transcription)→ RNA →(translation)→ protein; reverse transcriptase adds the RNA → DNA "back door" (HIV, retroviruses).</li>
+        <li>The triplet code: 64 codons / 20 amino acids, with degeneracy as fault tolerance; the code table is universal across all life — evidence of a common ancestor, and a license for genetic engineering.</li>
+        <li>Frameshift mutations (insertions/deletions not in multiples of 3) are far more destructive than point substitutions.</li>
+        <li>The technology loop closes: PCR (heat-tolerant polymerase + cycles of melting) amplifies DNA exponentially; CRISPR-Cas9 rewrites genes at chosen spots with guide RNA — read the chemistry, and you can rewrite life.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · The Chemistry of Genetic Information <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "In the DNA double helix, which base pairs with adenine (A), and through how many hydrogen bonds?",
+            "options": ["G, 3 hydrogen bonds", "C, 3 hydrogen bonds", "T, 2 hydrogen bonds", "U, 2 hydrogen bonds"],
+            "answer": 2,
+            "explain": "In DNA, A=T (2 hydrogen bonds) and G≡C (3). U appears only in RNA. The difference in hydrogen-bond count also means the higher the GC content, the higher the melting temperature."
+          },
+          {
+            "q": "What does \"semiconservative replication\" mean?",
+            "options": ["The daughter DNA molecules are entirely newly synthesized", "Each daughter molecule contains one parental strand and one new strand", "The parental strands are degraded and rebuilt from memory", "Both parental strands end up in the same daughter molecule"],
+            "answer": 1,
+            "explain": "After unzipping, each old strand serves as a template for a new strand — each of the two daughter molecules is half old, half new. Meselson–Stahl proved this with ¹⁵N labeling."
+          },
+          {
+            "q": "If a DNA template strand reads 3′-TAC-5′, what is the transcribed mRNA?",
+            "options": ["3′-ATG-5′", "5′-AUG-3′", "5′-TAC-3′", "5′-UAC-3′"],
+            "answer": 1,
+            "explain": "The template is read 3′→5′ and copied into mRNA 5′→3′: T→A, A→U, C→G, giving 5′-AUG-3′ (AUG is precisely the start codon)."
+          },
+          {
+            "q": "What is the root reason the lagging strand must be made in \"Okazaki fragments\" that are sewn together afterward?",
+            "options": ["DNA polymerase can only synthesize 5′→3′, while the two template strands at the fork run in opposite directions", "The lagging strand's template breaks easily", "Okazaki fragments are products of mutation", "RNA plays no part in DNA replication"],
+            "answer": 0,
+            "explain": "One template runs with the fork's direction of travel (the leading strand, continuous); the other runs against it, so the polymerase can only work backward in segments — those products are the Okazaki fragments, stitched together by ligase."
+          },
+          {
+            "q": "Every PCR cycle heats to about 95 ℃, so which enzyme must be used?",
+            "options": ["Heat-tolerant Taq polymerase (from a thermophilic bacterium)", "Helicase", "Reverse transcriptase", "Restriction enzymes"],
+            "answer": 0,
+            "explain": "95 ℃ irreversibly denatures ordinary enzymes (the weak bonds fall apart). Taq polymerase, made by hot-spring bacteria, is heat-tolerant by nature — the only way to accompany DNA through the \"denaturation–annealing–extension\" cycle."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Enzymes-and-Metabolism.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Enzymes and Metabolism</span></a>
+      <a class="next" href="../06-Polymer-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">06 Polymer Chemistry · Branch overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactions (DNA unwinding/replication animation / central-dogma stepper) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* Shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. DNA unwinding and replication animation ---------- */
+  var dnaSvg = document.getElementById("dnaSvg");
+  if (dnaSvg) {
+    var dnaReadout = document.getElementById("dnaReadout");
+    var N = 11, TOP = 84, BOT = 344;
+    var LSEQ = ["A", "G", "T", "C", "A", "T", "G", "C", "T", "A", "G"];
+    var COMP = { A: "T", T: "A", G: "C", C: "G" };
+    var BCOL = { A: "#ef4444", T: "#f59e0b", G: "#22c55e", C: "#3b82f6" };
+    var p = 0, raf = null;
+
+    function yOf(i) { return TOP + i * (BOT - TOP) / (N - 1); }
+
+    function box(cx, cy, letter, op) {
+      var o = op === undefined ? 1 : op;
+      el("rect", { x: cx - 15, y: cy - 9, width: 30, height: 18, rx: 4,
+                   fill: BCOL[letter], opacity: o }, dnaSvg);
+      var t = el("text", { x: cx, y: cy + 3.5, "text-anchor": "middle", "font-size": 10,
+                           "font-weight": 800, fill: "#fff", opacity: o }, dnaSvg);
+      t.textContent = letter;
+    }
+
+    function drawDNA() {
+      dnaSvg.innerHTML = "";
+      var forkY = 66 + p * 300;
+      // Legend and labels
+      var keys = ["A", "T", "G", "C"];
+      for (var li = 0; li < 4; li++) {
+        var lx = 20 + li * 52;
+        el("rect", { x: lx, y: 20, width: 12, height: 12, rx: 3, fill: BCOL[keys[li]] }, dnaSvg);
+        var lt = el("text", { x: lx + 17, y: 31, "font-size": 10.5, fill: "#4b5563" }, dnaSvg);
+        lt.textContent = keys[li];
+      }
+      var lab1 = el("text", { x: 150, y: 31, "font-size": 10.5, "font-weight": 700, fill: "#0f766e" }, dnaSvg);
+      lab1.textContent = "Leading strand (continuous)";
+      var lab2 = el("text", { x: 620, y: 31, "text-anchor": "end", "font-size": 10.5,
+                              "font-weight": 700, fill: "#b45309" }, dnaSvg);
+      lab2.textContent = "Lagging strand (Okazaki fragments)";
+
+      // State of each base pair
+      var st = [];
+      for (var i = 0; i < N; i++) {
+        var yy = yOf(i);
+        var t = Math.max(0, Math.min(1, (forkY - yy + 10) / 26));
+        st.push({ y: yy, t: t,
+                  lx: 285 + (120 - 285) * t,
+                  rx: 355 + (520 - 355) * t });
+      }
+      // Parental backbone
+      for (var s = 0; s < N - 1; s++) {
+        el("line", { x1: st[s].lx, y1: st[s].y, x2: st[s + 1].lx, y2: st[s + 1].y,
+                     stroke: "#94a3b8", "stroke-width": 3 }, dnaSvg);
+        el("line", { x1: st[s].rx, y1: st[s].y, x2: st[s + 1].rx, y2: st[s + 1].y,
+                     stroke: "#94a3b8", "stroke-width": 3 }, dnaSvg);
+      }
+      // Hydrogen bonds + parental bases
+      for (var b = 0; b < N; b++) {
+        var ob = st[b];
+        if (ob.t < 1) {
+          var hx1 = ob.lx + 15, hx2 = ob.rx - 15;
+          var mid = (hx1 + hx2) / 2, half = (hx2 - hx1) / 2 * (1 - ob.t);
+          el("line", { x1: mid - half, y1: ob.y, x2: mid + half, y2: ob.y,
+                       stroke: "#64748b", "stroke-width": 2, "stroke-dasharray": "3 3",
+                       opacity: (1 - ob.t) }, dnaSvg);
+        }
+        box(ob.lx, ob.y, LSEQ[b]);
+        box(ob.rx, ob.y, COMP[LSEQ[b]]);
+      }
+      // New leading strand (left, continuous)
+      var prevL = null;
+      for (var n1 = 0; n1 < N; n1++) {
+        var o1 = st[n1];
+        var show1 = Math.max(0, Math.min(1, (forkY - o1.y - 8) / 18));
+        if (show1 > 0) {
+          if (prevL) el("line", { x1: prevL[0], y1: prevL[1], x2: 52, y2: o1.y,
+                                  stroke: "#0d9488", "stroke-width": 3, opacity: show1 }, dnaSvg);
+          box(52, o1.y, COMP[LSEQ[n1]], show1);
+          prevL = [52, o1.y];
+        } else { prevL = null; }
+      }
+      // New lagging strand (right, in groups of 4)
+      var prevR = null;
+      for (var n2 = 0; n2 < N; n2++) {
+        var o2 = st[n2];
+        var show2 = Math.max(0, Math.min(1, (forkY - o2.y - 8) / 18));
+        if (n2 % 4 === 0) prevR = null;
+        if (show2 > 0) {
+          if (prevR) el("line", { x1: prevR[0], y1: prevR[1], x2: 588, y2: o2.y,
+                                  stroke: "#b45309", "stroke-width": 3, opacity: show2 }, dnaSvg);
+          box(588, o2.y, COMP[LSEQ[n2]], show2);
+          prevR = [588, o2.y];
+        }
+      }
+      // Helicase
+      var hy = Math.min(forkY, 352);
+      el("circle", { cx: 320, cy: hy, r: 17, fill: "#64748b", opacity: .93 }, dnaSvg);
+      var ht = el("text", { x: 320, y: hy + 3.5, "text-anchor": "middle", "font-size": 9.5,
+                            "font-weight": 700, fill: "#fff" }, dnaSvg);
+      ht.textContent = "Helicase";
+      // Readout
+      var opened = 0;
+      for (var c = 0; c < N; c++) if (st[c].t >= 1) opened++;
+      dnaReadout.textContent = p <= 0
+        ? "Click a button to watch the helicase unzip the helix and the two new strands follow along"
+        : "Opened " + opened + "/" + N + " pairs | Leading strand (left) extends continuously | Lagging strand (right) synthesized in Okazaki fragments, stitched later by ligase | The polymerase can only build 5′→3′";
+    }
+
+    function bindDna(id, fn) {
+      var b = document.getElementById(id);
+      if (b) b.addEventListener("click", fn);
+    }
+    bindDna("dnaGo", function () {
+      if (raf) cancelAnimationFrame(raf);
+      var t0 = null, dur = 5200;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        p = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        drawDNA();
+        if (k < 1) raf = requestAnimationFrame(step);
+      }
+      raf = requestAnimationFrame(step);
+    });
+    bindDna("dnaStep", function () {
+      if (raf) cancelAnimationFrame(raf);
+      p = Math.min(1, p + 1 / N);
+      drawDNA();
+    });
+    bindDna("dnaReset", function () {
+      if (raf) cancelAnimationFrame(raf);
+      p = 0;
+      drawDNA();
+    });
+    drawDNA();
+  }
+
+  /* ---------- 2. Central dogma stepper ---------- */
+  var cdSvg = document.getElementById("cdSvg");
+  if (cdSvg) {
+    var cdReadout = document.getElementById("cdReadout");
+    var cdNext = document.getElementById("cdNext");
+    var cdPrev = document.getElementById("cdPrev");
+    var cdReset = document.getElementById("cdReset");
+    var IDS = ["cdDna", "cdRna", "cdPro", "cdRep", "cdTrc", "cdTrl", "cdRev"];
+    var STAGES = [
+      { on: [],
+        text: "The central dogma: a map of how information flows between molecules — DNA is the master blueprint, RNA the working copy, protein the machine that does the work. Click 'Next' to light it up step by step." },
+      { on: ["cdDna", "cdRep"],
+        text: "① Replication (previous section): DNA → DNA. Before the cell divides, the entire blueprint is photocopied — semiconservative replication, each parental strand claiming a new partner." },
+      { on: ["cdDna", "cdRna", "cdTrc"],
+        text: "② Transcription: RNA polymerase unwinds a small stretch of DNA and copies an mRNA from the template strand — pairing rules A→U, T→A, G→C, C→G." },
+      { on: ["cdRna"],
+        text: "③ mRNA: carries its 'photocopied page' out of the nucleus (in eukaryotes) and to the ribosome — a short-lived copy, degraded after use and reprinted whenever needed." },
+      { on: ["cdRna", "cdPro", "cdTrl"],
+        text: "④ Translation: the ribosome reads triplet codons one by one as tRNA delivers the matching amino acid — the peptide bonds of Chapter 1 form here, one after another." },
+      { on: IDS,
+        text: "⑤ Full map lit + one 'back door': retroviruses (such as HIV) can copy RNA back into DNA (purple dashed line) — the central dogma was supplemented, not overturned: once information flows into protein, it does not flow back into nucleic acid." }
+    ];
+    var stage = 0;
+
+    var dots = document.getElementById("cdDots");
+    var dotEls = [];
+    if (dots) {
+      for (var i = 0; i < STAGES.length; i++) {
+        var d = el("circle", { cx: 235 + i * 34, cy: 286, r: 7,
+                               fill: "#e5e7eb", stroke: "#cbd5e1", "stroke-width": 1.5 }, dots);
+        dotEls.push(d);
+      }
+    }
+
+    function render() {
+      var act = {};
+      STAGES[stage].on.forEach(function (id) { act[id] = true; });
+      IDS.forEach(function (id) {
+        var g = document.getElementById(id);
+        if (g) g.setAttribute("opacity", act[id] ? "1" : "0.4");
+      });
+      dotEls.forEach(function (d, i) {
+        d.setAttribute("fill", i === stage ? "#0d9488" : (i < stage ? "#99f6e4" : "#e5e7eb"));
+      });
+      cdReadout.textContent = STAGES[stage].text;
+      if (cdNext) {
+        cdNext.textContent = "Next (" + stage + "/" + STAGES.length + ")";
+        cdNext.disabled = stage >= STAGES.length - 1;
+      }
+      if (cdPrev) cdPrev.disabled = stage <= 0;
+    }
+    if (cdNext) cdNext.addEventListener("click", function () {
+      if (stage < STAGES.length - 1) { stage++; render(); }
+    });
+    if (cdPrev) cdPrev.addEventListener("click", function () {
+      if (stage > 0) { stage--; render(); }
+    });
+    if (cdReset) cdReset.addEventListener("click", function () { stage = 0; render(); });
+    render();
+  }
+})();
+</script>
+</body>
+</html>

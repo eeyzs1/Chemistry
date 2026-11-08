@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemical Reactions and Stoichiometry · Foundations of Chemistry Chapter 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">00 Foundations of Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 3 · Chemical Reactions and Stoichiometry</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 Foundations of Chemistry · Chapter 3</div>
+    <h1>Chemical Reactions and Stoichiometry: The Chemist's Arithmetic</h1>
+    <p class="lede">
+      A candle grows lighter as it burns, iron grows heavier as it rusts — does matter really appear out of nowhere or vanish into thin air?
+      This chapter answers two questions: <strong>how to keep faithful accounts with equations (conservation of mass and balancing)</strong>, and
+      <strong>how to convert between invisible molecules and weighable grams (the mole and stoichiometry)</strong>.
+      This is the bread-and-butter skill behind every quantitative calculation in the branches that follow.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time 50 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1 and 2</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#equation">Equations and conservation of mass</a>
+    <a href="#mole">The mole: chemistry's "dozen"</a>
+    <a href="#stoich">Proportion calculations and the limiting reagent</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Lavoisier's Balance</h2>
+    <p>
+      In the 1770s, Lavoisier ran an experiment so meticulous it bordered on obsessive: water was heated in a sealed vessel for 101 days,
+      turning into "distilled water" and back again, weighed the whole way — the mass never budged by a hair. From this he established an iron law:
+      <strong>a chemical reaction is nothing more than atoms rearranging; it neither creates mass out of nothing nor annihilates it</strong>.
+      A candle becoming lighter is not matter disappearing — it turns into carbon dioxide and water vapor that escape into the air; iron becoming heavier as it rusts is the metal "taking in" oxygen from the air.
+    </p>
+    <details class="think">
+      <summary>Think It Through: charcoal burns inside a sealed glass cover — how does the total mass of the cover and everything inside it change between before and after the reaction?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: gases cannot get out, and nothing from outside can get in.</p>
+        <p>
+          The total mass is <strong>exactly unchanged</strong> — the oxygen becomes carbon dioxide, the carbon becomes carbon dioxide; only the "way of combining" has changed.
+          This is precisely the law of conservation of mass: in a closed system, the total mass is identical before and after a chemical reaction. Balancing chemical equations rests on it.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Equations ============ -->
+  <section id="equation">
+    <h2>§1 The Chemical Equation: Faithful Bookkeeping</h2>
+    <p>
+      The chemical equation <span class="formula">2H₂ + O₂ → 2H₂O</span> reads "every 2 hydrogen molecules react with 1 oxygen molecule
+      to form 2 water molecules". The numbers in front (the <span class="term">coefficient</span>) give the <strong>ratio of particle counts</strong>,
+      and at the same time the <strong>mole ratio</strong> — this is the key to the next section's calculations.
+    </p>
+    <p><strong>Three-step balancing:</strong> ① count every kind of atom on both sides → ② use the least common multiple to balance the most complicated molecule → ③ leave hydrogen and oxygen for last and double-check.</p>
+
+    <h3>🔬 Hands-on: Balancing practice</h3>
+    <figure class="fig">
+      <div class="fig-canvas" id="balBox">
+        <div id="balEq" style="font-family:var(--mono);font-size:1.15rem;margin:6px 0 14px"></div>
+        <div id="balCtl" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center"></div>
+        <div class="fig-controls">
+          <button class="btn ghost" id="balPrev">← Previous</button>
+          <button class="btn ghost" id="balNext">Next →</button>
+          <button class="btn" id="balCheck">Check balance</button>
+          <button class="btn ghost" id="balReset">↺ Reset coefficients</button>
+        </div>
+        <div class="fig-readout" id="balReadout"></div>
+      </div>
+      <figcaption>
+        Use +/− to adjust the coefficient in front of each species, then click "Check balance". The pass criterion is conservation of mass: the total number of each kind of atom must be equal on both sides.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Coefficients are not decoration</div>
+      The 2 : 1 : 2 in <span class="formula">2H₂ + O₂ → 2H₂O</span> is the <strong>molecule ratio = mole ratio = volume ratio (for gases at the same temperature and pressure)</strong>.
+      Get one coefficient wrong and every calculation after it is wrong — balancing is the foundation of chemical arithmetic.
+    </div>
+  </section>
+
+  <!-- ============ §2 The mole ============ -->
+  <section id="mole">
+    <h2>§2 The Mole: The Chemist's "Dozen"</h2>
+    <p>
+      A single water molecule weighs about 3×10⁻²³ g — a balance cannot weigh out "a few molecules", yet chemistry happens across billions upon billions of them.
+      So chemists invented a gigantic counting unit:
+      the <span class="term">mole</span><span class="en">symbol: mol</span>.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Explanation Ladder · What exactly is a mole?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Eggs are bought by the dozen (1 dozen = 12), paper by the ream (1 ream = 500 sheets), and molecules are counted by the mole
+          (1 mol ≈ 6.02×10²³ of them). It is <strong>just a number</strong> — an entirely different thing from a mass unit like the gram.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Definition and conversion</span>
+        <p>
+          1 mol = <strong>6.02×10²³</strong> particles (the <span class="term">Avogadro constant</span> N<sub>A</sub>).
+          The remarkable part: a mass in grams whose numerical value equals the relative molecular mass M contains exactly N<sub>A</sub> molecules.
+          So <span class="formula">n = m / M</span> (amount of substance = mass ÷ molar mass) builds a bridge between "grams" and "counts":
+          18 g of water ≈ 6.02×10²³ water molecules; 44 g of carbon dioxide ≈ 6.02×10²³ CO₂ molecules.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Why 6.02×10²³?</span>
+        <p>
+          This number was not chosen at random: <strong>1/12 of the mass of a ¹²C atom defines the atomic mass unit u, and the number of atoms in 12 g of ¹²C is exactly N<sub>A</sub></strong>.
+          Because 1 u ≈ 1.66×10⁻²⁴ g, the two are reciprocals — which is what makes the shortcut "M grams is, numerically, 1 mol" work.
+          The link between u and g has been pinned down precisely by experiment (e.g., X-ray crystal-density methods, tracing back to the oil-drop experiment), and after the 2019 SI reform N<sub>A</sub> is a defined value.
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 Hands-on: Mole calculator</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center">
+          <label style="font-size:.9rem" for="molSel">Substance:</label>
+          <select id="molSel" style="font:inherit;padding:8px 10px;min-height:44px;border:1px solid var(--line);border-radius:8px">
+            <option value="18">Water H₂O (M = 18)</option>
+            <option value="44">Carbon dioxide CO₂ (M = 44)</option>
+            <option value="58.5">Sodium chloride NaCl (M = 58.5)</option>
+            <option value="40">Sodium hydroxide NaOH (M = 40)</option>
+            <option value="100">Calcium carbonate CaCO₃ (M = 100)</option>
+          </select>
+          <label style="font-size:.9rem" for="molIn">Mass m =</label>
+          <input id="molIn" type="number" min="0" step="any" value="18"
+                 style="font:inherit;width:110px;padding:8px 10px;min-height:44px;border:1px solid var(--line);border-radius:8px">
+          <span style="font-size:.9rem">g</span>
+        </div>
+        <div class="fig-readout" id="molReadout"></div>
+      </div>
+      <figcaption>Pick another substance or edit the mass to get n = m/M and the number of molecules N = n·N_A in real time.</figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · The mole's identity</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          "1 mol of water is 18 grams, so the mole is a unit of mass" / "1 mol of iron weighs the same as 1 mol of water".
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          The mole is a <strong>counting unit</strong>: 1 mol of any substance contains 6.02×10²³ particles.
+          1 mol of water weighs 18 g, while 1 mol of iron weighs 56 g — <strong>same count, different mass</strong> (like a dozen ping-pong balls versus a dozen shot puts).
+          The "18 g" is simply the molar mass M happening to make the numbers neat.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Proportion calculations ============ -->
+  <section id="stoich">
+    <h2>§3 Stoichiometric Proportion Calculations and the Limiting Reagent</h2>
+    <p>
+      Once the equation is balanced, the calculation is just <strong>converting by proportion</strong>. Take the laboratory preparation of hydrogen as an example:
+      <span class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</span> — every 1 mol of zinc consumes 2 mol of hydrogen chloride and yields 1 mol of hydrogen.
+    </p>
+
+    <h3>📐 Worked-Example Scaffold: the full workflow in one pass</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        6.5 g of zinc is added to excess dilute hydrochloric acid. How many moles of hydrogen form at most, and how many grams of HCl are consumed? (Zn: 65; HCl: 36.5)
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Write the equation and balance it: <span class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</span>.</li>
+        <li class="step">Convert the given quantity to moles: n(Zn) = 6.5 ÷ 65 = <strong>0.1 mol</strong>.</li>
+        <li class="step">Convert along the coefficient ratios: Zn : HCl : H₂ = 1 : 2 : 1 → n(H₂) = 0.1 mol; n(HCl) = 0.2 mol.</li>
+        <li class="step">Convert the requested quantity back to mass: m(HCl) = 0.2 × 36.5 = <strong>7.3 g</strong>.</li>
+        <li class="step">✅ Answer: H₂ 0.1 mol (about 6.02×10²² molecules, roughly 2.24 L at STP), consuming 7.3 g of HCl. The routine in one line: <strong>grams → moles → convert by ratio → moles → grams</strong>.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice: the limiting reagent (do it with me)</div>
+      <div class="worked-problem">
+        3 mol of H₂ is ignited with 2 mol of O₂ (<span class="formula">2H₂ + O₂ → 2H₂O</span>). Which reactant is left over? How many moles of water form at most?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Approach: "convert" each reactant into the other to compare. If all the H₂ reacts, how much O₂ is needed? Coefficient ratio 2:1 → 3 mol H₂ needs <strong>1.5 mol O₂</strong>.</li>
+        <li class="step">💡 We actually have 2 mol O₂ > 1.5 mol → <strong>O₂ is in excess, and H₂ is the limiting reagent</strong> (the wooden-bucket effect: the shortest stave decides how much it holds).</li>
+        <li class="step">💡 Compute the product from H₂: H₂ : H₂O = 2 : 2 = 1 : 1 → <strong>3 mol H₂O</strong> forms, with 0.5 mol O₂ left over.</li>
+        <li class="step">✅ Self-check: H used 3×2 = 6 atoms, O used 3; the source is 3 mol H₂ + 1.5 mol O₂ — conservation holds.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: why is the hydrogen actually collected in the lab always less than the theoretical amount?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: where might gas sneak off to? Does the reaction really go to completion without a single miss?</p>
+        <p>
+          Three reasons: ① <strong>incomplete collection</strong> — a little hydrogen dissolves in the water or escapes;
+          ② <strong>side reactions</strong> — the zinc contains impurities, or reacts with the acid in other ways;
+          ③ <strong>reversibility and incomplete reaction</strong>. Hence the definition <strong>yield = actual yield ÷ theoretical yield × 100%</strong>;
+          in industry this number directly determines profit, and it is one of the things analytical chemistry monitors (see Branch 03).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The law of conservation of mass is the basis for balancing: the number of each kind of atom must be equal on both sides.</li>
+        <li>Coefficients = molecule ratio = mole ratio (and, for gases at the same temperature and pressure, volume ratio as well).</li>
+        <li>The mole is a counting unit: n = m/M, N = n·N<sub>A</sub> (6.02×10²³).</li>
+        <li>The calculation routine: grams → moles → proportion by coefficients → moles → grams.</li>
+        <li>The limiting reagent determines the yield; yield = actual ÷ theoretical × 100%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Self-Test · Chemical Reactions and Stoichiometry <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "A candle burns in an open vessel and the residue left behind is lighter — where did the missing mass go?",
+            "options": ["It violates conservation of mass", "It turned into energy and vanished into nothing", "It became CO₂ and water vapor that escaped into the air", "It was devoured by the flame"],
+            "answer": 2,
+            "explain": "Conservation of mass only guarantees that the overall ledger balances: paraffin + oxygen consumed = CO₂ + water vapor produced + residue. The products that escaped into the air carried part of the mass away."
+          },
+          {
+            "q": "How many oxygen atoms does 1 mol of CO₂ contain?",
+            "options": ["6.02×10²³", "1.204×10²⁴", "3.01×10²³", "6.02×10²²"],
+            "answer": 1,
+            "explain": "1 mol of CO₂ holds 6.02×10²³ molecules, and each molecule contains 2 O atoms → 2 × 6.02×10²³ = 1.204×10²⁴."
+          },
+          {
+            "q": "What is the amount of substance of 98 g of sulfuric acid (H₂SO₄, M = 98)?",
+            "options": ["0.5 mol", "1 mol", "2 mol", "98 mol"],
+            "answer": 1,
+            "explain": "n = m/M = 98/98 = 1 mol. Whenever the mass in grams equals the molar mass numerically, you have exactly 1 mol — that is the convenience built into the definition of M."
+          },
+          {
+            "q": "3 mol of H₂ is ignited with 2 mol of O₂ (2H₂ + O₂ → 2H₂O). Which statement is correct?",
+            "options": ["All of the O₂ reacts", "H₂ is in excess", "O₂ is in excess by 0.5 mol, and at most 3 mol of water forms", "4 mol of water forms"],
+            "answer": 2,
+            "explain": "3 mol of H₂ needs only 1.5 mol of O₂, so 0.5 mol of O₂ remains; H₂ is the limiting reagent, and computing from it gives 3 mol of water."
+          },
+          {
+            "q": "After balancing Al + O₂ → Al₂O₃, what are the coefficients of the species in order?",
+            "options": ["2, 1, 2", "4, 3, 2", "2, 3, 1", "1, 1, 1"],
+            "answer": 1,
+            "explain": "4Al + 3O₂ → 2Al₂O₃: Al 4 = 4, O 6 = 6 — conservation holds."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="02-Chemical-Bonding-and-Molecular-Structure.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 2 · Chemical Bonding and Molecular Structure</span></a>
+      <a class="next" href="04-States-of-Matter-and-Solutions.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 4 · States of Matter and Solutions</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter interactions: balancing practice + mole calculator ============ */
+(function () {
+  "use strict";
+  var NA = 6.02e23;
+
+  /* ---------- 1. Balancing practice ---------- */
+  var EQS = [
+    { lhs: [["H₂", {H:2}], ["O₂", {O:2}]], rhs: [["H₂O", {H:2,O:1}]], ans: [2,1,2],
+      note: "Hydrogen combustion — balance oxygen first via the least common multiple: 2 O on the left, 1 O on the right → give H₂O a 2." },
+    { lhs: [["Fe", {Fe:1}], ["O₂", {O:2}]], rhs: [["Fe₃O₄", {Fe:3,O:4}]], ans: [3,2,1],
+      note: "Oxidation of iron — Fe₃O₄ contains 3 Fe, so give Fe a 3 first, then set O₂ to 2." },
+    { lhs: [["Al", {Al:1}], ["HCl", {H:1,Cl:1}]], rhs: [["AlCl₃", {Al:1,Cl:3}], ["H₂", {H:2}]], ans: [2,6,2,3],
+      note: "Laboratory hydrogen — Cl appears in AlCl₃ as a multiple of 3 and H₂ is even, so bring both to 6." }
+  ];
+  var eqIdx = 0, coefs = [];
+  var eqEl = document.getElementById("balEq"), ctlEl = document.getElementById("balCtl"),
+      readEl = document.getElementById("balReadout");
+
+  function fmtAtom(a) { var s = []; for (var k in a) s.push(a[k] + k); return s.join(""); }
+  function loadEq() {
+    coefs = [].concat(EQS[eqIdx].ans.map(function () { return 1; }));
+    readEl.textContent = "Question " + (eqIdx + 1) + " / " + EQS.length + ": judge it first, adjust the coefficients, then click 'Check balance'.";
+    render();
+  }
+  function render() {
+    var eq = EQS[eqIdx];
+    eqEl.innerHTML = "";
+    function span(txt) { var s = document.createElement("span"); s.textContent = txt; eqEl.appendChild(s); return s; }
+    function one(spec, ci) {
+      var c = document.createElement("b");
+      c.style.color = coefs[ci] === eq.ans[ci] ? "var(--ok)" : "var(--accent-deep)";
+      c.textContent = coefs[ci];
+      eqEl.appendChild(c);
+      span(spec[0]);
+    }
+    var ci = 0;
+    eq.lhs.forEach(function (sp, i) { if (i) span(" + "); one(sp, ci++); });
+    span("  →  ");
+    eq.rhs.forEach(function (sp, i) { if (i) span(" + "); one(sp, ci++); });
+
+    ctlEl.innerHTML = "";
+    ci = 0;
+    function mkCtl(label, idx) {
+      var wrap = document.createElement("div");
+      wrap.style.textAlign = "center";
+      var name = document.createElement("div");
+      name.textContent = label;
+      name.style.cssText = "font-size:.85rem;color:var(--ink-2);margin-bottom:4px";
+      wrap.appendChild(name);
+      var minus = document.createElement("button");
+      minus.className = "btn ghost"; minus.textContent = "−"; minus.style.minWidth = "44px";
+      var plus = document.createElement("button");
+      plus.className = "btn ghost"; plus.textContent = "＋"; plus.style.minWidth = "44px";
+      minus.addEventListener("click", function () { if (coefs[idx] > 1) { coefs[idx]--; render(); } });
+      plus.addEventListener("click", function () { if (coefs[idx] < 20) { coefs[idx]++; render(); } });
+      wrap.appendChild(minus);
+      wrap.appendChild(plus);
+      ctlEl.appendChild(wrap);
+    }
+    eq.lhs.forEach(function (sp, i) { mkCtl(sp[0], ci++); });
+    eq.rhs.forEach(function (sp, i) { mkCtl(sp[0], ci++); });
+  }
+  function check() {
+    var eq = EQS[eqIdx], ci = 0, atoms = {}, ok = true;
+    function acc(side, sign) {
+      side.forEach(function (sp) {
+        var n = coefs[ci++];
+        for (var k in sp[1]) {
+          atoms[k] = (atoms[k] || 0) + sign * n * sp[1][k];
+        }
+      });
+    }
+    acc(eq.lhs, 1); acc(eq.rhs, -1);
+    for (var k in atoms) if (atoms[k] !== 0) ok = false;
+    readEl.innerHTML = ok
+      ? "<b style='color:var(--ok)'>✓ Correctly balanced!</b> " + eq.note
+      : "<b style='color:var(--bad)'>✗ Not conserved yet.</b> Current imbalance: " + Object.keys(atoms).filter(function (k) { return atoms[k] !== 0; })
+          .map(function (k) { return (atoms[k] > 0 ? "left has " : "right has ") + Math.abs(atoms[k]) + " extra " + k; }).join(", ") + ". Keep adjusting.";
+  }
+  if (eqEl) {
+    document.getElementById("balPrev").addEventListener("click", function () { eqIdx = (eqIdx + EQS.length - 1) % EQS.length; loadEq(); });
+    document.getElementById("balNext").addEventListener("click", function () { eqIdx = (eqIdx + 1) % EQS.length; loadEq(); });
+    document.getElementById("balCheck").addEventListener("click", check);
+    document.getElementById("balReset").addEventListener("click", loadEq);
+    loadEq();
+  }
+
+  /* ---------- 2. Mole calculator ---------- */
+  var molSel = document.getElementById("molSel"), molIn = document.getElementById("molIn");
+  if (molSel && molIn) {
+    var molRead = document.getElementById("molReadout");
+    function calc() {
+      var M = parseFloat(molSel.value);
+      var m = parseFloat(molIn.value);
+      if (isNaN(m) || m < 0) { molRead.textContent = "Please enter a valid mass (≥ 0)"; return; }
+      var n = m / M, N = n * NA;
+      molRead.innerHTML = "n = m ÷ M = " + m + " ÷ " + M + " = <strong>" + n.toFixed(3) + " mol</strong>" +
+        " | number of molecules N = n·N<sub>A</sub> ≈ " + N.toExponential(2).replace("e+", "×10^") + " molecules";
+    }
+    molSel.addEventListener("change", calc);
+    molIn.addEventListener("input", calc);
+    calc();
+  }
+})();
+</script>
+</body>
+</html>

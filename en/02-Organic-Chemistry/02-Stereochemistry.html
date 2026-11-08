@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Stereochemistry · Organic Chemistry Chapter 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b02">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">02 Organic Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 2 · Stereochemistry</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">02 Organic Chemistry · Chapter 2</div>
+    <h1>Stereochemistry: A Molecule's Left Hand and Right Hand</h1>
+    <p class="lede">
+      A molecular formula on paper is flat; a real molecule is three-dimensional. This chapter starts from <strong>methane's regular tetrahedron</strong>,
+      walks you through <strong>conformational rotation in ethane</strong> and <strong>cis–trans isomerism</strong>, and arrives at stereochemistry's most captivating core:
+      <strong>chirality</strong> — two molecules that are mirror images of each other yet can never be superimposed, just like your left and right hands.
+      This is no geometry game: the living world uses almost only "one hand," and a single failure to take chirality seriously once caused more than ten thousand babies to be born deformed.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time 55 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 Carbon Skeletons and Functional Groups</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#tetra">§1 Methane and the Regular Tetrahedron</a>
+    <a href="#conf">§2 Conformations of Ethane</a>
+    <a href="#cis">§3 Cis–Trans Isomerism</a>
+    <a href="#chiral">§4 Chiral Carbons and Enantiomers</a>
+    <a href="#life">§5 Chirality and Life</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Chemistry in the Mirror</h2>
+    <p>
+      Stand in front of a mirror and raise your right hand, and the figure in the mirror raises a "right hand" too — yet the two of you can never shake hands:
+      to grip your hand, the image would have to use its left hand, and that is exactly the result of the mirror swapping left and right. Gloves are the most honest evidence:
+      a left-hand glove and a right-hand glove are <strong>exactly the same size</strong>, same material, same stitching,
+      yet no amount of turning makes one fit the other hand. The property of an object that "looks the same as its mirror image yet cannot be superimposed on it" is called
+      <span class="term">chirality</span> (from the Greek cheir, "hand").
+    </p>
+    <p>
+      Molecules likewise come in left- and right-handed versions. Two molecules that are mirror images of each other have identical melting points, boiling points, and solubilities,
+      yet inside the body they may follow completely different scripts — one is a good medicine, the other a poison.
+      In this chapter we first learn to read three-dimensional molecules on paper, and then learn to tell a molecule's "left hand" from its "right."
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Explanation Ladder · Why won't a left-hand glove fit the right hand?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          The problem is not size — the two gloves match to the last millimeter; the problem is <strong>"handedness"</strong>.
+          The mirror turns "front" into "back": the glove with the thumb in front becomes the glove with the thumb behind. And "rotation" merely spins in place;
+          it never flips any part over to the other side. So whether you turn it clockwise, counterclockwise, or over and over,
+          a left-hand glove can never become a right-hand glove.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Criterion</span>
+        <p>
+          Mathematically, "superimposable" means you may use only <strong>translation and rotation</strong> (rigid-body motions) to make every point coincide.
+          The mirroring operation leaves the distance between any two points unchanged, yet it "flips space over" — it is equivalent to a reflection,
+          which no combination of rotations can reproduce. To decide whether a molecule is chiral, just look for a <strong>plane of symmetry</strong>:
+          if some plane cuts the molecule into two halves that are mirror images of each other, the molecule is "achiral" (it can be superimposed on its mirror image);
+          only a molecule with no plane of symmetry at all comes in distinct left- and right-handed versions.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          For molecules, the strict criterion of "superimposable" is that the positions of all atomic nuclei can be brought into complete alignment by rigid-body motion
+          (in which case every detail of the energy is of course identical too). The most common source of chirality is the
+          <span class="term">chiral carbon</span>: a carbon bearing <strong>four mutually different groups</strong>,
+          which no plane can cut into two symmetric halves. Engineers have long been familiar with this geometry:
+          left- and right-handed screw threads, the left- and right-handed rotation of the plane of polarized light — all one and the same mathematics: orientation.
+          The demonstrator below will let you "fail" at it with your own hands.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §1 Methane and the Regular Tetrahedron ============ -->
+  <section id="tetra">
+    <h2>§1 Methane and the Regular Tetrahedron</h2>
+    <p>
+      What does methane, the simplest organic molecule, <span class="formula">CH<sub>4</sub></span>, look like?
+      If the four hydrogens sat in a square, the bond angles would be 90°; arranged as a "pinwheel" (one H above the central plane, three below), the angles would still be uneven.
+      The real answer: the four sp³ hybrid orbitals stay <strong>as far away from one another as possible</strong>, ending up pointing at
+      the four corners of a <strong>regular tetrahedron</strong>, so any two C–H bonds meet at
+      <span class="formula">109.5°</span> (exactly 109°28′).
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="Tetrahedral model of methane with wedge and dash notation">
+          <g transform="translate(230,140)">
+            <line x1="0" y1="0" x2="-92" y2="-62" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="92" y2="-62" stroke="#6b7280" stroke-width="3"/>
+            <line x1="0" y1="0" x2="104" y2="80" stroke="#92400e" stroke-width="9"/>
+            <line x1="0" y1="0" x2="-104" y2="80" stroke="#6b7280" stroke-width="3" stroke-dasharray="7 6"/>
+            <circle cx="0" cy="0" r="26" fill="#374151"/>
+            <text x="0" y="7" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="-92" cy="-62" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="-92" y="-55" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="92" cy="-62" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="92" y="-55" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="104" cy="80" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="104" y="87" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="-104" cy="80" r="18" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="-104" y="87" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">H</text>
+            <path d="M -60 -46 A 70 70 0 0 1 60 -46" fill="none" stroke="#15803d" stroke-width="2"/>
+            <text x="0" y="-64" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">109.5°</text>
+          </g>
+          <g>
+            <text x="418" y="96" font-size="13" font-weight="700" fill="#92400e">Solid wedge</text>
+            <text x="418" y="116" font-size="12" fill="#4b5563">out of the page</text>
+            <text x="418" y="156" font-size="13" font-weight="700" fill="#4b5563">Dashes</text>
+            <text x="418" y="176" font-size="12" fill="#4b5563">behind the page</text>
+            <text x="418" y="216" font-size="13" font-weight="700" fill="#6b7280">Plain line</text>
+            <text x="418" y="236" font-size="12" fill="#4b5563">in the plane of the page</text>
+          </g>
+          <text x="230" y="284" text-anchor="middle" font-size="13" fill="#6b7280">Paper is 2D, molecules are 3D — wedges and dashes are their "3D glasses"</text>
+        </svg>
+      </div>
+      <figcaption>
+        Ball-and-stick model of methane: two plain lines lie in the plane of the page, the solid wedge comes out of the page, and the dashes recede behind it.
+        These three notations are stereochemistry's "international language," and the mirror-image demonstrator in §4 relies on them entirely.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      Organic molecules are <strong>three-dimensional objects</strong>; the structure drawn on paper is only their projection.
+      Carbon's sp³ tetrahedral geometry is where all of this begins — from now on, please automatically "go 3D" with every molecule you see.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why did chemists absolutely have to invent two notations, wedge bonds and dashed bonds? Wouldn't plain lines alone do?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: how many directions can a sheet of paper "hold"?</p>
+        <p>
+          No. The flat page can show only the two directions that lie in the plane, but carbon's four bonds point to the four corners of a tetrahedron —
+          at least one bond reaches out of the page and another recedes behind it. If everything were drawn with plain lines, the reader would have no way to know how the molecule
+          "folds" in space. Wedges and dashes are precisely the convention that squeezes the third dimension onto the two-dimensional page, like contour lines on a map.
+          Without them, the discussion of chirality in §4 could not even be put on paper.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 Conformations of Ethane ============ -->
+  <section id="conf">
+    <h2>§2 Conformations of Ethane: Rotating about a Single Bond</h2>
+    <p>
+      A σ single bond is symmetric about its axis, so it can <strong>rotate freely</strong> like an axle (a double bond cannot — see §3).
+      In ethane <span class="formula">CH<sub>3</sub>–CH<sub>3</sub></span>, turning the two methyl groups to different angles about the C–C bond
+      gives different <span class="term">conformations</span>.
+      Chemists like to look straight down the C–C bond and draw a <span class="term">Newman projection</span>:
+      the front carbon is a dot, the back carbon a circle.
+    </p>
+    <p>
+      Two extremes: the <strong>staggered</strong> form (the hydrogens on the front and back carbons are offset by 60°) and the <strong>eclipsed</strong> form
+      (the front and back hydrogens face each other directly). In the eclipsed form, the electron clouds of the front and back C–H bonds crowd against each other,
+      producing <span class="term">torsional strain</span>,
+      which puts it about <span class="formula">12.6 kJ/mol</span> above the staggered form — not much,
+      so at room temperature ethane still whirs rapidly between the two conformations, though at any instant most molecules rest in the more comfortable staggered form.
+    </p>
+
+    <h3>🔬 Try It Out: The Conformation Rotator</h3>
+    <p>
+      Drag the slider to change the <strong>dihedral angle θ</strong> between the front and back methyl groups, and watch the Newman projection move together with the energy curve on the right:
+      θ = 60°, 180°, 300° are the three "valleys" (staggered), and θ = 0°, 120°, 240° are the three "peaks" (eclipsed).
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="confSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="Newman projections of ethane conformations with an energy curve"></svg>
+        <div class="fig-controls">
+          <input type="range" id="confSlider" min="0" max="360" step="5" value="60"
+                 style="min-width:260px;accent-color:var(--accent);height:44px" aria-label="Dihedral angle">
+          <button type="button" class="btn ghost" id="confStag">Snap to staggered 60°</button>
+          <button type="button" class="btn ghost" id="confEcl">Snap to eclipsed 0°</button>
+        </div>
+        <div class="fig-readout" id="confReadout"></div>
+      </div>
+      <figcaption>
+        The thick green bonds belong to the front carbon (the central dot); the gray bonds belong to the back carbon (the circle). On the energy curve, the vertical axis is relative energy (kJ/mol)
+        and the horizontal axis is the dihedral angle θ. Real ethane behaves like a little ball on this potential-energy surface, rolling nonstop from valley to valley.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 A single bond can rotate ≠ rotation is free</div>
+      There are energy barriers between conformations (about 12.6 kJ/mol in ethane), which room-temperature thermal motion can easily cross;
+      but in larger molecules a barrier may be high enough to "lock in" a particular conformation — the functional shapes of proteins are locked in exactly this way (Branch 05).
+    </div>
+  </section>
+
+  <!-- ============ §3 Cis–Trans Isomerism ============ -->
+  <section id="cis">
+    <h2>§3 Cis–Trans Isomerism: The "Hard Constraint" of the Double Bond</h2>
+    <p>
+      A double bond = 1 σ bond + 1 π bond. The π bond forms by the <strong>side-by-side</strong> overlap of two p orbitals;
+      the moment it is twisted about the axis, the "shoulders" slip past each other and the π bond breaks — that takes about 270 kJ/mol, utterly impossible at ordinary temperatures.
+      So the two ends of a double bond are welded shut: the groups sit either on the same side of the double bond or on opposite sides, and they cannot swap.
+    </p>
+    <p>
+      Cis–trans isomerism requires two conditions to hold at once: <strong>① there is a double bond (or a ring); ② each double-bond carbon carries two different groups</strong>.
+      Take 2-butene <span class="formula">CH<sub>3</sub>CH=CHCH<sub>3</sub></span> as the example:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="260" viewBox="0 0 640 260" role="img" aria-label="Comparison of cis- and trans-2-butene">
+          <!-- cis -->
+          <g transform="translate(0,10)">
+            <line x1="170" y1="120" x2="270" y2="120" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="113" x2="270" y2="113" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="170" cy="120" r="19" fill="#374151"/>
+            <text x="170" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="270" cy="120" r="19" fill="#374151"/>
+            <text x="270" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="120" cy="72" r="20" fill="#16a34a"/>
+            <text x="120" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="320" cy="72" r="20" fill="#16a34a"/>
+            <text x="320" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="120" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="120" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="320" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="320" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <text x="220" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">cis: the two CH₃ groups on the same side</text>
+            <text x="220" y="242" text-anchor="middle" font-size="12" fill="#4b5563">boiling point 3.7 °C · nonzero dipole</text>
+          </g>
+          <!-- trans -->
+          <g transform="translate(320,10)">
+            <line x1="170" y1="120" x2="270" y2="120" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="113" x2="270" y2="113" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <line x1="170" y1="120" x2="120" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="168" stroke="#6b7280" stroke-width="3"/>
+            <line x1="270" y1="120" x2="320" y2="72" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="170" cy="120" r="19" fill="#374151"/>
+            <text x="170" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="270" cy="120" r="19" fill="#374151"/>
+            <text x="270" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">C</text>
+            <circle cx="120" cy="72" r="20" fill="#16a34a"/>
+            <text x="120" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="320" cy="168" r="20" fill="#16a34a"/>
+            <text x="320" y="173" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">CH₃</text>
+            <circle cx="120" cy="168" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="120" y="173" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <circle cx="320" cy="72" r="13" fill="#ffffff" stroke="#9ca3af" stroke-width="2"/>
+            <text x="320" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">H</text>
+            <text x="220" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">trans: the two CH₃ groups on opposite sides</text>
+            <text x="220" y="242" text-anchor="middle" font-size="12" fill="#4b5563">boiling point 0.9 °C · more symmetric, crystallizes more readily</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        Cis–trans isomers are two substances with the same molecular formula and the same connectivity, differing only in <strong>spatial arrangement</strong>;
+        they interconvert only when heated enough to break bonds. The everyday version: natural olive oil is rich in cis-oleic acid (liquid),
+        while the trans fats produced by partial hydrogenation (solid) have been restricted in many countries, because trans isomers raise cardiovascular risk.
+      </figcaption>
+    </figure>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "Molecules with the same chemical formula are exactly the same substance"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          If the molecular formula is the same, it is the same substance, and its properties must be identical. On an exam, writing the formula means you are done.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          A molecular formula records only "which atoms and how many," not the <strong>connectivity</strong>, and certainly not the <strong>spatial arrangement</strong>.
+          Identity has three layers: molecular formula → structural formula (constitutional isomerism: ethanol boils at 78 °C, dimethyl ether at −24 °C) →
+          stereostructure (cis–trans isomerism: maleic acid melts at 135 °C, fumaric acid at 287 °C; enantiomers: opposite directions of optical rotation,
+          strikingly different behavior in chiral environments). Only "structure + stereochemistry" gives a substance its full name.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why does 1-butene, CH₂=CH–CH₂CH₃, show no cis–trans isomerism?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: check the condition "each double-bond carbon carries two different groups" — both carbons must pass.</p>
+        <p>
+          The terminal double-bond carbon of 1-butene (C1) carries <strong>two hydrogens</strong> — identical groups.
+          Since the two groups on C1 can be swapped without creating any new arrangement, "same side / opposite side" loses its meaning.
+          Cis–trans isomerism requires that <strong>each end carry two different groups</strong> — both conditions, no exceptions.
+          Quick self-check: propene and ethene likewise lack cis–trans isomerism because their end carbons each carry two hydrogens.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Chiral Carbons and Enantiomers ============ -->
+  <section id="chiral">
+    <h2>§4 Chiral Carbons and Enantiomers: The Two Hands of Lactic Acid</h2>
+    <p>
+      When a carbon atom is bonded to <strong>four mutually different groups</strong>, it becomes a
+      <span class="term">chiral center</span>:
+      no plane of symmetry can be found, no matter what. It has two and only two tetrahedral arrangements, mirror images of each other —
+      just like a left hand and a right hand. Such a pair of molecules are called <span class="term">enantiomers</span>.
+    </p>
+    <p>
+      The classic example is lactic acid <span class="formula">CH<sub>3</sub>CH(OH)COOH</span>
+      (the acid in yogurt): the central carbon carries four different groups, –CH₃, –OH, –COOH, and –H, so it is a chiral carbon.
+      Lactic acid therefore comes in two kinds: one rotates polarized light to the right (written +), the other rotates it to the left (written −).
+      About <span class="term">optical activity</span>,
+      a beginner needs just one sentence: <strong>enantiomers rotate plane-polarized light through equal angles in opposite directions; apart from that,
+      their properties are identical in achiral environments</strong> (the direction of rotation has no necessary correspondence with the D/L label and must be determined experimentally).
+    </p>
+
+    <h3>🔬 Try It Out: The Mirror-Superposition Demonstrator</h3>
+    <p>
+      On the left is a molecule of lactic acid; on the right is its mirror image (the four substituents are distinguished by color).
+      Use the "rotate mirror" buttons to rotate it in the plane, then click "Try to superimpose" — the demonstrator slides the mirror image over onto the original molecule to align them.
+      You will find: <strong>no matter what angle you rotate to, some group is always "standing in the wrong place."</strong>
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mirSvg" width="660" height="330" viewBox="0 0 660 330" role="img" aria-label="Mirror-superposition demonstrator for a chiral molecule"></svg>
+        <div class="fig-controls">
+          <button type="button" class="btn ghost" id="mirR30">↻ Rotate +30°</button>
+          <button type="button" class="btn ghost" id="mirL30">↺ Rotate −30°</button>
+          <button type="button" class="btn" id="mirTry">🎯 Try to superimpose</button>
+          <button type="button" class="btn ghost" id="mirReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="mirReadout"></div>
+      </div>
+      <figcaption>
+        Green = CH₃, red = OH, blue = COOH, white = H; the solid wedge comes out of the page, the dashes recede behind it.
+        Rotation within the plane leaves "handedness" unchanged — that is the limit of this demonstration; even with arbitrary rotation in three-dimensional space,
+        an enantiomer still cannot be superimposed on the original molecule, and that is precisely the definition of chirality.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: Spotting chiral carbons</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me)</div>
+      <div class="worked-problem">
+        Does 2-butanol <span class="formula">CH<sub>3</sub>CH(OH)CH<sub>2</sub>CH<sub>3</sub></span>
+        have a chiral carbon? If it does, point out which carbon it is and which four groups it carries.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Method: examine the carbons one by one, asking "are the four attached groups all different from one another?"
+          The end carbons C1 (3 H + 1 C) and C4 are eliminated immediately — they have identical H's.</li>
+        <li class="step">C2 is bonded to: –OH, –H, –CH₃ (upward), –CH₂CH₃ (downward). The four groups are pairwise different → <strong>C2 is a chiral carbon</strong>.</li>
+        <li class="step">C3 is a CH₂ (two H), likewise eliminated. Conclusion: C2 is the one and only chiral carbon.</li>
+        <li class="step">✅ Corollary: a molecule with exactly one chiral carbon must be chiral and exists as two enantiomers (R and S; the naming rules are beyond this introduction).
+          So "2-butanol" is really a pair of left and right hands — laboratory synthesis usually delivers a 1:1 mixture (a racemic mixture).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me)</div>
+      <div class="worked-problem">
+        Which of the following molecules shows cis–trans isomerism? A. propene B. 1-butene C. 2-butene D. one way of writing 1-chloropropene, CH₂=CHCl
+        <em>(check each option against the conditions before revealing the answer)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Recall the criteria: a double bond + <strong>each</strong> double-bond carbon carrying two different groups.</li>
+        <li class="step">💡 Check A, propene CH₂=CHCH₃: terminal carbon C1 carries two H's → not satisfied. B, 1-butene, fails the same way (two H on the terminal carbon) → not satisfied.</li>
+        <li class="step">💡 Check C, 2-butene: C2 carries H and CH₃ (different), C3 carries H and CH₃ (different) → <strong>cis–trans isomerism exists</strong>.
+          In D, C1 likewise carries two H's → not satisfied.</li>
+        <li class="step">✅ The answer is C. Rule of thumb: "both ends must each carry two different groups before cis and trans part ways" — terminal alkenes never show cis–trans isomerism.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §5 Chirality and Life ============ -->
+  <section id="life">
+    <h2>§5 Chirality and Life: Biology Picks Just One Hand</h2>
+    <p>
+      The astonishing fact: the amino acids that build proteins are almost exclusively of the <strong>L form</strong> (left-handed),
+      while sugars are almost exclusively of the <strong>D form</strong> (right-handed) — the living world is strongly "one-handed."
+      The reason is not hard to understand: enzymes and receptors are themselves chiral molecules, and their "pockets" are like left-hand gloves
+      that fit only one hand. So when enantiomers enter the body, one may be recognized and put to use while the other is ignored — or even causes harm:
+    </p>
+    <ul>
+      <li><strong>Odor</strong>: (R)-carvone smells of spearmint, while its mirror image (S)-carvone smells of caraway — the receptors in your nose can tell left from right.</li>
+      <li><strong>Drug efficacy</strong>: levodopa treats Parkinson's disease, while its dextrorotatory counterpart is nearly useless; for some chiral drugs the two enantiomers act in completely different ways.</li>
+    </ul>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ The Thalidomide Tragedy</div>
+      In the late 1950s, thalidomide was marketed in Europe as a sedative for morning sickness in pregnant women. One of its enantiomers (R) is sedative,
+      but the other (S) interferes with the development of fetal limbs, producing more than ten thousand babies with "seal-limb" (phocomelia) deformities.
+      Worse still: the body slowly converts the R form into the S form — so even giving "only the good half" offered little protection.
+      Ever since, drug-approval authorities everywhere have required each enantiomer's individual behavior to be documented. This lesson
+      was written into the textbooks by stereochemistry at its heaviest cost.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Since natural amino acids are almost all L-form, should you worry about the "left-to-right ratio" in the supplements you take?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: what ratio does ordinary chemical synthesis (under achiral conditions) usually deliver? And what does the body do with the other half?</p>
+        <p>
+          Amino acids made by ordinary chemical synthesis, without chiral technology, are 1:1 racemic mixtures —
+          the body often absorbs only the L form, while the other half is either excreted or even interferes with absorption (D and L forms compete for transport proteins).
+          That is why pharmaceutical-grade amino acid production widely adopts chiral synthesis or resolution processes.
+          It also explains why chirality is a core issue for the pharmaceutical industry (one of the protagonists of Branch 10, Medicinal Chemistry).
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Carbon's sp³ geometry is a <strong>regular tetrahedron</strong> (109.5°); wedges and dashes are the standard notation for the third dimension on paper.</li>
+        <li>Rotation about single bonds produces <strong>conformations</strong>: the staggered form is more stable than the eclipsed form by about 12.6 kJ/mol (torsional strain).</li>
+        <li>Double bonds cannot rotate → <strong>cis–trans isomerism</strong>, on the condition that each double-bond carbon carries two different groups.</li>
+        <li>A carbon bearing four mutually different groups is a <strong>chiral carbon</strong>; its two arrangements are <strong>enantiomers</strong> (mirror images that cannot be superimposed) with opposite directions of optical rotation.</li>
+        <li>The living world picks a hand: amino acids L, sugars D; enantiomers can differ sharply in efficacy or toxicity inside the body — the lesson of thalidomide.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · Stereochemistry <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "What is the spatial geometry of the methane molecule, and the angle between C–H bonds?",
+            "options": [
+              "Planar square, 90°",
+              "Regular tetrahedron, about 109.5°",
+              "Trigonal pyramid, about 107°",
+              "Linear, 180°"
+            ],
+            "answer": 1,
+            "explain": "The four sp³ hybrid orbitals stay as far from one another as possible, pointing to the four corners of a regular tetrahedron, with bond angles of 109°28′. The trigonal pyramid is the geometry of ammonia (squeezed by a lone pair) — don't confuse it with methane."
+          },
+          {
+            "q": "Among the conformations of ethane, which has the lowest energy?",
+            "options": [
+              "The eclipsed form",
+              "The staggered form",
+              "The two have exactly the same energy",
+              "It depends on the temperature; there is no fixed answer"
+            ],
+            "answer": 1,
+            "explain": "In the staggered form the C–H bonds of the front and back carbons are offset, their electron clouds do not crowd each other, and torsional strain is minimal; the eclipsed form is about 12.6 kJ/mol higher. Room-temperature thermal motion easily interconverts the two, but most molecules rest in the staggered form."
+          },
+          {
+            "q": "Which of the following molecules shows cis–trans isomerism?",
+            "options": ["Propene", "1-Butene", "2-Butene", "Ethene"],
+            "answer": 2,
+            "explain": "Cis–trans isomerism requires each double-bond carbon to carry two different groups. Both ends of 2-butene carry H and CH₃, so it qualifies; in propene and 1-butene the terminal carbon carries two identical H's, and in ethene both ends carry two H's each — none of these qualifies."
+          },
+          {
+            "q": "What is the condition for a carbon atom to be a chiral carbon?",
+            "options": [
+              "It is bonded to four carbon atoms",
+              "It is bonded to four mutually different groups",
+              "It is itself part of a double bond",
+              "It carries a hydroxyl group"
+            ],
+            "answer": 1,
+            "explain": "When the four groups are all different, the tetrahedral arrangement comes in only two mirror-image versions with no plane of symmetry — that is what creates left and right hands. Being bonded to four carbons or carrying a hydroxyl group is not sufficient — the groups must be pairwise different."
+          },
+          {
+            "q": "Which statement about a pair of enantiomers (such as the two lactic acids) is correct?",
+            "options": [
+              "They differ in melting point, boiling point, and density",
+              "They are mirror images that cannot be superimposed and rotate polarized light in opposite directions",
+              "They behave identically in every chemical reaction",
+              "They can be superimposed on each other by rotation within the plane"
+            ],
+            "answer": 1,
+            "explain": "In achiral environments enantiomers have identical melting and boiling points and solubilities, and they react identically with achiral reagents; there are just two differences: opposite directions of optical rotation, and different interactions with chiral partners (enzymes, receptors, polarized light). These are exactly the observable consequences of being non-superimposable."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="01-Carbon-Skeletons-and-Functional-Groups.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 1 · Carbon Skeletons and Functional Groups</span></a>
+      <a class="next" href="03-Introduction-to-Reaction-Mechanisms.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 3 · Introduction to Reaction Mechanisms</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (ethane conformation rotator / mirror-superposition demonstrator) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+  function T(parent, x, y, str, o) {
+    o = o || {};
+    var t = el("text", {
+      x: x, y: y, "text-anchor": o.anchor || "middle",
+      "font-size": o.size || 13, "font-weight": o.weight || 400,
+      fill: o.fill || "#1f2937"
+    }, parent);
+    t.textContent = str;
+    return t;
+  }
+  function rot2(x, y, deg) {
+    var r = deg * Math.PI / 180;
+    return [x * Math.cos(r) - y * Math.sin(r), x * Math.sin(r) + y * Math.cos(r)];
+  }
+
+  /* ---------- 1. Ethane conformations: Newman projection + energy curve ---------- */
+  var confSvg = document.getElementById("confSvg");
+  if (confSvg) {
+    var confReadout = document.getElementById("confReadout");
+    var confSlider = document.getElementById("confSlider");
+    var CX = 170, CY = 165, R = 88, BACK = 26;
+
+    function energy(theta) { return 6.3 * (1 + Math.cos(3 * theta * Math.PI / 180)); }
+
+    function drawConf() {
+      var th = parseFloat(confSlider.value);
+      confSvg.innerHTML = "";
+      T(confSvg, CX, 30, "Newman projection: looking down the C–C bond", { size: 14, weight: 700 });
+      // back-carbon circle and bonds
+      el("circle", { cx: CX, cy: CY, r: BACK, fill: "#ffffff", stroke: "#94a3b8", "stroke-width": 2.5 }, confSvg);
+      var fBase = [90, 210, 330];
+      fBase.forEach(function (a) {
+        var rad = (a + th) * Math.PI / 180;
+        var x1 = CX + BACK * Math.cos(rad), y1 = CY + BACK * Math.sin(rad);
+        var x2 = CX + R * Math.cos(rad), y2 = CY + R * Math.sin(rad);
+        el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: "#64748b", "stroke-width": 4 }, confSvg);
+        T(confSvg, CX + (R + 14) * Math.cos(rad), CY + (R + 14) * Math.sin(rad) + 4, "H", { size: 12, weight: 700, fill: "#475569" });
+      });
+      // front-carbon dot and bonds
+      fBase.forEach(function (a) {
+        var rad = a * Math.PI / 180;
+        var x2 = CX + R * Math.cos(rad), y2 = CY + R * Math.sin(rad);
+        el("line", { x1: CX, y1: CY, x2: x2, y2: y2, stroke: "#15803d", "stroke-width": 5 }, confSvg);
+        T(confSvg, CX + (R + 14) * Math.cos(rad), CY + (R + 14) * Math.sin(rad) + 4, "H", { size: 12, weight: 700, fill: "#166534" });
+      });
+      el("circle", { cx: CX, cy: CY, r: 10, fill: "#15803d" }, confSvg);
+
+      // small energy-curve plot
+      var X0 = 300, Y0 = 250, W = 320, H = 175;
+      el("line", { x1: X0, y1: Y0, x2: X0 + W + 14, y2: Y0, stroke: "#94a3b8", "stroke-width": 2 }, confSvg);
+      el("line", { x1: X0, y1: Y0, x2: X0, y2: Y0 - H - 24, stroke: "#94a3b8", "stroke-width": 2 }, confSvg);
+      var pts = [];
+      for (var d = 0; d <= 360; d += 6) {
+        pts.push((X0 + d * W / 360).toFixed(1) + "," + (Y0 - energy(d) * 12).toFixed(1));
+      }
+      el("polyline", { points: pts.join(" "), fill: "none", stroke: "#15803d", "stroke-width": 2.5 }, confSvg);
+      var mx = X0 + th * W / 360, my = Y0 - energy(th) * 12;
+      el("circle", { cx: mx, cy: my, r: 7, fill: "#b45309", class: "anim-pulse" }, confSvg);
+      T(confSvg, X0 + W / 2, Y0 + 22, "Dihedral angle θ (°)", { size: 12, fill: "#4b5563" });
+      var yl = el("text", { x: X0 - 12, y: Y0 - H / 2, "text-anchor": "middle", "font-size": 12, fill: "#4b5563",
+        transform: "rotate(-90 " + (X0 - 12) + " " + (Y0 - H / 2) + ")" }, confSvg);
+      yl.textContent = "Relative energy (kJ/mol)";
+      T(confSvg, 620, 292, "Green = front-carbon H · gray = back-carbon H", { size: 11, fill: "#6b7280" });
+
+      var m = th % 120, state, hint;
+      if (m < 15 || m > 105) { state = "Eclipsed (least stable)"; hint = "front and back hydrogens face each other; torsional strain at its greatest"; }
+      else if (Math.abs(m - 60) < 15) { state = "Staggered (most stable)"; hint = "front and back hydrogens offset; torsional strain at its least"; }
+      else { state = "In between"; hint = "crossing the energy barrier"; }
+      confReadout.textContent = "Dihedral angle θ = " + th + "° · " + state + " · relative energy ≈ " +
+        energy(th).toFixed(1) + " kJ/mol (peak 12.6) | " + hint;
+    }
+    confSlider.addEventListener("input", drawConf);
+    var s1 = document.getElementById("confStag"), s2 = document.getElementById("confEcl");
+    if (s1) s1.addEventListener("click", function () { confSlider.value = 60; drawConf(); });
+    if (s2) s2.addEventListener("click", function () { confSlider.value = 0; drawConf(); });
+    drawConf();
+  }
+
+  /* ---------- 2. Mirror-superposition demonstrator ---------- */
+  var mirSvg = document.getElementById("mirSvg");
+  if (mirSvg) {
+    var mirReadout = document.getElementById("mirReadout");
+    var AX = 170, AY = 155, BX0 = 490, BY = 155;
+    var SUBS = [
+      { k: "OH", full: "OH", f: "#dc2626", tc: "#ffffff", x: 52, y: -56, bond: "w" },
+      { k: "H", full: "H", f: "#ffffff", tc: "#1f2937", x: -52, y: 56, bond: "d" },
+      { k: "CH₃", full: "CH₃ (green)", f: "#16a34a", tc: "#ffffff", x: -58, y: -46, bond: "p" },
+      { k: "COOH", full: "COOH (blue)", f: "#2563eb", tc: "#ffffff", x: 58, y: 48, bond: "p" }
+    ];
+    var rot = 0, attempts = 0, busy = false;
+
+    function drawMirror(bx, rings) {
+      mirSvg.innerHTML = "";
+      T(mirSvg, 170, 26, "Original molecule (lactic acid)", { size: 14, weight: 700, fill: "#166534" });
+      T(mirSvg, 490, 26, "Mirror image", { size: 14, weight: 700, fill: "#9a3412" });
+      // mirror plane
+      el("line", { x1: 330, y1: 40, x2: 330, y2: 280, stroke: "#9ca3af", "stroke-width": 2, "stroke-dasharray": "8 7" }, mirSvg);
+      T(mirSvg, 330, 32, "Mirror plane", { size: 12, fill: "#6b7280" });
+
+      drawOneMol(AX, AY, 0, "A", null);
+      drawOneMol(bx, BY, rot, "M", rings);
+
+      // legend
+      el("line", { x1: 120, y1: 306, x2: 168, y2: 306, stroke: "#92400e", "stroke-width": 8 }, mirSvg);
+      T(mirSvg, 250, 310, "Solid wedge = out of the page", { size: 11, fill: "#4b5563" });
+      el("line", { x1: 340, y1: 306, x2: 388, y2: 306, stroke: "#6b7280", "stroke-width": 3, "stroke-dasharray": "6 5" }, mirSvg);
+      T(mirSvg, 470, 310, "Dashes = behind the page", { size: 11, fill: "#4b5563" });
+      T(mirSvg, 578, 310, "Plain line = in the page", { size: 11, fill: "#4b5563" });
+    }
+
+    function drawOneMol(cx, cy, angle, which, rings) {
+      var i;
+      // bonds (drawn first; the balls drawn later cover the endpoints)
+      SUBS.forEach(function (s) {
+        var rx = (which === "A") ? s.x : -s.x;
+        var ry = s.y;
+        var p = (which === "A") ? [rx, ry] : rot2(rx, ry, angle);
+        var x2 = cx + p[0], y2 = cy + p[1];
+        var dx = x2 - cx, dy = y2 - cy, L = Math.sqrt(dx * dx + dy * dy);
+        if (s.bond === "w") {
+          var px = -dy / L, py = dx / L, ex = cx + dx * 0.82, ey = cy + dy * 0.82;
+          el("polygon", { points: (cx + px * 2.5) + "," + (cy + py * 2.5) + " " + (ex + px * 12) + "," + (ey + py * 12) +
+            " " + (ex - px * 12) + "," + (ey - py * 12) + " " + (cx - px * 2.5) + "," + (cy - py * 2.5), fill: "#4b5563" }, mirSvg);
+        } else if (s.bond === "d") {
+          el("line", { x1: cx, y1: cy, x2: x2, y2: y2, stroke: "#6b7280", "stroke-width": 3, "stroke-dasharray": "6 5" }, mirSvg);
+        } else {
+          el("line", { x1: cx, y1: cy, x2: x2, y2: y2, stroke: "#6b7280", "stroke-width": 3 }, mirSvg);
+        }
+      });
+      // central carbon
+      el("circle", { cx: cx, cy: cy, r: 20, fill: "#374151" }, mirSvg);
+      T(mirSvg, cx, cy + 5, "C", { size: 14, weight: 700, fill: "#ffffff" });
+      // substituent balls
+      SUBS.forEach(function (s, idx) {
+        var rx = (which === "A") ? s.x : -s.x;
+        var p = (which === "A") ? [rx, s.y] : rot2(rx, s.y, angle);
+        var x2 = cx + p[0], y2 = cy + p[1];
+        if (rings && which === "M" && rings[idx]) {
+          el("circle", { cx: x2, cy: y2, r: 22, fill: "none", stroke: rings[idx], "stroke-width": 3.5 }, mirSvg);
+        }
+        el("circle", { cx: x2, cy: y2, r: 17, fill: s.f, stroke: s.k === "H" ? "#9ca3af" : "rgba(0,0,0,.2)", "stroke-width": 1.5 }, mirSvg);
+        T(mirSvg, x2, y2 + 4, s.k, { size: 11, weight: 700, fill: s.tc });
+      });
+    }
+
+    function mirrorSubsPos() {
+      return SUBS.map(function (s) {
+        var p = rot2(-s.x, s.y, rot);
+        return [BX0 + p[0], BY + p[1]];
+      });
+    }
+
+    function setRot(d) {
+      if (busy) return;
+      rot = ((rot + d) % 360 + 360) % 360;
+      attempts++;
+      drawMirror(BX0, null);
+      mirReadout.textContent = "Rotated " + rot + "°. Rotation within the plane does not change the molecule's handedness — click \"Try to superimpose\" to slide it over and compare.";
+    }
+
+    var r30 = document.getElementById("mirR30"), l30 = document.getElementById("mirL30"),
+        tryBtn = document.getElementById("mirTry"), resetBtn = document.getElementById("mirReset");
+
+    if (r30) r30.addEventListener("click", function () { setRot(30); });
+    if (l30) l30.addEventListener("click", function () { setRot(-30); });
+    if (resetBtn) resetBtn.addEventListener("click", function () {
+      if (busy) return;
+      rot = 0; attempts = 0;
+      drawMirror(BX0, null);
+      mirReadout.textContent = "Reset. The mirror image is in place — rotate it first, then \"Try to superimpose.\"";
+    });
+
+    if (tryBtn) tryBtn.addEventListener("click", function () {
+      if (busy) return;
+      busy = true; attempts++;
+      var t0 = null;
+      function slide(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / 600);
+        var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var bx = BX0 + (AX - BX0) * ease;
+        drawMirror(bx, null);
+        if (k < 1) { requestAnimationFrame(slide); return; }
+        // alignment check
+        var mp = SUBS.map(function (s) {
+          var p = rot2(-s.x, s.y, rot);
+          return [bx + p[0], BY + p[1]];
+        });
+        var rings = [], aligned = 0, wrongList = [];
+        SUBS.forEach(function (s, i) {
+          var ox = AX + s.x, oy = AY + s.y;
+          var dx = mp[i][0] - ox, dy = mp[i][1] - oy;
+          if (dx * dx + dy * dy < 324) { rings.push("#15803d"); aligned++; }
+          else {
+            rings.push("#b91c1c");
+            // find whose position it has landed on
+            SUBS.forEach(function (o, j) {
+              if (j !== i) {
+                var jx = mp[i][0] - (AX + o.x), jy = mp[i][1] - (AY + o.y);
+                if (jx * jx + jy * jy < 324) wrongList.push(s.full + " has landed on " + o.full + "'s position");
+              }
+            });
+          }
+        });
+        drawMirror(bx, rings);
+        var msg = "Superposition attempted at rotation " + rot + "°: only " + aligned + "/4 groups match";
+        if (aligned < 4) {
+          msg += " — ✗ they cannot be superimposed!" + (wrongList.length ? " For example, " + wrongList[0] + "." : "");
+          msg += " Rotation within the plane will never line them up.";
+          if (attempts >= 3) msg += " In fact, not even arbitrary rotation in three-dimensional space will do it — this pair of mirror images are two distinct molecules (enantiomers).";
+        }
+        mirReadout.textContent = msg;
+        setTimeout(function () {
+          var t1 = null;
+          function back(ts2) {
+            if (t1 === null) t1 = ts2;
+            var k2 = Math.min(1, (ts2 - t1) / 600);
+            var e2 = k2 < 0.5 ? 2 * k2 * k2 : 1 - Math.pow(-2 * k2 + 2, 2) / 2;
+            drawMirror(BX0 + (AX - BX0) * (1 - e2), null);
+            if (k2 < 1) requestAnimationFrame(back);
+            else busy = false;
+          }
+          requestAnimationFrame(back);
+        }, 900);
+      }
+      requestAnimationFrame(slide);
+    });
+
+    drawMirror(BX0, null);
+    mirReadout.textContent = "The mirror image is in place. Use the rotate buttons to try to match the molecule on the left, then \"Try to superimpose.\"";
+  }
+})();
+</script>
+</body>
+</html>

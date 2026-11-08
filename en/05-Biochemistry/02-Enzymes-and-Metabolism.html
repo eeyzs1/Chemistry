@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Enzymes and Metabolism · Biochemistry Chapter 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b05">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">05 Biochemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 2 · Enzymes and Metabolism</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">05 Biochemistry · Chapter 2</div>
+    <h1>Enzymes and Metabolism: The Cell's Accelerators and Energy Ledger</h1>
+    <p class="lede">
+      A slice of bread left on the table merely dries out over a week; inside your body it becomes
+      carbon dioxide, water, and energy within hours — the difference is <strong>enzymes</strong>.
+      This chapter first takes the enzyme apart as a nanomachine: how it speeds reactions up a
+      million-fold, and why it is so picky about its substrates. Then we follow the energy assembly
+      line of <strong>glycolysis → citric acid cycle → oxidative phosphorylation</strong> to watch
+      a bowl of rice become ATP — the cell's one and only "energy currency".
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: Chapter 1 of this branch (the Four Families)</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#enzyme">§1 Enzymes: Biological Catalysts</a>
+    <a href="#atp">§2 ATP: The Energy Currency</a>
+    <a href="#resp">§3 The Three Stages of Cellular Respiration</a>
+    <a href="#reg">§4 Metabolic Switches</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Thermodynamics Says "Yes", Kinetics Says "Slow"</h2>
+    <p>
+      Oxidizing glucose to <span class="formula">CO₂</span> and water releases <strong>−2870 kJ</strong>
+      per mole — thermodynamically a spectacular bargain. Yet a spoonful of sugar on the lab bench will
+      not burn even after years: its electrons "have ambition but no nerve" and cannot climb the mountain
+      of <span class="term">activation energy</span> that stands across the reaction's path.
+    </p>
+    <p>
+      Your cells accomplish the same feat within hours at 37 ℃, atmospheric pressure, in aqueous
+      solution, thanks to two treasures: <strong>enzymes</strong> — catalysts that shrink the mountain
+      to a foothill; and <strong>metabolism</strong> — a stepwise energy assembly line that breaks one
+      "explosion" into a string of small steps. <span class="term">Metabolism</span> is the master
+      ledger of every chemical reaction in the cell: energy-releasing breakdown in
+      <strong>catabolism</strong> and energy-consuming construction in <strong>anabolism</strong> —
+      one column in, one column out, reconciled day and night.
+    </p>
+  </section>
+
+  <!-- ============ §1 Enzymes ============ -->
+  <section id="enzyme">
+    <h2>§1 Enzymes: Biological Catalysts a Million Times Faster</h2>
+    <p>
+      The overwhelming majority of enzymes are proteins (the "machine family" of Chapter 1); a few are
+      RNAs (ribozymes — foreshadowed in Chapter 3). They obey the three iron rules of catalysts:
+      <strong>never launch a reaction thermodynamics forbids, never shift the equilibrium position,
+      never get consumed themselves</strong> — they merely lower the <strong>activation energy</strong>.
+      Watch the comparison experiment below:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="eaSvg" width="620" height="260" viewBox="0 0 620 260" role="img" aria-label="Activation energy and enzyme catalysis animation">
+          <path id="eaRawPath" d="M40,205 C130,205 175,45 310,45 C445,45 490,225 580,225"
+                fill="none" stroke="#94a3b8" stroke-width="3"/>
+          <path id="eaEnzPath" d="M40,205 C160,205 205,148 310,148 C415,148 460,225 580,225"
+                fill="none" stroke="#0d9488" stroke-width="3" stroke-dasharray="7 6"/>
+          <circle cx="40" cy="205" r="5" fill="#475569"/>
+          <circle cx="580" cy="225" r="5" fill="#475569"/>
+          <text x="40" y="235" font-size="11" fill="#4b5563">Reactants</text>
+          <text x="580" y="248" text-anchor="end" font-size="11" fill="#4b5563">Products (lower energy, ΔG＜0)</text>
+          <text x="310" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">Ea (no enzyme) ≈ 75 kJ/mol</text>
+          <text x="310" y="133" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">Ea (with enzyme) ≈ 20 kJ/mol</text>
+          <rect x="56" y="44" width="18" height="4" fill="#94a3b8"/>
+          <text x="80" y="50" font-size="11" fill="#4b5563">No enzyme</text>
+          <rect x="56" y="64" width="18" height="4" fill="#0d9488"/>
+          <text x="80" y="70" font-size="11" fill="#4b5563">Enzyme-catalyzed (lowers the activation energy)</text>
+          <circle id="eaBall" cx="40" cy="193" r="10" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn" id="eaRaw">🏃 Climb without an enzyme</button>
+          <button class="btn" id="eaEnz">⚡ Enzyme to the rescue</button>
+          <button class="btn ghost" id="eaReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="eaReadout">Choose a mode and see whether the molecule can cross the barrier</div>
+      </div>
+      <figcaption>
+        The enzyme changes neither the start nor the finish (ΔG is unchanged); it only "tunnels through"
+        the middle. With the activation energy falling from 75 to 20 kJ/mol, the fraction of molecules
+        that can clear the barrier at room temperature skyrockets, and the speedup can reach the
+        <strong>10⁹-fold</strong> order of magnitude.
+      </figcaption>
+    </figure>
+
+    <h3>The Active Site and Induced Fit</h3>
+    <p>
+      Only a small groove on the enzyme actually does the work — the
+      <span class="term">active site</span>; the molecule it processes is the
+      <span class="term">substrate</span>. Older textbooks taught "lock and key"; the modern version is
+      <span class="term">induced fit</span>: as the substrate enters, both enzyme and substrate deform
+      slightly and mold to each other like a handshake — the more precise the fit, the more stable the
+      transition state, and the faster the reaction.
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Explanation Ladder · Why can enzymes be a million times faster?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Making two molecules react in solution is like asking two shy people wandering a whole city at
+          random to <strong>collide by chance and in exactly the right posture</strong> — next to
+          impossible. The enzyme is a dependable <strong>matchmaker</strong>: it seats both parties at
+          the same small table in the correct posture (proximity + orientation) and even adjusts the
+          lighting and temperature (microenvironment). Blind chance becomes inevitability; the mountain
+          becomes a foothill.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Mechanism</span>
+        <p>
+          Textbooks distill four tricks: ① <strong>proximity and orientation effects</strong> — effective
+          concentration soars and collision geometry is locked in; ② <strong>transition-state
+          complementarity</strong> — the active site is shape-complementary to the <em>transition
+          state</em> (not the substrate!), steadying the most unstable intermediate and driving
+          ΔG‡ straight down; ③ <strong>acid–base catalysis</strong> — active-site residues hand off or
+          take up protons on the spot; ④ <strong>strain and covalent catalysis</strong> — "twisting"
+          the substrate out of shape or briefly forming a covalent intermediate. Note trick ②:
+          <strong>the enzyme's mold is the transition state</strong> — that sentence is the key to
+          understanding enzyme-inhibiting drugs (§4).
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Quantitative</span>
+        <p>
+          Efficiency is measured by <strong>k<sub>cat</sub>/K<sub>m</sub></strong>. Some enzymes
+          (carbonic anhydrase converts a million CO₂ per second; orotidine 5′-phosphate
+          decarboxylase speeds up a reaction that would otherwise happen once every 78 million years by
+          a factor of 10¹⁷) have already hit the <strong>diffusion limit</strong> — the substrate cannot
+          drift into place without being processed, which earns them the label "catalytically perfect".
+          A <strong>k<sub>cat</sub>/K<sub>m</sub></strong> of 10⁸–10⁹ M⁻¹s⁻¹ means there is physically
+          no room left to be faster. Precisely for that reason, drug design does not try to "make the
+          enzyme faster"; it builds <strong>transition-state analogues</strong> to fool the enzyme
+          (HIV protease inhibitors follow exactly this logic).
+        </p>
+      </div>
+    </div>
+
+    <h3>More Substrate, Faster — Up to a Limit: The Michaelis–Menten Curve</h3>
+    <p>
+      With the enzyme amount fixed, adding substrate first raises the rate almost linearly, then the
+      curve gradually <strong>saturates</strong> — like dock workers: when cargo is scarce each crate is
+      carried as it arrives, but no matter how much piles up, there is still only one crew. Drag the
+      slider to feel out this curve:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="mmSvg" width="620" height="290" viewBox="0 0 620 290" role="img" aria-label="Michaelis–Menten kinetics simulator"></svg>
+        <div class="fig-controls">
+          <label for="mmS" style="font-size:.9rem;color:var(--ink-2)">
+            Substrate concentration [S] = <strong id="mmSVal">1.5</strong> mM (K<sub>m</sub> = 1.5 mM, fixed)
+          </label>
+          <input id="mmS" type="range" min="0" max="10" step="0.1" value="1.5"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Substrate concentration">
+        </div>
+        <div class="fig-readout" id="mmReadout"></div>
+      </div>
+      <figcaption>
+        <strong>K<sub>m</sub></strong> is the substrate concentration at half-maximal rate — a rough
+        proxy for "affinity": the smaller the K<sub>m</sub>, the less substrate the enzyme needs;
+        <strong>V<sub>max</sub></strong> is the limiting rate when every enzyme molecule works at full
+        load. At [S] = K<sub>m</sub>, v is exactly 50% of V<sub>max</sub>.
+      </figcaption>
+    </figure>
+
+    <h3>Temperature and pH: Every Machine Has a Working Range</h3>
+    <p>
+      Raising the temperature first speeds the reaction up, but past the <strong>optimum
+      temperature</strong> (about 37 ℃ for human enzymes) the enzyme begins to denature and the rate
+      falls off a cliff. pH works the same way: pepsin in the stomach works best at <strong>pH ≈ 2</strong>
+      (it functions happily in strong acid), while trypsin, once it reaches the small intestine, prefers
+      <strong>pH ≈ 8</strong>. Changing pH alters the charges of active-site residues — effectively
+      "deforming" the machine's interface.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: Why is a fever above 40 ℃ a danger signal, yet a small rise in body temperature during exercise is harmless?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Recall "denaturation" from Chapter 1 — which bonds hold an enzyme's 3D structure together, and what do they fear?</p>
+        <p>
+          An enzyme's higher-order structure is held together by <strong>weak interactions such as
+          hydrogen bonds and hydrophobic effects</strong>; the fiercer the thermal motion, the sooner
+          these weak bonds let go. Enzymes at 37 ℃ are fine-tuned to body temperature: in a high fever
+          some "marginal" enzymes fail first and the metabolic network clogs; above 40 ℃ denaturation
+          accelerates and organs such as the brain may be damaged. During exercise the core temperature
+          rises only slightly, and the body is protected by heat dissipation and heat-shock proteins
+          (the "rescue team" that helps enzymes refold) — the magnitude and duration are completely
+          different.
+        </p>
+      </div>
+    </details>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Are enzymes "used up"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Enzymes are consumed by the reactions they take part in, so the body must constantly
+          synthesize them in large amounts, and "digestive enzyme" supplements benefit everyone.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Enzymes are <strong>catalysts</strong>: released the moment a reaction ends and reused in
+          cycles. A single molecule of carbonic anhydrase can process about a million CO₂ molecules per
+          second. The body does keep synthesizing enzymes — but because they age and degrade like every
+          other protein (protein turnover, Chapter 1), not because reactions eat them. A healthy
+          person's digestive enzymes are self-sufficient; enzyme supplements have proven value only in
+          specific deficiencies (such as lactose intolerance or pancreatic insufficiency).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 ATP ============ -->
+  <section id="atp">
+    <h2>§2 ATP: The Cell's Energy Currency</h2>
+    <p>
+      The energy that catabolism releases cannot be put to work directly — any more than you can charge
+      a phone with a bonfire. The cell's solution is to bank that energy in small denominations on a
+      small molecule: <span class="term">adenosine triphosphate (ATP)</span> — adenine + ribose +
+      <strong>three phosphate groups linked in series</strong>. It is exactly the "nucleotide
+      derivative" of Chapter 1: a cousin of the nucleic acid family that retrained as an energy porter.
+    </p>
+    <p>
+      Hydrolysis of the ATP terminus, <span class="formula">ATP + H₂O → ADP + Pi</span>, releases about
+      −30.5 kJ/mol (roughly −50 kJ/mol under actual cellular conditions). Anabolism feeds on
+      <strong>coupling</strong>: an energy-releasing reaction is bound to an energy-consuming one — the
+      exergonic "downhill" push drives the endergonic "uphill" climb — and ATP is the
+      <strong>cash transfer</strong> between the two: catabolism "earns" and charges it into ATP;
+      anabolism "spends" it by hydrolysis.
+    </p>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Is ATP a "big battery"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          The body stockpiles large amounts of energy in ATP, and the more you "charge" it the more
+          energetic you feel; a huge packet of energy is locked inside ATP's high-energy phosphate bond.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          ATP is <strong>currency, not savings</strong>: at any moment your whole body holds only about
+          250 g of ATP — enough for a few minutes of sitting still — so it must be produced and spent in
+          a high-speed cycle (the daily turnover is comparable to body weight; see Example 2). The
+          "high-energy phosphate bond" does not mean energy hides inside the bond; it means the
+          hydrolysis <strong>products</strong> (ADP and Pi) are resonance-stabilized and their separated
+          charges relax, giving a net release of energy. True long-term storage is fat and glycogen —
+          ATP serves only as "small change".
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why not fuel muscles directly with glucose — why convert to ATP first?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What does paying 2870 kJ in one lump sum versus about 30 kJ per installment some 30 times mean for a precision machine?</p>
+        <p>
+          ① <strong>Denomination</strong>: one glucose molecule releases 2870 kJ — the energy of about
+          94 ATP delivered all at once — and proteins would be "burned out" (temperature runaway, side
+          reactions everywhere). ATP slices energy into ~30 kJ banknotes, precise and controllable.
+          ② <strong>Universality</strong>: biosynthesis, transport, movement, and signaling all accept
+          this one currency, so coupled reactions need only a single universal interface.
+          ③ <strong>Reversibility</strong>: the ATP/ADP cycle is reused and recharged on demand — this
+          is "small-change economics", not "warehouse economics".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Cellular respiration ============ -->
+  <section id="resp">
+    <h2>§3 Cellular Respiration: The Energy Assembly Line in Three Stages</h2>
+    <p>
+      The complete oxidation of one glucose molecule is accomplished in three stops. First the
+      panoramic view, then a stop-by-stop tour:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="335" viewBox="0 0 640 335" role="img" aria-label="Overview of the three-stage cellular respiration pipeline">
+          <!-- ① Glycolysis -->
+          <rect x="20" y="20" width="600" height="85" rx="12" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+          <text x="36" y="42" font-size="12" font-weight="700" fill="#854d0e">① Cytosol · Glycolysis (runs without oxygen)</text>
+          <rect x="36" y="56" width="80" height="34" rx="8" fill="#fff" stroke="#a16207" stroke-width="2"/>
+          <text x="76" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">Glucose</text>
+          <line x1="116" y1="73" x2="160" y2="73" stroke="#854d0e" stroke-width="2.5"/>
+          <polygon points="160,73 152,69 152,77" fill="#854d0e"/>
+          <rect x="162" y="56" width="80" height="34" rx="8" fill="#fff" stroke="#a16207" stroke-width="2"/>
+          <text x="202" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937">Pyruvate</text>
+          <text x="270" y="70" font-size="11" font-weight="700" fill="#15803d">net +2 ATP · +2 NADH</text>
+          <text x="270" y="88" font-size="10" fill="#6b7280">invests 2 ATP up front, recovers 4 ATP (net gain 2)</text>
+          <text x="470" y="70" font-size="10.5" fill="#6b7280">Without oxygen, fermentation saves the day:</text>
+          <text x="470" y="86" font-size="10.5" fill="#6b7280">muscle → lactate · yeast → ethanol + CO₂</text>
+          <!-- Transition -->
+          <line x1="216" y1="107" x2="216" y2="118" stroke="#854d0e" stroke-width="2.5"/>
+          <polygon points="216,120 212,112 220,112" fill="#854d0e"/>
+          <text x="230" y="117" font-size="9.5" fill="#6b7280">pyruvate enters the mitochondrion → acetyl-CoA (+2 NADH)</text>
+          <!-- ② TCA -->
+          <rect x="20" y="120" width="600" height="85" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+          <text x="36" y="142" font-size="12" font-weight="700" fill="#0f766e">② Mitochondrial matrix · Citric acid cycle (2 turns)</text>
+          <circle cx="110" cy="170" r="28" fill="#fff" stroke="#0d9488" stroke-width="2.5"/>
+          <path d="M110,146 a24,24 0 1,1 -17,42" fill="none" stroke="#0d9488" stroke-width="2"/>
+          <polygon points="93,188 91,179 100,183" fill="#0d9488"/>
+          <text x="110" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">TCA</text>
+          <text x="160" y="164" font-size="11" font-weight="700" fill="#15803d">per turn: 3 NADH + 1 FADH₂ + 1 GTP</text>
+          <text x="160" y="182" font-size="10.5" fill="#6b7280">Krebs cycle · carbon leaves as CO₂ (the CO₂ you exhale comes from here)</text>
+          <!-- Transition -->
+          <line x1="216" y1="207" x2="216" y2="218" stroke="#0f766e" stroke-width="2.5"/>
+          <polygon points="216,220 212,212 220,212" fill="#0f766e"/>
+          <text x="230" y="217" font-size="9.5" fill="#6b7280">NADH / FADH₂ carry high-energy electrons to the inner membrane</text>
+          <!-- ③ ETC -->
+          <rect x="20" y="220" width="600" height="85" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+          <text x="36" y="242" font-size="12" font-weight="700" fill="#1e40af">③ Inner mitochondrial membrane · Oxidative phosphorylation (the big producer)</text>
+          <rect x="46" y="256" width="140" height="34" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+          <text x="116" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Electron-transport chain</text>
+          <line x1="186" y1="273" x2="226" y2="273" stroke="#1e40af" stroke-width="2.5"/>
+          <polygon points="228,273 220,269 220,277" fill="#1e40af"/>
+          <rect x="230" y="256" width="150" height="34" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+          <text x="305" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a8a">Pumps H⁺ uphill</text>
+          <line x1="380" y1="273" x2="420" y2="273" stroke="#1e40af" stroke-width="2.5"/>
+          <polygon points="422,273 414,269 414,277" fill="#1e40af"/>
+          <rect x="424" y="256" width="160" height="34" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+          <text x="504" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">ATP synthase ≈ +26 ATP</text>
+          <text x="46" y="300" font-size="10" fill="#475569">O₂ is the electrons' final destination: O₂ + 4H⁺ + 4e⁻ → 2H₂O (the water you exhale) · the proton gradient is a dam, and ATP synthase is the spinning water turbine</text>
+          <text x="320" y="327" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0f766e">1 glucose molecule ≈ 30–32 ATP (the older textbooks' 36–38 is an overestimate)</text>
+        </svg>
+      </div>
+      <figcaption>
+        Division of labor across the three stages: ① glycolysis starts up quickly in the cytosol (no
+        oxygen required); ② the citric acid cycle strips carbon off as CO₂ and packs the energy into
+        the electron carriers NADH/FADH₂; ③ the electron-transport chain uses electrons to "pump water
+        uphill", and ATP synthase releases it to generate electricity.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Chemiosmosis: The Flowing Battery</div>
+      The essence of stage ③ is to <strong>convert chemical energy into a "head of water" before
+      generating electricity</strong>: the transport chain pumps H⁺ out of the membrane, building a
+      proton gradient across it (the reservoir); ATP synthase lets H⁺ flow back, spinning like a
+      water-driven turbine to synthesize ATP. This is the <strong>chemiosmotic hypothesis</strong>
+      Mitchell proposed in 1961, nobody believed at first, and which won the Nobel Prize in 1978.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: The Energy Ledger</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me): How many ATP does one glucose molecule fetch?</div>
+      <div class="worked-problem">
+        Tally the full account for the complete aerobic oxidation of 1 glucose molecule using the
+        modern convention (NADH ≈ 2.5 ATP, FADH₂ ≈ 1.5 ATP).
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Glycolysis: a net gain of <strong>2 ATP</strong> (substrate-level phosphorylation) + <strong>2 NADH</strong> (cytosol).</li>
+        <li class="step">2 pyruvate → 2 acetyl-CoA: yields <strong>2 NADH</strong>.</li>
+        <li class="step">Two turns of the citric acid cycle: 2 GTP (= 2 ATP) + <strong>6 NADH</strong> + <strong>2 FADH₂</strong>.</li>
+        <li class="step">Settlement at the electron-transport chain: 10 NADH in total × 2.5 = 25; 2 FADH₂ × 1.5 = 3.</li>
+        <li class="step">✅ Grand total: 2 + 2 + 25 + 3 = <strong>32 ATP</strong> (usually written 30–32 to allow for shuttle losses). Older textbooks, settling at 3/2, get 36–38 — an overestimate.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me): How much ATP turns over each day?</div>
+      <div class="worked-problem">
+        An adult takes in about 2000 kcal (≈ 8370 kJ) per day, all of it turning over through ATP.
+        Under cellular conditions, each mole of ATP hydrolyzed supplies ~50 kJ. Estimate the mass of
+        ATP he turns over per day (M(ATP) ≈ 507 g/mol), and state what the conclusion implies.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Hint: energy ÷ unit price = moles. 8370 ÷ 50 ≈ <strong>167 mol</strong> of ATP per day.</li>
+        <li class="step">💡 Hint: convert to mass. 167 × 507 g ≈ <strong>85 kg</strong> — heavier than most people!</li>
+        <li class="step">💡 Hint: yet at any moment the body holds only about 250 g of ATP (≈ 0.49 mol). Number of turnovers = 167 ÷ 0.49 ≈ <strong>340 per day</strong>.</li>
+        <li class="step">✅ Conclusion: ATP is "small change, minted the instant it is spent", not a deposit — it must cycle at high speed, and the real energy stores are fat and glycogen.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Is the muscle soreness that lasts two or three days after exercise really "lactic acid buildup"?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: How soon after exercise stops is lactate cleared away? Is the soreness felt "right then" or "the next day"?</p>
+        <p>
+          Lactate is indeed produced during exercise (fermentation regenerates NAD⁺ so glycolysis can
+          keep running), but <strong>blood lactate is essentially cleared within an hour after you stop</strong> —
+          the heart and muscles can even burn it as fuel, or it returns to the liver via the Cori cycle
+          to be rebuilt into glucose. <strong>Delayed-onset muscle soreness (DOMS)</strong> appears
+          24–72 hours later, and its chief actors are <strong>microdamage and inflammation</strong> in
+          the muscle fibers. Blaming the bill on lactate is one of the most widespread "miscarriages
+          of justice" in exercise science.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Regulation ============ -->
+  <section id="reg">
+    <h2>§4 Metabolic Switches: Who Calls the Halt</h2>
+    <p>
+      An assembly line cannot just barrel ahead at full speed — the cell produces on demand, switches
+      on when something is lacking, and shuts down when supplies suffice. Three common switches:
+    </p>
+    <ul>
+      <li><strong>Competitive inhibition</strong>: an impostor crowds into the active site.
+        Sulfonamide drugs resemble p-aminobenzoic acid, the bacteria's "folate raw material", and seize
+        the enzyme's active site; unable to make folate, the bacteria starve — whereas humans obtain
+        folate from food, so the drug selectively poisons bacteria. The signature of competitive
+        inhibition: <strong>adding substrate rescues the enzyme</strong> (V<sub>max</sub> unchanged,
+        K<sub>m</sub> increased).</li>
+      <li><strong>Allosteric regulation and feedback inhibition</strong>: an effector binds at an
+        <strong>allosteric site</strong> away from the active site, deforming the enzyme and shifting
+        its gear. The most elegant version is <strong>negative feedback</strong>: the pathway's end
+        product doubles back and switches off the first enzyme — like a thermostat: the more product
+        piles up, the more slowly it is made.</li>
+      <li><strong>Covalent modification</strong>: a phosphate group is attached or removed
+        (by kinases/phosphatases), toggling the switch on and off in a second. Adrenaline arrives →
+        glycogen phosphorylase is activated by phosphorylation → glycogen is broken down at once for
+        energy — the whole "wartime mobilization" is completed within seconds.</li>
+    </ul>
+    <div class="keypoint">
+      <div class="kp-title">📌 A Preview of Medicinal Chemistry</div>
+      Penicillin inhibits the transpeptidase that builds the bacterial cell wall; statins competitively
+      inhibit the first enzyme of cholesterol synthesis; HIV protease inhibitors mimic the transition
+      state — <strong>read the enzyme, and you can design its switch</strong>. This line of attack
+      unfolds in full in Branch 10, Medicinal Chemistry.
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Enzymes are biological catalysts: they <strong>only lower the activation energy</strong>, leaving ΔG and the equilibrium untouched and recycling themselves; rate enhancements can exceed 10⁹-fold.</li>
+        <li>Active site + induced fit; the enzyme's mold is the <strong>transition state</strong>, not the substrate — the key to understanding inhibition and drug design.</li>
+        <li>Michaelis–Menten kinetics: v = V<sub>max</sub>[S]/(K<sub>m</sub>+[S]); read K<sub>m</sub> as affinity and V<sub>max</sub> as the saturation limit.</li>
+        <li>Temperature and pH each have an optimal range; cross the line and the weak bonds loosen — the enzyme denatures and goes dead.</li>
+        <li>ATP is the <strong>energy currency</strong>, not an energy warehouse: small transfers in installments (≈ 30 kJ each), turning over at high speed (roughly body weight per day).</li>
+        <li>Cellular respiration in three stages: glycolysis (net 2 ATP) → citric acid cycle (loading the electron carriers) → oxidative phosphorylation (proton gradient → ATP synthase; the big producer).</li>
+        <li>Metabolism is regulated on demand through three switches: competitive inhibition, allosteric/feedback inhibition, and phosphorylation-type covalent modification.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · Enzymes and Metabolism <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "By what principle do enzymes accelerate chemical reactions?",
+            "options": ["By raising the total energy of the reactants", "By lowering the activation energy of the reaction", "By changing the equilibrium constant of the reaction", "By supplying energy to the reaction and being consumed"],
+            "answer": 1,
+            "explain": "An enzyme digs the energy barrier lower so more molecules can get over it. ΔG and the equilibrium position are unchanged, and the enzyme is not consumed — the three iron rules of a catalyst."
+          },
+          {
+            "q": "Which metaphor best fits ATP's role in the cell?",
+            "options": ["A piggy bank of long-term deposits", "An energy currency spent as fast as it is minted (small change)", "An archive storing genetic information", "The wall that makes up the cell membrane"],
+            "answer": 1,
+            "explain": "The whole body holds only about 250 g of ATP at any moment, yet turns over roughly body weight of it every day — earning and spending continuously. Long-term energy storage relies on fat and glycogen."
+          },
+          {
+            "q": "What are the net products of glycolysis?",
+            "options": ["2 pyruvate + net 2 ATP + 2 NADH", "6 CO₂ + 32 ATP", "lactate + ethanol", "2 acetyl-CoA + 6 NADH"],
+            "answer": 0,
+            "explain": "1 glucose → 2 pyruvate; an investment of 2 ATP returns 4 ATP (net 2), plus 2 NADH. The whole route runs in the cytosol and needs no oxygen."
+          },
+          {
+            "q": "How does a competitive inhibitor work?",
+            "options": ["It competes with the substrate for the active site", "It hydrolyzes the enzyme into amino acids", "It raises the ambient temperature so the enzyme denatures", "It changes the reaction's ΔG so less energy is released"],
+            "answer": 0,
+            "explain": "The inhibitor resembles the substrate and occupies the active site. Raising the substrate concentration relieves it (Vmax unchanged, Km increased). Sulfonamides are the classic example."
+          },
+          {
+            "q": "In the aerobic oxidation of one glucose molecule, which stage produces the most ATP?",
+            "options": ["Glycolysis", "The citric acid cycle", "Oxidative phosphorylation (electron-transport chain + ATP synthase)", "Lactic acid fermentation"],
+            "answer": 2,
+            "explain": "Oxidative phosphorylation contributes about 26–28 of the 30–32 ATP total — the first two stops mostly just 'charge up the electron carriers'."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="01-The-Four-Families-of-Biomolecules.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 1 · The Four Families of Biomolecules</span></a>
+      <a class="next" href="03-The-Chemistry-of-Genetic-Information.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 3 · The Chemistry of Genetic Information</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (activation-energy animation / Michaelis–Menten slider) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* Shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Activation-energy hill-climbing animation ---------- */
+  var eaBall = document.getElementById("eaBall");
+  var eaRawPath = document.getElementById("eaRawPath");
+  var eaEnzPath = document.getElementById("eaEnzPath");
+  var eaReadout = document.getElementById("eaReadout");
+  var eaRaf = null;
+
+  function placeBallStart() {
+    if (eaBall) { eaBall.setAttribute("cx", 40); eaBall.setAttribute("cy", 193); }
+  }
+  function seg(path, from, to, dur, done) {
+    var L = path.getTotalLength();
+    var t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var p = path.getPointAtLength(L * (from + (to - from) * k));
+      eaBall.setAttribute("cx", p.x);
+      eaBall.setAttribute("cy", p.y - 12);
+      if (k < 1) eaRaf = requestAnimationFrame(step);
+      else if (done) done();
+    }
+    if (eaRaf) cancelAnimationFrame(eaRaf);
+    eaRaf = requestAnimationFrame(step);
+  }
+  function bindEa(id, fn) {
+    var b = document.getElementById(id);
+    if (b) b.addEventListener("click", fn);
+  }
+  bindEa("eaRaw", function () {
+    if (!eaBall || !eaRawPath) return;
+    placeBallStart();
+    eaReadout.textContent = "The molecule charges toward the hill...";
+    seg(eaRawPath, 0, 0.42, 1400, function () {
+      seg(eaRawPath, 0.42, 0, 1000, function () {
+        eaReadout.textContent = "❌ Not enough energy: it climbs halfway up and slides back — without an enzyme this reaction is almost immeasurably slow at room temperature (Ea ≈ 75 kJ/mol)";
+      });
+    });
+  });
+  bindEa("eaEnz", function () {
+    if (!eaBall || !eaEnzPath) return;
+    placeBallStart();
+    eaReadout.textContent = "The enzyme digs the barrier lower, and the molecule sets off with ease...";
+    seg(eaEnzPath, 0, 1, 1700, function () {
+      eaReadout.textContent = "✅ Activation energy down to ≈ 20 kJ/mol: the molecule reaches the product side smoothly, a speedup of about 10⁹-fold (order-of-magnitude estimate)";
+    });
+  });
+  bindEa("eaReset", function () {
+    if (eaRaf) cancelAnimationFrame(eaRaf);
+    placeBallStart();
+    eaReadout.textContent = "Choose a mode and see whether the molecule can cross the barrier";
+  });
+
+  /* ---------- 2. Michaelis–Menten kinetics curve ---------- */
+  var mmSvg = document.getElementById("mmSvg");
+  if (mmSvg) {
+    var mmReadout = document.getElementById("mmReadout");
+    var mmS = document.getElementById("mmS");
+    var mmSVal = document.getElementById("mmSVal");
+    var VMAX = 100, KM = 1.5;
+    var X0 = 60, X1 = 570, Y0 = 250, Y1 = 40;   // canvas pixels
+    var SMAX = 10;
+
+    function px(s) { return X0 + (X1 - X0) * s / SMAX; }
+    function py(v) { return Y0 - (Y0 - Y1) * v / 110; }
+    function vv(s) { return VMAX * s / (KM + s); }
+
+    function drawMM() {
+      mmSvg.innerHTML = "";
+      // grid and axes
+      for (var g = 0; g <= 5; g++) {
+        var gx = px(g * 2);
+        el("line", { x1: gx, y1: Y1, x2: gx, y2: Y0, stroke: "#e5e7eb", "stroke-width": 1 }, mmSvg);
+        var gt = el("text", { x: gx, y: Y0 + 18, "text-anchor": "middle", "font-size": 10, fill: "#6b7280" }, mmSvg);
+        gt.textContent = g * 2;
+      }
+      el("line", { x1: X0, y1: Y0, x2: X1, y2: Y0, stroke: "#9ca3af", "stroke-width": 2 }, mmSvg);
+      el("line", { x1: X0, y1: Y0, x2: X0, y2: Y1, stroke: "#9ca3af", "stroke-width": 2 }, mmSvg);
+      var xl = el("text", { x: (X0 + X1) / 2, y: Y0 + 36, "text-anchor": "middle", "font-size": 11, fill: "#4b5563" }, mmSvg);
+      xl.textContent = "Substrate concentration [S] / mM";
+      var yl = el("text", { x: 18, y: (Y0 + Y1) / 2, "font-size": 11, fill: "#4b5563",
+                            transform: "rotate(-90 18 " + (Y0 + Y1) / 2 + ")" }, mmSvg);
+      yl.textContent = "Reaction rate v (% Vmax)";
+      // Vmax dashed line
+      el("line", { x1: X0, y1: py(VMAX), x2: X1, y2: py(VMAX), stroke: "#94a3b8",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      var vt = el("text", { x: X1 - 4, y: py(VMAX) - 6, "text-anchor": "end", "font-size": 10.5,
+                            "font-weight": 700, fill: "#475569" }, mmSvg);
+      vt.textContent = "Vmax (saturation limit)";
+      // Km dashed line (half rate)
+      el("line", { x1: px(KM), y1: py(50), x2: px(KM), y2: Y0, stroke: "#0d9488",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      el("line", { x1: X0, y1: py(50), x2: px(KM), y2: py(50), stroke: "#0d9488",
+                   "stroke-width": 1.5, "stroke-dasharray": "5 5" }, mmSvg);
+      var kt = el("text", { x: px(KM) + 6, y: py(50) - 6, "font-size": 10.5, "font-weight": 700, fill: "#0f766e" }, mmSvg);
+      kt.textContent = "Km = 1.5 → v = 50% Vmax";
+      // curve
+      var d = "";
+      for (var s = 0; s <= SMAX + 0.001; s += 0.05) {
+        d += (s === 0 ? "M" : " L") + px(s).toFixed(1) + "," + py(vv(s)).toFixed(1);
+      }
+      el("path", { d: d, fill: "none", stroke: "#0d9488", "stroke-width": 3.5, "stroke-linecap": "round" }, mmSvg);
+      // current point
+      var S = parseFloat(mmS.value), V = vv(S);
+      el("line", { x1: px(S), y1: py(V), x2: px(S), y2: Y0, stroke: "#f97316",
+                   "stroke-width": 1.5, "stroke-dasharray": "3 4" }, mmSvg);
+      el("circle", { cx: px(S), cy: py(V), r: 9, fill: "#f97316", opacity: .25 }, mmSvg);
+      el("circle", { cx: px(S), cy: py(V), r: 6, fill: "#f97316", stroke: "#c2410c", "stroke-width": 1.5 }, mmSvg);
+      // readout
+      mmSVal.textContent = S.toFixed(1);
+      var note;
+      if (S < KM * 0.8) note = "Substrate scarce: most enzymes idle, and the rate rises almost linearly with [S] (most sensitive to substrate concentration)";
+      else if (S < KM * 1.25) note = "At Km: running at exactly half speed, v = 50% Vmax";
+      else if (S < KM * 4) note = "Approaching saturation: most workstations are occupied, and the rate climbs more slowly";
+      else note = "Near saturation: the dock is at full capacity, and more substrate barely helps (→ Vmax)";
+      mmReadout.textContent = "v = " + V.toFixed(1) + " % Vmax | " + note;
+    }
+    if (mmS) {
+      mmS.addEventListener("input", drawMM);
+      drawMM();
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>States of Matter and Solutions · Foundations of Chemistry Chapter 4</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b00">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">00 Foundations of Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 4 · States of Matter and Solutions</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">00 Foundations of Chemistry · Chapter 4</div>
+    <h1>States of Matter and Solutions: The Social Life of Molecules</h1>
+    <p class="lede">
+      A single water molecule is colorless and formless; only when 10²³ of them gather do rain, fog, ice, and the oceans exist.
+      This chapter watches two things: <strong>how temperature and pressure direct the particles' “way of living together” (the three states and the gas laws)</strong>,
+      and <strong>how the books are kept when substances dissolve in one another (concentration and dilution)</strong>. Most chemical reactions happen in solution — this chapter is their backstage.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time 40 minutes</span>
+      <span class="chip">Prerequisites: Chapters 1–3</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#states">The three states and particle motion</a>
+    <a href="#gas">The gas laws</a>
+    <a href="#solution">Solutions and concentration</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: One Cast of Actors, Three Stage Plays</h2>
+    <p>
+      Ice, water, and water vapor are made of exactly the same molecules; they differ only in the “style of the performance”: in ice, the molecules hold hands, each in its assigned place (<strong>a fixed formation</strong>);
+      in water, they crowd together yet can still swap places (<strong>close but free</strong>); in water vapor, each molecule dashes off on its own (<strong>no interference</strong>).
+      The director staging these scene changes is <strong>temperature and pressure</strong>. Why does a pressure cooker cook faster? Why does opening a soda go “psst”?
+      You will find both answers in this chapter.
+    </p>
+    <details class="think">
+      <summary>Think It Through: Why do wet clothes dry faster in summer than in winter?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: evaporation = a water molecule's “jailbreak” from the liquid surface — and what does a jailbreak require?</p>
+        <p>
+          Escaping the liquid surface takes enough <strong>kinetic energy</strong>. The higher the temperature, the greater the molecules' average kinetic energy,
+          and the fraction of molecules “qualified to break out” rises exponentially (this foreshadows the Boltzmann distribution in Branch 04).
+          That is why evaporation — and laundry — goes faster in summer, and why the higher temperature inside a pressure cooker makes reactions run faster.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 The three states ============ -->
+  <section id="states">
+    <h2>§1 The Three States: One Set of Molecules, Three Kinds of Discipline</h2>
+    <table class="tbl">
+      <thead>
+        <tr><th>State</th><th>Molecular arrangement</th><th>Molecular motion</th><th>Shape / volume</th><th>Everyday examples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Solid</strong></td><td>Orderly, close-packed</td><td>Vibrate in place</td><td>Fixed shape, fixed volume</td><td>Ice, iron nails</td></tr>
+        <tr><td><strong>Liquid</strong></td><td>Close-packed but disordered</td><td>Vibration + sliding and swapping places</td><td>Shape follows the container; fixed volume</td><td>Water, mercury</td></tr>
+        <tr><td><strong>Gas</strong></td><td>Far apart</td><td>High-speed straight-line flight + collisions</td><td>No fixed shape or volume; fills the container</td><td>Water vapor, air</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔬 Try it out: particle motion simulator</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="ptCanvas" width="380" height="240" style="border-radius:8px;background:#0f172a" role="img" aria-label="Particle simulator for the three states of matter: drag the temperature slider and watch particle behavior change across the solid, liquid, and gas states"></canvas>
+        <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+          <span style="font-size:.9rem;color:var(--ink-2)">Temperature:</span>
+          <input id="ptT" type="range" min="0" max="100" value="25" style="width:200px;accent-color:var(--accent);height:44px" aria-label="Temperature">
+          <span id="ptTLabel" style="font-size:.9rem;font-weight:700;color:var(--accent-deep);min-width:80px">Low (solid-like)</span>
+        </div>
+        <div class="fig-readout" id="ptReadout"></div>
+      </div>
+      <figcaption>
+        Drag the temperature slider: at low temperature the particles huddle at the bottom and creep along slowly (solid-like); at medium temperature they slide everywhere, squeezing and bumping into one another (liquid-like);
+        at high temperature they fly wildly around the whole container (gas-like). Real phase transitions also depend on intermolecular forces — what this demo shows is <strong>the link between kinetic energy and order</strong>.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Temperature = a measure of the molecules' average kinetic energy</div>
+      Temperature is not “how much heat” — it is a <strong>statistical measure of how violent the molecules' random motion is</strong>.
+      This one viewpoint explains everything at once: faster evaporation, faster diffusion, faster reactions (kinetics in Branch 04), melting solids — in every case, the molecules are simply moving with more gusto.
+    </div>
+  </section>
+
+  <!-- ============ §2 The gas laws ============ -->
+  <section id="gas">
+    <h2>§2 The Gas Laws: A Temper You Can Squeeze</h2>
+    <p>
+      Most of the space a gas fills in its container is “empty”, so gases are the easiest state to compress — and the easiest to describe quantitatively.
+      Two classic rules (both established by quantitative experiments in the 17th–18th centuries):
+    </p>
+    <ul>
+      <li><span class="term">Boyle's law</span>: at constant temperature, <strong>pV = constant</strong> — squeeze the volume to half and the pressure doubles.</li>
+      <li><span class="term">Charles's law</span>: at constant pressure, <strong>V ∝ T</strong> (thermodynamic temperature) — raise the temperature and the volume expands.</li>
+    </ul>
+    <p>
+      Combine them into one all-purpose formula — the <span class="term">ideal gas law</span>:
+      <span class="formula">pV = nRT</span> (R = 8.314 J·mol⁻¹·K⁻¹; T must be the kelvin temperature, K = °C + 273.15).
+    </p>
+
+    <h3>🔬 Try it out: syringe compression experiment</h3>
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="pistSvg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-label="Syringe compression simulation"></svg>
+        <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+          <span style="font-size:.9rem;color:var(--ink-2)">Plunger (volume V):</span>
+          <input id="pistV" type="range" min="20" max="80" value="60" style="width:200px;accent-color:var(--accent);height:44px" aria-label="Volume">
+        </div>
+        <div class="fig-readout" id="pistReadout"></div>
+      </div>
+      <figcaption>
+        At constant temperature, push the plunger: as the volume is squeezed from V₀ to V, the pressure follows <span class="formula">p₁V₁ = p₂V₂</span>.
+        Notice that the molecular density (particles per unit of space) rises in step — this is the microscopic source of pressure: denser collisions.
+      </figcaption>
+    </figure>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration: gas volume at standard conditions</div>
+      <div class="worked-problem">At standard conditions (0 °C, 101.325 kPa), what volume does 2 mol of ideal gas occupy?</div>
+      <ol class="worked-steps">
+        <li class="step">List the knowns: n = 2 mol; T = 0 °C = <strong>273.15 K</strong> (kelvin!); p = 101.325 kPa = 101325 Pa.</li>
+        <li class="step">Rearrange the ideal gas law: V = nRT / p.</li>
+        <li class="step">Substitute: V = 2 × 8.314 × 273.15 ÷ 101325 ≈ <strong>0.0448 m³</strong> = 44.8 L.</li>
+        <li class="step">✅ Conclusion: at standard conditions, 1 mol of any ideal gas ≈ <strong>22.4 L</strong> (the molar volume of a gas), regardless of which gas it is — because the volume is set only by the number of molecules and their kinetic energy, not by “who” they are.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · “0 °C is just 0”</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Entering the Celsius temperature directly in gas calculations: “T = 25 °C, so I'll put in 25”.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          In the gas laws, T is the <strong>thermodynamic temperature (kelvin)</strong>: T/K = t/°C + 273.15.
+          Molecular kinetic energy at 0 °C is not zero — the true “zero kinetic energy” sits at −273.15 °C (absolute zero).
+          Entering a Celsius temperature makes Charles's law come out completely wrong (the baseline of the V ∝ T proportionality is off from the start).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Solutions ============ -->
+  <section id="solution">
+    <h2>§3 Solutions and Concentration: The Ledger of Liquid-State Chemistry</h2>
+    <p>
+      A <span class="term">solution</span> = solute (what gets dissolved) + solvent (what does the dissolving).
+      In sugar water, sugar is the solute and water is the solvent. Three common “languages” describe how concentrated it is:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Notation</th><th>Definition</th><th>Formula</th><th>Typical setting</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Molarity c</strong></td><td>Moles of solute per unit volume of solution</td><td><span class="formula">c = n / V</span> (mol/L)</td><td>Labels on laboratory reagent bottles</td></tr>
+        <tr><td><strong>Mass fraction w</strong></td><td>Solute mass as a percentage of solution mass</td><td><span class="formula">w = m(solute) / m(solution) × 100%</span></td><td>98% concentrated sulfuric acid, 75% disinfecting alcohol</td></tr>
+        <tr><td><strong>ppm (parts per million)</strong></td><td>Extremely dilute concentrations; mg/L (approximately, for dilute aqueous solutions)</td><td><span class="formula">1 ppm = 1 mg/L</span></td><td>Water-quality and air-quality reports</td></tr>
+      </tbody>
+    </table>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Full demonstration: calculating amounts for preparing a solution</div>
+      <div class="worked-problem">The lab needs to prepare 250 mL of a 0.1 mol/L NaCl solution. How many grams of sodium chloride should be weighed out? (M = 58.5)</div>
+      <ol class="worked-steps">
+        <li class="step">Align the units: V = 250 mL = 0.250 L.</li>
+        <li class="step">Find the moles of solute: n = cV = 0.1 × 0.250 = <strong>0.025 mol</strong>.</li>
+        <li class="step">Convert to mass: m = nM = 0.025 × 58.5 = <strong>1.46 g</strong>.</li>
+        <li class="step">✅ Procedure: weigh out 1.46 g NaCl → dissolve it in a little water → transfer to a 250 mL volumetric flask and dilute to the mark. Note that the requirement is a <strong>final volume</strong> of 250 mL, not “add 250 mL of water”.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 3 · Guided practice: dilution (do it with me)</div>
+      <div class="worked-problem">100 mL of 2 mol/L hydrochloric acid is diluted to 500 mL. What is the concentration after dilution?</div>
+      <ol class="worked-steps">
+        <li class="step">💡 What stays the same before and after dilution? — the <strong>moles</strong> of solute (dilution adds no acid, only water).</li>
+        <li class="step">💡 Write the conservation relation c₁V₁ = c₂V₂ → 2 × 100 = c₂ × 500.</li>
+        <li class="step">💡 Solve: c₂ = <strong>0.4 mol/L</strong>. The volume is now 5× larger, so the concentration is 1/5 of what it was.</li>
+        <li class="step">✅ Self-check: n = 0.2 mol unchanged; 0.2 ÷ 0.5 = 0.4 ✓.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Saturated ≠ concentrated</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>“This solution is saturated, so it must be very concentrated.”</div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Saturated only means the solute has <strong>reached its dissolving limit at that temperature</strong> — and the limit itself may be high or low:
+          saturated sugar water is cloyingly concentrated, while saturated calcium hydroxide solution (limewater) is dilute to below 0.02 mol/L.
+          “Saturated” is a <strong>relative-solubility</strong> concept; “concentrated or dilute” is an <strong>absolute-concentration</strong> concept — two different things.
+        </div>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Why does opening a bottle of soda set off a rush of bubbles?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: how much higher than atmospheric pressure is the pressure inside an unopened bottle? And how does gas solubility depend on pressure?</p>
+        <p>
+          At bottling, carbon dioxide is pressed into the drink at 2–4 atmospheres — <strong>the greater the pressure, the greater the gas's solubility</strong> (Henry's law).
+          The instant the cap opens, the pressure falls back to 1 atm, the solubility limit plunges, and the excess CO₂ must come out of solution — hence the eruption of bubbles.
+          Shaking speeds up this release (more nucleation sites), which is why a shaken soda fizzes harder when opened — letting a soda settle before opening it is everyday chemical wisdom.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The three states differ in how their molecules are arranged and how much order their motion has; temperature is a measure of average kinetic energy.</li>
+        <li>The two gas laws → the ideal gas law pV = nRT; T in kelvin; molar volume at standard conditions 22.4 L/mol.</li>
+        <li>Three languages of concentration: c = n/V (the lab), mass fraction (industry), ppm (trace levels in environmental work).</li>
+        <li>Dilution conserves the moles of solute: c₁V₁ = c₂V₂.</li>
+        <li>Saturated ≠ concentrated; gas solubility rises with pressure (Henry's law — the secret of fizzy drinks).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Self-Test · States of Matter and Solutions <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "At constant temperature, a gas is compressed to half of its original volume. What does the pressure become?",
+            "options": ["Half as large", "Unchanged", "Twice as large", "Four times as large"],
+            "answer": 2,
+            "explain": "Boyle's law, pV = constant: V halved → p doubled. Microscopically: the molecular density doubles, so wall collisions per second double."
+          },
+          {
+            "q": "At standard conditions (0 °C, 101.325 kPa), 1 mol of ideal gas occupies about?",
+            "options": ["22.4 L", "1 L", "22.4 mL", "It depends on the gas"],
+            "answer": 0,
+            "explain": "V = nRT/p = 8.314 × 273.15 ÷ 101325 ≈ 0.0224 m³ = 22.4 L, independent of the gas."
+          },
+          {
+            "q": "5.85 g of NaCl (M = 58.5) is dissolved in water to make 500 mL of solution. What is the concentration?",
+            "options": ["0.1 mol/L", "0.2 mol/L", "0.5 mol/L", "1 mol/L"],
+            "answer": 1,
+            "explain": "n = 5.85/58.5 = 0.1 mol; c = 0.1/0.5 = 0.2 mol/L."
+          },
+          {
+            "q": "100 mL of 2 mol/L brine is diluted with water to 500 mL. What is the concentration?",
+            "options": ["1 mol/L", "0.5 mol/L", "0.4 mol/L", "0.2 mol/L"],
+            "answer": 2,
+            "explain": "c₁V₁ = c₂V₂: 2 × 100 = c₂ × 500 → c₂ = 0.4 mol/L. The moles of solute stay at 0.2 mol throughout."
+          },
+          {
+            "q": "Which of the following statements about a “saturated solution” is correct?",
+            "options": ["A saturated solution must be a concentrated solution", "An unsaturated solution must be a dilute solution", "Saturated = the solute has reached its dissolving limit at that temperature, which says nothing about concentrated vs dilute", "A saturated solution cannot dissolve any other substance"],
+            "answer": 2,
+            "explain": "Saturation is an upper-limit concept tied to relative solubility: saturated limewater is very dilute, while saturated sugar water is very concentrated. Moreover, saturated salt water can still dissolve alcohol — the “limit” applies to one specific solute."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="03-Chemical-Reactions-and-Stoichiometry.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">Chapter 3 · Chemical Reactions and Stoichiometry</span></a>
+      <a class="next" href="../01-Inorganic-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">01 Inorganic Chemistry · Branch overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter interactions: particle-motion simulation + syringe compression ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Particle motion simulation (canvas) ---------- */
+  var cv = document.getElementById("ptCanvas");
+  if (cv) {
+    var ctx = cv.getContext("2d");
+    var W = cv.width, H = cv.height;
+    var parts = [];
+    for (var i = 0; i < 70; i++) {
+      parts.push({ x: 10 + Math.random() * (W - 20), y: H - 30 + Math.random() * 20,
+                   vx: (Math.random() - .5), vy: (Math.random() - .5), r: 4 });
+    }
+    var tLabel = document.getElementById("ptTLabel"), ptRead = document.getElementById("ptReadout");
+    var slider = document.getElementById("ptT");
+    var temp = 25;
+    function tempColor() {
+      // cold blue to hot red
+      var k = temp / 100;
+      var r = Math.round(80 + 175 * k), g = Math.round(150 - 90 * k), b = Math.round(255 - 180 * k);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    function phaseName() {
+      if (temp < 20) return "Low temperature: particles huddle at the bottom and vibrate gently (solid-like order)";
+      if (temp < 55) return "Medium temperature: particles slide all over the place, colliding often (liquid-like freedom)";
+      return "High temperature: particles fly at high speed and fill the space (gas-like chaos)";
+    }
+    function ptStep() {
+      var speed = 0.3 + temp / 100 * 4.5;
+      for (var j = 0; j < parts.length; j++) {
+        var p = parts[j];
+        p.x += p.vx * speed; p.y += p.vy * speed;
+        // low-temperature "gravity + cohesion"
+        if (temp < 30) p.y += (H - 40 - p.y) * 0.002 * (30 - temp) / 30 + 0.15 * (1 - temp / 30);
+        if (p.x < p.r) { p.x = p.r; p.vx = Math.abs(p.vx); }
+        if (p.x > W - p.r) { p.x = W - p.r; p.vx = -Math.abs(p.vx); }
+        if (p.y < p.r) { p.y = p.r; p.vy = Math.abs(p.vy); }
+        if (p.y > H - p.r) { p.y = H - p.r; p.vy = -Math.abs(p.vy); }
+      }
+    }
+    function ptDraw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#0f172a";
+      ctx.fillRect(0, 0, W, H);
+      var col = tempColor();
+      for (var j = 0; j < parts.length; j++) {
+        var p = parts[j];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = col;
+        ctx.fill();
+      }
+    }
+    function ptSettle(n) { for (var i = 0; i < n; i++) ptStep(); ptDraw(); }
+    slider.addEventListener("input", function () {
+      temp = parseFloat(slider.value);
+      tLabel.textContent = temp < 20 ? "Low temp" : temp < 55 ? "Mid temp" : "High temp";
+      tLabel.style.color = tempColor();
+      ptRead.textContent = "T ≈ " + Math.round(temp * 3) + " °C (illustrative) | " + phaseName();
+      if (ptReduced) ptSettle(300);
+    });
+    tLabel.textContent = "Low (solid-like)";
+    ptRead.textContent = "T ≈ 75 °C (illustrative) | " + phaseName();
+    /* The loop runs only while the simulator is visible and the page is in the foreground; with reduced motion, a static equilibrium frame is shown */
+    var ptReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
+    if (ptReduced) {
+      ptSettle(420);
+      ptRead.textContent += " | showing a static equilibrium frame per your system's reduced-motion setting";
+    } else {
+      DSHChem.autoloop(ptCanvas, function () { ptStep(); ptDraw(); });
+    }
+  }
+
+  /* ---------- 2. Syringe compression (SVG) ---------- */
+  var pist = document.getElementById("pistSvg");
+  if (pist) {
+    var pRead = document.getElementById("pistReadout");
+    var pSlider = document.getElementById("pistV");
+    var gasGroup = el("g", {}, pist);
+    var dots = [];
+    for (var d = 0; d < 24; d++) dots.push(el("circle", { r: 5, fill: "#38bdf8" }, gasGroup));
+    function draw() {
+      var V = parseFloat(pSlider.value);           // relative volume 20–80
+      var x0 = 30, y0 = 30, h = 160;
+      var wMax = 340, w = wMax * V / 80;           // gas column width
+      pist.innerHTML = "";
+      // barrel
+      el("rect", { x: x0, y: y0, width: wMax, height: h, fill: "#f8fafc", stroke: "#94a3b8", "stroke-width": 2, rx: 6 }, pist);
+      // gas region
+      var gg = el("g", {}, pist);
+      // recreate the particles
+      for (var d2 = 0; d2 < 24; d2++) {
+        el("circle", { cx: x0 + 8 + Math.random() * (w - 16), cy: y0 + 10 + Math.random() * (h - 20), r: 5, fill: "#38bdf8", opacity: .85 }, gg);
+      }
+      // piston
+      var px = x0 + w;
+      el("rect", { x: px, y: y0 - 6, width: 18, height: h + 12, fill: "#64748b", rx: 4 }, pist);
+      el("rect", { x: px + 36, y: y0 + h / 2 - 4, width: wMax - px - 30 + 20, height: 8, fill: "#64748b", rx: 4 }, pist);
+      // scale
+      el("text", { x: x0, y: y0 + h + 20, "font-size": 12, fill: "#64748b" }, pist, "V = " + V.toFixed(0) + " units");
+      var p = 60 * (80 / V);                       // p1V1 = p2V2; 60×80 is the reference
+      pRead.innerHTML = "p = p₀·V₀/V = 60 × (80/" + V.toFixed(0) + ") = <strong>" + p.toFixed(1) + " kPa (illustrative)</strong>" +
+        " | particle density ↑ → wall-collision frequency ↑ → pressure ↑" + (p > 240 ? " ⚠️ It's getting really cramped in there!" : "");
+    }
+    pSlider.addEventListener("input", draw);
+    draw();
+  }
+})();
+</script>
+</body>
+</html>

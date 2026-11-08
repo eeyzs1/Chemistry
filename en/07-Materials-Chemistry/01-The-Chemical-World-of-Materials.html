@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>The Chemical World of Materials · Materials Chemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b07">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">07 Materials Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · The Chemical World of Materials</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">07 Materials Chemistry · Chapter 1</div>
+    <h1>The Chemical World of Materials: Arrangement, Defects, and Scale</h1>
+    <p class="lede">
+      A pencil lead and a diamond ring are both pure carbon—one costs pennies, the other a fortune. Materials chemistry tells you:
+      <strong>what governs performance is not just "what it contains," but "how it is arranged" (crystal structure), "where it is imperfect" (defects and doping), and "how small it is" (the nanoscale)</strong>.
+      Following the thread "structure → defects → scale → function," this chapter travels from the unit cell all the way to pn junctions, gold nanoparticles, and lithium batteries,
+      to watch chemistry design functional materials the way a painter wields a brush.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: <a href="../01-Inorganic-Chemistry/index.html">01 Inorganic Chemistry</a> + <a href="../04-Physical-Chemistry/index.html">04 Physical Chemistry</a> (recommended)</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 4 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter table of contents">
+    <a href="#intro">Introduction</a>
+    <a href="#crystal">Crystals and Unit Cells</a>
+    <a href="#defect">Defects Create Function</a>
+    <a href="#nano">Nano Effects</a>
+    <a href="#energy">Energy Materials at a Glance</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: One Phone, One Materials Expo</h2>
+    <p>
+      Pick up your phone: the chip is single-crystal silicon doped with trace impurities, the screen is ion-exchange-strengthened glass,
+      the battery's positive electrode is a lithium-bearing metal oxide, the frame is an aluminum alloy, and the camera coating is a stack of alternating dielectric layers tens of nanometers thick.
+      One phone is a whole materials-chemistry expo—and every material in it poses a chemical question:
+      <strong>How are the atoms arranged? What should be doped in? How small should the particles be?</strong>
+    </p>
+    <p>
+      Better still, the answers often defy common sense: semiconductors require silicon purified to 99.9999999% (nine 9s),
+      yet only become truly useful after a few parts per million of impurity are deliberately doped back in; gold is yellow by nature, but turns red when made into particles a few nanometers across;
+      the hardest natural substance and the softest writing material share exactly the same composition. To understand all this, we must start from the "queuing rules" inside solids.
+    </p>
+    <details class="think">
+      <summary>Think It Through: Why did chips settle on silicon of all elements? Where does it rank among the most abundant elements in Earth's crust?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Think about three things—"reserves, difficulty of purification, and what its surface oxide is good for."</p>
+        <p>
+          Silicon is the second most abundant element in the crust (about 28%, second only to oxygen); its feedstock is the quartz in sand, cheap to the point of being nearly limitless;
+          its band gap (about 1.1 eV) is neither too large nor too small, so its conductivity at room temperature can be tuned precisely; better still, the surface oxide it grows,
+          SiO<sub>2</sub>, is a superb insulating layer that naturally "tiles the floor" for the chip. <strong>Rich reserves + a well-sized band gap + a built-in insulating coat</strong>—
+          with all three in place, silicon became the "king of elements" of the information age.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Crystals and Unit Cells ============ -->
+  <section id="crystal">
+    <h2>§1 Crystals and Unit Cells: The "Queuing Rules" Inside Solids</h2>
+    <p>
+      Atoms in a solid can live two ways: heaped together in disarray as <strong>amorphous solids</strong> (glass, rosin—internally like a liquid frozen in an instant),
+      or lined up neatly by rule as <span class="term">crystals</span> (table salt, diamond, and every metal).
+      The smallest repeating "brick" of a crystal is called the <span class="term">unit cell</span>—
+      like the motif of a wallpaper pattern, translated and copied countless times until it tiles the whole material.
+    </p>
+    <p>
+      By the edge lengths and angles of their unit cells, all crystals fall into <strong>seven crystal systems</strong>: cubic, tetragonal, orthorhombic, trigonal, hexagonal, monoclinic, and triclinic—
+      stepping down from "perfectly boxy" to "skewed every which way." The simplest and most common are the three brothers of the cubic family:
+      simple cubic, body-centered cubic, and face-centered cubic. Click the buttons to switch and compare:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="latSvg" width="640" height="310" viewBox="0 0 640 310" role="img" aria-label="Switching demo of three cubic unit cells"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="latSC">Simple Cubic</button>
+          <button class="btn ghost" id="latBCC">Body-Centered Cubic</button>
+          <button class="btn ghost" id="latFCC">Face-Centered Cubic</button>
+        </div>
+        <div class="fig-readout" id="latReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        Gray spheres = corner atoms (each shared by 8 unit cells, counted as 1/8 apiece); the orange sphere = the body-center atom (belongs entirely to this unit cell);
+        gold spheres = face-center atoms (each shared by 2 unit cells, counted as 1/2); the dashed frame marks edges hidden behind the cell.
+        Translucent circles denote face-center atoms tucked behind the unit cell.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The trick for counting atoms in a unit cell</div>
+      <strong>Count a corner atom as 1/8, an edge atom as 1/4, a face atom as 1/2, and an interior atom as 1</strong>.
+      Hence: simple cubic 8×⅛ = 1 atom; body-centered cubic 8×⅛ + 1 = 2 atoms; face-centered cubic 8×⅛ + 6×½ = 4 atoms.
+      The fuller the packing (coordination number 6→8→12), the denser the structure—copper, silver, aluminum, and gold are all face-centered cubic, which is why they are dense yet ductile.
+    </div>
+
+    <h3>Graphite vs Diamond: Two Lives of the Same Element</h3>
+    <p>
+      Graphite and diamond are <span class="term">allotropes</span> of each other—
+      different simple substances of the same element. The difference lies entirely in "how they connect": graphite is sp² hybridized (echoing branch 02),
+      each carbon contributing 3 σ bonds to build two-dimensional sheets while the remaining 1 π electron "roams" between them; the sheets themselves are stacked only by weak van der Waals forces,
+      sliding at a touch—hence the marks left on paper and its service as a lubricant. Diamond is sp³ hybridized:
+      each carbon reaches out in four directions with σ bonds, weaving a giant net spanning all of three-dimensional space—unbreakable in every direction, making it the hardest material in nature (Mohs 10).
+    </p>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Both are carbon—so why is one a pencil lead and the other a diamond ring?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Graphite is like a <strong>stack of mille-feuille pastry</strong>: each layer is thin and tough (covalent bonds within a layer are extremely strong), but the layers are held together by only a hint of "stickiness" (van der Waals forces)—
+          one swipe of the hand and the layers slip, so thin flakes shear off onto paper as writing. Diamond is like a <strong>poured rebar cage</strong>:
+          thick rebar (σ covalent bonds) runs in every direction—horizontal, vertical, diagonal—so breaking it anywhere means cutting rebar; that is why it slices glass and drills rock without flinching.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data Comparison</span>
+        <p>
+          Graphite: sp² hybridized, in-layer C–C bond length 142 pm, interlayer spacing 335 pm (more than twice the bond length!),
+          Mohs hardness 1–2, good conductivity along the layers (delocalized π electrons).
+          Diamond: sp³ hybridized, bond length 154 pm, a regular tetrahedral network, Mohs hardness 10, refractive index 2.42 (extremely high, hence the sparkle),
+          resistivity up to 10¹⁸ Ω·cm—one of the finest insulators known.
+          <strong>Hardness is about how thoroughly bonds cover the directions, conductivity about whether movable electrons exist, and optics about how easily electrons are excited—one arrangement explains all three properties at once.</strong>
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Band Theory</span>
+        <p>
+          Quantum mechanics writes "can the electrons move?" as energy bands: each carbon in a graphite sheet contributes 1 π electron, and the π and π* bands land exactly half-filled—
+          a half-filled band is a conductor (this is also why graphene's charge carriers race along like "massless particles").
+          In diamond, σ bonds lock every electron in the valence band, the conduction band sits empty, and the two are separated by a <strong>broad band gap of 5.5 eV</strong>—
+          visible light (about 2 eV) cannot drive an electron up, so diamond is transparent and insulating. Curiously enough: natural blue diamonds are doped with trace boron (an acceptor impurity),
+          which digs shallow levels into the band gap, adding both color and conductivity—a "p-type semiconductor diamond."
+        </p>
+      </div>
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "Composition determines everything"</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          To know how a material performs, looking up its chemical composition is enough; substances of identical composition must share identical properties.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          <strong>Performance = composition × structure × scale × processing</strong>. Graphite, diamond, graphene, and C<sub>60</sub> are identical in composition,
+          yet worlds apart in performance; zirconia doped with different stabilizers can give a cubic phase (transparent ceramics) or a monoclinic phase (ceramic toughening);
+          the same stainless steel can differ severalfold in toughness under different heat treatments. Half the territory of materials chemistry is the study of "how the very same atoms
+          might be arranged to deliver brand-new functions."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §2 Defects Create Function ============ -->
+  <section id="defect">
+    <h2>§2 Defects Create Function: Imperfection Is the Star</h2>
+    <p>
+      A "perfect crystal" sounds like a good thing, yet a piece of absolutely pure, perfectly ordered silicon barely conducts and could not be made into any device.
+      What truly brings silicon "to life" is a deliberately doped-in few parts per million of impurity—
+      <span class="term">doping</span>, which in essence "plants" point defects into the lattice:
+    </p>
+    <ul>
+      <li><strong>Silicon doped with phosphorus → n-type</strong>: phosphorus has 5 valence electrons, so replacing 4-valent silicon leaves 1 extra electron with nowhere to bond,
+        loosely orbiting the phosphorus ion and breaking free at the slightest heating—the charge carriers are <strong>negatively charged electrons</strong> (negative), hence n-type.</li>
+      <li><strong>Silicon doped with boron → p-type</strong>: boron has only 3 valence electrons, so substituting leaves it one electron short and creates a positively charged "empty seat"—a
+        <span class="term">hole</span>. Neighboring electrons hop over to fill it, so the hole behaves like positive charge in flow, hence p-type (positive).</li>
+      <li><strong>The pn junction in one sentence</strong>: press n-type against p-type and a built-in electric field forms at the interface, letting current through one way only—
+        this "microscopic valve" is the common ancestor of diodes, LEDs, solar cells, and the billions of transistors in a chip.</li>
+    </ul>
+
+    <h3>📐 Worked-Example Scaffold: Determining the Doping Type</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Phosphorus and boron—which type does each create? (Work along with me)</div>
+      <div class="worked-problem">
+        Trace phosphorus (element 15, 5-valent) and trace boron (element 5, 3-valent) are doped separately into pure silicon (4-valent). What type of semiconductor does each yield, and what is the majority carrier in each?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Count valence electrons first: Si has 4, P has 5, B has 3. A dopant enters silicon's tetrahedral network by substitution and must bond with 4 neighbors.</li>
+        <li class="step">💡 Phosphorus brings 5 electrons but uses only 4 → <strong>1 electron to spare</strong>, which becomes a free carrier → the electron is negative → <strong>n-type</strong>.</li>
+        <li class="step">💡 Boron has only 3 electrons, 1 short → leaves a <strong>hole</strong>, an effective positive charge → <strong>p-type</strong>.</li>
+        <li class="step">✅ Self-check: n-type is electron-rich (negative), p-type is hole-rich (positive)—the English words negative/positive are exactly where the names come from. Put the two together and you get a pn junction conducting one way only.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: The doping level is only on the order of one part per million—why is that enough to change silicon's conductivity tens of thousands of times over?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Silicon's atomic density is about 5×10²² atoms/cm³, and intrinsic (pure) silicon has only about 10¹⁰ free carriers per cm³. Work out what one part per million amounts to.</p>
+        <p>
+          5×10²² × 10⁻⁶ = 5×10¹⁶ per cm³—compared with the 10¹⁰ carriers pure silicon excites thermally on its own,
+          <strong>that is a full 6 orders of magnitude more</strong>! So a "tiny trace" of impurity is, on the atomic scale, a whole army.
+          This also explains why the semiconductor industry purifies silicon to nine 9s (99.9999999%):
+          clear the stage first, then cast the assigned roles exactly as scripted—uncontrolled impurities would throw the carriers' "roster" into disarray.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §3 Nano Effects ============ -->
+  <section id="nano">
+    <h2>§3 Nano Effects: The Finer You Cut, the More Surface You Get</h2>
+    <p>
+      Cut a 1 cm³ block of material into nanoparticles and <strong>the composition is unchanged, the volume is unchanged</strong>—
+      what changes is the <strong>surface</strong>: the number of small pieces grows as the cube, each piece's surface area shrinks as the square,
+      and the combined total surface area = 6n (n = the number of divisions along an edge)—linear amplification!
+      Catalysis, adsorption, dissolution, and reaction all take place at surfaces, so "going nano" amounts to expanding a material's "working surface" ten-million-fold.
+      Try your hand at cutting and see for yourself:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="nanoSvg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-label="Nano cutter: a cube sliced finer step by step"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="nanoCut">🔪 Cut again</button>
+          <button class="btn ghost" id="nanoExtreme">⚡ Straight to 1 nm!</button>
+          <button class="btn ghost" id="nanoReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="nanoReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        It starts as a solid block 1 cm on a side (surface area 6 cm²). Each press of "Cut again" adds 1 to the division count in all three directions (2×2×2, 3×3×3, ...);
+        "Straight to 1 nm" shows the extreme case. Note how the total surface area in the readout surges linearly with the number of cuts—this is the mathematical root of nanocatalysis.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: Settling the "Surface Account"</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · A 1 cm³ platinum block crushed into 1 nm particles (Watch me work)</div>
+      <div class="worked-problem">
+        A solid block of platinum catalyst 1 cm on a side (surface area 6 cm²) is crushed into small cubic particles 1 nm on edge. What does the total surface area become, and by about what factor does it grow?
+        (1 cm = 10⁷ nm)
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Count the pieces: 10⁷ divisions per direction → pieces = (10⁷)³ = <strong>10²¹ pieces</strong> (the piece count grows as the cube).</li>
+        <li class="step">Surface area per piece = 6 × (1 nm)² = 6 nm² = 6×10⁻¹⁴ cm² (a single piece's area shrinks as the square).</li>
+        <li class="step">Total surface area = 10²¹ × 6×10⁻¹⁴ cm² = <strong>6×10⁷ cm² = 6000 m²</strong>.</li>
+        <li class="step">✅ Amplification = 6×10⁷ cm² ÷ 6 cm² = <strong>10⁷-fold</strong> (exactly the factor by which the edge length shrank). 6000 m² ≈ a standard football pitch—no wonder automotive exhaust catalysts take platinum down to the nanoscale: reactions happen only at the surface, and surface is throughput.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Two nano effects—one sentence each</div>
+      <strong>Surface effect</strong>: size ↓ → specific surface area ↑ (proportional to 1/edge length) → the share of surface atoms soars → catalytic and adsorption activity leaps (the 10⁷-fold of the worked example).
+      <strong>Quantum confinement</strong>: electrons shut inside a nanoscale box find energy levels turning from a "continuous band" into "discrete steps"—
+      gold nanoparticles around 20 nm <strong>appear red</strong> through surface plasmon resonance (the answer to the riddle of the ancient Roman Lycurgus cup), and quantum dots emit colors tuned by size.
+    </div>
+  </section>
+
+  <!-- ============ §4 Energy Materials at a Glance ============ -->
+  <section id="energy">
+    <h2>§4 Energy Materials at a Glance: Batteries, Photovoltaics, and Catalysts</h2>
+    <table class="tbl">
+      <thead>
+        <tr><th>Material</th><th>Chemical core</th><th>The principle in one sentence</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lithium-ion battery</strong></td>
+          <td>Li⁺ "intercalating/de-intercalating" between the two electrodes</td>
+          <td>On charging, Li⁺ "swings" from the positive electrode (a lithium-bearing metal oxide) to settle in the graphite negative electrode, and swings back on discharge—the rocking-chair cell; the layered lattice of the electrode materials is exactly the "guest room" reserved for Li⁺ (echoing the electrochemistry of branch 04).</td>
+        </tr>
+        <tr>
+          <td><strong>Perovskite solar cells</strong></td>
+          <td>ABX₃ structure (e.g., CH₃NH₃PbI₃)</td>
+          <td>The name of a crystal-structure family (from the mineral perovskite, CaTiO₃): its octahedral framework is naturally suited to transporting photogenerated carriers, and laboratory efficiencies have rocketed from 3.8% to above 26% in a dozen-odd years—the "supernova" of photovoltaics.</td>
+        </tr>
+        <tr>
+          <td><strong>Catalysts</strong></td>
+          <td>A surface that lowers the activation energy</td>
+          <td>Reactant molecules adsorb on the catalyst surface and take a "shortcut" through the transition state (echoing the kinetics of branch 04); the automotive three-way catalyst uses nanoscale platinum/palladium/rhodium to convert CO, hydrocarbons, and nitrogen oxides simultaneously.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      One philosophy unites all three materials: <strong>put the right atoms at the right scale</strong>—the lithium battery keeps a guest room in its lattice,
+      the perovskite picks its bands through structure, and the catalyst builds its factory on a nano surface. Structure, defects, scale—the three treasures of this chapter all assemble on the energy stage.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Materials safety notes</div>
+      ① Never pierce, crush, overcharge, or toss lithium-ion batteries into fire—a short circuit can trigger thermal runaway and fire, and a swollen battery must be taken out of service at once;
+      ② Nanoparticles and nanopowders carry enormous specific surface areas and are far more chemically reactive than bulk material of the same composition—wear protection and avoid inhaling them in the lab;
+      ③ Perovskite photovoltaic research commonly uses lead salts, whose waste counts as heavy-metal contamination and must be handled under hazardous-chemical rules.
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>A crystal = atoms arranged with translational periodicity; the unit cell is the smallest repeating brick; the counting mnemonic: corner ⅛, edge ¼, face ½, body 1 (simple cubic 1, body-centered 2, face-centered 4).</li>
+        <li>Graphite (sp² sheets, van der Waals in between) vs diamond (an sp³ 3D σ network): identical composition, different structure → vastly different properties, with band theory as the ultimate explanation.</li>
+        <li>Defects create function: phosphorus in silicon (extra electrons) → n-type, boron in silicon (one electron missing, hence a hole) → p-type; the pn junction is the common ancestor of electronic devices.</li>
+        <li>Nano effects: total surface area inversely proportional to edge length (10⁷-fold growth at 1 nm) → catalytic activity soars; quantum confinement turns gold red and makes quantum-dot emission tunable.</li>
+        <li>Energy materials = the right atoms at the right scale: lithium batteries (a lattice that hosts intercalation), perovskites (structure selects the band gap), catalysts (nano surfaces that lower the activation energy).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · The Chemical World of Materials <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Graphite and diamond are both pure carbon, yet their properties are worlds apart. What is the single biggest reason for the difference?",
+            "options": ["Diamond contains some mysterious impurity", "The atoms are arranged differently (hybridization and connectivity)", "Graphite is twice as dense as diamond", "Diamond contains more carbon atoms"],
+            "answer": 1,
+            "explain": "The two are identical in composition (both carbon). The difference lies entirely in structure: graphite is sp² sheets held together only by van der Waals forces (soft, lubricating, conductive); diamond is an sp³ three-dimensional network of σ bonds (hardest, insulating, brilliant). This is the textbook case of 'structure determines properties'—material performance = composition × structure × scale × processing."
+          },
+          {
+            "q": "Trace phosphorus (5-valent) is doped into pure silicon. What type of semiconductor results, and what is the majority carrier?",
+            "options": ["p-type; the majority carriers are holes", "n-type; the majority carriers are free electrons", "n-type; the majority carriers are holes", "The type is unchanged; it remains an insulator"],
+            "answer": 1,
+            "explain": "Silicon is 4-valent; once substituted in, only 4 of phosphorus's 5 valence electrons bond, and the loosely held 5th ionizes easily into a free electron—negative carriers (negative) give n-type its name. Doping 3-valent boron instead leaves one electron missing and a hole in its place, giving p-type (positive)."
+          },
+          {
+            "q": "A 1 cm³ material is cut into cubic particles 1 nm on edge (1 cm = 10⁷ nm). By about what factor does the total surface area grow?",
+            "options": ["10³-fold", "10⁵-fold", "10⁷-fold", "10²¹-fold"],
+            "answer": 2,
+            "explain": "The growth factor of the total surface area equals exactly the shrink factor of the edge length: the piece count grows as the cube (10²¹ pieces) while each piece's area shrinks as the square (10⁻¹⁴ cm²); multiplied together they give 6×10⁷ cm² = 6000 m², which is 10⁷ times the original 6 cm². Note that it is not 10²¹-fold—that is the piece count, not the amplification of area. This is the mathematical root of why nanocatalysts are so effective."
+          },
+          {
+            "q": "In a face-centered cubic unit cell, how many atoms actually 'belong' to that cell?",
+            "options": ["8", "6", "4", "14"],
+            "answer": 2,
+            "explain": "The 8 corner atoms are each shared by 8 unit cells (1/8 apiece, totaling 1 atom); the 6 face-center atoms are each shared by 2 unit cells (1/2 apiece, totaling 3 atoms); the grand total is 1+3=4 atoms. '14' is what the eye counts as spheres, forgetting that neighboring cells share walls and pillars. Copper, silver, aluminum, and gold are all face-centered cubic."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="../06-Polymer-Chemistry/01-From-Monomers-to-Polymers.html"><span class="pg-dir">← Previous chapter</span><br><span class="pg-title">06 Polymer Chemistry · From Monomers to Polymers</span></a>
+      <a class="next" href="../08-Environmental-Chemistry/index.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">08 Environmental Chemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (nano cutter / lattice switcher) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* shared SVG helper, defined in assets/tutor.js */
+  function txt(parent, x, y, str, size, fill, weight, anchor) {
+    var t = el("text", { x: x, y: y, "font-size": size, fill: fill,
+      "font-weight": weight || 400, "text-anchor": anchor || "start" }, parent);
+    t.textContent = str;
+    return t;
+  }
+
+  /* ---------- 1. Nano cutter ---------- */
+  var nanoSvg = document.getElementById("nanoSvg");
+  if (nanoSvg) {
+    var nanoReadout = document.getElementById("nanoReadout");
+    var nCut = 1;          // divisions per direction
+    var S = 190;           // cube edge length (px)
+    var AX = 150, AY = 88; // front top-left corner
+    var DX = 62, DY = -46; // depth offset (rear, up-right)
+
+    // grid of the three visible faces: corner + two edge vectors
+    function faceGrid(g, cx, cy, ux, uy, vx, vy, n, stroke) {
+      for (var i = 1; i < n; i++) {
+        var f = i / n;
+        // line along u (v component fixed)
+        el("line", { x1: cx + vx * f, y1: cy + vy * f,
+                     x2: cx + ux + vx * f, y2: cy + uy + vy * f,
+                     stroke: stroke, "stroke-width": 1.1, opacity: .85 }, g);
+        // line along v (u component fixed)
+        el("line", { x1: cx + ux * f, y1: cy + uy * f,
+                     x2: cx + ux * f + vx, y2: cy + uy * f + vy,
+                     stroke: stroke, "stroke-width": 1.1, opacity: .85 }, g);
+      }
+    }
+
+    function renderNano(extreme) {
+      nanoSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 640, height: 330, fill: "#ffffff" }, nanoSvg);
+      var g = el("g", {}, nanoSvg);
+
+      var bx = AX, by = AY;             // front top-left
+      var fx2 = AX + S, fy2 = AY + S;   // front bottom-right
+
+      if (extreme) {
+        // nano limit: the faces have gone "solidly dark"; dense dots stand for the explosion of surface atoms
+        var poly = [
+          "M" + bx + "," + by + " L" + fx2 + "," + by + " L" + fx2 + "," + fy2 + " L" + bx + "," + fy2 + " Z",
+          "M" + bx + "," + by + " L" + (bx + DX) + "," + (by + DY) + " L" + (fx2 + DX) + "," + (by + DY) + " L" + fx2 + "," + by + " Z",
+          "M" + fx2 + "," + by + " L" + (fx2 + DX) + "," + (by + DY) + " L" + (fx2 + DX) + "," + (fy2 + DY) + " L" + fx2 + "," + fy2 + " Z"
+        ];
+        poly.forEach(function (d, i) {
+          el("path", { d: d, fill: i === 0 ? "#1f2937" : (i === 1 ? "#374151" : "#111827") }, g);
+          el("path", { d: d, fill: "none", stroke: "#0ea5e9", "stroke-width": 1.5 }, g);
+        });
+        // surface-atom dots
+        var dots = el("g", {}, g);
+        var seed = 7;
+        for (var i = 0; i < 90; i++) {
+          seed = (seed * 9301 + 49297) % 233280;
+          var rx = seed / 233280;
+          seed = (seed * 9301 + 49297) % 233280;
+          var ry = seed / 233280;
+          var px = bx + 6 + rx * (S - 12), py = by + 6 + ry * (S - 12);
+          el("circle", { cx: px, cy: py, r: 1.6, fill: "#67e8f9" }, dots);
+        }
+        txt(g, 320, 40, "n = 10⁷ (1 nm particles)—the pieces are now beyond what the eye can resolve", 13, "#0c4a6e", 700, "middle");
+        nanoReadout.innerHTML = "Cuts <strong>10⁷ × 10⁷ × 10⁷</strong> ｜ piece edge = <strong>1 nm</strong> ｜ pieces = <strong>10²¹</strong> ｜ " +
+          "total surface area = <strong>6×10⁷ cm² = 6000 m² ≈ one football pitch</strong> ｜ <strong>10⁷-fold</strong> relative to the solid block (6 cm²)";
+        return;
+      }
+
+      var n = nCut;
+      var gridColor = "#b45309";
+      // front face (densest grid)
+      faceGrid(g, bx, by, S, 0, 0, S, n, gridColor);
+      // top face
+      faceGrid(g, bx, by, S, 0, DX, DY, n, "#92400e");
+      // right face
+      faceGrid(g, fx2, by, 0, S, DX, DY, n, "#a16207");
+
+      // cube edges
+      var edges = [
+        // front square
+        [bx, by, fx2, by], [fx2, by, fx2, fy2], [fx2, fy2, bx, fy2], [bx, fy2, bx, by],
+        // back square (three hidden edges dashed)
+        [bx + DX, by + DY, fx2 + DX, by + DY], [fx2 + DX, by + DY, fx2 + DX, fy2 + DY],
+        [fx2 + DX, fy2 + DY, bx + DX, fy2 + DY, 1], [bx + DX, fy2 + DY, bx + DX, by + DY, 1],
+        // connecting edges (one hidden)
+        [bx, by, bx + DX, by + DY], [fx2, by, fx2 + DX, by + DY],
+        [fx2, fy2, fx2 + DX, fy2 + DY], [bx, fy2, bx + DX, fy2 + DY, 1]
+      ];
+      edges.forEach(function (e) {
+        el("line", { x1: e[0], y1: e[1], x2: e[2], y2: e[3],
+          stroke: "#334155", "stroke-width": 2.4,
+          "stroke-dasharray": e[4] ? "6 5" : "none" }, g);
+      });
+
+      // labels
+      txt(g, 320, 40, n + " × " + n + " × " + n + " cuts", 15, "#92400e", 800, "middle");
+      txt(g, 455, fy2 + 30, "piece edge " + (1 / n).toFixed(n > 4 ? 3 : 2) + " cm", 12, "#4b5563", 600);
+      txt(g, 320, 312, "blue text = cut count n ｜ grid lines per visible face = n×n", 11, "#9ca3af", 500, "middle");
+
+      var blocks = Math.pow(n, 3);
+      var area = 6 * n; // cm²
+      nanoReadout.innerHTML = "Cuts <strong>" + n + "×" + n + "×" + n + "</strong> ｜ pieces = <strong>" + n + "³ = " +
+        blocks.toLocaleString("en-US") + "</strong> ｜ edge per piece = 1/" + n + " cm ｜ " +
+        "total surface area = pieces × 6 × (1/" + n + ")² = <strong>" +
+        (area % 1 === 0 ? area : area.toFixed(2)) + " cm²</strong> ｜ <strong>" + n + "-fold</strong> relative to the original 6 cm²";
+    }
+
+    document.getElementById("nanoCut").addEventListener("click", function () {
+      if (nCut < 10) { nCut++; renderNano(false); }
+      else { renderNano(false); }
+    });
+    document.getElementById("nanoExtreme").addEventListener("click", function () { renderNano(true); });
+    document.getElementById("nanoReset").addEventListener("click", function () { nCut = 1; renderNano(false); });
+    renderNano(false);
+  }
+
+  /* ---------- 2. Lattice switcher ---------- */
+  var latSvg = document.getElementById("latSvg");
+  if (latSvg) {
+    var latReadout = document.getElementById("latReadout");
+    var S2 = 180, AX2 = 150, AY2 = 80, DX2 = 60, DY2 = -45;
+    var MODES = {
+      sc:  { name: "Simple Cubic", atoms: "8×⅛ = 1", cn: "6", rep: "Polonium Po (rare); apart from a few low-temperature phases of α-Fe, almost never seen",
+             note: "The loosest packing: atoms sit only at the 8 corners, each touching 6 neighbors—above, below, left, right, front, and back." },
+      bcc: { name: "Body-Centered Cubic", atoms: "8×⅛ + 1 = 2", cn: "8", rep: "α-iron (steel), tungsten W, molybdenum Mo, sodium Na",
+             note: "One whole atom tucked into the center of the cell. The source of ferritic steel's toughness—dislocations glide easily, so plasticity is good." },
+      fcc: { name: "Face-Centered Cubic", atoms: "8×⅛ + 6×½ = 4", cn: "12", rep: "copper Cu, silver Ag, gold Au, aluminum Al, platinum Pt, NaCl (two interpenetrating fcc lattices)",
+             note: "One of the closest packings (coordination number 12). Gold beaten into leaf and aluminum pressed into beverage cans both owe it to fcc's many slip systems." }
+    };
+
+    function drawAtom(g, x, y, r, fill, stroke, hidden) {
+      el("circle", { cx: x, cy: y, r: r, fill: fill, stroke: stroke,
+        "stroke-width": 2, opacity: hidden ? 0.4 : 1 }, g);
+    }
+
+    function renderLat(mode) {
+      latSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 640, height: 310, fill: "#ffffff" }, latSvg);
+      var g = el("g", {}, latSvg);
+      var M = MODES[mode];
+
+      var corners = [
+        [AX2, AY2], [AX2 + S2, AY2], [AX2 + S2, AY2 + S2], [AX2, AY2 + S2],
+        [AX2 + DX2, AY2 + DY2], [AX2 + S2 + DX2, AY2 + DY2],
+        [AX2 + S2 + DX2, AY2 + S2 + DY2], [AX2 + DX2, AY2 + S2 + DY2]
+      ];
+      var front = corners.slice(0, 4), back = corners.slice(4);
+      var edges = [
+        [front[0], front[1]], [front[1], front[2]], [front[2], front[3]], [front[3], front[0]],
+        [back[0], back[1]], [back[1], back[2], 1], [back[2], back[3], 1], [back[3], back[0], 1],
+        [front[0], back[0]], [front[1], back[1]], [front[2], back[2]], [front[3], back[3], 1]
+      ];
+      edges.forEach(function (e) {
+        el("line", { x1: e[0][0], y1: e[0][1], x2: e[1][0], y2: e[1][1],
+          stroke: "#94a3b8", "stroke-width": 2.2,
+          "stroke-dasharray": e[2] ? "6 5" : "none" }, g);
+      });
+
+      // body center: draw the bonds before the atom (dashed to the 8 corners)
+      if (mode === "bcc") {
+        var cx = AX2 + S2 / 2 + DX2 / 2, cy = AY2 + S2 / 2 + DY2 / 2;
+        corners.forEach(function (c) {
+          el("line", { x1: cx, y1: cy, x2: c[0], y2: c[1],
+            stroke: "#fdba74", "stroke-width": 1.6, "stroke-dasharray": "5 4" }, g);
+        });
+      }
+
+      // corner atoms
+      corners.forEach(function (c) { drawAtom(g, c[0], c[1], 14, "#475569", "#1e293b"); });
+
+      if (mode === "bcc") {
+        var cx2 = AX2 + S2 / 2 + DX2 / 2, cy2 = AY2 + S2 / 2 + DY2 / 2;
+        drawAtom(g, cx2, cy2, 17, "#ea580c", "#9a3412");
+        txt(g, cx2, cy2 + 5, "+1", 11, "#fff", 800, "middle");
+      }
+
+      if (mode === "fcc") {
+        // face-center positions: front, top, right visible; back, left, bottom drawn translucent
+        var h = S2 / 2;
+        var faces = [
+          [AX2 + h, AY2 + h, false],                                  // front
+          [AX2 + h + DX2 / 2, AY2 + DY2 / 2, false],                  // top
+          [AX2 + S2 + DX2 / 2, AY2 + h + DY2 / 2, false],             // right
+          [AX2 + h + DX2, AY2 + h + DY2, true],                       // back (translucent)
+          [AX2 + DX2 / 2, AY2 + h + DY2 / 2, true],                   // left (translucent)
+          [AX2 + h + DX2 / 2, AY2 + S2 + DY2 / 2, true]               // bottom (translucent)
+        ];
+        faces.forEach(function (f) {
+          drawAtom(g, f[0], f[1], 13, "#d97706", "#92400e", f[2]);
+          txt(g, f[0], f[1] + 4, "½", 10, "#fff", 800, "middle");
+        });
+      }
+
+      txt(g, 320, 34, M.name, 16, "#92400e", 800, "middle");
+      txt(g, 320, 296, M.note, 12, "#4b5563", 600, "middle");
+      latReadout.innerHTML = "Atoms per unit cell: <strong>" + M.atoms + "</strong> ｜ coordination number: <strong>" + M.cn +
+        "</strong> ｜ representative substances: " + M.rep;
+
+      ["latSC", "latBCC", "latFCC"].forEach(function (id) {
+        var btn = document.getElementById(id);
+        var isCur = (id === "latSC" && mode === "sc") || (id === "latBCC" && mode === "bcc") ||
+                    (id === "latFCC" && mode === "fcc");
+        btn.classList.toggle("ghost", !isCur);
+      });
+    }
+
+    document.getElementById("latSC").addEventListener("click", function () { renderLat("sc"); });
+    document.getElementById("latBCC").addEventListener("click", function () { renderLat("bcc"); });
+    document.getElementById("latFCC").addEventListener("click", function () { renderLat("fcc"); });
+    renderLat("sc");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemistry and the Environment · Environmental Chemistry · Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b08">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">08 Environmental Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · Chemistry and the Environment</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">08 Environmental Chemistry · Chapter 1</div>
+    <h1>Chemistry and the Environment: Giving the Earth a Chemical Checkup</h1>
+    <p class="lede">
+      The chemicals we release into the environment do not simply "vanish into thin air" — they keep migrating,
+      reacting, and transforming in the air, water, and soil, then return to our dinner tables and our lungs in
+      unexpected ways. <strong>This chapter tracks five major environmental issues through the lens of chemistry:
+      the greenhouse effect, ozone-layer depletion, acid rain, water pollution, and green chemistry as the "antidote"</strong> —
+      from mechanisms to remedies, we will see how chemistry is both the maker of these problems and their only solver.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: 00–02 recommended</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#atmos">The Atmosphere and the Greenhouse Effect</a>
+    <a href="#ozone">The Ozone Layer</a>
+    <a href="#acidrain">Acid Rain</a>
+    <a href="#water">The Hydrosphere</a>
+    <a href="#green">Soil and Green Chemistry</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: London's "Killer Smog"</h2>
+    <p>
+      In December 1952, a thick fog wrapped London for five full days. Every household burned coal for heat,
+      and the <span class="formula">SO₂</span> and particulate matter in the smoke were sealed over the city by a
+      temperature inversion, unable to disperse. About <strong>4,000 people died within five days</strong>, and deaths
+      over the following months eventually totaled in the tens of thousands. This "killer smog" forced a fact upon
+      all of humanity: <strong>chemicals discharged into the environment do not disappear — they keep reacting,
+      and they find their way back to us</strong>.
+    </p>
+    <p>
+      <span class="term">environmental chemistry</span>
+      thus became an independent discipline: it studies the <strong>sources, transport, transformation, fate, and
+      effects</strong> of chemical substances in the environment, and designs remediation and prevention strategies.
+      It is a real-world "comprehensive exam" for inorganic, organic, and analytical chemistry.
+    </p>
+    <div class="keypoint">
+      <div class="kp-title">📌 Environmental Chemistry's "Five Questions"</div>
+      For any environmental issue, ask in turn: <strong>① Where does it come from (source)? ② Where does it go
+      (transport)? ③ What does it become (transformation)? ④ How concentrated is it (exposure)?
+      ⑤ What does it do to whom (effects)?</strong>
+      The greenhouse gases, CFCs, acid-rain precursors, and nutrients in this chapter all fit into this checklist.
+    </div>
+  </section>
+
+  <!-- ============ §1 Atmosphere and the Greenhouse Effect ============ -->
+  <section id="atmos">
+    <h2>§1 The Atmosphere: How Four Parts in Ten Thousand Move the Whole Planet</h2>
+    <p>
+      Start with the atmosphere's "ingredient list". Note the last column — what makes a molecule a greenhouse gas
+      is not how abundant it is, but whether it has the ability to "grab infrared radiation":
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Component</th><th>Volume fraction</th><th>Absorbs surface infrared?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">N₂</span></td><td>78.08%</td><td>No (transparent to IR)</td></tr>
+        <tr><td><span class="formula">O₂</span></td><td>20.95%</td><td>No (transparent to IR)</td></tr>
+        <tr><td><span class="formula">Ar</span></td><td>0.93%</td><td>No (monatomic, no vibrations)</td></tr>
+        <tr><td><span class="formula">CO₂</span></td><td>about 0.042% (420 ppm)</td><td><strong>Yes</strong> (strong absorption band near 15 μm)</td></tr>
+        <tr><td><span class="formula">H₂O</span>, <span class="formula">CH₄</span>, <span class="formula">O₃</span>, <span class="formula">N₂O</span>, etc.</td><td>trace</td><td><strong>Yes</strong></td></tr>
+      </tbody>
+    </table>
+    <p>
+      The mechanism takes just two sentences: <strong>sunlight (mostly visible light) reaches the ground almost
+      unimpeded and heats it; the ground then re-emits that heat outward as infrared radiation, which is absorbed
+      by greenhouse-gas molecules such as CO₂ and re-emitted in all directions</strong> —
+      roughly half of that energy heads back down to the ground. It is like tucking a blanket around the Earth:
+      getting in is easy, getting out is hard.
+    </p>
+
+    <h3>🔬 Try It Out: The Fate of an Infrared Photon</h3>
+    <p>
+      In the simulation below, the orange-red spheres are infrared "photons" leaving the ground. Switch the CO₂
+      concentration setting and watch how the fraction that "escapes directly" and the simulated temperature change:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ghSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="Greenhouse-effect infrared photon simulator"></svg>
+        <div class="fig-controls" id="ghCtl">
+          <button class="btn ghost" data-ppm="180">🧊 Ice age 180 ppm</button>
+          <button class="btn" data-ppm="280">🏭 Pre-industrial 280 ppm</button>
+          <button class="btn ghost" data-ppm="420">📈 Today 420 ppm</button>
+          <button class="btn ghost" data-ppm="560">⚠️ Doubled 560 ppm</button>
+        </div>
+        <div class="fig-readout" id="ghReadout"></div>
+      </div>
+      <figcaption>
+        The orange spheres are infrared photons: when one hits a CO₂ molecule it is absorbed and re-emitted randomly,
+        half upward and half downward (the real direction is anywhere in between — this is a simplification).
+        A photon only escapes to space by crossing the dashed line at the top; falling back to the ground means
+        "insulation successful". The more CO₂ molecules there are, the greater the chance a photon is "turned back".
+        Temperature is estimated as the equilibrium value for "each doubling of CO₂ concentration warms the globe by
+        about 3 °C", ignoring the lag from ocean heat uptake (in reality the world has warmed about 1.2 °C above
+        pre-industrial so far, and the remaining "debt" is still on its way).
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Step Ladder · CO₂ is only 4 parts in 10,000 — so what gives it the power to change the global climate?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Park a car in the summer sun with the windows up, and an hour later the interior can be 20 °C hotter than
+          the outside: the glass lets visible light in but holds back most of the infrared. Greenhouse gases are that
+          layer of "glass" for the atmosphere. An infrared photon has to cross tens of kilometers of air — even if the
+          "interceptors" account for only a few parts per ten thousand, that is enough to shift the entire planet's
+          energy budget, like a single drop of ink in a pool of clear water.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          N₂, O₂, and Ar — 99.96% of the atmosphere — are <strong>completely transparent</strong> to infrared;
+          the absorbers CO₂, H₂O, CH₄, and friends add up to less than 0.5%, yet their absorption bands happen to
+          cover the energy-rich region of Earth's thermal radiation (about 4–50 μm, with CO₂'s strong absorption
+          band near 15 μm) — not much, but "stationed right on the only road". Since the Industrial Revolution,
+          CO₂ has risen from 280 ppm to about 420 ppm and the global mean temperature has climbed about 1.2 °C:
+          a change of a few parts per ten thousand tips the heat balance of the whole planet.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · First Principles</span>
+        <p>
+          Whether a molecule can absorb infrared depends on <strong>whether its dipole moment changes as it
+          vibrates</strong>. N₂ and O₂ are homonuclear diatomic molecules: no vibration produces a dipole change,
+          so they are infrared-"inert". CO₂ has no overall polarity, but its bending vibration and asymmetric
+          stretch momentarily separate the centers of positive and negative charge, corresponding to the strong
+          absorption near 15 μm. This is the quantum root of the rule that "greenhouse gases are mostly molecules
+          of three or more atoms" — two faces of the same coin as the molecular vibration spectroscopy in Branch 04.
+        </p>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Greenhouse Effect Is Originally a Friend</div>
+      Without the natural greenhouse effect, the mean surface temperature would be <strong>−18 °C</strong>;
+      with it, Earth is a livable <strong>+15 °C</strong>. Today's trouble is not called "the greenhouse effect" —
+      it is called the <strong>"enhanced greenhouse effect"</strong>: the extra CO₂ and CH₄ humanity emits push the
+      energy budget toward warming (per unit mass, CH₄ has about 28 times the 100-year warming effect of CO₂).
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: Water vapor is the most abundant greenhouse gas — so why is CO₂ the one sitting at the negotiating table?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Compare the two gases' "residence times" in the atmosphere, then ask "which one controls which".</p>
+        <p>
+          Water vapor condenses and falls out within 8–9 days on average, and how much water vapor the atmosphere
+          can hold is set automatically by <strong>temperature</strong> — warmer air holds more, and humans cannot
+          control it directly over the long term. CO₂, by contrast, has a lifetime of a century or more and keeps
+          accumulating after emission; it is the "knob" humanity has turned with its own hands.
+          Warming → more atmospheric water vapor → a stronger greenhouse effect: water vapor is the "amplifier",
+          while CO₂ is the "knob". That is why emissions-reduction negotiations keep their eyes on carbon.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §2 The Ozone Layer ============ -->
+  <section id="ozone">
+    <h2>§2 The Ozone Layer: One Chlorine Atom's Chain of Destruction</h2>
+    <p>
+      In the stratosphere, 15–35 km above the ground, oxygen is continuously "photolyzed" by high-energy ultraviolet
+      light, producing a thin veil of ozone (compressed to one atmosphere, it would be only about 3 mm thick) —
+      this is the classic <span class="term">Chapman mechanism</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">O₂ + hν (λ&lt;242 nm) → 2O</span>
+      <span class="formula">O + O₂ → O₃</span>
+    </p>
+    <p>
+      This ozone layer absorbs the most dangerous of the Sun's ultraviolet rays, UV-B, and is the "protective
+      umbrella" that allowed life to colonize the land. Its destroyer is a story of almost perfect irony:
+      <strong>in 1928 humans synthesized Freon (CFCs) to replace toxic, flammable ammonia and sulfur dioxide
+      refrigerants</strong> — nonflammable, nontoxic, and chemically extremely stable, it was hailed as the
+      "perfect chemical". Precisely that <strong>stability</strong> became the disaster: CFCs do not decompose in
+      the troposphere, live long enough to diffuse all the way into the stratosphere, and only there are photolyzed
+      by intense ultraviolet light, releasing chlorine atoms:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Cl· + O₃ → ClO· + O₂</span>
+      <span class="formula">ClO· + O → Cl· + O₂</span>
+    </p>
+    <p>
+      With the two steps done, the chlorine atom is <strong>regenerated intact</strong> — this is a catalytic cycle:
+      the net reaction is <span class="formula">O₃ + O → 2O₂</span>,
+      and a single chlorine atom can tear apart roughly <strong>100,000 ozone molecules</strong>. Worse still is
+      Antarctica: on the surfaces of "polar stratospheric cloud" ice crystals at −80 °C during the polar night,
+      chlorine reservoir molecules are converted into reactive Cl₂; each spring (September–November), the moment
+      sunlight returns, the Cl₂ is photolyzed into chlorine atoms, and the alarming "ozone hole" appears over
+      Antarctica in spring. In 1985 the British scientist Joe Farman identified it in observational data;
+      in 1987 the Montreal Protocol was signed, phasing out CFCs — to this day the <strong>only environmental
+      treaty to win genuinely universal ratification worldwide</strong> — and the ozone layer is expected to
+      have largely recovered by the mid-to-late 21st century (around 2066).
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Same Molecule, Role Set by Location</div>
+      Stratospheric O₃ absorbs UV-B and is the "protective umbrella"; <strong>tropospheric</strong> O₃, however,
+      is a culprit of photochemical smog, irritating airways and damaging crops:
+      <span class="formula">NO₂ + hν → NO + O</span>,
+      <span class="formula">O + O₂ → O₃</span> — the same photochemistry is a resupply line in the stratosphere
+      and a pollutant over our cities. To judge whether a substance is "good" or "bad", always ask first:
+      where, and how much.
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · "The ozone layer has a hole in it, so that's why the globe is warming"?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          The ozone over Antarctica has a hole in it; UV leaks in through the hole and heats the Earth —
+          the ozone hole and global warming are one and the same.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          These are <strong>two independent chemical problems</strong>. The culprit behind ozone depletion is
+          ozone-depleting substances such as CFCs, acting in the stratosphere, whose chief harm is more UV-B;
+          the culprit behind warming is greenhouse gases such as CO₂ intercepting infrared radiation near the
+          surface. In fact, ozone depletion actually <strong>cools</strong> the stratosphere. The only thing the
+          two share: both stem from emissions of synthetic chemicals, and both prove that a global treaty can
+          genuinely work.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Acid Rain ============ -->
+  <section id="acidrain">
+    <h2>§3 Acid Rain: Strong Acids Brewed Inside Cloud Droplets</h2>
+    <p>
+      Burning coal releases <span class="formula">SO₂</span>, while motor vehicles and high-temperature combustion
+      release <span class="formula">NOₓ</span>. By themselves these are merely acidic gases; the real "brewing"
+      happens inside cloud droplets: SO₂ is oxidized to SO₃ by O₃ and H₂O₂ within the cloud, and with water that
+      immediately gives sulfuric acid, while NO₂ reacts directly with water to form nitric acid:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">SO₂ → SO₃ → H₂SO₄</span> (in-cloud oxidation)
+      <span class="formula">3NO₂ + H₂O → 2HNO₃ + NO</span>
+    </p>
+    <p>
+      The most vivid damage is carved into marble statues — the pits etched by acid rain and the blinded faces:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂↑</span>
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Why is the criterion pH &lt; 5.6, not &lt; 7?</div>
+      The roughly 420 ppm of CO₂ in the atmosphere already dissolves into raindrops:
+      <span class="formula">CO₂ + H₂O ⇌ H₂CO₃</span> (a weak acid),
+      so <strong>even completely unpolluted rain has a pH of only about 5.6</strong>.
+      Only a pH below 5.6 shows that "extra acid" — sulfuric or nitric — has been mixed in. Writing the criterion
+      as pH&lt;7 would misclassify every rainfall on Earth as acid rain — background levels are a concept
+      environmental assessment can never sidestep.
+    </div>
+
+    <p>
+      Controlling acid rain relies on "fighting acid with base" and "escorting nitrogen back to N₂".
+      <strong>Limestone–gypsum flue-gas desulfurization</strong>:
+      a power plant sprays its flue gas with a limestone slurry, the SO₂ is absorbed and oxidized, and it finally
+      becomes gypsum for building materials:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">SO₂ + CaCO₃ + ½O₂ + 2H₂O → CaSO₄·2H₂O + CO₂</span>
+    </p>
+    <p>
+      <strong>Selective catalytic reduction (SCR) for denitrification</strong>: over a catalyst, ammonia reduces
+      NOₓ back to harmless nitrogen —
+      <span class="formula">4NH₃ + 4NO + O₂ → 4N₂ + 6H₂O</span>.
+      After more than two decades of continuous desulfurization and denitrification, China's acid-rain-affected
+      area has shrunk dramatically and cities with severe acid rain have essentially been eliminated; the flue gas
+      cleanliness of "ultra-low emission" coal-fired plants now even exceeds that of many gas-fired plants.
+    </p>
+
+    <h3>📐 Worked-Example Scaffold: Doing the Power Plant's Desulfurization Math</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        A coal-fired power plant burns 1000 t of coal per day, and the coal is 2% sulfur by mass.<br>
+        ① Without desulfurization, how many tonnes of SO₂ are emitted per day? ② With limestone–gypsum
+        desulfurization (95% efficiency), how many tonnes of limestone (counted as CaCO₃) are needed per day at minimum?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Write the combustion equation for sulfur: <span class="formula">S + O₂ → SO₂</span>.
+          Sulfur entering the furnace per day = 1000 t × 2% = 20 t. The mass ratio of SO₂ to S = 64 : 32 = 2,
+          so <strong>SO₂ = 20 × 2 = 40 t</strong>.</li>
+        <li class="step">Desulfurization efficiency 95% → SO₂ to be removed = 40 t × 95% = <strong>38 t</strong> (the other 2 t is still emitted).</li>
+        <li class="step">Overall desulfurization reaction (simplified) <span class="formula">SO₂ + CaCO₃ + ½O₂ + 2H₂O → CaSO₄·2H₂O + CO₂</span>:
+          SO₂ and CaCO₃ react in a <strong>molecular ratio of 1 : 1</strong>, so the mass ratio = 64 : 100.</li>
+        <li class="step">CaCO₃ = 38 × 100 ÷ 64 ≈ <strong>59.4 t</strong>.
+          ✅ Check: about 1.56 t of limestone per t of SO₂, matching the engineering rule of thumb (1.5–1.6);
+          byproduct gypsum = 38 × 172 ÷ 64 ≈ 102 t, which can be made into plasterboard — a pollutant turned
+          into a building material.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Hydrosphere ============ -->
+  <section id="water">
+    <h2>§4 The Hydrosphere: The Invisible War over Oxygen</h2>
+    <p>
+      To judge water quality, chemists first "measure the oxygen" of a water body. Three indicators, one table:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Indicator</th><th>What it measures</th><th>How to read it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="term">DO</span> (dissolved oxygen)</td><td>O₂ molecules in the water</td><td>Higher is better: saturation at 20 °C is about 9 mg/L; fish need ≥ 5</td></tr>
+        <tr><td><span class="term">BOD₅</span> (5-day biochemical oxygen demand)</td><td>Oxygen consumed by microbes decomposing organic matter over 5 days</td><td>Higher = more organic pollutants</td></tr>
+        <tr><td><span class="term">COD</span> (chemical oxygen demand)</td><td>Oxygen consumed when potassium dichromate oxidizes organic matter</td><td>Faster results than BOD, but it also "counts" hard-to-degrade substances</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      The bloodiest battlefield of this "oxygen war" is <span class="term">eutrophication</span>:
+      fertilizers and domestic sewage deliver large loads of <span class="formula">N</span> and
+      <span class="formula">P</span> into lakes (phosphorus is often the limiting factor in freshwater — exactly
+      why many countries have banned phosphate laundry detergents), and algae grow wildly into an "algal bloom";
+      when the algae die and settle, microbes decompose them, <strong>consuming large amounts of dissolved
+      oxygen</strong>, and fish and shrimp suffocate — excess nutrients end in "oxygen depletion".
+    </p>
+
+    <h3>🔬 Try It Out: The Lake's Day–Night Survival Line</h3>
+    <p>
+      Drag the slider to adjust nutrient discharge, then toggle day/night and watch the fate of dissolved oxygen
+      and fish:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px;margin-bottom:10px">
+          <label for="euSlider" style="font-size:.9rem;color:var(--ink-2)">
+            Nutrient discharge (N and P inflow): <strong id="euVal">Medium</strong>
+          </label>
+          <input id="euSlider" type="range" min="0" max="100" value="35" step="1"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Nutrient discharge level">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>0 Clean water</span><span>100 Severe eutrophication</span>
+          </div>
+        </div>
+        <svg id="euSvg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-label="Eutrophic lake day-night simulator"></svg>
+        <div class="fig-controls">
+          <button class="btn" id="euToggle">🌙 Switch to night</button>
+        </div>
+        <div class="fig-readout" id="euReadout"></div>
+      </div>
+      <figcaption>
+        By day, algal photosynthesis releases oxygen (bubbles), and dissolved oxygen can rise all the way to
+        "supersaturation"; at night, every organism is left doing nothing but respiring and consuming oxygen.
+        Max out the nutrients and switch to night — after a whole night of consumption, dissolved oxygen reaches
+        its lowest point, <strong>which is exactly why fish farmers say "pond crashes" always happen just before
+        dawn</strong>: the last moment before daybreak is the most dangerous one.
+      </figcaption>
+    </figure>
+
+    <p>
+      The "main force" of a municipal sewage treatment plant is also microorganisms: the
+      <span class="term">activated sludge process</span> blasts air into aeration tanks so that an army of
+      bacteria feeding on organic matter "eats" the pollutants into CO₂ and H₂O; one step earlier, coagulation
+      and sedimentation (Al³⁺ from alum hydrolyzes to form an <span class="formula">Al(OH)₃</span> colloid that
+      adsorbs suspended impurities) serves both drinking-water treatment and advanced treatment.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Heavy Metals: Pollution That Cannot Be "Degraded"</div>
+      Organic matter can be dismantled by microbes back into CO₂ and H₂O, but mercury, cadmium, lead, and chromium
+      <strong>can only be moved, never destroyed</strong>. In Minamata Bay, microorganisms methylated Hg²⁺ into the
+      fat-soluble <span class="formula">CH₃Hg⁺</span>, which biomagnified up the food chain until top predators
+      carried concentrations on the order of a million times that of the water — the source of Japan's 1956
+      Minamata disease tragedy. Heavy-metal remediation relies on chemical "immobilization": adjusting pH to
+      precipitate them as hydroxides, or locking them into extremely insoluble salts with phosphates or sulfides.
+    </div>
+  </section>
+
+  <!-- ============ §5 Soil and Green Chemistry ============ -->
+  <section id="green">
+    <h2>§5 Soil and Green Chemistry: From Cleaning Up to Preventing Pollution</h2>
+    <p>
+      Soil is the "silent one" among the environment's three spheres. <span class="term">Soil colloids</span>
+      (clay-mineral and humus particles) carry negative surface charges and can adsorb cations such as Ca²⁺, K⁺,
+      and NH₄⁺ — this is the chemical essence of soil's nutrient retention, and also the handle for remediation:
+      applying lime to raise the pH precipitates heavy metals, and adding phosphates locks them into insoluble
+      minerals. Pesticides have evolved along the same lines: from DDT, "so stable it got everywhere", to today's
+      readily degradable varieties designed around microbial degradation half-lives.
+    </p>
+    <p>
+      But however good end-of-pipe treatment becomes, it is still "mending the fold after the sheep are lost".
+      In 1998, Anastas and Warner proposed the twelve principles of <span class="term">green chemistry</span>,
+      whose core is a single sentence: <strong>preventing pollution is better than treating it</strong>. The sharpest
+      blade is <span class="term">atom economy</span> (Trost, 1991) —
+      getting as many atoms as possible from the starting materials into the product instead of into waste:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">Atom economy = mass of the desired product ÷ mass of all starting materials × 100%</span>
+    </p>
+    <p>
+      The classic case is the ibuprofen process: the old route took 6 steps with an atom utilization of about 40%;
+      the green catalytic route takes 3 steps, at about 77%. Another everyday example is the
+      <strong>three-way catalytic converter</strong> in car exhaust (Pt/Pd/Rh catalysts):
+      <span class="formula">2CO + 2NO → 2CO₂ + N₂</span>,
+      turning two pollutants into harmless substances at once — and lead "poisons" the catalyst, which is one of
+      the chemical reasons leaded gasoline was phased out.
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Green Chemistry Is Not Chemistry's "Atonement"</div>
+      It is chemistry's evolution: generate no waste that can be avoided (atom economy), use catalysis rather than
+      stoichiometric reagents wherever possible, use water rather than organic solvents wherever possible, and
+      design products to degrade safely after use. <strong>Green chemistry writes the environmental cost into
+      the design stage of the reaction</strong> — chemistry's most thorough answer to the "London smog".
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: If a plastic bag is labeled "biodegradable", can we toss it away without a care?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: What conditions does "degradation" require? Does the ocean provide them?</p>
+        <p>
+          Most biodegradable plastics (such as polylactic acid, PLA) require <strong>industrial composting
+          conditions</strong> — about 58 °C, high humidity, and specific microbial communities — to decompose
+          within a few months. Dropped into the cold, oxygen-poor ocean, they persist for years all the same and
+          fragment into microplastics that enter the food chain. Degradability only settles the "end-of-life
+          destination"; reducing, reusing, and recycling (3R) still come first.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Environmental chemistry asks "source → transport → transformation → fate → effects" and designs remediation and prevention accordingly.</li>
+        <li>Greenhouse effect: greenhouse gases are transparent to visible light and absorb the ground's infrared; the natural greenhouse effect keeps the surface at 15 °C, and it is the "enhanced greenhouse effect" that drives warming; CO₂ is the knob, water vapor the amplifier.</li>
+        <li>CFCs release chlorine atoms in the stratosphere, and a <strong>catalytic cycle</strong> destroys ozone (1 Cl ≈ 100,000 O₃); the Montreal Protocol proves global treaties can work.</li>
+        <li>Acid rain = SO₂/NOₓ oxidized in clouds into sulfuric and nitric acids; the criterion is pH&lt;5.6 (the CO₂ background); control relies on the limestone–gypsum process and SCR denitrification.</li>
+        <li>Eutrophication: excess N, P → algal blooms → decomposition consumes oxygen → fish suffocate (most dangerous at dawn); heavy metals do not degrade and biomagnify along the food chain.</li>
+        <li>Green chemistry prevents pollution at the source: atom economy, catalytic routes, safer solvents — preventing pollution is better than treating it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Chemistry and the Environment <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Greenhouse gases warm the surface mainly because they absorb which of the following kinds of radiation?",
+            "options": ["Visible light emitted by the Sun", "Infrared radiation emitted outward by the ground", "Ultraviolet radiation emitted by stratospheric ozone", "Sunlight reflected by the Moon"],
+            "answer": 1,
+            "explain": "Greenhouse gases are nearly transparent to visible light (sunlight gets in) but absorb the infrared emitted by the ground; after absorbing it they re-emit in all directions, and about half the energy returns to the surface. Be careful to distinguish this from ozone absorbing ultraviolet light."
+          },
+          {
+            "q": "Regarding the destruction of the ozone layer by Freon (CFCs), which of the following statements is correct?",
+            "options": ["A chlorine atom is deactivated after reacting with one ozone molecule — one-for-one mutual destruction", "The chlorine atom cycles repeatedly like a catalyst; a single one can destroy about 100,000 ozone molecules", "CFCs decompose quickly in the troposphere and never reach the stratosphere at all", "The Antarctic ozone hole is caused only by atmospheric circulation and has nothing to do with chemical reactions"],
+            "answer": 1,
+            "explain": "Cl· + O₃ → ClO· + O₂, ClO· + O → Cl· + O₂: the chlorine is regenerated after reacting, so it is a catalytic cycle. CFCs survive all the way to the stratosphere precisely because they are too stable in the troposphere (exactly why they were once regarded as safe refrigerants); the Antarctic ozone hole is closely tied to reactions on polar stratospheric clouds."
+          },
+          {
+            "q": "Unpolluted natural rain has a pH of about 5.6 rather than 7. Why?",
+            "options": ["CO₂ in the atmosphere dissolves into raindrops to form carbonic acid", "Natural background sulfur dioxide", "Nitrogen oxides produced by lightning discharges", "Salt carried in from evaporation off the sea"],
+            "answer": 0,
+            "explain": "The ~420 ppm of CO₂ dissolves into raindrops: CO₂ + H₂O ⇌ H₂CO₃ (a weak acid), making even pure rain slightly acidic. That is why the acid-rain criterion is pH below 5.6 rather than below 7 — the concept of a background level is key to environmental assessment."
+          },
+          {
+            "q": "Which pair of nutrient elements is most critical for a lake \"algal bloom\" (explosive algae growth)?",
+            "options": ["Carbon and hydrogen", "Calcium and magnesium", "Iron and zinc", "Nitrogen and phosphorus"],
+            "answer": 3,
+            "explain": "Nitrogen and phosphorus fertilize algae, and phosphorus is often the limiting factor in freshwater — exactly why countries have banned phosphate laundry detergents. After a bloom, the algae die and decompose, consuming large amounts of oxygen instead, ending with fish dying of hypoxia."
+          },
+          {
+            "q": "Which of the following practices best embodies the idea of \"green chemistry\"?",
+            "options": ["Diluting wastewater until it is below the standard, then discharging it", "Installing desulfurization equipment at the end of the smokestack", "Designing the process from the start to generate as little pollutant as possible", "Burying waste deep underground in areas far from people"],
+            "answer": 2,
+            "explain": "The core of green chemistry is preventing pollution rather than treating pollution after it exists: atom economy makes less waste arise, and catalysis and safer solvents make processes cleaner. End-of-pipe treatment (such as desulfurization) is necessary but is remediation; dilution and relocation are merely out of sight, out of mind."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">08 Environmental Chemistry · Branch overview</span></a>
+      <a class="next" href="../09-Theoretical-and-Computational-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">09 Theoretical and Computational Chemistry · Branch overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (greenhouse-effect simulator / eutrophication day-night simulator) ============ */
+(function () {
+  "use strict";
+  var el = window.DSHChem.el; /* Shared SVG helper, defined in assets/tutor.js */
+
+  /* ---------- 1. Greenhouse effect: infrared photon simulator ---------- */
+  var ghSvg = document.getElementById("ghSvg");
+  if (ghSvg) {
+    var ghReadout = document.getElementById("ghReadout");
+    var GH_GROUND = 246;
+    var gh = { ppm: 280, mols: [], photons: [], escaped: 0, returned: 0, frame: 0 };
+    var ghBtns = document.querySelectorAll("#ghCtl button");
+
+    function ghT(ppm) { return 15 + 3 * Math.log(ppm / 280) / Math.LN2; }
+    function ghCount(ppm) { return 2 + Math.round((ppm - 180) / 40); }
+    function ghBob(m, f) { return Math.sin(f / 34 + m.ph) * 4; }
+
+    var ghPhotonsG = null;
+
+    function ghScene() {
+      ghSvg.innerHTML = "";
+      el("rect", { x: 0, y: 0, width: 560, height: 300, fill: "#e0f2fe" }, ghSvg);
+      el("line", { x1: 0, y1: 10, x2: 560, y2: 10, stroke: "#94a3b8", "stroke-width": 1, "stroke-dasharray": "6 6" }, ghSvg);
+      var t1 = el("text", { x: 8, y: 26, "font-size": 10, fill: "#64748b" }, ghSvg);
+      t1.textContent = "Top of the atmosphere: an infrared photon that crosses the dashed line escapes to space";
+      /* Sun */
+      var sun = el("g", { transform: "translate(56,48)" }, ghSvg);
+      var rays = el("g", { class: "anim-spin" }, sun);
+      rays.style.animationDuration = "26s";
+      for (var r = 0; r < 8; r++) {
+        var ra = Math.PI * r / 4;
+        el("line", { x1: 26 * Math.cos(ra), y1: 26 * Math.sin(ra), x2: 34 * Math.cos(ra), y2: 34 * Math.sin(ra), stroke: "#f59e0b", "stroke-width": 3, "stroke-linecap": "round" }, rays);
+      }
+      el("circle", { r: 19, fill: "#fbbf24", stroke: "#f59e0b", "stroke-width": 2 }, sun);
+      var st = el("text", { x: 56, y: 100, "text-anchor": "middle", "font-size": 11, fill: "#92400e", "font-weight": 700 }, ghSvg);
+      st.textContent = "Solar radiation (visible light)";
+      /* Sunlight arrows (pass through unimpeded) */
+      var sl = [[100, 92, 150, 238], [160, 104, 226, 238], [228, 118, 322, 238]];
+      for (var i = 0; i < sl.length; i++) {
+        var x1 = sl[i][0], y1 = sl[i][1], x2 = sl[i][2], y2 = sl[i][3];
+        el("line", { x1: x1, y1: y1, x2: x2, y2: y2, stroke: "#f59e0b", "stroke-width": 2.5, "stroke-linecap": "round", class: "anim-pulse", opacity: .85 }, ghSvg);
+        var ang = Math.atan2(y2 - y1, x2 - x1);
+        var hx = x2 - 12 * Math.cos(ang), hy = y2 - 12 * Math.sin(ang);
+        var pts = x2 + "," + y2 + " " +
+          (hx - 5 * Math.cos(ang - Math.PI / 2)) + "," + (hy - 5 * Math.sin(ang - Math.PI / 2)) + " " +
+          (hx + 5 * Math.cos(ang - Math.PI / 2)) + "," + (hy + 5 * Math.sin(ang - Math.PI / 2));
+        el("polygon", { points: pts, fill: "#f59e0b" }, ghSvg);
+      }
+      /* Ground */
+      el("rect", { x: 0, y: GH_GROUND, width: 560, height: 8, fill: "#65a30d" }, ghSvg);
+      el("rect", { x: 0, y: GH_GROUND + 8, width: 560, height: 46, fill: "#7c4a1e" }, ghSvg);
+      var gt = el("text", { x: 552, y: 290, "text-anchor": "end", "font-size": 11, fill: "#fde68a", "font-weight": 700 }, ghSvg);
+      gt.textContent = "Ground (heated by the sun, emits infrared)";
+      /* IR-transparent N₂/O₂ */
+      var npos = [[120, 158], [452, 118]];
+      for (i = 0; i < npos.length; i++) {
+        var gn = el("g", { transform: "translate(" + npos[i][0] + "," + npos[i][1] + ")", opacity: .55 }, ghSvg);
+        el("circle", { r: 17, fill: "none", stroke: "#94a3b8", "stroke-width": 1.2, "stroke-dasharray": "3 4" }, gn);
+        el("circle", { cx: -6, cy: 0, r: 4, fill: "#94a3b8" }, gn);
+        el("circle", { cx: 6, cy: 0, r: 4, fill: "#94a3b8" }, gn);
+        var nt = el("text", { y: 32, "text-anchor": "middle", "font-size": 9, fill: "#64748b" }, gn);
+        nt.textContent = "N₂/O₂: transparent to IR";
+      }
+      /* CO₂ molecules (count varies with concentration) */
+      gh.mols = [];
+      var count = ghCount(gh.ppm), tries = 0;
+      while (gh.mols.length < count && tries < 600) {
+        tries++;
+        var m = { x: 40 + Math.random() * 480, y: 56 + Math.random() * 158, ph: Math.random() * 6.28 };
+        var ok = true;
+        for (var j = 0; j < gh.mols.length; j++) {
+          if (Math.hypot(m.x - gh.mols[j].x, m.y - gh.mols[j].y) < 52) { ok = false; break; }
+        }
+        if (m.x < 118 && m.y < 130) ok = false; /* keep clear of the sun */
+        if (ok) gh.mols.push(m);
+      }
+      for (i = 0; i < gh.mols.length; i++) {
+        var gm = el("g", { transform: "translate(" + gh.mols[i].x + "," + gh.mols[i].y + ")" }, ghSvg);
+        el("line", { x1: -10, y1: 0, x2: 10, y2: 0, stroke: "#475569", "stroke-width": 1.6 }, gm);
+        el("circle", { cx: -10, cy: 0, r: 4.2, fill: "#ef4444" }, gm);
+        el("circle", { cx: 0, cy: 0, r: 5.4, fill: "#334155" }, gm);
+        el("circle", { cx: 10, cy: 0, r: 4.2, fill: "#ef4444" }, gm);
+        gh.mols[i].g = gm;
+      }
+      var ct = el("text", { x: 8, y: 58, "font-size": 10, fill: "#4d7c0f", "font-weight": 700 }, ghSvg);
+      ct.textContent = "⬤ CO₂ molecules ×" + gh.mols.length + " (count varies with the concentration setting)";
+      /* Photon layer on top */
+      ghPhotonsG = el("g", {}, ghSvg);
+    }
+
+    function ghEmit(p) {
+      var dir = Math.random() < 0.5 ? -1 : 1;
+      p.vy = dir * (1.6 + Math.random() * 0.9);
+      p.vx = (Math.random() - 0.5) * 1.4;
+      p.bounces++;
+    }
+
+    function ghRenderReadout() {
+      var total = gh.escaped + gh.returned;
+      var t = ghT(gh.ppm), d = t - 15;
+      var dStr = (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1);
+      if (ghReduced) {
+        ghReadout.textContent = "CO₂ " + gh.ppm + " ppm | Simulated equilibrium temperature " + t.toFixed(1) +
+          " °C (" + dStr + " °C vs pre-industrial) | Photon animation paused per the system reduced-motion setting";
+        return;
+      }
+      ghReadout.textContent = "CO₂ " + gh.ppm + " ppm | " +
+        (total ? "IR escaped directly " + Math.round(gh.escaped / total * 100) + "% · returned to surface " +
+          Math.round(gh.returned / total * 100) + "% | " : "Simulating infrared photons… | ") +
+        "Simulated equilibrium temperature " + t.toFixed(1) + " °C (" + dStr + " °C vs pre-industrial)";
+    }
+
+    function ghFrame() {
+      gh.frame++;
+      if (gh.frame % 8 === 0 && gh.photons.length < 30) {
+        var p = {
+          x: 30 + Math.random() * 500, y: GH_GROUND - 4, vx: 0,
+          vy: -(1.8 + Math.random() * 0.8), bounces: 0,
+          node: el("circle", { r: 4.2, fill: "#f97316", stroke: "#c2410c", "stroke-width": 1 }, ghPhotonsG)
+        };
+        gh.photons.push(p);
+      }
+      for (var i = gh.photons.length - 1; i >= 0; i--) {
+        var p2 = gh.photons[i];
+        p2.x += p2.vx; p2.y += p2.vy;
+        for (var j = 0; j < gh.mols.length; j++) {
+          var m = gh.mols[j];
+          if (Math.hypot(p2.x - m.x, p2.y - (m.y + ghBob(m, gh.frame))) < 16) { ghEmit(p2); break; }
+        }
+        p2.node.setAttribute("cx", p2.x);
+        p2.node.setAttribute("cy", p2.y);
+        if (p2.y < 12 || p2.y > GH_GROUND - 4) {
+          if (p2.y < 12) gh.escaped++; else gh.returned++;
+          p2.node.remove();
+          gh.photons.splice(i, 1);
+          ghRenderReadout();
+        } else if (p2.x < 6 || p2.x > 554) {
+          p2.vx *= -1;
+        }
+      }
+      for (var k = 0; k < gh.mols.length; k++) {
+        gh.mols[k].g.setAttribute("transform", "translate(" + gh.mols[k].x + "," + (gh.mols[k].y + ghBob(gh.mols[k], gh.frame)) + ")");
+      }
+    }
+
+    ghBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        gh.ppm = parseInt(b.getAttribute("data-ppm"), 10);
+        ghBtns.forEach(function (x) { x.className = "btn ghost"; });
+        b.className = "btn";
+        gh.photons.forEach(function (p) { p.node.remove(); });
+        gh.photons = []; gh.escaped = 0; gh.returned = 0;
+        ghScene();
+        ghRenderReadout();
+      });
+    });
+    ghBtns.forEach(function (x) { x.className = x.getAttribute("data-ppm") === "280" ? "btn" : "btn ghost"; });
+    var ghReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
+    ghScene();
+    ghRenderReadout();
+    /* The loop runs only while the simulator is visible and the page is in the foreground */
+    if (!ghReduced) DSHChem.autoloop(ghSvg, ghFrame);
+  }
+
+  /* ---------- 2. Eutrophication: lake day-night simulator ---------- */
+  var euSvg = document.getElementById("euSvg");
+  if (euSvg) {
+    var euReadout = document.getElementById("euReadout");
+    var euToggle = document.getElementById("euToggle");
+    var euSlider = document.getElementById("euSlider");
+    var euVal = document.getElementById("euVal");
+    var eu = { n: 0.35, day: true, bubbles: [], frame: 0, bubblesG: null };
+
+    function euDO() { return eu.day ? 8 + 5 * eu.n : Math.max(0.5, 8 - 7 * eu.n); }
+    function euNut() { return eu.n < 0.25 ? "Low (clean water)" : eu.n < 0.55 ? "Medium (eutrophication beginning)" : "High (severe eutrophication)"; }
+    function euStatus(d) {
+      if (d >= 8) return d > 10.5 ? "Supersaturated (algae producing oxygen rapidly by day)" : "Dissolved oxygen plentiful";
+      if (d >= 5) return "Fish behaving normally";
+      if (d >= 3) return "Fish gasping at the surface, breathing rapidly";
+      if (d >= 2) return "Severe hypoxia, fish and shrimp near death";
+      return "Oxygen crash: fish suffocating and dying";
+    }
+
+    function euFish(x, y, mode) { /* swim | gasp | dead */
+      var g = el("g", { transform: "translate(" + x + "," + y + ")" + (mode === "dead" ? " rotate(-8)" : "") }, euSvg);
+      var body = mode === "dead" ? "#94a3b8" : "#38bdf8";
+      var edge = mode === "dead" ? "#64748b" : "#0284c7";
+      el("ellipse", { rx: 15, ry: 7, fill: body, stroke: edge, "stroke-width": 1.5 }, g);
+      el("polygon", { points: "13,0 24,-7 24,7", fill: body, stroke: edge, "stroke-width": 1 }, g);
+      if (mode === "dead") {
+        el("line", { x1: 5, y1: -3, x2: 10, y2: 2, stroke: "#1f2937", "stroke-width": 1.6 }, g);
+        el("line", { x1: 10, y1: -3, x2: 5, y2: 2, stroke: "#1f2937", "stroke-width": 1.6 }, g);
+      } else {
+        el("circle", { cx: 6, cy: -2, r: 2.4, fill: "#fff" }, g);
+        el("circle", { cx: 6.8, cy: -2, r: 1.1, fill: "#0f172a" }, g);
+        if (mode === "gasp") el("circle", { cx: 16, cy: 0, r: 2.6, fill: "none", stroke: edge, "stroke-width": 1.4 }, g);
+      }
+    }
+
+    function euScene() {
+      euSvg.innerHTML = "";
+      var skyC = eu.day ? "#bfdbfe" : "#1e293b";
+      var w1 = eu.day ? "#60a5fa" : "#3f5573";
+      var w2 = eu.day ? "#1d4ed8" : "#1b2c4d";
+      var tx = eu.day ? "#1e3a8a" : "#dbeafe";
+      el("rect", { x: 0, y: 0, width: 560, height: 64, fill: skyC }, euSvg);
+      el("rect", { x: 0, y: 64, width: 560, height: 120, fill: w1 }, euSvg);
+      el("rect", { x: 0, y: 184, width: 560, height: 116, fill: w2 }, euSvg);
+      if (eu.day) {
+        var sun = el("g", { transform: "translate(64,32)" }, euSvg);
+        var rays = el("g", { class: "anim-spin" }, sun);
+        rays.style.animationDuration = "22s";
+        for (var r = 0; r < 8; r++) {
+          var ra = Math.PI * r / 4;
+          el("line", { x1: 24 * Math.cos(ra), y1: 24 * Math.sin(ra), x2: 31 * Math.cos(ra), y2: 31 * Math.sin(ra), stroke: "#f59e0b", "stroke-width": 2.6, "stroke-linecap": "round" }, rays);
+        }
+        el("circle", { r: 17, fill: "#fbbf24" }, sun);
+        var st = el("text", { x: 64, y: 60, "text-anchor": "middle", "font-size": 10, fill: "#92400e", "font-weight": 700 }, euSvg);
+        st.textContent = "Day: algal photosynthesis produces oxygen O₂ ↑";
+      } else {
+        el("circle", { cx: 64, cy: 30, r: 15, fill: "#f1f5f9" }, euSvg);
+        el("circle", { cx: 73, cy: 25, r: 13, fill: skyC }, euSvg);
+        [[160, 18], [230, 40], [320, 22]].forEach(function (s) {
+          el("circle", { cx: s[0], cy: s[1], r: 1.8, fill: "#f8fafc" }, euSvg);
+        });
+        var nt2 = el("text", { x: 64, y: 60, "text-anchor": "middle", "font-size": 10, fill: "#e2e8f0", "font-weight": 700 }, euSvg);
+        nt2.textContent = "Night: every organism only consumes oxygen in respiration O₂ ↓";
+        [170, 285, 400].forEach(function (ax) {
+          el("line", { x1: ax, y1: 120, x2: ax, y2: 162, stroke: "#fb923c", "stroke-width": 3, "stroke-linecap": "round" }, euSvg);
+          el("polygon", { points: ax + ",176 " + (ax - 7) + ",162 " + (ax + 7) + ",162", fill: "#fb923c" }, euSvg);
+        });
+        var na = el("text", { x: 285, y: 196, "text-anchor": "middle", "font-size": 10.5, fill: "#fed7aa" }, euSvg);
+        na.textContent = "Algae, fish, and microbes respire and consume oxygen all night";
+      }
+      /* Algal film and algae */
+      if (eu.n > 0.3) el("rect", { x: 0, y: 63, width: 560, height: Math.round(6 + eu.n * 4), fill: "#84cc16", opacity: Math.min(.92, .3 + eu.n) }, euSvg);
+      var nAlgae = Math.round(4 + 44 * eu.n);
+      for (var i = 0; i < nAlgae; i++) {
+        var cc = el("circle", {
+          cx: 16 + Math.random() * 528,
+          cy: 74 + Math.random() * (14 + 100 * eu.n),
+          r: 2.4 + Math.random() * 2.4,
+          fill: "#22c55e", stroke: "#15803d", "stroke-width": .8, opacity: .9
+        }, euSvg);
+        if (i % 7 === 0) cc.setAttribute("class", "anim-float");
+      }
+      /* Bottom silt */
+      var nSilt = Math.round(16 * eu.n);
+      for (i = 0; i < nSilt; i++) {
+        el("circle", { cx: 12 + Math.random() * 536, cy: 272 + Math.random() * 22, r: 2.5 + Math.random() * 3, fill: "#57534e", opacity: .85 }, euSvg);
+      }
+      if (eu.n > 0.55) {
+        var silt = el("text", { x: 548, y: 264, "text-anchor": "end", "font-size": 10, fill: "#e7e5e4" }, euSvg);
+        silt.textContent = "Dead algae settle · microbial decomposition (a major oxygen consumer)";
+      }
+      /* Fish state changes with dissolved oxygen */
+      var d = euDO();
+      if (d >= 5) { euFish(150, 160, "swim"); euFish(380, 214, "swim"); }
+      else if (d >= 3) {
+        euFish(150, 84, "gasp"); euFish(390, 96, "gasp");
+        var ft = el("text", { x: 150, y: 104, "text-anchor": "middle", "font-size": 10, fill: tx, "font-weight": 700 }, euSvg);
+        ft.textContent = "Gasping at the surface";
+      } else if (d >= 2) { euFish(150, 84, "gasp"); euFish(380, 80, "dead"); }
+      else { euFish(160, 80, "dead"); euFish(370, 86, "dead"); }
+      /* Bubble layer on top */
+      eu.bubblesG = el("g", {}, euSvg);
+      eu.bubbles = [];
+      var lg = el("text", { x: 10, y: 22, "font-size": 10.5, fill: eu.day ? "#1e40af" : "#e0e7ff", "font-weight": 700 }, euSvg);
+      lg.textContent = (eu.day ? "☀ Day" : "🌙 Night") + " · Lake cross-section";
+    }
+
+    function euFrame() {
+      eu.frame++;
+      if (eu.day) {
+        var want = Math.round(2 + 10 * eu.n);
+        while (eu.bubbles.length < want) {
+          eu.bubbles.push({
+            x: 16 + Math.random() * 528,
+            y: 80 + Math.random() * (20 + 90 * eu.n),
+            s: .8 + Math.random() * .9,
+            node: el("circle", { r: 1.6 + Math.random() * 2.4, fill: "#ffffff", opacity: .8, stroke: "#e0f2fe", "stroke-width": .7 }, eu.bubblesG)
+          });
+        }
+        for (var i = 0; i < eu.bubbles.length; i++) {
+          var b = eu.bubbles[i];
+          b.y -= b.s;
+          b.node.setAttribute("cy", b.y);
+          b.node.setAttribute("cx", b.x + Math.sin((eu.frame + b.x) / 18) * 3);
+          if (b.y < 70) { b.y = 80 + Math.random() * (20 + 90 * eu.n); b.x = 16 + Math.random() * 528; }
+        }
+      }
+    }
+
+    function euRender() {
+      var d = euDO();
+      if (euVal) euVal.textContent = eu.n < 0.25 ? "Low" : eu.n < 0.55 ? "Medium" : "High";
+      euReadout.textContent = "Nutrients: " + euNut() + " | " + (eu.day ? "☀ Day" : "🌙 Night") +
+        " | Dissolved oxygen " + d.toFixed(1) + " mg/L | " + euStatus(d);
+    }
+
+    if (euSlider) euSlider.addEventListener("input", function () {
+      eu.n = parseInt(euSlider.value, 10) / 100;
+      euScene(); euRender();
+    });
+    if (euToggle) euToggle.addEventListener("click", function () {
+      eu.day = !eu.day;
+      euToggle.textContent = eu.day ? "🌙 Switch to night" : "☀ Switch to day";
+      euScene(); euRender();
+    });
+    euScene();
+    euRender();
+    /* The bubble loop runs only while the scene is visible and the page is in the foreground; no bubble animation under reduced motion */
+    if (!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced())) {
+      DSHChem.autoloop(euSvg, euFrame);
+    }
+  }
+})();
+</script>
+</body>
+</html>

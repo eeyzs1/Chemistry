@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Experiments in Silico · Theoretical and Computational Chemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b09">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">09 Theoretical and Computational Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · Experiments in Silico</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">09 Theoretical and Computational Chemistry · Chapter 1</div>
+    <h1>💻 Experiments in Silico: Compute First, Then Act</h1>
+    <p class="lede">
+      In 1929 Dirac declared that the underlying equations of chemistry were already fully
+      written down — “the difficulty is only that these equations are too hard to solve.”
+      A century later, <strong>clever approximations + exploding computing power</strong>
+      have finally turned that sigh into an everyday tool:
+      before setting hand to a synthesis, you can first compute a molecule's shape and energy
+      inside the computer, simulate which “mountain pass” a reaction climbs over,
+      and predict how fast it will run. This chapter walks you through the discipline's two
+      engines — quantum mechanics for the electrons, Newtonian mechanics for the atoms —
+      as well as a third engine now taking the stage: machine learning. By the end you will
+      know how far a computed result can be trusted,
+      and when it pays to compute first and act second.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: 04 Physical Chemistry (quantum chapter)</span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#qm">Electronic structure: trading approximation for solvability</a>
+    <a href="#pes">The potential-energy surface: the map of a reaction</a>
+    <a href="#md">Molecular dynamics: setting atoms in motion</a>
+    <a href="#ml">Machine-learning potentials and AI</a>
+    <a href="#tradeoff">Accuracy and cost</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: The Equations Are in Hand — Solving Them Is Another Matter</h2>
+    <p>
+      Quantum mechanics supplies the master equation governing molecules — the
+      time-independent Schrödinger equation
+      <span class="formula">Ĥψ = Eψ</span>: know ψ, and you know everything about the molecule.
+      The trouble is that <strong>the electrons repel one another</strong>: each electron's
+      position is tied to every other's, and the wave function becomes a function of 3N
+      dimensions (N = number of electrons). Ten electrons means thirty dimensions —
+      even sampling only 10 grid points per coordinate would require storing 10³⁰ numbers,
+      more than all the sand grains on Earth by a dozen orders of magnitude.
+      This is what chemists call the <strong>curse of dimensionality</strong>: exact solutions
+      exist only for one-electron systems such as the hydrogen atom.
+    </p>
+    <p>
+      The entire history of computational chemistry is a history of
+      <strong>trading approximation for solvability</strong>. There are two ways out:
+      one keeps solving the quantum equation but makes clever approximations
+      (quantum chemistry, §1–2);
+      the other gives up on electrons altogether and runs Newton's equations directly with an
+      empirical potential-energy function (molecular simulation, §3).
+      In recent years a third route has burst onto the scene: letting machines learn the
+      potential energy from data (§4).
+    </p>
+    <div class="keypoint">
+      <div class="kp-title">📌 Two Engines, One Bridge</div>
+      <strong>Engine one (quantum)</strong>: solve the electrons' Schrödinger equation →
+      yields energies and shapes;
+      <strong>engine two (Newton)</strong>: let the nuclei move under forces →
+      yields processes and trajectories.
+      The bridge joining the two engines is the <strong>Born–Oppenheimer approximation</strong>:
+      first freeze the nuclei and solve for the electronic energy,
+      spread the results into an “energy landscape”, then let the nuclei move on that
+      landscape — and that landscape is the star of §2:
+      <span class="term">potential-energy surface (PES)</span>.
+    </div>
+  </section>
+
+  <!-- ============ §1 Electronic structure ============ -->
+  <section id="qm">
+    <h2>§1 Electronic Structure: Trading Approximation for Solvability</h2>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · From “Unsolvable” to “Computable”</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          The intuition behind the Born–Oppenheimer approximation is the huge disparity of
+          masses: nuclei are thousands to hundreds of thousands of times heavier than
+          electrons, so the electrons adjust their state almost instantaneously.
+          <strong>Let the clumsy actors (the nuclei) strike a pose, and the lighting
+          (the electrons) catches up at once</strong> — so for each pose you can solve the
+          electronic problem once and record the energy at that pose; the result is the
+          “floor topography” on which the nuclei move.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · The Methods</span>
+        <p>
+          What about the electrons? <strong>The mean field</strong>: let each electron feel all
+          the others as a smooth “average cloud”, splitting the many-electron problem into a
+          chain of one-electron problems — this is the Hartree–Fock (HF) method;
+          correcting for correlation effects on top of it yields perturbation theory (MP2)
+          and the “gold standard” CCSD(T).
+          The other route is even more elegant: <strong>density functional theory (DFT)</strong>
+          proves that the ground-state energy is a functional
+          <span class="formula">E[ρ]</span> of the electron density ρ alone (a
+          three-dimensional function!) — and the curse of dimensionality is sidestepped.
+          The 1998 Nobel Prize in Chemistry (Kohn and Pople) went precisely to the pioneers
+          of these two routes.
+          Everyday DFT delivers bond lengths with typical errors of about 0.01 Å —
+          good enough for chemists.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The Essence</span>
+        <p>
+          Why do these methods “get more accurate the harder you compute”? By the
+          <strong>variational principle</strong>: for any trial wave function,
+          <span class="formula">⟨ψ|Ĥ|ψ⟩ ≥ E₀</span> — the computed energy is never lower than
+          the true ground state.
+          So ψ is expanded on a set of “basis functions”, and the mixing coefficients are
+          tuned to minimize the energy:
+          the larger the basis set, the closer to the true value — and the greater the cost.
+          Every click in computational chemistry is, in essence, one
+          <strong>accuracy ↔ cost</strong> transaction.
+        </p>
+      </div>
+    </div>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 DFT: The Price–Performance King</div>
+      CCSD(T) reaches “chemical accuracy” (on the order of kJ/mol), but you can only afford a
+      dozen or so atoms;
+      DFT is slightly less accurate yet handles hundreds of atoms — which is why the vast
+      majority of reaction-mechanism studies in today's journals use it.
+      The “electron cloud” picture from the quantum chapter of prerequisite Branch 04 becomes
+      the protagonist in DFT:
+      <strong>the energy is fixed by the density, with no need to chase every electron</strong>.
+    </div>
+  </section>
+
+  <!-- ============ §2 Potential-energy surface ============ -->
+  <section id="pes">
+    <h2>§2 The Potential-Energy Surface: A 3-D Map of the Reaction</h2>
+    <p>
+      Once the Born–Oppenheimer approximation has laid out the “terrain”, the molecular
+      energy becomes a function of all the atomic coordinates
+      <span class="formula">E(R)</span> — a hypersurface of 3N−6 dimensions. Every term in the
+      chemist's vocabulary translates into topography:
+      <strong>valley floor = a stable molecule; the pass between two valleys = the transition
+      state; the height difference from valley to pass = the activation energy Ea</strong>.
+      A reaction is like a ball rolling out of the “reactant valley”, over the pass, and down
+      into the “product valley” — and once Ea is computed,
+      the rate can be predicted from the Arrhenius equation
+      <span class="formula">k = A·e<sup>−Ea/RT</sup></span>.
+    </p>
+
+    <h3>🔬 Try It Out: Potential-Energy Surface Explorer</h3>
+    <p>
+      The figure below is the “standard examination hall” where computational chemists test
+      their algorithms (the Müller–Brown model potential-energy surface).
+      Drag the ball (or use the sliders, or tap directly on the plot) to choose a starting
+      configuration, then click “Steepest Descent” and see which valley it rolls into:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="pesCanvas" width="560" height="380" style="border-radius:8px;cursor:crosshair;touch-action:none" aria-label="Potential-energy surface explorer: steepest-descent animation of a ball on an energy landscape"></canvas>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;min-width:280px">
+          <div style="flex:1;min-width:220px">
+            <label for="pesX" style="font-size:.86rem;color:var(--ink-2)">Configuration coordinate x</label>
+            <input id="pesX" type="range" min="-1.6" max="1.2" step="0.005" value="0.623"
+                   style="width:100%;accent-color:var(--accent);height:40px" aria-label="Ball x coordinate">
+          </div>
+          <div style="flex:1;min-width:220px">
+            <label for="pesY" style="font-size:.86rem;color:var(--ink-2)">Configuration coordinate y</label>
+            <input id="pesY" type="range" min="-0.4" max="2.2" step="0.005" value="0.028"
+                   style="width:100%;accent-color:var(--accent);height:40px" aria-label="Ball y coordinate">
+          </div>
+        </div>
+        <div class="fig-controls">
+          <button class="btn" id="pesDescend">⛰ Steepest descent · Roll to a valley</button>
+          <button class="btn ghost" id="pesReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="pesReadout"></div>
+      </div>
+      <figcaption>
+        Blue = valley floors (stable configurations); red = hillsides (high energy).
+        This surface holds three valleys (reactant, intermediate, product)
+        and two passes (TS①, TS② — saddle points). Watch closely:
+        <strong>steepest descent only ever rolls into “the valley underfoot” and never climbs
+        a hill</strong> — that is the very nature of structure-optimization algorithms;
+        and to find a transition state (a saddle point: a maximum along the reaction
+        direction, a minimum perpendicular to it),
+        you must use a dedicated saddle-point search algorithm (such as the NEB nudged
+        elastic band method).
+        Try placing the ball on either side of the watershed between two valleys, and see how
+        the starting position decides its fate.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Local Minimum ≠ Global Minimum</div>
+      Optimizing until the gradient vanishes only guarantees that you have arrived at
+      “some valley floor” — which one depends entirely on where you started.
+      That is why computational chemists launch their conformational searches from many
+      different initial structures.
+      Nor is the product valley (the global minimum) necessarily a reaction's final home:
+      <strong>a kinetically controlled process can stall in the intermediate valley</strong>.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: A reaction is computed to have Ea = 50 kJ/mol — can it proceed at room temperature?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Compare Ea with RT (about 2.5 kJ/mol at 298 K), then ask what happens when a “small probability” is multiplied by “vast numbers of molecules”.</p>
+        <p>
+          The barrier is about 20 × RT, so the fraction of molecules that make it over the
+          pass is only e<sup>−Ea/RT</sup> ≈ e<sup>−20</sup> ≈
+          2×10⁻⁹ — <strong>two in a billion</strong>, which looks utterly hopeless?
+          But one mole contains 6×10²³ molecules,
+          and gas-phase molecules collide ~10⁹ times per second: the macroscopic rate remains
+          perfectly respectable. This is the deep meaning of the Arrhenius equation:
+          <strong>temperature sits in the exponent</strong>, so warming by 10 K can double the
+          rate;
+          a catalyst that cuts 50 to 25 kJ/mol boosts the rate a thousandfold — and
+          computational chemistry, needing only the accurately computed energies of two
+          stationary points, can predict every one of these numbers.
+        </p>
+      </div>
+    </details>
+
+    <h3>📐 Worked-Example Scaffold: From a DFT Barrier to a Reaction Rate</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        A DFT calculation gives the activation energy of a reaction as
+        Ea = 80.0 kJ/mol and the pre-exponential factor as A = 1.0×10¹³ s⁻¹.<br>
+        ① What is the rate constant k at 25 °C? ② How many times faster is the reaction at 125 °C?
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Write the formula <span class="formula">k = A·e<sup>−Ea/RT</sup></span> and align the units:
+          Ea = 80000 J/mol, R = 8.314 J/(mol·K), T₁ = 298 K.</li>
+        <li class="step">Compute the exponent: Ea/RT₁ = 80000 ÷ (8.314×298) = 32.3 →
+          e<sup>−32.3</sup> ≈ 9.7×10⁻¹⁵ →
+          k₁ = 1.0×10¹³ × 9.7×10⁻¹⁵ ≈ <strong>9.7×10⁻² s⁻¹</strong> (a half-life of about 7 seconds — visibly fast).</li>
+        <li class="step">T₂ = 398 K: Ea/RT₂ = 80000 ÷ (8.314×398) = 24.2 →
+          e<sup>−24.2</sup> ≈ 3.2×10⁻¹¹ → k₂ ≈ <strong>3.2×10² s⁻¹</strong> (a half-life of about 2 milliseconds).</li>
+        <li class="step">The ratio = e<sup>(Ea/R)(1/T₁ − 1/T₂)</sup> = e<sup>8.1</sup> ≈
+          <strong>3300-fold</strong>. ✅ Check: k₂/k₁ = 320/0.097 ≈ 3300 — the two routes agree.
+          Conclusion: the higher the barrier, the greater the temperature sensitivity — a
+          100 K rise speeds things up more than three-thousandfold, all written in the exponent.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §3 Molecular dynamics ============ -->
+  <section id="md">
+    <h2>§3 Molecular Dynamics: Setting a Hundred Thousand Atoms in Motion</h2>
+    <p>
+      The second engine never touches quantum mechanics at all: give every atom an empirical
+      “force field” (bond springs + angle bending +
+      van der Waals + Coulomb terms), then use <span class="formula">F = −∂V/∂R</span> with
+      Newton's second law,
+      slicing time into femtosecond-sized steps (1 fs each) and marching positions and
+      velocities forward step by step —
+      this is <span class="term">molecular dynamics (MD)</span>.
+      A million steps buy just one nanosecond of “movie”,
+      yet that movie shows scenes no experiment can see:
+      how a drug molecule slips out of its pocket, how ions diffuse through a battery,
+      how a protein folds.
+      The 2013 Nobel Prize in Chemistry (Karplus, Levitt, and Warshel) honored precisely
+      such “multiscale models of complex chemical systems”.
+    </p>
+    <p>
+      The “temperature” in MD is not an ambient setting but
+      <strong>a statistical measure of the molecules' average kinetic energy</strong>;
+      the simulator nudges the velocities with a “thermostat” to hold the system at the
+      target temperature. You can get a hands-on feel for exactly this in the toy simulator
+      below:
+    </p>
+
+    <h3>🔬 Try It Out: A 90-Atom “Molecular Dynamics” Run</h3>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <div style="min-width:300px;margin-bottom:10px">
+          <label for="mdT" style="font-size:.9rem;color:var(--ink-2)">
+            Thermostat target temperature T* = <strong id="mdTVal">0.30</strong> (reduced units)
+          </label>
+          <input id="mdT" type="range" min="5" max="150" value="30" step="1"
+                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Simulation temperature">
+          <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
+            <span>Low temperature (condenses into a droplet)</span><span>High temperature (evaporates into a gas)</span>
+          </div>
+        </div>
+        <canvas id="mdCanvas" width="560" height="340" style="border-radius:8px" aria-label="Particle molecular-dynamics simulator: watch condensation and evaporation with the temperature slider"></canvas>
+        <div class="fig-controls">
+          <button class="btn ghost" id="mdReset">↺ Reset particles</button>
+        </div>
+        <div class="fig-readout" id="mdReadout"></div>
+      </div>
+      <figcaption>
+        The 90 particles interact through nothing more than a simple pairwise Lennard-Jones
+        potential plus a weak gravity (σ is the particle diameter, ε the interaction
+        strength, τ the time unit).
+        Pull the temperature to the bottom: kinetic energy is steadily drained by the
+        thermostat, the particles condense into a “droplet”, and the occasional surface
+        particle that escapes is pulled back;
+        set it midway: droplet and vapor wax and wane — exactly the dynamic equilibrium
+        between evaporation and condensation; push it to the top: everything evaporates
+        into gas.
+        The colors encode instantaneous speed (blue slow, red fast) — an entire speed
+        distribution in a single glance. Real MD merely scales this up to a million atoms
+        and swaps in a more refined force field; the principle is exactly the same.
+      </figcaption>
+    </figure>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Force Field Decides Everything</div>
+      MD integrates Newton's equations with numerical precision, so
+      <strong>all the accuracy is staked on the potential-energy function (the force
+      field)</strong>:
+      if the force field is wrong, however beautiful the trajectories that follow, it is
+      “garbage in, garbage out”.
+      Classical force fields also have one blind spot from birth —
+      <strong>they cannot see bonds breaking or forming</strong> (the electronic processes
+      are frozen out),
+      and to simulate chemical reactions you must summon the new engine of §4.
+    </div>
+  </section>
+
+  <!-- ============ §4 Machine-learning potentials and AI ============ -->
+  <section id="ml">
+    <h2>§4 Machine-Learning Potentials and AI: The Third Engine</h2>
+    <p>
+      Computational chemistry was long trapped inside one inequality:
+      <strong>quantum methods are accurate but small (hundreds of atoms, picoseconds),
+      while classical force fields are large but coarse (blind to reactions)</strong>.
+      In 2007 Behler and Parrinello found the way out:
+      use hundreds or thousands of DFT-computed energies and forces as the “textbook”,
+      and train a neural network to imitate DFT —
+      <span class="term">machine-learning potential</span>.
+      It is <strong>as accurate as quantum and as fast as classical</strong>, and it has
+      already pushed simulations containing chemical reactions out to a million atoms.
+      The macroscopic version is just as stunning: DeepMind's GNoME model predicted
+      2.2 million candidate crystal structures in one go,
+      nearly a tenfold expansion of humanity's catalog of known inorganic crystals —
+      “compute millions of candidates first, then pick a few hundred to synthesize”.
+    </p>
+    <p>
+      You have probably heard the other piece of news: in 2020 AlphaFold achieved
+      near-experimental accuracy in the protein structure prediction competition,
+      and half of the 2024 Nobel Prize in Chemistry went to its creators (the other half to
+      Baker, who designs proteins from scratch).
+      Note its route: <strong>it does not solve the Schrödinger equation but learns
+      statistical regularities from hundreds of thousands of known structures</strong> —
+      data-driven, not first principles.
+    </p>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ A Computed Result ≠ a Fact</div>
+      However beautiful the picture on your screen, it is only the output of one approximate
+      method in one basis set. Every method carries systematic error,
+      and a machine-learning model can only <strong>interpolate — never extrapolate</strong>
+      beyond its training data.
+      A serious calculation must report its method and sources of error and be checked
+      against experimental benchmarks —
+      <strong>an unverified computation is more dangerous than ignorance</strong>,
+      because it wears the mask of “precision”.
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: AlphaFold can predict structures but cannot say “why it folds this way” — is a prediction without equations still science?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Is the heart of science “testable prediction”, or “understandable mechanism”? Must the two be the same thing?</p>
+        <p>
+          The bar for a scientific theory is <strong>falsifiability and testability</strong>:
+          every AlphaFold prediction can be overturned by experiment,
+          and it is indeed being tested over and over — it is certainly a scientific tool.
+          But “why” remains the territory of first principles:
+          equations deliver mechanism and causation, data delivers correlation and
+          candidates. <strong>Data-driven methods do the discovering, first principles do
+          the explaining</strong>,
+          and two engines plus one new engine are complementary rather than interchangeable.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §5 Accuracy and cost ============ -->
+  <section id="tradeoff">
+    <h2>§5 Accuracy and Cost: There Is No “Best” Method</h2>
+    <p>
+      Put this chapter's methods into one table and the triangular trade-off among
+      “accuracy × spatial scale × time scale” becomes plain —
+      no option maxes out all three, and your budget always lets you pick only two:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Method</th><th>How large it can go</th><th>How long it can run</th><th>Accuracy</th><th>Typical uses</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ab initio (HF / MP2 / CCSD(T))</td><td>A dozen to a few dozen atoms</td><td>Static, vibrational</td><td>CCSD(T) = the gold standard (kJ/mol level)</td><td>Small-molecule energetics and spectra, benchmark data</td></tr>
+        <tr><td>DFT (density functional theory)</td><td>Hundreds of atoms</td><td>Picoseconds</td><td>Bond lengths ~0.01 Å, energies within a few kJ/mol</td><td>Reaction mechanisms, catalyst screening</td></tr>
+        <tr><td>Classical force-field MD</td><td>A hundred thousand to a million atoms</td><td>Microseconds to milliseconds</td><td>Depends on parameterization; blind to bond making/breaking</td><td>Proteins, materials, interfaces</td></tr>
+        <tr><td>Machine-learning potentials</td><td>Thousands to a million atoms</td><td>Nanoseconds to microseconds</td><td>Close to DFT (within the training range)</td><td>Chemical reactions in large systems</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 Good Enough Wins: A Tiered Computational Strategy</div>
+      The standard move in modern R&amp;D is to <strong>place bets in tiers</strong>: first
+      sweep tens of thousands of candidates with fast-and-coarse methods,
+      promote the survivors to precise DFT refinement,
+      and hand the final champions to experiment and synthesis.
+      “There is no best method — only a method that is good enough.” That piece of workshop
+      wisdom is this chapter's final lesson.
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · “The equations are all written down — is chemistry nearly ‘finished’?”</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Dirac himself said all the laws are known — the rest of chemistry is just a
+          computing problem,
+          and once computers are fast enough, chemists will have nothing left to do.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Having the equations ≠ having chemistry. First, the many-electron problem runs into
+          the <strong>curse of dimensionality</strong>,
+          and “a somewhat faster computer” can never chase down exponential growth — which is
+          exactly why approximate methods and machine learning exist;
+          second, even when the computation is affordable,
+          <strong>deciding what to compute, how to actually make it, and what the real
+          phenomena mean</strong> —
+          posing questions, designing syntheses, interpreting results — remains the chemist's
+          creative work.
+          Theory has drawn the track for chemistry; the race has only just begun.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>The Schrödinger equation in principle contains all of chemistry, but
+          many-electron systems hit the <strong>curse of dimensionality</strong>;
+          computational chemistry = trading approximation for solvability.</li>
+        <li>The <strong>Born–Oppenheimer approximation</strong> is the bridge between the two
+          engines: freeze the nuclei and solve the electrons → lay out the potential-energy
+          surface → let the nuclei move on it.</li>
+        <li>DFT replaces the wave function with the electron density and is the
+          price–performance king; the variational principle guarantees the approximation only
+          ever errs high, never low.</li>
+        <li>On the potential-energy surface: <strong>valley = stable configuration,
+          saddle point = transition state, height difference = activation energy</strong>;
+          once Ea is computed, the Arrhenius equation predicts the rate.</li>
+        <li>MD uses a force field + Newton's laws to generate “molecular movies”;
+          temperature = average kinetic energy;
+          all the accuracy rides on the force field, and classical force fields cannot see
+          reactions.</li>
+        <li>Machine-learning potentials are “as accurate as quantum, as fast as classical”;
+          AlphaFold represents the data-driven route —
+          discovery and explanation complement each other, and computed results must face
+          experimental test.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Experiments in Silico <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "What is the physical basis of the Born–Oppenheimer approximation (first freezing the nuclei, then solving the electronic equation)?",
+            "options": ["Nuclei are thousands to tens of thousands of times heavier than electrons, and electrons adapt to the nuclear positions almost instantaneously", "Electrons do not interact with one another, so the equation separates to begin with", "Nuclei never move during chemical processes", "The wave function must be real-valued to be solvable"],
+            "answer": 0,
+            "explain": "The basis is the disparity of masses: nuclei are thousands to hundreds of thousands of times heavier than electrons, and the electronic state adjusts nearly instantaneously, so the nuclear coordinates can be treated as parameters while the electronic problem is solved first, yielding the potential-energy surface for nuclear motion. Electron–electron repulsion is precisely the difficulty that must be approximated away, and the nuclei certainly do move — just much more slowly."
+          },
+          {
+            "q": "Which statement about the transition state (saddle point) on a potential-energy surface is correct?",
+            "options": ["A maximum in every direction — the highest-energy point on the entire surface", "A maximum along the reaction direction and a minimum perpendicular to it; the slightest push sends it sliding away", "As stable as a minimum, so it can exist for a long time", "Located at the average of the reactant and product energies"],
+            "answer": 1,
+            "explain": "The transition state is a saddle point: the first derivative vanishes; along the reaction coordinate it is a maximum (the energy is lower on both sides), while in the remaining directions it is a minimum. It is an unstable equilibrium — a gentle push along the net reaction direction sends it sliding toward the reactant or product valley, and its lifetime is on the order of a molecular vibration period."
+          },
+          {
+            "q": "What does “temperature” mean in a molecular dynamics simulation?",
+            "options": ["The heat output of the computer running the simulation", "A statistical measure of the particles' average kinetic energy, computed from the mean of the squared velocities", "The instantaneous speed of each individual particle", "The magnitude of the system's total potential energy"],
+            "answer": 1,
+            "explain": "In statistical mechanics temperature corresponds to average kinetic energy: kT is proportional to m times the mean squared velocity. The measured temperature in a simulation is obtained precisely by averaging the squared velocities of all the particles, and the thermostat keeps the system near the set point by gently rescaling the velocities (adding or removing kinetic energy)."
+          },
+          {
+            "q": "What is the greatest advantage of machine-learning potentials?",
+            "options": ["They can be used with no training data at all", "They transcend quantum mechanics and are more fundamental than first principles", "Accuracy close to first-principles calculations, speed close to classical force fields", "They can completely replace experimental measurement"],
+            "answer": 2,
+            "explain": "Machine-learning potentials train a neural network on DFT data to imitate the quantum calculation: accuracy close to DFT, cost close to an empirical force field, which makes large-scale simulations containing chemical reactions possible. But at heart they interpolate the regularities within their training data; their ability to extrapolate is limited, let alone replacing experiment."
+          },
+          {
+            "q": "Two reactions have activation energies of 40 and 80 kJ/mol, with identical pre-exponential factors. Heated by the same amount, which one accelerates more sharply?",
+            "options": ["Both speed up by the same factor", "The Ea = 40 kJ/mol reaction accelerates more", "Impossible to compare without knowing the reactant concentrations", "The Ea = 80 kJ/mol reaction accelerates more"],
+            "answer": 3,
+            "explain": "The speed-up on heating is e raised to the power (Ea/R)(1/T₁−1/T₂): the larger the Ea, the larger the factor — high-barrier reactions are more temperature-sensitive. This also explains why a catalyst that cuts the barrier from 80 to 40 kJ/mol is often enough to let a reaction that demanded high temperature proceed at room temperature."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">09 Theoretical and Computational Chemistry · Overview</span></a>
+      <a class="next" href="../10-Medicinal-Chemistry/index.html"><span class="pg-dir">Next branch →</span><br><span class="pg-title">10 Medicinal Chemistry · Overview</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (potential-energy surface explorer / particle MD simulator) ============ */
+(function () {
+  "use strict";
+
+  /* ---------- 1. Potential-energy surface explorer (Müller–Brown PES) ---------- */
+  var pesCanvas = document.getElementById("pesCanvas");
+  if (pesCanvas) {
+    var pctx = pesCanvas.getContext("2d");
+    var PW = pesCanvas.width, PH = pesCanvas.height;
+    var XMIN = -1.6, XMAX = 1.2, YMIN = -0.4, YMAX = 2.2;
+    var MB_A = [-200, -100, -170, 15], MB_a = [-1, -1, -6.5, 0.7],
+        MB_b = [0, 0, 11, 0.6], MB_c = [-10, -10, -6.5, 0.7],
+        MB_x = [1, 0, -0.5, -1], MB_y = [0, 1.5, 1.5, 1];
+
+    function mbE(x, y) {
+      var s = 0;
+      for (var i = 0; i < 4; i++) {
+        var dx = x - MB_x[i], dy = y - MB_y[i];
+        s += MB_A[i] * Math.exp(MB_a[i] * dx * dx + MB_b[i] * dx * dy + MB_c[i] * dy * dy);
+      }
+      return s;
+    }
+    function mbG(x, y) {
+      var gx = 0, gy = 0;
+      for (var i = 0; i < 4; i++) {
+        var dx = x - MB_x[i], dy = y - MB_y[i];
+        var e = MB_A[i] * Math.exp(MB_a[i] * dx * dx + MB_b[i] * dx * dy + MB_c[i] * dy * dy);
+        gx += e * (2 * MB_a[i] * dx + MB_b[i] * dy);
+        gy += e * (MB_b[i] * dx + 2 * MB_c[i] * dy);
+      }
+      return [gx, gy];
+    }
+    function toPx(x, y) {
+      return [(x - XMIN) / (XMAX - XMIN) * PW, PH - (y - YMIN) / (YMAX - YMIN) * PH];
+    }
+    function toDom(px, py) {
+      return [XMIN + px / PW * (XMAX - XMIN), YMIN + (PH - py) / PH * (YMAX - YMIN)];
+    }
+    function clampX(v) { return Math.max(XMIN + 0.02, Math.min(XMAX - 0.02, v)); }
+    function clampY(v) { return Math.max(YMIN + 0.02, Math.min(YMAX - 0.02, v)); }
+
+    var PTS = [
+      { x: 0.623, y: 0.028, tag: "Reactant valley (local minimum)", lab: "Reactants" },
+      { x: -0.558, y: 1.442, tag: "Product valley (global minimum)", lab: "Products" },
+      { x: -0.050, y: 0.467, tag: "Intermediate (local minimum)", lab: "Intermediate" },
+      { x: 0.212, y: 0.293, tag: "Transition state ① (saddle point)", lab: "TS①" },
+      { x: -0.822, y: 0.624, tag: "Transition state ② (saddle point)", lab: "TS②" }
+    ];
+
+    /* Color ramp: blue (low energy) → red (high energy) */
+    function pal(t) {
+      var S = [
+        [0, 30, 58, 138], [0.25, 14, 165, 233], [0.45, 34, 197, 94],
+        [0.65, 253, 224, 71], [0.85, 249, 115, 22], [1, 220, 38, 38]
+      ];
+      for (var i = 1; i < S.length; i++) {
+        if (t <= S[i][0]) {
+          var u = (t - S[i - 1][0]) / (S[i][0] - S[i - 1][0]);
+          return [Math.round(S[i - 1][1] + u * (S[i][1] - S[i - 1][1])),
+                  Math.round(S[i - 1][2] + u * (S[i][2] - S[i - 1][2])),
+                  Math.round(S[i - 1][3] + u * (S[i][3] - S[i - 1][3]))];
+        }
+      }
+      return [220, 38, 38];
+    }
+
+    /* Pre-render the terrain (once) */
+    var LO = -147, HI = 15;
+    var pesBg = document.createElement("canvas");
+    pesBg.width = PW; pesBg.height = PH;
+    (function () {
+      var bctx = pesBg.getContext("2d");
+      var img = bctx.createImageData(PW, PH);
+      for (var py = 0; py < PH; py++) {
+        var wy = YMIN + (PH - py) / PH * (YMAX - YMIN);
+        for (var px = 0; px < PW; px++) {
+          var wx = XMIN + px / PW * (XMAX - XMIN);
+          var t = Math.max(0, Math.min(1, (mbE(wx, wy) - LO) / (HI - LO)));
+          var c = pal(t);
+          var k = (py * PW + px) * 4;
+          img.data[k] = c[0]; img.data[k + 1] = c[1]; img.data[k + 2] = c[2]; img.data[k + 3] = 255;
+        }
+      }
+      bctx.putImageData(img, 0, 0);
+    })();
+
+    var ball = { x: 0.623, y: 0.028 };
+    var trail = [];
+    var descending = false, dragging = false;
+    var pesX = document.getElementById("pesX"), pesY = document.getElementById("pesY");
+    var pesReadout = document.getElementById("pesReadout");
+    var btnDesc = document.getElementById("pesDescend"), btnPReset = document.getElementById("pesReset");
+
+    function pesWhere(x, y) {
+      var best = null, bd = 0.2;
+      for (var i = 0; i < PTS.length; i++) {
+        var d = Math.hypot(x - PTS[i].x, y - PTS[i].y);
+        if (d < bd) { bd = d; best = PTS[i]; }
+      }
+      return best;
+    }
+
+    function pesDraw() {
+      pctx.drawImage(pesBg, 0, 0);
+      pctx.shadowColor = "rgba(0,0,0,.75)"; pctx.shadowBlur = 3;
+      pctx.font = "bold 11px sans-serif"; pctx.textAlign = "left";
+      pctx.fillStyle = "rgba(255,255,255,.95)";
+      pctx.fillText("Energy landscape: blue = valley floor (low energy) → red = hillside (high energy)", 10, 18);
+      pctx.fillText("Müller–Brown model potential-energy surface", 10, 34);
+      pctx.font = "bold 11.5px sans-serif"; pctx.textAlign = "center";
+      for (var i = 0; i < PTS.length; i++) {
+        var p = toPx(PTS[i].x, PTS[i].y);
+        pctx.beginPath(); pctx.arc(p[0], p[1], 3, 0, 6.283);
+        pctx.fillStyle = "#fff"; pctx.fill();
+        pctx.fillText(PTS[i].lab, p[0], p[1] - 9);
+      }
+      pctx.shadowBlur = 0;
+      if (trail.length > 1) {
+        pctx.strokeStyle = "rgba(255,255,255,.9)";
+        pctx.lineWidth = 2; pctx.setLineDash([5, 4]);
+        pctx.beginPath();
+        var p0 = toPx(trail[0].x, trail[0].y);
+        pctx.moveTo(p0[0], p0[1]);
+        for (var j = 1; j < trail.length; j++) {
+          var pj = toPx(trail[j].x, trail[j].y);
+          pctx.lineTo(pj[0], pj[1]);
+        }
+        pctx.stroke(); pctx.setLineDash([]);
+      }
+      var b = toPx(ball.x, ball.y);
+      pctx.beginPath(); pctx.arc(b[0], b[1], 8, 0, 6.283);
+      pctx.fillStyle = "#fff"; pctx.fill();
+      pctx.lineWidth = 2.5; pctx.strokeStyle = "#111827"; pctx.stroke();
+    }
+
+    function pesRead() {
+      pesX.value = ball.x; pesY.value = ball.y;
+      var E = mbE(ball.x, ball.y), g = mbG(ball.x, ball.y), gn = Math.hypot(g[0], g[1]);
+      var w = pesWhere(ball.x, ball.y), loc;
+      if (gn < 2) loc = "Gradient ≈ 0: resting at a stationary point — " + (w ? w.tag : "some pass or valley floor");
+      else loc = w ? "On a slope (near " + w.tag + ")" : "On a slope";
+      pesReadout.textContent = descending
+        ? "⤵ Steepest descent rolling... (the white ball follows only the slope and never climbs)"
+        : "Ball position (" + ball.x.toFixed(2) + ", " + ball.y.toFixed(2) + ") | Energy E = " +
+          E.toFixed(1) + " | Gradient |∇E| = " + gn.toFixed(1) + " | " + loc;
+    }
+
+    function startDescent() {
+      if (descending) return;
+      trail = [{ x: ball.x, y: ball.y }];
+      descending = true;
+      var steps = 0;
+      (function anim() {
+        var s = 0;
+        while (descending && s < 8) {
+          var g = mbG(ball.x, ball.y), gn = Math.hypot(g[0], g[1]);
+          if (gn < 2 || steps >= 800) { descending = false; break; }
+          ball.x = clampX(ball.x - g[0] / gn * 0.012);
+          ball.y = clampY(ball.y - g[1] / gn * 0.012);
+          trail.push({ x: ball.x, y: ball.y });
+          steps++; s++;
+        }
+        pesDraw(); pesRead();
+        if (descending) requestAnimationFrame(anim);
+      })();
+    }
+
+    function pesPoint(e) {
+      var r = pesCanvas.getBoundingClientRect();
+      var px = (e.clientX - r.left) * PW / r.width;
+      var py = (e.clientY - r.top) * PH / r.height;
+      var d = toDom(px, py);
+      ball.x = clampX(d[0]); ball.y = clampY(d[1]);
+      trail = [];
+    }
+    pesCanvas.addEventListener("pointerdown", function (e) {
+      dragging = true; descending = false;
+      try { pesCanvas.setPointerCapture(e.pointerId); } catch (err) {}
+      pesPoint(e); pesDraw(); pesRead();
+    });
+    pesCanvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      pesPoint(e); pesDraw(); pesRead();
+    });
+    pesCanvas.addEventListener("pointerup", function () { dragging = false; });
+    pesCanvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    if (pesX) pesX.addEventListener("input", function () {
+      descending = false; trail = [];
+      ball.x = clampX(parseFloat(this.value)); pesDraw(); pesRead();
+    });
+    if (pesY) pesY.addEventListener("input", function () {
+      descending = false; trail = [];
+      ball.y = clampY(parseFloat(this.value)); pesDraw(); pesRead();
+    });
+    if (btnDesc) btnDesc.addEventListener("click", startDescent);
+    if (btnPReset) btnPReset.addEventListener("click", function () {
+      descending = false; trail = [];
+      ball.x = 0.623; ball.y = 0.028;
+      pesDraw(); pesRead();
+    });
+    pesDraw(); pesRead();
+  }
+
+  /* ---------- 2. Particle MD simulator (LJ + gravity + thermostat) ---------- */
+  var mdCanvas = document.getElementById("mdCanvas");
+  if (mdCanvas) {
+    var mctx = mdCanvas.getContext("2d");
+    var MW = mdCanvas.width, MH = mdCanvas.height, S = 20;
+    var BW = MW / S, BH = MH / S; /* a box of about 28σ × 17σ */
+    var P = [];
+    var mdSet = 0.30, mdTema = 0.30;
+    var mdSlider = document.getElementById("mdT"), mdTVal = document.getElementById("mdTVal");
+    var mdReadout = document.getElementById("mdReadout"), mdResetBtn = document.getElementById("mdReset");
+
+    function mdInit() {
+      P = [];
+      var tries = 0;
+      while (P.length < 90 && tries < 30000) {
+        tries++;
+        var x = 1 + Math.random() * (BW - 2), y = 1 + Math.random() * (BH - 2), ok = true;
+        for (var i = 0; i < P.length; i++) {
+          var dx = P[i].x - x, dy = P[i].y - y;
+          if (dx * dx + dy * dy < 1.44) { ok = false; break; }
+        }
+        if (ok) {
+          var a = Math.random() * 6.283, v = Math.sqrt(mdSet) * (0.5 + Math.random());
+          P.push({ x: x, y: y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, fx: 0, fy: 0 });
+        }
+      }
+      mdTema = mdSet;
+    }
+
+    function mdStep(dt) {
+      var i, j;
+      for (i = 0; i < P.length; i++) { P[i].fx = 0; P[i].fy = -0.012; }
+      for (i = 0; i < P.length; i++) {
+        for (j = i + 1; j < P.length; j++) {
+          var dx = P[j].x - P[i].x, dy = P[j].y - P[i].y, r2 = dx * dx + dy * dy;
+          if (r2 < 6.25 && r2 > 0.01) {
+            var inv2 = 1 / r2, inv6 = inv2 * inv2 * inv2;
+            var f = 24 * inv6 * (2 * inv6 - 1) * inv2;
+            P[i].fx += f * dx; P[i].fy += f * dy;
+            P[j].fx -= f * dx; P[j].fy -= f * dy;
+          }
+        }
+      }
+      var sum = 0;
+      for (i = 0; i < P.length; i++) {
+        var p = P[i];
+        p.vx += p.fx * dt; p.vy += p.fy * dt;
+        p.x += p.vx * dt; p.y += p.vy * dt;
+        if (p.x < 0.5) { p.x = 0.5; p.vx = Math.abs(p.vx); }
+        if (p.x > BW - 0.5) { p.x = BW - 0.5; p.vx = -Math.abs(p.vx); }
+        if (p.y < 0.5) { p.y = 0.5; p.vy = Math.abs(p.vy); }
+        if (p.y > BH - 0.5) { p.y = BH - 0.5; p.vy = -Math.abs(p.vy); }
+        sum += p.vx * p.vx + p.vy * p.vy;
+      }
+      var Tc = sum / (2 * P.length);
+      if (Tc > 1e-9) {
+        var lam = Math.sqrt(1 + 0.12 * (mdSet / Tc - 1));
+        lam = Math.max(0.9, Math.min(1.12, lam));
+        for (i = 0; i < P.length; i++) { P[i].vx *= lam; P[i].vy *= lam; }
+      }
+    }
+
+    function mdStatus(T) {
+      if (T < 0.08) return "Low temperature: particles condense into a droplet; surface particles occasionally escape and are pulled back";
+      if (T < 0.45) return "Intermediate temperature: droplet and vapor coexist in a dynamic evaporation–condensation tug-of-war";
+      return "High temperature: gaseous; particles fly about freely, interacting only in the instant of collision";
+    }
+
+    function mdDraw() {
+      mctx.fillStyle = "#0f172a"; mctx.fillRect(0, 0, MW, MH);
+      mctx.strokeStyle = "#334155"; mctx.lineWidth = 2; mctx.strokeRect(1, 1, MW - 2, MH - 2);
+      var vref = Math.sqrt(Math.max(mdSet, 0.05) * 3) + 0.15;
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i], v = Math.hypot(p.vx, p.vy);
+        var t = Math.min(1, v / vref);
+        mctx.beginPath();
+        mctx.arc(p.x * S, MH - p.y * S, 8, 0, 6.283);
+        mctx.fillStyle = "hsl(" + Math.round(205 - 205 * t) + ",85%,62%)";
+        mctx.fill();
+      }
+      mctx.font = "bold 11px sans-serif"; mctx.textAlign = "left";
+      mctx.fillStyle = "rgba(255,255,255,.85)";
+      mctx.fillText("Color = instantaneous speed: blue (slow) → red (fast) — a glimpse of the speed distribution", 10, 18);
+    }
+
+    var mdFrame = 0;
+    function mdLoop() {
+      for (var s = 0; s < 6; s++) mdStep(0.008);
+      mdFrame++;
+      var sum = 0, vsum = 0;
+      for (var i = 0; i < P.length; i++) {
+        sum += P[i].vx * P[i].vx + P[i].vy * P[i].vy;
+        vsum += Math.hypot(P[i].vx, P[i].vy);
+      }
+      mdTema = mdTema * 0.95 + (sum / (2 * P.length)) * 0.05;
+      mdDraw();
+      if (mdFrame % 8 === 0) {
+        mdReadout.textContent = "Set T* = " + mdSet.toFixed(2) + " | Measured T* ≈ " + mdTema.toFixed(2) +
+          " | Mean speed ≈ " + (vsum / P.length).toFixed(2) + " σ/τ | Observation: " + mdStatus(mdTema);
+      }
+    }
+    /* Reduced motion: no continuous animation; evolve silently to equilibrium and draw one snapshot */
+    function mdSettle() {
+      mdInit();
+      for (var i = 0; i < 2400; i++) mdStep(0.008);
+      var sum = 0, vsum = 0;
+      for (i = 0; i < P.length; i++) {
+        sum += P[i].vx * P[i].vx + P[i].vy * P[i].vy;
+        vsum += Math.hypot(P[i].vx, P[i].vy);
+      }
+      mdTema = sum / (2 * P.length);
+      mdDraw();
+      mdReadout.textContent = "Set T* = " + mdSet.toFixed(2) + " | Equilibrium T* ≈ " + mdTema.toFixed(2) +
+        " | Mean speed ≈ " + (vsum / P.length).toFixed(2) + " σ/τ | Observation: " + mdStatus(mdTema) +
+        " | Equilibrium snapshot shown per the system's reduced-motion setting";
+    }
+    var mdReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
+
+    if (mdSlider) mdSlider.addEventListener("input", function () {
+      mdSet = parseInt(this.value, 10) / 100;
+      if (mdTVal) mdTVal.textContent = mdSet.toFixed(2);
+      if (mdReduced) mdSettle();
+    });
+    if (mdResetBtn) mdResetBtn.addEventListener("click", function () {
+      if (mdReduced) mdSettle(); else mdInit();
+    });
+    /* The loop runs only while the simulator is visible and the page is in the foreground */
+    if (mdReduced) mdSettle();
+    else { mdInit(); mdDraw(); DSHChem.autoloop(mdCanvas, mdLoop); }
+  }
+})();
+</script>
+</body>
+</html>

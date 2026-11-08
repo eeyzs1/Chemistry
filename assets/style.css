@@ -400,3 +400,15 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 1
   .ladder-panel { display: block !important; border-top: 1px dashed #ccc; padding-top: 10px; }
   .card, .worked, .fig .fig-canvas { box-shadow: none; }
 }
+
+/* 语言切换（EN / 中文，由 tutor.js 注入或直接写在门户页） */
+.crumbs .langswitch {
+  margin-left: auto;
+  font-size: .78rem; font-weight: 700; letter-spacing: .04em;
+  padding: 3px 12px; min-height: 28px;
+  border-radius: 999px; border: 1px solid var(--accent-ring);
+  background: var(--accent-soft); color: var(--accent-deep);
+  text-decoration: none; display: inline-block;
+}
+.crumbs .langswitch:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media print { .crumbs .langswitch { display: none; } }

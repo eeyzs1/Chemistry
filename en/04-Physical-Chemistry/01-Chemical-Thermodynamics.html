@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemical Thermodynamics · Physical Chemistry Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b04">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">04 Physical Chemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · Chemical Thermodynamics</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">04 Physical Chemistry · Chapter 1</div>
+    <h1>Chemical Thermodynamics: The Steering Wheel of Change</h1>
+    <p class="lede">
+      Tear open a disposable hand warmer and it heats itself, never "sucking" heat back from your palm to cool down;
+      crack an ammonium nitrate instant cold pack and it absorbs heat and turns cold — yet it, too, happens all by itself.
+      One releases heat, the other absorbs it, <strong>yet both are spontaneous</strong> — clearly, "releasing heat" is not
+      the final arbiter of direction. This chapter goes looking for the real judge: first we learn to keep the books of
+      change (internal energy and enthalpy), then to add up paths (Hess's law), and finally we summon
+      <strong>ΔG = ΔH − TΔS</strong> to settle, once and for all, the question: can this change happen spontaneously?
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 65 minutes</span>
+      <span class="chip">Prerequisites: 00 Foundations · moles and stoichiometry</span>
+      <span class="chip">Interactive animation ×1 (ΔG explorer)</span>
+      <span class="chip">Self-Test: 5 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Chapter contents">
+    <a href="#intro">Introduction</a>
+    <a href="#basics">Systems and state functions</a>
+    <a href="#firstlaw">First law and enthalpy</a>
+    <a href="#hess">Hess's law</a>
+    <a href="#gibbs">Entropy and Gibbs free energy</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: Why the world has a direction</h2>
+    <p>
+      Hot coffee left on the table always cools, yet cold coffee never warms itself; a perfume bottle opened once fills
+      the whole room with fragrance, yet the molecules never politely return to the bottle; a mountain stream runs
+      downhill and never flows back up to the summit. Physics calls changes of this kind — those that happen without
+      external pushing and cannot run themselves backwards —
+      <span class="term">spontaneous processes</span>.
+    </p>
+    <p>
+      Chemists ask a more concrete question: <strong>can a given chemical reaction — iron rusting, glucose oxidation,
+      water freezing — actually happen spontaneously? Under what conditions?</strong> This question is valuable because
+      the answer tells us directly: whether a battery can be built, how hot limestone must be fired to become lime,
+      and whether a dream synthesis route is "physically allowed" at all. This chapter proceeds in three steps: first,
+      what exactly we keep accounts of (§1); then two bookkeeping rules (§2, §3); and finally the judge takes the
+      bench (§4).
+    </p>
+    <details class="think">
+      <summary>Think It Through: opening a perfume bottle, the molecules soon spread through the whole room; they never return to the bottle on their own. Is the "energy" difference between these two situations large? Where does the real difference lie?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: compare the two arrangements — "all molecules in the bottle" versus "molecules spread evenly through the room". Which one can be realized in more ways?</p>
+        <p>
+          Energetically the two are almost identical — the kinetic energy of the flying molecules has not changed.
+          The real difference is <strong>the number of possible arrangements</strong>: "spread through the room" can be
+          realized in countless ways, while "all back in the bottle" allows only a handful. The world naturally favors
+          states that can be realized in more ways — that is the <strong>entropy</strong> that §4 will quantify.
+          The sense of direction often comes not from energy but from "disorder".
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Systems and state functions ============ -->
+  <section id="basics">
+    <h2>§1 Systems, surroundings, and state functions</h2>
+    <p>
+      Before keeping accounts, draw the ledger's boundary. The portion of matter under study is the
+      <span class="term">system</span>; everything outside it is the <span class="term">surroundings</span>.
+      If you study hot water in a cup, the water is the system while the cup, the tabletop, and the air are the
+      surroundings. In the laboratory, a reaction in an open beaker can exchange both matter and energy with its
+      surroundings, while a sealed bomb calorimeter exchanges only energy. Thermodynamics cares about
+      <strong>how much heat and work are exchanged between the two</strong>.
+    </p>
+    <p>
+      The system's "net worth" is described by quantities that depend only on its current state: temperature, pressure,
+      volume, and the internal energy <span class="formula">U</span>. Such quantities are called
+      <span class="term">state functions</span> — <strong>they depend only on the starting point and the end point,
+      not on the path taken</strong>. Heat <span class="formula">Q</span> and work <span class="formula">W</span>,
+      by contrast, are <strong>path quantities</strong>: they describe "how the journey was made", and the same trip
+      done differently yields different values.
+    </p>
+
+    <details class="think">
+      <summary>Think It Through: returning from the mountaintop lodge to the parking lot, by cable car or on foot. Which of "drop in elevation" and "energy you expended" behaves like a state function?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: change the way you descend — which number never changes?</p>
+        <p>
+          The drop in elevation depends only on the start and end points — by cable car or by trekking over ridges it
+          is 800 m either way, so it is a "state function". The energy you expend depends entirely on the length and
+          style of the route — it is a "path quantity". In thermodynamics:
+          <strong>ΔU is like the elevation difference; Q and W are like the effort</strong> — which explains why the
+          same reaction can release different amounts of heat in different apparatus, while the change in internal
+          energy stays the same.
+        </p>
+      </div>
+    </details>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The key idea in one sentence</div>
+      State functions are like <strong>elevation</strong> (only the endpoints matter); path quantities are like the
+      <strong>effort of the walk</strong> (the route matters). The protagonists of this chapter —
+      <span class="formula">U</span>, <span class="formula">H</span>,
+      <span class="formula">S</span>, <span class="formula">G</span> — are all state functions,
+      which is why their differences ΔH and ΔG can be freely split apart and recombined as in §3.
+    </div>
+  </section>
+
+  <!-- ============ §2 First law and enthalpy ============ -->
+  <section id="firstlaw">
+    <h2>§2 The first law of thermodynamics and enthalpy</h2>
+    <p>
+      Written into the chemist's ledger, conservation of energy becomes the
+      <span class="term">first law of thermodynamics</span>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">ΔU = Q + W</span>
+    </p>
+    <p>
+      Using the common sign convention: <strong>Q &gt; 0 the system absorbs heat, Q &lt; 0 the system releases heat;
+      W &gt; 0 the surroundings do work on the system, W &lt; 0 the system does work on the surroundings</strong>.
+      Example: a gas absorbs 50 J of heat while expanding and doing 20 J of work on a piston, so W = −20 J and
+      ΔU = 50 + (−20) = +30 J — part of the heat taken in was spent as work done on the outside, and the rest was
+      deposited into internal energy. The law says: energy is never created or destroyed, only transferred between
+      system and surroundings; <strong>a perpetual-motion machine cannot be built</strong>.
+    </p>
+
+    <h3>Enthalpy: an energy account tailored for open vessels</h3>
+    <p>
+      Laboratory reactions are almost always run at <strong>constant pressure</strong> (open vessels under an
+      unchanging atmosphere). Whenever gas is produced or consumed, the system must do some "expansion work" pushing
+      the atmosphere back, an item ΔU does not settle cleanly. So thermodynamics defines a new state function —
+      <span class="term">enthalpy</span>, <span class="formula">H = U + pV</span> — which exactly covers that work and
+      makes the heat budget of a constant-pressure process neat and tidy:
+    </p>
+    <p style="text-align:center">
+      at constant pressure <span class="formula">Q<sub>p</sub> = ΔH</span>
+    </p>
+    <p>
+      That is why chemists talk about ΔH from dawn to dusk: <strong>the "heat of reaction" measured at constant
+      pressure is precisely the enthalpy change</strong>. The signs tell the story at a glance:
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Sign</th><th>Meaning</th><th>System's energy</th><th>Feels like</th><th>Examples (per mole)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="formula">ΔH &lt; 0</span></td><td>Exothermic reaction</td><td>Enthalpy drops; surplus heat flows to the surroundings</td><td>warmer</td><td>Methane combustion −890 kJ; neutralization −57.3 kJ</td></tr>
+        <tr><td><span class="formula">ΔH &gt; 0</span></td><td>Endothermic reaction</td><td>Enthalpy rises; heat is "borrowed" from the surroundings</td><td>cooler</td><td>Ice melting +6.0 kJ; ammonium nitrate dissolving in water +25.8 kJ</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Note the hidden landmine in the "feels like" column: exothermic ≠ spontaneous, and endothermic ≠ non-spontaneous
+      — the endothermic dissolution in the last row, which happens all by itself, is precisely the open case that
+      §4 will resolve.
+    </p>
+  </section>
+
+  <!-- ============ §3 Hess's law ============ -->
+  <section id="hess">
+    <h2>§3 Hess's law: adding and subtracting heats of reaction</h2>
+    <p>
+      In 1840 the Swiss chemist Hess summarized from experiments: <strong>at constant temperature and pressure (or
+      constant volume), the heat of reaction depends only on the initial and final states, not on the path taken</strong>.
+      This is <span class="term">Hess's law</span>. It is really a direct corollary of the fact that ΔH is the
+      increment of a state function — since only the endpoints matter, <strong>ΔH values add and subtract exactly as
+      the equations do</strong>, like the altitude gained on a mountain trek accumulated stage by stage.
+    </p>
+    <p>
+      Its greatest use is to <strong>calculate reaction heats that cannot be measured</strong>. Some reactions cannot
+      be "stopped halfway" — burning carbon, for instance: you can never burn it to pure CO (the CO always goes on to
+      burn to CO₂). So the question "how much heat does C release burning to CO" can only be answered by detour:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg width="640" height="210" viewBox="0 0 640 210" role="img" aria-label="Hess's law path diagram: the direct path from carbon to carbon dioxide and the stepwise path through carbon monoxide">
+          <defs>
+            <marker id="arrH" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0369a1"></path>
+            </marker>
+          </defs>
+          <!-- Start: C + O2 -->
+          <g transform="translate(105,105)">
+            <circle r="46" fill="#f0f9ff" stroke="#0369a1" stroke-width="2"></circle>
+            <text y="-4" text-anchor="middle" font-size="17" font-weight="800" fill="#075985">C + O₂</text>
+            <text y="20" text-anchor="middle" font-size="11" fill="#4b5563">start</text>
+          </g>
+          <!-- End: CO2 -->
+          <g transform="translate(535,105)">
+            <circle r="46" fill="#f0fdf4" stroke="#15803d" stroke-width="2"></circle>
+            <text y="-4" text-anchor="middle" font-size="17" font-weight="800" fill="#166534">CO₂</text>
+            <text y="20" text-anchor="middle" font-size="11" fill="#4b5563">end</text>
+          </g>
+          <!-- Direct path (top) -->
+          <path d="M150,68 Q320,8 490,68" fill="none" stroke="#0369a1" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <text x="320" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#075985">① Burn straight to the end: ΔH₁ = −393.5 kJ/mol</text>
+          <!-- Stepwise path (bottom) -->
+          <path d="M150,142 Q230,190 300,158" fill="none" stroke="#92400e" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <path d="M330,142 Q425,88 490,142" fill="none" stroke="#92400e" stroke-width="2.5" marker-end="url(#arrH)"></path>
+          <g transform="translate(320,178)">
+            <rect x="-64" y="-16" width="128" height="32" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"></rect>
+            <text y="5" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">CO (waypoint)</text>
+          </g>
+          <text x="196" y="192" text-anchor="middle" font-size="12" fill="#92400e">ΔH(?)</text>
+          <text x="445" y="96" text-anchor="middle" font-size="12" fill="#92400e">② then burn: −283.0</text>
+        </svg>
+      </div>
+      <figcaption>
+        The height difference (ΔH) along the two routes must be identical: ΔH₁ of the direct route = ΔH(?) + ΔH₂ of
+        the stepwise route. The "unmeasurable step" is thereby squeezed out by two measurable routes.
+      </figcaption>
+    </figure>
+
+    <h3>📐 Worked-Example Scaffold: find ΔH for "C burned to CO"</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · Full demonstration (watch me do it)</div>
+      <div class="worked-problem">
+        Given ① <span class="formula">C(s) + O₂(g) → CO₂(g)</span>, ΔH₁ = −393.5 kJ/mol;
+        ② <span class="formula">CO(g) + ½O₂(g) → CO₂(g)</span>, ΔH₂ = −283.0 kJ/mol.
+        Find ΔH for <span class="formula">C(s) + ½O₂(g) → CO(g)</span>.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">Recognize the difficulty: carbon burning in oxygen cannot be stopped at the CO stage (the CO
+          formed is immediately oxidized further), so the target reaction's ΔH <strong>cannot be measured
+          directly</strong> — exactly the signal for Hess's law to step in.</li>
+        <li class="step">Design the route: target = ① − ②. Check the matter account:
+          ①'s C + O₂ + CO₂ minus ②'s CO + ½O₂ + CO₂ —
+          CO₂ cancels on both sides, O₂ leaves 1 − ½ = ½, giving <strong>C + ½O₂ → CO</strong> ✓ exactly the target.</li>
+        <li class="step">Do the same arithmetic on ΔH: ΔH = ΔH₁ − ΔH₂ = (−393.5) − (−283.0) =
+          <strong>−110.5 kJ/mol</strong>. Note that "subtracting a negative number" means adding its absolute value —
+          don't drop the sign.</li>
+        <li class="step">Sanity check: C → CO₂ releases 393.5 kJ, of which C → CO releases 110.5 and CO → CO₂ releases
+          283.0; 110.5 + 283.0 = 393.5 ✓ the two routes' "height differences" close perfectly.
+          Answer: ΔH = <strong>−110.5 kJ/mol</strong> (exothermic).</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ §4 Entropy and Gibbs free energy ============ -->
+  <section id="gibbs">
+    <h2>§4 Entropy and Gibbs free energy: the final judge of direction</h2>
+
+    <h3>Entropy: the world's other preference</h3>
+    <p>
+      A brand-new deck of cards comes sorted neatly by suit; shuffle a few times and it is chaos. Drop it on the floor
+      and it will never re-stack itself. The molecular world is the same: in ice's crystal lattice every water molecule
+      "stands in formation"; once melted into water each wanders freely and the number of arrangements explodes.
+      Thermodynamics uses <span class="term">entropy</span> to measure this "number of ways of being realized" —
+      intuitively, <strong>entropy is a measure of the system's disorder (more strictly: of the number of
+      microstates)</strong>: the larger S, the more possible microscopic arrangements. Gas expanding, a substance
+      dissolving, a crystal melting — in all of them entropy increases.
+    </p>
+
+    <h3>ΔG: two judges merged into one</h3>
+    <p>
+      Now put both driving forces into a single formula. In the 1870s Gibbs defined the
+      <span class="term">Gibbs free energy</span> and proved that at <strong>constant temperature and pressure</strong>:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">ΔG = ΔH − TΔS</span>
+    </p>
+    <p>
+      ΔH is the <strong>energy term</strong> (negative when heat is released, pushing the reaction forward); TΔS is the
+      <strong>entropy term</strong> (positive when entropy grows, and the higher the temperature the harder it pushes).
+      The two play tug-of-war, and the net push is ΔG:
+    </p>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The spontaneity criterion (constant T and p)</div>
+      <span class="formula">ΔG &lt; 0</span> the forward reaction is <strong>spontaneous</strong>;
+      <span class="formula">ΔG = 0</span> the system is at <strong>equilibrium</strong>;
+      <span class="formula">ΔG &gt; 0</span> the forward reaction is not spontaneous (the <strong>reverse</strong>
+      reaction is). The ice-melting case is thereby solved: ΔH = +6.0 kJ/mol "objects", but at 298 K the term
+      TΔS ≈ 6.6 kJ/mol "pushes", so ΔG = 6.0 − 6.6 = −0.6 kJ/mol &lt; 0 —
+      <strong>entropy wins, so an endothermic change still proceeds spontaneously</strong>.
+    </div>
+
+    <p>Lay out the four sign combinations of ΔH and ΔS in one table, and the role of temperature becomes plain:</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>ΔH</th><th>ΔS</th><th>ΔG vs. temperature</th><th>Spontaneity</th><th>Examples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>−</td><td>+</td><td>always negative</td><td><strong>spontaneous at any temperature</strong></td><td>H₂O₂ decomposition: 2H₂O₂ → 2H₂O + O₂ (exothermic and gas-producing)</td></tr>
+        <tr><td>+</td><td>−</td><td>always positive</td><td><strong>never spontaneous</strong></td><td>CO decomposing back to C + ½O₂ (the reverse of Example 1)</td></tr>
+        <tr><td>−</td><td>−</td><td>increases as T rises</td><td><strong>spontaneous at low T, not at high T</strong> (crossover T = ΔH/ΔS)</td><td>Ammonia synthesis N₂ + 3H₂ → 2NH₃</td></tr>
+        <tr><td>+</td><td>+</td><td>decreases as T rises</td><td><strong>spontaneous at high T, not at low T</strong> (crossover T = ΔH/ΔS)</td><td>CaCO₃ decomposition → CaO + CO₂</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why isn't "lowest energy" enough to guarantee spontaneity?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          The world has more than one preference: besides "flow downhill" there is "shuffle towards disorder".
+          Waterfalls race to lower ground (energy decreasing) and perfume spreads through the room (disorder
+          increasing) — the two currents often run the same way, fooling us into thinking "lowest energy = always
+          spontaneous". Ice melting at room temperature runs the other way: it absorbs heat and its energy rises, but
+          its molecules gain freedom from the tidy lattice — <strong>disorder's winning margin outweighs energy's
+          loss</strong>. Watch only the energy and you have read only half the map.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Data</span>
+        <p>
+          Settle it with the formula. Ice melting: ΔH = +6.0 kJ/mol, ΔS = +22 J/(mol·K) = +0.022 kJ/(mol·K).
+          At 298 K (25 °C), ΔG = 6.0 − 298×0.022 = 6.0 − 6.6 = <strong>−0.6 kJ/mol</strong>, spontaneous;
+          at 268 K (−5 °C), ΔG = 6.0 − 5.9 = <strong>+0.1 kJ/mol</strong>, not spontaneous — the ice stays solid.
+          The crossover sits exactly at T* = ΔH/ΔS = 6000/22 ≈ 273 K — that is 0 °C.
+          <strong>Same reaction, temperature changes the verdict</strong>: a phenomenon "lowest energy" cannot
+          explain, but ΔG can.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · The essence</span>
+        <p>
+          The real judge is the second law of thermodynamics: <strong>the total entropy of an isolated system never
+          decreases</strong>. When the system absorbs heat ΔH on melting, the surroundings lose that heat, so the
+          surroundings' entropy change is ΔS<sub>surr</sub> = −ΔH/T (negative: the surroundings release heat to the
+          system). The universe's total entropy change is therefore ΔS<sub>total</sub> = ΔS − ΔH/T. Multiply both
+          sides by −T: <span class="formula">−TΔS<sub>total</sub> = ΔH − TΔS = ΔG</span>.
+          So <strong>ΔG &lt; 0 ⇔ ΔS<sub>total</sub> &gt; 0</strong> — ΔG is merely a way of folding "the
+          surroundings' half of the ledger" into the system's books, and its verdict is always signed: the total
+          entropy of the universe increases.
+        </p>
+      </div>
+    </div>
+
+    <h3>🔬 Try It Out: the ΔG explorer</h3>
+    <p>
+      Drag the three sliders for ΔH, ΔS, and T: the right panel shows the ΔG value and the spontaneity verdict in real
+      time, while the dot on the four-quadrant chart at the left marks your current (ΔH, ΔS) position and quadrant.
+      Try the three presets: first verify the 273 K crossover with "ice melting"; then feel with "ammonia synthesis"
+      why "low temperature favored" pairs with low-temperature industrial conditions; finally take "CaCO₃
+      decomposition" past 1113 K and watch the verdict flip on the spot.
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <svg id="ggSvg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-label="ΔG four-quadrant explorer">
+          <!-- Quadrant backgrounds -->
+          <rect id="ggQul" x="30" y="25" width="160" height="140" rx="4" fill="#f0fdf4" opacity=".55"></rect>
+          <rect id="ggQur" x="190" y="25" width="160" height="140" rx="4" fill="#eff6ff" opacity=".55"></rect>
+          <rect id="ggQll" x="30" y="165" width="160" height="140" rx="4" fill="#fffbeb" opacity=".55"></rect>
+          <rect id="ggQlr" x="190" y="165" width="160" height="140" rx="4" fill="#fef2f2" opacity=".55"></rect>
+          <!-- Quadrant labels -->
+          <text x="110" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">ΔH&lt;0 · ΔS&gt;0</text>
+          <text x="110" y="64" text-anchor="middle" font-size="11" fill="#166534">spontaneous at any T ✓</text>
+          <text x="270" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">ΔH&gt;0 · ΔS&gt;0</text>
+          <text x="270" y="64" text-anchor="middle" font-size="11" fill="#1e40af">spontaneous only at high T</text>
+          <text x="110" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">ΔH&lt;0 · ΔS&lt;0</text>
+          <text x="110" y="204" text-anchor="middle" font-size="11" fill="#a16207">spontaneous only at low T</text>
+          <text x="270" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">ΔH&gt;0 · ΔS&lt;0</text>
+          <text x="270" y="204" text-anchor="middle" font-size="11" fill="#b91c1c">never spontaneous ✗</text>
+          <!-- Axes -->
+          <line x1="26" y1="165" x2="352" y2="165" stroke="#94a3b8" stroke-width="1.5"></line>
+          <line x1="190" y1="21" x2="190" y2="309" stroke="#94a3b8" stroke-width="1.5"></line>
+          <text x="348" y="156" text-anchor="end" font-size="11" fill="#4b5563">ΔH (kJ/mol) →</text>
+          <text x="196" y="34" font-size="11" fill="#4b5563">ΔS ↑ (J·mol⁻¹·K⁻¹)</text>
+          <!-- Crosshair and dot -->
+          <line id="ggCh" x1="30" y1="165" x2="350" y2="165" stroke="#0369a1" stroke-width="1" stroke-dasharray="3 4" opacity=".55"></line>
+          <line id="ggCv" x1="190" y1="25" x2="190" y2="305" stroke="#0369a1" stroke-width="1" stroke-dasharray="3 4" opacity=".55"></line>
+          <circle id="ggDot" cx="116.4" cy="234.65" r="8" fill="#15803d" stroke="#ffffff" stroke-width="2.5"></circle>
+          <!-- Live panel at right -->
+          <text x="372" y="42" font-size="12" fill="#6b7280">ΔG at the current temperature</text>
+          <text id="ggVal" x="372" y="76" font-size="26" font-weight="800" fill="#15803d">−32.7</text>
+          <text x="500" y="76" font-size="13" fill="#6b7280">kJ/mol</text>
+          <text id="ggStatus" x="372" y="104" font-size="15" font-weight="700" fill="#15803d">Forward spontaneous ✓</text>
+          <line x1="372" y1="122" x2="626" y2="122" stroke="#e5e7eb" stroke-width="1"></line>
+          <text x="372" y="146" font-size="12" fill="#6b7280">Crossover temperature T* = ΔH / ΔS</text>
+          <text id="ggTstar" x="372" y="172" font-size="15" font-weight="700" fill="#1f2937">≈ 462 K</text>
+          <text id="ggTnote" x="372" y="198" font-size="12" fill="#4b5563">spontaneous for T &lt; 462 K; beyond it, reversed</text>
+          <text id="ggQuad" x="372" y="230" font-size="12" font-weight="700" fill="#075985">Current quadrant: ΔH&lt;0, ΔS&lt;0 (low-temperature spontaneous)</text>
+          <text x="372" y="258" font-size="11" fill="#6b7280">Drag the sliders below, or click a preset case</text>
+          <text id="ggCalc" x="372" y="284" font-size="11" font-family="Consolas, monospace" fill="#4b5563"></text>
+        </svg>
+        <div class="fig-controls">
+          <button class="btn ghost gg-preset" data-h="6" data-s="22" data-t="298">🧊 Ice melting</button>
+          <button class="btn ghost gg-preset" data-h="-92" data-s="-199" data-t="298">🌿 Ammonia synthesis</button>
+          <button class="btn ghost gg-preset" data-h="178" data-s="160" data-t="298">🪨 CaCO₃ decomposition</button>
+        </div>
+        <div style="display:grid;gap:10px;margin-top:12px;text-align:left;min-width:300px;max-width:430px;margin-left:auto;margin-right:auto">
+          <label for="ggH" style="font-size:.88rem;color:var(--ink-2)">
+            ΔH = <b id="ggHv">−92</b> kJ/mol (exothermic ↔ endothermic)
+            <input id="ggH" type="range" min="-200" max="200" step="1" value="-92" style="width:100%;accent-color:var(--accent);height:44px" aria-label="Enthalpy change slider">
+          </label>
+          <label for="ggS" style="font-size:.88rem;color:var(--ink-2)">
+            ΔS = <b id="ggSv">−199</b> J/(mol·K) (entropy decrease ↔ increase)
+            <input id="ggS" type="range" min="-400" max="400" step="1" value="-199" style="width:100%;accent-color:var(--accent);height:44px" aria-label="Entropy change slider">
+          </label>
+          <label for="ggT" style="font-size:.88rem;color:var(--ink-2)">
+            T = <b id="ggTv">298</b> K (temperature)
+            <input id="ggT" type="range" min="100" max="1500" step="1" value="298" style="width:100%;accent-color:var(--accent);height:44px" aria-label="Temperature slider">
+          </label>
+        </div>
+        <div class="fig-readout" id="ggReadout"></div>
+      </div>
+      <figcaption>
+        Quick guide: dot in a green quadrant → spontaneous at any temperature; blue → heating helps; yellow →
+        cooling helps; red → never spontaneous. When ΔH and ΔS have the same sign there is a crossover temperature
+        T* = ΔH/ΔS — the critical point where the verdict flips. Ice's 273 K, ammonia synthesis's ~462 K, and
+        limestone decomposition's ~1113 K all come from this one division.
+      </figcaption>
+    </figure>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ The unit trap (the #1 score-killer in this chapter)</div>
+      ΔH is usually quoted in <strong>kJ/mol</strong>, while ΔS is usually quoted in <strong>J/(mol·K)</strong>.
+      Before substituting into <span class="formula">ΔG = ΔH − TΔS</span> you must unify them: <strong>divide ΔS by
+      1000</strong>. Multiply 160.5 J straight by 298 K and TΔS comes out a thousand times too large — "not
+      spontaneous" flips to "spontaneous" in an instant. One unit, a reversed verdict. Always convert first, before
+      anything else.
+    </div>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Exothermic vs. spontaneous</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          To judge whether a reaction can happen spontaneously, just look at whether it releases or absorbs heat:
+          exothermic reactions can, endothermic ones cannot.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Looking only at ΔH is seeing only half the picture. Ice melting (ΔH = +6.0 kJ/mol) and ammonium nitrate
+          dissolving in water (ΔH = +25.8 kJ/mol — the test tube feels ice-cold) are both <strong>endothermic yet
+          spontaneous</strong>, because the entropy term TΔS is larger; conversely, an exothermic reaction with a
+          steep entropy decrease (ammonia synthesis at very high temperature, say) can turn ΔG positive. The only
+          judge is whether <span class="formula">ΔG = ΔH − TΔS</span> is negative.
+        </div>
+      </div>
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: use ΔG to judge whether a decomposition can happen</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · Guided practice (do it with me)</div>
+      <div class="worked-problem">
+        Calcining limestone: <span class="formula">CaCO₃(s) → CaO(s) + CO₂(g)</span>,
+        ΔH = +178.2 kJ/mol, ΔS = +160.5 J/(mol·K).
+        (1) Is it spontaneous at 300 K? (2) Is it spontaneous at 1200 K? (3) Find the crossover temperature, and
+        explain why lime kilns must be fired to about 900 °C.
+        <em>(Each step gives a hint first — work it out yourself, then expand to compare.)</em>
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 Step one is always lining up the units: ΔS = 160.5 J/(mol·K) ÷ 1000 =
+          <strong>0.1605 kJ/(mol·K)</strong>. Leave ΔH in kJ/mol, untouched.</li>
+        <li class="step">💡 At 300 K: ΔG = 178.2 − 300×0.1605 = 178.2 − 48.2 = <strong>+130.0 kJ/mol</strong> &gt; 0,
+          <strong>not spontaneous</strong> at ordinary temperatures — which is why limestone on mountainsides has
+          stayed undecomposed for eons.</li>
+        <li class="step">💡 At 1200 K: ΔG = 178.2 − 1200×0.1605 = 178.2 − 192.6 = <strong>−14.4 kJ/mol</strong> &lt; 0,
+          <strong>spontaneous</strong> at high temperature. Note ΔS &gt; 0 (a gas is produced), so the TΔS term climbs
+          ever faster with temperature until it finally overtakes.</li>
+        <li class="step">💡 Crossover temperature T* = ΔH/ΔS = 178.2/0.1605 ≈ <strong>1110 K (about 837 °C)</strong>.
+          Firing a lime kiln above 900 °C is exactly to clear this threshold with margin to spare.
+          ✅ Self-check: T* lies between 300 K and 1200 K, consistent with (1) not spontaneous and (2) spontaneous.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <details class="think">
+      <summary>Think It Through: does ΔG = 0 mean the reaction has "stopped dead"?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: recall how the forward and reverse rates relate at chemical equilibrium.</p>
+        <p>
+          Nothing "stops". ΔG = 0 is <strong>equilibrium</strong>: the forward and reverse reactions still proceed
+          every instant, just at equal rates, so the macroscopic concentrations no longer change. ΔG is like the slope
+          of a hill: farther from equilibrium the slope is steeper (the driving force stronger); at the valley floor
+          the slope is zero — but the molecular coming and going never ceases. This also reminds us: ΔG governs
+          "which way and how far", never "how fast".
+        </p>
+      </div>
+    </details>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · Negative ΔG and everything's fine?</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          As long as ΔG &lt; 0 works out, the reaction will proceed smoothly — and quickly, too.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Thermodynamics answers only "can it, and which way" — <strong>never "how fast"</strong>. Diamond turning to
+          graphite has ΔG &lt; 0, yet the ring on your finger is perfectly safe — the rate is measured in eons.
+          Rate is the business of kinetics, the star of the next chapter; many industrial reactions with strongly
+          negative ΔG still rely on high temperature and catalysts precisely to satisfy both chapters at once.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Draw the system/surroundings boundary first, then keep accounts: ΔU, H, S, G are all <strong>state
+          functions</strong> (endpoints only); Q and W are path quantities.</li>
+        <li>First law <span class="formula">ΔU = Q + W</span>: energy is conserved; perpetual motion is impossible.</li>
+        <li>The heat of reaction at constant pressure is the enthalpy change:
+          <span class="formula">ΔH &lt; 0</span> exothermic, <span class="formula">ΔH &gt; 0</span> endothermic.</li>
+        <li>Hess's law: ΔH values add and subtract as the equations do — unmeasurable heats of reaction can be
+          computed "by detour".</li>
+        <li>Entropy S measures disorder; the sole judge of spontaneity is
+          <span class="formula">ΔG = ΔH − TΔS</span> (ΔG&lt;0 spontaneous, =0 equilibrium, &gt;0 reverse spontaneous).</li>
+        <li>Of the four ΔH/ΔS combinations, the two same-sign cases have a crossover temperature
+          <span class="formula">T* = ΔH/ΔS</span>; always unify units before computing (divide ΔS by 1000).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ Chapter Self-Test · Chemical Thermodynamics <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "Which of the following four quantities is NOT a state function?",
+            "options": ["Internal energy U", "Enthalpy H", "Heat Q", "Entropy S"],
+            "answer": 2,
+            "explain": "U, H, and S depend only on the system's current state, like elevation depending only on the endpoints; Q is a path quantity — the same change along a different path gives a different value. Hess's law works precisely because ΔH is the increment of a state function and is path-independent."
+          },
+          {
+            "q": "Given ① C + O₂ → CO₂, ΔH₁ = −393.5 kJ/mol; ② CO + ½O₂ → CO₂, ΔH₂ = −283.0 kJ/mol. What is ΔH for C + ½O₂ → CO?",
+            "options": ["+110.5 kJ/mol", "−110.5 kJ/mol", "−676.5 kJ/mol", "−283.0 kJ/mol"],
+            "answer": 1,
+            "explain": "① − ② cancels CO₂ and leaves ½O₂, giving exactly the target reaction; subtract the ΔH values in step: (−393.5) − (−283.0) = −110.5 kJ/mol. Check: 110.5 + 283.0 = 393.5 — the height differences along the two paths close."
+          },
+          {
+            "q": "Ice melts spontaneously at 25 °C, yet it absorbs heat (ΔH = +6.0 kJ/mol). Which term drives the change?",
+            "options": ["The decrease in enthalpy", "The entropy term TΔS", "The drop in temperature", "Work done on the system by the surroundings"],
+            "answer": 1,
+            "explain": "ΔH > 0, so the energy term actually objects. But ice → water increases entropy (ΔS = +22 J/(mol·K)), and at 298 K, TΔS ≈ 6.6 kJ/mol > ΔH, giving ΔG = 6.0 − 6.6 = −0.6 kJ/mol < 0. Entropy's push outweighs energy's resistance."
+          },
+          {
+            "q": "A reaction has ΔH < 0 and ΔS < 0 (e.g. ammonia synthesis). Which statement about its spontaneity is correct?",
+            "options": ["Spontaneous at any temperature", "Never spontaneous at any temperature", "Spontaneous at low temperature, not at high temperature", "Spontaneous at high temperature, not at low temperature"],
+            "answer": 2,
+            "explain": "In ΔG = ΔH − TΔS, with ΔS < 0 the −TΔS term grows as T rises, so ΔG climbs monotonically with temperature; past the crossover T* = ΔH/ΔS, ΔG turns positive. Low temperature favors it, high temperature does not — industry runs ammonia synthesis at 400–500 °C precisely to balance the two demands."
+          },
+          {
+            "q": "CaCO₃ decomposition has ΔH = +178 kJ/mol and ΔS = +0.160 kJ/(mol·K). Its crossover temperature is about?",
+            "options": ["178 K", "298 K", "1113 K", "1600 K"],
+            "answer": 2,
+            "explain": "T* = ΔH/ΔS = 178/0.160 ≈ 1113 K (about 840 °C). Lime kilns fire above 900 °C to clear this threshold with margin for rate — direction and speed, two conditions that must both be met."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">04 Physical Chemistry · Overview</span></a>
+      <a class="next" href="02-Chemical-Kinetics.html"><span class="pg-dir">Next chapter →</span><br><span class="pg-title">Chapter 2 · Chemical Kinetics</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (ΔG explorer) ============ */
+(function () {
+  "use strict";
+  var sH = document.getElementById("ggH");
+  var sS = document.getElementById("ggS");
+  var sT = document.getElementById("ggT");
+  if (!sH || !sS || !sT) return;
+
+  var vH = document.getElementById("ggHv");
+  var vS = document.getElementById("ggSv");
+  var vT = document.getElementById("ggTv");
+  var dot = document.getElementById("ggDot");
+  var ch = document.getElementById("ggCh");
+  var cv = document.getElementById("ggCv");
+  var val = document.getElementById("ggVal");
+  var status = document.getElementById("ggStatus");
+  var tstar = document.getElementById("ggTstar");
+  var tnote = document.getElementById("ggTnote");
+  var quad = document.getElementById("ggQuad");
+  var calc = document.getElementById("ggCalc");
+  var readout = document.getElementById("ggReadout");
+  var rects = {
+    ul: document.getElementById("ggQul"), ur: document.getElementById("ggQur"),
+    ll: document.getElementById("ggQll"), lr: document.getElementById("ggQlr")
+  };
+
+  function fmt(n, d) {
+    var f = n.toFixed(d);
+    return f.replace("-", "−");
+  }
+
+  function update() {
+    var H = parseFloat(sH.value);
+    var S = parseFloat(sS.value);
+    var T = parseFloat(sT.value);
+    var dG = H - T * S / 1000;
+
+    vH.textContent = fmt(H, 0);
+    vS.textContent = fmt(S, 0);
+    vT.textContent = fmt(T, 0);
+
+    /* Dot position: x = 190 + ΔH×0.8, y = 165 − ΔS×0.35 */
+    var px = 190 + H * 0.8;
+    var py = 165 - S * 0.35;
+    dot.setAttribute("cx", px);
+    dot.setAttribute("cy", py);
+    ch.setAttribute("x1", 30); ch.setAttribute("x2", 350);
+    ch.setAttribute("y1", py); ch.setAttribute("y2", py);
+    cv.setAttribute("x1", px); cv.setAttribute("x2", px);
+    cv.setAttribute("y1", 25); cv.setAttribute("y2", 305);
+
+    /* Color by the ΔG verdict */
+    var col = dG < 0 ? "#15803d" : (dG > 0 ? "#b91c1c" : "#4b5563");
+    dot.setAttribute("fill", col);
+    val.setAttribute("fill", col);
+    val.textContent = fmt(dG, 1);
+    status.setAttribute("fill", col);
+    status.textContent = dG < 0 ? "Forward spontaneous ✓" : (dG > 0 ? "Not spontaneous ✗ (reverse is spontaneous)" : "Exactly at equilibrium");
+
+    /* Crossover temperature */
+    var tS, tN;
+    if (S === 0) {
+      tS = "—";
+      tN = "ΔS = 0: ΔG = ΔH, independent of temperature";
+    } else {
+      var Ts = H * 1000 / S;
+      if (Ts <= 0) {
+        tS = "none (negative solution)";
+        tN = S > 0 ? "Exothermic with ΔS > 0: spontaneous at any temperature" : "Endothermic with ΔS < 0: never spontaneous";
+      } else {
+        tS = "≈ " + Math.round(Ts) + " K";
+        if (S > 0) {
+          tN = "Spontaneous for T > " + Math.round(Ts) + " K (heating helps)";
+        } else {
+          tN = "Spontaneous for T < " + Math.round(Ts) + " K (cooling helps)";
+        }
+      }
+    }
+    tstar.textContent = tS;
+    tnote.textContent = tN;
+
+    /* Quadrant highlight */
+    var key = (H < 0 ? "l" : "r") + (S < 0 ? "l" : "u");
+    ["ul", "ur", "ll", "lr"].forEach(function (k) {
+      var on = k === key;
+      rects[k].setAttribute("opacity", on ? "1" : ".45");
+      if (on) rects[k].setAttribute("stroke", "#0369a1");
+      else rects[k].removeAttribute("stroke");
+    });
+    var qName = { ul: "spontaneous at any temperature", ur: "spontaneous at high temperature", ll: "spontaneous at low temperature", lr: "never spontaneous" };
+    quad.textContent = "Current quadrant: " + (H < 0 ? "ΔH<0" : "ΔH>0") + ", " + (S < 0 ? "ΔS<0" : "ΔS>0") +
+      " (" + qName[key] + ")";
+
+    /* Numeric trace */
+    calc.textContent = "ΔG = ΔH − TΔS = " + fmt(H, 0) + " − " + fmt(T, 0) + "×" +
+      fmt(S / 1000, 3) + " = " + fmt(dG, 1) + " kJ/mol";
+    readout.textContent = "ΔH = " + fmt(H, 0) + " kJ/mol | ΔS = " + fmt(S, 0) +
+      " J/(mol·K) | T = " + fmt(T, 0) + " K | ΔG = " + fmt(dG, 1) +
+      " kJ/mol → " + (dG < 0 ? "spontaneous" : (dG > 0 ? "not spontaneous" : "equilibrium")) +
+      " | T* " + tS;
+  }
+
+  [sH, sS, sT].forEach(function (s) { s.addEventListener("input", update); });
+  Array.prototype.forEach.call(document.querySelectorAll(".gg-preset"), function (b) {
+    b.addEventListener("click", function () {
+      sH.value = b.getAttribute("data-h");
+      sS.value = b.getAttribute("data-s");
+      sT.value = b.getAttribute("data-t");
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>

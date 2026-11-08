@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Chemistry of the Atomic Nucleus · Nuclear and Radiochemistry · Chapter 1</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="b11">
+<div class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="../index.html">Chemistry Self-Study Center</a><span class="sep">/</span>
+    <a href="index.html">11 Nuclear and Radiochemistry</a><span class="sep">/</span>
+    <span class="here">Chapter 1 · Chemistry of the Atomic Nucleus</span>
+  </nav>
+
+  <header class="ch-header">
+    <div class="ch-kicker">11 Nuclear and Radiochemistry · Chapter 1</div>
+    <h1>Chemistry of the Atomic Nucleus: Decay, Half-Lives, and Nuclear Energy</h1>
+    <p class="lede">
+      Chemical reactions rearrange the electrons outside the nucleus — however wildly an atom is reshuffled, it remains the same element;
+      nuclear chemistry, by contrast, changes <strong>the atomic nucleus itself</strong>: once the proton number changes, one element becomes another.
+      This chapter introduces the α, β, and γ decays together with balanced nuclear equations, lets you “decay” 500 nuclei with your own hands to grasp the statistical essence of the half-life,
+      shows how carbon-14 dates ancient artifacts and how uranium-235 releases nuclear energy through a chain reaction, and builds a scientifically grounded understanding of radiation protection.
+    </p>
+    <div class="ch-meta">
+      <span class="chip acc">Suggested time: 60 minutes</span>
+      <span class="chip">Prerequisites: <a href="../00-Foundations/01-Atoms-and-Elements.html">00 Foundations · Atoms and Elements</a></span>
+      <span class="chip">Interactive animations ×2</span>
+      <span class="chip">Self-Test: 4 questions</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="In this chapter">
+    <a href="#intro">Introduction</a>
+    <a href="#history">The Discovery of Radioactivity</a>
+    <a href="#decay">Decay Types and Nuclear Equations</a>
+    <a href="#half">Half-Life and Radiometric Dating</a>
+    <a href="#fission">Fission and Fusion</a>
+    <a href="#safety">Applications and Protection</a>
+    <a href="#summary">Summary</a>
+    <a href="#quiz">Self-Test</a>
+  </nav>
+
+  <!-- ============ Introduction ============ -->
+  <section id="intro">
+    <h2>Introduction: There Is a “Nuclear Reactor” in Your Body</h2>
+    <p>
+      Start with a fact: nuclear decay is happening inside your body at this very moment. Potassium is essential to life, and about 0.012% of natural potassium is
+      radioactive potassium-40 — in a 60 kg adult, roughly 4000 potassium-40 atoms decay every second.
+      Eating a banana delivers about 0.4 g of potassium, and so was born a playful unit of radiation dose —
+      the <span class="term">banana equivalent dose</span><span class="en">≈0.1 μSv</span>.
+    </p>
+    <p>
+      “Radioactivity” sounds distant and frightening, yet it is everywhere: the rocks beneath your feet, cosmic rays overhead, radon inhaled into your lungs,
+      the X-ray at a medical checkup. Real scientific literacy is not a reflexive fear of all things nuclear, but <strong>knowing what decay is, why the size of the dose matters,
+      and how to keep exposure within safe limits</strong>. That quantitative commonsense is exactly what this chapter gives you.
+    </p>
+    <details class="think">
+      <summary>Think It Through: Medieval alchemists labored for centuries to turn lead into gold and were doomed to fail — so why can modern science genuinely “turn stone into gold”?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Which number must change to change an element? Can a chemical reaction reach it?</p>
+        <p>
+          Turning lead into gold requires changing the <strong>proton number</strong> (Z: 82→79). Chemical reactions merely rearrange the electrons outside the nucleus and leave the nucleus untouched, which is why alchemy was doomed to futility.
+          But changing the proton count inside the nucleus with neutron bombardment or particle accelerators really can transmute elements — scientists have made trace amounts of gold from bismuth in accelerators,
+          at a cost billions of times the price of gold. <strong>The alchemists' dream has come true through nuclear chemistry — yet it will never become a business.</strong>
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §1 Discovery history ============ -->
+  <section id="history">
+    <h2>§1 The Discovery of Radioactivity: Three Legends</h2>
+    <ul>
+      <li><strong>1896 · Becquerel's drawer</strong>: While studying “whether uranium salts fluoresce after basking in sunlight,” he locked uranium ore together with photographic plates in a drawer —
+        the plates turned out to be exposed anyway. Uranium needed no “charging”: it spontaneously emitted invisible, penetrating rays. Natural radioactivity had revealed itself.</li>
+      <li><strong>1898 · The Curies' pitchblende</strong>: Marie Curie found that the ore pitchblende was more radioactive than pure uranium and concluded that new elements were hidden inside;
+        she and her husband Pierre then processed <strong>tons of ore residue</strong> in a leaky shed, isolating 0.1 g of radium and naming “polonium” (in honor of her homeland, Poland).
+        She herself won two Nobel Prizes (Physics 1903, Chemistry 1911), and her daughter Irène took the 1935 Chemistry Prize — three Nobel Prizes in one family.</li>
+      <li><strong>1899 · Rutherford's three rays</strong>: sent through a magnetic field, the rays separated into three streams deflected in different directions —
+        positively charged <strong>α</strong> (later proven to be helium nuclei), negatively charged <strong>β</strong> (electrons), and undeflected <strong>γ</strong> (high-energy photons).
+        Those three Greek-letter names are still in use today and are the stars of the next section.</li>
+    </ul>
+    <div class="keypoint">
+      <div class="kp-title">📌 A Poignant Footnote</div>
+      The Curies' laboratory notebooks are radioactive to this day (radium-226 has a half-life of 1600 years); they are stored in lead-lined boxes, and readers must sign a liability waiver.
+      That generation of pioneers traded their health for the dawn of nuclear science — and it is precisely because of them that we now have dosimetry and protection standards.
+    </div>
+  </section>
+
+  <!-- ============ §2 Decay types ============ -->
+  <section id="decay">
+    <h2>§2 Decay Types and Nuclear Equations: Both Sides Must Balance</h2>
+    <p>
+      An unstable nucleus transmutes spontaneously and releases energy. The three classic decays fit in one sentence:
+      <strong>α = a ⁴₂He nucleus (a helium nucleus); β⁻ = the electron ejected when a neutron turns into a proton; γ = the high-energy photon emitted as the nucleus “anneals” off its excess energy</strong>.
+    </p>
+    <table class="tbl">
+      <thead>
+        <tr><th>Decay</th><th>Particle emitted</th><th>Mass number A</th><th>Charge number Z</th><th>Penetrating power</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>α decay</strong></td><td>⁴₂He (2 protons + 2 neutrons)</td><td>−4</td><td>−2</td><td>Stopped by a sheet of paper</td></tr>
+        <tr><td><strong>β⁻ decay</strong></td><td>⁰₋₁e (in-nucleus neutron → proton + electron)</td><td>unchanged</td><td>+1</td><td>A few millimeters of aluminum</td></tr>
+        <tr><td><strong>γ radiation</strong></td><td>High-energy photon (often released alongside α/β to shed excess energy)</td><td>unchanged</td><td>unchanged</td><td>Thick lead or concrete required</td></tr>
+      </tbody>
+    </table>
+
+    <div class="keypoint">
+      <div class="kp-title">📌 The Golden Rule for Balancing Nuclear Equations</div>
+      <strong>Mass number A and charge number Z must be equal on both sides of the arrow</strong> (protons + neutrons are neither created from nothing nor destroyed).
+      Example: ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He; on the left A=238, Z=92; on the right 234+4=238 and 90+2=92 ✓.
+      In β⁻ decay an electron seems to “pop out of nowhere” — record it as A=0, Z=−1 and the equation still balances. The electron is not “created from nothing”;
+      it is the “change” the neutron must hand over, as charge conservation demands, when it transforms.
+    </div>
+
+    <h3>📐 Worked-Example Scaffold: Writing the Daughter Nuclide</h3>
+
+    <div class="worked">
+      <div class="worked-head">Example 1 · α Decay of ²³⁸U (watch me do it)</div>
+      <div class="worked-problem">
+        Uranium-238 (Z=92) undergoes α decay. The daughter nuclide is an isotope of which element? Write the balanced nuclear equation.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">The α particle is simply a helium nucleus, ⁴₂He: mass number 4, charge number 2.</li>
+        <li class="step">Balance the books: daughter A = 238 − 4 = <strong>234</strong>; daughter Z = 92 − 2 = <strong>90</strong>.</li>
+        <li class="step">Look up Z=90 in the periodic table → <strong>thorium, Th</strong>. The daughter is ²³⁴₉₀Th.</li>
+        <li class="step">✅ Full equation: ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He. Check: A 238 = 234+4 ✓; Z 92 = 90+2 ✓. In fact ²³⁴Th is unstable as well — uranium-238 must decay 14 steps in a row before settling at stable lead-206. That is the “decay chain”.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="worked">
+      <div class="worked-head">Example 2 · β⁻ Decay of ¹⁴C (do it along with me)</div>
+      <div class="worked-problem">
+        Carbon-14 (Z=6) undergoes β⁻ decay — precisely the key step behind carbon-14 dating. What is the daughter nuclide? Balance the equation.
+      </div>
+      <ol class="worked-steps">
+        <li class="step">💡 β⁻ decay mechanism: a neutron inside the nucleus turns into a proton while ejecting an electron (⁰₋₁e).</li>
+        <li class="step">💡 Balance the books: A stays unchanged at 14; Z = 6 + 1 = <strong>7</strong> (one proton more; recording the electron as −1 does not break conservation).</li>
+        <li class="step">💡 Look up Z=7 → <strong>nitrogen, N</strong>. The daughter is ¹⁴₇N — the most abundant nitrogen, and stable.</li>
+        <li class="step">✅ Equation: ¹⁴₆C → ¹⁴₇N + ⁰₋₁e. Check: A 14 = 14+0 ✓; Z 6 = 7+(−1) ✓.</li>
+      </ol>
+      <div class="worked-controls">
+        <button class="btn js-step-next">Next step</button>
+        <button class="btn ghost js-step-all">Show all</button>
+        <button class="btn ghost js-step-reset">Reset</button>
+      </div>
+    </div>
+
+    <h3>🎮 Try It Out: The Decay-Equation Balancer</h3>
+    <p>The three problems below are genuine decays from history (the daughter in problem 3 is the source of the “household radon” in the safety box further down):</p>
+
+    <figure class="fig">
+      <div class="fig-canvas" style="text-align:left;max-width:560px">
+        <div id="eqQ" style="font-size:1.15rem;font-weight:700;text-align:center;margin:6px 0 4px"></div>
+        <div id="eqEq" style="font-family:var(--mono);font-size:1.25rem;text-align:center;margin:10px 0;color:#111827"></div>
+        <div id="eqOpts" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div>
+        <div id="eqExplain" class="quiz-explain" style="margin-top:10px"></div>
+        <div class="fig-controls" style="justify-content:flex-start">
+          <button class="btn" id="eqNext" disabled>Next problem →</button>
+          <span id="eqScore" style="font-size:.85rem;color:var(--ink-3);align-self:center"></span>
+        </div>
+      </div>
+      <figcaption>
+        Pick the correct daughter nuclide. Right or wrong, the <strong>conservation check</strong> unfolds (A and Z subtracted term by term on both sides) — the problem-solving key that never fails for nuclear equations.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ §3 Half-life ============ -->
+  <section id="half">
+    <h2>§3 Half-Life and Carbon-14 Dating: The Magic of Statistics</h2>
+    <p>
+      <span class="term">half-life</span><span class="en">T<sub>½</sub></span>:
+      the time it takes for <strong>half</strong> of a large population of nuclei to decay. For carbon-14 it is 5730 years; for iodine-131 about 8 days;
+      for uranium-238 a full 4.5 billion years. Decay obeys an exponential law: <strong>each half-life that passes leaves half the stock</strong> —
+      another leaves a quarter… “an endless halving that never reaches zero,” yet one that fades astonishingly fast. Try it yourself:
+    </p>
+
+    <figure class="fig">
+      <div class="fig-canvas">
+        <canvas id="decayCanvas" width="640" height="330" role="img" aria-label="Radioactive decay simulator: animation of the time evolution of nuclei decaying generation by generation"></canvas>
+        <div class="fig-controls">
+          <button class="btn" id="dkNext">Next generation ⏭</button>
+          <button class="btn ghost" id="dkAuto">▶ Auto-play</button>
+          <button class="btn ghost" id="dkReset">↺ Reset</button>
+        </div>
+        <div class="fig-readout" id="dkReadout" style="display:block;max-width:100%"></div>
+      </div>
+      <figcaption>
+        500 nuclei (gold dots = surviving, gray dots = decayed). Each press of “Next generation” gives every surviving nucleus a 50% chance of decaying —
+        note how the actual count <strong>fluctuates randomly</strong> around “exactly half,” a direct sign that the half-life is a statistical law rather than a clock for each nucleus.
+        Below, the solid line is the measured survivors curve and the dashed line the theoretical value 500×2⁻ᵍ. The time axis is reckoned in carbon-14 units (T½ = 5730 years).
+      </figcaption>
+    </figure>
+
+    <div class="ladder">
+      <div class="ladder-head">🪜 Three-Level Ladder · Why is a radioactive stock “never fully gone, yet quickly harmless”?</div>
+      <div class="ladder-tabs">
+        <button class="ladder-tab">Intuition</button>
+        <button class="ladder-tab">Standard Treatment</button>
+        <button class="ladder-tab">Deeper Theory</button>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 1 · Analogy</span>
+        <p>
+          Imagine 500 coins, and after each round you throw away every coin that landed tails. In theory half remain each round, but a few always enjoy a “lucky streak” of ten heads in a row —
+          those lucky few can hold out for a very long time (hence “never fully gone”); yet the total crashes from 500 to below 1 in only about ten rounds,
+          and the stragglers at the tail end no longer matter to the total (hence “quickly harmless”).
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 2 · Formula</span>
+        <p>
+          The remaining amount is N = N₀ × (1/2)<sup>t/T½</sup>. After 10 half-lives about <strong>one thousandth</strong> remains (2⁻¹⁰≈0.1%),
+          and after 20 half-lives one millionth. The key point is that <strong>a single nucleus has no “age” and does not wear out</strong> —
+          a ¹⁴C nucleus that has survived ten thousand years has exactly the same probability of decaying in the next second as one just born. We can never predict when any given nucleus will decay,
+          only predict the behavior of “a large crowd” with precision — like an insurer that cannot predict the year any one person will die, yet can price a million-person population with precision.
+        </p>
+      </div>
+      <div class="ladder-panel">
+        <span class="lv-tag">LEVEL 3 · Essence</span>
+        <p>
+          Danger is determined by <strong>activity</strong> (decays per second) × <strong>exposure time</strong>, and activity is proportional to the number of nuclei remaining,
+          so activity collapses exponentially in step with the stock. Long-half-life nuclides actually decay slowly per unit time (U-238's T½ is comparable to the age of the Earth — a sample held in your hand has low activity);
+          short-half-life nuclides strike hard and fade fast (medical PET imaging agents choose ¹⁸F, with a T½ of only 110 minutes —
+          activity falls to background within a few hours after the scan). “Dangerous or not” never hinges on half-life length alone,
+          but on the combination of <strong>activity, energy, mode of intake, and exposure time</strong>.
+        </p>
+      </div>
+    </div>
+
+    <h3>Carbon-14 Dating: How the Nuclear Clock Runs</h3>
+    <ol>
+      <li><strong>Winding</strong>: cosmic-ray neutrons bombard atmospheric nitrogen-14: ¹⁴₇N + ¹₀n → ¹⁴₆C + ¹₁p (note! this is exactly “neutron activation” —
+        nature has been doing it all along); the ¹⁴C formed is oxidized to CO<sub>2</sub> and mixes into the atmosphere.</li>
+      <li><strong>Syncing</strong>: living organisms breathe and eat constantly, keeping their internal ¹⁴C/¹²C ratio matched to the atmosphere (on the order of 10⁻¹²).</li>
+      <li><strong>Stopping</strong>: the organism dies, carbon exchange with the environment stops, ¹⁴C is no longer replenished and only leaks away, and the ratio halves every 5730 years.</li>
+      <li><strong>Reading the dial</strong>: measure ¹⁴C/¹²C in the remains at half the atmospheric value → died about 5730 years ago; a quarter → about 11460 years ago.
+        The usable range is about 50,000 years (anything older falls below the detection limit). Libby won the 1960 Nobel Prize in Chemistry for this.</li>
+    </ol>
+
+    <details class="think">
+      <summary>Think It Through: Why is the ¹⁴C-to-¹²C “ratio” measured instead of simply counting ¹⁴C atoms?</summary>
+      <div class="think-body">
+        <p class="think-hint">Hint: Do different organisms hold the same absolute number of ¹⁴C atoms at death? Is the atmospheric production of ¹⁴C constant?</p>
+        <p>
+          The absolute count is shaped by body size, carbon content, and preservation conditions, so there is no universal “starting point”;
+          the exchange between a living body and its environment, by contrast, pins the <strong>ratio</strong> to the atmospheric level, and that is what makes a reliable initial condition. The ratio method also allows calibration against tree-ring dating —
+          cosmic-ray intensity fluctuates with solar activity, so the atmospheric ratio differs slightly from era to era, and after calibration the error of carbon dating can be brought within a few decades.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ §4 Fission and fusion ============ -->
+  <section id="fission">
+    <h2>§4 Fission and Fusion: Taking Energy Out of the Atomic Nucleus</h2>
+    <h3>Fission: An Avalanche Started by One Neutron</h3>
+    <p>
+      In 1938, Hahn and Strassmann found that bombarding uranium with neutrons produced barium — the element really had “split” open.
+      One of the classic fission channels:
+    </p>
+    <p style="text-align:center">
+      <span class="formula">²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3 ¹₀n + energy</span>
+    </p>
+    <p>
+      Check: A 235+1 = 141+92+3×1 = 236 ✓; Z 92 = 56+36 ✓. What matters most is those <strong>3 neutrons</strong> on the right —
+      each of them can trigger another round of fission, 1 becomes 3, 3 becomes 9… and the <span class="term">chain reaction</span>
+      snowballs exponentially. Nuclear power plants use control rods to “soak up” the surplus neutrons so that exactly one neutron from each generation
+      triggers the next (critical), releasing heat steadily; an atomic bomb instead lets the neutrons pile up (supercritical), releasing all the energy within microseconds.
+      The minimum amount of fuel needed to sustain a chain reaction is called the <span class="term">critical mass</span> —
+      below it, most neutrons simply leak away and the avalanche extinguishes itself.
+    </p>
+    <h3>Fusion: The Sun's Energy Source</h3>
+    <p>
+      Opposite to fission, light nuclei squeezed together also release energy: <span class="formula">²₁H + ³₁H → ⁴₂He + ¹₀n (17.6 MeV)</span>.
+      But every nucleus is positively charged, and getting close means climbing a towering “mountain” of Coulomb repulsion — it takes a plasma state at tens of millions of degrees.
+      The Sun's core manages it with gravity and 15 million degrees (the proton-proton chain forges 4 hydrogen nuclei into 1 helium nucleus);
+      so far humanity has approached those conditions only in hydrogen bombs and in laboratory tokamaks.
+      Why do both ends release energy? <strong>The binding-energy curve peaks near iron</strong>: heavy nuclei fission and light nuclei fuse,
+      both “sliding” toward the iron valley from either side, the missing mass exchanged for energy at the E=mc² rate.
+    </p>
+    <div class="keypoint">
+      <div class="kp-title">📌 The Direction in One Sentence</div>
+      <strong>Nuclei heavier than iron release energy by splitting (fission); nuclei lighter than iron release energy by merging (fusion)</strong>.
+      Chemistry moves electrons on the electron-volt scale, while nuclear changes move nucleons on the megaelectronvolt scale — that is the energy gap behind 1 g of uranium ≈ 2.7 tons of coal.
+    </div>
+  </section>
+
+  <!-- ============ §5 Applications and protection ============ -->
+  <section id="safety">
+    <h2>§5 Applications and Protection: Putting Radioactivity to Work</h2>
+    <ul>
+      <li><strong>Irradiated food</strong>: γ rays kill pathogenic bacteria and insect eggs (this is not “irradiated food becoming radioactive” — see the Misconception Buster below),
+        inhibit sprouting, and extend freshness; endorsed by the WHO and applied worldwide for decades.</li>
+      <li><strong>Medical imaging with ¹⁸F-FDG</strong>: a glucose analog labeled with fluorine-18 is injected into the body, and metabolically hungry tumor tissue “eats” more of it;
+        the PET scan captures the annihilation photons of the positrons emitted in ¹⁸F decay, drawing a “metabolic map” of the body. T½ = 110 minutes — activity decays to a very low level the same day the exam is done.</li>
+      <li><strong>Radiotherapy</strong>: high-energy photon or proton beams strike tumor DNA with precision; the cobalt-60 gamma knife and targeted lutetium-177 and radium-223 therapies are frontiers of radiochemistry.</li>
+      <li><strong>Everyday technology</strong>: americium-241 in smoke detectors (α particles ionize the air), paper thickness gauges, archaeological and geological dating, and neutron activation analysis of artifact composition.</li>
+    </ul>
+
+    <div class="myth">
+      <div class="myth-head">⚠️ Misconception Buster · “An object that has been irradiated becomes a radioactive object”</div>
+      <div class="myth-row bad">
+        <span class="myth-ic">✗</span>
+        <div><span class="myth-tag">Misconception</span>
+          Items that passed through a security scanner, food sterilized by irradiation, and people who have had an X-ray have all “picked up radioactivity” and will keep emitting rays that harm bystanders.
+        </div>
+      </div>
+      <div class="myth-row good">
+        <span class="myth-ic">✓</span>
+        <div><span class="myth-tag">Correct</span>
+          Radioactivity can only come from <strong>a transformation of the atomic nucleus itself</strong>. γ rays and X-rays merely “pass through” —
+          they break chemical bonds as they penetrate matter, but they cannot turn a stable nucleus into a radioactive one. <strong>Only neutron irradiation</strong> (inside a nuclear reactor, or in the “activation analysis” performed with neutron sources)
+          can be captured by nuclei and produce radioactive nuclides — this is called neutron activation.
+          So: irradiated food, security-scanned luggage, and the body after an X-ray all <strong>carry no radioactivity</strong> — and don't forget, even the atmosphere keeps using cosmic-ray neutrons
+          to “activate” nitrogen into carbon-14, and every living thing around us carries this natural trace radioactivity.
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="kp-title">⚠️ Radiation Safety Essentials: Sources, Doses, and Three Principles</div>
+      <p style="margin-top:0">
+        <strong>Background radiation you receive every year (global average about 2.4 mSv/year):</strong>
+        ① radon gas (about 1.2 mSv) — ²²²Rn from the uranium decay chain seeps out of foundation soil and accumulates indoors, so <strong>ventilation is the first rule of household radon control</strong>
+        (it is the daughter in problem 3 of this chapter's balancer); ② cosmic rays (about 0.4 mSv, higher on plateaus and when flying);
+        ③ natural nuclides taken into the body (potassium-40 among them, about 0.3 mSv); ④ building materials and soil (about 0.5 mSv).
+      </p>
+      <p>
+        <strong>Dose benchmarks (in banana equivalents, 1 banana ≈ 0.1 μSv):</strong>
+        eating one banana, 0.1 μSv; a transoceanic flight, about 40 μSv (≈400 bananas);
+        a chest X-ray, about 100 μSv (≈1000 bananas); a chest CT scan, about 6 mSv (≈60,000 bananas — hence CT should follow medical advice, with no needless scans);
+        a full year of background, 2.4 mSv (≈24,000 bananas). The occupational limit is 20 mSv/year, and the public limit for additional exposure is 1 mSv/year.
+      </p>
+      <p style="margin-bottom:0">
+        <strong>Three protection principles: keep the time short (spend less of it), keep the distance long (dose rate falls with the square of distance), keep the shielding thick (α stopped by paper, β by aluminum, γ by lead).</strong>
+        When you see the ionizing radiation warning sign (the trefoil ☢), follow its instructions: do not enter off-limits areas and do not pick up unknown metal objects.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ Summary ============ -->
+  <section id="summary">
+    <div class="summary">
+      <h3>🧺 Chapter Summary</h3>
+      <ul>
+        <li>Radioactivity was discovered by Becquerel in 1896; the Curies isolated polonium and radium and founded radiochemistry; α/β/γ are respectively helium nuclei, electrons, and high-energy photons.</li>
+        <li><strong>Balancing nuclear equations: mass number A and charge number Z equal on both sides</strong>. α decay: A−4, Z−2; β⁻ decay: A unchanged, Z+1; γ changes neither.</li>
+        <li>The half-life is a statistical law: N = N₀(1/2)<sup>t/T½</sup>; single nuclei are unpredictable while large populations collapse precisely — “never fully gone” and “quickly harmless” do not contradict each other.</li>
+        <li>Carbon-14 dating: cosmic rays activate nitrogen into ¹⁴C → the ratio in living things stays constant → after death the ratio halves every 5730 years → usable within about 50,000 years.</li>
+        <li>Fission (U-235 + n → Ba + Kr + 3n; the chain reaction needs a critical mass) and fusion (deuterium + tritium → helium, the Sun's energy source) both release energy by moving toward iron, the peak of binding energy.</li>
+        <li>Irradiation is not contamination: objects exposed to γ rays carry no radioactivity — only neutron activation can do that; protection rests on the three principles of time, distance, and shielding, plus dose literacy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Self-Test ============ -->
+  <section id="quiz">
+    <div class="quiz">
+      <div class="quiz-head">✅ End-of-Chapter Self-Test · Chemistry of the Atomic Nucleus <span class="quiz-score"></span></div>
+      <script type="application/json" class="quiz-data">
+      {
+        "questions": [
+          {
+            "q": "²³⁸₉₂U (uranium-238) undergoes one α decay. What is the daughter nuclide?",
+            "options": ["²³⁴₉₀Th (thorium-234)", "²³⁴₉₂U (uranium-234)", "²³⁸₉₃Np (neptunium-238)", "²³⁴₉₁Pa (protactinium-234)"],
+            "answer": 0,
+            "explain": "The α particle is a ⁴₂He nucleus: mass number −4, charge number −2. A = 238−4 = 234, Z = 92−2 = 90, and Z=90 is thorium. Choosing ²³⁴₉₂U (Z not lowered by 2) or neptunium (Z+1, the β⁻ direction) means forgetting to balance the books — A and Z must be equal on both sides of a nuclear equation."
+          },
+          {
+            "q": "What does ¹⁴₆C become after β⁻ decay?",
+            "options": ["¹⁴₇N (nitrogen-14)", "¹⁴₅B (boron-14)", "¹⁴₆C (no change)", "¹⁰₅B (boron-10)"],
+            "answer": 0,
+            "explain": "β⁻ decay is an in-nucleus neutron → proton + electron: A stays at 14, Z rises by 1 (6→7), and Z=7 is nitrogen. This is the endpoint of carbon-14 dating — the ¹⁴C in an organism's body eventually decays into stable ¹⁴N."
+          },
+          {
+            "q": "A radioactive nuclide has a half-life of 10 days. After 30 days, roughly what fraction remains?",
+            "options": ["1/3", "1/8", "1/30", "0 (all decayed)"],
+            "answer": 1,
+            "explain": "30 days = 3 half-lives, so the remainder is (1/2)³ = 1/8. Not 1/30 (a half-life is not steady consumption but a halving each period); and it never exactly equals 0 — exponential decay is “never fully done,” just increasingly negligible."
+          },
+          {
+            "q": "Which statement about “irradiated objects” is correct?",
+            "options": ["Food sterilized by γ irradiation becomes radioactive", "Only neutron irradiation (neutron activation) can turn a stable nuclide into a radioactive one", "A person who has had an X-ray emits rays from the body", "Luggage scanned by a security machine must be quarantined through a decay period"],
+            "answer": 1,
+            "explain": "Radioactivity comes from transformations inside the nucleus. γ and X rays merely break chemical bonds as they pass through matter (ionization) without altering nuclei, so irradiated food, a body after an X-ray, and scanned luggage carry no radioactivity. Only neutrons can be captured by nuclei to form new radioactive nuclides (neutron activation) — for example, cosmic-ray neutrons activate atmospheric nitrogen into carbon-14."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <nav class="pager" aria-label="Chapter navigation">
+      <a href="index.html"><span class="pg-dir">← Previous page</span><br><span class="pg-title">11 Nuclear and Radiochemistry · Overview</span></a>
+      <a class="next" href="../index.html"><span class="pg-dir">Next stop →</span><br><span class="pg-title">Back to portal · Chemistry Self-Study Center</span></a>
+    </nav>
+  </section>
+</div>
+
+<script src="../assets/tutor.js"></script>
+<script>
+/* ============ Chapter-specific interactivity (half-life simulator canvas / decay-equation balancer) ============ */
+(function () {
+  "use strict";
+
+  /* ---------- 1. Half-life simulator (canvas grid of 500 dots + survivors curve) ---------- */
+  var cv = document.getElementById("decayCanvas");
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext("2d");
+    var dkReadout = document.getElementById("dkReadout");
+    var TOTAL = 500, COLS = 25, ROWS = 20;
+    var alive = [], gen = 0, history = [500], timer = null;
+    var T_HALF = 5730; // half-life of carbon-14 (years)
+
+    function resetSim() {
+      alive = [];
+      for (var i = 0; i < TOTAL; i++) alive.push(true);
+      gen = 0; history = [TOTAL];
+      if (timer) { clearInterval(timer); timer = null; setAutoLabel(false); }
+      drawSim();
+    }
+
+    function stepSim() {
+      if (gen >= 15) return;
+      var nAlive = 0;
+      for (var i = 0; i < TOTAL; i++) {
+        if (alive[i]) {
+          if (Math.random() < 0.5) alive[i] = false; // each surviving nucleus has a 50% chance of decaying
+        }
+        if (alive[i]) nAlive++;
+      }
+      gen++;
+      history.push(nAlive);
+      drawSim();
+      if (nAlive === 0 && timer) { clearInterval(timer); timer = null; setAutoLabel(false); }
+    }
+
+    function drawSim() {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, cv.width, cv.height);
+
+      // dot grid area: x 16..516 (25×20), y 24..264 (20×12)
+      var x0 = 16, y0 = 24, cw = 20, chh = 12;
+      var nAlive = 0;
+      for (var i = 0; i < TOTAL; i++) {
+        var cx = x0 + (i % COLS) * cw + cw / 2;
+        var cy = y0 + Math.floor(i / COLS) * chh + chh / 2;
+        if (alive[i]) { ctx.fillStyle = "#b45309"; ctx.beginPath(); ctx.arc(cx, cy, 3.6, 0, Math.PI * 2); ctx.fill(); nAlive++; }
+        else { ctx.fillStyle = "#e5e7eb"; ctx.beginPath(); ctx.arc(cx, cy, 2.6, 0, Math.PI * 2); ctx.fill(); }
+      }
+      ctx.fillStyle = "#92400e"; ctx.font = "700 13px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("Grid of nuclei (gold = alive, gray = decayed)", x0, 16);
+
+      // curve area: y 286..322, x 16..516
+      var gx = 16, gw = 500, gy = 322, gh = 40;
+      ctx.strokeStyle = "#e5e7eb"; ctx.lineWidth = 1;
+      ctx.strokeRect(gx, gy - gh, gw, gh);
+      ctx.fillStyle = "#6b7280"; ctx.font = "600 11px sans-serif";
+      ctx.fillText("Survivors curve (generations 0–15)", gx, gy - gh - 6);
+
+      function X(g) { return gx + gw * g / 15; }
+      function Y(n) { return gy - gh * n / TOTAL; }
+
+      // theoretical curve (dashed)
+      ctx.strokeStyle = "#94a3b8"; ctx.setLineDash([5, 4]); ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      for (var g = 0; g <= 15; g++) {
+        var nt = TOTAL * Math.pow(0.5, g);
+        if (g === 0) ctx.moveTo(X(g), Y(nt)); else ctx.lineTo(X(g), Y(nt));
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+
+      // measured line
+      ctx.strokeStyle = "#b45309"; ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      for (var k = 0; k < history.length; k++) {
+        if (k === 0) ctx.moveTo(X(k), Y(history[k])); else ctx.lineTo(X(k), Y(history[k]));
+      }
+      ctx.stroke();
+      for (var k2 = 0; k2 < history.length; k2++) {
+        ctx.fillStyle = "#b45309";
+        ctx.beginPath(); ctx.arc(X(k2), Y(history[k2]), 2.8, 0, Math.PI * 2); ctx.fill();
+      }
+
+      var years = gen * T_HALF;
+      var theory = TOTAL * Math.pow(0.5, gen);
+      dkReadout.innerHTML = "Generation <strong>" + gen + "</strong> ｜ <strong>" + nAlive + "</strong>/500 nuclei remaining" +
+        " (random fluctuation; theoretical expectation " + (theory < 1 ? theory.toFixed(2) : theory.toFixed(1)) + ")" +
+        " ｜ if this were carbon-14 (T½ = 5730 years), <strong>" + years.toLocaleString("en-US") + " years</strong> would have elapsed" +
+        (gen > 0 ? " ｜ fraction remaining ≈ " + (100 * nAlive / TOTAL).toFixed(1) + "%" : "") +
+        (nAlive === 0 && gen > 0 ? " ｜ all nuclei have decayed 🎉" : "");
+    }
+
+    function setAutoLabel(on) {
+      var b = document.getElementById("dkAuto");
+      b.textContent = on ? "⏸ Pause" : "▶ Auto-play";
+    }
+
+    document.getElementById("dkNext").addEventListener("click", stepSim);
+    document.getElementById("dkAuto").addEventListener("click", function () {
+      if (timer) { clearInterval(timer); timer = null; setAutoLabel(false); }
+      else { setAutoLabel(true); timer = setInterval(function () { stepSim(); if (gen >= 15) { clearInterval(timer); timer = null; setAutoLabel(false); } }, 900); }
+    });
+    document.getElementById("dkReset").addEventListener("click", resetSim);
+    resetSim();
+  }
+
+  /* ---------- 2. Decay-equation balancer (3 multiple-choice problems) ---------- */
+  var eqQ = document.getElementById("eqQ");
+  if (eqQ) {
+    var eqEq = document.getElementById("eqEq");
+    var eqOpts = document.getElementById("eqOpts");
+    var eqExplain = document.getElementById("eqExplain");
+    var eqNext = document.getElementById("eqNext");
+    var eqScoreEl = document.getElementById("eqScore");
+
+    var QS = [
+      {
+        q: "Problem 1 · α decay", eq: "²³⁸₉₂U → ? + ⁴₂He",
+        opts: ["²³⁴₉₀Th", "²³⁴₉₂U", "²³⁴₉₁Pa", "²³⁸₉₀Th"],
+        ans: 0,
+        why: "The α particle carries off A=4 and Z=2: daughter A = 238−4 = 234, Z = 92−2 = 90 → thorium, Th. Check: 234+4 = 238 ✓, 90+2 = 92 ✓. This is the first step of the uranium decay chain, which comes to rest at lead-206 after 14 steps."
+      },
+      {
+        q: "Problem 2 · β⁻ decay", eq: "¹⁴₆C → ? + ⁰₋₁e",
+        opts: ["¹⁴₇N", "¹⁴₅B", "¹⁴₈O", "¹⁰₇N"],
+        ans: 0,
+        why: "β⁻ decay: neutron → proton + electron, A unchanged and Z+1: 14 and 6+1=7 → nitrogen, N. Check: 14+0 = 14 ✓, 7+(−1) = 6 ✓. Stable nitrogen-14 is exactly the endpoint of carbon-14 dating."
+      },
+      {
+        q: "Problem 3 · α decay (the daughter is linked to household radon)", eq: "²²⁶₈₈Ra → ? + ⁴₂He",
+        opts: ["²²²₈₆Rn", "²²²₈₈Ra", "²²⁶₈₆Rn", "²²²₈₇Fr"],
+        ans: 0,
+        why: "A = 226−4 = 222, Z = 88−2 = 86 → radon, Rn! Check: 222+4 = 226 ✓, 86+2 = 88 ✓. The radon-222 born from radium-226 decay is a radioactive gas that can seep from foundation soil into homes — that is where the “ventilate against radon” advice in the safety box comes from."
+      }
+    ];
+
+    var qi = 0, rightCnt = 0, answered = false;
+
+    function renderEq() {
+      var item = QS[qi];
+      eqQ.textContent = item.q;
+      eqEq.textContent = item.eq;
+      eqOpts.innerHTML = "";
+      eqExplain.className = "quiz-explain";
+      eqExplain.innerHTML = "";
+      eqNext.disabled = true;
+      answered = false;
+      item.opts.forEach(function (o, oi) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "quiz-opt";
+        btn.innerHTML = "<span class='opt-key'>" + "ABCD"[oi] + "</span>" + o;
+        btn.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var isRight = oi === item.ans;
+          if (isRight) rightCnt++;
+          Array.prototype.forEach.call(eqOpts.children, function (b, bj) {
+            b.disabled = true;
+            if (bj === item.ans) b.classList.add("correct");
+          });
+          if (!isRight) btn.classList.add("wrong");
+          eqExplain.innerHTML = (isRight ? "<b class='good'>✓ Balanced correctly!</b> " : "<b class='bad'>✗ Reconcile the books once more.</b> ") + item.why;
+          eqExplain.classList.add("is-shown");
+          eqScoreEl.textContent = "Answered " + (qi + 1) + "/" + QS.length + " · Correct " + rightCnt;
+          eqNext.disabled = false;
+          eqNext.textContent = qi === QS.length - 1 ? "🎉 Done" : "Next problem →";
+        });
+        eqOpts.appendChild(btn);
+      });
+      eqScoreEl.textContent = "Answered " + qi + "/" + QS.length + " · Correct " + rightCnt;
+    }
+
+    eqNext.addEventListener("click", function () {
+      if (qi < QS.length - 1) { qi++; renderEq(); }
+      else {
+        eqQ.textContent = "All done! " + rightCnt + "/" + QS.length + " correct";
+        eqEq.textContent = "The balancing key: mass number A and charge number Z equal on both sides";
+        eqOpts.innerHTML = "";
+        eqExplain.className = "quiz-explain is-shown";
+        eqExplain.innerHTML = "<b class='good'>🎉</b> Three problems covering both α and β⁻ decay. Head back to the worked-example scaffold above, or take on four more in the end-of-chapter Self-Test.";
+        eqNext.disabled = true;
+        eqNext.textContent = "✓ Finished";
+      }
+    });
+    renderEq();
+  }
+})();
+</script>
+</body>
+</html>
