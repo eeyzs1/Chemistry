@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>化学键与分子结构 · 化学总论 第 2 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -352,14 +353,7 @@
 /* ============ 本章交互：分子形状切换器 + 沸点柱状图 ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent, text) {
-    var n = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) n.setAttribute(k, attrs[k]);
-    if (text !== undefined) n.textContent = text;
-    if (parent) parent.appendChild(n);
-    return n;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
 
   /* ---------- 1. 分子形状切换器 ---------- */
   var MOLS = {

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>仪器分析三剑客 · 分析化学 第 3 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -292,7 +293,7 @@
     <h3>🔬 动手玩：色谱分离动画</h3>
     <figure class="fig">
       <div class="fig-canvas">
-        <canvas id="chromCanvas" width="640" height="310" style="max-width:100%;display:block" aria-label="三组分色谱分离动画" role="img"></canvas>
+        <canvas id="chromCanvas" width="640" height="310" style="display:block" aria-label="三组分色谱分离动画" role="img"></canvas>
         <div class="fig-controls">
           <button class="btn" id="chromPlay">▶ 重新分离</button>
         </div>
@@ -441,13 +442,7 @@
 /* ============ 章节自定义交互（比尔定律滑块 / 色谱分离动画） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
   function lerp(a, b, t) { return a + (b - a) * t; }
   function mixColor(c1, c2, t) {
     return "rgb(" + Math.round(lerp(c1[0], c2[0], t)) + "," +

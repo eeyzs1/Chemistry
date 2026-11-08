@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>材料的化学世界 · 材料化学 第 1 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -382,13 +383,7 @@
 /* ============ 章节自定义交互（纳米切割器 / 晶格切换器） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
   function txt(parent, x, y, str, size, fill, weight, anchor) {
     var t = el("text", { x: x, y: y, "font-size": size, fill: fill,
       "font-weight": weight || 400, "text-anchor": anchor || "start" }, parent);

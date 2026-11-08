@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>化学与环境 · 环境化学 第 1 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -499,13 +500,7 @@
 /* ============ 章节自定义交互（温室效应模拟 / 富营养化昼夜模拟） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
 
   /* ---------- 1. 温室效应：红外光子模拟器 ---------- */
   var ghSvg = document.getElementById("ghSvg");
@@ -603,13 +598,18 @@
       var total = gh.escaped + gh.returned;
       var t = ghT(gh.ppm), d = t - 15;
       var dStr = (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1);
+      if (ghReduced) {
+        ghReadout.textContent = "CO₂ " + gh.ppm + " ppm ｜ 模拟平衡温度 " + t.toFixed(1) +
+          " °C（较工业化前 " + dStr + " °C）｜ 已按系统减少动态效果设置暂停光子动画";
+        return;
+      }
       ghReadout.textContent = "CO₂ " + gh.ppm + " ppm ｜ " +
         (total ? "红外直接逃逸 " + Math.round(gh.escaped / total * 100) + "% · 折返地面 " +
           Math.round(gh.returned / total * 100) + "% ｜ " : "红外光子模拟中…… ｜ ") +
         "模拟平衡温度 " + t.toFixed(1) + " °C（较工业化前 " + dStr + " °C）";
     }
 
-    function ghLoop() {
+    function ghFrame() {
       gh.frame++;
       if (gh.frame % 8 === 0 && gh.photons.length < 30) {
         var p = {
@@ -632,6 +632,7 @@
           if (p2.y < 12) gh.escaped++; else gh.returned++;
           p2.node.remove();
           gh.photons.splice(i, 1);
+          ghRenderReadout();
         } else if (p2.x < 6 || p2.x > 554) {
           p2.vx *= -1;
         }
@@ -639,8 +640,6 @@
       for (var k = 0; k < gh.mols.length; k++) {
         gh.mols[k].g.setAttribute("transform", "translate(" + gh.mols[k].x + "," + (gh.mols[k].y + ghBob(gh.mols[k], gh.frame)) + ")");
       }
-      ghRenderReadout();
-      requestAnimationFrame(ghLoop);
     }
 
     ghBtns.forEach(function (b) {
@@ -655,9 +654,11 @@
       });
     });
     ghBtns.forEach(function (x) { x.className = x.getAttribute("data-ppm") === "280" ? "btn" : "btn ghost"; });
+    var ghReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
     ghScene();
     ghRenderReadout();
-    requestAnimationFrame(ghLoop);
+    /* 循环只在模拟器可见且页面在前台时运行 */
+    if (!ghReduced) DSHChem.autoloop(ghSvg, ghFrame);
   }
 
   /* ---------- 2. 富营养化：湖泊昼夜模拟器 ---------- */
@@ -767,7 +768,7 @@
       lg.textContent = (eu.day ? "☀ 白天" : "🌙 夜晚") + " · 湖泊剖面";
     }
 
-    function euLoop() {
+    function euFrame() {
       eu.frame++;
       if (eu.day) {
         var want = Math.round(2 + 10 * eu.n);
@@ -787,7 +788,6 @@
           if (b.y < 70) { b.y = 80 + Math.random() * (20 + 90 * eu.n); b.x = 16 + Math.random() * 528; }
         }
       }
-      requestAnimationFrame(euLoop);
     }
 
     function euRender() {
@@ -808,7 +808,10 @@
     });
     euScene();
     euRender();
-    requestAnimationFrame(euLoop);
+    /* 气泡循环只在场景可见且页面在前台时运行；减少动态效果时不显示气泡动画 */
+    if (!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced())) {
+      DSHChem.autoloop(euSvg, euFrame);
+    }
   }
 })();
 </script>

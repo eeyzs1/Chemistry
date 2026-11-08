@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>原子与元素 · 化学总论 第 1 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -470,13 +471,7 @@
 /* ============ 章节自定义交互（原子模拟器 / NaCl / 氯同位素 / 迷你周期表） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
 
   /* ---------- 1. 玻尔原子模拟器 ---------- */
   var NAMES = ["氢 H","氦 He","锂 Li","铍 Be","硼 B","碳 C","氮 N","氧 O","氟 F","氖 Ne",

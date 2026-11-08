@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>官能团反应巡礼 · 有机化学 第 4 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -480,13 +481,7 @@
 /* ============ 章节自定义交互（苯共振切换器 / 官能团转化路线图） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
   function T(parent, x, y, str, o) {
     o = o || {};
     var t = el("text", {

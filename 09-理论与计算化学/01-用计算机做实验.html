@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>用计算机做实验 · 理论与计算化学 第 1 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -144,7 +145,7 @@
 
     <figure class="fig">
       <div class="fig-canvas">
-        <canvas id="pesCanvas" width="560" height="380" style="max-width:100%;border-radius:8px;cursor:crosshair;touch-action:none" aria-label="势能面探索器：能量地形图上的小球最陡下降动画"></canvas>
+        <canvas id="pesCanvas" width="560" height="380" style="border-radius:8px;cursor:crosshair;touch-action:none" aria-label="势能面探索器：能量地形图上的小球最陡下降动画"></canvas>
         <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;min-width:280px">
           <div style="flex:1;min-width:220px">
             <label for="pesX" style="font-size:.86rem;color:var(--ink-2)">构型坐标 x</label>
@@ -254,7 +255,7 @@
             <span>低温（凝聚成液滴）</span><span>高温（蒸发成气体）</span>
           </div>
         </div>
-        <canvas id="mdCanvas" width="560" height="340" style="max-width:100%;border-radius:8px" aria-label="粒子分子动力学模拟器：温度滑块观察凝聚与蒸发"></canvas>
+        <canvas id="mdCanvas" width="560" height="340" style="border-radius:8px" aria-label="粒子分子动力学模拟器：温度滑块观察凝聚与蒸发"></canvas>
         <div class="fig-controls">
           <button class="btn ghost" id="mdReset">↺ 重置粒子</button>
         </div>
@@ -741,15 +742,35 @@
         mdReadout.textContent = "设定 T* = " + mdSet.toFixed(2) + " ｜ 实测 T* ≈ " + mdTema.toFixed(2) +
           " ｜ 平均速率 ≈ " + (vsum / P.length).toFixed(2) + " σ/τ ｜ 观察：" + mdStatus(mdTema);
       }
-      requestAnimationFrame(mdLoop);
     }
+    /* 减少动态效果：不做连续动画，静默演化到平衡后画一帧快照 */
+    function mdSettle() {
+      mdInit();
+      for (var i = 0; i < 2400; i++) mdStep(0.008);
+      var sum = 0, vsum = 0;
+      for (i = 0; i < P.length; i++) {
+        sum += P[i].vx * P[i].vx + P[i].vy * P[i].vy;
+        vsum += Math.hypot(P[i].vx, P[i].vy);
+      }
+      mdTema = sum / (2 * P.length);
+      mdDraw();
+      mdReadout.textContent = "设定 T* = " + mdSet.toFixed(2) + " ｜ 平衡态 T* ≈ " + mdTema.toFixed(2) +
+        " ｜ 平均速率 ≈ " + (vsum / P.length).toFixed(2) + " σ/τ ｜ 观察：" + mdStatus(mdTema) +
+        "｜已按系统减少动态效果设置显示平衡快照";
+    }
+    var mdReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
 
     if (mdSlider) mdSlider.addEventListener("input", function () {
       mdSet = parseInt(this.value, 10) / 100;
       if (mdTVal) mdTVal.textContent = mdSet.toFixed(2);
+      if (mdReduced) mdSettle();
     });
-    if (mdResetBtn) mdResetBtn.addEventListener("click", function () { mdInit(); });
-    mdInit(); mdDraw(); mdLoop();
+    if (mdResetBtn) mdResetBtn.addEventListener("click", function () {
+      if (mdReduced) mdSettle(); else mdInit();
+    });
+    /* 循环只在模拟器可见且页面在前台时运行 */
+    if (mdReduced) mdSettle();
+    else { mdInit(); mdDraw(); DSHChem.autoloop(mdCanvas, mdLoop); }
   }
 })();
 </script>

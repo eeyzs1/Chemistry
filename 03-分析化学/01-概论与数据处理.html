@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>概论与数据处理 · 分析化学 第 1 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -507,13 +508,7 @@
 /* ============ 章节自定义交互（四联靶准确度/精密度模拟器） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
   function tri() { return Math.random() + Math.random() - 1; }
 
   var svg = document.getElementById("targetSvg");

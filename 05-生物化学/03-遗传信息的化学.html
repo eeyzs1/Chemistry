@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>遗传信息的化学 · 生物化学 第 3 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -466,13 +467,7 @@
 /* ============ 章节自定义交互（DNA 解链复制动画 / 中心法则 stepper） ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var node = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) node.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(node);
-    return node;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
 
   /* ---------- 1. DNA 解链复制动画 ---------- */
   var dnaSvg = document.getElementById("dnaSvg");

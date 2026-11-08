@@ -74,7 +74,8 @@ a:hover { color: var(--accent); }
 ul, ol { padding-left: 1.5em; margin: 0 0 var(--sp)*2; }
 li { margin: .3em 0; }
 strong { color: #111827; }
-img, svg { max-width: 100%; }
+img, svg, canvas { max-width: 100%; }
+svg, canvas { height: auto; }
 
 :focus-visible {
   outline: 3px solid var(--accent);
@@ -260,6 +261,20 @@ sub, sup { line-height: 0; }
 .btn.ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
 .btn[disabled] { opacity: .45; cursor: not-allowed; }
 
+/* 回到顶部（由 tutor.js 注入） */
+.backtop {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60;
+  font: inherit; font-size: .86rem; font-weight: 700;
+  min-height: 42px; padding: 8px 16px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--accent-deep);
+  box-shadow: var(--shadow-2); cursor: pointer;
+  opacity: 0; pointer-events: none; transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease, border-color .18s ease;
+}
+.backtop.is-shown { opacity: 1; pointer-events: auto; transform: none; }
+.backtop:hover { border-color: var(--accent); }
+
 /* 自测 */
 .quiz { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 28px 0; background: var(--surface); box-shadow: var(--shadow-1); }
 .quiz-head { padding: 12px 18px; background: var(--accent); color: #fff; font-weight: 700; font-size: .95rem; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -347,6 +362,8 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 1
 .lesson-card .lc-title { font-size: 1.05rem; font-weight: 700; }
 .lesson-card .lc-desc { font-size: .88rem; color: var(--ink-2); flex: 1; }
 .lesson-card .lc-meta { font-size: .78rem; color: var(--ink-3); display: flex; gap: 10px; flex-wrap: wrap; }
+.lesson-card .lc-meta .lc-done { color: var(--ok); font-weight: 700; }
+.lesson-card .lc-meta .lc-part { color: var(--warn); font-weight: 600; }
 
 /* ---------- 动画工具 ---------- */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -379,7 +396,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 1
 /* ---------- 打印 ---------- */
 @media print {
   body { background: #fff; }
-  .crumbs, .toc, .worked-controls, .fig-controls, .quiz, .pager, .ladder-tabs { display: none !important; }
+  .crumbs, .toc, .worked-controls, .fig-controls, .quiz, .pager, .ladder-tabs, .backtop { display: none !important; }
   .ladder-panel { display: block !important; border-top: 1px dashed #ccc; padding-top: 10px; }
   .card, .worked, .fig .fig-canvas { box-shadow: none; }
 }

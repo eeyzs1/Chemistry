@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>物态与溶液 · 化学总论 第 4 章</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -79,7 +80,7 @@
     <h3>🔬 动手玩：粒子运动模拟器</h3>
     <figure class="fig">
       <div class="fig-canvas">
-        <canvas id="ptCanvas" width="380" height="240" style="border-radius:8px;background:#0f172a;max-width:100%"></canvas>
+        <canvas id="ptCanvas" width="380" height="240" style="border-radius:8px;background:#0f172a" role="img" aria-label="物质三态粒子模拟器：拖动温度滑块观察固、液、气三态的粒子行为变化"></canvas>
         <div style="display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap">
           <span style="font-size:.9rem;color:var(--ink-2)">温度：</span>
           <input id="ptT" type="range" min="0" max="100" value="25" style="width:200px;accent-color:var(--accent);height:44px" aria-label="温度">
@@ -314,13 +315,7 @@
 /* ============ 本章交互：粒子运动模拟 + 注射器压缩 ============ */
 (function () {
   "use strict";
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(tag, attrs, parent) {
-    var n = document.createElementNS(SVGNS, tag);
-    for (var k in attrs) n.setAttribute(k, attrs[k]);
-    if (parent) parent.appendChild(n);
-    return n;
-  }
+  var el = window.DSHChem.el; /* 共享 SVG 辅助，定义见 assets/tutor.js */
 
   /* ---------- 1. 粒子运动模拟（canvas） ---------- */
   var cv = document.getElementById("ptCanvas");
@@ -346,12 +341,8 @@
       if (temp < 55) return "中温：粒子满场滑动、频繁碰撞（液态纪律）";
       return "高温：粒子高速乱飞充满空间（气态纪律）";
     }
-    function tick() {
+    function ptStep() {
       var speed = 0.3 + temp / 100 * 4.5;
-      ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "#0f172a";
-      ctx.fillRect(0, 0, W, H);
-      var col = tempColor();
       for (var j = 0; j < parts.length; j++) {
         var p = parts[j];
         p.x += p.vx * speed; p.y += p.vy * speed;
@@ -361,22 +352,39 @@
         if (p.x > W - p.r) { p.x = W - p.r; p.vx = -Math.abs(p.vx); }
         if (p.y < p.r) { p.y = p.r; p.vy = Math.abs(p.vy); }
         if (p.y > H - p.r) { p.y = H - p.r; p.vy = -Math.abs(p.vy); }
+      }
+    }
+    function ptDraw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#0f172a";
+      ctx.fillRect(0, 0, W, H);
+      var col = tempColor();
+      for (var j = 0; j < parts.length; j++) {
+        var p = parts[j];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = col;
         ctx.fill();
       }
-      requestAnimationFrame(tick);
     }
+    function ptSettle(n) { for (var i = 0; i < n; i++) ptStep(); ptDraw(); }
     slider.addEventListener("input", function () {
       temp = parseFloat(slider.value);
       tLabel.textContent = temp < 20 ? "低温" : temp < 55 ? "中温" : "高温";
       tLabel.style.color = tempColor();
       ptRead.textContent = "T ≈ " + Math.round(temp * 3) + " °C（示意）｜ " + phaseName();
+      if (ptReduced) ptSettle(300);
     });
     tLabel.textContent = "低温（固态感）";
     ptRead.textContent = "T ≈ 75 °C（示意）｜ " + phaseName();
-    tick();
+    /* 循环只在模拟器可见且页面在前台时运行；减少动态效果时显示静态平衡画面 */
+    var ptReduced = !!(window.DSHChem && DSHChem.prefersReduced && DSHChem.prefersReduced());
+    if (ptReduced) {
+      ptSettle(420);
+      ptRead.textContent += "｜已按系统减少动态效果设置显示静态平衡画面";
+    } else {
+      DSHChem.autoloop(ptCanvas, function () { ptStep(); ptDraw(); });
+    }
   }
 
   /* ---------- 2. 注射器压缩（SVG） ---------- */
