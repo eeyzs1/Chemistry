@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>The Four Families of Biomolecules · Biochemistry Chapter 1</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b05">
 <div class="page">
@@ -594,7 +594,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactions (peptide builder / phospholipid self-assembly) ============ */
 (function () {
@@ -725,7 +725,7 @@
       var t0 = null, dur = 850;
       function step(ts) {
         if (t0 === null) t0 = ts;
-        var k = Math.min(1, (ts - t0) / dur);
+        var k = DSHChem.prefersReduced() ? 1 : Math.min(1, (ts - t0) / dur);
         var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
         for (var i = 0; i < 10; i++) {
           cur[i].x = from[i].x + (to[i].x - from[i].x) * ease;

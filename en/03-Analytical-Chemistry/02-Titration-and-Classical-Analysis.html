@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Titration and Classical Analysis · Analytical Chemistry Chapter 2</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b03">
 <div class="page">
@@ -154,6 +154,7 @@
         <div class="fig-readout" id="titReadout">V(NaOH) = 0.00 mL | pH = 1.00 | Phenolphthalein: colorless | Before the stoichiometric point (excess acid)</div>
       </div>
       <figcaption>
+        Model: ideal dilute solution at 25 °C; water autoionization is included.
         0.1000 mol/L NaOH titrating 20.00 mL of 0.1000 mol/L HCl. Drag the slider into the 19.9–20.1 mL range and look closely: half a drop apart,
         the pH soars by more than 5 units — the steep portion of the curve (the jump) is precisely the stage for phenolphthalein's color change. The curve on the right grows in real time; the pink horizontal band is the transition range of phenolphthalein (8.2–10).
       </figcaption>
@@ -438,7 +439,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (NaOH titrating HCl simulator) ============ */
 (function () {
@@ -454,13 +455,10 @@
     var slider = document.getElementById("titSlider");
     var playBtn = document.getElementById("titPlay");
     var resetBtn = document.getElementById("titReset");
-    var V = 0, playing = false, rafId = null;
+    var V = 0, playing = false, rafId = null, lastFrame = null;
 
     function pHOf(v) {
-      if (v <= 0) return 1.00;
-      if (v < V0 - 1e-9) return -Math.log10(C * (V0 - v) / (V0 + v));
-      if (v <= V0 + 1e-9) return 7.00;
-      return 14 + Math.log10(C * (v - V0) / (V0 + v));
+      return DSHChem.strongAcidBasePH(C * V0 / 1000, C * v / 1000, (V0 + v) / 1000);
     }
     function px(v) { return X0 + W * v / 40; }
     function py(p) { return Y0 - H * p / 14; }
@@ -480,9 +478,9 @@
       return "Phenolphthalein: pink";
     }
     function stateText(v) {
+      if (Math.abs(v - V0) < 1e-9) return "Stoichiometric point ✓";
       if (Math.abs(v - V0) <= 0.03) return "⚡ Jump region: half a drop apart, pH soars!";
       if (v < V0) return "Before the stoichiometric point (excess acid)";
-      if (Math.abs(v - V0) < 1e-9) return "Stoichiometric point ✓";
       return "Past the stoichiometric point (excess base)";
     }
 
@@ -588,14 +586,18 @@
 
     function stopPlay() {
       playing = false;
+      lastFrame = null;
       if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
       if (playBtn) playBtn.textContent = "▶ Auto-titrate";
     }
 
-    function loop() {
+    function loop(ts) {
       if (!playing) return;
-      var dv = (V > 19.4 && V < 20.6) ? 0.05 : 0.3;
-      V = Math.min(40, V + dv);
+      var dt = lastFrame === null ? 1 / 60 : Math.min(0.05, (ts - lastFrame) / 1000);
+      lastFrame = ts;
+      var speed = (V >= 19.4 && V < 20.6) ? 3 : 18;
+      var next = Math.min(40, V + speed * dt);
+      V = V < 19.4 && next > 19.4 ? 19.4 : next;
       sync();
       if (V >= 40) { stopPlay(); return; }
       rafId = requestAnimationFrame(loop);
@@ -604,9 +606,10 @@
     if (playBtn) playBtn.addEventListener("click", function () {
       if (playing) { stopPlay(); return; }
       if (V >= 40) V = 0;
+      if (DSHChem.prefersReduced()) { V = 40; sync(); stopPlay(); return; }
       playing = true;
       playBtn.textContent = "⏸ Pause";
-      loop();
+      loop(performance.now());
     });
     if (slider) slider.addEventListener("input", function () {
       stopPlay();

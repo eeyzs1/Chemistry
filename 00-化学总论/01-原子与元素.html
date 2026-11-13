@@ -325,12 +325,12 @@
 
     <figure class="fig">
       <div class="fig-canvas">
-        <div style="min-width:300px">
+        <div style="min-width:min(300px,100%)">
           <label for="clSlider" style="font-size:.9rem;color:var(--ink-2)">
             <strong id="clPct">75.8%</strong> 的 <sup>35</sup>Cl（其余为 <sup>37</sup>Cl）
           </label>
           <input id="clSlider" type="range" min="0" max="100" value="76" step="0.5"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="氯35的比例">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="氯35的比例">
           <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
             <span>0%（全是 ³⁷Cl）</span><span>100%（全是 ³⁵Cl）</span>
           </div>
@@ -557,7 +557,7 @@
   var naclSvg = document.getElementById("naclSvg");
   if (naclSvg) {
     var naReadout = document.getElementById("naclReadout");
-    var moved = false, flying = null;
+    var moved = false, flying = null, flightId = null;
     function drawNaCl(state) {
       naclSvg.innerHTML = "";
       // Na
@@ -593,6 +593,8 @@
     drawNaCl(0);
     var goBtn = document.getElementById("naclGo");
     if (goBtn) goBtn.addEventListener("click", function () {
+      if (flightId !== null) return;
+      if (DSHChem.prefersReduced()) moved = true;
       if (moved) { drawNaCl(1); naReadout.textContent = "Na⁺（11p·10e，+1） + Cl⁻（17p·18e，−1） → 异性相吸，构成 NaCl"; return; }
       var x0 = 176, x1 = 374, t0 = null, dur = 1100;
       function step(ts) {
@@ -602,16 +604,19 @@
         flying = x0 + (x1 - x0) * ease + Math.sin(k * Math.PI) * -46;
         drawNaCl(k < 1 ? 0.5 : 1);
         if (k >= 1) {
-          flying = null; moved = true;
+          flying = null; moved = true; flightId = null;
+          drawNaCl(1);
           naReadout.textContent = "转移完成！Na⁺（11p·10e）与 Cl⁻（17p·18e）—— 它们将互相吸引成盐。";
           return;
         }
-        requestAnimationFrame(step);
+        flightId = requestAnimationFrame(step);
       }
-      requestAnimationFrame(step);
+      flightId = requestAnimationFrame(step);
     });
     var rBtn = document.getElementById("naclReset");
     if (rBtn) rBtn.addEventListener("click", function () {
+      if (flightId !== null) cancelAnimationFrame(flightId);
+      flightId = null;
       moved = false; flying = null; drawNaCl(0);
       naReadout.textContent = "Na（11p·11e，电中性） + Cl（17p·17e，电中性）";
     });
@@ -668,7 +673,11 @@
   if (host) {
     var info = document.getElementById("ptInfo");
     ELS.forEach(function (d) {
-      var cell = document.createElement("div");
+      var cell = document.createElement("button");
+      cell.type = "button";
+      cell.style.padding = "2px";
+      cell.style.font = "inherit";
+      cell.style.minWidth = "0";
       cell.style.gridColumn = d[6];
       cell.style.gridRow = d[5];
       cell.style.background = CAT[d[4]][1];
@@ -693,6 +702,7 @@
       function hide() { cell.style.transform = ""; }
       cell.addEventListener("mouseenter", show);
       cell.addEventListener("mouseleave", hide);
+      cell.addEventListener("blur", hide);
       cell.addEventListener("focus", show);
       cell.addEventListener("click", show);
       host.appendChild(cell);

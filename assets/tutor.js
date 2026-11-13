@@ -14,6 +14,9 @@
     else document.addEventListener("DOMContentLoaded", fn);
   }
 
+  var isZh = (document.documentElement.lang || "").indexOf("zh") === 0;
+  function tr(zh, en) { return isZh ? zh : en; }
+
   /* ---------- 0. 共享工具 ---------- */
   var SVGNS = "http://www.w3.org/2000/svg";
 
@@ -33,12 +36,13 @@
   }
 
   /* 视口感知动画循环：元素在视口内且页面可见时才跑，滚出/切走自动暂停。
-     frameFn 不再自行调用 requestAnimationFrame；返回 {start, stop}。 */
+     frameFn 不再自行调用 requestAnimationFrame；返回 {start, stop, destroy}。 */
   function autoloop(watchEl, frameFn, opts) {
     opts = opts || {};
-    var running = false, rafId = null, visible = false;
+    var running = false, enabled = true, destroyed = false, rafId = null, visible = false;
     var minDt = opts.maxFps ? 1000 / opts.maxFps : 0;
     var last = 0;
+    var motion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
 
     function tick(ts) {
       rafId = null;
@@ -49,24 +53,31 @@
       }
       last = ts;
       frameFn(ts);
-      if (running) rafId = requestAnimationFrame(tick);
+      if (running && rafId === null) rafId = requestAnimationFrame(tick);
     }
-    function start() {
-      if (running) return;
-      running = true;
-      rafId = requestAnimationFrame(tick);
-    }
-    function stop() {
+    function pause() {
       running = false;
       if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
     }
     function update() {
-      if (visible && !document.hidden) start();
-      else stop();
+      if (!destroyed && enabled && visible && !document.hidden && !(motion && motion.matches)) {
+        if (!running) {
+          running = true;
+          last = 0;
+          rafId = requestAnimationFrame(tick);
+        }
+      } else pause();
+    }
+    function start() { enabled = true; update(); }
+    function stop() { enabled = false; pause(); }
+    function motionChanged() {
+      update();
+      if (enabled && visible && !document.hidden && motion.matches) frameFn(performance.now());
     }
 
+    var io = null;
     if ("IntersectionObserver" in window && watchEl) {
-      var io = new IntersectionObserver(function (entries) {
+      io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) { visible = en.isIntersecting; });
         update();
       }, { rootMargin: opts.rootMargin || "80px" });
@@ -76,33 +87,90 @@
       update();
     }
     document.addEventListener("visibilitychange", update);
-    return { start: start, stop: stop };
+    if (motion && motion.addEventListener) motion.addEventListener("change", motionChanged);
+    return {
+      start: start,
+      stop: stop,
+      destroy: function () {
+        destroyed = true;
+        stop();
+        if (io) io.disconnect();
+        document.removeEventListener("visibilitychange", update);
+        if (motion && motion.removeEventListener) motion.removeEventListener("change", motionChanged);
+      }
+    };
+  }
+
+  /* 连续滴定等数值模型共用：25 °C、理想稀溶液，计入水的自解离。
+     使用数值稳定的二次方程解，避免计量点附近出现 pH 倒跳或无穷大。 */
+  function strongAcidBasePH(acidMoles, baseMoles, volumeLitres) {
+    if (!Number.isFinite(acidMoles) || !Number.isFinite(baseMoles) ||
+        !Number.isFinite(volumeLitres) || acidMoles < 0 || baseMoles < 0 || volumeLitres <= 0) {
+      throw new RangeError("Non-negative amounts and a positive volume are required");
+    }
+    var excess = (acidMoles - baseMoles) / volumeLitres;
+    var major = (Math.abs(excess) + Math.hypot(excess, 2e-7)) / 2;
+    return excess >= 0 ? -Math.log10(major) : 14 + Math.log10(major);
   }
 
   /* ---------- 进度存取（localStorage，容错：不可用时静默降级） ---------- */
   var PROG_KEY = "dshchem:progress";
+  var memoryProg = {};
+
+  function validScore(value) { return typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 100; }
 
   function readProg() {
-    try { return JSON.parse(localStorage.getItem(PROG_KEY) || "{}"); }
-    catch (e) { return {}; }
+    try {
+      var parsed = JSON.parse(localStorage.getItem(PROG_KEY) || "{}");
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+      var clean = {};
+      Object.keys(parsed).forEach(function (key) {
+        if (/^b\d{2}:/.test(key) && validScore(parsed[key])) clean[key] = parsed[key];
+      });
+      return clean;
+    } catch (e) { return memoryProg; }
   }
   function writeProg(store) {
+    memoryProg = store;
     try { localStorage.setItem(PROG_KEY, JSON.stringify(store)); } catch (e) {}
   }
-  /* 进度键 = 分支 body class + 页面文件名（跨页面稳定） */
-  function pageKey(fileName) {
-    var b = (document.body.className.match(/b\d{2}/) || [""])[0];
-    var p = fileName || location.pathname.split("/").pop() || location.href;
+  /* 中英文同章使用中文文件名作为规范键，同时兼容旧版英文进度。 */
+  function branchKey() { return (document.body.className.match(/\bb\d{2}\b/) || [""])[0]; }
+  function pagePair(fileName) {
+    var p = (fileName || location.pathname.split("/").pop() || "index.html").split(/[?#]/)[0];
     try { p = decodeURIComponent(p); } catch (e) {}
-    return b + ":" + p;
+    return LANG_PAIRS.find(function (pair) {
+      return pair[0] === branchKey() && (pair[1] === p || pair[2] === p);
+    }) || [branchKey(), p, p];
+  }
+  function pageKey(fileName) {
+    var pair = pagePair(fileName);
+    return pair[0] + ":" + pair[1];
+  }
+  function bestScore(fileName, store) {
+    var pair = pagePair(fileName);
+    var scores = [store[pair[0] + ":" + pair[1]], store[pair[0] + ":" + pair[2]]].filter(validScore);
+    return scores.length ? Math.max.apply(null, scores) : null;
+  }
+  function saveBest(pct) {
+    // 提交时重新读取，防止较早打开的章节覆盖其他标签页后来写入的成绩。
+    var prog = readProg();
+    var previous = bestScore(null, prog);
+    var best = previous === null ? pct : Math.max(previous, pct);
+    prog[pageKey()] = best;
+    writeProg(prog);
+    return { best: best, record: previous === null || pct > previous };
   }
 
   /* ---------- 1. 三级讲解阶梯 ---------- */
   function initLadders(root) {
     (root || document).querySelectorAll(".ladder").forEach(function (ladder, li) {
+      if (ladder.dataset.initialized) return;
       var tabs = ladder.querySelectorAll(".ladder-tab");
       var panels = ladder.querySelectorAll(".ladder-panel");
       var tabsWrap = ladder.querySelector(".ladder-tabs");
+      if (!tabs.length || tabs.length !== panels.length) return;
+      ladder.dataset.initialized = "1";
       if (tabsWrap) tabsWrap.setAttribute("role", "tablist");
 
       function activate(i) {
@@ -117,8 +185,11 @@
 
       panels.forEach(function (p, j) {
         p.setAttribute("role", "tabpanel");
+        p.tabIndex = 0;
         if (!p.id) p.id = "ladder" + li + "-panel" + j;
-        if (tabs[j]) tabs[j].setAttribute("aria-controls", p.id);
+        if (!tabs[j].id) tabs[j].id = p.id + "-tab";
+        tabs[j].setAttribute("aria-controls", p.id);
+        p.setAttribute("aria-labelledby", tabs[j].id);
       });
 
       tabs.forEach(function (tab, i) {
@@ -127,9 +198,9 @@
         tab.addEventListener("click", function () { activate(i); });
         tab.addEventListener("keydown", function (e) {
           var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-          if (!d) return;
+          if (!d && e.key !== "Home" && e.key !== "End") return;
           e.preventDefault();
-          var n = (i + d + tabs.length) % tabs.length;
+          var n = e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : (i + d + tabs.length) % tabs.length;
           activate(n);
           tabs[n].focus();
         });
@@ -141,8 +212,10 @@
   /* ---------- 2. 例题脚手架步进 ---------- */
   function initWorked(root) {
     (root || document).querySelectorAll(".worked").forEach(function (box) {
+      if (box.dataset.initialized) return;
       var steps = Array.prototype.slice.call(box.querySelectorAll(".worked-steps .step"));
       if (!steps.length) return;
+      box.dataset.initialized = "1";
       var btnNext = box.querySelector(".js-step-next");
       var btnAll  = box.querySelector(".js-step-all");
       var btnReset= box.querySelector(".js-step-reset");
@@ -153,10 +226,10 @@
         if (btnNext) {
           if (shown >= steps.length) {
             btnNext.disabled = true;
-            btnNext.textContent = "已完成 ✓";
+            btnNext.textContent = tr("已完成 ✓", "Done ✓");
           } else {
             btnNext.disabled = false;
-            btnNext.textContent = "下一步（" + shown + "/" + steps.length + "）";
+            btnNext.textContent = tr("下一步（", "Next step (") + shown + "/" + steps.length + tr("）", ")");
           }
         }
       }
@@ -171,26 +244,32 @@
   var KEYS = ["A", "B", "C", "D", "E", "F"];
 
   function buildQuiz(box) {
+    if (box.dataset.initialized) return;
     var dataScript = box.querySelector("script.quiz-data");
     if (!dataScript) return;
     var data;
     try { data = JSON.parse(dataScript.textContent); }
-    catch (e) { console.warn("quiz JSON 解析失败：", e); return; }
-    var questions = data.questions || [];
-    if (!questions.length) return;
+    catch (e) { console.warn("Invalid quiz JSON:", e); return; }
+    var questions = data && data.questions;
+    if (!Array.isArray(questions) || !questions.length || !questions.every(function (q) {
+      return q && typeof q.q === "string" && Array.isArray(q.options) && q.options.length >= 2 &&
+        q.options.every(function (option) { return typeof option === "string"; }) &&
+        Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length &&
+        (q.explain === undefined || typeof q.explain === "string");
+    })) { console.warn("Invalid quiz questions"); return; }
+    box.dataset.initialized = "1";
 
     var body = document.createElement("div");
     body.className = "quiz-body";
 
     var answered = 0, correct = 0;
     var score = box.querySelector(".quiz-score");
+    if (score) { score.setAttribute("role", "status"); score.setAttribute("aria-live", "polite"); }
 
-    var prog = readProg();
-    var myKey = pageKey();
-    var best = (typeof prog[myKey] === "number") ? prog[myKey] : null;
+    var best = bestScore(null, readProg());
 
     function scoreText(extra) {
-      var s = "已答 " + answered + "/" + questions.length + " · 正确 " + correct;
+      var s = tr("已答 ", "Answered ") + answered + "/" + questions.length + tr(" · 正确 ", " · Correct ") + correct;
       if (extra) s += extra;
       return s;
     }
@@ -201,6 +280,9 @@
 
       var qText = document.createElement("div");
       qText.className = "q-text";
+      qText.id = "quiz-" + Array.prototype.indexOf.call(document.querySelectorAll(".quiz"), box) + "-q" + qi;
+      qDiv.setAttribute("role", "group");
+      qDiv.setAttribute("aria-labelledby", qText.id);
       var no = document.createElement("span");
       no.className = "q-no";
       no.textContent = "Q" + (qi + 1);
@@ -213,6 +295,7 @@
 
       var explain = document.createElement("div");
       explain.className = "quiz-explain";
+      explain.setAttribute("aria-live", "polite");
 
       (q.options || []).forEach(function (optText, oi) {
         var btn = document.createElement("button");
@@ -235,27 +318,21 @@
             if (bj === q.answer) b.classList.add("correct");
           });
           if (!isRight) btn.classList.add("wrong");
-          explain.innerHTML = (isRight
-            ? "<b class='good'>✓ 回答正确。</b> "
-            : "<b class='bad'>✗ 再想想。</b> ") + (q.explain || "");
+          var feedback = document.createElement("b");
+          feedback.className = isRight ? "good" : "bad";
+          feedback.textContent = isRight ? tr("✓ 回答正确。 ", "✓ Correct. ") : tr("✗ 回答有误，请看解析。 ", "✗ Incorrect. See the explanation. ");
+          explain.replaceChildren(feedback, document.createTextNode(q.explain || ""));
           explain.classList.add("is-shown");
-          if (score) {
-            var tail = "";
-            if (answered === questions.length) {
-              var pct = Math.round(correct / questions.length * 100);
-              tail = "（" + pct + "%）";
-              var isRecord = (best === null || pct > best);
-              if (isRecord) {
-                best = pct;
-                prog[myKey] = pct;
-                writeProg(prog);
-                tail += " 🏆 新纪录";
-              } else if (best !== null) {
-                tail += " · 历史最佳 " + best + "%";
-              }
-            }
-            score.textContent = scoreText(tail);
+          var tail = "";
+          if (answered === questions.length) {
+            var pct = Math.round(correct / questions.length * 100);
+            var result = saveBest(pct);
+            best = result.best;
+            tail = " (" + pct + "%)" + (result.record
+              ? tr(" 🏆 新纪录", " 🏆 New record") : tr(" · 历史最佳 ", " · best ") + best + "%");
           }
+          if (score) score.textContent = scoreText(tail);
+          retry.hidden = false;
         });
         opts.appendChild(btn);
       });
@@ -267,14 +344,34 @@
 
     box.appendChild(body);
 
+    var controls = document.createElement("div");
+    controls.className = "quiz-controls";
+    var retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "btn ghost";
+    retry.textContent = tr("↻ 重新自测", "↻ Try again");
+    retry.hidden = true;
+    retry.addEventListener("click", function () {
+      body.remove();
+      controls.remove();
+      delete box.dataset.initialized;
+      buildQuiz(box);
+      var first = box.querySelector(".quiz-opt");
+      if (first) first.focus({ preventScroll: true });
+    });
+    controls.appendChild(retry);
+    box.appendChild(controls);
+
     if (score) {
-      score.textContent = "共 " + questions.length + " 题" +
-        (best !== null ? " · 历史最佳 " + best + "%" : "");
+      score.textContent = tr("共 " + questions.length + " 题", questions.length + (questions.length === 1 ? " question" : " questions")) +
+        (best !== null ? tr(" · 历史最佳 ", " · best ") + best + "%" : "");
     }
   }
 
   function initQuizzes(root) {
-    (root || document).querySelectorAll(".quiz").forEach(buildQuiz);
+    (root || document).querySelectorAll(".quiz").forEach(function (box) {
+      try { buildQuiz(box); } catch (e) { console.warn(e); }
+    });
   }
 
   /* ---------- 4. 目录滚动高亮 ---------- */
@@ -307,14 +404,14 @@
     cards.forEach(function (card) {
       var href = (card.getAttribute("href") || "").split("/").pop();
       if (!href) return;
-      var pct = prog[pageKey(href)];
-      if (typeof pct !== "number") return;
+      var pct = bestScore(href, prog);
       var meta = card.querySelector(".lc-meta");
-      if (!meta || meta.querySelector(".lc-done, .lc-part")) return;
-      var b = document.createElement("span");
-      if (pct >= 80) { b.className = "lc-done"; b.textContent = "✓ 已通过 " + pct + "%"; }
-      else { b.className = "lc-part"; b.textContent = "最佳 " + pct + "%"; }
-      meta.appendChild(b);
+      if (!meta) return;
+      var b = meta.querySelector(".lc-done, .lc-part");
+      if (pct === null) { if (b) b.remove(); return; }
+      if (!b) { b = document.createElement("span"); meta.appendChild(b); }
+      if (pct >= 80) { b.className = "lc-done"; b.textContent = tr("✓ 已通过 ", "✓ Passed ") + pct + "%"; }
+      else { b.className = "lc-part"; b.textContent = tr("最佳 ", "Best ") + pct + "%"; }
     });
   }
 
@@ -324,13 +421,18 @@
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "backtop";
-    btn.textContent = "↑ 顶部";
-    btn.setAttribute("aria-label", "回到页面顶部");
+    btn.textContent = tr("↑ 顶部", "↑ Top");
+    btn.setAttribute("aria-label", tr("回到页面顶部", "Back to top of page"));
     btn.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: prefersReduced() ? "auto" : "smooth" });
     });
     document.body.appendChild(btn);
-    function show() { btn.classList.toggle("is-shown", (window.scrollY || window.pageYOffset) > 600); }
+    function show() {
+      var on = (window.scrollY || window.pageYOffset) > 600;
+      btn.classList.toggle("is-shown", on);
+      btn.tabIndex = on ? 0 : -1;
+      btn.setAttribute("aria-hidden", on ? "false" : "true");
+    }
     window.addEventListener("scroll", show, { passive: true });
     show();
   }
@@ -396,9 +498,8 @@
 
   function initLangSwitch() {
     var crumbs = document.querySelector(".crumbs");
-    if (!crumbs) return;
-    var isZh = (document.documentElement.lang || "").indexOf("zh") === 0;
-    var b = (document.body.className.match(/b\d{2}/) || [""])[0];
+    if (!crumbs || crumbs.querySelector(".langswitch")) return;
+    var b = branchKey();
     var file = location.pathname.split("/").pop() || "index.html";
     try { file = decodeURIComponent(file); } catch (e) {}
     var hit = null;
@@ -408,14 +509,42 @@
     if (!hit) return;
     var href = b
       ? (isZh ? "../en/" + LANG_EN_FOLDERS[b] + "/" + hit[2]
-              : "../" + LANG_ZH_FOLDERS[b] + "/" + hit[1])
-      : (isZh ? "en/index.html" : "index.html");
+              : "../../" + LANG_ZH_FOLDERS[b] + "/" + hit[1])
+      : (isZh ? "en/index.html" : "../index.html");
     var a = document.createElement("a");
     a.className = "langswitch";
     a.href = href;
     a.textContent = isZh ? "EN" : "中文";
     a.setAttribute("aria-label", isZh ? "English version" : "中文版");
+    a.hreflang = isZh ? "en" : "zh-CN";
+    a.lang = isZh ? "en" : "zh-CN";
     crumbs.appendChild(a);
+  }
+
+  /* 宽表格在自己的区域滚动，正文和公式可以在窄屏上换行。 */
+  function initReading() {
+    document.querySelectorAll("table.tbl").forEach(function (table) {
+      if (table.parentElement.classList.contains("table-scroll")) return;
+      var wrap = document.createElement("div");
+      wrap.className = "table-scroll";
+      wrap.tabIndex = 0;
+      wrap.setAttribute("role", "region");
+      wrap.setAttribute("aria-label", tr("表格，可横向滚动", "Table, scroll horizontally"));
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  }
+
+  /* CSS 的常驻动效也按整个图示暂停；新绘制的 SVG 子节点自动遵循父级状态。 */
+  function initFigureMotion() {
+    function pageVisibility() { document.documentElement.classList.toggle("document-paused", document.hidden); }
+    document.addEventListener("visibilitychange", pageVisibility);
+    pageVisibility();
+    if (!("IntersectionObserver" in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.classList.toggle("motion-paused", !entry.isIntersecting); });
+    }, { rootMargin: "80px" });
+    document.querySelectorAll(".fig, .portal-hero").forEach(function (figure) { observer.observe(figure); });
   }
 
   /* ---------- 启动 ---------- */
@@ -427,6 +556,12 @@
     try { initLessonProgress(null); } catch (e) { console.warn(e); }
     try { initBackTop(); } catch (e) { console.warn(e); }
     try { initLangSwitch(); } catch (e) { console.warn(e); }
+    try { initReading(); } catch (e) { console.warn(e); }
+    try { initFigureMotion(); } catch (e) { console.warn(e); }
+    window.addEventListener("pageshow", function () { initLessonProgress(null); });
+    window.addEventListener("storage", function (event) {
+      if (event.key === PROG_KEY || event.key === null) initLessonProgress(null);
+    });
   });
 
   /* 暴露给章节页自定义动画使用 */
@@ -434,6 +569,7 @@
     el: el,
     autoloop: autoloop,
     prefersReduced: prefersReduced,
+    strongAcidBasePH: strongAcidBasePH,
     initLadders: initLadders,
     initWorked: initWorked,
     initQuizzes: initQuizzes

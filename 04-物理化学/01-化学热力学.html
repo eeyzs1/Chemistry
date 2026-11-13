@@ -164,14 +164,15 @@
   <section id="hess">
     <h2>§3 盖斯定律：反应热的加减法</h2>
     <p>
-      1840 年，瑞士化学家盖斯从实验中归纳出：<strong>恒温恒压（或恒容）下，反应热只由始态与终态决定，
-      与中间路径无关</strong>。这就是<span class="term">盖斯定律</span>
+      盖斯定律指出：<strong>反应焓变只由始态与终态决定，与中间路径无关</strong>。
+      在只发生体积功的条件下，恒压反应热 q<sub>p</sub> = ΔH，恒容反应热 q<sub>v</sub> = ΔU；计算时须统一条件。
+      这就是<span class="term">盖斯定律</span>
       <span class="en">Hess's law</span>。它其实是"ΔH 是状态函数的增量"这一身份的直接推论——
       既然只看起终点，那么<strong>方程式怎么加减，ΔH 就怎么加减</strong>，就像爬山的高度可以分段累加。
     </p>
     <p>
       它最大的用处是把<strong>测不到的反应热算出来</strong>。有些反应无法"停在半路"，
-      比如碳燃烧——你永远烧不出纯 CO（它总会继续烧成 CO₂），那"C 烧成 CO 放多少热"这道题就只能靠绕路：
+      比如碳不完全燃烧时常同时生成 CO 和 CO₂，难以直接准确测出只生成 CO 的反应焓，因此可以用盖斯定律绕路求解：
     </p>
 
     <figure class="fig">
@@ -205,7 +206,8 @@
             <text y="5" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">CO（中转站）</text>
           </g>
           <text x="196" y="192" text-anchor="middle" font-size="12" fill="#92400e">ΔH(?)</text>
-          <text x="445" y="96" text-anchor="middle" font-size="12" fill="#92400e">② 再烧：−283.0</text>
+          <text x="400" y="88" text-anchor="middle" font-size="11" fill="#92400e">② CO 再燃烧</text>
+          <text x="400" y="103" text-anchor="middle" font-size="11" fill="#92400e">ΔH₂ = −283.0 kJ/mol</text>
         </svg>
       </div>
       <figcaption>
@@ -382,7 +384,7 @@
           <button class="btn ghost gg-preset" data-h="-92" data-s="-199" data-t="298">🌿 合成氨</button>
           <button class="btn ghost gg-preset" data-h="178" data-s="160" data-t="298">🪨 CaCO₃ 分解</button>
         </div>
-        <div style="display:grid;gap:10px;margin-top:12px;text-align:left;min-width:300px;max-width:430px;margin-left:auto;margin-right:auto">
+        <div style="display:grid;gap:10px;margin-top:12px;text-align:left;min-width:min(300px,100%);max-width:430px;margin-left:auto;margin-right:auto">
           <label for="ggH" style="font-size:.88rem;color:var(--ink-2)">
             ΔH = <b id="ggHv">−92</b> kJ/mol（放热 ↔ 吸热）
             <input id="ggH" type="range" min="-200" max="200" step="1" value="-92" style="width:100%;accent-color:var(--accent);height:44px" aria-label="焓变滑块">
@@ -494,6 +496,8 @@
   </section>
 
   <!-- ============ 小结 ============ -->
+  <p>参考：<a href="https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy">OpenStax：焓、恒压热与盖斯定律</a>。</p>
+
   <section id="summary">
     <div class="summary">
       <h3>🧺 本章小结</h3>
@@ -628,7 +632,7 @@
     } else {
       var Ts = H * 1000 / S;
       if (Ts <= 0) {
-        tS = "不存在（解为负）";
+        tS = Ts === 0 ? "0 K（无正温度转折）" : "不存在（解为负）";
         tN = S > 0 ? "熵恒增且放热：任何温度都自发" : "熵减且吸热：任何温度都不自发";
       } else {
         tS = "≈ " + Math.round(Ts) + " K";
@@ -643,7 +647,7 @@
     tnote.textContent = tN;
 
     /* 象限高亮 */
-    var key = (H < 0 ? "l" : "r") + (S < 0 ? "l" : "u");
+    var key = H === 0 || S === 0 ? null : (S < 0 ? "l" : "u") + (H < 0 ? "l" : "r");
     ["ul", "ur", "ll", "lr"].forEach(function (k) {
       var on = k === key;
       rects[k].setAttribute("opacity", on ? "1" : ".45");
@@ -651,12 +655,13 @@
       else rects[k].removeAttribute("stroke");
     });
     var qName = { ul: "任何温度都自发型", ur: "高温自发型", ll: "低温自发型", lr: "任何温度都不自发型" };
-    quad.textContent = "当前象限：" + (H < 0 ? "ΔH<0" : "ΔH>0") + "、" + (S < 0 ? "ΔS<0" : "ΔS>0") +
-      "（" + qName[key] + "）";
+    quad.textContent = "当前位置：ΔH" + (H === 0 ? "=0" : H < 0 ? "<0" : ">0") + "、ΔS" + (S === 0 ? "=0" : S < 0 ? "<0" : ">0") +
+      "（" + (key ? qName[key] : "坐标轴上，直接用 ΔG = ΔH − TΔS 判断") + "）";
 
     /* 数值轨迹 */
-    calc.textContent = "ΔG = ΔH − TΔS = " + fmt(H, 0) + " − " + fmt(T, 0) + "×" +
-      fmt(S / 1000, 3) + " = " + fmt(dG, 1) + " kJ/mol";
+    calc.textContent = "ΔG = ΔH − TΔS";
+    DSHChem.el("tspan", { x: 372, dy: 14, "font-size": 9 }, calc,
+      fmt(H, 0) + " − " + fmt(T, 0) + "×(" + fmt(S / 1000, 3) + ") = " + fmt(dG, 1) + " kJ/mol");
     readout.textContent = "ΔH = " + fmt(H, 0) + " kJ/mol ｜ ΔS = " + fmt(S, 0) +
       " J/(mol·K) ｜ T = " + fmt(T, 0) + " K ｜ ΔG = " + fmt(dG, 1) +
       " kJ/mol → " + (dG < 0 ? "自发" : (dG > 0 ? "不自发" : "平衡")) +

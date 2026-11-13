@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Chemistry and the Environment · Environmental Chemistry · Chapter 1</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b08">
 <div class="page">
@@ -373,12 +373,12 @@
 
     <figure class="fig">
       <div class="fig-canvas">
-        <div style="min-width:300px;margin-bottom:10px">
+        <div style="min-width:min(300px,100%);margin-bottom:10px">
           <label for="euSlider" style="font-size:.9rem;color:var(--ink-2)">
             Nutrient discharge (N and P inflow): <strong id="euVal">Medium</strong>
           </label>
           <input id="euSlider" type="range" min="0" max="100" value="35" step="1"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Nutrient discharge level">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="Nutrient discharge level">
           <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
             <span>0 Clean water</span><span>100 Severe eutrophication</span>
           </div>
@@ -534,7 +534,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (greenhouse-effect simulator / eutrophication day-night simulator) ============ */
 (function () {

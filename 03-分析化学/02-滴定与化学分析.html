@@ -154,6 +154,7 @@
         <div class="fig-readout" id="titReadout">V(NaOH) = 0.00 mL ｜ pH = 1.00 ｜ 酚酞：无色 ｜ 未到计量点（酸过量）</div>
       </div>
       <figcaption>
+        模型：25 °C 理想稀溶液，计入水的自解离。
         0.1000 mol/L NaOH 滴定 20.00 mL 0.1000 mol/L HCl。把滑块拖到 19.9–20.1 mL 之间细看：半滴之差，
         pH 飙升 5 个多单位——曲线的陡坡（突跃）正是酚酞变色的舞台。右侧曲线实时生长，粉色横带是酚酞的变色范围（8.2–10）。
       </figcaption>
@@ -453,13 +454,10 @@
     var slider = document.getElementById("titSlider");
     var playBtn = document.getElementById("titPlay");
     var resetBtn = document.getElementById("titReset");
-    var V = 0, playing = false, rafId = null;
+    var V = 0, playing = false, rafId = null, lastFrame = null;
 
     function pHOf(v) {
-      if (v <= 0) return 1.00;
-      if (v < V0 - 1e-9) return -Math.log10(C * (V0 - v) / (V0 + v));
-      if (v <= V0 + 1e-9) return 7.00;
-      return 14 + Math.log10(C * (v - V0) / (V0 + v));
+      return DSHChem.strongAcidBasePH(C * V0 / 1000, C * v / 1000, (V0 + v) / 1000);
     }
     function px(v) { return X0 + W * v / 40; }
     function py(p) { return Y0 - H * p / 14; }
@@ -479,9 +477,9 @@
       return "酚酞：桃红";
     }
     function stateText(v) {
+      if (Math.abs(v - V0) < 1e-9) return "化学计量点 ✓";
       if (Math.abs(v - V0) <= 0.03) return "⚡ 突跃区：半滴之差，pH 飙升！";
       if (v < V0) return "未到计量点（酸过量）";
-      if (Math.abs(v - V0) < 1e-9) return "化学计量点 ✓";
       return "已过计量点（碱过量）";
     }
 
@@ -587,14 +585,18 @@
 
     function stopPlay() {
       playing = false;
+      lastFrame = null;
       if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
       if (playBtn) playBtn.textContent = "▶ 自动滴定";
     }
 
-    function loop() {
+    function loop(ts) {
       if (!playing) return;
-      var dv = (V > 19.4 && V < 20.6) ? 0.05 : 0.3;
-      V = Math.min(40, V + dv);
+      var dt = lastFrame === null ? 1 / 60 : Math.min(0.05, (ts - lastFrame) / 1000);
+      lastFrame = ts;
+      var speed = (V >= 19.4 && V < 20.6) ? 3 : 18;
+      var next = Math.min(40, V + speed * dt);
+      V = V < 19.4 && next > 19.4 ? 19.4 : next;
       sync();
       if (V >= 40) { stopPlay(); return; }
       rafId = requestAnimationFrame(loop);
@@ -603,9 +605,10 @@
     if (playBtn) playBtn.addEventListener("click", function () {
       if (playing) { stopPlay(); return; }
       if (V >= 40) V = 0;
+      if (DSHChem.prefersReduced()) { V = 40; sync(); stopPlay(); return; }
       playing = true;
       playBtn.textContent = "⏸ 暂停";
-      loop();
+      loop(performance.now());
     });
     if (slider) slider.addEventListener("input", function () {
       stopPlay();

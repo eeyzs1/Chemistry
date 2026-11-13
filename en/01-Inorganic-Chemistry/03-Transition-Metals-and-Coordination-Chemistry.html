@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Transition Metals and Coordination Chemistry · Inorganic Chemistry Chapter 3</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b01">
 <div class="page">
@@ -389,7 +389,7 @@
           this is the <span class="term">d–d transition</span>. As white light passes through, the absorbed band
           vanishes, and the solution shows the complementary color of what was taken out. For the aqua copper ion,
           Δ corresponds to absorbing orange-red light → you see blue; switch to NH<sub>3</sub> ligands and Δ grows,
-          shifting the absorption toward orange-yellow → you see a deeper royal blue.
+          shifting absorption to shorter wavelengths. The solution commonly appears deep blue, but Δ alone does not determine color intensity.
         </p>
       </div>
       <div class="ladder-panel">
@@ -401,7 +401,7 @@
           CN<sup>−</sup> is strongest because, beyond electrostatics, its π system can siphon off metal d electrons
           (back-donation), widening the split further. Two important exceptions to remember: ① when the d orbitals
           are completely full or completely empty (e.g. Zn²⁺ d¹⁰, Sc³⁺ d⁰) <strong>there are no electrons to jump,
-          or no vacancies to jump into, so the complex is colorless</strong>; ② yet MnO<sub>4</sub><sup>−</sup>
+          or no vacancies for d–d transitions; these complexes are usually colorless if there is no other visible absorption</strong>; ② yet MnO<sub>4</sub><sup>−</sup>
           (Mn +7, d⁰) is intensely purple — that is not a d–d transition but the stronger "charge transfer"
           (an O electron momentarily jumps toward Mn), whose absorption is a hundred times more intense and whose
           color is far more vivid.
@@ -446,7 +446,7 @@
           What changed is <strong>the chemical species itself</strong>: the ligand went from H<sub>2</sub>O to
           NH<sub>3</sub>, [Cu(H<sub>2</sub>O)<sub>4</sub>]<sup>2+</sup> → [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>.
           The NH<sub>3</sub> ligand field is stronger → Δ is larger → the absorption peak shifts to shorter
-          wavelengths (orange-red → orange-yellow) → the complementary color shifts to a deeper royal blue.
+          wavelengths. The full absorption spectrum, concentration, and path length determine the observed color and its intensity.
           The simulator below makes this "seat swap" visible from start to finish — and dilute hydrochloric acid
           can evict the newcomer and restore the original seat.
         </div>
@@ -474,7 +474,7 @@
         In a real experiment the aqua copper ion is closer to the distorted octahedron [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>;
         here we follow the conventional four-coordinate shorthand. Remember the ligand-strength fragment
         <span class="formula">H<sub>2</sub>O &lt; NH<sub>3</sub> &lt; CN<sup>−</sup></span>:
-        stronger ligand → larger Δ → shorter-wavelength absorption → deeper color. The "acid restoration" in the
+        stronger ligand field → larger Δ → shorter-wavelength absorption; intensity also depends on absorptivity, concentration, and path length. The "acid restoration" in the
         final step is a preview of the acid–base contest in Chapter 4.
       </figcaption>
     </figure>
@@ -507,6 +507,14 @@
   </section>
 
   <!-- ============ Summary ============ -->
+  <details class="think">
+    <summary>Model limits and source</summary>
+    <div class="think-body"><p>The coordination drawings emphasize four equatorial ligands and omit axial water ligands.
+      Hydrated copper(II) is usually written [Cu(H₂O)₆]²⁺; the main deep-blue species in excess aqueous ammonia is written [Cu(NH₃)₄(H₂O)₂]²⁺.
+      Δ sets the absorption energy in this simplified model, rather than the color intensity by itself. See
+      <a href="https://edu.rsc.org/experiments/transition-elements-and-complex-compounds-microscale-experiment-16-18-years/518.article">Royal Society of Chemistry: ligand exchange and copper complexes</a>.</p></div>
+  </details>
+
   <section id="summary">
     <div class="summary">
       <h3>🧺 Chapter Summary</h3>
@@ -562,15 +570,15 @@
             "explain": "The coordinate bond is a covalent bond with a 'single investor': the ligand's donor atom (N in NH₃, C in CN⁻) supplies a lone pair into an empty orbital of the central ion. Outer-sphere ions only neutralize the charge ionically and do not coordinate."
           },
           {
-            "q": "According to crystal field theory, why is [Cu(NH₃)₄]²⁺ more deeply colored than [Cu(H₂O)₄]²⁺?",
+            "q": "In a simplified crystal-field model, how does replacing H₂O ligands with NH₃ in aqueous copper(II) usually affect d–d absorption?",
             "options": [
               "NH₃ is itself a blue molecule",
               "The ammonia concentrated the copper",
-              "The NH₃ ligand field is stronger, the splitting energy Δ is larger, the absorption shifts to shorter wavelengths, and the complementary color is deeper",
+              "The NH₃ ligand field is stronger, Δ is larger, and absorption shifts to shorter wavelengths",
               "The number of d electrons on Cu²⁺ changed"
             ],
             "answer": 2,
-            "explain": "It is the same Cu²⁺ (d⁹); what changed is the ligand: in the spectrochemical series H₂O < NH₃ < CN⁻, NH₃ enlarges Δ, so the d–d transition absorbs higher energy (shorter wavelength, orange-red → orange-yellow), and the observed complementary color shifts to deep royal blue. The species changed — it is not concentration, and certainly not a blue molecule."
+            "explain": "Cu²⁺ remains d⁹. NH₃ gives a stronger ligand field, so the simplified model predicts larger Δ and shorter absorption wavelength by E = hc/λ. Color intensity also depends on absorptivity, concentration, and path length; larger Δ alone does not imply a darker color."
           },
           {
             "q": "Complexes of Zn²⁺ (such as [Zn(NH₃)₄]²⁺) are nearly colorless. Why?",
@@ -595,7 +603,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interaction: ligand-substitution simulator ============ */
 (function () {
@@ -611,7 +619,7 @@
     "[1/5 · Initial] Copper(II) sulfate solution: [Cu(H₂O)₄]²⁺ is pale blue — the water ligand field is weak, Δ is small, and longer-wavelength orange-red light is absorbed",
     "[2/5 · A few drops of ammonia] NH₃·H₂O ⇌ NH₄⁺ + OH⁻; the OH⁻ grabs Cu²⁺ first: Cu²⁺ + 2OH⁻ → Cu(OH)₂↓, and a pale-blue flocculent precipitate appears",
     "[3/5 · Excess ammonia] The more strongly coordinating NH₃ displaces water one by one: Cu(OH)₂ + 4NH₃ → [Cu(NH₃)₄]²⁺ + 2OH⁻; the precipitate dissolves and the solution turns deep royal blue",
-    "[4/5 · Comparison] Still the same Cu²⁺! Ligand H₂O → NH₃, Δ grows, and the absorption shifts from orange-red toward orange-yellow — it is the 'species' that deepened, not added pigment",
+    "[4/5 · Comparison] Still the same Cu²⁺! Ligand H₂O → NH₃, Δ grows, and the absorption shifts to shorter wavelengths — the copper ion’s ligand environment changed; no pigment was added",
     "[5/5 · Dilute hydrochloric acid added] H⁺ carries the NH₃ off: [Cu(NH₃)₄]²⁺ + 4H⁺ → [Cu(H₂O)₄]²⁺ + 4NH₄⁺; the solution returns to pale blue — ligand substitution is a reversible tug-of-war (a preview of Lewis acids and bases in Chapter 4)"
   ];
 
@@ -738,7 +746,7 @@
     dt.textContent = "Δ";
     var cap = el("text", { x: cx, y: 306, "text-anchor": "middle", "font-size": 10.5, fill: "#4b5563" }, svg);
     cap.textContent = step === 1 ? "Cu's coordination environment is disrupted in the precipitate" :
-      (g > 18 ? "Large Δ → absorbs orange-yellow light → deep royal blue" : "Small Δ → absorbs orange-red light → pale blue");
+      (g > 18 ? "Larger Δ → shorter-wave absorption (schematic colors)" : "Smaller Δ → longer-wave absorption (schematic colors)");
   }
 
   function render() {

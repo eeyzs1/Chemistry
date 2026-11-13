@@ -162,7 +162,7 @@
             底物浓度 [S] = <strong id="mmSVal">1.5</strong> mM（K<sub>m</sub> = 1.5 mM 固定）
           </label>
           <input id="mmS" type="range" min="0" max="10" step="0.1" value="1.5"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="底物浓度">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="底物浓度">
         </div>
         <div class="fig-readout" id="mmReadout"></div>
       </div>
@@ -495,7 +495,7 @@
     var t0 = null;
     function step(ts) {
       if (t0 === null) t0 = ts;
-      var k = Math.min(1, (ts - t0) / dur);
+      var k = DSHChem.prefersReduced() ? 1 : Math.min(1, (ts - t0) / dur);
       var p = path.getPointAtLength(L * (from + (to - from) * k));
       eaBall.setAttribute("cx", p.x);
       eaBall.setAttribute("cy", p.y - 12);

@@ -1,0 +1,2 @@
+# Optional: only needed for browser regression tests; reading the site needs no dependencies.
+playwright==1.58.0

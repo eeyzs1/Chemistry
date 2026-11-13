@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Main-Group Elements · Inorganic Chemistry Chapter 2</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b01">
 <div class="page">
@@ -460,7 +460,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity: flame test simulator + step-by-step sodium–water animation ============ */
 (function () {
@@ -500,14 +500,6 @@
 
     function drawFlame(d) {
       fsvg.innerHTML = "";
-      var defs = el("defs", {}, fsvg);
-      var grad = el("linearGradient", { id: "flameGrad", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
-      el("stop", { offset: "0%", "stop-color": lighten(d.hex, 0.55), "stop-opacity": 0.95 }, grad);
-      el("stop", { offset: "55%", "stop-color": d.hex, "stop-opacity": 0.75 }, grad);
-      el("stop", { offset: "100%", "stop-color": d.hex, "stop-opacity": 0.12 }, grad);
-      var blur = el("filter", { id: "flameBlur", x: "-60%", y: "-60%", width: "220%", height: "220%" }, defs);
-      el("feGaussianBlur", { stdDeviation: 16 }, blur);
-
       drawBurner(fsvg);
 
       if (!d) {
@@ -515,6 +507,14 @@
         t0.textContent = "(not lit)";
         return;
       }
+
+      var defs = el("defs", {}, fsvg);
+      var grad = el("linearGradient", { id: "flameGrad", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      el("stop", { offset: "0%", "stop-color": lighten(d.hex, 0.55), "stop-opacity": 0.95 }, grad);
+      el("stop", { offset: "55%", "stop-color": d.hex, "stop-opacity": 0.75 }, grad);
+      el("stop", { offset: "100%", "stop-color": d.hex, "stop-opacity": 0.12 }, grad);
+      var blur = el("filter", { id: "flameBlur", x: "-60%", y: "-60%", width: "220%", height: "220%" }, defs);
+      el("feGaussianBlur", { stdDeviation: 16 }, blur);
 
       /* glow + outer flame + middle flame + flame core */
       el("circle", { cx: 180, cy: 168, r: 86, fill: d.hex, opacity: 0.16, filter: "url(#flameBlur)" }, fsvg);

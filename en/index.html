@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Chemistry · Chemistry Self-Study Center</title>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="../assets/style.css">
 <style>
   .portal-hero{
     border-radius:14px; border:1px solid var(--line);
@@ -23,7 +23,8 @@
   }
   .portal-hero h1{font-size:2.3rem;margin-bottom:10px;}
   .portal-hero .lede{font-size:1.06rem;color:var(--ink-2);max-width:44em;}
-  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:22px 0;}
+  .portal-actions{display:flex;flex-wrap:wrap;gap:8px;}
+  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:16px;margin:22px 0;}
   .branch-card{
     display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;
     background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);
@@ -63,9 +64,9 @@
       Every concept is taught through a three-level ladder of intuition → standard treatment → deeper theory,
       supported by a Misconception Buster, worked-example scaffolds, and interactive animations. From zero to a full map of chemistry.
     </p>
-    <p style="margin-top:16px">
+    <p class="portal-actions" style="margin-top:16px">
       <a class="btn" href="00-Foundations/index.html">Start here →</a>
-      <a class="btn ghost" href="README.md" style="margin-left:8px">See the branch map (README)</a>
+      <a class="btn ghost" href="README.md">See the branch map (README)</a>
     </p>
   </header>
 
@@ -103,7 +104,7 @@
       <span class="bc-desc">Thermodynamics, kinetics, electrochemistry, quantum chemistry — the direction, speed, and essence of change.</span>
       <span class="bc-meta"><span>4 chapters</span><span>Prerequisites: 00–02</span><span>Advanced</span></span>
     </a>
-    <a class="branch-card" style="--accent:#0d9488;--accent-deep:#0f766e;--accent-soft:#f0fdfa" href="05-Biochemistry/index.html">
+    <a class="branch-card" style="--accent:#0f766e;--accent-deep:#115e59;--accent-soft:#f0fdfa" href="05-Biochemistry/index.html">
       <span class="bc-no">Branch 05 · Core Five</span>
       <span class="bc-title">Biochemistry</span>
       <span class="bc-desc">Proteins, nucleic acids, enzymes, and metabolism — how life's chemical machinery runs.</span>
@@ -173,5 +174,6 @@
     <a href="README.md">README.md</a>.
   </p>
 </div>
+<script src="../assets/tutor.js"></script>
 </body>
 </html>

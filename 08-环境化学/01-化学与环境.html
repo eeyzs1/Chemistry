@@ -339,12 +339,12 @@
 
     <figure class="fig">
       <div class="fig-canvas">
-        <div style="min-width:300px;margin-bottom:10px">
+        <div style="min-width:min(300px,100%);margin-bottom:10px">
           <label for="euSlider" style="font-size:.9rem;color:var(--ink-2)">
             营养物排放（氮、磷流入）：<strong id="euVal">中</strong>
           </label>
           <input id="euSlider" type="range" min="0" max="100" value="35" step="1"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="营养物排放水平">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="营养物排放水平">
           <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
             <span>0 清洁水体</span><span>100 严重富营养化</span>
           </div>

@@ -500,6 +500,11 @@
 
     function drawFlame(d) {
       fsvg.innerHTML = "";
+      drawBurner(fsvg);
+      if (!d) {
+        el("text", { x: 180, y: 150, "text-anchor": "middle", "font-size": 13, fill: "#94a3b8" }, fsvg, "（未点火）");
+        return;
+      }
       var defs = el("defs", {}, fsvg);
       var grad = el("linearGradient", { id: "flameGrad", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
       el("stop", { offset: "0%", "stop-color": lighten(d.hex, 0.55), "stop-opacity": 0.95 }, grad);
@@ -507,14 +512,6 @@
       el("stop", { offset: "100%", "stop-color": d.hex, "stop-opacity": 0.12 }, grad);
       var blur = el("filter", { id: "flameBlur", x: "-60%", y: "-60%", width: "220%", height: "220%" }, defs);
       el("feGaussianBlur", { stdDeviation: 16 }, blur);
-
-      drawBurner(fsvg);
-
-      if (!d) {
-        var t0 = el("text", { x: 180, y: 150, "text-anchor": "middle", "font-size": 13, fill: "#94a3b8" }, fsvg);
-        t0.textContent = "（未点火）";
-        return;
-      }
 
       /* 光晕 + 外焰 + 中焰 + 焰心 */
       el("circle", { cx: 180, cy: 168, r: 86, fill: d.hex, opacity: 0.16, filter: "url(#flameBlur)" }, fsvg);

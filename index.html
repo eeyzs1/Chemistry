@@ -23,7 +23,8 @@
   }
   .portal-hero h1{font-size:2.3rem;margin-bottom:10px;}
   .portal-hero .lede{font-size:1.06rem;color:var(--ink-2);max-width:44em;}
-  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:22px 0;}
+  .portal-actions{display:flex;flex-wrap:wrap;gap:8px;}
+  .branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:16px;margin:22px 0;}
   .branch-card{
     display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;
     background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);
@@ -63,9 +64,9 @@
       每个概念都用「直觉类比 → 标准讲解 → 深入原理」三级阶梯来讲授，
       配合误区粉碎机、例题脚手架与交互动画。从零基础到建立完整的化学学科图景。
     </p>
-    <p style="margin-top:16px">
+    <p class="portal-actions" style="margin-top:16px">
       <a class="btn" href="00-化学总论/index.html">从这里开始 →</a>
-      <a class="btn ghost" href="README.md" style="margin-left:8px">查看分支地图说明</a>
+      <a class="btn ghost" href="README.md">查看分支地图说明</a>
     </p>
   </header>
 
@@ -103,7 +104,7 @@
       <span class="bc-desc">热力学、动力学、电化学、量子化学——变化的方向、速度与本质。</span>
       <span class="bc-meta"><span>4 章</span><span>先修：00–02</span><span>进阶</span></span>
     </a>
-    <a class="branch-card" style="--accent:#0d9488;--accent-deep:#0f766e;--accent-soft:#f0fdfa" href="05-生物化学/index.html">
+    <a class="branch-card" style="--accent:#0f766e;--accent-deep:#115e59;--accent-soft:#f0fdfa" href="05-生物化学/index.html">
       <span class="bc-no">分支 05 · 五大化学</span>
       <span class="bc-title">生物化学</span>
       <span class="bc-desc">蛋白质、核酸、酶与代谢——生命这台化学机器如何运转。</span>
@@ -173,5 +174,6 @@
     <a href="README.md">README.md</a>。
   </p>
 </div>
+<script src="assets/tutor.js"></script>
 </body>
 </html>

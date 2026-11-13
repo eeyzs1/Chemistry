@@ -55,7 +55,7 @@ Once you have studied the main branches, every "finer direction" below has a cle
 F:\Chemistry\en\
 ├── README.md                                                 ← this file: branch map + study routes
 ├── index.html                                                ← portal page (enter any branch from here)
-├── assets\                                                   ← shared styles and the interactive engine (style.css, tutor.js)
+├── (uses ../assets/)                                         ← styles and interactive engine shared with the Chinese pages
 ├── 00-Foundations\                                           ← start here: the common foundation (4 chapters)
 ├── 01-Inorganic-Chemistry\                                   (4 chapters)
 ├── 02-Organic-Chemistry\                                     (4 chapters)
@@ -109,11 +109,39 @@ Inside each branch folder: `index.html` (the branch overview page — what you w
    - 🎬 **Interactive animations/simulations**: orbitals, titration curves, energy diagrams, radioactive decay and more, all operable with buttons and sliders;
    - ✅ **End-of-chapter self-test**: instant scoring + per-question explanations.
 3. **Suggested pace**: 30–60 minutes per chapter; start with the intuition level, move up to the standard level once you can retell it, and move on after scoring 80%+ on the self-test.
-4. **Progress tracking**: your end-of-chapter self-test scores are stored locally in your browser (localStorage — no network, no upload).
-   Reopening the same chapter shows your "best score"; the chapter cards on the branch overview pages show ✓ Passed (≥80%) or your recent best score.
-   Clear your browser data to reset progress.
+4. **Progress tracking**: completed self-tests save your best score locally (localStorage; no network or upload).
+   Use “Try again” to restart; lower scores do not replace your best. Chinese and English versions share the same chapter score and recognize older records.
+   Branch cards show ✓ Passed (≥80%) or the best score. Clear browser data to reset progress.
+   Storage isolation for `file://` pages varies by browser; reading and quizzes still work when storage is disabled.
+   For consistent progress across pages, run `python -m http.server 8000 --bind 127.0.0.1` from the repository root,
+   then open [the local English portal](http://127.0.0.1:8000/en/). Keep the same browser, address and port. File and HTTP progress are separate.
 5. **Accessibility & power saving**: the whole site respects the system reduced-motion setting (prefers-reduced-motion: animations switch to static result displays);
    persistent simulation animations run only while they are on screen and the page is in the foreground, auto-pausing as soon as they scroll out of view.
+
+## Maintenance and Validation
+
+Both languages use `../assets/style.css` and `../assets/tutor.js` at the repository root. Keep the complete repository together;
+the `en/` folder is not a standalone distribution. Update matching translations and quiz explanations together.
+Titration models use ideal dilute solutions at 25 °C and include water autoionization.
+
+From the repository root, run the static check with Python 3.10+ and Node.js 22+:
+
+```powershell
+python scripts/check_site.py
+```
+
+It checks local links and anchors, duplicate IDs, offline assets, JavaScript syntax, quiz schemas, and bilingual page/quiz structure.
+Optional browser regressions use Playwright:
+
+```powershell
+python -m pip install -r requirements-dev.txt
+python -m playwright install chromium
+python -m unittest discover -s tests -v
+```
+
+Coverage includes offline reading, 320/390/1280px layouts, slider boundaries, language switching, retries, legacy scores,
+multiple open chapters, unavailable/corrupt storage, keyboard controls, and key simulation calculations and resets.
+GitHub Actions runs these checks on pushes and pull requests. Chemistry content and model assumptions still need human review.
 
 ---
 

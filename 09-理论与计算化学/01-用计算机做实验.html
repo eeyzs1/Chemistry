@@ -146,7 +146,7 @@
     <figure class="fig">
       <div class="fig-canvas">
         <canvas id="pesCanvas" width="560" height="380" style="border-radius:8px;cursor:crosshair;touch-action:none" aria-label="势能面探索器：能量地形图上的小球最陡下降动画"></canvas>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;min-width:280px">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;min-width:0;max-width:100%">
           <div style="flex:1;min-width:220px">
             <label for="pesX" style="font-size:.86rem;color:var(--ink-2)">构型坐标 x</label>
             <input id="pesX" type="range" min="-1.6" max="1.2" step="0.005" value="0.623"
@@ -245,12 +245,12 @@
 
     <figure class="fig">
       <div class="fig-canvas">
-        <div style="min-width:300px;margin-bottom:10px">
+        <div style="min-width:min(300px,100%);margin-bottom:10px">
           <label for="mdT" style="font-size:.9rem;color:var(--ink-2)">
             恒温器设定温度 T* = <strong id="mdTVal">0.30</strong>（约化单位）
           </label>
           <input id="mdT" type="range" min="5" max="150" value="30" step="1"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="模拟温度">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="模拟温度">
           <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-3)">
             <span>低温（凝聚成液滴）</span><span>高温（蒸发成气体）</span>
           </div>
@@ -592,7 +592,7 @@
       var steps = 0;
       (function anim() {
         var s = 0;
-        while (descending && s < 8) {
+        while (descending && s < (DSHChem.prefersReduced() ? 800 : 8)) {
           var g = mbG(ball.x, ball.y), gn = Math.hypot(g[0], g[1]);
           if (gn < 2 || steps >= 800) { descending = false; break; }
           ball.x = clampX(ball.x - g[0] / gn * 0.012);

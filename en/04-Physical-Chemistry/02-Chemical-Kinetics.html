@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Chemical Kinetics · Physical Chemistry Chapter 2</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b04">
 <div class="page">
@@ -260,9 +260,9 @@
           <text id="mbRefLabel" font-size="11" fill="#94a3b8"></text>
         </svg>
         <div class="fig-controls">
-          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:300px">
+          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:min(300px,100%)">
             Temperature T = <b id="mbTv">300</b> K (drag to watch the shaded area change)
-            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Temperature slider">
+            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="Temperature slider">
           </label>
         </div>
         <div class="fig-readout" id="mbReadout"></div>
@@ -577,7 +577,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactions (energy distribution curve · energy-level diagram switcher) ============ */
 (function () {

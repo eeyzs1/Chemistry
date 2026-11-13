@@ -566,7 +566,8 @@
             fill: "#1f2937", stroke: "#ffffff", "stroke-width": 1.2, opacity: 0 }, g);
           d.setAttribute("style", "transition:opacity .18s ease");
           (function (node, delay) {
-            setTimeout(function () { node.setAttribute("opacity", "1"); }, delay);
+            if (DSHChem.prefersReduced()) node.setAttribute("opacity", "1");
+            else setTimeout(function () { node.setAttribute("opacity", "1"); }, delay);
           })(d, 100 + k * 90 + i * 45);
         }
         (function (idx) {

@@ -230,9 +230,9 @@
           <text id="mbRefLabel" font-size="11" fill="#94a3b8"></text>
         </svg>
         <div class="fig-controls">
-          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:300px">
+          <label for="mbT" style="font-size:.9rem;color:var(--ink-2);min-width:min(300px,100%)">
             温度 T = <b id="mbTv">300</b> K（拖动看阴影面积变化）
-            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="温度滑块">
+            <input id="mbT" type="range" min="200" max="500" step="10" value="300" style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="温度滑块">
           </label>
         </div>
         <div class="fig-readout" id="mbReadout"></div>

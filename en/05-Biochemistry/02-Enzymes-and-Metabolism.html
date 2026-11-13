@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Enzymes and Metabolism · Biochemistry Chapter 2</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b05">
 <div class="page">
@@ -184,7 +184,7 @@
             Substrate concentration [S] = <strong id="mmSVal">1.5</strong> mM (K<sub>m</sub> = 1.5 mM, fixed)
           </label>
           <input id="mmS" type="range" min="0" max="10" step="0.1" value="1.5"
-                 style="width:100%;min-width:280px;accent-color:var(--accent);height:44px" aria-label="Substrate concentration">
+                 style="width:100%;min-width:0;max-width:100%;accent-color:var(--accent);height:44px" aria-label="Substrate concentration">
         </div>
         <div class="fig-readout" id="mmReadout"></div>
       </div>
@@ -537,7 +537,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (activation-energy animation / Michaelis–Menten slider) ============ */
 (function () {
@@ -559,7 +559,7 @@
     var t0 = null;
     function step(ts) {
       if (t0 === null) t0 = ts;
-      var k = Math.min(1, (ts - t0) / dur);
+      var k = DSHChem.prefersReduced() ? 1 : Math.min(1, (ts - t0) / dur);
       var p = path.getPointAtLength(L * (from + (to - from) * k));
       eaBall.setAttribute("cx", p.x);
       eaBall.setAttribute("cy", p.y - 12);

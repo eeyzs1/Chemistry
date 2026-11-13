@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Electrochemistry · Physical Chemistry Chapter 3</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b04">
 <div class="page">
@@ -516,8 +516,8 @@
     <p>
       In 1991 Sony brought the lithium-ion battery to market, and phones, laptops, and electric
       vehicles have been sprinting ahead ever since. Its stroke of genius:
-      <strong>throughout the whole process no metallic lithium is ever deposited — only Li⁺,
-      the smallest metal ion, shuttles back and forth between two "layered warehouses"</strong> —
+      <strong>during normal operation Li⁺ intercalates into and leaves two "layered warehouses",
+      without relying on the deposition of metallic lithium</strong> —
       the carbon layers of graphite on one side, the oxide layers of lithium cobalt oxide (LiCoO₂)
       on the other. The model is popularly called the "rocking-chair battery":
     </p>
@@ -606,6 +606,11 @@
   </section>
 
   <!-- ============ Summary ============ -->
+  <details class="think">
+    <summary>Model limits and source</summary>
+    <div class="think-body"><p>This chapter models normal intercalation in a graphite/LiCoO₂ cell. Real cells can also undergo side reactions. See <a href="https://www.nrel.gov/docs/fy22osti/82801.pdf">the review by NREL and collaborators on battery degradation, including lithium plating at low temperature and high current</a>.</p></div>
+  </details>
+
   <section id="summary">
     <div class="summary">
       <h3>🧺 Chapter Summary</h3>
@@ -626,7 +631,7 @@
           connects to the positive terminal. Faraday's law:
           <span class="formula">Q = I·t → n(e⁻) = Q/F → n = n(e⁻)/z</span> (F = 96485 C/mol).</li>
         <li>The lithium-ion battery = a rocking chair: discharge is galvanic, charge is electrolytic;
-          Li⁺ travels between the graphite and LiCoO₂ layers, with no metallic lithium deposited.</li>
+          Li⁺ normally travels between the graphite and LiCoO₂ layers; overly fast charging can cause lithium plating as a side reaction.</li>
       </ul>
     </div>
   </section>
@@ -640,7 +645,7 @@
         "questions": [
           {
             "q": "When a Daniell cell is running, which path do the electrons take around the circuit?",
-            "options": ["From the Cu electrode through the wire to the Zn electrode", "From the Zn electrode through the wire to the Cu electrode, then back through the salt bridge", "Freely shuttling through the two solutions", "From the positive electrode through the wire to the negative electrode"],
+            "options": ["From the Cu electrode through the wire to the Zn electrode", "From Zn through the external circuit to Cu; ions carry charge in the salt bridge", "Freely shuttling through the two solutions", "From the positive electrode through the wire to the negative electrode"],
             "answer": 1,
             "explain": "Zn is the negative electrode (oxidation, electron loss); the electrons flow through the external circuit to the positive Cu electrode (reduction). Note that electrons never enter the salt bridge — conduction in solution is carried by ions, with K⁺ and Cl⁻ heading for the cathode and anode regions respectively."
           },
@@ -666,7 +671,7 @@
             "q": "During the charge and discharge of a lithium-ion battery, which description of the behavior of Li⁺ is most accurate?",
             "options": ["It intercalates/deintercalates back and forth between the graphite and metal-oxide layers, swinging between the two ends of a rocking chair", "It is deposited as metallic lithium on discharge and dissolves again on charge", "It stays inside the positive electrode and never moves", "It is permanently consumed by the battery"],
             "answer": 0,
-            "explain": "The rocking-chair principle: on discharge Li⁺ leaves the graphite layers and migrates into the LiCoO₂ layers (with the electrons doing work in the external circuit); on charge the external supply pushes it back into the graphite. Li⁺ is cycled rather than consumed, and it is never deposited as metallic lithium — precisely why the battery is safe and long-lived."
+            "explain": "In normal rocking-chair operation Li⁺ leaves graphite on discharge and enters the positive-electrode material, returning to graphite on charge. Metallic lithium deposition is not part of this intended mechanism; fast charging, low temperature, and other conditions can cause lithium plating and shorten cell life."
           }
         ]
       }
@@ -680,7 +685,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (Daniell cell assembly simulation) ============ */
 (function () {

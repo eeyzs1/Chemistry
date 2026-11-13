@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Stereochemistry · Organic Chemistry Chapter 2</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b02">
 <div class="page">
@@ -528,7 +528,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (ethane conformation rotator / mirror-superposition demonstrator) ============ */
 (function () {
@@ -712,7 +712,7 @@
       var t0 = null;
       function slide(ts) {
         if (t0 === null) t0 = ts;
-        var k = Math.min(1, (ts - t0) / 600);
+        var k = DSHChem.prefersReduced() ? 1 : Math.min(1, (ts - t0) / 600);
         var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
         var bx = BX0 + (AX - BX0) * ease;
         drawMirror(bx, null);
@@ -746,6 +746,7 @@
           if (attempts >= 3) msg += " In fact, not even arbitrary rotation in three-dimensional space will do it — this pair of mirror images are two distinct molecules (enantiomers).";
         }
         mirReadout.textContent = msg;
+        if (DSHChem.prefersReduced()) { busy = false; return; }
         setTimeout(function () {
           var t1 = null;
           function back(ts2) {

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Introduction and Data Treatment · Analytical Chemistry Chapter 1</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b03">
 <div class="page">
@@ -573,7 +573,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (four-target accuracy/precision simulator) ============ */
 (function () {
@@ -636,7 +636,8 @@
             fill: "#1f2937", stroke: "#ffffff", "stroke-width": 1.2, opacity: 0 }, g);
           d.setAttribute("style", "transition:opacity .18s ease");
           (function (node, delay) {
-            setTimeout(function () { node.setAttribute("opacity", "1"); }, delay);
+            if (DSHChem.prefersReduced()) node.setAttribute("opacity", "1");
+            else setTimeout(function () { node.setAttribute("opacity", "1"); }, delay);
           })(d, 100 + k * 90 + i * 45);
         }
         (function (idx) {

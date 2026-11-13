@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Chemistry of the Atomic Nucleus · Nuclear and Radiochemistry · Chapter 1</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b11">
 <div class="page">
@@ -319,11 +319,11 @@
       <div class="myth-row good">
         <span class="myth-ic">✓</span>
         <div><span class="myth-tag">Correct</span>
-          Radioactivity can only come from <strong>a transformation of the atomic nucleus itself</strong>. γ rays and X-rays merely “pass through” —
-          they break chemical bonds as they penetrate matter, but they cannot turn a stable nucleus into a radioactive one. <strong>Only neutron irradiation</strong> (inside a nuclear reactor, or in the “activation analysis” performed with neutron sources)
-          can be captured by nuclei and produce radioactive nuclides — this is called neutron activation.
-          So: irradiated food, security-scanned luggage, and the body after an X-ray all <strong>carry no radioactivity</strong> — and don't forget, even the atmosphere keeps using cosmic-ray neutrons
-          to “activate” nitrogen into carbon-14, and every living thing around us carries this natural trace radioactivity.
+          Radioactivity comes from <strong>unstable nuclei</strong>. Exposure to radiation is different from contamination with radioactive material.
+          Routine diagnostic X-rays, security scans, and food irradiation under approved conditions <strong>do not induce radioactivity</strong> or leave a radiation source behind.
+          This does not apply to every radiation energy: neutrons, charged particles, and sufficiently energetic photons can produce radioactive nuclides through nuclear reactions.
+          <strong>Neutron activation is common, but is not the only route</strong>; activation depends on the incident particle, its energy, and the target nucleus.
+          Naturally occurring traces of radioactivity, such as carbon-14 in living organisms, are also distinct from irradiation-induced contamination.
         </div>
       </div>
     </div>
@@ -350,6 +350,11 @@
   </section>
 
   <!-- ============ Summary ============ -->
+  <details class="think">
+    <summary>Sources and further reading</summary>
+    <div class="think-body"><p><a href="https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1617web-1294055.pdf">IAEA: Nuclear Medicine Physics (radionuclide production and activation)</a>; <a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-irradiation/frequently-asked-questions-regarding-food-irradiation-1.html">Health Canada: food irradiation under approved conditions</a>.</p></div>
+  </details>
+
   <section id="summary">
     <div class="summary">
       <h3>🧺 Chapter Summary</h3>
@@ -359,7 +364,7 @@
         <li>The half-life is a statistical law: N = N₀(1/2)<sup>t/T½</sup>; single nuclei are unpredictable while large populations collapse precisely — “never fully gone” and “quickly harmless” do not contradict each other.</li>
         <li>Carbon-14 dating: cosmic rays activate nitrogen into ¹⁴C → the ratio in living things stays constant → after death the ratio halves every 5730 years → usable within about 50,000 years.</li>
         <li>Fission (U-235 + n → Ba + Kr + 3n; the chain reaction needs a critical mass) and fusion (deuterium + tritium → helium, the Sun's energy source) both release energy by moving toward iron, the peak of binding energy.</li>
-        <li>Irradiation is not contamination: objects exposed to γ rays carry no radioactivity — only neutron activation can do that; protection rests on the three principles of time, distance, and shielding, plus dose literacy.</li>
+        <li>Irradiation is not contamination: routine X-rays and approved food irradiation do not induce radioactivity; neutrons, charged particles, and high-energy photons can activate matter under suitable conditions.</li>
       </ul>
     </div>
   </section>
@@ -391,9 +396,9 @@
           },
           {
             "q": "Which statement about “irradiated objects” is correct?",
-            "options": ["Food sterilized by γ irradiation becomes radioactive", "Only neutron irradiation (neutron activation) can turn a stable nuclide into a radioactive one", "A person who has had an X-ray emits rays from the body", "Luggage scanned by a security machine must be quarantined through a decay period"],
+            "options": ["Approved γ irradiation induces radioactivity in food", "Routine diagnostic X-rays do not induce radioactivity; neutrons, charged particles, and high-energy photons can activate matter under suitable conditions", "A person continues emitting the diagnostic X-rays after the scan", "Security-scanned luggage needs a quarantine period for radioactive decay"],
             "answer": 1,
-            "explain": "Radioactivity comes from transformations inside the nucleus. γ and X rays merely break chemical bonds as they pass through matter (ionization) without altering nuclei, so irradiated food, a body after an X-ray, and scanned luggage carry no radioactivity. Only neutrons can be captured by nuclei to form new radioactive nuclides (neutron activation) — for example, cosmic-ray neutrons activate atmospheric nitrogen into carbon-14."
+            "explain": "Irradiation is distinct from contamination. Routine diagnostic X-rays, security scans, and approved food irradiation do not induce radioactivity. Neutrons, charged particles, and sufficiently energetic photons can cause nuclear reactions, so activation is not limited to neutrons."
           }
         ]
       }
@@ -407,7 +412,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactivity (half-life simulator canvas / decay-equation balancer) ============ */
 (function () {

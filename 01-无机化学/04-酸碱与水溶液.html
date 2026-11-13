@@ -538,9 +538,7 @@
     function yOf(p) { return B - p / 14 * (B - T); }
 
     function pHof(V) {
-      if (V < EQ) return -Math.log10(0.1 * (EQ - V) / (EQ + V));
-      if (V === EQ) return 7;
-      return 14 + Math.log10(0.1 * (V - EQ) / (V + EQ));
+      return DSHChem.strongAcidBasePH(0.1 * EQ / 1000, 0.1 * V / 1000, (EQ + V) / 1000);
     }
 
     function renderT() {

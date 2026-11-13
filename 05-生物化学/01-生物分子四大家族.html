@@ -680,7 +680,7 @@
       var t0 = null, dur = 850;
       function step(ts) {
         if (t0 === null) t0 = ts;
-        var k = Math.min(1, (ts - t0) / dur);
+        var k = DSHChem.prefersReduced() ? 1 : Math.min(1, (ts - t0) / dur);
         var ease = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
         for (var i = 0; i < 10; i++) {
           cur[i].x = from[i].x + (to[i].x - from[i].x) * ease;

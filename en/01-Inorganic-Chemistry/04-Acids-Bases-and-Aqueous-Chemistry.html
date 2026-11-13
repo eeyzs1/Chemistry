@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Acids, Bases, and Aqueous Solutions · Inorganic Chemistry Chapter 4</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body class="b01">
 <div class="page">
@@ -432,7 +432,7 @@
   </section>
 </div>
 
-<script src="../assets/tutor.js"></script>
+<script src="../../assets/tutor.js"></script>
 <script>
 /* ============ Chapter-specific interactions: interactive pH scale + curve plotter for a strong base titrating a strong acid ============ */
 (function () {
@@ -540,9 +540,7 @@
     function yOf(p) { return B - p / 14 * (B - T); }
 
     function pHof(V) {
-      if (V < EQ) return -Math.log10(0.1 * (EQ - V) / (EQ + V));
-      if (V === EQ) return 7;
-      return 14 + Math.log10(0.1 * (V - EQ) / (V + EQ));
+      return DSHChem.strongAcidBasePH(0.1 * EQ / 1000, 0.1 * V / 1000, (EQ + V) / 1000);
     }
 
     function renderT() {
